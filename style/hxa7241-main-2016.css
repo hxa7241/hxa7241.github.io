@@ -1,0 +1,454 @@
+/* HXA7241 website style-sheet 'textographic' v1 - 2016-10-29T15:09Z */
+
+
+/*
+ 
+Contents
+--------
+
+* body
+* general
+   * basics
+   * links
+   * lists
+   * tables
+* head
+* main
+   * article head
+   * article body
+* page-specific
+
+*/
+
+
+
+
+body {
+   color:                rgb(15%,0%,0%);
+   background-color:     rgb(97%,96%,95%);
+   /*background:           rgb(97%,96%,95%) url(bits.svg)
+                         repeat-y scroll right top;*/
+   margin:               0em;
+   /*border-left:          rgb(120,80,250) solid 0.8em;*/
+   /*border-left:        rgb(250,200,40) solid 0.8em;*/
+   /*border-left:          rgb(230,200,110) solid 0.8em;*/
+   border-left:          rgb(160,80,80) solid 0.8em;
+   border-right:         rgb(158,158,153) solid 2em;
+   padding:              0em;
+   font-family:          sans-serif;
+   font-size:            18px;/*1.1em*/
+   line-height:          1.3em;
+}
+
+
+
+
+/*---- general ----*/
+
+/*-- basics --*/
+
+img {
+   border:            0 none;
+}
+
+sup {
+   font-size:         0.8em;
+   line-height:       0.5em;
+}
+
+p {
+   margin:               1em 0em 1em 0em;
+   padding:              0em;
+}
+
+pre {
+   background-color: rgb(232,230,228);
+   padding:          1em 0.6em 1em 0.6em;
+   font-family:      monospace;
+   font-size:        0.9em;
+   line-height:      1.3em;
+}
+
+.comment {
+   font-style:       italic;
+   border-top:       0.2em solid rgb(232,230,228);
+}
+
+
+/*-- links --*/
+
+a:link {
+   color:                rgb(71,68,69);
+   text-decoration:      underline;
+}
+
+a:visited {
+   color:                rgb(158,158,153);
+   text-decoration:      underline;
+}
+
+a:hover {
+   color:                rgb(71,68,69);
+   background-color:     rgb(212,212,206);
+   text-decoration:      underline;
+}
+
+a:active {
+   color:                rgb(250,250,250);
+   background-color:     rgb(158,158,153);
+   text-decoration:      underline;
+}
+
+/*- img-links -*/
+
+a:link img,
+a:visited img {
+   border:           0.1em solid rgb(250,250,250);
+}
+
+a:hover img {
+   border:           0.1em solid gray;
+}
+
+a:active img {
+   border:           0.1em solid rgb(71,68,69);
+}
+
+
+/*-- lists --*/
+
+ul, ol {
+   list-style-position:  inside;
+   margin:           1em 0em 1em 0em;
+   padding:          0em 0.5em 0em 0.5em;
+}
+
+ul ul, ul ol, ol ul, ol ol, dl ul, dl ol {
+   margin:           0.25em 2em 0.25em 2em;
+}
+
+ul {
+   list-style-type:  square;
+}
+
+li {
+   margin-top:       0.25em;
+   margin-bottom:    0.25em;
+}
+
+dl {
+   padding:          0em;
+}
+
+dt {
+   font-weight:      bold;
+   /*clear:            left;*/
+}
+
+dd {
+   margin-left:      0em;
+   margin-bottom:    1em;
+}
+
+dt img {
+   margin-right:     1em;
+   float:            left;
+}
+
+dl.compact {
+   padding-left:     2em;
+}
+
+dl.compact dt {
+   float:            left;
+   margin-right:     1em;
+}
+
+dl.compact dd {
+   margin-top:       0.25em;
+   margin-bottom:    0.25em;
+}
+
+.plainlist {
+   list-style-type:  none;
+   margin:           1em 2em 1em 2em;
+}
+
+
+/*-- tables --*/
+
+table {
+   margin:           1em 0em 1em 0em;
+   font-size:        1em;
+   line-height:      1.4em;
+}
+
+table td {
+   padding-right:    1em;
+   vertical-align:   top;
+}
+
+.tableterm {
+   font-weight:      bold;
+   padding-right:    1.5em;
+}
+
+.tableitem {
+   padding-left:     1.5em;
+}
+
+.tablecomment {
+   font-style:       italic;
+   padding-left:     1.5em;
+}
+
+.producticon {
+   margin-right:     2em;
+}
+
+.thumbcaption {
+   width:            100px;  /*6.2em;*/
+   margin-top:       0em;
+}
+
+/*-- other --*/
+
+img.clock-small {
+   height:           0.8em;
+}
+
+
+
+
+/*---- head ----*/
+
+#top-head {
+   background-color:     rgb(99%,99%,99%);
+   margin:               0em 0em -8em 0em;
+   padding:              0em;
+   max-width:            70em;
+}
+
+#top-head h1 {
+   color:                rgb(90%,90%,90%);
+   /*background:           rgb(250,250,250) url(background.jpg) repeat scroll -6em 0;*/
+   margin:               0em 0em -0.15em 0em;
+   padding:              0em;
+   font-size:            14em;
+   line-height:          0em;
+}
+
+#top-head a img {
+   border:               0 none;
+}
+
+#top-head img {
+   width:                4.508em;
+}
+
+#top-head #sub-head {
+   color:                rgb(81%,81%,79%);
+   margin:               0em 0em -0.15em 0em;
+   max-width:            9em;
+   font-size:            8em;
+   line-height:          0.8em;
+   text-align:           right;
+}
+
+#top-head #subsub-head {
+   /*color:                rgb(250,150,100);*/
+   /*color:                rgb(120,80,250);*/
+   color:                rgb(55%,55%,55%);
+   height:               1.8em;
+   max-width:            58em;
+   font-size:            1.2em;
+   line-height:          0.8em;
+   text-align:           right;
+}
+
+#top-head h1 a,
+#top-head #sub-head a {
+   color:                inherit;
+   background-color:     transparent;
+   text-decoration:      none;
+}
+
+
+
+
+/*---- main ----*/
+
+main {
+   background-color:     rgb(99%,99%,99%);
+   margin:               0em;
+   /*border-bottom:        rgb(170,80,80) solid 0.4em;*/
+   padding:              0em 0em 2em 0em;
+   max-width:            70em;
+}
+
+article {
+   margin:               0em;
+   padding:              0 0 0 12.5%;
+}
+
+
+/*-- article head --*/
+
+.artefact-head {
+   color:                rgb(65%,65%,65%);
+   margin:               0em 0em -0.5em -4em;
+   padding:              0em;
+   font-size:            1.2em;
+   line-height:          0.8em;
+}
+
+.artefact-head pre {
+   background-color:     transparent;
+   margin:               0em;
+   padding:              0em;
+   font-size:            0.8em;
+   line-height:          1em;
+}
+
+
+/*-- article body --*/
+
+.artefact-body {
+   /*background-color:     rgb(247,245,245);*/
+   max-width:            42em;
+}
+
+.artefact-body h2 {
+   /*color:                rgb(60%,60%,60%);*/
+   /*color:                rgb(52,187,33);*/
+   /*color:                rgb(52,250,33);*/
+   color:                rgb(64%,74%,64%);
+   margin:               0em 0em -0.3em -0.5em;
+   padding:              0em;
+   font-size:            3.5em;
+   line-height:          0.8em;
+}
+
+.artefact-summary {
+   /*color:                rgb(70%,70%,70%);*/
+   color:                rgb(119,221,0);
+   margin-left:          -0.5em;
+   font-size:            1.4em;
+   line-height:          0.9em;
+}
+
+table.artefact-menu {
+   background-color:     rgb(95%,95%,95%);
+   border:               0 none;
+   margin:               0em 0em 3em 0em;
+   font-size:            1.1em;
+   line-height:          1em;
+}
+
+table.artefact-menu th,
+table.artefact-menu td {
+   vertical-align:       top;
+   padding:              0em;
+}
+
+table.artefact-menu ul {
+   margin:               0em;
+   padding:              0em;
+}
+
+.artefact-body section {
+   margin:               0em 0em 4em 0em;
+}
+
+.artefact-body h3 {
+   color:                rgb(40%,40%,40%);
+   background-color:     rgb(92%,92%,92%);
+   margin:               1em 0em 0em 0em;
+   font-size:            1.7em;
+   line-height:          1em;
+   font-weight:          bold;
+}
+
+.artefact-body h4 {
+   color:                rgb(40%,40%,40%);
+   margin:               2em 0em 0.8em 0em;
+   border-bottom:        rgb(90%,90%,90%) solid 0.2em;
+   font-size:            1.2em;
+   line-height:          1em;
+   font-weight:          bold;
+}
+
+.artefact-body a.sectnum {
+   color:                rgb(70%,70%,70%);
+}
+.artefact-body a.paranum {
+   color:                rgb(60%,60%,60%);
+}
+
+/*
+.artefact-body h5 {
+   margin-top:           1.5em;
+   margin-bottom:        0em;
+   padding:              0em 0.5em 0em 0.5em;
+   font-size:            1em;
+   line-height:          1.2em;
+   font-weight:          bold;
+   text-align:           left;
+}
+
+.artefact-body h6 {
+   margin:               0em 1.5em 0em 0em;
+   padding:              0em 0.5em 0em 0.5em;
+   float:                left;
+   font-size:            1em;
+   line-height:          1.2em;
+   font-weight:          bold;
+   text-align:           left;
+}
+*/
+
+.artefact-body .panel {
+   background-color:     rgb(232,230,228);
+   font-size:            1em;
+   line-height:          1.4em;
+   margin-bottom:        0em;
+   padding:              0.5em;
+}
+
+.artefact-body .panel dl,
+.artefact-body .panel dt {
+   margin:               0.5em 0em 0.5em 0em;
+}
+
+.artefact-body .panel dd {
+   margin:               0.5em 0em 0.5em 1em;
+}
+
+
+
+
+/*---- page-specific ----*/
+
+/*#hxa7241-home .plainlist {
+   list-style-position:  inside;
+   list-style-type:      square;
+   margin:               1em 0em 1em 0em;
+   padding:              0em;
+}*/
+
+html.hxa7241-writings body {
+   border-left:          rgb(160,80,80) solid 0.8em;
+}
+
+html.hxa7241-software body {
+   border-left:          rgb(100,100,200) solid 0.8em;
+}
+
+html.hxa7241-other body {
+   border-left:          rgb(128,64,128) solid 0.8em;
+}
+
+html.hxa7241-colophon body {
+   border-left:          rgb(64,128,128) solid 0.8em;
+   /*border-left:          rgb(150,120,24) solid 0.8em;*/
+}
