@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Post-Currencyism 3: Security - (note-20140119T1238Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Post-Currencyism 3: Security - (note-20140119T1238Z) - HXA7241" />
+   <meta name="DC.subject"     content="economic engineering" />
+   <meta name="DC.description" content="An examination of post-currency economic systems, part 3: Does this make a viable cooperative structure? Is it basically self-supporting?" />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2014-01-19" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20140119T1238Z.html" />
+
+   <meta name="keywords"       content="economic engineering" />
+   <meta name="description"    content="An examination of post-currency economic systems, part 3: Does this make a viable cooperative structure? Is it basically self-supporting?" />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons BY-SA 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Post-Currencyism 3: Security</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20140119T1238Z.html" title="permalink">NOTE HXA7241 2014-01-19T12:38Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>Does this make a viable cooperative structure? Is it basically self-supporting?</h5>
+
+   <ul>
+      <li><a href="#cooperation">Cooperation</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#consensus">Consensus</a></li>
+   </ul>
+
+
+   <h4 id="cooperation">Cooperation</h4>
+
+   <p>The minimal possible cooperative group is two people: Alice and Bob. One day Alice needs some tea, and Bob has some so sends it over. Another day it is the other way around: Bob needs a hat, and Alice has one spare. Now Alice has to decide: whether to send the hat to Bob or not. That decision is the crux of the cooperation. And it can be straightforward: Alice keeps a record of all interactions with Bob, and checks it. In the past Bob has helped with some tea, therefore helping Bob with a hat now is sensible. Bob also keeps such a record and can decide similarly. So we have a successfully running cooperative group.</p>
+
+   <p>But there is one main possible security failure. An unknown third person, C, impersonates Bob in asking for a hat. Then the record of Bob's interactions is misapplied: C is taking advantage of Bob's good record. So the problem is this: to ensure the identity of participants: when someone interacts with you, you want to be sure they are the same as the person in your records.</p>
+
+   <p>Identity seems a rather ordinary, well-understood security concern (though not necessarily easy), and not something new and special to this kind of cooperative system. So we can feel calm about that: it seems do-able and not demanding anything of the basic design.</p>
+
+   <p>The next question is how this generalises to groups of more than two. It roughly seems to do so straightforwardly, but that is not yet clarifed. (It seems basically the same structure, but with each interaction being &lsquo;on behalf of&rsquo; the rest of the group.)</p>
+
+   <p>... Taking a bit of a jump, the generalised solution to the &lsquo;cooperation decision&rsquo; seems like the following. How to decide whether to give to someone else? Try to find paths across the network of previous interactions, where each step receives something from that other person's direction &ndash; i.e. they give to Y, Y gives X, X gives to you (not the same object, just that flow of giving). Inspecting the network shows the other person has contributed to the group, and hence also you, and so are a good choice to give to.</p>
+
+   <p>If someone set up a million fake bots all interacting with each other, might that not create a false appearance of cooperative good-will? But if they never actually give anything to the rest of the group they will never create any paths to anyone else, and so no-one else will trust them. Their isolated interactions count for nothing. And if they <i>do</i> give to others, they <i>are</i> actually being cooperative. This is the key point: cooperation is inherently verified by others.</p>
+
+   <p>That seems to offer some reassurance about the basic security concerns.</p>
+
+
+   <h4 id="privacy">Privacy</h4>
+
+   <p>Now there is another question of privacy. One might say economic interaction is essentially public &ndash; by definition you cannot keep an interaction to yourself. But we can still consider <i>degrees</i> of interaction. Interactions are not all with everyone, and we might deliberately want some to be strictly limited, within sub-groups. But we should be inclined to leave this for later &ndash; it seems non-critical, and also separable.</p>
+
+
+   <h4 id="consensus">Consensus</h4>
+
+   <p>Both Bitcoin and Ripple are highly concerned about consensus (a very centralised idea). Yet this network-based/non-currency system seems to be missing that. Is that a fault?</p>
+
+   <p>No, because the essential problem is not about currency but about cooperative structure/behaviour, and cooperation is intrinsically distributed and does not require consensus. Bitcoin (etc.) is working too hard, or rather is too focused on the wrong main problem: it is primarily trying to simulate material objects &ndash; their objective limitedness. That is money's mechanism. But that mechanism is accidental, or only peripheral. The real main purpose is to make a system for cooperation, and the mechanism there is about sharing, communicating, storing the non-rival good of information.</p>
+
+   <h4>Related</h4>
+   <ul>
+      <li><a href="note-hxa7241-20140119T1214Z.html">Post-Currencyism 2: Allocation</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

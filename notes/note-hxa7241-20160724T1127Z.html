@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Basic proglang naming schemes - (note-20160724T1127Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Basic proglang naming schemes - (note-20160724T1127Z) - HXA7241" />
+   <meta name="DC.subject"     content="software, programming, language, structural-naming" />
+   <meta name="DC.description" content="Programming languages can be classified into two well-known naming schemes (tacit, and non-), but from there one can see a third -- naming from intrinsic structure -- which seems interesting and underexplored." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2016-11-03" />
+   <meta name="DC.date"        content="2016-07-24" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20160724T1127Z.html" />
+
+   <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+   <meta name="keywords"       content="software, programming, language, structural-naming" />
+   <meta name="description"    content="Programming languages can be classified into two well-known naming schemes (tacit, and non-), but from there one can see a third -- naming from intrinsic structure -- which seems interesting and underexplored." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons BY-SA 3.0" />
+
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Basic proglang naming schemes</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20160724T1127Z.html" title="permalink">NOTE HXA7241 2016-07-24T11:27Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5 id="p0">Programming languages can be classified into two well-known naming schemes (tacit, and non-), but from there one can see a third &ndash; naming from intrinsic structure &ndash; which seems interesting and underexplored.</h5>
+
+   <p id="p1">The characteristic feature of tacit languages &ndash; eschewal of names &ndash; brings with it a clearly definable disadvantage. This weakness is rooted in the data-structure of function parameters: with tacit languages it has a vacuous ordering &ndash; it has ordering but that ordering is meaningless, a dead weight.</p>
+
+   <p id="p1">For tacit languages, any single set of parameters can have multiple forms &ndash; because of the ordering flexibility. Think of stacks in Forth and Joy. But that opens the possibility that two pieces of code using the same function could be handling the data in different forms/orders, for whatever reason, and that means that to join them together will require bridging that mismatch &ndash; shuffling the stack in Forth or Joy. But the ordering/arrangement property is wholly empty, meaningless: the arrangement changes nothing about the meaning of the collection of parameters. And so the &lsquo;wiring-together&rsquo; work it gives rise to is wholly otiose.</p>
+
+   <p id="p1">Normal, non-tacit, languages avoid this problem because they present the data-structure of function parameters as dictionaries, which have no ordering/arrangement. This eradicates the whole difficulty, the whole extra labour, which tacit languages fall into.</p>
+
+   <p id="p1">(Yet tacit languages can still work well: those which work best confine themselves to unary and binary functions. There, the arrangement of the program text can itself <i>show</i> the connexions &ndash; consider J, with its arithmetic phraseology &ndash; and that form can maintain clarity while dispensing with clutter, and be powerfully succinct.).</p>
+
+   <p>&ndash;&ndash;&ndash;&ndash;</p>
+
+<p id="p1">Looking closer, you could say that the difference between tacit and non-tacit is in the style of naming. Both language kinds must address function parameters &ndash; that is, select from them &ndash; but they do so differently. Normal non-tacit languages distinguish data with names which come from outside: names made up by humans. Tacit languages distinguish data by the arrangement: each item is named relative to the others, as with an array and its indexing. (The non-tacit style you could call <i>ectonominative</i> (ecto = external), and the tacit style you could call <i>internominative</i> (inter = among)).</p>
+
+<p id="p1">Non-tacit languages' ectonominativity is bad because it drags in the great mess of human culture: the logical software structure is polluted and distracted with undisciplined shapeless stuff, and consequently choosing names seems an eternal conundrum. Tacit languages' internominativity is decidedly preferable in avoiding all that, but it has its own serious shortcoming: the useless extra wiring-together work.</p>
+
+<p id="p1">What we want, perhaps, is another naming style: where names are made from the object itself (<i>endonominative</i> (endo = internal)).</p>
+
+<p id="p1">Deriving a name from a thing is about what the thing is. What is a piece of data? Data is really the process which made it: <i>that</i> is what it is. The full name of a data object is the text of the sub-program which produced it &ndash; but that would be far too long. So you need a way of compressing that &ndash; which seems like a hash. You could have some coherent structured hash, in a neat encoding, and rendered into pronounceable form (&lsquo;structural naming&rsquo;) ... is that the way? ... Or maybe some mixture of the styles? ...</p>
+
+<p id="p1">(The only remaining naming scheme alternative besides ecto-, inter-, and endo-, seems to be randomness, like UUIDs (version 4), but that seems very unergonomic.).</p>
+
+   <p>&ndash;&ndash;&ndash;&ndash;</p>
+
+   <p id="related">Related:</p>
+   <ul>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20140330T1114Z.html">"Software's essential form, and visual programming"; HXA7241; 2014 / note .</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20120708T0907Z.html">"Names are wrong, tacit/point-free is right"; HXA7241; 2012 / note .</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20141231T1101Z.html">"TADIST file naming pattern"; HXA7241; 2014 / note .</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

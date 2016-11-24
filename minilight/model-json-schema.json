@@ -1,0 +1,178 @@
+{
+   "description": "MiniLight JSON model format\nHarrison Ainsworth / HXA7241 : 2012\nhttp://www.hxa.name/minilight/\n\n(World axes are: X positive rightwards, Y positive upwards, Z positive forwards.)",
+   "id": "http://www.hxa.name/minilight/model-json-schema.json",
+   "$schema": "http://json-schema.org/schema",
+
+   "type": "object",
+   "required": true,
+   "properties":
+   {
+      "id":
+      {
+         "type": "string",
+         "required": true,
+         "pattern": "^#MiniLight"
+      },
+      "iterations":
+      {
+         "type": "integer",
+         "required": true,
+         "minimum": 0
+      },
+      "image":
+      {
+         "type": "object",
+         "required": true,
+         "properties":
+         {
+            "width":
+            {
+               "type": "integer",
+               "required": true,
+               "minimum": 1
+            },
+            "height":
+            {
+               "type": "integer",
+               "required": true,
+               "minimum": 1
+            }
+         }
+      },
+      "view":
+      {
+         "type": "object",
+         "required": true,
+         "properties":
+         {
+            "position":
+            {
+               "type": "array",
+               "required": true,
+               "minItems": 3,
+               "maxItems": 3,
+               "items":
+               {
+                  "type": "number",
+                  "required": true
+               }
+            },
+            "direction":
+            {
+               "type": "array",
+               "required": true,
+               "minItems": 3,
+               "maxItems": 3,
+               "items":
+               {
+                  "type": "number",
+                  "required": true
+               }
+            },
+            "angle":
+            {
+               "description": "degrees",
+               "type": "number",
+               "required": true
+            }
+         }
+      },
+      "scene":
+      {
+         "type": "object",
+         "required": true,
+         "properties":
+         {
+            "skyemission":
+            {
+               "description": "HDR",
+               "type": "array",
+               "required": true,
+               "minItems": 3,
+               "maxItems": 3,
+               "items":
+               {
+                  "type": "number",
+                  "required": true,
+                  "minimum": 0
+               }
+            },
+            "groundreflection":
+            {
+               "type": "array",
+               "required": true,
+               "minItems": 3,
+               "maxItems": 3,
+               "items":
+               {
+                  "type": "number",
+                  "required": true,
+                  "minimum": 0,
+                  "maximum": 1
+               }
+            },
+            "triangles":
+            {
+               "type": "array",
+               "required": true,
+               "items":
+               {
+                  "description": "Triangle front face has clock-wise vertexes. Triangles are reflective (therefore visible) on both faces, but emissive on the front face only.",
+                  "type": "object",
+                  "required": true,
+                  "properties":
+                  {
+                     "vertexs":
+                     {
+                        "type": "array",
+                        "required": true,
+                        "minItems": 3,
+                        "maxItems": 3,
+                        "items":
+                        {
+                           "type": "array",
+                           "required": true,
+                           "minItems": 3,
+                           "maxItems": 3,
+                           "items":
+                           {
+                              "type": "number",
+                              "required": true
+                           }
+                        }
+                     },
+                     "reflectivity":
+                     {
+                        "type": "array",
+                        "required": true,
+                        "minItems": 3,
+                        "maxItems": 3,
+                        "items":
+                        {
+                           "type": "number",
+                           "required": true,
+                           "minimum": 0,
+                           "maximum": 1
+                        }
+                     },
+                     "emitivity":
+                     {
+                        "description": "HDR",
+                        "type": "array",
+                        "required": true,
+                        "minItems": 3,
+                        "maxItems": 3,
+                        "items":
+                        {
+                           "type": "number",
+                           "required": true,
+                           "minimum": 0
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

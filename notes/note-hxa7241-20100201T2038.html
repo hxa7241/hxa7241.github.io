@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>The illusion in up-front design - (note-20100201T2038) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="The illusion in up-front design - (note-20100201T2038) - HXA7241" />
+   <meta name="DC.subject"     content="software engineering, representational design" />
+   <meta name="DC.description" content="There is an illusion in the idea of up-front design in software, that makes it seem more plausible than it really is." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.publisher"   content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2010-02-09" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20100201T2038.html" />
+
+   <meta name="keywords"       content="software engineering, representational design" />
+   <meta name="description"    content="There is an illusion in the idea of up-front design in software, that makes it seem more plausible than it really is." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>The illusion in up-front design</h1>
+   <h2><a href="http://www.hxa.name/notes/note-hxa7241-20100201T2038.html" title="permalink"><small>NOTE-HXA7241-20100201T2038</small></a></h2>
+   <h4>Harrison Ainsworth</h4>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <p><b>There is an illusion in the idea of up-front design in software (that is, code arrangement, not algorithm), that makes it seem more plausible than it really is.</b></p>
+
+   <p>When working on it, we have a feeling that if we devise a particularly good structure, it will accommodate more changes. And further, that better techniques &ndash; alternatives to classes, templates, or other structures &ndash; can be invented to help software development handle change. But there is something not entirely right here.</p>
+
+   <p>It is not because the techniques are immature. Better techniques of abstraction (classes, templates, etc.) can never fundamentally help. What you are trying to do in up-front design is to make an abstraction: but one that covers a set whose instances are at different future times. (An abstraction just fixes something, and lets other things vary. In designing one, you distill a generalisation, a simplification, of a set of things.) But that cannot be done if the set is unknown &ndash; the commonality of an unbounded set is unbounded. And that is the situation with up-front design and its future instances.</p>
+
+   <p>It feels like only the instances are unknown, but it is really the abstraction that would encompass the instances that is unknown.</p>
+
+   <p>The only solution is to find the bounds &ndash; not make a good prediction, but find with certainty &ndash; to make them known. It is only definite fixed bounds that can give a definite fixed enduring up-front abstraction. And when, as usual, that cannot be done, there should be no sense of shortfall. You make the best use of the information available, and when that changes, the design should too. Software development is essentially about responding to change, because software is essentially changeable.</p>
+
+   <p>Although there may be room for statistically informed prediction . . .</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

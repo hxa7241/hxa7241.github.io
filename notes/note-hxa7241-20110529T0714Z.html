@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>A comment on: 'The Carrying-Cost of Code: Taking Lean Seriously' - (note-20110529T0714Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="A comment on: 'The Carrying-Cost of Code: Taking Lean Seriously' - (note-20110529T0714Z) - HXA7241" />
+   <meta name="DC.subject"     content="software engineering, process, agile, lean" />
+   <meta name="DC.description" content="The original article wbcvsn-analysis:http://michaelfeathers.typepad.com/michael_feathers_blog/2011/05/the-carrying-cost-of-code-taking-lean-seriously.html seems, on analysis, contradictory to agile. But maybe some resolution is possible, by building more general knowledge from more general investigation." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2011-05-29" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20110529T0714Z.html" />
+
+   <meta name="keywords"       content="software engineering, process, agile, lean" />
+   <meta name="description"    content="The original article wbcvsn-analysis:http://michaelfeathers.typepad.com/michael_feathers_blog/2011/05/the-carrying-cost-of-code-taking-lean-seriously.html seems, on analysis, contradictory to agile. But maybe some resolution is possible, by building more general knowledge from more general investigation." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>A comment on: &lsquo;The Carrying-Cost of Code: Taking Lean Seriously&rsquo;</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20110529T0714Z.html" title="permalink">NOTE HXA7241 2011-05-29T07:14Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5><a href="http://michaelfeathers.typepad.com/michael_feathers_blog/2011/05/the-carrying-cost-of-code-taking-lean-seriously.html">The original article</a> seems, on analysis, contradictory to agile. But maybe some resolution is possible, by building more general knowledge from more general investigation.</h5>
+
+
+   <h3>The proposition</h3>
+
+   <ul>
+      <li>The problem is about complexity.</li>
+      <li>The solution is not really about deleting code but limiting code.</li>
+   </ul>
+
+   <p>The problem is that larger code is more complex, and more complex is harder to work on. The suggestion is that we impose limits on the amount of code. Limiting? &ndash; yes, the article says code will be deleted and the client will have to choose what to save &ndash; so the rate of deletion is at least as large as the rate of addition. This deleting and adding is effectively the same as limiting.</p>
+
+   <p>The basic idea of limiting appears prudent: limiting code is limiting complexity, which limits the difficulty of work.</p>
+
+
+   <h3>The corollary</h3>
+
+   <ul>
+      <li>Limiting code means limiting functionality.</li>
+      <li>Really, we want to make things easier to do.</li>
+   </ul>
+
+   <p>Broadly, functionality is proportional to code size &ndash; in general, and in particular where all else stays constant. So limiting code size is limiting functionality &ndash; which limits what we produce, what the client gets.</p>
+
+   <p>But we do not want to do less, we want to make things <i>easier</i> to do. So the proposed solution does not really <i>attack</i> the real underlying problem: we want to make code easier to change <i>despite</i> it being more complex.</p>
+
+   <p>It is not a criticism that the solution suggested does not do more &ndash; that is really more a project for computer-science/software-science, not software-engineering practice. But it is worth noting.</p>
+
+
+   <h3>The contradiction</h3>
+
+   <ul>
+      <li>Limiting functionality now is paying for changes in the future.</li>
+      <li>Speculation is contrary to a principle of agile.</li>
+   </ul>
+
+   <p>The proposed limiting really amounts to re-arranging the costs. It is transferring the costs of future change into costs of current activity &ndash; future work is made easier, by making current work harder. But instead of paying those moved costs by doing <i>more work</i> now, they are paid by having <i>less functionality</i> now.</p>
+
+   <p>This is contradictory to one of the principles of agile: you do not try to predict the future, you just do only what you need now. Agile is feedback-driven not forecast-driven.</p>
+
+   <p>And if the proposal is taken to really mean deleting and rewriting rather than just limiting, that just strengthens the contradiction since it not only limits functionality it adds the extra work of rewriting too.</p>
+
+
+   <h3>A resolution</h3>
+
+   <ul>
+      <li>Anticipatory work must be founded on hard knowledge.</li>
+      <li>Move this learning out of the client project.</li>
+   </ul>
+
+   <p>What makes predictive work bad is not really that it is for the future but that it is for the unknown. So if some solid information and knowledge can be got, &lsquo;predictive&rsquo; work could perhaps become reasonable enough to do.</p>
+
+   <p>The way to do that is probably to conduct general experiments somehow and/or gather measures (perhaps like <a href="http://www.hxa.name/notes/note-hxa7241-20110417T0913Z.html">this earlier note on &lsquo;Software Registries&rsquo;</a>). Instead of having developers rewriting on the job, make it a proper investigation &ndash; and move the learning out of the client project.</p>
+
+   <p>There are two layers of learning/information here. The agile process is itself a learning process: it discovers (and makes) what the client wants by direct interaction between them and the construction. But proposing behaviour now, like limiting (or deleting/rewriting), to help what might be wanted in the future is not direct. So any knowledge backing it must come from elsewhere &ndash; separate proper experiment/measurement. This recognises there is specific knowledge to be got on the job, and more general knowledge that can be (and ought to be) got from more general research.</p>
+
+   <p>Ultimately, agile is not about doing less, it is about doing only what you are clear about.</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

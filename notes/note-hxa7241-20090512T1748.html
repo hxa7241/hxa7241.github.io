@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>The Missing Principle Of Programming Languages - (note-20090512T1748) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="The Missing Principle Of Programming Languages (note) - HXA7241 - 2009" />
+   <meta name="DC.subject"     content="software development, software engineering, programming languages, data/computation mechanics, performance analysis, synchronous languages" />
+   <meta name="DC.description" content="Languages should support data/computation mechanics (mostly known as performance evaluation/analysis)." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.publisher"   content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2009-05-12" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20090512T1748.html" />
+
+   <meta name="keywords"       content="software development, software engineering, programming languages, data/computation mechanics, performance analysis, synchronous languages" />
+   <meta name="description"    content="Languages should support data/computation mechanics (mostly known as performance evaluation/analysis)." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>The Missing Principle Of Programming Languages</h1>
+   <h2><a href="http://www.hxa.name/notes/note-hxa7241-20090512T1748.html" title="permalink">note-<small>HXA7241</small>-<small>20090512T1748</small></a></h2>
+   <h4>Harrison Ainsworth</h4>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <p><i>Support for data/computation mechanics (mostly known as performance evaluation/analysis)</i></p>
+
+   <p>The fundamental material of software is bits and their modification. This is determinate. And this makes software essentially engineering. A basic capability of physical, structural engineering is calculating resultant behaviour from forces across whole structures. In software this would be a matter of the time and space needed for transferring data, transforming data, and storing data. How much is the equivalent basic capability visible in software &ndash; understanding the performance of whole systems?</p>
+
+   <p>Common languages have no representation of time. They allow explicit control of space/storage, although total runtime needs are somewhat contingent. But where is time accounted for? There is no language equivalent. When this essential quantitative aspect seems non-existent in most software development, it is no surprise it seems less like engineering.</p>
+
+   <p>Time could be handled in two ways: where time properties are deduced for parts or whole, or where parts or whole must fit time properties. And these do indeed exist, but are marginal, specialist, in industry and academia. For the first way, there is &lsquo;stochastic process algebras&rsquo;: the main available tool is rather high-level: it can work from UML, but not from code (and might be limited to smaller inputs). For the second way, there are &lsquo;synchronous languages&rsquo;, such as: Lustre: in these, program modules react to, and fit into, a stream of event points.</p>
+
+   <p>Since compute power is plentiful, most everyday software is casual about performance. But for something so intrinsic to software engineering, at least some significant handling of data/computation mechanics would be reasonable in all languages.</p>
+
+   <p>References:</p>
+   <ul id="references">
+      <li><a href="http://www.hxa.name/articles/content/software-engineering-and-civil-engineering_hxa7241_2008.html">&lsquo;Software Engineering And Civil Engineering&rsquo;; <small>HXA7241</small>; 2008</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20090325T1709.html">&lsquo;Determinate Knowledge In Software Engineering&rsquo;; <small>HXA7241</small>; 2009.</a></li>
+      <li><a href="http://www.dcs.ed.ac.uk/pepa/">&lsquo;Process Algebras for Quantitative Analysis&rsquo;; Hillston; University Of Edinburgh; 2005.</a></li>
+      <li><a href="http://www-verimag.imag.fr/SYNCHRONE/index.php?page=lang-design#lustrecore">&lsquo;A Tutorial Of Lustre&rsquo;; Halbwachs, Raymond; 2002.</a><!--http://www-verimag.imag.fr/~halbwach/PS/tutorial.ps--></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

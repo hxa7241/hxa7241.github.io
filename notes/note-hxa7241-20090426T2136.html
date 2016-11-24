@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Better HTML fragment referencing, and RDFa - (note-20090426T2136) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Better HTML fragment referencing, and RDFa (note) - HXA7241 - 2009" />
+   <meta name="DC.subject"     content="software engineering, WWW, GGG, RDF, RDFa, HTML" />
+   <meta name="DC.description" content="A look at the relation of HTML fragment identifiers and the joining of the GGG with the WWW." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.publisher"   content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2009-04-26" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20090426T2136.html" />
+
+   <meta name="keywords"       content="software engineering, WWW, GGG, RDF, RDFa, HTML" />
+   <meta name="description"    content="A look at the relation of HTML fragment identifiers and the joining of the GGG with the WWW." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Better HTML fragment referencing, and RDFa</h1>
+   <h2><a href="http://www.hxa.name/notes/note-hxa7241-20090426T2136.html" title="permalink">note-<small>HXA7241</small>-<small>20090426T2136</small></a></h2>
+   <h4>Harrison Ainsworth</h4>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <p>HTML certainly needs better, proper, fragment identifier referencing capability. Remember: unless there is already an id in the right place in the document, it is impossible.</p>
+
+   <p><a href="http://dret.typepad.com/dretblog/2008/05/xhtml-fragment.html">Dretblog</a> proposes some decent options. And it seems it would be a relatively simple project. There may be a tendency to immediate concern for robustness: surely a simple easy scheme would break too easily. But think of basic URLs &ndash; they have no robustness, technically, at all. Totally disregarding robustness is well founded, in fact it is right. Not trying too hard makes the web work.</p>
+
+   <p>A tangential benefit is a perhaps better way than RDFa to bridge the <acronym title="Great Global Graph ('great' is better than 'giant')">GGG</acronym> with the WWW, ie. RDF to HTML pages.</p>
+
+   <p>There are two obvious basic approaches:</p>
+   <ul>
+      <li>add RDF to presentation (HTML): such as RDFa (simpler, easier, more acceptable)</li>
+      <li>add presentation to RDF: like <a href="http://www.w3.org/2005/04/fresnel-info/">Fresnel</a> (complexer, less acceptable &ndash; it is indeed not prominent)</li>
+   </ul>
+
+   <p>But another way would be: adjust an intermediary to join them together better: improved HTML URL fragment identifiers. Then external, separate, RDF could address details of web pages. This seems much the best engineeringly, because it is so minimal.</p>
+
+   <p>Whereas, RDFa is rather dubious. Its HTML base makes it familiar and acceptable. But it still can't make statements about web-page details without changing the page itself. It is antithetical to RDF's essentially &lsquo;addititve&rsquo;, always open, graph principle. RDFa is also much more complex than better fragment identifiers: it adds more than it reuses, designwise <i>(is that a tendency of W3C?)</i>.</p>
+
+   <p>There is not really much of a problem having all three tactics available, and maybe that is best overall. But RDF + Fresnel, with better HTML fragments, would be most powerful.</p>
+
+   <p>References:</p>
+   <ul id="references">
+      <li><a href="http://dret.typepad.com/dretblog/2008/05/xhtml-fragment.html">&lsquo;X(HT)ML Fragment Identifiers&rsquo;; Erik Wilde; 2008.</a></li>
+      <li><a href="http://www.w3.org/DesignIssues/Fragment.html">&lsquo;URI References: Fragment Identifiers on URIs&rsquo;; Tim Berners-Lee; 1998.</a></li>
+      <li><a href="http://www.w3.org/TR/xhtml-rdfa-primer/">&lsquo;RDFa Primer&rsquo;; W3C; 2008.</a></li>
+      <li><a href="http://www.w3.org/2005/04/fresnel-info/">&lsquo;Fresnel - Display Vocabulary for RDF&rsquo;; W3C; 2008.</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

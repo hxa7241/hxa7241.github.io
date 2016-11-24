@@ -1,0 +1,632 @@
+/* www.hxa.name main stylesheet */
+
+
+
+
+/* main containers */
+
+body
+{
+   color:            rgb(71,68,69);
+   background:       rgb(158,158,153) url(backgroundbits.png) repeat scroll 0 0;
+   text-align:       left;
+   font-family:      sans-serif;
+   font-size:        1.1em;
+   line-height:      1.4em;
+   margin:           0em;
+   padding:          0em;
+}
+
+.outer
+{
+   background:       rgb(250,250,250) url(background.jpg) repeat scroll -6em 0;
+   margin:           0em;
+   width:            60em;
+}
+
+
+
+
+/* general */
+
+img
+{
+   border:           0 none;
+   margin-bottom:   -1.8px;
+}
+
+a:link img,
+a:visited img
+{
+   border:           0.1em solid rgb(250,250,250);
+}
+
+a:hover img
+{
+   border:           0.1em solid gray;
+}
+
+a:active img
+{
+   border:           0.1em solid rgb(71,68,69);
+}
+
+sup
+{
+   font-size:         0.8em;
+   line-height:       0.5em;
+}
+
+p
+{
+   margin:           1em 0em 1em 0em;
+   padding:          0em 0.5em 0em 0.5em;
+}
+
+pre
+{
+   font-family:      monospace;
+   line-height:      1.3em;
+   background-color: rgb(232,230,228);
+   padding:          1em 0.6em 1em 0.6em;
+}
+
+.comment
+{
+   font-style:       italic;
+   border-top:       0.2em solid rgb(232,230,228);
+}
+
+
+
+
+/* lists */
+
+ul, ol
+{
+   list-style-position:  inside;
+   margin:           1em;
+   padding:          0em 0.5em 0em 0.5em;
+}
+
+ul ul, ul ol, ol ul, ol ol, dl ul, dl ol   
+{
+   margin:           0.25em 2em 0.25em 2em;
+}
+
+ul
+{
+   list-style-type:      square;
+}
+
+li
+{
+   margin-top:       0.25em;
+   margin-bottom:    0.25em;
+}
+
+dl
+{
+   padding:          0em 0.5em 0em 0.5em;
+}
+
+dt
+{
+   font-weight:      bold;
+   /*clear:            left;*/
+}
+
+dd
+{
+   margin-left:      0em;
+   margin-bottom:    1em;
+}
+
+dt img
+{
+   margin-right:     1em;
+   float:            left;
+}
+
+dl.compact
+{
+   padding-left:     2em;
+}
+
+dl.compact dt
+{
+   float:            left;
+   margin-right:     1em;
+}
+
+dl.compact dd
+{
+   margin-top:       0.25em;
+   margin-bottom:    0.25em;
+}
+
+.plainlist
+{
+   list-style-type:  none;
+   margin:           1em 2em 1em 2em;
+}
+
+
+
+
+/* tables */
+
+table
+{
+   font-size:        1em;
+   line-height:      1.4em;
+   margin:           0em 0.5em 1em 0.5em;
+}
+
+.tableterm
+{
+   font-weight:      bold;
+   padding-right:    1.5em;
+}
+
+.tableitem
+{
+   padding-left:     1.5em;
+}
+
+.tablecomment
+{
+   font-style:       italic;
+   padding-left:     1.5em;
+}
+
+.producticon
+{
+   margin-right:     2em;
+}
+
+.thumbcaption
+{
+   width:            100px;  /*6.2em;*/
+   margin-top:       0em;
+}
+
+
+
+
+/* links */
+
+a:link
+{
+   text-decoration:  underline;
+   color:            rgb(71,68,69);
+}
+
+a:visited
+{
+   text-decoration:  underline;
+   color:            rgb(158,158,153);
+}
+
+a:hover
+{
+   text-decoration:  underline;
+   color:            rgb(71,68,69);
+   background-color: rgb(212,212,206);
+}
+
+a:active
+{
+   text-decoration:  underline;
+   color:            rgb(250,250,250);
+   background-color: rgb(158,158,153);
+}
+
+
+
+
+/* upper part */
+
+.upper
+{
+   border-top:       1.2em solid rgb(81,68,69);
+   width:            50em;
+   text-align:       left;
+}
+
+.title
+{
+   width:            18em;
+   margin:           0em;
+}
+
+h1
+{
+   font-size:        1em;
+   font-weight:      normal;
+   line-height:      0.65em;
+   width:            17em;
+   margin:           0em;
+   padding:          0em;
+   background-color: rgb(81,68,69);
+}
+
+h1 a:hover, h1 a:active
+{
+   text-decoration:  none;
+   /*background-color: rgb(81,68,69);*/
+   background-color: transparent;
+   border:           0 none;
+}
+
+h1 a:link img, h1 a:visited img, h1 a:hover img, h1 a:active img
+{
+   border:           0 none;
+}
+
+
+
+
+/* side part */
+
+.side
+{
+   float:            left;
+   margin-top:       1.5em;
+}
+
+.mainmenu
+{
+   line-height:      2.4em;
+   margin:           0em 0em 1.5em 0em;
+   padding:          0em;
+   width:            18em;
+   list-style-type:      none;
+   list-style-position:  outside;
+}
+
+.mainmenu .mainmenu
+{
+   margin:           0em 0em 0em 1em;
+}
+
+.mainmenu li
+{
+   font-weight:      bold;
+}
+
+.mainmenu span.current
+{
+   color:            rgb(158,158,153);
+   background-color: rgb(247,245,245);
+   padding:          0.7em 0.5em 0.5em 0.5em;
+   border:           0.1em rgb(232,230,228) solid;
+}
+
+.mainmenu a
+{
+   padding:          0.7em 0.5em 0.5em 0.5em;
+}
+
+.mainmenu a:link
+{
+   color:            rgb(71,68,69);
+   background-color: rgb(232,230,228);
+   text-decoration:  none;
+}
+
+.mainmenu a:visited
+{
+   background-color: rgb(232,230,228);
+   text-decoration:  none;
+}
+
+.mainmenu a:hover
+{
+   background-color: rgb(212,212,206);
+   text-decoration:  none;
+}
+
+.mainmenu a:active
+{
+   color:            rgb(250,250,250);
+   background-color: rgb(190,190,184);
+   text-decoration:  none;
+}
+
+.sidepanel
+{
+   margin-top:       6em;
+   padding:          0.2em 0.2em 1em 0.2em;
+   background-color: rgb(232,230,228);
+   width:            10em;
+}
+
+.submenu
+{
+   font-weight:      bold;
+   margin:           0em;
+   list-style-type:      none;
+   list-style-position:  outside;
+}
+
+
+
+
+/* central part */
+
+.middle
+{
+   background-color: rgb(247,245,245);
+   text-align:       left;
+   width:            42em;
+   margin:           0em 0em 8em 18em;
+}
+
+.picture
+{
+   display: none;
+   background-color: rgb(232,230,228);
+   width:            42em;
+   margin:           0em;
+}
+
+.picture img
+{
+   width:            42em;
+   margin-bottom:    -5px;
+}
+
+
+
+
+/* lower part */
+
+.lower
+{
+   text-align:       left;
+   line-height:      1.2em;
+   margin:           0em 0em 0em 18em;
+   border-top:       0.4em rgb(192,192,180) solid;
+}
+
+.lower div
+{
+   background-color: rgb(192,192,180);
+   padding-left:     0.4em;
+   margin:           0em -6em 0em 10em;
+}
+
+.lower a:link img, .lower a:visited img, .lower a:hover img, .lower a:active img
+{
+   border:           0 none;
+}
+
+
+
+
+/* subject heading */
+
+h2
+{
+   background-color: rgb(186,198,186);
+   font-size:        3em;
+   line-height:      0.9em;
+   font-weight:      normal;
+   letter-spacing:   -0.05em;
+   text-align:       left;
+   margin:           0em 0.2em 0em 0em;
+   padding:          0.4em 0.1em 0em 0.1em;
+}
+
+.h2subheading
+{
+   background-color: rgb(192,192,180);
+   font-size:        1.2em;
+   line-height:      1em;
+   margin:           0em 0em 2em 2em;
+   padding:          0em 0.4em 0.4em 0.4em;
+}
+
+
+
+
+/* pagemenu */
+
+.pagemenu
+{
+   background-color: rgb(232,230,228);
+   font-size:        1.1em;
+   line-height:      1em;
+   margin:           0em;
+}
+
+.pagemenu ul
+{
+   margin:           0.25em 0.5em 0.25em 0.5em;
+}
+
+.pagemenu a:hover
+{
+   text-decoration:  none;
+   background-color: rgb(190,190,184);
+}
+
+.pagemenu a:active
+{
+   text-decoration:  none;
+   background-color: rgb(158,158,153);
+}
+
+
+
+
+/* page section */
+
+.sectionhead
+{
+}
+
+.section
+{
+   margin-top:             4em;
+   margin-bottom:          4.5em;
+   padding-bottom:         0.5em;
+}
+
+.panel
+{
+   background-color:       rgb(232,230,228);
+   font-size:              1em;
+   line-height:            1.4em;
+   margin-bottom:          0em;
+}
+
+.sectionicon
+{
+   text-align:             center;
+}
+
+h3
+{
+   border-top:             0.15em rgb(186,198,186) solid;
+   background-color:       rgb(232,230,228);
+   font-size:              1.7em;
+   line-height:            1.1em;
+   font-weight:            normal;
+   letter-spacing:         -0.05em;
+   text-align:             left;
+   margin:                 1.5em 0em 0.5em 0em;
+   padding:                0em 0.3em 0.1em 0.3em;
+}
+
+h4
+{
+   font-size:              1.1em;
+   line-height:            1.2em;
+   font-weight:            bold;
+   text-align:             left;
+   margin-top:             2em;
+   margin-bottom:          0em;
+   padding:                0em 0.4em 0em 0.4em;
+   border-bottom:          0.2em rgb(232,230,228) solid;
+}
+
+h4.subtitle
+{
+   margin-top:             0em;
+}
+
+h5
+{
+   font-size:              1em;
+   line-height:            1.2em;
+   font-weight:            bold;
+   text-align:             left;
+   margin-top:             1.5em;
+   margin-bottom:          0em;
+   padding:                0em 0.5em 0em 0.5em;
+}
+
+h6
+{
+   font-size:              1em;
+   line-height:            1.2em;
+   font-weight:            bold;
+   text-align:             left;
+   margin:                 0em 1.5em 0em 0em;
+   padding:                0em 0.5em 0em 0.5em;
+   float:                  left;
+}
+
+/*.section p,
+.sectionhead p
+{
+   padding:                0em 0.5em 0em 0.5em;
+}*/
+
+
+
+
+
+
+
+
+/* home specific */
+
+#hxa7241-home .content
+{
+   font-size:        1.1em;
+   line-height:      1.3em;
+}
+
+#hxa7241-home .section
+{
+   margin-top:       0em;
+   padding-bottom:   0em;
+}
+
+#hxa7241-home .section h3
+{
+   background-color: rgb(186,198,186);
+   margin-top:       0em;
+}
+
+#hxa7241-home .plainlist
+{
+   margin:           1em 0em 1em 0em;
+}
+
+#hxa7241-home pre.sesym
+{
+   line-height:      1em;
+}
+
+#hxa7241-home pre.sesym a
+{
+   text-decoration:  none;
+   color:            rgb(71,68,69);
+   background-color: rgb(232,230,228);
+}
+
+
+
+
+/* cardahedra specific */
+/* (non-strict XHTML is rendered differently) */
+
+#hxa7241-businesscardahedra h2
+{
+   padding-top:      0.1em;
+}
+
+#hxa7241-businesscardahedra #introduction img
+{
+   margin-right:     1em;
+}
+
+
+
+
+/* bibliography specific */
+
+/*#hxa7241-bibliography .section a:link,
+#hxa7241-bibliography .section a:visited
+{
+   text-decoration:  none;
+}*/
+
+
+
+
+/* sitemap specific */
+
+#hxa7241-sitemap .section ul a
+{
+   font-weight:      bold;
+}
+
+#hxa7241-sitemap .section ul.plainlist a
+{
+   font-weight:      normal;
+}

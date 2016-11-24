@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>The insoluble pragmatism of types - (note-20110918T1016Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="The insoluble pragmatism of types - (note-20110918T1016Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, types, programming" />
+   <meta name="DC.description" content="What one might think of as the problem of type systems looks, in a deep sense, actually insoluble. A useful module cannot be completely specified." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2011-09-18" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20110918T1016Z.html" />
+
+   <meta name="keywords"       content="software-engineering, types, programming" />
+   <meta name="description"    content="What one might think of as the problem of type systems looks, in a deep sense, actually insoluble. A useful module cannot be completely specified." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>The insoluble pragmatism of types</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20110918T1016Z.html" title="permalink">NOTE HXA7241 2011-09-18T10:16Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>What one might think of as the problem of type systems looks, in a deep sense, actually insoluble. A useful module cannot be completely specified.</h5>
+
+
+   <p>Why do we have types? Pretty much to help modularise software into interchangeable parts.</p>
+
+   <p>But how does that work? Those parts are <a href="http://www.hxa.name/notes/note-hxa7241-20110410T0910Z.html ">abstractions</a>: something fixed encompassing something varying. Something is specified, but while allowing something to vary within that bound.</p>
+
+   <p>And an ideal type system would, one might expect, be able to specify exactly and completely. Is that not the value of types? that they can logically ensure particular meaning? We want to maximise that.</p>
+
+   <p>But these two are contradictory. You cannot simultaneously have interchangeble modules <i>and</i> perfectly specified types. The more interchangeable, the less specified: you have one, or the other. The interchangeability <i>depends</i> on the looseness of the specification &ndash; that is what abstraction is: it must <i>leave out</i> something, it <i>does not</i> say everything, otherwise nothing could vary.</p>
+
+   <p>The two are counterbalancing goods: the looseness of abstraction allows interchangeability, the rigidness of abstraction allows logical understanding/certainty. But the looseness also necessitates the possibility of error, and the rigidness also necessitates an unpliability of development &ndash; because each is really the opposite of the other.</p>
+
+   <!--<p>(The complete type is the program itself. And each part is fixed by that. If you specify <i>exactly</i> what the program does, you have specified <i>exactly</i> what each part does. Then no part can work anywhere else. . . . Is this really true?)</p>-->
+
+      <p>~ ~ ~</p>
+
+   <p>In practice we resolve this in a few ways (all &lsquo;externalise&rsquo; the variation, or pretend to, since that is not really possible).</p>
+
+   <p>First, we have sort-of decided that time and space are not primary: how much space a program uses is not fully explicitly coded, and how much time is practically entirely absent. This means performance can be an interchangeable aspect: different algorithms, of different performance, are substitutable, yet could still have (seemingly) fully specified types in code. The &lsquo;looseness&rsquo; in the abstraction that allows interchangeability is just something we look away from.</p>
+
+   <p>Second, we are slack. We tend towards loose abstractions with a particular kind of risk distribution: we can gain a consistent productivity increase (by simplifying and sharing), but with a rare chance of big failure. See: <a href="http://www.hxa.name/notes/note-hxa7241-20110109T1023Z.html">&lsquo;Programming is probabilistic&rsquo;</a>.</p>
+
+   <p>Third, we do not really care about getting exactly particular results. In fact, we do not really even know exactly what we want. You might want a particluar document, but do you care about the formatting? or whether it came from a particular hard-drive? So all software is only a rough idea, to some significant degree.</p>
+
+      <p>~ ~ ~</p>
+
+   <p>Type systems are ultimately pragmatic, empirical. We are not driving toward ever greater precision and power; it is a zero-sum-game in a sense: we are just shifting things around trying to find an optimal arrangement for what we happen to find ourselves doing (other fundamentals of software also seem like this . . .). Some interchangeability here, some logical certainty there.</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

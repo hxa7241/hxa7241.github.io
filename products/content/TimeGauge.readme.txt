@@ -1,0 +1,79 @@
+
+
+TimeGauge
+======================================================================
+
+
+TimeGauge stopwatch, version 1.1
+Copyright (c) 2004, Harrison Ainsworth. Some rights reserved.
+
+http://www.hxa7241.org/
+
+2004-03-31
+
+
+
+
+contents
+--------
+
+ * description
+ * requirements
+ * installation
+ * usage
+ * acknowledgements
+
+
+
+
+description
+-----------
+
+windows mini-application for measuring temporal duration - a
+stopwatch.
+
+* no other runtimes needed
+* no installation needed
+* does not write to the registry
+* does not create or modify files
+
+
+
+
+requirements
+------------
+
+* Windows 95 or later, or Windows NT 3.5 or later
+* Pentium I or equivalent AMD, or later
+* 2M ram
+* 100K disk space
+
+
+
+
+installation
+------------
+
+copy TimeGauge.exe to wherever.
+
+
+
+
+usage
+-----
+
+* to start/stop/resume - left-click mouse or 'spacebar' key
+* to reset to zero     - right-click mouse or 'delete' key
+
+
+
+
+acknowledgements
+----------------
+
+* written in C++ for Win32
+* edited with TextPad: http://www.textpad.com/
+* built with MinGW 3.1.0 including GCC 3.4.2: http://www.mingw.org/
+  http://gcc.gnu.org/
+* built with visual c++ toolkit 2003 and sdk
+* credit to robin keir for initial idea: http://www.keir.net/

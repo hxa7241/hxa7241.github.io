@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="hxa7241-rendering" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+   <title>&lt; H X A 7 2 4 1 &gt; : rendering </title>
+
+   <meta name="keywords" content="graphics, 3D, rendering, global illumination, physically-based, renderer, ray tracing, tone mapper, tone reproduction, tonemapper, whitebalancer, octree, software, programming, C++, OCaml, Ruby, open-source, Windows, Linux, Mac OSX" />
+   <meta name="description" content="some rendering-related development projects" />
+
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="outer">
+
+<div class="upper">
+   <div class="title">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
+   </div>
+</div>
+
+
+<div class="side">
+   <ul class="mainmenu">
+      <li>
+         <a href="../" title="home" accesskey="h">HOME</a>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../software/" title="various software projects">SOFTWARE</a>
+         <ul class="mainmenu">
+            <li>
+               <span class="current" title="this page">RENDERING</span>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
+      </li>
+      <li>
+         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
+      </li>
+   </ul>
+</div>
+
+
+<div class="middle">
+<div class="picture">
+   <img src="rendering-picture.jpg" alt="" />
+</div>
+
+<h2>RENDERING</h2>
+<div class="h2subheading">some rendering-related development projects</div>
+
+<table class="pagemenu" border="0" cellpadding="0" frame="void" rules="none" summary="menu of page sections">
+   <tr valign="top">
+      <td>
+         <ul>
+            <li><a href="#minilight">MiniLight</a></li>
+            <li><a href="#perceptuum">Perceptuum 2</a></li>
+            <li><a href="#p3tonemapper">P3 ToneMapper</a></li>
+            <li><a href="#p3whitebalancer">P3 WhiteBalancer</a></li>
+            <li><a href="#cpplibrary">C++ Library</a></li>
+            <li><a href="#octree">Octree</a></li>
+            <li><a href="#p3architecture">P3 Architecture</a></li>
+         </ul>
+      </td>
+   </tr>
+</table>
+
+
+<div class="content">
+
+<div class="section" id="minilight">
+   <h3>MiniLight</h3>
+   <dl>
+      <dt><a href="../minilight/"><img src="../minilight/cornellbox-n-small.ml1.jpg" width="48" height="48" alt="example image" />Minimal global illumination renderer</a></dt>
+      <dd>MiniLight is a <i>minimal</i> global illumination renderer: an attempt to distill the essentials, in a clear form. Open-source C, OCaml, Scheme, and others, command-line app. Mac, Linux, and Windows platforms. (Caution: This page may include an equation.)</dd>
+   </dl>
+</div>
+
+
+<div class="section" id="perceptuum">
+   <h3>Perceptuum 2</h3>
+   <dl>
+      <dt><a href="../perceptuum/"><img src="../images/p2study2small.jpg" width="77" height="48" alt="example image" /> Global illumination renderer</a></dt>
+      <dd>An experimental physically-based renderer, with progressive refinement, frame-coherent/noise-avoiding sampling, and generalised BRDFs. Open-source (GPL) C++.</dd>
+   </dl>
+</div>
+
+
+<div class="section" id="p3tonemapper">
+   <h3>P3 ToneMapper</h3>
+   <dl>
+      <dt><a href="../tonemapper/"><img src="../tonemapper/memorial_o876_h_small.jpg" width="32" height="48" alt="example image" />Tone mapper component</a></dt>
+      <dd>Transforms a high-dynamic-range image into a low-dynamic-range image. Implementation of Ward/Larson's 1997 technique. Open-source (LGPL) C++, command-line tool and dynamic library. Windows and Linux platforms.</dd>
+   </dl>
+</div>
+
+
+<div class="section" id="p3whitebalancer">
+   <h3>P3 WhiteBalancer</h3>
+   <dl>
+      <dt><a href="../whitebalancer/"><img src="../whitebalancer/memorials-wb_small.jpg" width="64" height="48" alt="example image" />White Balancer component</a></dt>
+      <dd>Removes the color cast from an image. Command-line tool and dynamic library. Windows and Linux platforms.</dd>
+   </dl>
+</div>
+
+
+<div class="section" id="cpplibrary">
+   <h3>C++ Library</h3>
+   <dl>
+      <dt><a href="cpplibrary.html"><img src="code-small.png" width="40" height="48" alt="code" />Some graphics-oriented code</a></dt>
+      <dd>A casual gathering of quite reusable graphics-oriented C++ code. Open-source (BSD new).</dd>
+   </dl>
+</div>
+
+
+<div class="section" id="octree">
+   <h3>Octree</h3>
+   <dl>
+      <dt><a href="../articles/content/octree-general-cpp_hxa7241_2005.html"><img src="octree-diag-small.png" width="38" height="48" alt="diagram" />General octree framework</a></dt>
+      <dd>Octree to store any object type, and apply any query algorithm. Uses externalised virtual pattern to be non-intrusive. Mixes genericism and polymorphism for minimal compiled size. Open-source (BSD new) C++ and Ruby. <a href="../articles/content/octree-general-ruby_hxa7241_2005.html">Ruby version here.</a></dd>
+   </dl>
+</div>
+
+
+<div class="section" id="p3architecture">
+   <h3>P3 Architecture</h3>
+   <dl>
+      <dt><a href="../articles/content/p3-architecture-description_hxa7241_2004.html"><img src="article-small.png" width="64" height="48" alt="diagram" />Renderer architecture article</a></dt>
+      <dd>Formalised ideas for a new renderer version. But it is more than year old, and <i>now</i> I think I would do it all differently <i>again</i>...</dd>
+   </dl>
+</div>
+
+</div>
+</div>
+
+
+<div class="lower">
+   <div>2008-01-03</div>
+</div>
+
+
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+#------------------------------------------------------------------------------#
+#                                                                              #
+#  RubyGauge version 2                                                         #
+#  Copyright (c) 2005, Harrison Ainsworth / HXA7241.                           #
+#                                                                              #
+#  http://www.hxa7241.org/                                                     #
+#                                                                              #
+#------------------------------------------------------------------------------#
+
+
+
+
+require 'Find'
+
+
+
+
+# Counts lines of code in Ruby source files.
+#
+# * Directories are looked in recursively for source files
+# * Source files with the following name extensions are recognized: .rb .rbw
+# * A line is counted as code if it is not empty and not solely comment
+#
+# == requirements
+# Ruby 1.8
+#
+# == usage
+# RubyGauge.rb (file|directory)pathname ...
+# RubyGauge.rb --help|-?
+#
+module RubyGauge
+
+   # Entry point if run from the command-line.
+   #
+   # Reads command-line args, writes output to stdout.
+   #
+   def RubyGauge.main
+
+      # check if help message needed
+      if ARGV.empty? || (ARGV[0] =~ /-(-help|\?)/)
+
+         puts "\n------------------------------------------------------------"
+         puts "  RubyGauge v2"
+         puts "  Copyright (c) 2005, Harrison Ainsworth / HXA7241.\n"
+         puts "\n  http://www.hxa7241.org/"
+         puts "------------------------------------------------------------"
+
+         puts "\nRubyGauge counts lines of code in Ruby source files."
+         puts "\n* Directories are looked in recursively for source files"
+         puts "* Source files with the following name extensions are " +
+            "recognized: .rb .rbw"
+         puts "* A line is counted as code if it is not empty and not solely " +
+            "comment"
+         puts "\nUsage:"
+         puts "  RubyGauge.rb (file|directory)pathname ..."
+         puts "  RubyGauge.rb --help|-?"
+
+      # execute
+      else
+
+         # count
+         lineCount, fileCount = RubyGauge.countLinesInFileTree( ARGV )
+
+         # output
+         puts "\n   #{lineCount} line#{1 == lineCount ? '' : 's'} of code"
+         puts   "   #{fileCount} file#{1 == fileCount ? '' : 's'} of Ruby"
+
+      end
+
+   end
+
+
+   # Counts lines of Ruby code in file tree recursively.
+   #
+   # A line is counted as code if it is not empty and not solely comment.
+   #
+   # == parameters
+   # * pathnames: Array of String of file or directory pathname
+   #   (relative or absolute)
+   # == return
+   # * Array of two Fixnums: line count and file count
+   #
+   def RubyGauge.countLinesInFileTree( pathnames )
+
+      lineCount = 0
+      fileCount = 0
+
+      # scan directory tree
+      Find.find( *pathnames ) do |fileOrDirName|
+
+         # filter file types (to Ruby)
+         if FileTest.file?( fileOrDirName ) &&
+            FileTest.readable?( fileOrDirName ) &&
+            fileOrDirName =~ /\.(rb|rbw)\Z/
+
+            fileCount += 1
+
+            # read file
+            File.open( File.expand_path( fileOrDirName ), 'r' ) do |file|
+
+               # scan file lines
+               file.each_line do |line|
+                  # select non blank, non comment-only line
+                  lineCount += 1 unless line =~ /^\s*(#|\Z)/
+               end
+
+            end
+
+         end
+      end
+
+      [lineCount, fileCount]
+
+   end
+
+end
+
+
+
+
+# run
+RubyGauge.main

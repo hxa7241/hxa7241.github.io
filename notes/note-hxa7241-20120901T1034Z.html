@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Evolving global software - (note-20120901T1034Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Evolving global software - (note-20120901T1034Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, evolution, design" />
+   <meta name="DC.description" content="How should we develop software globally? Is it possible to say what kind of basic process and features, what broad strategies, are preferable? Here are three suggestions." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2012-09-01" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20120901T1034Z.html" />
+
+   <meta name="keywords"       content="software-engineering, evolution, design" />
+   <meta name="description"    content="How should we develop software globally? Is it possible to say what kind of basic process and features, what broad strategies, are preferable? Here are three suggestions." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Evolving global software</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20120901T1034Z.html" title="permalink">NOTE HXA7241 2012-09-01T10:34Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>How should we develop software globally? Is it possible to say what kind of basic process and features, what broad strategies, are preferable? Here are three suggestions.</h5>
+
+
+   <h4>Suggestions</h4>
+
+   <ul>
+      <li>Let larger abstractions evolve collectively, only design for particular problems.</li>
+      <li>Make good descriptions, rather than strong standards.</li>
+      <li>Use more formalised transforms to specialise reused software.</li>
+   </ul>
+
+   <h5>Evolve large, design small</h5>
+
+   <p>Reusable abstractions should not be designed &ndash; we should not try: because our knowledge falls short of encompassing such problems: we cannot consider all uses and we cannot predict the future. Instead, large-scale under-specified abstractions should be <i>evolved</i> &ndash; they should emerge passively from everyone collectively. And our <i>design</i> effort should only be on the rest: the smaller, clearer, work needed to address <i>particular</i> problems.</p>
+
+   <h5>Describe rather than demand</h5>
+
+   <p>We should describe rather than demand. Instead of making standards demanding adherence, we should focus on describing clearly whatever we do do. Again, as above, a standard depends on the original intention actually fitting future use, which is unreliable (and compliance is another problem). But describing is &lsquo;local&rsquo; and much more strongly feasible.</p>
+
+   <h5>Formalise reassembly</h5>
+
+   <p>The activities of assembling and modifying should be (more) formalised. Since design is substantially about reusing and adjusting it is probably good to give such transformation activities a clear structure. Formalisation and discretisation is the most essential basic idea of software, but it seems we could probably do more modularising of transforms, as well as products.</p>
+
+   <h5>Combination and process</h5>
+
+   <p>These three work together. Particular design is built from previously evolved pieces. Good description enables effective filtering and finding of those pieces to build on. New parts may or may not themselves evolve to popularity, according to what actual use decides. Formalised transforms clarify use and reuse, and so are a basis of good description of design.</p>
+
+   <p>And that can be expressed as a normal kind of simple process, that feeds back into itself iteratively:</p>
+
+   <ol>
+      <li>Filter:  search/filter abstractions from the community.</li>
+      <li>Make:    directedly transform, or assemble, into individual need.</li>
+      <li>Publish: release newly produced stuff to community.</li>
+   </ol>
+
+
+   <h4>Rationale</h4>
+
+   <p>The suggestions are founded on some well-appreciated or easily visible ideas.</p>
+
+   <h5>Reuse</h5>
+
+   <p>From Brooks' &lsquo;No Silver Bullet&rsquo;: accidental details like language, tools, etc. are insignificant compared with the essential complexity of the problem, and the only way to substantially improve development is reuse. If you can easily find some code and copy it, you get the result at zero cost. That is an efficiency that cannot be beaten: no amount of programming tool and technique improvements can ever do that. So we want to maximise reuse.</p>
+
+   <h5>Globalness and continualness</h5>
+
+   <p>The nature of software, and the infrastructure of the internet, means its maximum development scope is global. And the nature of software is also to be easily changeable, and there need not be any real start and end points, so the process can be continual. Software imposes no normal physical limits on development, so development should be expanded to maximise the effectiveness of its constituent practices.</p>
+
+   <h5>Informed design</h5>
+
+   <p>One of the key propositions of eXtreme-Programming is that &lsquo;designing&rsquo; speculatively creates risk. You cannot simply design something &lsquo;flexible&rsquo;: it is likely you will design the wrong thing and not use it, and the effort is wasted. (Yet is not the purpose of design to reduce risk? &ndash; by using knowledge you know works? Really, the more design is speculative rather than based on firm knowledge the less it really <i>is</i> design at all.) So we want to design only for what we <i>know</i>.</p>
+
+   <h5>Evolution</h5>
+
+   <p>Evolution can produce things that work, but they may not be what is wanted &ndash; evolution is not done to order, it directs itself. But in the cases where we cannot design we do not know what we want or how to do it anyway, so there evolution fits nicely. Evolution and design are complementary. As Linus Torvalds has observed: large-scale software cannot be designed well, but must be evolved.</p>
+
+   <h5>Open-source/freedom</h5>
+
+   <p>And of course this all presupposes the software is open-source/free-libre. There can be no fully-functioning globalness/continualness, evolution, or reuse otherwise.</p>
+
+
+   <h4>Conclusion</h4>
+
+   <p>The most powerful resource in programming is information flow.</p>
+
+   <p>To think of programming as a problem of how a person builds some software is to view it or frame it in a very industrial craft-like way. But software development is not a materially limited activity.</p>
+
+   <p>Software is immensely about what happens <i>between</i> all the people doing the programming. (Think of software not as <i>individual things</i> that <i>you</i> make and <i>finish</i>, but as <i>a single big thing</i> that the <i>whole world</i> makes and <i>continuously adjusts</i>.) So just as much, and perhaps more, than addressing how to make programming better, we should focus globally on how to make <i>finding, accessing, and copying</i> programs better.</p>
+
+   <p>The questions to tackle now, in ways that fit this global evolution perspective:</p>
+   <ul>
+      <li>How to describe software? And hence how to search and filter it?</li>
+      <li>How to formalise transforms?</li>
+   </ul>
+
+
+   <h5>Related:</h5>
+
+   <ul>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20111218T1151Z.html">&lsquo;Software's economic basics&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20111204T1257Z.html">&lsquo;Why an information economy is not an IP economy&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110424T0826Z.html">&lsquo;Considering the limits of DRY(&lsquo;dont repeat yourself&rsquo;) / factoring&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110314T2011Z.html">&lsquo;Software as web&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20100302T2157.html">&lsquo;There is only one program&rsquo;</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

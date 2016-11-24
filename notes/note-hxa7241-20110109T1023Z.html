@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Programming is probabilistic - (note-20110109T1023Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Programming is probabilistic - (note-20110109T1023Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, programming, abstraction, probability" />
+   <meta name="DC.description" content="In common programming, we use abstractions in a particular kind of probabilistic way. It is normally in the background, but is fairly well-defined, and deserves more examination." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2011-01-09" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20110109T1023Z.html" />
+
+   <meta name="keywords"       content="software-engineering, programming, abstraction, probability" />
+   <meta name="description"    content="In common programming, we use abstractions in a particular kind of probabilistic way. It is normally in the background, but is fairly well-defined, and deserves more examination." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Programming is probabilistic</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20110109T1023Z.html" title="permalink">NOTE HXA7241 2011-01-09T10:23Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>In common programming, we use abstractions in a particular kind of probabilistic way. It is normally in the background, but is fairly well-defined, and deserves more examination.</h5>
+
+   <p>In each case of making or using an abstraction we make a trade-off. We avoid looking at the problem/solution/construction as closely as really needed, by just re-using components that are roughly right. There is an everyday significant gain in productivity, but in exchange it brings a small chance of substantial failure.</p>
+
+   <p>For example: we can easily add two numbers using built-in facilities, yet one day when too large a number is added it overflows and fails completely. Programming is full of this kind of construction: simple and usually fine, but in rare cases will break.</p>
+
+   <p>This is a particular way of mixing the needs of the programming activity with the requirements of the problem. And it seems measurable, or understandable, in quite a clear way &ndash; what more can be found out and said about it? It seems that more should be said. Making a trade-off is a normal, essential, engineering practice. But we are not doing it in a very engineering way, we are doing it a bit carelessly.</p>
+
+   <p>Understanding it is a matter of analysing and classifying the varieties of probabilistic assumptions, and examining more closely their details.</p>
+
+   <p>Software engineering is about weighing up two broad interests: how useful, effective, reliable particular abstractions are, and how much development effort is needed for that particular amount of precision and exactness of abstraction. Generally, we can be clearer and exacter about what we build &ndash; the abstractions we design &ndash; but it costs more effort. And more specifically, there are many varieties of kinds of abstraction, exactness, and effort to be considered and weighed.</p>
+
+   <p>We already have a vague sense of this. What we lack is a clear and extensive map and inventory of all the varieties and their features and costs.</p>
+
+   <h4>appendix</h4>
+
+   <p>One difference is notable: civil engineering rests largely on statistical properties of materials; software engineering rests largely on statistical properties of <i>usage</i>. It is not so clear cut, but there is a different emphasis in software. It partly echoes, and is related to, the dominance of representation over function (we are more concerned with software source manipulability than with its algorithmic performance).</p>
+
+   <p>One feature is that this means software has a large dependence on something easy to manipulate. And this leads to security problems. Dangerous but unlikely events can be deliberately induced, and so then become much more likely. The probablilites are themselves volatile. It is like later events changed the probability, and invalidated the earlier trade-off. The ease of that construction was no longer a good bargain, but the work had already been done.</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

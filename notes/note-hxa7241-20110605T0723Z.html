@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>The functional/representational division in software - (note-20110605T0723Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="The functional/representational division in software - (note-20110605T0723Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, representational, functional" />
+   <meta name="DC.description" content="The division of software engineering into 'functional' and 'representational' aspects/structures can be expressed with a simple (if a little archaic) metaphor, and backed with some basic theoretical definition." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2011-06-05" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20110605T0723Z.html" />
+
+   <meta name="keywords"       content="software-engineering, representational, functional" />
+   <meta name="description"    content="The division of software engineering into 'functional' and 'representational' aspects/structures can be expressed with a simple (if a little archaic) metaphor, and backed with some basic theoretical definition." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>The functional/representational division in software</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20110605T0723Z.html" title="permalink">NOTE HXA7241 2011-06-05T07:23Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>The division of software engineering into &lsquo;functional&rsquo; and &lsquo;representational&rsquo; aspects/structures can be expressed with a simple (if a little archaic) metaphor, and backed with some basic theoretical definition.</h5>
+
+
+   <p>This is a distinction often passed over or confused. Even Alan Kay and Gregor Kiczales did not make it clear:</p>
+
+   <ul>
+      <li><a href="http://queue.acm.org/detail.cfm?id=1039523">&lsquo;A Conversation with Alan Kay&rsquo;; ACM Queue; 2004-12-27.</a> &ndash; where pyramids and arches are mentioned
+      &ndash; see a previous note: <a href="http://www.hxa.name/notes/note-hxa7241-20090806T1142.html">&lsquo;A Comment On &lsquo;A Conversation with Alan Kay&rsquo;&rsquo;</a>.</li>
+    <li><a href="http://www2.parc.com/csl/groups/sda/projects/oi/towards-talk/transcript.html">&lsquo;Why are Black Boxes so Hard to Reuse?&rsquo;; Kiczales; 1994.</a> &ndash; where bridges are mentioned</li>
+   </ul>
+
+   <p>But it is valuable to be clear about this; it helps us understand software engineering better.</p>
+
+
+   <h4>Metaphor</h4>
+
+   <p>Deciding on a structuring arrangement &ndash; how to design some software into classes, functions, macros, modules, etc. &ndash; is like deciding on a paper filing system.</p>
+
+   <p>With a different paper filing system, all the same information is there, but accessible in different ways. Different kinds of information will be suited by different filing systems. And the main part of what makes one arrangement suitable is the human manipulation: what is visible where, how many sheets to move.</p>
+
+   <p>This is what we are really considering when weighing up and choosing program structure. The algorithm does not change, but the convenience of human manipulation can be adjusted.</p>
+
+   <p>It is half of what programming is. One half &ndash; the &lsquo;functional&rsquo; &ndash; is the more solid engineering: designing a system able to serve <i>x</i> web-pages per second with <i>y</i> storage. The other half &ndash; this &lsquo;representational&rsquo; side &ndash; is designing a &lsquo;paper filing system&rsquo; for us to handle all the algorithm and program pieces.</p>
+
+
+   <h4>Theory</h4>
+
+   <p>Representation is not really <i>totally</i> separate from function/algorithm. To have a different representation the software must have some actual difference, and that difference is going to affect execution in some way.</p>
+
+   <p>How separate? There does not seem to be a proof of a particular degree, because the concepts seem to be defined by that very thing. O(1) or less is what we would expect as the performance effect of representation on function &ndash; because representation changes only the algorithm itself as a static thing, it just makes certain operations etc. slower. But this really assumes the changes are not to the deeper structure of the algorithm, i.e. that the O() character is unchanged &ndash; which was what a proof would be seeking.</p>
+
+   <p>The exemplars are programming languages. Interpretation has an O(1) effect &ndash; although the factor is between the orders of 10 and 1000. Compilation has O(0) effect by translating-out the difference before execution &ndash; or at least it aims to, often without achieving it.</p>
+
+   <p>In the end this is a &lsquo;good&rsquo; kind of separation (because it is basically linear?). Representation cost is either negligable, or easily tradeable: if it is <i>n</i> times slower, compensate with <i>n</i> times more power. And if you just wait long enough for hardware to get faster, it all just improves by itself.</p>
+
+
+   <h4>Comment</h4>
+
+   <p>It is the <i>functional</i> side &ndash; algorithmic performance (speed, storage, (and energy?)) &ndash; that corresponds to the products of other physical engineerings &ndash; material structures with particular weight, strength, etc. properties. The representational side &ndash; the &lsquo;paper filing system&rsquo;, i.e. what is <i>not</i> algorithmic performance &ndash; corresponds more to the <i>drawing/diagram/design formats</i> of physical engineering.</p>
+
+   <p>But such diagram-formats are rather more important in software. Because the manipulation of them is much enlarged: even more use, re-use, modification, and communication depends on it. A building is just used. But software can be <i>re</i>-used as part of many other pieces of software.</p>
+
+   <p>The primary point of the distinction is: separating the two helps understanding (because each side can be addressed without concern of the other). The secondary point of the distinction is: you cannot properly understand software <i>representation</i> by looking at other engineering's <i>function</i> (which is what seemed troubling with the examples from Kay and Kiczales).</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

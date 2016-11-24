@@ -1,0 +1,329 @@
+/* HXA7241 article CSS version 7 */
+
+/*
+Document outline/structure:
+
+   <html
+      <head
+      <body
+         <header #edge
+         <main
+            <div #preface
+               <div #title
+               <div #summary
+               <div #contents
+            <div #text
+               <section #s00
+               ...
+            <div #metadata
+         <footer #edge
+*/
+
+
+
+/* ---- structural ---- */
+
+body
+{
+   background-color:       white;
+   font-size:              medium;
+   text-align:             center;
+   margin:                 0em;
+   padding:                0em;
+}
+
+
+.edge
+{
+   color:                  white;
+   background-color:       black;
+   font-family:            sans-serif;
+   line-height:            1.2em;
+   padding:                0.1em 0.4em 0.1em 0.4em;
+}
+
+   #edgeheader
+   {
+      font-size:              2.2em;
+      text-align:             left;
+   }
+
+   #edgefooter
+   {
+      font-size:              1.1em;
+      font-weight:            bold;
+      text-align:             right;
+   }
+
+   #edgeheader div a,
+   #edgefooter div a
+   {
+      color:                  white;
+      background-color:       black;
+      text-decoration:        underline;
+   }
+
+
+main
+{
+   color:                  black;
+   background-color:       white;
+   font-family:            Times New Roman, Times, serif;
+   font-size:              1.25em;
+   line-height:            1.4em;
+   text-align:             left;
+   text-indent:            0em;
+   max-width:              42em;
+   border:                 0 none;
+   margin:                 4em auto 4em auto;
+}
+
+
+#preface,
+#text,
+#metadata
+{
+   margin:                 0em 1em 4em 1em;
+}
+
+   #preface div
+   {
+      margin-bottom:          4em;
+   }
+
+      #contents ul,
+      #contents ol
+      {
+         font-weight:            bold;
+         margin-bottom:          1.5em;
+      }
+
+      #contents ul ul,
+      #contents ol ol,
+      #contents ul ol,
+      #contents ol ul
+      {
+         margin-left:            2em;
+      }
+
+      #contents ul li,
+      #contents ol li
+      {
+         margin-top:             0.5em;
+         margin-bottom:          0.5em;
+      }
+
+
+#text section
+{
+   margin-bottom:          4em;
+   text-align:             justify;
+}
+
+#text section section
+{
+   margin-bottom:          2em;
+}
+
+
+
+/* ---- general ---- */
+
+h1
+{
+   font-size:              3.5em;
+   line-height:            1em;
+   font-weight:            normal;
+   text-align:             left;
+   margin-top:             0em;
+   margin-bottom:          1.14em;
+}
+
+h2
+{
+   font-size:              2em;
+   line-height:            1em;
+   font-weight:            normal;
+   text-align:             left;
+   margin-top:             0em;
+   margin-bottom:          0.5em;
+}
+
+h3
+{
+   font-size:              1.5em;
+   line-height:            1.2em;
+   font-weight:            normal;
+   text-align:             left;
+   margin-top:             1em;
+   margin-bottom:          0.5em;
+}
+
+h4
+{
+   font-size:              1.2em;
+   line-height:            1.2em;
+   font-weight:            bold;
+   text-align:             left;
+   margin-top:             1em;
+   margin-bottom:          0em;
+}
+
+h5
+{
+   font-size:              1em;
+   line-height:            1.2em;
+   font-weight:            bold;
+   text-align:             left;
+   margin:                 0.5em 0em 0.5em 0em;
+}
+
+h6
+{
+   font-size:              1em;
+   line-height:            1.2em;
+   font-weight:            bold;
+   text-align:             left;
+   margin:                 0em 1.5em 0em 0em;
+   float:                  left;
+}
+
+h3.divider,
+h4.divider,
+h5.divider
+{
+   margin-top:             0.5em;
+   margin-bottom:          0.5em;
+}
+
+hr
+{
+   display:                none;
+}
+
+p
+{
+   text-indent:            0em;
+   margin-top:             0.75em;
+   margin-bottom:          0.75em;
+}
+
+pre
+{
+   font-family:            monospace;
+   font-size:              0.9em;
+   line-height:            1.3em;
+   text-align:             left;
+   white-space:            pre-wrap;
+   margin-top:             1em;
+   margin-bottom:          1em;
+   padding:                1em;
+   border:                 0.1em black solid;
+}
+
+table
+{
+   margin-top:             1em;
+}
+
+img
+{
+   border:                 0.1em solid black;
+   margin:                 1em 0em 1em 0em;
+}
+
+sup,
+sub
+{
+   line-height:            0.5em;
+}
+
+code
+{
+   font-family:            monospace;
+}
+
+
+ol, ul, dl
+{
+   margin:                 0.5em 2em 0.5em 1.3em;
+   padding:                0em;
+}
+
+dl
+{
+   margin-left:            2em;
+}
+
+.plainlist
+{
+   list-style-type:        none;
+}
+
+dl.plainlist
+{
+   margin:                 0.5em 0em 0.5em 0em;
+}
+
+li, dt, dd
+{
+   margin-top:             0.25em;
+   margin-bottom:          0.25em;
+}
+
+dt
+{
+   font-weight:            bold;
+}
+
+dl.plainlist dd
+{
+   margin-left:            0em;
+   margin-bottom:          0.5em;
+}
+
+
+#references ul
+{
+   list-style-type:        none;
+   margin-left:            0em;
+}
+
+#references ul li
+{
+   margin-top:             1em;
+   margin-bottom:          1em;
+}
+
+
+a:link, a:visited
+{
+   color:                  black;
+   background-color:       white;
+   text-decoration:        none;
+}
+
+a:hover
+{
+   color:                  black;
+   background-color:       white;
+   text-decoration:        underline;
+}
+
+a:active
+{
+   color:                  black;
+   background-color:       rgb(208,208,208);
+   text-decoration:        underline;
+}
+
+
+.highlight
+{
+   background-color:       rgb(224,224,224);
+}
+
+.lowlight
+{
+   color:                  rgb(144,144,144);
+}

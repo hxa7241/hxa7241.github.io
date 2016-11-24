@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="hxa7241-cpplibrary" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+   <title>&lt; H X A 7 2 4 1 &gt; : C++ Library</title>
+
+   <meta name="keywords" content="C++, source code, graphics" />
+   <meta name="description" content="A collection of quite reusable graphics-oriented C++ code." />
+
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+<div class="outer">
+
+
+<div class="upper">
+   <div class="title">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
+   </div>
+</div>
+
+
+<div class="side">
+   <ul class="mainmenu">
+      <li>
+         <a href="../" title="home" accesskey="h">HOME</a>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../software/" title="various software projects">SOFTWARE</a>
+         <ul class="mainmenu">
+            <li>
+               <a href="../rendering/" title="some rendering-related development projects">RENDERING</a>
+               <ul class="mainmenu">
+                  <li>
+                     <span class="current" title="this page">C++ LIBRARY</span>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
+      </li>
+      <li>
+         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
+      </li>
+   </ul>
+</div>
+
+
+<div class="middle">
+<div class="picture">
+   <img src="../software/hexdump-picture.jpg" alt="hex bytes" />
+</div>
+
+<h2>C++ LIBRARY</h2>
+<div class="h2subheading">some quite reusable c++ code</div>
+
+<table class="pagemenu" border="0" cellpadding="0" frame="void" rules="none" summary="menu of page sections">
+   <tr valign="top">
+      <td>
+         <ul>
+            <li><a href="#desc">description</a></li>
+            <li><a href="#modulelist">module list</a></li>
+            <li><a href="#download">download</a></li>
+         </ul>
+      </td>
+   </tr>
+</table>
+
+
+<div class="content">
+
+<div class="section" id="desc">
+   <h3>description</h3>
+
+   <p>A collection of quite reusable graphics-oriented C++ code. Fairly refined as individual parts, but the package as a whole is a bit casual.</p>
+
+   <p>Comprising 29 modules, and about 8500 lines. Mostly classes, but several functions too. Not all tests are included.</p>
+</div>
+
+
+<div class="section" id="modulelist">
+   <h3>module list</h3>
+   
+   <h4>general</h4>
+   <p>standalone:</p>
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="general-standalone modules">
+      <tr><td class="tableterm">FpToInt      </td><td>Int-float conversion functions</td></tr>
+      <tr><td class="tableterm">Clamps       </td><td>Functions to clamp numerics between bounds</td></tr>
+      <tr><td class="tableterm">Bounded      </td><td>Scalar value within a restricted range</td></tr>
+      <tr><td class="tableterm">Float01      </td><td>Float value between 0 and 1, open or closed interval</td></tr>
+      <tr><td class="tableterm">hxa7241vector</td><td>std::vector storage manipulation functions</td></tr>
+      <tr><td class="tableterm">Array        </td><td>Simpler, compacter alternative to std::vector</td></tr>
+      <tr><td class="tableterm">RandomMwc1   </td><td>Simple, fast, good random number generator, v1</td></tr>
+      <tr><td class="tableterm">RandomMwc2   </td><td>Simple, fast, good random number generator, v2</td></tr>
+      <tr><td class="tableterm">LogFast      </td><td>Fast approximation to log</td></tr>
+      <tr><td class="tableterm">PowFast      </td><td>Fast approximation to pow</td></tr>
+   </table>
+
+   <p>dependent on above:</p>
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="general-dependent modules">
+      <tr><td class="tableterm">Sheet        </td><td>A simple 2D dynamic array, suitable for images</td></tr>
+   </table>
+   
+   <h4>graphics</h4>
+   <p>standalone:</p>
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="graphics-standalone modules">
+      <tr><td class="tableterm">ColorConstants</td><td>Standard and common color constants</td></tr>
+      <tr><td class="tableterm">Filters       </td><td>Some 2D radial filter functions</td></tr>
+      <tr><td class="tableterm">Polar         </td><td>Disk-square mapping, and coordinate conversion functions</td></tr>
+      <tr><td class="tableterm">HaltonSequence</td><td>Halton sequence, with optional jittering</td></tr>
+      <tr><td class="tableterm">SobolSequence </td><td>One dimension of a sobol sequence (choice of 40)</td></tr>
+      <tr><td class="tableterm">Coord2        </td><td>2D coordinate class template</td></tr>
+      <tr><td class="tableterm">Vector3f      </td><td>Yes, its the 3D vector class!</td></tr>
+      <tr><td class="tableterm">XyzE          </td><td>Greg Ward-Larson realpixel, for any float triplet</td></tr>
+   </table>
+
+   <p>dependent on above:</p>
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="graphics-dependent modules">
+      <tr><td class="tableterm">ColorSpace    </td><td>Trichromatic color space, with conversions to/from XYZ</td></tr>
+      <tr><td class="tableterm">UnitVector3f  </td><td>Unitized 3D vector</td></tr>
+      <tr><td class="tableterm">Vector4f      </td><td>4D vector of floats</td></tr>
+      <tr><td class="tableterm">Matrix3f      </td><td>3D matrix of floats, with extra translation capability</td></tr>
+      <tr><td class="tableterm">Matrix4f      </td><td>4D matrix of floats</td></tr>
+      <tr><td class="tableterm">Quaternion    </td><td>Unit quaternion</td></tr>
+      <tr><td class="tableterm">Spherahedron  </td><td>Make a sphere of triangles, in shared-vertex form</td></tr>
+   </table>
+   
+   <h4>image</h4>
+   <p>standalone:</p>
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="image-standalone modules">
+      <tr><td class="tableterm">ppm       </td><td>IO for the nice-and-simple PPM file format</td></tr>
+      <tr><td class="tableterm">rgbe      </td><td>IO for the Radiance RGBE file format</td></tr>
+      <tr><td class="tableterm">quantizing</td><td>Conversions between integer and float [0,1] triplet images</td></tr>
+   </table>
+</div>
+
+
+<div class="section" id="download">
+   <h3>download</h3>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="C++ Library downloads">
+      <tr>
+         <td>
+            <img src="../icons1/cpp_icon.png" width="16" height="16" alt="c++ icon" />
+            <a href="content/hxa7241_cpp_library_1.7z">hxa7241_cpp_library_1.7z</a>
+         </td>
+         <td class="tableitem">7-zipped C++ source code (66k)</td>
+      </tr>
+   </table>
+</div>
+
+</div>
+</div>
+
+
+<div class="lower">
+   <div>2007-12-28</div>
+</div>
+
+
+</div>
+</body>
+
+</html>

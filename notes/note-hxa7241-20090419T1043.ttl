@@ -1,0 +1,57 @@
+# ttl - Turtle - http://www.w3.org/TeamSubmission/turtle/
+
+# Note - HXA7241
+# (for a new note, change: thisnote, title, content, contenthash, date.)
+
+
+@base <http://hxa.name/>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/TR/xmlschema-2/#> .
+@prefix rfc: <http://www.ietf.org/rfc/> .
+@prefix iana: <http://www.iana.org/assignments/media-types/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix hxa: <rdf/1/rdf-terms#> .
+@prefix thisnote: <urn:uuid:20C3732F-D80C-4697-A9DC-CB006FC4F96D> .
+
+
+thisnote:
+dc:title  "Why Data-'Piracy' Is Morally Good"@en
+; hxa:content """
+Freely and widely sharing good things is one of the most obviously moral acts possible.
+
+Helping to make good things is just as moral because it provides things to be shared.
+
+These are the foundation of cultural morality.
+
+These are simple, clear examples of a solid ethics (Is it possible to want your behaviour to be a general rule?). You help someone else, and if everyone did the same, *you* would benefit too. They are incompletely realised, but with obvious potential to be so.
+
+Copyrights, patents, and all intellectual monopoly offend these. Laws that forbid copying and making are clearly against morality. They could only be acceptable with even clearer and greater compensation, but there is none. Since communication and creativity are naturally abundant, such rules do nothing but drag things down.
+
+So the choice is: Either you have legally burdened, morally compromised rules, with false justifications, and ever harder implemention. Or instead you have simple, obviously good rules, needing better implementation, but with easy means to fulfil that in networked digital tech.
+
+It is an easy choice to make.
+
+* You have a duty to help make good things.
+* You have a duty to share good things.
+* You have a duty to replace a system that is against these with something better.
+
+These are now easier than ever . . .
+
+(Make, share, improve.)
+
+References:
+* 'Groundwork For The Metaphysic Of Morals'; Kant, Bennett (trans); 1785, 2008.
+* 'Against Intellectual Monopoly'; Boldrin, Levine; 2008.
+* 'Against Intellectual Property'; Kinsella; 2008.
+"""@en
+; hxa:contenthash  "1f78d390a7370da3f1a28ee43b473cca0bd44e67"^^rfc:rfc3174
+; hxa:domainurl  <notes/>
+; rdf:type  hxa:note
+; dc:format  "text"^^iana:text
+; dc:date  "2009-04-19T10:43"^^xsd:dateTime
+; dc:creator  <about/foaf.rdf>
+; dc:language  "en-GB"^^rfc:rfc4646
+; dc:rights  <http://creativecommons.org/licenses/by-sa/3.0/>
+.

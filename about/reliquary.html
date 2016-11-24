@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="hxa7241-reliquary" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+   <title>&lt; H X A 7 2 4 1 &gt; : reliquary </title>
+
+   <meta name="keywords" content="old, fragment, Z80, code" />
+   <meta name="description" content="the oldest code i still have: some obscure Z80 routines" />
+
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="outer">
+
+
+<div class="upper">
+   <div class="title">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
+   </div>
+</div>
+
+
+<div class="side">
+   <ul class="mainmenu">
+      <li>
+         <a href="../" title="home" accesskey="h">HOME</a>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
+         <ul class="mainmenu">
+            <li>
+               <span class="current" title="this page">RELIQUARY</span>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
+      </li>
+   </ul>
+</div>
+
+
+<div class="middle">
+<div class="picture">
+   <img src="../software/hexdump-picture.jpg" alt="faux aged hex digits" />
+</div>
+
+<h2>RELIQUARY</h2>
+<div class="h2subheading">some ancient obscure Z80 code</div>
+
+
+<div class="content">
+
+<div class="section" id="z80">
+   <h3>Z80 routines</h3>
+
+   <p>These fragments are the oldest code I still have, transcribed from exercise-book paper. They come from a time long ago. A time when not only commenting was unknown, but even entitling the pieces of paper was avoided. Their meaning and function is lost in antiquity...</p>
+
+   <h4>fragment 1</h4>
+<pre>
+            Ld HL, (x)            2A:nnnn
+            Call 'Abs HL'         CD:nnnn
+            Rl A                  17
+            Ex AF,AF'             08
+            Ex DE, HL             EB
+            Call 'Div, Mult'      CD:nnnn
+            Ex AF, AF'            08
+            Rr A                  1F
+            Call c '2s c HL'      DC:nnnn
+            Ld (a), HL            22:nnnn
+            Ld HL, (y)            2A:nnnn
+            Call 'Abs HL'         CD:nnnn
+            Rl A                  17
+            Ex AF, AF'            08
+            Ex HL, DE             EB
+            Call 'Div, Mult'      CD:nnnn
+            Ex AF, AF'            08
+            Rr A                  1F
+            Call c '2s c HL'      DC:nnnn
+            Ld (b), HL            22:nnnn
+            Ret                   C9
+
+(52 bytes)
+</pre>
+
+   <h4>fragment 2</h4>
+<pre>
+            Ld BC, (x)            ED4B:nnnn
+            Call 'Div, Mult'      CD:nnnn
+            Ld (a), HL            22:nnnn
+            Ld BC, (y)            ED4B:nnnn
+            Call 'Div, Mult'      CD:nnnn
+            Ld (b), HL            22:nnnn
+            Ret                   C9
+
+
+
+
+'Abs HL'    Ld A, H               7C
+            Rl A                  17
+            Ret nc                D0
+'2s c HL'   Ccf                   3F
+            Ex HL, DE             EB
+            Ld HL, 0000           21:0000
+            Sbc HL, DE            ED52
+            Ret                   C9
+</pre>
+
+   <h4>fragment 3</h4>
+<pre>
+(in: DE = x, y)
+
+            Xor A                 AF              1
+            Ld HL, 0000           21:0000         2.5
+            Ld BC, (z)            ED4B:nnnn       5
+            Ld IXH, 19h           DD26:19h        2.75
+     -----&gt; And A                 A7              1
+     |      Sbc HL, BC            ED42            3.75
+     |  --- Jr nc                 30:01     1.75  3
+     |  |   Add HL, BC            09        2.75
+     |  --&gt; Ccf                   3F              1
+     |      Rl A                  17              1
+     |      Rl E                  CB13            2
+     |      Rl D                  CB12            2
+     |      Rl L                  CB15            2
+     |      Rl H                  CB14            2
+     |      Dec IXH               DD25            2
+     ------ Jr nz                 20:EC           3
+                                                  1.75
+
+(average: 2.14 microsecs)
+(total time: 600.5 microsecs)
+(number of instructions: 280)
+</pre>
+
+   <h4>fragment 4</h4>
+<pre>
+            Ld B, A               47
+            Ld HL, d              21:nnnn
+            Ld C, (HL)            4E
+            Ld HL, 0000           21:0000
+            Ld A, H               7C
+            Ld IXH, 08            DD26:08
+     -----&gt; And A                 A7
+     |      Rl A                  17
+     |      Rl L                  CB15
+     |      Rl H                  CB14
+     |      Rl C                  CB11
+     |  --- Jr nc                 30:03
+     |  |   Add A, B              80
+     |  |   Adc HL, DE            ED5A
+     |  --&gt; Dec IXH               DD25
+     ------ Jr nz                 20:EF
+            Ld BC, 0000           01:0000
+            Rl A                  17
+            Adc HL, BC            ED4A
+            Ret                   C9
+
+(out: HL -&gt; a, b)
+
+(36 instructions)
+(67 bytes)
+</pre>
+
+   <h4>fragment 5</h4>
+<pre>
+x -&gt; F030
+y -&gt; F032
+z -&gt; F034
+d =  F036
+
+a &lt;- F038
+b &lt;- F03A
+
+call F048
+
+F030   00 00 00 00 00 00 00 00
+F038   00 00 00 00 00 00 00 00
+F040   00 00 00 00 00 00 00 00
+F048   2A 30 F0 CD 71 F0 17 08
+F050   EB CD 80 F0 08 1F DC 74
+F058   F0 22 38 F0 2A 32 F0 CD
+F060   71 F0 17 08 EB CD 80 F0
+F068   08 1F DC 74 F0 22 3A F0
+F070   C9 7C 17 D0 3F EB 21 00
+F078   00 ED 52 C9 00 00 00 00
+F080   AF 21 00 00 DD 26 19 ED
+F088   4B 34 F0 A7 ED 42 30 01
+F090   09 3F 17 CB 13 CB 12 CB
+F098   15 CB 14 D0 25 20 EC 47
+F0A0   21 36 F0 4E 21 00 00 7C
+F0A8   DD 26 08 A7 17 CB 15 CB
+F0B0   14 CB 11 30 03 80 ED 5A
+F0B8   DD 25 20 EF 01 00 00 17
+F0C0   ED 4A C9 00 00 00 00 00
+</pre>
+
+   <p>...the <a href="http://www.z80.info/">Z80</a> was a great CPU. And there is something in the purity and simplicity of direct machine-code programming that is still appealing.</p>
+</div>
+
+</div>
+</div>
+
+
+<div class="lower">
+   <div>2005-06-01</div>
+</div>
+
+
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

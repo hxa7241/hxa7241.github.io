@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+   <title>Reusability By Orthogonalysis</title>
+
+   <meta charset="UTF-8" />
+   <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Reusability By Orthogonalysis" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.date"        content="2016-04-24" />
+   <meta name="DC.date"        content="2016-03-23" />
+   <meta name="DC.type"        content="article" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.language"    content="en-GB" />
+   <meta name="DC.subject"     content="software engineering" />
+   <meta name="DC.description" content="To make software reusable, divide it into orthogonal facilities -- because that makes available maximal functionality with minimal dependencies." />
+   <meta name="DC.identifier"  content="urn:uuid:AA599023-0DA3-42EF-B3EA-971CC2725E89" />
+   <meta name="DC.relation"    content="http://www.hxa.name/articles/content/Reusability-By-Orthogonalysis_hxa7241_2016.html" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 4.0 License." />
+
+   <meta name="author"         content="Harrison Ainsworth / HXA7241" />
+   <meta name="keywords"       content="software engineering" />
+   <meta name="description"    content="To make software reusable, divide it into orthogonal facilities -- because that makes available maximal functionality with minimal dependencies." />
+   <meta name="document"       content="hxa7241article7" />
+   <meta name="license"        content="Creative Commons BY-SA 4.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article-7.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+</head>
+
+
+<!--
+Document outline/structure:
+
+   <html
+      <head
+      <body
+         <header #edge
+         <main
+            <div #preface
+               <div #title
+               <div #summary
+               <div #contents
+            <div #text
+               <section #s00
+               ...
+            <div #metadata
+         <footer #edge
+-->
+
+
+<body>
+
+<header class="edge" id="edgeheader"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></header>
+
+
+<hr/>
+
+
+<main>
+
+<div id="preface">
+
+   <div id="title" title="title">
+      <h1>Reusability By Orthogonalysis</h1>
+   </div>
+
+
+   <div id="summary" title="summary">
+
+      <p id="st0p01"><b>To make software reusable, divide it into orthogonal facilities &ndash; because that makes available maximal functionality with minimal dependencies.</b></p>
+
+      <p id="st0p02">1000 words (5 minutes)</p>
+   </div>
+
+
+   <div id="contents" title="contents">
+      <ul>
+         <li><a href="#s01">Introduction</a></li>
+         <li><a href="#s02">External</a></li>
+         <li><a href="#s03">Internal</a></li>
+         <li><a href="#s04">Comment</a></li>
+      </ul>
+   </div>
+
+</div><!--preface-->
+
+
+<hr/>
+
+
+<div id="text">
+
+<section id="s01" title="s01">
+<h2>Introduction</h2>
+
+<p id="s01p01" title="s01p01">&ldquo;I am making some software. How can I ensure it is reusable?&rdquo;.</p>
+
+<p id="s01p02" title="s01p02">Let us bifurcate the question of software reusability into two considerations, &lsquo;external&rsquo; and &lsquo;internal&rsquo;.</p>
+
+<p id="s01p03" title="s01p03">The external concern is what the software does, what functionality it offers. The internal concern is how that given functionality is arranged or available. One might express the distinction between external and internal as that between content and form.</p>
+
+<p id="s01p04" title="s01p04">These can be addressed and handled independently, and so less complexly. And this partitioning leads us toward an answer to the overall question of reusability that is both clear and general.</p>
+
+</section>
+
+
+
+<section id="s02" title="s02">
+<h2>External</h2>
+
+<p id="s02p01" title="s02p01">The external is the dominant concern, though more preliminary than central to the enquiry.</p>
+
+<p id="s02p02" title="s02p02">The generality and reusability of software is ultimately limited by what it <i>does</i> &ndash; it is not something that can be added-on, adscititiously. If software offers only insubstantial function, mere re-arrangement of it can make little improvement. </p>
+
+<p id="s02p03" title="s02p03">So to make something general/reusable, you must first make it <i>useful</i>. And that is not a matter of code-twiddling, it is about deeply understanding the domain and requirements.</p>
+
+<p id="s02p04" title="s02p04">First, set the overall functionality: by gathering info, getting the requirements, as and when needed and available, and design to fit them. Properly establishing the functionality founds the assumptions on which any furtherance of reuse can be properly deliberated.</p>
+
+<p id="s02p05" title="s02p05">Speculation and generalisation of what <i>might</i> later be needed or useful is ever a temptation in software, and if you are at such liberty, here is where it can be indulged. But such extras belong only in this &lsquo;external&rsquo;-focused half of the activity, and must be isolated from the second half.</p>
+
+</section>
+
+
+
+<section id="s03" title="s03">
+<h2>Internal</h2>
+
+<p id="s03p01" title="s03p01">The internal is the subservient, secondary concern, but it is usually taken as the heart of reusability questions.</p>
+
+<p id="s03p02" title="s03p02">Because where requirements are imposed from outside and a matter of the domain, here is still some choice as a matter more purely of code. Further, that choice is more determinate and tractable. Marshalling requirements is quite unbounded and difficult, but deciding the arrangement of software is circumscribed in a non-contingent logical sphere.</p>
+
+<p id="s03p03" title="s03p03">The conscious, sharp separation of external/internal now yields its pay-off: we are freed from worrying about what functionality, or what might change, and are left a much more determinate job. One can now more clearly ask, given that limited, fixed functionality how can we make the best of it, regarding reusability? And since the question is posed abstract of any particularities of function the answer will serve generally for all software. We could now plausibly deduce some clear and general guide.</p>
+
+<p id="s03p04" title="s03p04">The question of software reusability becomes this: one of <b>optimally dividing up</b> the parts. And this &lsquo;internal&rsquo;-focused half of the activity is a strict refactoring: functionality is held constant and adjustments are only synony<wbr/>morpho<wbr/>logical &ndash; confined to the representation. So how should your software be divided it up?</p>
+
+<h5 class="divider">&mdash;&mdash;</h5>
+
+<p id="s03p05" title="s03p05">Software (re)usability in general is set by two factors, a positive and a negative: what a part offers its users and what it demands of them. The more it offers, the more situations a part might be valuable, but the more it demands, the fewer situations a part can be accommodated.</p>
+
+<p id="s03p06" title="s03p06">Since the functionality offered overall has already been fixed (by the &lsquo;external&rsquo; consideration), the only way to offer more is to: 1, expose hidden functionality; 2, minimise the demands made by it.</p>
+
+<p id="s03p07" title="s03p07">The best way to achieve those is to divide the software into pieces (as a supplement alongside the whole), and make those pieces <b>orthogonal &ndash; non-overlapping &ndash; in functionality</b>. This offers all the functionality that can be extracted, while each piece makes no more demand than needed to enable its offering. Together, these maximise functionality, and minimise dependencies.</p>
+
+</section>
+
+
+
+<section id="s04" title="s04">
+<h2>Comment</h2>
+
+<p id="s04p01" title="s04p01">What about the &lsquo;single responsibility principle&rsquo; &ndash; is this not the same?</p>
+
+<p id="s04p02" title="s04p02">The problem with that formulation is absoluteness: it is difficult to answer, it is too large and confounded a question. What is a single responsibility? In what sense? Software is by nature always subdividable, so to see something as single must disqualify some decompositions and not others &ndash; what is the criterion?</p>
+
+<p id="s04p03" title="s04p03">But orthogonality is defined relatively. The criterion of what is permissible for each part to do is simply what other parts do not. We need not try to condense from the varied air of software culture some exogenous criterion, or divine singleness as some obscure inherent property, we can instead more mechanically compare one part with another.</p>
+
+<p id="s04p04" title="s04p04">(And if the &lsquo;single responsibility principle&rsquo; is defined as &lsquo;single reason to change&rsquo;, well, &lsquo;change&rsquo; is a very confused and problematic motive in software engineering design ...).</p>
+
+<h5 class="divider">&mdash;&mdash;</h5>
+
+<p id="s04p05" title="s04p05">Orthogonal division might recall another older prescription for design: to make (APIs) &lsquo;minimal, complete, and primitive&rsquo;. What of that?</p>
+
+<p id="s04p06" title="s04p06">The &lsquo;minimal&rsquo; and &lsquo;complete&rsquo; clauses are actually redundant: they prescribe merely that the functionality offered should be no more than the requirements say, and no less. The &lsquo;primitive&rsquo; clause is what approximates to orthogonality, but if that is its intent, it expresses it weakly and implicitly.</p>
+
+<h5 class="divider">&mdash;&mdash;</h5>
+
+<p id="s04p07" title="s04p07">Is not orthogonality of function here still ill-defined and troublingly vague? Does it not rest heavily on human judgement?</p>
+
+<p id="s04p08" title="s04p08">Of course, in the final reckoning, but, broadly, those deciding the quality are those acting upon it. If an average programmer deems some function/division orthogonal, that is OK because they are the ones who need to be satisfied.</p>
+
+<h5 class="divider">&mdash;&mdash;</h5>
+
+<p id="s04p09" title="s04p09">Does this really furnish a sufficient optimum? Is it not over-simplified?</p>
+
+<p id="s04p10" title="s04p10">Maybe for any <i>n</i> pieces there is an optimal division, and that target not easily seen, or maybe there are conflicts or other accidentals that impede attainment of a good orthogonality. These and so on are not addressed.</p>
+
+<p id="s04p11" title="s04p11">But these are all non-critical shortfalls or refinements. A rough optimal from a rough orthogonality is adequate &ndash; this is after all a secondary concern of making the software, and an uncertain one. The greater speculation of value warrants the lesser commitment of work.</p>
+
+<h5 class="divider">&mdash;&mdash;</h5>
+
+<p id="s04p12" title="s04p12">Finally, there is the cost. Dressing all those parts of the code to be neatly separately accessible/usable is a modest task, yet not negligible. Do you <i>really</i> care or need to provide for reuse? If not, do not bother with all this.</p>
+
+</section>
+
+</div><!--text-->
+
+
+<hr/>
+
+
+<div id="metadata" title="metadata">
+<h2>Metadata</h2>
+
+<pre class="plain json">DC: {
+   title: "Reusability By Orthogonalysis",
+   creator: "Harrison Ainsworth",
+
+   date: "2016-04-24",
+   date: "2016-03-23",
+
+   type: "article",
+   format: "text/html",
+
+   language: "en-GB",
+   subject: "software engineering",
+   description: "To make software reusable, divide it into orthogonal facilities -- because that makes available maximal functionality with minimal dependencies.",
+
+   identifier: "urn:uuid:AA599023-0DA3-42EF-B3EA-971CC2725E89",
+   relation: "http://www.hxa.name/articles/content/Reusability-By-Orthogonalysis_hxa7241_2016.html",
+
+   rights: "Creative Commons BY-SA 4.0 License"
+}</pre>
+
+</div><!--metadata-->
+
+</main>
+
+
+<hr/>
+
+
+<footer class="edge" id="edgefooter"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></footer>
+
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+
+</body>
+
+</html>

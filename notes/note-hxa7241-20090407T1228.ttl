@@ -1,0 +1,54 @@
+# ttl - Turtle - http://www.w3.org/TeamSubmission/turtle/
+
+# Note - HXA7241
+# (for a new note, change: thisnote, title, content, contenthash, date.)
+
+
+@base <http://hxa.name/>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/TR/xmlschema-2/#> .
+@prefix rfc: <http://www.ietf.org/rfc/> .
+@prefix iana: <http://www.iana.org/assignments/media-types/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix hxa: <rdf/1/rdf-terms#> .
+@prefix thisnote: <urn:uuid:517BDD49-A628-4D3A-958C-0C7D747718AC> .
+
+
+thisnote:
+dc:title  "Structured Object-Oriented Programming"@en
+; hxa:content """
+[Subject: software engineering > rework structure > language]
+
+Structured Programming proposed a limited set of forms -- only sequences, conditionals, and loops -- for building all procedural software. The intended primary benefits were:
+* uniformity of complexity -- complexity 'is proportional to program length'
+* a global, subdividable 'frame of reference' or 'coordinate' space
+and these ramify into other details of understanding and manipulation. The whole representation is more 'logically efficient'.
+
+Is it possible to apply a similar formalisation to Object-Oriented software? Classes seem comparatively undisciplined: on one hand they have a single general form (various methods and fields), on the other there are various loose open-ended conventions (such as Patterns). Structured Programming implies more discipline, like a limited set of interfaces for all classes. And the aim would be making interchange easier by reducing adjustment of interfaces.
+
+Functional programming suggests something of a direct analogue to the three Structured forms, translated into data:
+* map (struct in C, object in JSON) -- sequence
+* list (array in C and JSON) -- loop
+* sum/variant-type (union in C) -- conditional
+Perhaps this is the answer. They are comprehensive, and they have a limited set of fixed interfaces -- although they disappear into the language syntax.
+
+But the basic data structures aren't quite satisfying: the primacy of data-orientation seems lost, and they are too low-level (and being well-established, they don't add anything new). Classifications of kinds of classes would be better: like containers, iterators, or streams, each defining a pattern of methods. They only exist vaguely/colloquially though; something firmer is needed.
+
+Maybe just strictly defined versions of 'Design Patterns' would do, like: Iterator, Strategy, Composite . . .
+
+References:
+* 'Notes On Structured Programming'/ewd249; Dijkstra; 1970. http://www.cs.utexas.edu/users/EWD/ewd02xx/EWD249.PDF
+* 'Object Oriented Software Construction'; Meyer; 1997.
+* 'Design Patterns'; Gamma, Helm, Johnson, Vlissides; 1995.
+"""@en
+; hxa:contenthash  "90083550428afe9b8e2c07163a30615c0d458105"^^rfc:rfc3174
+; hxa:domainurl  <notes/>
+; rdf:type  hxa:note
+; dc:format  "text"^^iana:text
+; dc:date  "2009-04-07T12:28"^^xsd:dateTime
+; dc:creator  <about/foaf.rdf>
+; dc:language  "en-GB"^^rfc:rfc4646
+; dc:rights  <http://creativecommons.org/licenses/by-sa/3.0/>
+.

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="hxa7241-tonemapper" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+   <title>&lt; H X A 7 2 4 1 &gt; : P3 Tone Mapper </title>
+
+   <meta name="keywords" content="tonemapper, tone mapper, tone reproduction, rendering, graphics, component, library, software, open-source, LGPL, C++, binary, Windows, Linux" />
+   <meta name="description" content="A tone-mapper open-source component for high-quality rendering." />
+
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+<div class="outer">
+
+
+<div class="upper">
+   <div class="title">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
+   </div>
+</div>
+
+
+<div class="side">
+   <ul class="mainmenu">
+      <li>
+         <a href="../" title="home" accesskey="h">HOME</a>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../software/" title="various software projects">SOFTWARE</a>
+         <ul class="mainmenu">
+            <li>
+               <a href="../rendering/" title="some rendering-related development projects">RENDERING</a>
+               <ul class="mainmenu">
+                  <li>
+                     <span class="current" title="this page">P3 TONEMAPPER</span>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
+      </li>
+      <li>
+         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
+      </li>
+   </ul>
+</div>
+
+
+<div class="middle">
+<div class="picture">
+   <img src="tonemapper-picture.jpg" alt="four cornell box tone mappings" />
+</div>
+
+<h2>P3 TONEMAPPER</h2>
+<div class="h2subheading">a tone-mapper open-source component for high-quality rendering</div>
+
+<table class="pagemenu" border="0" cellpadding="0" frame="void" rules="none" summary="menu of page sections">
+   <tr valign="top">
+      <td>
+         <ul>
+            <li><a href="#desc">description</a></li>
+            <li><a href="#images">images</a></li>
+            <li><a href="#technique">technique</a></li>
+            <li><a href="#usage">usage</a></li>
+            <li><a href="#downloads">downloads</a></li>
+            <li><a href="#othertools">others</a></li>
+         </ul>
+      </td>
+   </tr>
+</table>
+
+
+<div class="content">
+
+<div class="section" id="desc">
+   <h3>description</h3>
+
+   <p>P3 Tonemapper transforms a high-dynamic-range image into a low-dynamic-range image, in an automated way, sensitive to human perception. It produces natural-looking and realistic results.</p>
+
+   <p>It is in two parts: a <b>command line application</b>, and a <b>dynamic library</b> for programmatic use. Supported platforms are <b>Windows</b> <img src="../icons1/win_icon_g.png" width="16" height="16" alt="windows icon" /> and <b>Linux</b> <img src="../icons1/linux_icon_g.png" width="16" height="16" alt="linux icon" />, and maybe Mac
+   in future.</p>
+
+   <p>Images are <b>RGB</b>, with exact colorspace specifiable. <b>OpenEXR</b> and <!--<a href="http://radsite.lbl.gov/radiance/">-->Radiance<!--</a>--> <!--<a href="http://radsite.lbl.gov/radiance/refer/filefmts.pdf">-->RGBE<!--</a>--> files are readable, and <b>PNG</b> and <!--<a href="http://netpbm.sourceforge.net/doc/ppm.html">-->PPM<!--</a>--> files are writeable to 16bit precision.</p>
+
+   <p>The essential algorithm is from <a href="http://radsite.lbl.gov/radiance/papers/lbnl39882/tonemap.pdf" title="A Visibility Matching Tone Reproduction Operator For High Dynamic Range Scenes">&lsquo;A Visibility Matching Tone Reproduction Operator&rsquo; by Ward Larson <img src="../icons1/txt_icon_g.png" width="16" height="16" alt="text icon" /></a>. It produces good results, accounts for human perceptual limitations, and is highly automatic. Others could be added.</p>
+
+   <p>Full ISO <b>C++ source code</b> is available, under <b>LGPL</b> license. It is carefully organized, commented, with wide unit-test coverage. Overall high-level <a href="p3-tonemapper-architecture.html">technical design documentation</a> is included.</p>
+</div>
+
+
+<div class="section" id="images">
+   <h3>images</h3>
+
+   <table class="panel" border="0" cellpadding="20" cellspacing="0" frame="void" rules="none" summary="tonemapped image thumbnail links">
+      <tr valign="top">
+         <td>
+            <a href="content/memorial_o876_i.jpg">
+               <img src="memorial_o876_i_small.jpg" width="66" height="100" alt="church interior thumbnail" title="church interior, ideal tonemapping" class="thumbnail" /></a>
+            <div class="thumbcaption">Church interior, ideal tone mapping</div>
+            <div class="thumbcaption">63k</div>
+         </td>
+         <td>
+            <a href="content/memorial_o876_h.jpg">
+               <img src="memorial_o876_h_small.jpg" width="66" height="100" alt="church interior thumbnail" title="church interior, human tonemapping showing glare" class="thumbnail" /></a>
+            <div class="thumbcaption">Church interior, human tone mapping</div>
+            <div class="thumbcaption">57k</div>
+         </td>
+         <td>
+            <a href="content/tree_oAC1_i.jpg">
+               <img src="tree_oAC1_i_small.jpg" width="102" height="100" alt="tree thumbnail" title="tree, ideal tonemapping" class="thumbnail" /></a>
+            <div class="thumbcaption">Tree, ideal tone mapping</div>
+            <div class="thumbcaption">97k</div>
+         </td>
+         <td>
+            <a href="content/tree_oAC1_h.jpg">
+               <img src="tree_oAC1_h_small.jpg" width="102" height="100" alt="tree thumbnail" title="tree, human tonemapping showing glare" class="thumbnail" /></a>
+            <div class="thumbcaption">Tree, human tone mapping</div>
+            <div class="thumbcaption">81k</div>
+         </td>
+      </tr>
+   </table>
+
+   <p>The human tone-mappings show the effects of glare: emphasising brightness locally, and reducing contrast more widely.</p>
+
+   <table class="panel" border="0" cellpadding="7" cellspacing="0" frame="void" rules="none" summary="tonemapped image thumbnail links">
+      <tr valign="top">
+         <th colspan="5">Bathroom interior, human tone-mapping, from dark to light in scaling multiples of 10</th>
+      </tr>
+      <tr valign="top">
+         <td>
+            <a href="content/rend04_o80A_0p1.jpg">
+               <img src="rend04_o80A_0p1_small.jpg" width="68" height="100" alt="bathroom interior thumbnail" title="bathroom interior, human tonemapping 0.1 scaling" class="thumbnail" /></a>
+            <div class="thumbcaption">11k</div>
+         </td>
+         <td>
+            <a href="content/rend04_o80A_1.jpg">
+               <img src="rend04_o80A_1_small.jpg" width="68" height="100" alt="bathroom interior thumbnail" title="bathroom interior, human tonemapping 1 scaling" class="thumbnail" /></a>
+            <div class="thumbcaption">12k</div>
+         </td>
+         <td>
+            <a href="content/rend04_o80A_10.jpg">
+               <img src="rend04_o80A_10_small.jpg" width="68" height="100" alt="bathroom interior thumbnail" title="bathroom interior, human tonemapping 10 scaling" class="thumbnail" /></a>
+            <div class="thumbcaption">15k</div>
+         </td>
+         <td>
+            <a href="content/rend04_o80A_100.jpg">
+               <img src="rend04_o80A_100_small.jpg" width="68" height="100" alt="bathroom interior thumbnail" title="bathroom interior, human tonemapping 100 scaling" class="thumbnail" /></a>
+            <div class="thumbcaption">19k</div>
+         </td>
+         <td>
+            <a href="content/rend04_o80A_1000.jpg">
+               <img src="rend04_o80A_1000_small.jpg" width="68" height="100" alt="bathroom interior thumbnail" title="bathroom interior, human tonemapping 1000 scaling" class="thumbnail" /></a>
+            <div class="thumbcaption">26k</div>
+         </td>
+      </tr>
+   </table>
+
+   <p>These show the effects of darkness: reducing spatial acuity, color sensitivity and contrast sensitivity.</p>
+
+   <p>HDR source images from <a href="http://www.anyhere.com/gward/hdrenc/pages/originals.html">Greg Ward Larson</a>.</p>
+</div>
+
+
+<div class="section" id="technique">
+   <h3>technique</h3>
+
+   <h4>core</h4>
+   <p>Humans judge brightness mostly comparatively. This allows flexibility in squashing real luminance ranges into display images. The <a href="http://radsite.lbl.gov/radiance/papers/lbnl39882/tonemap.pdf" title="A Visibility Matching Tone Reproduction Operator For High Dynamic Range Scenes">Ward Larson</a> technique uses a histogram to do this. One range is squashed into the other, but different sub-ranges are squashed differently, according to population in the original image.</p>
+
+   <p>A histogram of the original image brightness is made, then integrated. The resulting graph is a mapping of original brightness (x axis) to display brightness (y axis). Sub-ranges of luminance that have more representation in the original produce a larger gradient in the graph, so occupy a larger sub-range of display values.</p>
+
+   <p>It follows human vision in adapting to the most popular light level, while still covering much of the rest.</p>
+
+   <h4>perceptual</h4>
+   <h5>glare</h5>
+   <p>(bloom not flare) Eye materials scatter a small proportion of light widely over the sensors. This is simulated with a very wide weak filter. The result is reduced contrast overall, and obvious spreading of bright areas onto darker areas.</p>
+
+   <h5>contrast sensitivity</h5>
+   <p>Absolute brightness differences are less visible in darkness. This is simulated by clamping the histogram according to luminance. The result is a more gloomy image.</p>
+
+   <h5>color sensitivity</h5>
+   <p>Color is less visible in darkness. This is simulated by interpolating pixel values to grey according to luminance. The result is a desaturated/mono image.</p>
+
+   <h5>spatial acuity</h5>
+   <p>Sharpness is reduced in darkness. This is simulated by locally filtering according to luminance. The result is a blurry image.</p>
+</div>
+
+
+<div class="section" id="usage">
+   <h3>usage</h3>
+
+   <h4>application</h4>
+   <p>The general form is:</p>
+   <blockquote><p><kbd>p3tonemapper [options] [-x:CommandFilePathName] imageFilePathName</kbd></p></blockquote>
+
+   <p>The simplest example ignores human perceptual limitations, and produces consistently good results:</p>
+   <blockquote><p><kbd>p3tonemapper somerendering.exr</kbd></p></blockquote>
+
+   <p>The next simplest simulates all human limitations, but requires that the input image holds proper cd/m<sup>2</sup> luminance values (or includes a calibrating scale factor). A scale factor can be given with the <kbd>-is</kbd> option:</p>
+   <blockquote><p><kbd>p3tonemapper -m1:h -is:1000_0 anotherimage.hdr</kbd></p></blockquote>
+
+   <p>There are options to control:</p>
+   <ul>
+      <li>input RGB chromaticities</li>
+      <li>input pixel scaling and offset</li>
+      <li>input view frustrum angle</li>
+      <li>glare and acuity and color sensitivity on/off</li>
+      <li>output display luminance range</li>
+      <li>output gamma transform</li>
+      <li>output bit depth</li>
+   </ul>
+
+   <p>Dynamic libraries for <a href="http://www.openexr.com/">OpenEXR</a> and <a href="http://www.libpng.org/pub/png/">PNG</a> must be present to use those formats.</p>
+
+   <h4>library</h4>
+
+   <p>The library has a <a href="p3tmPerceptualMap.h.html">C interface</a> defined in two header files. For Windows, there is an import library to link with, or it can be accessed purely dynamically.</p>
+
+   <p>The core interface follows an object pattern, in three parts: construction and destruction, commands to set options, and queries to operate on data. Overlayed on that is a simpler, more typed, interface, so an image may be tonemapped with a single function call.</p>
+
+   <p>Currently it takes the HDR image as an array of float triples, and writes the tonemapped image to an array of byte or word triples.</p>
+</div>
+
+
+<div class="section" id="downloads">
+   <h3>downloads</h3>
+
+   <p>Version 1.2 (2007-06-26)</p>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="P3 Tonemapper downloads">
+      <tr>
+         <td>
+            <img src="../icons1/win_icon_g.png" width="16" height="16" alt="windows icon" />
+            <a href="p3tonemapper12exe-win.zip" onclick="javascript:urchinTracker('/tonemapper/tonemapper-download');">p3tonemapper12exe-win.zip</a>
+         </td>
+         <td class="tableitem" valign="bottom">application and library - Windows (199k)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/linux_icon_g.png" width="16" height="16" alt="linux icon" />
+            <a href="p3tonemapper12exe-linux.tar.gz" onclick="javascript:urchinTracker('/tonemapper/tonemapper-download');">p3tonemapper12exe-linux.tar.gz</a>
+         </td>
+         <td class="tableitem" valign="bottom">application and library - Linux (x86) (102k)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/zip_icon_g.png" width="16" height="16" alt="zip icon" />
+            <a href="p3tonemapper12src.zip" onclick="javascript:urchinTracker('/tonemapper/tonemapper-download');">p3tonemapper12src.zip</a>
+         </td>
+         <td class="tableitem" valign="bottom">source code (266k)</td>
+      </tr>
+   </table>
+</div>
+
+
+<div class="section" id="othertools">
+   <h3>others</h3>
+
+   <p>Related open-source tools:</p>
+   <ul>
+      <li><a href="http://www.mpi-inf.mpg.de/resources/pfstools/">PFSTools</a> &mdash; various HDR formats, several tone mappers</li>
+      <li><a href="http://scanline.ca/exrtools/">exrtools</a> &mdash;  OpenEXR images, a few tone mappers</li>
+   </ul>
+</div>
+
+</div>
+</div>
+
+
+<div class="lower">
+   <div>2007-06-26</div>
+</div>
+
+
+</div>
+</body>
+
+</html>

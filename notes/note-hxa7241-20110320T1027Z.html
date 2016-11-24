@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Dependent types are about consistency - (note-20110320T1027Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Dependent types are about consistency - (note-20110320T1027Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, typing, consistency, verification" />
+   <meta name="DC.description" content="Dependent types allow constraints to be defined with (almost) full algorithmic richness. Thinking about what this is doing illustrates the distinction between 'consistency' and 'verification'." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2011-03-20" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20110320T1027Z.html" />
+
+   <meta name="keywords"       content="software-engineering, typing, consistency, verification" />
+   <meta name="description"    content="Dependent types allow constraints to be defined with (almost) full algorithmic richness. Thinking about what this is doing illustrates the distinction between 'consistency' and 'verification'." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Dependent types are about consistency</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20110320T1027Z.html" title="permalink">NOTE HXA7241 2011-03-20T10:27Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>Dependent types allow constraints to be defined with (almost) full algorithmic richness. Thinking about what this is doing illustrates the distinction between &lsquo;consistency&rsquo; and &lsquo;verification&rsquo;.</h5>
+
+
+   <p><a href="http://axisofeval.blogspot.com/2010/10/notes-on-dependent-types.html">&lsquo;Dependent types&rsquo;</a> appear to add another layer of code or description, to verify the normal code. But is the word &lsquo;verify&rsquo; sneaking in to mislead us? Looking closer, verification is not quite really what it does. It just adds more detail to the normal code, it just enriches the normal code's definitions of its abstractions. This is still a good thing: in fact, it is the best thing to do (but not really for typing reasons exactly, but for sofware engineering generally &ndash; more clarity is better).</p>
+
+   <p>Typing is in essence wholly &lsquo;internal&rsquo;. It is about relations <i>within</i> code: it is about consistency. Typing is not verifying against other information. In the terms of logic, it is not checking soundness, but validity.</p>
+
+   <p>That typing is about consistency is what makes it possible to do automatically. Otherwise &lsquo;dependent types&rsquo; would lead to an unsatisfiable regress: you verify the code, but only with more code &ndash; so what verifies <i>that</i> code? another layer of verification? No amount of recursion will ever lead where <i>verification</i> really needs to go: external (human) judgement.</p>
+
+   <p>Consistency is about meaning the <i>same</i> thing, verification is about meaning the <i>correct</i> thing. In a way it is only a small, pedantic, supplementary point, but then again maybe it also captures something notable . . .</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

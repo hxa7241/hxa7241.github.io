@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>A conversational convention for the web - (note-20100811T2247Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="A conversational convention for the web - (note-20100811T2247Z) - HXA7241" />
+   <meta name="DC.subject"     content="www, rdf, text, url" />
+   <meta name="DC.description" content="A simple ad-hoc 'semanticised web' idea for making structures of related texts." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2010-08-11" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20100811T2247Z.html" />
+
+   <meta name="keywords"       content="www, rdf, text, url" />
+   <meta name="description"    content="A simple ad-hoc 'semanticised web' idea for making structures of related texts." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>A conversational convention for the web</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20100811T2247Z.html" title="permalink">NOTE-HXA7241-20100811T2247Z</a></h3>
+   <h4>Harrison Ainsworth</h4>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>A simple ad-hoc &lsquo;semanticised web&rsquo; idea for making structures of related texts</h5>
+
+   <p>References among web documents are made with links, but search engines don't reliably/effectively allow query of these. So even though there is some semantic relation between separate writings, it is hard to get.</p>
+
+   <p>A simple text convention could remedy this, and add graspable structure to web &lsquo;conversations&rsquo;. Links can be put directly into the text in a particular format:</p>
+
+   <p>A URL with a special 2-part pre-scheme containing a general marker and specific relation, e.g.:</p>
+   <blockquote>
+      <p><code>wbcvsn-reply:http://example.org/something.html</code></p>
+   </blockquote>
+
+   <p>&lsquo;<code>wbcvsn</code>&rsquo; would probably do as a general marker &ndash; it is possibly unique, and conjunctions of it and another term are very likely distinctive. The relations are open-ended: finding a good set seems more appropriately a task for evolution, not specification. But some possibles could be: &lsquo;reply&rsquo;, &lsquo;update&rsquo;, &lsquo;question&rsquo;, &lsquo;answer&rsquo;, &lsquo;annotation&rsquo;, &lsquo;correction&rsquo;, &lsquo;addition&rsquo;, . . .</p>
+
+   <p>Quasi-code like a URL is a bit ungainly, but it is readable and familiar, and could find a place like a kind of footnote.</p>
+
+   <p>Merely writing such links into text would produce benefit. It enables search engine queries to show the structure. But with a little software to automate and aggregate such querying a richer view of the relation-graph could be quite easily presented.</p>
+
+   <h4>Appendix</h4>
+
+   <h5>Maps directly to RDF</h5>
+
+   <p>An expression like:</p>
+   <blockquote>
+      <p><code>wbcvsn-reply:http://example.org/something.html</code></p>
+   </blockquote>
+   <p>is an abbreviated triple:</p>
+
+   <ul>
+      <li>The subject is implicit: it is the paragraph, section, or document itself.</li>
+      <li>The predicate is reduced to the relation term of the pre-scheme.</li>
+      <li>The object is the normal URI part (after the pre-scheme).</li>
+   </ul>
+
+   <p>So, with a simple translation, it could be fed into any RDF processing.</p>
+
+   <h5>Improves on tagging</h5>
+
+   <p>A clear, abstract, propositional structure gives it some substantial meaning.</p>
+
+   <p>&lsquo;Tagging&rsquo; is too loose. It has too little convention. No-one seems to know how to use tags. Most simply repeat terms already in the content.</p>
+
+   <p>If you don't have to think whether you are making a good or correct assertion, such an assertion has practically no meaning. To be informative requires saying something that <i>could</i> be wrong. And to do this in an interesting way requires statements with sufficiently rich structure. The rules don't need to be strict and total, but they need some structure, and some sense of getting it right or not.</p>
+
+   <h5>Avoids the deception problem</h5>
+
+   <p>It is a special kind of metadata: integrated and readable with the content it annotates. And this counters deception.</p>
+
+   <p>Metadata makes assertions that can be true or false. So it can be exploited to deceive, in systematic, automated ways &ndash; which undermines trust in any of it. But metadata is still just data. Whatever means we have to evaluate general data can apply to metadata too. If the metadata is presented explicitly with the rest of the text of a web-page, then it can be judged as part of it, and that general opinion summarised in PageRank or similar. Good metadata will be ranked above bad just as good data is &ndash; the text as a whole is.</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

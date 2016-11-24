@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Testing vs proof in software development - (note-20130804T0939Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Testing vs proof in software development - (note-20130804T0939Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, testing, proof" />
+   <meta name="DC.description" content="Is proof better than testing? On examination it seems they are not quite comparable, and the key issues are other things: inference and judgement. Development needs both. Perhaps ideally fused into 'inferential construction'." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2013-08-04" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20130804T0939Z.html" />
+
+   <meta name="keywords"       content="software-engineering, testing, proof" />
+   <meta name="description"    content="Is proof better than testing? On examination it seems they are not quite comparable, and the key issues are other things: inference and judgement. Development needs both. Perhaps ideally fused into 'inferential construction'." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons BY-SA 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Testing vs proof in software development</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20130804T0939Z.html" title="permalink">NOTE HXA7241 2013-08-04T09:39Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>Is proof better than testing? On examination it seems they are not quite comparable, and the key issues are other things: inference and judgement. Development needs both. Perhaps ideally fused into &lsquo;inferential construction&rsquo;.</h5>
+
+   <blockquote>
+      <p>A dream of mine as a software developer is for someone to demand &ldquo;How do you know it works, did you test it??&rdquo; and reply &ldquo;No, I proved it.&rdquo;</p>
+      <p>&ndash; <a href="https://twitter.com/pelotom/status/362386563084189698">https://twitter.com/pelotom/status/362386563084189698</a></p>
+   </blockquote>
+
+   <p>This does seem desirable. Or is it? Does it really make sense? What do testing and proof do?</p>
+
+   <p>First of all, specification problems still exist &ndash; you cannot <i>prove</i> you want the right thing. You want to calculate area, but you code x <i>plus</i> y. One might respond that of course proof depends on trustworthy available specifications, and so do tests. But &lsquo;test&rsquo; can reasonably have a larger meaning. Tests can check by human judgement: you can directly show the customer and ask them if it is right. That extra meaning of test is interesting.</p>
+
+   <p>The concern is that tests/checks by human judgement are not only needed at the very edge &ndash; checking the final product with the customer. Is not human judgement a deep and pervasive ingredient throughout software? Is not each component (hence its developer) the &lsquo;customer&rsquo; to another? Is judgement not needed in making every line of code? So how valuable is proof if it is surrounded, and perhaps undermined, everywhere by the uncertainty of human judgement? You can prove some small step, but that only stands upon the shaky ground of some other test by judgement. <b>If each part of programming is not shaped purely by logical decisions, logical approaches can never wholly prove any program.</b></p>
+
+   <p>One might then consider that proofs could also integrate reference to human judgement. This is the way mathematics has proceeded. You have a set of strict rules and you check &ndash; by human judgement &ndash; if a proof complies. But then what does proof really mean, because it must now seem rather weaker. &lsquo;Proved&rsquo; in the original quote is probably read as utterly authoritative, as strong as the force of logic. But if proof is so intermixed throughout with human judgement that can hardly be true. A proof no longer &lsquo;proves&rsquo; something correct.</p>
+
+   <p>Yet that does not destroy everything. Proof still does <i>something</i>. It is like the Wittgenstein rule-following question. Just because a rule does not secure every detail does not mean it gives you nothing. Proof is still better than testing, because it leverages abstraction. Proof lets you take certain kinds of big strong steps that testing cannot. <b>Our proofs are as strong as our abstractions</b> (although our abstractions must be compromised with other requirements too &hellip;).</p>
+
+   <p>The key elements here are not proof and test, but inference and judgement. Inference: a special disciplined kind of movement, taking structured logical steps; judgement: appealing to the ultimate authority of human intent, following what is actually wanted. Both are essential in software development &ndash; they must always be there. Automatic complete apodictic &lsquo;proof&rsquo; of software correctness is as impossible as automatically making software &ndash; at least, as long as software is a deliberate, willful, activity.</p>
+
+   <p>So testing and proof are really about different things &ndash; or at least they are best used as such. Testing is comparison, proof is inference. One is not better than the other: we need both testing <i>and</i> proof. The virtue of proof is the power of inference, its range and solidity. Testing also has a virtue, but it ought to be more closely confined to it. Ideally, the only testing we should do is comparison with human intent, which only testing <i>can</i> do, and everything else should be proved.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>But why build something and <i>then</i> prove it? <b>The method of construction should be the proof</b>. Perhaps ideally we want that kind of &lsquo;inferential-construction&rsquo;: every step of building or modification rigidly logically ensures certain properties, but also moves in a direction chosen by judgement. That seems the minimal general form of combining inference and judgement in software development. Each action in the process of building combines attention to both needs.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>Related:</p>
+   <ul>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110130T0917Z.html">&lsquo;Testing: thoughts on improving it&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20130609T0917Z.html">&lsquo;Rule-following and software development&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110918T1016Z.html">&lsquo;The insoluble pragmatism of types&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110327T1046Z.html">&lsquo;Stone cathedrals, structure-preserving-transformations, and software development&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20111113T1241Z.html">&lsquo;Power, predictability, and regularity&rsquo;</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

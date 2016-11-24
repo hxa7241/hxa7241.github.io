@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>TADIST file naming pattern - (note-20141231T1101Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="TADIST file naming pattern - (note-20141231T1101Z) - HXA7241" />
+   <meta name="DC.subject"     content="software, programming" />
+   <meta name="DC.description" content="How should you name user-content files? Here is a possible way: a simple formalised pattern that seems to work for various things." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2014-12-31" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20141231T1101Z.html" />
+
+   <meta name="keywords"       content="software, programming" />
+   <meta name="description"    content="How should you name user-content files? Here is a possible way: a simple formalised pattern that seems to work for various things." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons BY-SA 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>TADIST file naming pattern</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20141231T1101Z.html" title="permalink">NOTE HXA7241 2014-12-31T11:01Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>How should you name user-content files? Here is a possible way: a simple formalised pattern that seems to work for various things.</h5>
+
+<p>Or: don't name your article &lsquo;paper.pdf&rsquo;. Name it like this ...</p>
+
+<ul>
+   <li><a href="#examples">Examples</a></li>
+   <li><a href="#description">Description</a></li>
+   <li><a href="#grammar">Grammar</a></li>
+   <li><a href="#datastructure">Data structure</a></li>
+   <li><a href="#plaintextform">Plain-text form</a></li>
+</ul>
+
+
+   <div class="part" id="examples">
+   <h4>Examples</h4>
+
+   <p>These give most of the idea:</p>
+
+   <blockquote>
+      <p><code>The-Practice-Of-Programming_Kernighan-Pike_1999.ISBN-020161586X.djvu</code></p>
+
+      <p><code>Concerto-2-E-min-RV279-1-Allegro_Vivaldi_1713-1995.ISRC-GBFO77341004.v245.mp3</code></p>
+
+      <p><code>Missa-Papae-Marcelli-Kyrie_Palestrina-TheTallisScholars_1562-1999.ISRC-GBADM9400034.v245.mp3</code></p>
+
+      <p><code>Sparrow-On-The-Crabapple-Tree_Anderson_2007.flickr-734188511.1024x683.jpg</code></p>
+   </blockquote>
+   </div>
+
+
+   <div class="part" id="description">
+   <h4>Description</h4>
+
+   <p>&lsquo;TADIST&rsquo; is an acronym: the format is basically:</p>
+
+   <blockquote>
+      <p><b>title _ author _ date . id . subtype . type</b></p>
+   </blockquote>
+
+   <p>But some parts can be omitted, so then the schema is roughly (with [] meaning optional):</p>
+
+   <blockquote>
+      <p><b>title [_ author [_ date]] [. id] [. subtype] . type</b></p>
+   </blockquote>
+
+   <p>Furthermore, each part (except the type) can have sub-parts separated by &lsquo;<code>-</code>&rsquo;, so (with ... meaning possible repetition):</p>
+
+   <blockquote>
+      <p><b>ttt-tt-... [_ aaa-aa-... [_ ddd-dd-...]] [. iii-iiii] [. sss ] . type</b></p>
+   </blockquote>
+
+   <p>The semantics of sub-parts vary though:</p>
+   <ul>
+      <li><b>title</b> is a string of words (&lsquo;<code>-</code>&rsquo; means space)</li>
+      <li><b>author</b> and <b>date</b> are arrays of items (&lsquo;<code>-</code>&rsquo; means &lsquo;,&rsquo;)</li>
+      <li><b>id</b> is a label-value pair (&lsquo;<code>-</code>&rsquo; separates those two)</li>
+   </ul>
+
+   <p>And more detail on some elements:</p>
+   <ul>
+      <li><b>date</b> is an ISO-8601 date in compact (no-space) form</li>
+      <li><b>id</b> should follow some standard or convention, e.g.: <code>ISBN-9780631128014</code></li>
+      <li><b>sub-type</b> should be understandable from the type, e.g.: <code>100x60.png</code>, <code>c320.mp3</code></li>
+      <li><b>type</b> should be from a commonly known vocabulary, e.g.: <code>jpg</code>, <code>epub</code>, <code>mp3</code></li>
+   </ul>
+
+   <p>These are all assembled only from three character classes which are easy to handle in file names:</p>
+   <ul>
+      <li>letters:    (at least ASCII)</li>
+      <li>digits:     <code>0123456789</code></li>
+      <li>separators: <code>-</code> <code>_</code> <code>.</code></li>
+   </ul>
+   </div>
+
+
+   <div class="part" id="grammar">
+   <h4>Grammar</h4>
+
+   <p>To be more exact, here is the grammar in <a href="http://www.hxa.name/notes/note-hxa7241-20130113T1107Z.html"><abbr title="BNF in S-Exprs">SBNF</abbr></a>:</p>
+
+   <blockquote>
+   <pre><code>(filename (, plain meta))
+
+(plain   (, title (? (, "_" author (? (, "_" date))))))
+(title   (+ alphnum "-"))
+(author  (+ alphnum "-"))
+(date    (+ (, year (? (, month (? day)))) "-"))
+
+(meta    (, (? (, "." id)) (? (, "." subtype)) "." type))
+(id      (, alphnum "-" alphnum))
+(subtype alphnum)
+(type    alphnum)
+
+(year    (, (? "-")
+            (| (=4 digit)
+               (, (=3 digit) "X")
+               (, (=2 digit) "XX")
+               (, digit "XXX"))))
+(month   (| "01" "02" "03" "04" "05" "06"
+            "07" "08" "09" "10" "11" "12"))
+(day     (| (, "0" (| "1" "2" "3" "4" "5" "6" "7" "8" "9"))
+            (, (| "1" "2") digit)
+            (, "3" (| "0" "1"))))
+(alphnum (+ (| letter digit)))
+
+(digit   (| "0" "1" "2" "3" "4" "5" "6" "7" "8" "9"))</code></pre>
+   </blockquote>
+
+   <p>Assuming:</p>
+   <ul>
+      <li><code>letter</code> &ndash; at least ASCII</li>
+   </ul>
+
+   <p>Comments:</p>
+   <ul>
+      <li>title   &ndash; a string of words</li>
+      <li>author  &ndash; an array of names</li>
+      <li>date    &ndash; an IS0-8601 date in compact (no-space) form</li>
+      <li>id      &ndash; following a label-value convention, e.g.: <code>ISBN-9780631128014</code></li>
+      <li>subtype &ndash; understandable from the type, e.g.: <code>100x60.png</code>, <code>c320.mp3</code></li>
+      <li>type    &ndash; from a commonly known vocabulary, e.g.: <code>jpg</code>, <code>epub</code>, <code>mp3</code></li>
+      <li>year    &ndash; does use leading &ldquo;<code>-</code>&rdquo; for BCE, and has a non-standard augmentation: &ldquo;<code>X</code>&rdquo; for unknown</li>
+   </ul>
+   </div>
+
+
+   <div class="part" id="datastructure">
+   <h4>Data structure</h4>
+
+   <p>The data-structure would be something like this (in quasi-code, where <code>:</code> means &lsquo;of type&rsquo;):</p>
+
+   <blockquote>
+   <pre><code>filename : product of {
+   title   : array of { string } ,
+   author  : array of { string } ,
+   date    : array of { ISO8601-date } ,
+   id      : option of {
+                product of {
+                   label : string ,
+                   value : string
+                   }
+                } ,
+   subtype : option of string ,
+   type    : string
+   }</code></pre>
+   </blockquote>
+
+   <p>where strings are alpha-numeric only and non-zero length, and the title array has at least one element.</p>
+   </div>
+
+
+   <div class="part" id="plaintextform">
+   <h4>Plain-text form</h4>
+
+   <p>The name pattern also has a plain-text form, so e.g.:</p>
+
+   <blockquote>
+      <p>"The Practice Of Programming" ; Kernighan, Pike ; 1999 / ISBN-020161586X / djvu .</p>
+   </blockquote>
+
+   <p>is the text representation of:</p>
+
+   <blockquote>
+      <p><code>The-Practice-Of-Programming_Kernighan-Pike_1999.ISBN-020161586X.djvu</code></p>
+   </blockquote>
+
+   <p>The grammar in <a href="http://www.hxa.name/notes/note-hxa7241-20130113T1107Z.html"><abbr title="BNF in S-Exprs">SBNF</abbr></a>:</p>
+
+   <blockquote>
+   <pre><code>(textform (, plain meta " ."))
+
+(plain   (, title (? (, " ; " author (? (, " ; " date))))))
+(title   (, "\"" chars-no-dquos "\""))
+(author  (+ chars-no-commas-or-semicolons-or-slashes ", "))
+(date    (+ (, year (? (, "-" month (? "-" day)))) ", "))
+
+(meta    (, (? (, " / " id)) (? (, " / " subtype)) " / " type))
+(id      (, alphnum "-" alphnum))
+(subtype alphnum)
+(type    alphnum)
+
+(year    (, (? "-")
+            (| (=4 digit)
+               (, (=3 digit) "X")
+               (, (=2 digit) "XX")
+               (, digit "XXX"))))
+(month   (| "01" "02" "03" "04" "05" "06"
+            "07" "08" "09" "10" "11" "12"))
+(day     (| (, "0" (| "1" "2" "3" "4" "5" "6" "7" "8" "9"))
+            (, (| "1" "2") digit)
+            (, "3" (| "0" "1"))))
+(alphnum (+ (| letter digit)))
+
+(digit   (| "0" "1" "2" "3" "4" "5" "6" "7" "8" "9"))</code></pre>
+   </blockquote>
+
+   <p>Assuming:</p>
+   <ul>
+      <li><code>chars-no-dquos</code></li>
+      <li><code>chars-no-commas-or-semicolons-or-slashes</code></li>
+      <li><code>letter</code> &ndash; at least ASCII</li>
+   </ul>
+
+   <p>Comments:</p>
+   <ul>
+      <li>title   &ndash; a string of words</li>
+      <li>author  &ndash; an array of names</li>
+      <li>date    &ndash; an IS0-8601 date</li>
+      <li>id      &ndash; following a label-value convention, e.g.: ISBN-9780631128014</li>
+      <li>subtype &ndash; understandable from the type, e.g.: 100x60 / png, c320 / mp3</li>
+      <li>type    &ndash; from a commonly known vocabulary, e.g.: jpg, epub, mp3</li>
+      <li>year    &ndash; does use leading &ldquo;-&rdquo; for BCE, and has a non-standard augmentation: &ldquo;X&rdquo; for unknown</li>
+   </ul>
+   </div>
+
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

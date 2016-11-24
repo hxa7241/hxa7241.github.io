@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>In Lisp, should lists be replaced with trees? - (note-20110515T0907Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="In Lisp, should lists be replaced with trees? - (note-20110515T0907Z) - HXA7241" />
+   <meta name="DC.subject"     content="programming, programming-languages, lisp, scheme, cons, pair, list, tree, branch" />
+   <meta name="DC.description" content="Conses/pairs/lists are rather low-level when you think about it. Would we not appreciate something just a little more powerful, a little more *modern*? A tree primitive is here casually and heretically proposed as a better alternative." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2011-05-15" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20110515T0907Z.html" />
+
+   <meta name="keywords"       content="programming, programming-languages, lisp, scheme, cons, pair, list, tree, branch" />
+   <meta name="description"    content="Conses/pairs/lists are rather low-level when you think about it. Would we not appreciate something just a little more powerful, a little more *modern*? A tree primitive is here casually and heretically proposed as a better alternative." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>In Lisp, should lists be replaced with trees?</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20110515T0907Z.html" title="permalink">NOTE HXA7241 2011-05-15T09:07Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>Conses/pairs/lists are rather low-level when you think about it. Would we not appreciate something just a little more powerful, a little more <i>modern</i>? A tree primitive is here casually and heretically proposed as a better alternative.</h5>
+
+
+   <h5>Introduction</h5>
+
+   <p><a href="http://axisofeval.blogspot.com/">MJS</a> prompted reconsidering Lisp's core compound data-structuring element, conses/lists. The main point was roughly that conses/lists are too crude, and too concrete (although their typing weakness will not be addressed here).</p>
+
+   <p>So, first a view of why and how they are overly primitive. Then a sketch of a reasonable possible replacement idea (as Scheme).</p>
+
+
+   <h5>Rationale</h5>
+
+   <p>Conses/lists seem like a mismatch in the language. They are more rudimentary than they should be compared to their context. They are also a little weak compared to common programming equivalents.</p>
+
+   <p>The grounds of the opinion is a sense of data-structure/algorithm symmetry &ndash; that the basic algorithmic means should balance with the basic data-structuring means. This is not very well-founded, it just has an immediately reasonable appeal.</p>
+
+   <p>Seemingly, conses/lists presume to be the lambda of data structures. Do they merit that position? Yes they do, in a way, But the problem is that is not what we want. They should really be equivalent to <i>procedures/functions</i>, which are a notch more developed for programming than lambdas.</p>
+
+   <p>Lambdas, in lambda-calculus world, assemble in a currying way: they do not have parameter lists, but chain calls of single parameters. <i>This</i> matches conses/lists.</p>
+
+   <p>But Lisp does not really have lambdas, it has procedures/functions &ndash; calls are not currying and parameters are arrays, each addressed by name. So, to match, Lisp should not have conses/lists, but instead the slightly higher level equivalent to procedures: dictionary-trees. A &lsquo;dictionary-tree&rsquo; being: a tree-like structure, with items at each node addressed by name &ndash; like a JavaScript/Lua object.</p>
+
+   <ul>
+      <li>Lists are like lambdas, not procedures:
+         <ul>
+            <li>a simple sequence of elements linked together.</li>
+         </ul></li>
+      <li>The data equivalent of procedures is dictionary-trees:
+         <ul>
+            <li>procedure structure is hierarchical &ndash; hence tree,</li>
+            <li>procedure parameters are named &ndash; hence dictionary.</li>
+         </ul></li>
+      <li>And the current/average/popular/pragmatic/core/basic data-structure is probably the JavaScript/Lua-style object/table/associative-array:
+         <ul>
+            <li><a href="http://steve-yegge.blogspot.com/2008/10/universal-design-pattern.html">'The Universal Design Pattern'</a></li>
+         </ul></li>
+   </ul>
+
+
+   <h5>Sketch</h5>
+
+   <p>Replace &rsquo;<code>pair</code>&rsquo; (in Scheme) with an alternative data structuring building-block, &rsquo;<code>branch</code>&rsquo;:</p>
+
+   <ul>
+      <li><code>branch</code>
+         <ul>
+            <li>item &ndash; name-value association</li>
+            <li>item &ndash; name-value association</li>
+            <li>item &ndash; name-value association</li>
+            <li>. . .</li>
+         </ul></li>
+   </ul>
+
+   <p>This is like <code>pair</code> except generalised and easified:</p>
+   <ul>
+      <li>any number of items (zero or more), instead of just two,</li>
+      <li>and each item is named (and indexed?).</li>
+   </ul>
+
+   <p>And this generalised structure is <i>simpler</i> than <code>pair</code>: <code>pair</code>'s having two items is like a special constant, ad hoc (but for what good reason now?).</p>
+
+   <p>Branchs/trees are a superset of pairs/lists, so could straightforwardly support all list operations. A pair is just a branch with two items, named &lsquo;car&rsquo; and &lsquo;cdr&rsquo;. Nil is perhaps redundant, since the tail end of a list could simply have only one item. But nil can be explicitly represented by a branch with zero items.</p>
+
+   <p>Operations on branchs/trees can be quite easily adapted from <a href="http://www.schemers.org/Documents/Standards/R5RS/HTML/r5rs-Z-H-9.html#%_sec_6.3.2">Scheme's operations on pairs/lists</a>:</p>
+
+<ul>
+   <li>Type predicates:
+      <ul>
+         <li><code>(branch?</code> &lt;arg&gt;<code>)</code></li>
+         <li><code>(tree?</code> &lt;arg&gt;<code>)</code> &ndash; is not some other graph shape</li>
+         <li><code>(null?</code> &lt;arg&gt;<code>)</code> &ndash; is zero-size branch</li>
+      </ul></li>
+   <li>Constructors:
+      <ul>
+         <li><code>(branch</code> [<code>(name-value</code> &lt;name&gt; &lt;value&gt;<code>)</code> ...]<code>)</code> &ndash; like cons and list</li>
+         <li><code>(append</code> &lt;branch&gt; <code>(name-value</code> &lt;name&gt; &lt;value&gt;<code>)</code> ...<code>)</code> &ndash; add at leaf end</li>
+         <li><code>(reverse</code> &lt;branch&gt;<code>)</code> &ndash; reverse branch (index) ordering
+            <ul>
+               <li>recursive ?</li>
+            </ul></li>
+      </ul></li>
+   <li>Queries:
+      <ul>
+         <li><code>(item</code> &lt;branch&gt; &lt;name|index&gt; [&lt;name|index&gt; ...]<code>)</code> &ndash; read a value, optionally recursively</li>
+         <li><code>(branch-size</code> &lt;branch&gt;<code>)</code> &ndash; item count (not including branchs?)</li>
+         <li><code>(tree-size</code> &lt;branch&gt;<code>)</code> &ndash; recursive</li>
+         <li>assoc ops are redundant, since items are named anyway</li>
+         <li>find matching item
+            <ul>
+               <li>. . .</li>
+            </ul></li>
+         <li>comprehensions
+            <ul>
+               <li>hierarchical/tree equivalents of: map, fold, filter, unfold, . . .</li>
+            </ul></li>
+      </ul></li>
+   <li>Commands:
+      <ul>
+         <li><code>(item-set!</code> &lt;branch&gt; &lt;name|index&gt; &lt;value&gt;<code>)</code></li>
+         <li><code>(item-add!</code> &lt;branch&gt; &lt;name|index&gt; &lt;value&gt;<code>)</code></li>
+         <li><code>(item-del!</code> &lt;branch&gt; &lt;name|index&gt;<code>)</code></li>
+      </ul></li>
+   <li>Conversions:
+      <ul>
+         <li><code>(tree-&gt;vector</code> &lt;branch&gt; [&lt;order&gt;]<code>)</code></li>
+      </ul></li>
+</ul>
+
+
+   <h5>Conclusion</h5>
+
+   <p>It is not <i>entirely</i> convincing, yet there is something to it. (And of course, it would no longer be Lisp: it would be <i>Trep</i>.)</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

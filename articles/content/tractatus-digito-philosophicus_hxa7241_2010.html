@@ -1,0 +1,1645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Tractatus Digito-Philosophicus - HXA7241 - 2010</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Tractatus Digito-Philosophicus - HXA7241 - 2010" />
+   <meta name="DC.subject"     content="software development, philosophy, philosophy of software engineering, wittgenstein, tractatus" />
+   <meta name="DC.description" content="A translation of Wittgenstein's Tractatus into the domain of software development." />
+   <meta name="DC.type"        content="article" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2011-03-29" />
+   <meta name="DC.date"        content="2010-11-19" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/articles/content/tractatus-digito-philosophicus_hxa7241_2010.html" />
+
+   <meta name="keywords"       content="software development, philosophy, philosophy of software engineering, wittgenstein, tractatus" />
+   <meta name="description"    content="A translation of Wittgenstein's Tractatus into the domain of software development." />
+   <meta name="document"       content="hxa7241article6" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article.css" />
+
+   <style type="text/css">
+      .clause p
+      {
+         margin:       0.25em 0em 0.3em 0em;
+      }
+      .clause
+      {
+         margin:       1em 0em 1em 0em;
+      }
+      .level
+      {
+         margin-left:  1em;
+      }
+      #a0
+      {
+         margin-left:  4em;
+      }
+      .number
+      {
+         color:        gray;
+         margin-left:  -4em;
+         float:        left;
+      }
+   </style>
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>Tractatus <br/>Digito-Philosophicus</h1>
+   <h2>(first draft, in progress)</h2>
+</div>
+
+
+<div id="colophon" title="colophon">
+<h4>Ludwig Wittgenstein / Pears, McGuinness / Harrison Ainsworth</h4>
+
+   <p id="contact"><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a>
+   <br />hxa7241+articles <i>(&alpha;&tau;)</i> googlemail <i>(d&omicron;&tau;)</i> com</p>
+
+   <p id="timestamp" title="started: 2010-11-19">2011-03-29</p>
+</div>
+
+
+<div id="preface">
+<div id="summary" title="introduction">
+   <h2>Introduction</h2>
+
+   <p id="intro-p1" title="intro-p1">This is a somewhat odd venture: a translation of Wittgenstein's Tractatus into the domain of software development.</p>
+
+   <p id="intro-p2" title="intro-p2">The software intellect &ndash; its basic conceptual forms &ndash; is rooted in the early 20th century, the 1910s, 1920s, 1930s. That is where the work of Church and Turing, lambda calculus and computability, comes from. And it is also the time of the Vienna Circle, logical positivism, and Wittgenstein's early work, the &lsquo;Tractatus Logico-Philosophicus&rsquo;.</p>
+
+   <p id="intro-p3" title="intro-p3">One might notice one day that software seems pointedly related to its original philosophical contemporaries. It is fundamentally a logical construction. It is like a Wittgensteinian logical proposition, but instead of <i>describing</i> the <i>world</i>, software <i>constructs</i> the <i>imagination</i>. There is a clear isomorphism. All terms related to describing map to terms related to constructing, and similarly for world and imagination. It seems a simple transformation will take Wittgenstein to software.</p>
+
+   <p id="intro-p5" title="intro-p5">So an interesting project emerges: translate the Tractatus into software terms! The result is sometimes obscure, but sometimes clearer than the original, and most is (still) quite odd and intriguing (which is perhaps the main virtue anyway) . . .</p>
+
+   <p id="intro-p6" title="intro-p6">(So far it is only partial and unfinished.)</p>
+
+   <p id="intro-p7" title="intro-p7">8000 words (55 minutes).</p>
+</div>
+</div>
+
+
+<div id="contents" title="contents">
+   <h2>Contents</h2>
+
+   <ul>
+      <li><a href="#summary">Introduction</a></li>
+      <li><a href="#text">Text</a>
+         <ul>
+            <li><a href="#text-preface">Preface</a></li>
+            <li><a href="#text-body">Body</a>
+               <ul>
+                  <li><a href="#text-body-effects">Effects</a></li>
+                  <li><a href="#text-body-formulations">Formulations</a></li>
+                  <li><a href="#text-body-programs">Programs</a></li>
+                  <li><a href="#text-body-outputs">Outputs</a></li>
+                  <li><a href="#text-body-segment-5">Segment 5</a></li>
+                  <li><a href="#text-body-segment-6">Segment 6</a></li>
+                  <li><a href="#text-body-segment-7">Segment 7</a></li>
+                  <li><a href="#text-body-segment-8">Segment 8</a></li>
+                  <li><a href="#text-body-segment-9">Segment 9</a></li>
+                  <li><a href="#text-body-segment-10">Segment 10</a></li>
+                  <li><a href="#text-body-segment-11">Segment 11</a></li>
+                  <li><a href="#text-body-segment-12">Segment 12</a></li>
+                  <li><a href="#text-body-segment-13">Segment 13</a></li>
+                  <li><a href="#text-body-segment-14">Segment 14</a></li>
+                  <li><a href="#text-body-segment-15">Segment 15</a></li>
+                  <li><a href="#text-body-segment-16">Segment 16</a></li>
+                  <li><a href="#text-body-segment-17">Segment 17</a></li>
+                  <li><a href="#text-body-segment-18">Segment 18</a></li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+      <li><a href="#translationtables">Translation tables</a>
+         <ul>
+            <li><a href="#translationtables-forward">Forward</a></li>
+            <li><a href="#translationtables-backward">Backward</a></li>
+         </ul>
+      </li>
+   </ul>
+</div>
+
+
+
+<div id="text">
+
+<h2>Text</h2>
+
+<div class="section" id="text-preface" title="text-preface">
+<h3>Preface</h3>
+
+   <p>Perhaps this book will be understood only by someone who themself already had the thoughts that are expressed in it &ndash; or at least similar thoughts. &ndash; So it is not a textbook. &ndash; Its purpose should be achieved if it gave pleasure to one person who read and understood it.</p>
+
+   <p>The book deals with the problems of software engineering philosophy, and shows, I believe, that the reason why these problems are posed is that the digitalness of our software is misunderstood. The whole sense of the book might be summed up in the following words: what can be built at all can be built precisely, and what we cannot develop we must pass over in stillness.</p>
+
+   <p>Thus the aim of the book is to draw a limit to designs, or rather &ndash; not to designs, but to the expression of designs: for in order to be able to draw a limit to designs, we should have to find both sides of the limit designable (i.e. we should have to be able to design what cannot be designed).</p>
+
+   <p>It will therefore only be in software that the limit can be drawn, and what lies on the other side of the limit will simply be nonsense.</p>
+
+   <p>I do not wish to judge how far my efforts coincide with those of other software engineering philosphers. Indeed, what I have written here makes no claim to novelty in detail, and the reason why I give no sources is that it is a matter of indifference to me whether the thoughts that I have had have been anticipated by someone else.</p>
+
+   <p>I will only mention that I am indebted to Frege's great works and to the writings of my friend Mr Bertrand Russell for much of the stimulation of my thoughts.</p>
+
+   <p>If this work has any value, it consists in two things: the first is that thoughts are expressed in it, and on this score the better the thoughts are expressed &ndash; the more the nail has been hit on the head &ndash; the greater will be its value. &ndash; Here I am conscious of having fallen a long way short of what is possible. Simply because my powers are too slight for the accomplishment of the task. &ndash; May others come and do it better.</p>
+
+   <p>On the other hand the <i>truth</i> of the thoughts that are here communicated seems to me unassailable and definitive. I therefore believe myself to have found, on all essential points, the final solution of the problems. And if I am not mistaken in this belief, then the second thing in which the value of this work consists is that it shows how little is achieved when these problems are solved.</p>
+</div>
+
+<div class="section" id="text-body" title="text-body">
+<h3>Body</h3>
+
+<div class="level" title="a0">
+<h4 id="text-body-effects">[Effects]</h4>
+
+<div class="clause" id="c1" title="c1">
+<span class="number">1</span> <p>The imagination is all that is intended.</p>
+</div>
+
+<div class="level" title="a1">
+<div class="clause" id="c1.1" title="c1.1">
+<span class="number">1.1</span> <p>The imagination is the totality of intents, not of actual-effects.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="clause" id="c1.11" title="c1.11">
+<span class="number">1.11</span> <p>The imagination is determined by the intents, and by their being <i>all</i> the intents.</p>
+</div>
+
+<div class="clause" id="c1.12" title="c1.12">
+<span class="number">1.12</span> <p>For the totality of intents determines what is intended, and also whatever cannot be intended.</p>
+</div>
+
+<div class="clause" id="c1.13" title="c1.13">
+<span class="number">1.13</span> <p>The intents in digital space are the imagination.</p>
+</div>
+</div><!-- level 2 -->
+
+<div class="clause" id="c1.2" title="c1.2">
+<span class="number">1.2</span> <p>The imagination divides into intents.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="clause" id="c1.21" title="c1.21">
+<span class="number">1.21</span> <p>Each item is intended or not intended while everything else remains the same.</p>
+</div>
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+<div class="clause" id="c2" title="c2">
+<span class="number">2</span> <p>What is intended &ndash; an intent &ndash; is the intendedness of sets of effects.</p>
+</div>
+
+<div class="level" title="a1">
+<div class="level" title="a2">
+<div class="clause" id="c2.01" title="c2.01">
+<span class="number">2.01</span> <p>A set of aims (a set of actual-effects) is a combination of effects (actual-effects).</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c2.011" title="c2.011">
+<span class="number">2.011</span> <p>It is essential to actual-effects that they should be possible constituents of sets of aims.</p>
+</div>
+
+<div class="clause" id="c2.012" title="c2.012">
+<span class="number">2.012</span> <p>In the digital nothing is accidental: if an actual-effect <i>can</i> occur in a set of aims, the possibility of the set of aims must be written into the actual-effect itself.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c2.0121" title="c2.0121">
+<span class="number">2.0121</span> <p>It would seem to be a sort of accident, if it turned out that a function would fit an actual-effect that could already be intended entirely on its own.</p>
+<p>If actual-effects can occur in sets of aims, this possibility must be in them from the beginning.</p>
+<p>(Nothing in the province of the digital can be merely possibly intended. The digital deals with every possible intention and all possibilities are its intents.)</p>
+<p>Just as we are quite unable to imagine spatial effects outside space or temporal effects outside time, so too there is no effect that we can imagine excluded from the possibility of combining with others.</p>
+<p>If I can imagine effects combined in sets of aims, I cannot imagine them excluded from the possibility of such combinations.</p>
+</div>
+
+<div class="clause" id="c2.0122" title="c2.0122">
+<span class="number">2.0122</span> <p>Actual-effects are independent in so far as they can occur in all possible functions, but this form of independence is a form of connexion with sets of aims, a form of dependence. (It is impossible for words to appear in two different roles: by themselves, and in programs.)</p>
+</div>
+
+<div class="clause" id="c2.0123" title="c2.0123">
+<span class="number">2.0123</span> <p>If I know an effect I also know all its possible occurrences in sets of aims.</p>
+<p>(Every one of these possibilities must be part of the nature of the effect.)</p>
+<p>A new possibility cannot be discovered later.</p>
+</div>
+
+<div class="clause" id="c2.01231" title="c2.01231">
+<span class="number">2.01231</span> <p>If I am to know an effect, though I need not know its external properties, I must know all its internal properties.</p>
+</div>
+
+<div class="clause" id="c2.0124" title="c2.0124">
+<span class="number">2.0124</span> <p>If all effects are given, then at the same time all <i>possible</i> sets of aims are also given.</p>
+</div>
+</div><!-- level 4 -->
+
+<div class="clause" id="c2.013" title="c2.013">
+<span class="number">2.013</span> <p>Each actual-effect is, as it were, in a space of possible sets of aims. This space I can imagine empty, but I cannot imagine the actual-effect without the space.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c2.0131" title="c2.0131">
+<span class="number">2.0131</span> <p>A spatial effect must be functional in infinite space. (A spatial point is an argument-place.)</p>
+<p>A speck in the visual field, though it need not be red, must have some colour: it is, so to speak, surrounded by colour-space. Notes must have some pitch, objects of the sense of touch <i>some</i> degree of hardness, and so on.</p>
+</div>
+</div><!-- level 4 -->
+
+<div class="clause" id="c2.014" title="c2.014">
+<span class="number">2.014</span> <p>Effects contain the possibility of all functions.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c2.0141" title="c2.0141">
+<span class="number">2.0141</span> <p>The possibility of its occurring in sets of aims is the form of an effect.</p>
+</div>
+</div><!-- level 4 -->
+</div><!-- level 3 -->
+
+<div class="clause" id="c2.02" title="c2.02">
+<span class="number">2.02</span> <p>Effects are simple.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="level" title="a4">
+<div class="clause" id="c2.0201" title="c2.0201">
+<span class="number">2.0201</span> <p>All software for complexes can be resolved into software for their constituents and into the programs that express the complexes completely.</p>
+</div>
+</div><!-- level 4 -->
+
+<div class="clause" id="c2.021" title="c2.021">
+<span class="number">2.021</span> <p>Effects make up the substance of the imagination. That is why they cannot be composite.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c2.0211" title="c2.0211">
+<span class="number">2.0211</span> <p>If the imagination had no substance, then whether a program had sense would depend on whether another program was correct.</p>
+</div>
+
+<div class="clause" id="c2.0212" title="c2.0212">
+<span class="number">2.0212</span> <p>In that case we could not hack-out any formulation of the imagination (correct or incorrect).</p>
+</div>
+</div><!-- level 4 -->
+
+<div class="clause" id="c2.022" title="c2.022">
+<span class="number">2.022</span> <p>It is obvious that software, however different it may be from intention, must have <i>something</i> &ndash; a form &ndash; in common with it.</p>
+</div>
+
+<div class="clause" id="c2.023" title="c2.023">
+<span class="number">2.023</span> <p>Effects are just what constitute this unalterable form.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c2.0231" title="c2.0231">
+<span class="number">2.0231</span> <p>The substance of the imagination <i>can</i> only determine a form, and not any functional properties. For it is only by means of programs that functional properties are produced &ndash; only by the configuration of effects that they are intended.</p>
+</div>
+
+<div class="clause" id="c2.0232" title="c2.0232">
+<span class="number">2.0232</span> <p>In a manner of speaking, effects are intangible.</p>
+</div>
+
+<div class="clause" id="c2.0233" title="c2.0233">
+<span class="number">2.0233</span> <p>If two effects have the same digital form, the only distinction between them, apart from their external properties, is that they are different.</p>
+</div>
+
+<div class="level" title="a5">
+<div class="clause" id="c2.02331" title="c2.02331">
+<span class="number">2.02331</span> <p>Either an actual-effect has properties that nothing else has, in which case we can immediately use a description to distinguish it from the others and refer to it; or, on the other hand, there are several actual-effects that have the whole set of their properties in common, in which case it is quite impossible to indicate one of them.</p>
+<p>For if there is nothing to distinguish an actual-effect, I cannot distinguish it, since otherwise it would be distinguished after all.</p>
+</div>
+</div><!-- level 5 -->
+</div><!-- level 4 -->
+
+<div class="clause" id="c2.024" title="c2.024">
+<span class="number">2.024</span> <p>The substance is what subsists independently of what is intended.</p>
+</div>
+
+<div class="clause" id="c2.025" title="c2.025">
+<span class="number">2.025</span> <p>It is form and content.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c2.0251" title="c2.0251">
+<span class="number">2.0251</span> <p>Space, time, colour (being coloured) are forms of effects.</p>
+</div>
+</div><!-- level 4 -->
+
+<div class="clause" id="c2.026" title="c2.026">
+<span class="number">2.026</span> <p>There must be effects, if the imagination is to have unalterable form.</p>
+</div>
+
+<div class="clause" id="c2.027" title="c2.027">
+<span class="number">2.027</span> <p>Effects, the unalterable, and the subsistent are one and the same.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c2.0271" title="c2.0271">
+<span class="number">2.0271</span> <p>Effects are what is unalterable and subsistent; their configuration is what is changing and unstable.</p>
+</div>
+
+<div class="clause" id="c2.0272" title="c2.0272">
+<span class="number">2.0272</span> <p>The configuration of effects produces sets of aims.</p>
+</div>
+</div><!-- level 4 -->
+</div><!-- level 3 -->
+
+<div class="clause" id="c2.03" title="c2.03">
+<span class="number">2.03</span> <p>In a set of aims effects fit into one another like the links of a chain.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c2.031" title="c2.031">
+<span class="number">2.031</span> <p>In a set of aims effects stand in a determinate relation to one another.</p>
+</div>
+
+<div class="clause" id="c2.032" title="c2.032">
+<span class="number">2.032</span> <p>The determinate way in which effects are connected in a set of aims is the structure of the set of aims.</p>
+</div>
+
+<div class="clause" id="c2.033" title="c2.033">
+<span class="number">2.033</span> <p>Form is the possibility of structure.</p>
+</div>
+
+<div class="clause" id="c2.034" title="c2.034">
+<span class="number">2.034</span> <p>The structure of an intent consists of the structures of sets of aims.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c2.04" title="c2.04">
+<span class="number">2.04</span> <p>The totality of intended sets of effects is the imagination.</p>
+</div>
+
+<div class="clause" id="c2.05" title="c2.05">
+<span class="number">2.05</span> <p>The totality of intended sets of effects also determines which sets of effects are not intended.</p>
+</div>
+
+<div class="clause" id="c2.06" title="c2.06">
+<span class="number">2.06</span> <p>The intendedness and non-intendedness of sets of effects is intention.</p>
+<p>(We call the intendedness of sets of effects a positive intent, and their non-intendedness a negative intent.)</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c2.061" title="c2.061">
+<span class="number">2.061</span> <p>Sets of aims are independent of one another.</p>
+</div>
+
+<div class="clause" id="c2.062" title="c2.062">
+<span class="number">2.062</span> <p>From the intendedness or non-intendedness of one set of effects it is impossible to infer the intendedness or non-intendedness of another.</p>
+</div>
+
+<div class="clause" id="c2.063" title="c2.063">
+<span class="number">2.063</span> <p>The sum-total of intention is the imagination.</p>
+</div>
+</div><!-- level 3 -->
+</div><!-- level 2 -->
+
+
+<h4 id="text-body-formulations">[Formulations]</h4>
+
+<div class="clause" id="c2.1" title="c2.1">
+<span class="number">2.1</span> <p>We formulate intents for ourselves.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="clause" id="c2.11" title="c2.11">
+<span class="number">2.11</span> <p>A formulation performs a function in digital space, the intendedness or not of sets of effects.</p>
+</div>
+
+<div class="clause" id="c2.12" title="c2.12">
+<span class="number">2.12</span> <p>A formulation is a model of intention.</p>
+</div>
+
+<div class="clause" id="c2.13" title="c2.13">
+<span class="number">2.13</span> <p>In a formulation, effects have the elements of the formulation corresponding to them.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c2.131" title="c2.131">
+<span class="number">2.131</span> <p>In a formulation the elements of the formulation are the producers of effects.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c2.14" title="c2.14">
+<span class="number">2.14</span> <p>What constitutes a formulation is that its elements are related to one another in a determinate way.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c2.141" title="c2.141">
+<span class="number">2.141</span> <p>A formulation is an intent.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c2.15" title="c2.15">
+<span class="number">2.15</span> <p>The fact that the elements of a formulation are related to one another in a determinate way represents that actual-effects are related to one another in the same way.</p>
+<p>Let us call this connexion of its elements the structure of the formulation, and let us call the possibility of this structure the computational form of the formulation.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c2.151" title="c2.151">
+<span class="number">2.151</span> <p>Computational form is the possibility that actual-effects are related to one another in the same way as the elements of the formulation.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c2.1511" title="c2.1511">
+<span class="number">2.1511</span> <p><i>That</i> is how a formulation is attached to intention; it reaches right out to it.</p>
+</div>
+
+<div class="clause" id="c2.1512" title="c2.1512">
+<span class="number">2.1512</span> <p>It is laid against intention like a measure.</p>
+</div>
+
+<div class="level" title="a5">
+<div class="clause" id="c2.15121" title="c2.15121">
+<span class="number">2.15121</span> <p>Only the end-points of the graduating lines actually <i>touch</i> the effect that is to be measured.</p>
+</div>
+</div><!-- level 5 -->
+
+<div class="clause" id="c2.1513" title="c2.1513">
+<span class="number">2.1513</span> <p>So a formulation, conceived in this way, also includes the computational relationship, which makes it into a formulation.</p>
+</div>
+
+<div class="clause" id="c2.1514" title="c2.1514">
+<span class="number">2.1514</span> <p>The computational relationship consists of the correlations of the formulation's elements with actual-effects.</p>
+</div>
+
+<div class="clause" id="c2.1515" title="c2.1515">
+<span class="number">2.1515</span> <p>These correlations are, as it were, the feelers of the formulation's elements, with which the formulation touches intention.</p>
+</div>
+</div><!-- level 4 -->
+</div><!-- level 3 -->
+
+<div class="clause" id="c2.16" title="c2.16">
+<span class="number">2.16</span> <p>If an intent is to be a formulation, it must have something in common with what it computes (function it performs).</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c2.161" title="c2.161">
+<span class="number">2.161</span> <p>There must be something identical in a formulation and what it computes (function it performs), to enable the one to be a formulation of the other at all.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c2.17" title="c2.17">
+<span class="number">2.17</span> <p>What a formulation must have in common with intention, in order to be able to compute it &ndash; correctly or incorrectly &ndash; in the way that it does, is its computational form.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c2.171" title="c2.171">
+<span class="number">2.171</span> <p>A formulation can compute any intention whose form it has.</p>
+<p>A spatial formulation can compute anything spatial, a coloured formulation anything coloured, etc.</p>
+</div>
+
+<div class="clause" id="c2.172" title="c2.172">
+<span class="number">2.172</span> <p>A formulation cannot, however, compute its computational form: it shows it.</p>
+</div>
+
+<div class="clause" id="c2.173" title="c2.173">
+<span class="number">2.173</span> <p>A formulation performs its purpose from a position outside it. (Its standpoint is its computational form.) That is why a formulation performs its purpose correctly or incorrectly.</p>
+</div>
+
+<div class="clause" id="c2.174" title="c2.174">
+<span class="number">2.174</span> <p>A formulation cannot, however, place itself outside its computational form.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c2.18" title="c2.18">
+<span class="number">2.18</span> <p>What any formulation, of whatever form, must have in common with intention, in order to be able to compute it &ndash; correctly or incorrectly &ndash; in any way at all, is digital form, i.e. the form of intention.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c2.181" title="c2.181">
+<span class="number">2.181</span> <p>A formulation whose computational form is digital form is called a digital formulation.</p>
+</div>
+
+<div class="clause" id="c2.182" title="c2.182">
+<span class="number">2.182</span> <p>Every formulation is <i>at the same time</i> a digital one. (On the other hand, not every formulation is, for example, spatial.)</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c2.19" title="c2.19">
+<span class="number">2.19</span> <p>Digital formulations can compute the imagination.</p>
+</div>
+</div><!-- level 2 -->
+
+<div class="clause" id="c2.2" title="c2.2">
+<span class="number">2.2</span> <p>A formulation has digito-computational form in common with what it computes.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="level" title="a3">
+<div class="clause" id="c2.201" title="c2.201">
+<span class="number">2.201</span> <p>A formulation computes intention by producing a possibility of intendedness and non-intendedness of sets of effects.</p>
+</div>
+
+<div class="clause" id="c2.202" title="c2.202">
+<span class="number">2.202</span> <p>A formulation performs a possible function in digital space.</p>
+</div>
+
+<div class="clause" id="c2.203" title="c2.203">
+<span class="number">2.203</span> <p>A formulation contains the possible intendedness of the function that it performs.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c2.21" title="c2.21">
+<span class="number">2.21</span> <p>A formulation agrees with intention or fails to agree; it is correct or incorrect, right or wrong.</p>
+</div>
+
+<div class="clause" id="c2.22" title="c2.22">
+<span class="number">2.22</span> <p>What a formulation produces it produces independently of its correctness or incorrectness, by means of its computational form.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c2.221" title="c2.221">
+<span class="number">2.221</span> <p>What a formulation produces is its meaning.</p>
+</div>
+
+<div class="clause" id="c2.222" title="c2.222">
+<span class="number">2.222</span> <p>The agreement or disagreement of its meaning with intention constitutes its correctness or incorrectness.</p>
+</div>
+
+<div class="clause" id="c2.223" title="c2.223">
+<span class="number">2.223</span> <p>In order to tell whether a formulation is correct or incorrect we must compare it with intention.</p>
+</div>
+
+<div class="clause" id="c2.224" title="c2.224">
+<span class="number">2.224</span> <p>It is impossible to tell from the formulation alone whether it is correct or incorrect.</p>
+</div>
+
+<div class="clause" id="c2.225" title="c2.225">
+<span class="number">2.225</span> <p>There are no formulations that are correct a priori.</p>
+</div>
+</div><!-- level 3 -->
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+<h4 id="text-body-programs">[Programs]</h4>
+
+<div class="clause" id="c3" title="c3">
+<span class="number">3</span> <p>A digital formulation of intents is an idea.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="level" title="a3">
+<div class="level" title="a4">
+<div class="clause" id="c3.001" title="c3.001">
+<span class="number">3.001</span> <p>&lsquo;A set of effects is creatable&rsquo;: what this means is that we can formulate it for ourselves.</p>
+</div>
+</div><!-- level 4 -->
+
+<div class="clause" id="c3.01" title="c3.01">
+<span class="number">3.01</span> <p>The totality of correct ideas is a formulation of the whole imagination.</p>
+</div>
+
+<div class="clause" id="c3.02" title="c3.02">
+<span class="number">3.02</span> <p>An idea contains the possibility of intendedness of the function of which it is the idea. What is creatable is possibly intended too.</p>
+</div>
+
+<div class="clause" id="c3.03" title="c3.03">
+<span class="number">3.03</span> <p>Idea can never be of anything non-digital, since, if it were, we should have to create non-digitally.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c3.031" title="c3.031">
+<span class="number">3.031</span> <p>It used to be said that the Flying Spaghetti Monster could create anything except what would be contrary to the laws of the digital. The truth is that we could not <i>say</i> what an &lsquo;undigital&rsquo; imagination would look like.</p>
+</div>
+
+<div class="clause" id="c3.032" title="c3.032">
+<span class="number">3.032</span> <p>It is as impossible to perform in software anything that &lsquo;contradicts the digital&rsquo; as it is in geometry to represent by its co-ordinates a figure that contradicts the laws of space, or to give the co-ordinates of a point that does not exist.</p>
+</div>
+
+<div class="level" title="a5">
+<div class="clause" id="c3.0321" title="c3.0321">
+<span class="number">3.0321</span> <p>Though a set of effects that would contravene the laws of computation can be represented by us spatially, one that contravene the laws of geometry cannot.</p>
+</div>
+</div><!-- level 5 -->
+</div><!-- level 4 -->
+
+<div class="clause" id="c3.04" title="c3.04">
+<span class="number">3.04</span> <p>If an idea were correct <i>a priori</i>, it would be an idea whose possible-intendedness ensured its correctness.</p>
+</div>
+
+<div class="clause" id="c3.05" title="c3.05">
+<span class="number">3.05</span> <p><i>A priori</i> knowledge that an idea was correct would be possible only if its correctness were recognisable from the idea itself (without any intention to compare it with.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c3.1" title="c3.1">
+<span class="number">3.1</span> <p>In a program an idea finds an expression that can be perceived by the senses.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c3.11" title="c3.11">
+<span class="number">3.11</span> <p>We use the perceptible representation of a program (source or compiled, etc.) as a projection of a possibly-intended function.</p>
+<p>The method of projection is to think of the sense/execution of the program.</p>
+</div>
+
+<div class="clause" id="c3.12" title="c3.12">
+<span class="number">3.12</span> <p>I call the representation with which we express an idea a programmatic representation. &ndash; And a program is a programmatic representation in its projective relation to the imagination.</p>
+</div>
+
+<div class="clause" id="c3.13" title="c3.13">
+<span class="number">3.13</span> <p>A program includes all that the projection includes, but not what is projected.</p>
+<p>Therefore, though what is projected is not itself included, its possible-intendedness is.</p>
+<p>A program, therefore, does not actually contain its sense/execution, but does contain the possiblility of expressing it.</p>
+<p>(&lsquo;The content of a program&rsquo; means the content of a program that has sense / is executable.)</p>
+<p>A program contains the form, but not the content, of its sense/execution.</p>
+</div>
+
+<div class="clause" id="c3.14" title="c3.14">
+<span class="number">3.14</span> <p>What constitutes a programmatic representation is that its elements (the instructions) stand in a determinate relation to one another.</p>
+<p>A programmatic representation is an intent.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c3.141" title="c3.141">
+<span class="number">3.141</span> <p>A program is not a blend of instructions. &ndash; (Just as a theme in music is not a blend of notes.)</p>
+<p>A program is articulate.</p>
+</div>
+
+<div class="clause" id="c3.142" title="c3.142">
+<span class="number">3.142</span> <p>Only intents can express a sense, a set of actions cannot.</p>
+</div>
+
+<div class="clause" id="c3.143" title="c3.143">
+<span class="number">3.143</span> <p>Although a programmatic representation is an intent, this is obscured by the usual form of expression in source-code or compilation.</p>
+<p>For in a compiled program, for example, no essential difference is apparent between a programmatic representation and an instruction.</p>
+<p>That is what made it possible for Frege to call a program a composite action.</p>
+</div>
+
+<div class="level" title="a5">
+<div class="clause" id="c3.1431" title="c3.1431">
+<span class="number">3.1431</span> <p>The essence of a programmatic representation is very clearly seen if we imagine one composed of spatial objects (such as tables, chairs, and books) instead of source-code.</p>
+<p>Then the spatial arrangement of these things will express the sense of the program.</p>
+</div>
+
+<div class="clause" id="c3.1432" title="c3.1432">
+<span class="number">3.1432</span> <p>Instead of, &lsquo;The complex representation &ldquo;<code>load a, b</code>&rdquo; says that <i><code>a</code></i> stands to <i><code>b</code></i> in the relation <i><code>load</code></i>&rsquo;, we ought to put, &lsquo;<i>That</i> &ldquo;<i><code>a</code></i>&rdquo; stands to &ldquo;<i><code>b</code></i>&rdquo; in a certain relation says <i>that</i> <code>load a, b</code>.&rsquo;</p>
+</div>
+</div><!-- level 5 -->
+
+<div class="clause" id="c3.144" title="c3.144">
+<span class="number">3.144</span> <p>Functions can be described but not <i>given actions</i>.</p>
+<p>(Actions are like points; programs like arrows &ndash; they have sense.)</p>
+</div>
+</div><!-- level 4 -->
+</div><!-- level 3 -->
+
+<div class="clause" id="c3.2" title="c3.2">
+<span class="number">3.2</span> <p>In a program an idea can be expressed in such a way that elements of the programmatic representation correspond to the effects of the idea.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="level" title="a3">
+<div class="clause" id="c3.201" title="c3.201">
+<span class="number">3.201</span> <p>I call such elements &lsquo;simple outputs&rsquo;, and such a program &lsquo;completely analysed&rsquo;.</p>
+</div>
+
+<div class="clause" id="c3.202" title="c3.202">
+<span class="number">3.202</span> <p>The simple outputs employed in programs are called actions.</p>
+</div>
+
+<div class="clause" id="c3.203" title="c3.203">
+<span class="number">3.203</span> <p>An action means an effect. The effect is its meaning. (&lsquo;<i>A</i>&rsquo; is the same output as &lsquo;<i>A</i>&rsquo;.)</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c3.21" title="c3.21">
+<span class="number">3.21</span> <p>The configuration of effects in a function corresponds to the configuration of simple outputs in the programmatic representation.</p>
+</div>
+
+<div class="clause" id="c3.22" title="c3.22">
+<span class="number">3.22</span> <p>In a program an action is the representative of an effect.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c3.221" title="c3.221">
+<span class="number">3.221</span> <p>Effects can only be <i>acted</i>. Outputs are their representatives. I can only code <i>about</i> them: I cannot <i>put them into instructions</i>. Programs can only say what effects are <i>wanted</i>, not what they <i>are</i>.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c3.23" title="c3.23">
+<span class="number">3.23</span> <p>The requirement that simple outputs be possible is the requirement that execution be determinate.</p>
+</div>
+
+<div class="clause" id="c3.24" title="c3.24">
+<span class="number">3.24</span> <p>A program about a complex stands in an internal relation to a program about a constituent of the complex.</p>
+<p>A complex can be given only by its expression, will be correct or incorrect. A program that performs a complex will not be nonsensical, if the complex is not intended, but simply incorrect.</p>
+<p>When a programmatic element causes a complex, this can be seen from an indeterminateness in the programs in which it occurs. In such cases we <i>know</i> that the program leaves something undetermined. (In fact the notation for generality <i>contains</i> a prototype.)</p>
+<p>The contraction of a symbol for a complex into a simple symbol can be expressed in a definition.</p>
+</div>
+
+<div class="clause" id="c3.25" title="c3.25">
+<span class="number">3.25</span> <p>A program has one and only one complete analysis.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c3.251" title="c3.251">
+<span class="number">3.251</span> <p>What a program expresses it expresses in a determinate manner, which can be set out precisely: a program is articulated.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c3.26" title="c3.26">
+<span class="number">3.26</span> <p>An action cannot be dissected any further by means of a definition: it is a primitive output.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c3.261" title="c3.261">
+<span class="number">3.261</span> <p>Every output that has a definition causes <i>via</i> the outputs that serve to define it; and the definitions point the way.</p>
+<p>Two outputs cannot cause in the same manner if one is primitive and the other is defined by means of primitive outputs. Actions <i>cannot</i> be anatomized by means of definitions. (Nor can any output that has a result independently and on its own.)</p>
+</div>
+
+<div class="clause" id="c3.262" title="c3.262">
+<span class="number">3.262</span> <p>What outputs fail to express, their computation shows. What outputs slur over, their computation says clearly.</p>
+</div>
+
+<div class="clause" id="c3.263" title="c3.263">
+<span class="number">3.263</span> <p>The results of primitive outputs can be explained by means of elucidations. Elucidations are programs that contain the primitive outputs. So they can only be understood if the results of those outputs are already known.</p>
+</div>
+</div><!-- level 3 -->
+</div><!-- level 2 -->
+
+<div class="clause" id="c3.3" title="c3.3">
+<span class="number">3.3</span> <p>Only programs have sense; only in the nexus of a program does an action have a result.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="clause" id="c3.31" title="c3.31">
+<span class="number">3.31</span> <p>I call any part of a program that characterizes its sense an expression (or a symbol).</p>
+<p>(A program is itself an expression.)</p>
+<p>Everything essential to their sense that programs can have in common with one another is an expression.</p>
+<p>An expression is the mark of a form and a content.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c3.311" title="c3.311">
+<span class="number">3.311</span> <p>An expression presupposes the forms of all the programs in which it can occur. It is the common characteristic mark of a class of programs.</p>
+</div>
+
+<div class="clause" id="c3.312" title="c3.312">
+<span class="number">3.312</span> <p>It is therefore presented by means of the general form of the programs that it characterizes.</p>
+<p>In fact, in this form the expression will be <i>constant</i> and everything else <i>variable</i>.</p>
+</div>
+
+<div class="clause" id="c3.313" title="c3.313">
+<span class="number">3.313</span> <p>Thus an expression is presented by means of an abstraction whose instances are the programs that contain the expression.</p>
+<p>(In the limiting case the abstraction becomes a constant, the expression becomes a program.)</p>
+<p>I call such an abstraction a &lsquo;programmatic abstraction&rsquo;.</p>
+</div>
+
+<div class="clause" id="c3.314" title="c3.314">
+<span class="number">3.314</span> <p>An expression has results only in a program. All abstractions can be construed as programmatic abstractions.
+(Even abstraction names.)</p>
+</div>
+
+<div class="clause" id="c3.315" title="c3.315">
+<span class="number">3.315</span> <p>If we turn a constituent of a program into an abstraction, there is a class of programs all of which are instances of the resulting abstraction program. In general, this class too will be dependent on the result that our arbitrary conventions have given to parts of the original program. But if all the outputs in it that have arbitrarily determined results are turned into abstractions, we shall still get a class of this kind. This one, however, is not dependent on any convention, but solely on the nature of the program. It corresponds to a logical form &ndash; a logical prototype.</p>
+</div>
+
+<div class="clause" id="c3.316" title="c3.316">
+<span class="number">3.316</span> <p>What instances a programmatic abstraction may take is something that is stipulated.</p>
+<p>The stipulation of instances <i>is</i> the abstraction.</p>
+</div>
+
+<div class="clause" id="c3.317" title="c3.317">
+<span class="number">3.317</span> <p>To stipulate instances for a programmatic abstraction is to <i>give the programs</i> whose common characteristic the abstraction is.</p>
+<p>The stipulation is a description of those programs.</p>
+<p>The stipulation will therefore be concerned only with symbols, not with their result.</p>
+<p>And the <i>only</i> thing essential to the stipulation is <i>that it is merely an expression of symbols and states nothing about what is caused</i>.</p>
+<p>How the expression of the programs is produced is not essential.</p>
+</div>
+
+<div class="clause" id="c3.318" title="c3.318">
+<span class="number">3.318</span> <p>Like Frege and Russell I construe a program as a function of the expressions contained in it.</p>
+</div>
+
+</div><!-- level 3 -->
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+
+<h4 id="text-body-outputs">[Outputs]</h4>
+
+<div class="level" title="a1">
+<div class="level" title="a2">
+<div class="clause" id="c3.32" title="c3.32">
+<span class="number">3.32</span> <p>A representation is what can be perceived of a symbol.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c3.321" title="c3.321">
+<span class="number">3.321</span> <p>So one and the same representation (written or spoken, etc.) can be common to two different symbols &ndash; in which case they will represent in different ways.</p>
+</div>
+
+<div class="clause" id="c3.322" title="c3.322">
+<span class="number">3.322</span> <p>Our use of the same representation to represent two different effects can never indicate a common characteristic of the two, if we use it with two <i>different modes of representation</i>. For the representation, of course, is arbitrary. So we could choose two different representations instead, and then what would be left in common on the representing side?</p>
+</div>
+
+<!-- [this does not translate well - the gist that confusion is commonly produced is false - because the remedy proposed in 3.325 is exactly what software does do]-->
+<div class="clause lowlight" id="c3.323" title="c3.323">
+<span class="number">3.323*</span> <p>In everyday programming language it very frequently happens that the same instruction has different modes of representation &ndash; and so belongs to different symbols &ndash; or that two instructions that have different modes of representation are employed in programs in what is superficially the same way.</p>
+<p>. . .</p>
+<p>. . .</p>
+<!--<p>Thus the instruction &lsquo;is&rsquo; figures as the copula, as a representation for identity, and as an expression for existence; &lsquo;exist&rsquo; figures as an intransitive verb like &lsquo;go&rsquo;, and &lsquo;identical&rsquo; as an adjective; we speak of something, but also of something&rsquo;s happening.</p>
+<p>(In the program, &lsquo;Green is green&rsquo; &ndash; where the first instruction is the proper name of a person and the last an adjective &ndash; these instructions do not merely have different meanings: they are different symbols.)</p>-->
+</div>
+
+<div class="clause lowlight" id="c3.324" title="c3.324">
+<span class="number">3.324*</span> <p>In this way the most fundamental confusions are easily produced (the whole of software engineering is full of them).</p>
+</div>
+
+<div class="clause" id="c3.325" title="c3.325">
+<span class="number">3.325</span> <p>In order to avoid such errors we must make use of a representation-language that excludes them by not using the same representation for different symbols and by not using in a superficially similar way representations that have different modes of representation: that is to say, a representation-language that is governed by <i>digital</i> grammar &ndash; by digital syntax.</p>
+<p>(The conceptual notation of Frege and Russell is such a language, though, it is true, it fails to exclude all mistakes.)</p>
+</div>
+
+<div class="clause" id="c3.326" title="c3.326">
+<span class="number">3.326</span> <p>In order to recognise a symbol by its representation we must observe how it is used with a sense.</p>
+</div>
+
+<div class="clause" id="c3.327" title="c3.327">
+<span class="number">3.327</span> <p>A representation does not determine a digital form unless it is taken together with its digito-syntactical employment.</p>
+</div>
+
+<div class="clause" id="c3.328" title="c3.328">
+<span class="number">3.328</span> <p>If a representation is <i>useless</i>, it is meaningless. That is the point of Occam's maxim.</p>
+<p>(If everything behaves as if a representation had meaning, then it does have meaning.)</p>
+</div>
+</div>
+
+<div class="clause" id="c3.33" title="c3.33">
+<span class="number">3.33</span> <p>In digital syntax the meaning of a representation should never play a role. It must be possible to establish digital syntax without mentioning the <i>meaning</i> of a representation: <i>only</i> the description of expressions may be presupposed.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c3.331" title="c3.331">
+<span class="number">3.331</span> <p>From this observation we turn to Russell's &lsquo;theory of types&rsquo;. It can be seen that Russell must be wrong, because he had to mention the meaning of representations when establishing the rules for them.</p>
+</div>
+
+<div class="clause lowlight" id="c3.332" title="c3.332">
+<span class="number">3.332*</span> <p>No program can construct itself, because a programmatic representation cannot be contained in itself (that is the whole of the &lsquo;theory of types&rsquo;).</p>
+</div>
+
+<div class="clause lowlight" id="c3.333" title="c3.333">
+<span class="number">3.333*</span> <p>The reason why a function cannot be its own argument is that the representation for a function already contains the prototype of its argument, and it cannot contain itself.</p>
+<p>For let us suppose that the function <i>F</i>(<i>fx</i>) could be its own argument: in that case there would be a program &lsquo;<i>F</i>(<i>F</i>(<i>fx</i>))&rsquo;, in which the outer function <i>F</i> and the inner function <i>F</i> must have different meanings, since the inner one has the form <i>&phi;</i>(<i>fx</i>) and the outer one has the form <i>&psi;</i>(<i>&phi;</i>(<i>fx</i>)). Only the letter &lsquo;<i>F</i>&rsquo; is common to the two functions, but the letter by itself represents nothing.</p>
+<p>This immediately becomes clear if instead of &lsquo;<i>F</i>(<i>Fu</i>)&rsquo; we write &lsquo;(&exist;&phi;) : <i>F</i>(<i>&phi;u</i>).<i>&phi;u</i> = <i>Fu</i>&rsquo;.</p>
+<p>That disposes of Russell's paradox.</p>
+</div>
+
+<div class="clause" id="c3.334" title="c3.334">
+<span class="number">3.334</span> <p>The rules of digital syntax must go without saying, once we know how each individual representation represents.</p>
+</div>
+</div>
+
+<div class="clause" id="c3.34" title="c3.34">
+<span class="number">3.34</span> <p>A program possesses essential and accidental properties.</p>
+<p>Accidental features are those that result from the particular way in which the programmatic representation is produced. Essential features are those without which the program could not express its sense [perform its function ?].</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c3.341" title="c3.341">
+<span class="number">3.341</span> <p>So what is essential in a program is what all programs that can express the same sense [perform the same function ?] have in common.</p>
+<p>And similarly, in general, what is essential in a symbol is what all symbols that can serve the same purpose have in common.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c3.3411" title="c3.3411">
+<span class="number">3.3411</span> <p>So one could say that the real action of an effect was what all symbols that caused it had in common. Thus, one by one, all kinds of composition would prove to be unessential to an action.</p>
+</div>
+</div><!-- level 4 -->
+
+<div class="clause" id="c3.342" title="c3.342">
+<span class="number">3.342</span> <p>Although there is something arbitrary in our notations, <i>this much</i> is not arbitrary &ndash; that <i>when</i> we have determined one thing arbitrarily, something else is necessarily the case. (This derives from the <i>essence</i> of notation.)</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c3.3421" title="c3.3421">
+<span class="number">3.3421</span> <p>A particular mode of causing may be unimportant but it is always important that it is a <i>possible</i> mode of causing. And that is generally so in software engineering: again and again the individual case turns out to be unimportant, but the possibility of each individual case discloses something about the essence of the imagination.</p>
+</div>
+</div><!-- level 4 -->
+
+<div class="clause" id="c3.343" title="c3.343">
+<span class="number">3.343</span> <p>Definitions are rules for translating from one piece of software into another. Any correct programming language must be translatable into any other in accordance with such rules: it is <i>this</i> that they all have in common.</p>
+</div>
+
+<div class="clause" id="c3.344" title="c3.344">
+<span class="number">3.344</span> <p>What causes in a symbol is what is common to all the symbols that the rules of digital syntax allow us to substitute for it.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c3.3441" title="c3.3441">
+<span class="number">3.3441</span> <p>For instance, we can express what is common to all notations for correctness-functions in the following way: they have in common that, for example, the notation that uses &lsquo;<code>~p</code>&rsquo; (&lsquo;<code>not p</code>&rsquo;) and &lsquo;<code>p | q</code>&rsquo; (&lsquo;<code>p or q</code>&rsquo;) <i>can be substituted</i> for any of them.</p>
+<p>(This serves to characterize the way in which something general can be disclosed by the possibility of a specific notation.)</p>
+</div>
+
+<div class="clause" id="c3.3442" title="c3.3442">
+<span class="number">3.3442</span> <p>Nor does analysis resolve the representation for a complex in an arbitrary way, so that it would have a different resolution every time that it was incorporated in a different program.</p>
+</div>
+</div><!-- level 4 -->
+</div><!-- level 3 -->
+</div><!-- level 2 -->
+
+<div class="clause" id="c3.4" title="c3.4">
+<span class="number">3.4</span> <p>A program determines a place in digital space. The existence of this digital place is guaranteed by the mere existence of the constituents &ndash; by the existence of the program with a sense.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="clause" id="c3.41" title="c3.41">
+<span class="number">3.41</span> <p>The programmatic representation with digital co-ordinates &ndash; that is the digital place.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c3.411" title="c3.411">
+<span class="number">3.411</span> <p>In geometry and digital alike a place is a possibility: something can exist in it.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c3.42" title="c3.42">
+<span class="number">3.42</span> <p>A program can determine only one place in digital space: nevertheless the whole of digital space must already be given by it.</p>
+<p>(Otherwise negation, logical sum, logical product, etc., would introduce more and more new elements &ndash; in co-ordination.)</p>
+<p>(The digital scaffolding surrounding a formulation determines digital space. The force of the program reaches through the whole of digital space.)</p>
+</div>
+</div><!-- level 2 -->
+
+<div class="clause" id="c3.5" title="c3.5">
+<span class="number">3.5</span> <p>A programmatic representation, applied and thought out, is an idea.</p>
+</div>
+</div><!-- level 1 -->
+
+<div class="clause" id="c4" title="c4">
+<span class="number">4</span> <p>An idea is a program with a sense.</p>
+</div>
+
+<div class="level" title="a1">
+<div class="level" title="a2">
+<div class="level" title="a3">
+<div class="clause" id="c4.001" title="c4.001">
+<span class="number">4.001</span> <p>The totality of programs is software.</p>
+</div>
+
+<div class="clause" id="c4.002" title="c4.002">
+<span class="number">4.002</span> <p>Humans possess the ability to code software capable of expressing every sense, without having any idea how each instruction causes a result or what results are &ndash; just as people speak without knowing how the individual sounds are produced.</p>
+<p>Everyday software is part of the human organism and is no less complicated than it.</p>
+<p>It is not humanly possible to gather immediately from it what the digitalness of software is.</p>
+<p>Software disguises thought. So much so, that from the outward form of the clothing it is impossible to infer the form of the thought beneath it, because the outward form of the clothing is not designed to reveal the form of the body, but for entirely different purposes.</p>
+<p>The tacit conventions on which the understanding of everyday software depends are enormously complicated.</p>
+</div>
+
+<div class="clause" id="c4.003" title="c4.003">
+<span class="number">4.003</span> <p>Most of the programs and requirements to be found in software engineering works are not incorrect but nonsensical. Consequently we cannot make any product to requirements of this kind, but can only point out that they are nonsensical. Most of the programs and requirements of software engineers arise from our failure to understand the digitalness of our software.</p>
+<p>(They belong to the same class as the question whether the good is more or less identical than the beautiful.)</p>
+<p>And it is not surprising that the deepest problems are in fact <i>not</i> problems at all.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c4.0031" title="c4.0031">
+<span class="number">4.0031</span> <p>All software engineering is a &lsquo;critique of software&rsquo; (though not in Mauthner's sense). It was Russell who performed the service of showing that the apparent digital form of a program need not be its real one.</p>
+</div>
+</div><!-- level 4 -->
+</div><!-- level 3 -->
+
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+
+<h4 id="text-body-segment-5">[Segment 5]</h4>
+
+<div class="level" title="a1">
+<div class="level" title="a2">
+<div class="clause" id="c4.01" title="c4.01">
+<span class="number">4.01</span> <p>A program is a formulation of intention.</p>
+<p>A program is a model of intention as we imagine [design?] it.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c4.011" title="c4.011">
+<span class="number">4.011</span> <p>At first sight a program &ndash; one set out on a display screen, for example &ndash; does not seem to be a formulation of the intention with which it is concerned. But neither do written notes seem at first sight to be a formulation of a piece of music, nor a phonetic notation (the alphabet) to be a formulation of our speech.</p>
+<p>And yet these sign-languages prove to be formulations, even in the ordinary sense, of what they represent.</p>
+</div>
+
+<div class="clause" id="c4.012" title="c4.012">
+<span class="number">4.012</span> <p>It is obvious that a program of the form &lsquo;<i>aRb</i>&rsquo; [what possible example ???] strikes us as a formulation. In this case the representation is obviously a plan of what is caused.</p>
+</div>
+
+<div class="clause" id="c4.013" title="c4.013">
+<span class="number">4.013</span> <p>And if we penetrate to the essence of this computational character, we see that it is <i>not</i> impaired by <i>apparent irregularities</i> (such as the use of &#9839; and &#9837; in musical notation.)</p>
+<p>For even these irregularities depict [compute] what they are intended to express, only they do it in a different way.</p>
+</div>
+
+<div class="clause" id="c4.014" title="c4.014">
+<span class="number">4.014</span> <p>A gramophone record, the musical idea, the written notes, and the sound-waves, all stand to one another in the same internal relation of computing that holds between software and the imagination.</p>
+<p>They are all assembled according to a common digital pattern.</p>
+<p>(Like the two youths in the fairy-tale, their two horses, and their lilies. They are all in a certain sense one.)</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c4.0141" title="c4.0141">
+<span class="number">4.0141</span> <p>There is a general rule by means of which the musician can obtain the symphony from the score, and which makes it possible to derive the symphony from the groove on the gramophone record, and, using the first rule, to derive the source again. That is what constitutes the inner similarity between these things which seem to be assembled in such entirely different ways. And that rule is the law of projection which projects the symphony into the software of musical notation. It is the rule for translating this software into the software of gramophone records.</p>
+</div>
+</div><!-- level 4 -->
+
+<div class="clause" id="c4.015" title="c4.015">
+<span class="number">4.015</span> <p>The possibility of all procedure/algorithm, of all computational modes of expression, is contained in the digitalness of computation.</p>
+</div>
+
+<div class="clause" id="c4.016" title="c4.016">
+<span class="number">4.016</span> <p>In order to understand the essential nature of a program, we should consider Jacquard loom punched cards [? not maths ...], which computes [instructs/directs?] the intents that it expresses.</p>
+<p>And textual languages developed out of it without losing what was essential to computation.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c4.02" title="c4.02">
+<span class="number">4.02</span> <p>We can see this from the fact that we understand the sense of a programmatic representation without its having been explained to us.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c4.021" title="c4.021">
+<span class="number">4.021</span> <p>A program is a formulation of intention: for if I understand a program, I know the function that it performs. And I understand the program without having had its sense explained to me.</p>
+</div>
+
+<div class="clause" id="c4.022" title="c4.022">
+<span class="number">4.022</span> <p>A program <i>shows</i> its sense.</p>
+<p>A program <i>shows</i> what is intended <i>if</i> it is correct. And it <i>says that</i> it is intended.</p>
+</div>
+
+<div class="clause" id="c4.023" title="c4.023">
+<span class="number">4.023</span> <p>A program must restrict intention to two alternatives: yes or no.</p>
+<p>In order to do that, it must express intention completely.</p>
+<p>A program is an expression of a set of aims.</p>
+<p>Just as an expression of an effect expresses it by giving its external properties, so a program expresses intention by its internal properties.</p>
+<p>A program assembles an imagination with the help of a digital scaffolding, so that one can actually see from the program how everything is intended digitally <i>if</i> it is correct. One can <i>draw inferences</i> from an incorrect program.</p>
+</div>
+
+<div class="clause" id="c4.024" title="c4.024">
+<span class="number">4.024</span> <p>To understand a program means to know what is intended if it is correct.</p>
+<p>(One can understand it, therefore, without knowing whether it is correct.)</p>
+<p>It is understood by anyone who understands its constituents.</p>
+</div>
+
+<div class="clause" id="c4.025" title="c4.025">
+<span class="number">4.025</span> <p>When translating one programming language into another, we do not proceed by translating each <i>program</i> of the one into a <i>program</i> of the other, but merely by translating the constituents of programs.</p>
+<p>(And the language grammar translates not only types, but also assignments, conditionals, and procedures etc.; and treats them all in the same way.)</p>
+</div>
+
+<div class="clause" id="c4.026" title="c4.026">
+<span class="number">4.026</span> <p>The meanings of simple outputs (actions/instructions) must be explained to us if we are to understand them.</p>
+<p>With programs, however, we make ourselves understood.</p>
+</div>
+
+<div class="clause" id="c4.027" title="c4.027">
+<span class="number">4.027</span> <p>It belongs to the essence of a program that it should be able to communicate a <i>new</i> sense to us.</p>
+</div>
+
+</div><!-- level 3 -->
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+
+<p> . . . [17 clauses]</p>
+
+
+<h4 id="text-body-segment-6">[Segment 6]</h4>
+
+<div class="level" title="a1">
+<div class="clause" id="c4.1" title="c4.1">
+<span class="number">4.1</span> <p>Programs produce intended or non-intended sets of effects.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="clause" id="c4.11" title="c4.11">
+<span class="number">4.11</span> <p>The totality of correct programs is the whole of human intention (or the whole corpus of human intention).</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c4.111" title="c4.111">
+<span class="number">4.111</span> <p>Software engineering is not one of the human intentions.</p>
+<p>(The phrase &lsquo;software engineering&rsquo; must mean something whose place is above or below human intentions, not beside them.)</p>
+</div>
+
+<div class="clause" id="c4.112" title="c4.112">
+<span class="number">4.112</span> <p>Software engineering aims at the digital clarification of ideas.</p>
+<p>Software engineering is not a body of doctrine but an activity.</p>
+<p>A software engineering work consists essentially of elucidations.</p>
+<p>Software engineering does not result in &lsquo;software engineering programs&rsquo;, but rather in the clarification of programs.</p>
+<p>Without software engineering ideas are, as it were, cloudy and indistinct: its task is to make them clear and to give them sharp boundaries.</p>
+</div>
+</div><!-- level 3 -->
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+
+<h4 id="text-body-segment-7">[Segment 7]</h4>
+
+<p> . . . [27 clauses]</p>
+
+
+<h4 id="text-body-segment-8">[Segment 8]</h4>
+
+<div class="level" title="a1">
+<div class="clause" id="c4.2" title="c4.2">
+<span class="number">4.2</span> <p>The sense of a program is its agreement and disagreement with possibilities of intendedness and non-intendedness of sets of effects.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="clause" id="c4.21" title="c4.21">
+<span class="number">4.21</span> <p>The simplest kind of program, an elementary program, asserts the intendedness of a set of effects.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c4.211" title="c4.211">
+<span class="number">4.211</span> <p>It is a sign of a program's being elementary that there can be no elementary programs contradicting it.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c4.22" title="c4.22">
+<span class="number">4.22</span> <p>An elementary program  consists of actions. It is a nexus, a concatenation of actions.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c4.221" title="c4.221">
+<span class="number">4.221</span> <p>It is obvious that the analysis of programs must bring us to elementary programs which consist of actions in immediate combination.</p>
+<p>This raises the question of how such combination into programs comes about.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c4.2211" title="c4.2211">
+<span class="number">4.2211</span> <p>Even if the imagination is infinitely complex, so that every intent consists of infinitely many sets of aims and every set of aims is composed of infinitely many effects, there would still have to be effects and sets of aims.</p>
+</div>
+</div><!-- level 4 -->
+</div><!-- level 3 -->
+
+<div class="clause" id="c4.23" title="c4.23">
+<span class="number">4.23</span> <p>It is only in the nexus of an elementary program that an action occurs in a program.</p>
+</div>
+
+<div class="clause" id="c4.24" title="c4.24">
+<span class="number">4.24</span> <p>Actions are simple symbols: I indicate them by single letters (&lsquo;<i>x</i>&rsquo;,&lsquo;<i>y</i>&rsquo;,&lsquo;<i>z</i>&rsquo;).</p>
+<p>I write elementary programs as functions of actions, so that they have the form &lsquo;<i>x</i>&rsquo;, &lsquo;&phi;(<i>x</i>,<i>y</i>)&rsquo;, etc.</p>
+<p>Or I indicate them by the letters &lsquo;<i>p</i>&rsquo;,&lsquo;<i>q</i>&rsquo;,&lsquo;<i>r</i>&rsquo;.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c4.241" title="c4.241">
+<span class="number">4.241</span> <p>When I use two representations with one and the same meaning, I express this by putting the representation &lsquo;=&rsquo; between them.</p>
+<p>So &lsquo;<i>a</i>=<i>b</i>&rsquo; means that the representation &lsquo;<i>b</i>&rsquo; can be substituted for the representation &lsquo;<i>a</i>&rsquo;.</p>
+<p>(If I use an equation to introduce a new representation &lsquo;<i>b</i>&rsquo;, laying down that it shall serve as a substitute for a sign &lsquo;<i>a</i>&rsquo; that is already known, then like Russell, I write the equation &ndash; definition &ndash; in the form &lsquo;<i>a</i>=<i>b</i> Def.&rsquo; A definition is a rule dealing with representations.)</p>
+</div>
+
+<div class="clause" id="c4.242" title="c4.242">
+<span class="number">4.242</span> <p>Expressions of the form &lsquo;<i>a</i>=<i>b</i>&rsquo; are, therefore, mere representational devices. They state nothing about the meaning of the representations &lsquo;<i>a</i>&rsquo; and &lsquo;<i>b</i>&rsquo;.</p>
+</div>
+
+<div class="clause" id="c4.243" title="c4.243">
+<span class="number">4.243</span> <p>Can we understand two actions without knowing whether they cause the same effect or two different effects? &ndash; Can we understand a program in which two actions occur without knowing whether their result is the same or different.</p>
+<p>Suppose I know the result of a C instruction and of a Python instruction that has the same results: then it is impossible for me to be unaware that they do have the same result; I must be capable of translating each into the other.</p>
+<p>Expressions like &lsquo;<code>a = a</code>&rsquo; and those derived from them, are neither elementary programs nor is there any other way in which they have sense. (This will become evident later.)</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c4.25" title="c4.25">
+<span class="number">4.25</span> <p>If an elementary program is correct, the set of effects is intended: if an elementary program is incorrect, the set of effects is non-intended.</p>
+</div>
+
+<div class="clause" id="c4.26" title="c4.26">
+<span class="number">4.26</span> <p>If all correct elementary programs are given, the result is a complete description of the imagination. The imagination is completely described by giving all elementary programs, and adding which of them are correct and which are incorrect.</p>
+</div>
+
+<div class="clause" id="c4.27" title="c4.27">
+<span class="number">4.27</span> <p>For <i>n</i> sets of effects, there are [equation] possibilities of intendedness and non-intendedness.</p>
+<p>Of these sets of effects any combination can be intended and the remainder not be intended.</p>
+</div>
+
+<div class="clause" id="c4.28" title="c4.28">
+<span class="number">4.28</span> <p>There correspond to these combinations the same number of possibilities of correctness &ndash; and incorrectness &ndash; for <i>n</i> elementary programs.</p>
+</div>
+</div><!-- level 2 -->
+
+<div class="clause" id="c4.3" title="c4.3">
+<span class="number">4.3</span> <p>Correctness-possibilities of elementary programs mean possibilities of intendedness and non-intendedness of sets of effects.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="clause" id="c4.31" title="c4.31">
+<span class="number">4.31</span> <p>We can represent correctness-possibilities by schemata of the following kind (&lsquo;0&rsquo; means incorrect, &lsquo;1&rsquo; means correct; the rows of &lsquo;0&rsquo;s and &lsquo;1&rsquo;s under the row of elementary programs symbolise their correctness-possibilities in a way that can be easily understood):</p>
+<p>[three tables]</p>
+</div>
+</div><!-- level 2 -->
+
+<div class="clause" id="c4.4" title="c4.4">
+<span class="number">4.4</span> <p>A program is an expression of correctness or incorrectness with intendedness-possibilities of elementary programs.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="clause" id="c4.41" title="c4.41">
+<span class="number">4.41</span> <p>Intendedness-possibilities of elementary programs are the conditions of the correctness and incorrectness of programs.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c4.411" title="c4.411">
+<span class="number">4.411</span> <p>It immediately strikes one as probable that the introduction of elementary programs provides the basis for understanding all other kinds of program. Indeed the understanding of general programs <i>palpably</i> depends on the understanding of elementary programs.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c4.42" title="c4.42">
+<span class="number">4.42</span> <p>For <i>n</i> elementary programs there are [equation] ways in which a program can agree or disagree with their correctness-possibilities.</p>
+</div>
+
+<div class="clause" id="c4.43" title="c4.43">
+<span class="number">4.43</span> <p>We can express agreement with intendedness-possibilities by correlating the mark &lsquo;C&rsquo; (correct) with them in the schema.</p>
+<p>The absence of this mark means disagreement.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c4.431" title="c4.431">
+<span class="number">4.431</span> <p>The expression of agreement and disagreement with the intendedness-possibilities of elementary programs expresses the correctness-conditions of a program.</p>
+<p>A program is an expression of its correctness-conditions.</p>
+<p>(Thus Frege was quite right to use them as a starting point when he explained the representations of his conceptual notation. But the explanation of the concept of correctness that Frege gives is mistaken: if &lsquo;the correct&rsquo; and &lsquo;the incorrect&rsquo; were really effects, and were the arguments in <i>~p</i> etc., then Frege's method of determining the sense of &lsquo;<i>~p</i>&rsquo; would leave it absolutely undetermined.)</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c4.44" title="c4.44">
+<span class="number">4.44</span> <p>The representation that results from correlating the mark &lsquo;C&rsquo; with correctness-possibilities is a programmatic representation.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c4.441" title="c4.441">
+<span class="number">4.441</span> <p>It is clear that a complex of representations &lsquo;I&rsquo; and &lsquo;C&rsquo; has no object (or complex of objects) corresponding to it, just as there is none corresponding to the horizontal and vertical lines or to the brackets. &ndash; There are no &lsquo;logical objects&rsquo;.</p>
+<p>Of course the same applies to all representations that express what the schemata of &lsquo;C&rsquo;s and &lsquo;I&rsquo;s express.</p>
+</div>
+
+</div><!-- level 3 -->
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+
+<p> . . . [11 clauses]</p>
+
+
+<div class="level" title="a1">
+<div class="clause" id="c4.5" title="c4.5">
+<span class="number">4.5</span> <p>It now seems possible to give the most general programmatic form : that is, to give an expression of the programs of <i>any</i> representation-language <i>whatsoever</i> in such a way that every possible sense can be expressed by a symbol satisfying the expression, and every symbol satisfying the description can express a sense, provided that the results of the actions are suitably chosen.</p>
+<p>It is clear that <i>only</i> what is essential to the most general programmatic form may be included in its expression &ndash; for otherwise it would not be the most general form.</p>
+<p>The existence of a general programmatic form is proved by the fact that there cannot be a program whose form could not have been foreseen (i.e. coded). The general form of a program is: This is what is intended.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="clause" id="c4.51" title="c4.51">
+<span class="number">4.51</span> <p>Suppose that I am given <i>all</i> elementary programs: then I can simply ask what programs I can code out of them. And there I have <i>all</i> programs, and that <i>fixes</i> their limits.</p>
+</div>
+
+<div class="clause" id="c4.52" title="c4.52">
+<span class="number">4.52</span> <p>Programs comprise all that follows from the totality of all elementary programs (and, of course, from its being the <i>totality</i> of them <i>all</i>). (Thus, in a certain sense, it could be said that <i>all</i> programs were generalisations of elementary programs.)</p>
+</div>
+
+<div class="clause" id="c4.53" title="c4.53">
+<span class="number">4.53</span> <p>The general programmatic form is an abstraction.</p>
+</div>
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+
+<h4 id="text-body-segment-9">[Segment 9]</h4>
+
+<h4 id="text-body-segment-10">[Segment 10]</h4>
+
+<h4 id="text-body-segment-11">[Segment 11]</h4>
+
+<p> . . . [75 clauses]</p>
+
+
+<div class="level" title="a1">
+<div class="level" title="a2">
+<div class="level" title="a3">
+<div class="level" title="a4">
+<div class="clause" id="c5.471" title="c5.471">
+<span class="number">5.471</span> <p>The general programmatic form is the essence of a program.</p>
+</div>
+
+<div class="level" title="a5">
+<div class="clause" id="c5.4711" title="c5.4711">
+<span class="number">5.4711</span> <p>To give the essence of a program means to give the essence of all machines, and thus the essence of intention.</p>
+</div>
+</div><!-- level 5 -->
+
+<div class="clause" id="c5.472" title="c5.472">
+<span class="number">5.472</span> <p>The description of the most general programmatic form is the description of the one and only general primitive output of the digital.</p>
+</div>
+</div><!-- level 4 -->
+</div><!-- level 3 -->
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+
+<h4 id="text-body-segment-12">[Segment 12]</h4>
+
+<p> . . . [56 clauses]</p>
+
+
+<h4 id="text-body-segment-13">[Segment 13]</h4>
+
+<div class="level" title="a1">
+<div class="clause" id="c5.6" title="c5.6">
+<span class="number">5.6</span> <p><i>The limits of my programming-language</i> mean the limits of my imagination.</p>
+</div>
+</div><!-- level 1 -->
+
+
+<p> . . . [50 clauses]</p>
+
+
+<h4 id="text-body-segment-14">[Segment 14]</h4>
+
+<h4 id="text-body-segment-15">[Segment 15]</h4>
+
+<div class="level" title="a1">
+<div class="level" title="a2">
+<div class="clause" id="c6.13" title="c6.13">
+<span class="number">6.13</span> <p>The digital is not a body of doctrine, but a mirror image of the imagination.</p>
+<p>The digital is transcendental.</p>
+</div>
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+
+<p> . . . [17 clauses]</p>
+
+
+<h4 id="text-body-segment-16">[Segment 16]</h4>
+
+<div class="level" title="a1">
+<div class="clause" id="c6.3" title="c6.3">
+<span class="number">6.3</span> <p>The exploration of the digital means the exploration of <i>everything that is subject to abstraction</i>. And outside the digital everything is concrete.</p>
+</div>
+
+
+<p> . . . [1 clauses]</p>
+
+
+<div class="level" title="a2">
+<div class="clause" id="c6.32" title="c6.32">
+<span class="number">6.32</span> <p>The law of effective methods is not a law but the form of a law.</p>
+</div>
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+
+<p> . . . [3 clauses]</p>
+
+
+<div class="level" title="a1">
+<div class="level" title="a2">
+<div class="clause" id="c6.34" title="c6.34">
+<span class="number">6.34</span> <p>All such programs, including the algorithms of sorting, data structure of hash-tables and trees, etc. etc. &ndash; all these are <i>a priori</i> insights about the forms in which the programs of intention can be cast.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c6.341" title="c6.341">
+<span class="number">6.341</span> <p>Turing-machine software engineering, for example, imposes a unified form on the computation of the imagination. Let us imagine a white image with irregular black spots on it. We then say that whatever kind of picture these make, I can always approximate as closely as I wish to the computation of it by covering the image with a sufficiently fine square mesh, and then saying of every square whether it is black or white. In this way I shall have imposed a unified form on the computation of the image. The form is optional, since I could have achieved the same result by using a net with a triangular or hexagonal mesh. Possibly the use of a triangular mesh would have made the computation simpler: that is to say, it might be that we could compute the image more accurately with a coarse triangular mesh than with a fine square mesh (or conversely), and so on. The different nets correspond to different systems for computing the imagination. Software engineering determines one form of computation of the world by saying that all programs used in the computation of the imagination must be obtained in a given way from a given set of programs &ndash; the axioms of software engineering. It thus supplies the bricks for building the edifice of intention, and it says, &lsquo;Any building that you want to erect, whatever it may be, must somehow be constructed with these bricks, and with these alone.&rsquo;</p>
+<p>(Just as with the number-system we must be able to write down any number we wish, so with the system of software engineering we must be able to write down any program of computation that we wish.)</p>
+</div>
+
+<div class="clause" id="c6.342" title="c6.342">
+<span class="number">6.342</span> <p>And now we can see the relative position of the digital and software engineering. (The net might also consist of more than one kind of mesh: e.g. we could use both triangles and hexagons.) The possibility of describing a picture like the one mentioned above with a net of a given form tells us <i>nothing</i> about the picture. (For that is true of all such pictures.) But what <i>does</i> characterize the picture is that it can be described <i>completely</i> by a particular net with a <i>particular</i> size of mesh.</p>
+<p>Similarly the possibility of computing the imagination by means of Turing-machine software engineering tells us nothing about the imagination: but what does tell us something about it is the precise <i>way</i> in which it is possible to compute it by these means. We are also told something about the imagination by the fact that it can be computed more simply with one system of software engineering than with another.</p>
+</div>
+
+<div class="clause" id="c6.343" title="c6.343">
+<span class="number">6.343</span> <p>Software engineering is an attempt to fabricate according to a single plan all the <i>useful/intended</i> programs that we need for the computation of the imagination.</p>
+</div>
+
+<div class="level" title="a4">
+<div class="clause" id="c6.3431" title="c6.3431">
+<span class="number">6.3431</span> <p>The laws of computer science, with all their digital apparatus, will speak, however indirectly, about the objects of the imagination.</p>
+</div>
+
+<div class="clause" id="c6.3432" title="c6.3432">
+<span class="number">6.3432</span> <p>We ought not to forget that any computation of the imagination by means of software engineering will be of the completely general kind. For example, it will never mention <i>particular</i> bit-strings: it will only compute <i>any bit-strings whatever</i>.</p>
+</div>
+</div><!-- level 4 -->
+</div><!-- level 3 -->
+
+<div class="clause" id="c6.35" title="c6.35">
+<span class="number">6.35</span> <p>Although the spots in our picture are geometrical figures, nevertheless geometry can obviously say nothing at all about ther actual form and position. The grid, however, is <i>purely</i> geometrical; all its properties can be given a priori.</p>
+<p>Abstractions like the algorithms of sorting, etc. are about the grid and not about what the grid describes.</p>
+</div>
+
+<div class="clause" id="c6.36" title="c6.36">
+<span class="number">6.36</span> <p>If there were an algorithm of effective methods, it might be put in the following way: There are algorithms of intention.</p>
+<p>But of course that cannot be computed: it makes itself manifest.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c6.361" title="c6.361">
+<span class="number">6.361</span> <p>One might say, using Hertz's terminology, that only structures that are <i>subject to abstraction</i> are <i>computable</i>.</p>
+</div>
+
+
+<p> . . . [2 clauses]</p>
+
+
+<div class="clause" id="c6.362" title="c6.362">
+<span class="number">6.362</span> <p>What can be computed can be intended too: and what the law of effective methods is meant to exclude cannot even be computed.</p>
+</div>
+
+
+<p> . . . [6 clauses]</p>
+
+
+<h4 id="text-body-segment-17">[Segment 17]</h4>
+
+<div class="clause" id="c6.373" title="c6.373">
+<span class="number">6.373</span> <p>Creations are independent of my will.</p>
+</div>
+
+<div class="clause" id="c6.374" title="c6.374">
+<span class="number">6.374</span> <p>Even if all that we did were to be wanted, still this would only be a favour granted by fate, so to speak: for there is no <i>digital</i> connexion between the will and creations, which would guarantee it, and the supposed computer-science connexion itself is surely not something that we could will.</p>
+</div>
+
+<div class="clause" id="c6.375" title="c6.375">
+<span class="number">6.375</span> <p>Just as the only necessity that exists is <i>digital</i> necessity, so too the only impossibility that exists is <i>digital</i> impossibility.</p>
+</div>
+
+</div><!-- level 3 -->
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+
+<h4 id="text-body-segment-18">[Segment 18]</h4>
+
+<p> . . . [15 clauses]</p>
+
+
+<div class="level" title="a1">
+<div class="clause" id="c6.5" title="c6.5">
+<span class="number">6.5</span> <p>When the solution cannot be put into bits, neither can the problem be put into bits.</p>
+<p><i>The puzzle</i> does not exist.</p>
+<p>If a problem can be framed at all, it is also <i>possible</i> to solve it.</p>
+</div>
+
+<div class="level" title="a2">
+<div class="clause" id="c6.51" title="c6.51">
+<span class="number">6.51</span> <p>Scepticism is <i>not</i> irrefutable, but obviously nonsensical, when it tries to raise doubts where no problems can be posed.</p>
+<p>For doubt can exist only where a problem exists, a problem only where a solution exists, and a solution only where something <i>can be built</i>.</p>
+</div>
+
+<div class="clause" id="c6.52" title="c6.52">
+<span class="number">6.52</span> <p>We feel that even when <i>all possible</i> practical problems have been solved, the problems of engineering remain completely untouched. Of course there are then no problems left, and this itself is the solution.</p>
+</div>
+
+<div class="level" title="a3">
+<div class="clause" id="c6.521" title="c6.521">
+<span class="number">6.521</span> <p>The solution of the problem of engineering is seen in the vanishing of the problem.</p>
+<p>(Is not this the reason why those who have found after a long period of doubt that the sense of engineering became clear to them have then been unable to say what constituted that sense?)</p>
+</div>
+
+<div class="clause" id="c6.522" title="c6.522">
+<span class="number">6.522</span> <p>There are, indeed, effects [functions ?] that cannot be put into instructions. They just <i>make themselves wanted</i>. They are what is mystical.</p>
+</div>
+</div><!-- level 3 -->
+
+<div class="clause" id="c6.53" title="c6.53">
+<span class="number">6.53</span> <p>The correct method in software engineering would really be the following: to build nothing except what can be built, i.e. programs of human intention &ndash; i.e. something that has nothing to do with software engineering &ndash; and then, whenever someone else wanted to build something metaphysical, to demonstrate to him that he had failed to give a result to certain outputs in his programs. Although it would not be satisfying to the other person &ndash; he would not have the feeling that we were teaching him software engineering &ndash; <i>this</i> method would be the only strictly correct one.</p>
+</div>
+
+<div class="clause" id="c6.54" title="c6.54">
+<span class="number">6.54</span> <p>My programs serve as elucidations in the following way: anyone who understands me eventually recognises them as nonsensical, when he has used them &ndash; as steps &ndash; to climb up beyond them. (He must, so to speak, throw away the ladder after he has climbed up it.)</p>
+<p>He must transcend these programs, and then he will see the imagination aright.</p>
+</div>
+</div><!-- level 2 -->
+</div><!-- level 1 -->
+
+<div class="clause" id="c7" title="c7">
+<span class="number">7</span> <p>What we cannot develop, we must pass over in stillness.</p>
+</div>
+</div><!-- level 0 -->
+
+</div>
+
+</div><!--text-->
+
+
+
+<div id="translationtables" title="translationtables">
+<h2>Translation tables</h2>
+
+<p>This is the basic transformation. It sometimes fails, and more flexibility in application would improve results. It needs refinement, and a few additions.</p>
+
+<div class="section" id="translationtables-forward" title="translationtables-forward">
+<h3>Forward</h3>
+
+<table>
+   <tr><td>answer</td>            <td>solution</td></tr>
+   <tr><td>clearly</td>           <td>precisely</td></tr>
+   <tr><td>construct</td>         <td>code / assemble</td></tr>
+   <tr><td>depict</td>            <td>compute [c]</td></tr>
+   <tr><td>describe</td>          <td>express [c]</td></tr>
+   <tr><td>existence</td>         <td>intendedness [i]</td></tr>
+   <tr><td>fact</td>              <td>intent (artifact, usable, utensil, service, utility -- offered by software)</td></tr>
+   <tr><td>imagery</td>           <td>procedure/algorithm [c]</td></tr>
+   <tr><td>is the case</td>       <td>is intended [i]</td></tr>
+   <tr><td>language</td>          <td>software [c]</td></tr>
+   <tr><td>law</td>               <td>abstraction</td></tr>
+   <tr><td>life</td>              <td>engineering</td></tr>
+   <tr><td>likeness</td>          <td>plan/algorithm [c]</td></tr>
+   <tr><td>logic</td>             <td>digital</td></tr>
+   <tr><td>material</td>          <td>functional [i]</td></tr>
+   <tr><td>meaning</td>           <td>result [i]</td></tr>
+   <tr><td>name</td>              <td>action/instruction (/output?) [c]</td></tr>
+   <tr><td>object</td>            <td>effect [i]</td></tr>
+   <tr><td>philosophy</td>        <td>software engineering</td></tr>
+   <tr><td>physics</td>           <td>computation [c]</td></tr>
+   <tr><td>pictorial</td>         <td>computational [c]</td></tr>
+   <tr><td>picture</td>           <td>formulate/formulation [c]</td></tr>
+   <tr><td>proposition</td>       <td>program [c]</td></tr>
+   <tr><td>question</td>          <td>problem</td></tr>
+   <tr><td>reality</td>           <td>intention [i]</td></tr>
+   <tr><td>reference</td>         <td>effect [i]</td></tr>
+   <tr><td>(re)present</td>       <td>(sometimes) perform, produce [c]</td></tr>
+   <tr><td>say/said</td>          <td>build/built [c]</td></tr>
+   <tr><td>science</td>           <td>intention [c]</td></tr>
+   <tr><td>scientific</td>        <td>practical [c]</td></tr>
+   <tr><td>sense</td>             <td>sense/meaning (maybe/sometimes: execution / is executable, or function ?)</td></tr>
+   <tr><td>sign</td>              <td>representation/output [c]</td></tr>
+   <tr><td>simple/primitive sign</td> <td>simple/primitive output (whatever a DAC turns bits into) [c]</td></tr>
+   <tr><td>signify</td>           <td>cause/represent [c]</td></tr>
+   <tr><td>situation</td>         <td>function [i]</td></tr>
+   <tr><td>statement</td>         <td>program [c]</td></tr>
+   <tr><td>states of affairs</td> <td>sets of aims/effects [i/c]</td></tr>
+   <tr><td>subject</td>           <td>purpose [i]</td></tr>
+   <tr><td>thing</td>             <td>effect [i]</td></tr>
+   <tr><td>thought</td>           <td>idea [i]</td></tr>
+   <tr><td>truth</td>             <td>correctness</td></tr>
+   <tr><td>variable/value</td>    <td>abstraction/instance [c]</td></tr>
+   <tr><td>word</td>              <td>instruction [c]</td></tr>
+   <tr><td>world</td>             <td>the imagination [i] (positively, of what is wanted)</td></tr>
+</table>
+
+</div>
+
+
+<div class="section" id="translationtables-backward" title="translationtables-backward">
+<h3>Backward</h3>
+
+   <p>. . . (invert the forward table)</p>
+</div>
+
+</div><!--translationtables-->
+
+
+<div id="metadata" title="metadata">
+   <h2>Metadata</h2>
+   <p><a href="http://www.hxa.name/txon/">(TXON)</a></p>
+
+<pre class="plain">DC:`
+   title:`Tractatus Digito-Philosophicus`
+   creator:`Ludwig Wittgenstein`
+   contributor:`Pears, McGuinness`
+   contributor:`Harrison Ainsworth`
+
+   date:`2011-03-29`
+   date:`2010-11-19`
+
+   description:`A translation of Wittgenstein's Tractatus into the domain of software development.`
+   subject:`software development, philosophy, philosophy of software engineering, wittgenstein, tractatus`
+
+   language:`en-GB`
+   type:`article`
+   relation:`http://www.hxa.name/`
+   identifier:`http://www.hxa.name/articles/content/tractatus-digito-philosophicus_hxa7241_2010.html`
+   rights:`Creative Commons BY-SA 3.0 License`
+`</pre>
+</div>
+
+
+</div><!--paper-->
+
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

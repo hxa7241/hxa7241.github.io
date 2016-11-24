@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Should there be hard limits on program part sizes? - (note-20101124T1927Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Should there be hard limits on program part sizes? - (note-20101124T1927Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, programming-languages, structured-programming, functional-programming" />
+   <meta name="DC.description" content="There is cause to, based on complexity, but a better solution seems to be to adopt a different structuring -- one with different scaling behaviour." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2010-11-24" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20101124T1927Z.html" />
+
+   <meta name="keywords"       content="software-engineering, programming-languages, structured-programming, functional-programming" />
+   <meta name="description"    content="There is cause to, based on complexity, but a better solution seems to be to adopt a different structuring -- one with different scaling behaviour." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Should there be hard limits on program part sizes?</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20101124T1927Z.html" title="permalink">NOTE HXA7241 2010-11-24T19:27Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>There is cause to, based on complexity, but a better solution seems to be to adopt a different structuring &ndash; one with different scaling behaviour</h5>
+
+
+   <p>We accept strict rules about <code>goto</code>: various languages constrain it or disclude it entirely. Should we be as strict with the <i>sizes</i> of functions, modules, and even programs? &ndash; not merely have best-practice guidelines but enforce limits with language rules? No-one likes a monster function. So should it be syntactically impossible, for example, to write a function of more than 30 lines? or have a class with more than 10 fields?</p>
+
+   <p>Software is about bringing some structure, or formalisation, to human logical activity, and sprawling functions, and other parts, look negligent.</p>
+
+
+   <h4>Limiting the complexity of local state</h4>
+
+   <p>Structured programming is informative here: the gist of it is to make complexity proportional to program length (<a href="http://www.cs.utexas.edu/users/EWD/ewd02xx/EWD249.PDF">Dijkstra: EWD249 page25 para5</a>). This deserves further pondering, but it immediately gives a perspective on what size-limiting would be doing.</p>
+
+   <p><i>The purpose of strict size limits would be to make complexity nearer constant within each structure/part.</i></p>
+
+   <p>These are two different kinds of complexity, but the intent is the same: to make them more understandable. Structured programming is addressing control-flow complexity and its mapping to program structure, size-limiting is addressing local state complexity.</p>
+
+   <p>Over-large functions (in their data and operations), modules (in their parts), and programs (in their modules) share the same problem: excess state and excess interconnection of it. The problem is not size per se, it is the uncontrolled internal structure. Each additional part adds not merely itself, but more complexity to the whole. A long function has many variables and arbitrary (that is, unpredictable to the reader) relationships of them and their operations. Similarly with a large module and its members, or a large program and its modules and classes.</p>
+
+   <p>Size limits keep this reasonably bounded. They do not replace all arbitrariness with standard forms &ndash; they cannot: there must be some room for arbitrariness of structure, otherwise programs could not be different. But it ought to be limited to something reasonably easy to understand.</p>
+
+
+   <h4>Avoiding complexity by using other structurings</h4>
+
+   <p>Functional languages rather avoid the function length problem: operations are not in simple sequences, but more in trees. You cannot add length without adding depth, and also immutability reduces interrelations, and those together isolate subsequent branches.</p>
+
+   <p>Functional languages still have some arbitrarily extendable parts: case/switch, pattern matching, function parameters. But they are different to imperative kinds of extension: because the complexity is only in the basic &lsquo;list&rsquo;-form of the structure &ndash; you can understand it just by recognising it is a &lsquo;list&rsquo;: each element doesn't add any more internal relationship complexity. The complexity is constant for the structure.</p>
+
+   <p>Within classes/modules, and between them in whole programs, functional languages seem not so restrained. These higher-level parts are might able to refer to each other, and so enable arbitrary complexity. Following the viewpoint so far, it would seem preferable instead to keep to the same basic functional form of aggregation: lists (and hence trees) of independent non-interrelating items.</p>
+
+   <p>Do these various kinds of lists still warrant size limits? Perhaps, but the need is much smaller &ndash; excess length might add inconvenience in viewing, but not really complexity.</p>
+
+
+   <h4>Conclusion</h4>
+
+   <p>So, roughly, the answer is yes, but preferably indirectly. We can avoid the problems of long procedures (and other things) &ndash; unbounded non-constant complexity &ndash; by using alternative structurings, like functional languages.</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

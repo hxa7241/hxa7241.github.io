@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>A Building Industry Model For Software Development - HXA7241 - 2009</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="A Building Industry Model For Software Development - HXA7241 - 2009" />
+   <meta name="DC.subject"     content="software development, software engineering, software architecture, philosophy of engineering" />
+   <meta name="DC.description" content="A conceptual framework for understanding software development, modelled on the building industry." />
+   <meta name="DC.type"        content="technical article" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2009-04-23" />
+   <meta name="DC.date"        content="2009-06-10" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/articles/content/building-model-for-software_hxa7241_2009.html" />
+
+   <meta name="keywords"       content="software development, software engineering, software architecture, philosophy of engineering" />
+   <meta name="description"    content="A conceptual framework for understanding and thinking about software development, modelled on the building industry." />
+   <meta name="document"       content="hxa7241article6" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>A Building Industry Model for Software Development</h1>
+</div>
+
+
+<div id="colophon">
+<h4>Harrison Ainsworth</h4>
+
+   <p id="contact"><a href="http://www.hxa.name/">http://www.hxa.name/</a>
+   <br />hxa7241+articles <i>(&alpha;&tau;)</i> googlemail <i>(d&omicron;&tau;)</i> com</p>
+
+   <p id="timestamp">2009-06-10</p>
+</div>
+
+
+<div id="preface">
+   <div id="summary" title="summary">
+      <h2>Summary</h2>
+      <p id="_0.1.1" title="_0.1.1">This presents a conceptual framework for understanding software development, modelled on the building industry.</p>
+
+      <p id="_0.1.2" title="_0.1.2">Building is enough like software development to be interesting and useful. Examining and emulating a similar, already evolved, field, both imports knowledge and prompts re-examination of what was familiar.</p>
+
+      <p id="_0.1.3" title="_0.1.3">The chosen principal features of the building industry are described briefly and abstractly. Software is then mapped to this, by substitution of the physical aspect, or by relation to other parts. Then some of the more straightforward implications or analyses are derived.</p>
+
+      <p>(This article includes updated parts of the author's previous work.)</p>
+
+      <p>(3000 words)</p>
+   </div>
+
+   <dl id="metadata" title="metadata" class="plainlist">
+      <dt>subject</dt>
+      <dd id="metadata-subject" title="metadata-subject">software development, software engineering, software architecture, philosophy of engineering</dd>
+
+      <dt>uri</dt>
+      <dd id="metadata-id" title="metadata-id"><a href="http://www.hxa.name/articles/content/building-model-for-software_hxa7241_2009.html">http://www.hxa.name/articles/content/building-model-for-software_hxa7241_2009.html</a></dd>
+
+      <dt>license</dt>
+      <dd id="metadata-license" title="metadata-license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons BY-SA 3.0 License</a></dd>
+   </dl>
+</div>
+
+
+<div id="contents" title="contents">
+   <h2>Contents</h2>
+
+   <h4><a href="#overview">Overview</a></h4>
+   <ul>
+      <li><a href="#introduction">Introduction</a></li>
+   </ul>
+
+   <h4><a href="#exposition">Exposition</a></h4>
+   <ul>
+      <li><a href="#exposition-development">Development</a></li>
+      <li><a href="#exposition-architecture">Architecture</a></li>
+      <li><a href="#exposition-engineering">Engineering</a></li>
+      <li><a href="#exposition-construction">Construction</a></li>
+   </ul>
+
+   <h4><a href="#supplement">Supplement</a></h4>
+   <ul>
+      <li><a href="#relatedwork">Related Work</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+      <li><a href="#references">References</a></li>
+   </ul>
+</div>
+
+
+
+<div id="text">
+
+<div class="division" id="overview" title="overview">
+<h2>Overview</h2>
+
+<div class="section" id="introduction" title="introduction">
+<h3>Introduction</h3>
+
+   <div class="part" id="introduction-problem" title="introduction-problem">
+   <h4>Problem</h4>
+
+   <p id="_1.1.1.1" title="_1.1.1.1">Software work is commonly rejected as engineering. And there are certainly grounds to. But there also seems a lack of alternative conceptualisations &ndash; that are as rich and deep and useful for understanding.</p>
+
+   <p id="_1.1.1.2" title="_1.1.1.2">Software <i>contains</i> engineering; <i>and</i> things that aren't. The difficulty is that the field has not been clear: When there is confusion of parts that are determinate with parts that cannot be, it can never really promise dependability, nor comfortably allow proper creative freedom.</p>
+
+   <p id="_1.1.1.3" title="_1.1.1.3">Software development needs a sophisticated coherent picture that resolves the parts and relates them together. And it needs to describe or fit their more essential characters or <i>potentials</i>, not just their current state of practice.</p>
+
+   <!--<p id="_1.1.1.2" title="_1.1.1.2">Software development perhaps needs a more definite self-awareness: Engineering is founded on a core of determinate knowledge. The outer features of reliability and predictability, and the inner character of scientific development rely on that. But this must also be conscious. When there is still confusion of parts that are determinate with parts that cannot be, it can never really promise dependability, nor achieve consistent progress. What <i>is</i> engineering needs to be carefully distinguished from what is freer.</p>-->
+   </div>
+
+
+   <div class="part" id="introduction-idea" title="introduction-idea">
+   <h4>Idea</h4>
+
+   <p id="_1.1.2.1" title="_1.1.2.1">A &lsquo;model&rsquo; for understanding software development, based on established knowledge, can encompass the differences in software. Of course there are still differences, but viewing them in a setting that supports the large similarities helps significantly. The comparison clarifies. And since the model brings the backing of a substantial body of thought and experience, there are various directions for progress.<sup><a href="#ref-eric">[eric]</a></sup></p>
+
+   <p id="_1.1.2.2" title="_1.1.2.2">The building industry is long established with a substantial body of work. It offers a complete guide for creative and engineering discipline that is well-known and known to work well. And it has a range and depth that should accommodate comparison with all software enterprises and projects: from large company projects, down to one-person jobs.</p>
+
+   <p id="_1.1.2.3" title="_1.1.2.3">Adapting what has worked before is the best base for advance. And a clear conception is the best base for organised activity &ndash; especially with software, in which clear thinking is the core.</p>
+
+   <p id="_1.1.2.4" title="_1.1.2.4">By taking an abstract view and replacing physical material with digital, the building industry's example can be followed quite closely in concept as well as word.</p>
+   </div>
+
+
+   <div class="part" id="introduction-contribution" title="introduction-contribution">
+   <h4>Contribution</h4>
+
+   <p id="_1.1.3.1" title="_1.1.3.1">The model produces adjustments to some main definitions of software development. It is descriptive, not prescriptive. It doesn't intend to deny or limit the experience or possibilities of various parts of software work, just to place them more clearly.</p>
+
+   <ul id="_1.1.3.2" title="_1.1.3.2">
+      <li><a href="#exposition-architecture">A way to view software architecture</a>:
+         <ul>
+            <li><a href="#software-architecture-definition">A definition of software architecture</a> &ndash; that is distinct and integrated.</li>
+            <li><a href="#exposition-architecture-relation">A relation of software architecture to building architecture</a>.</li>
+         </ul>
+      </li>
+      <li><a href="#exposition-engineering">A way to view software engineering</a>:
+         <ul>
+            <li><a href="#software-engineering-definition">A definition of software engineering</a> &ndash; that is distinct and integrated.</li>
+            <li><a href="#_2.3.0.6">An analysis of software engineering into main parts</a>.</li>
+         </ul>
+      </li>
+   </ul>
+
+   <p id="_1.1.3.3" title="_1.1.3.3">A common view of software construction is also confirmed, and fits with these.</p>
+   </div>
+</div>
+
+
+<!--<div class="section" id="idea" title="idea">
+<h3>Idea</h3>
+
+   <div class="part" id="idea-purpose" title="idea-purpose">
+   <h4>A common basic purpose</h4>
+
+   <p id="_1.3.2.1" title="_1.3.2.1">For software development and building, their basic task is the same &ndash; create some difficult useful artefact for a customer. Being led by intention and delegation of complexity, gives them both a shared abstract definition at the most basic level.</p>
+   </div>
+
+
+   <div class="part" id="idea-building" title="idea-building">
+   <h4>The building industry</h4>
+
+   <p id="_1.3.3.1" title="_1.3.3.1">Software has already adopted significant terms from the building industry, for example: architecture, engineering, and construction. But unfortunately the original meaning and context of the words has been overlooked. A closer attention is warranted.</p>
+
+   <p id="_1.3.3.3" title="_1.3.3.3">There are various kinds of building, just as there are various kinds of software development. It is possible to hire a builder to put up a garage for your house. There, all disciplines &ndash; architecture, engineering, construction &ndash; are fused in one pragmatic (and effective) work. Much software resembles this, and is probably the most familiar. But this doesn't show its essence or potential scope. It is larger &lsquo;civil engineering&rsquo;, or building, that can supply a pattern for software, and software appears competent for it.</p>
+
+   <p id="_1.3.3.4" title="_1.3.3.4">The medium is different: bits not atoms &ndash; and this might seem important. But for large projects, those differences seem far outweighed by the similarities. They are: the complexities of the task and the organisation required to control it. The building industry works because it is well organised, not because its basic medium is particularly suitable.</p>
+
+   <p id="_1.3.3.5" title="_1.3.3.5">By taking an abstract view and replacing physical material with digital, the building industry's example can be followed quite closely in concept as well as word.</p>
+   </div>
+</div>-->
+
+</div>
+
+
+
+<div class="division" id="exposition" title="exposition">
+<h2>Exposition</h2>
+
+<div class="section" id="exposition-development" title="exposition-development">
+<h3>Development</h3>
+
+   <p id="software-development-definition" title="software-development-definition"><b>&lsquo;Software development&rsquo; is the overall form of enterprise or endeavour that builds software.</b></p>
+
+   <p id="_2.1.0.1" title="_2.1.0.1">Building is a large and sophisticated form of enterprise, but it has a few quite clear primary parts. At the top, work is separated into, as an idealisation: <i>architecture</i>, <i>engineering</i>, and <i>construction</i>. In practice, these may tend to be merged (for smaller projects) or subdivided (for larger projects). Each is a sub-discipline and sub-sequence and successively dependent on each other, but not sharply defined.</p>
+
+   <p id="_2.1.0.2" title="_2.1.0.2">In summary:</p>
+
+   <ul id="_2.1.0.3" title="_2.1.0.3">
+      <li><b>Building</b> is the overall enterprise.
+         <ul>
+            <li><b>Architecture</b> is advocational: it concerns the external, user-facing, usable features. It is the &lsquo;what&rsquo;, and serves client wants.<sup><a href="#ref-arch">[arch]</a></sup></li>
+            <li><b>Engineering</b> is technical: it concerns the internal, non-usable features. It is the &lsquo;how&rsquo;, and implements architecture.<sup><a href="#ref-hend">[hend]</a></sup></li>
+            <li><b>Construction</b> is practical: it concerns actualising the ideas in a usable material. It realises engineering.<sup><a href="#ref-hend">[hend]</a></sup></li>
+         </ul>
+      </li>
+   </ul>
+
+   <p id="_2.1.0.4" title="_2.1.0.4">This can apply to software with one main adjustment:</p>
+
+   <ul id="_2.1.0.5" title="_2.1.0.5">
+      <li><b>&lsquo;Software Development&rsquo;</b> &ndash; the whole, equivalent to &lsquo;building&rsquo;.
+         <ul>
+            <li><b>&lsquo;Software Architecture&rsquo;</b> &ndash; equivalent to building architecture, but for logical not physical structure.</li>
+            <li><b>&lsquo;Software Engineering&rsquo;</b> &ndash; equivalent to building engineering, but for the computational not physical medium.
+               <ul>
+                  <li>&lsquo;Software Construction&rsquo; &ndash; absorbed into engineering, because there is no equivalent material realisation.</li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+   </ul>
+
+
+   <div class="part" id="exposition-development-other" title="exposition-development-other">
+   <h4>Other parts</h4>
+
+   <p id="_2.1.1.1" title="_2.1.1.1">The building industry has other necessary parts that also map easily into software. These include management predominantly, and things related to that. Since they are less specific to the medium, they are not dealt with here.</p>
+   </div>
+</div>
+
+
+<div class="section" id="exposition-architecture" title="exposition-architecture">
+<h3>Architecture</h3>
+
+   <p id="software-architecture-definition" title="software-architecture-definition"><b>&lsquo;Software architecture&rsquo; is the reflection and creation of logical structure in human activity, and its expression in various material forms. It is <i>&lsquo;what&rsquo;</i> to do.</b></p>
+
+   <p id="_2.2.0.1" title="_2.2.0.1">In building, architecture is the &lsquo;chief&rsquo; part, doing two main things: leading the development of what is done, and overseeing and co-ordinating other sub-tasks. It contains engineering, but its important feature is not engineering. The overall guiding purpose cannot be achieved with only logical/determinate knowledge. It oversees management, accounting, etc., but these are not essential to it. The various &lsquo;hows&rsquo; are subservient to the &lsquo;what&rsquo;, and the formation of that &lsquo;what&rsquo; is the definitive factor.</p>
+
+   <blockquote id="_2.2.0.2" title="_2.2.0.2">
+      <p>Architecture is the imaginative blend of art and science in the design of environments for people.</p>
+
+      <p>People need places to eat, work, live and play. Architects transform these needs into concepts and then develop the concepts into building images that can be constructed by others.</p>
+   </blockquote>
+
+   <p id="_2.2.0.3" title="_2.2.0.3">&ndash; archcareers.org (AIA, AIAS)<sup><a href="#ref-arch">[arch]</a></sup></p>
+
+   <p id="_2.2.0.4" title="_2.2.0.4">By replacing physical structure with <i>logical</i> structure, software can follow building. This immediately gives architecture in software real meaning: it is then the overall external appearance, usage, and function of the software system &ndash; it is the &lsquo;what&rsquo; &ndash; the usage structure. For id's Quake III Arena<sup><a href="#ref-idso">[idso]</a></sup>, for example, it is the desktop executable &lsquo;packaging&rsquo;, the first-person 3D interface, the game-play, the network multi-playability, the content modifiability, etc.</p>
+
+   <p id="_2.2.0.5" title="_2.2.0.5">This separation and delineation of architecture yields a main improvement: it concentrates more attention on pure &lsquo;product design&rsquo;. This is something of pivotal value in software, and something distinctly <i>of</i> software. Yet otherwise it is without a sufficiently integrated and prominent identity.</p>
+
+   <p id="_2.2.0.6" title="_2.2.0.6"><i>(The software world commonly confuses architecture with engineering; it is usually merely a grandiloquence for high-level engineering design. Giving a special word &ndash; &lsquo;architecture&rsquo; &ndash; to what is really a part of engineering is permanently misleading. It actually denotes a difference in degree, but it suggests a difference in kind. There is always an implication of something more, so definitions and meanings always seem to fall short.<sup><a href="#ref-sei">[sei]</a></sup>)</i></p>
+
+
+   <div class="part" id="exposition-architecture-logical" title="exposition-architecture-logical">
+   <h4>Logical structure in human behaviour</h4>
+
+   <p id="_2.2.1.1" title="_2.2.1.1">Software architecture is about articulating logical structure, but what does that mean more exactly?</p>
+
+   <p id="_2.2.1.2" title="_2.2.1.2">Mere consciousness confers upon almost everything at least some logical properties. Almost everything can be seen and handled in some way discretely and measurably. This aspect is ubiquitous, although varied: Some things partake only superficially or nebulously, like a feeling (at least it has some name and existence), but others deeply and complexly, like physics.</p>
+
+   <p id="_2.2.1.3" title="_2.2.1.3">That logical structure is the underlying realm of software architecture. Its focus is the region between vague and determinate, and its activity is to crystallise something for practical use, by means of software engineering. (The same underlying realm also belongs to software engineering, but its purview is the clear and determinate, and its task is to implement architecture.) Software architecture works to see and define useful new arrangements and expressions of logical structures. For example: the Wiki, the 3D game, music recommending/tracking, public transport ticket services, global navigation satellite systems. All these take elements of behaviour and understanding and shape them into unified software artefacts.</p>
+   </div>
+
+
+   <div class="part" id="exposition-architecture-relation" title="exposition-architecture-relation">
+   <h4>Special relation to building architecture</h4>
+
+   <p id="_2.2.2.1" title="_2.2.2.1">Building architecture fairly commonly has two aspects: usefulness, and aesthetics. Querying these shows something more of the relation to software architecture.</p>
+
+   <p id="_2.2.2.2" title="_2.2.2.2">Software architecture is not truly distinct from building architecture. It is an enlargement of it. Buildings themselves have logical structure, in how they behave, how they are useful. But in software this structure is extended; it is more dynamic, and possibly more complex. Most significantly, on the aesthetic side it can have various embodiments &ndash; visual, audio, material, etc. So, rather than being analogous to it, software architecture is building architecture generalised.</p>
+   </div>
+
+
+   <div class="part" id="exposition-architecture-other" title="exposition-architecture-other">
+   <h4>Organising the sub-disciplines, and leading the whole</h4>
+
+   <blockquote id="_2.2.3.1" title="_2.2.3.1">
+      <p>An architect serves in a leadership role to bring together the design and budgetary requirements set by the client, restraints of a site (where the building will be constructed), needs of the building's users, and the limitations of materials into a unique and balanced design solution.</p>
+   </blockquote>
+
+   <p id="_2.2.3.2" title="_2.2.3.2">&ndash; archcareers.org (AIA, AIAS)<sup><a href="#ref-arch">[arch]</a></sup></p>
+
+   <p id="_2.2.3.3" title="_2.2.3.3">This duty transfers almost straight to software, so it is not dealt with here.</p>
+   </div>
+</div>
+
+
+<div class="section" id="exposition-engineering" title="exposition-engineering">
+<h3>Engineering</h3>
+
+   <p id="software-engineering-definition" title="software-engineering-definition"><b>&lsquo;Software engineering&rsquo; is the assembling of data and computation by understanding their properties, and using experiment where needed. It is <i>&lsquo;how&rsquo;</i> to do it.</b></p>
+
+   <p id="_2.3.0.1" title="_2.3.0.1">Engineering in building, or &lsquo;civil engineering&rsquo;, fits the familiar definitions, roughly: scientific, logical, determinate knowledge employed practically,<sup><a href="#ref-pahl">[pahl]</a></sup> for making buildings. Being centrally about determinate knowledge implies a two-sided identity:</p>
+
+   <ul id="_2.3.0.2" title="_2.3.0.2">
+      <li>From the outside: engineering should know/say clearly what things it can do, and how to do them. Where &lsquo;clearly&rsquo; means precisely, certainly, reliably, in a language useful to its associate-disciplines (architecture and construction, for civil engineering). What can be done (for architecture) is expressed as alternatives, trade-offs, costs, material needs. How to do them (for construction) is expressed as instructions and descriptions.</li>
+      <li>From the inside: engineering must be restricted to an amenable medium &ndash; one that can be modelled determinately, and scientifically (like physical material for civil engineering). This means the knowledge can be analysed, synthesised and manipulated logically and mathematically. It is structured and objective. And where particular determinate knowledge falls short, an experimental process is used to incrementally gain more. The previous &lsquo;external&rsquo; characteristic rests upon this &lsquo;internal&rsquo; one.</li>
+   </ul>
+
+   <p id="_2.3.0.3" title="_2.3.0.3">These two sides provide two ways to define software engineering following civil engineering: first externally, in opposition to architecture; second internally, by replacing atoms with bits.</p>
+
+   <p id="_2.3.0.4" title="_2.3.0.4">By separating architecture as above, software engineering can follow civil engineering. The term &lsquo;engineering&rsquo;, in software, is strengthened by having a proper &lsquo;architecture&rsquo;. Indeterminate matters like requirements and usability are distanced or removed. And it shrinks somewhat into a more well-defined logical realm &ndash; it is the &lsquo;how&rsquo; &ndash; the technical structure. Then it treats only what kind of data is moved, where, and what processing is done to it. These are the truly essential concerns of engineering for software. For id's Quake III Arena<sup><a href="#ref-idso">[idso]</a></sup>, for example, it is the image rendering techniques, the content data-structures, the network protocols, etc.</p>
+
+   <p id="_2.3.0.5" title="_2.3.0.5">This separation and delineation of engineering yields a main improvement: It gives engineering clearer and more regularised requirements, allowing it to work more determinately. Much of the criticism of &lsquo;software engineering&rsquo; is deflected, because the uncertainty and vagueness can be seen as having a better defined, separate home in architecture. Any problems don't disappear, but they gain clarity from becoming part of something whose overall shape is known.</p>
+
+   <p id="_2.3.0.6" title="_2.3.0.6">Software engineering also follows civil engineering by replacing atoms with bits, but where does that lead more exactly? Software engineering can be divided into four sub-fields: the bit medium, particular subject models, computation mechanics, and representational structure:</p>
+
+
+   <div class="part" id="exposition-engineering-bit" title="exposition-engineering-bit">
+   <h4>Bit medium</h4>
+
+   <p id="_2.3.1.1" title="_2.3.1.1">Software certainly has a medium amenable to engineering. Comprising purely logical objects, it is necessarily capable of determinate manipulation. But that makes it rather different from a physical medium. Instead of being a material onto which a logical model is projected (so becoming a medium) &ndash; like atomic structure &ndash; software is its own medium, and its own model.</p>
+
+   <p id="_2.3.1.2" title="_2.3.1.2">The constitution of the software medium is very simple and open. The basic elements (bits) have two attributes: an easily changeable property &ndash; to be 0 or 1, and a fixed identity &ndash; a unique address. The vitality of bits is that they can stand for anything. What particular data is for and how it is used is ultimately pure interpretation. (Computation is merely automated bit-changing according to instructions held in other bits. So it is merely an agent for, and therefore part of, an interpretation.) Software is a medium for general dynamic abstraction, that is: for embodying any logical model of states and transforms.</p>
+
+   <p id="_2.3.1.3" title="_2.3.1.3">This is too low-level for direct application. But it would be the basis for theoretical consideration of the forms and relations of abstraction per se &ndash; which could help software structure at all levels.</p>
+   </div>
+
+
+   <div class="part" id="exposition-engineering-subject" title="exposition-engineering-subject">
+   <h4>Particular subject models</h4>
+
+   <p id="_2.3.2.1" title="_2.3.2.1">The freedom and mutability of the bit medium enables software to represent the state and transforms of any model &ndash; since a model is just a more sophisticated and structured kind of interpretation. For example, polyhedral objects: the state is made of vectors, and the transitions are by matrix transforms (each made of arrays of numbers). When taken from a mathematical branch, such models are independently well-defined. Otherwise they often must be created to fit an ill-defined source. For example: names and addresses &ndash; there are rules, but they are not entirely complete and clear. These are very simple examples, but they extend to things like meteorological simulations, or project management systems.</p>
+
+   <p id="_2.3.2.2" title="_2.3.2.2">These various subject models embody logical structures of all kinds and sophistication, from well-defined mathematical, to vaguely defined social. But they are all graspable by software because of their logical aspect.</p>
+
+   <p id="_2.3.2.3" title="_2.3.2.3">These models are where architecture and engineering join: choosing and tailoring them is a matter of architecture, building them is engineering. The former is vague and usage-led, the latter is determinate.</p>
+   </div>
+
+
+   <div class="part" id="exposition-engineering-mechanics" title="exposition-engineering-mechanics">
+   <h4>Data/computation mechanics</h4>
+
+   <p id="_2.3.3.1" title="_2.3.3.1">Essential and fundamental to software engineering ought to be quantification and modelling of basic behaviour. That is: the time and space needed for transferring data, transforming data, and storing data. Just as physical engineering calculates resultant behaviour from forces across whole structures, software engineering should capably predict performance of whole systems.<sup><a href="#ref-bucc">[bucc]</a></sup></p>
+
+   <p id="_2.3.3.2" title="_2.3.3.2">Currently anecdotal guides and trial-and-error are prevalent; perhaps because better understanding is not so often useful, given the power of computers relative to everyday tasks. Although some informality is ok, a foundation is appropriate, and engineering strives to replace ad hoc experiment with determinate modelling. Also, reliably predicting extremes/bad-cases (or being assured of their absence) would be quite widely valuable.</p>
+
+   <p id="_2.3.3.3" title="_2.3.3.3">This is really the core of software engineering: it is all determinate, purely &lsquo;software&rsquo;, and only about functionality. (&lsquo;Mechanics&rsquo; is a reasonable name: analogously from civil engineering, linguistically from Greek for machine.)</p>
+   </div>
+
+
+   <div class="part" id="exposition-engineering-representation" title="exposition-engineering-representation">
+   <h4>Representational structure</h4>
+
+   <p id="_2.3.4.1" title="_2.3.4.1">Here, there is an important difference from civil engineering. Due to the ease of change allowed by its medium, the software development process is much more iterative &ndash; most obviously as a series of versions. This effectively adds another set of requirements: for internal rework. And so a significant extra emphasis has emerged in software.</p>
+
+   <p id="_2.3.4.2" title="_2.3.4.2">The representation &ndash; the code &ndash; is what must meet this extra requirement: to be more understandable and changeable. Because this is distinctive and novel to software, it rightly has special attention. But it is not all of software. The term &lsquo;design&rsquo; is casually taken to mean only representation, which overplays its true status.</p>
+
+   <p id="_2.3.4.3" title="_2.3.4.3">This is of value but inessential, because it is only to assist the engineering process, rather than constitute the product.</p>
+   </div>
+</div>
+
+
+<div class="section" id="exposition-construction" title="exposition-construction">
+<h3>Construction</h3>
+
+   <p id="software-construction-definition" title="software-construction-definition"><b>&lsquo;Software construction&rsquo; is  the detailed end of software engineering, from a process viewpoint.</b></p>
+
+   <p id="_2.4.0.1" title="_2.4.0.1">The term &lsquo;Construction&rsquo; in software is problematic. In building it is the realisation of a descriptional model into material form. But in software both the model and the product are held in the same digital form. So there is no realisation, so no construction. It would be misleading to use the term in software. Maybe a vestigial form of construction could be seen in wiring-up networks, plugging-in and setting-up hardware. But it does not seem appropriate (or significant) enough to take the name.</p>
+
+   <p id="_2.4.0.2" title="_2.4.0.2">On the other hand: from a process/management view, physical &lsquo;construction&rsquo; and software &lsquo;coding&rsquo; do match quite well. Coding is the detailed end of software engineering design, and building construction also does detailed design. Both bear the majority of time, labour, and risk. So adapting the &lsquo;construction&rsquo; term to software could be useful. Furthermore, in building, the stricter separation of construction is a significant source of trouble and inefficiency, so a non-separate &lsquo;construction&rsquo; may even be an improvement.<sup><a href="#ref-hend2">[hend2]</a></sup> But it must always be appreciated that this is an artefact of process and management. For software, there is an essential unity of engineering and construction.</p>
+
+
+   <div class="part" id="exposition-construction-maintenance" title="exposition-construction-maintenance">
+   <h4>Maintenance</h4>
+
+   <p id="_2.4.1.1" title="_2.4.1.1">There is no &lsquo;maintenance&rsquo; in software; it is really development iteration, after delivery. There is no spontaneous/externally-caused degeneration; what changes is entirely deliberate (or should be). It is not different, in activity or purpose, to iteration during the main part of the project. Building probably modifies parts after delivery sometimes, but what do they call it? &lsquo;Renovation&rsquo; is not quite right. If there is a distinct name, it perhaps should be adopted by software.</p>
+   </div>
+</div>
+
+</div>
+
+
+
+<div class="division" id="supplement" title="supplement">
+<h2>Supplement</h2>
+
+<div class="section" id="relatedwork" title="relatedwork">
+<h3>Related Work</h3>
+
+   <p id="_3.1.0.1" title="_3.1.0.1">&lsquo;Prospects For An Engineering Discipline Of Software&rsquo;<sup><a href="#ref-shaw">[shaw]</a></sup> examines the evolution of other engineerings (civil and chemical). This shows software as immature but with potential. Finally it draws a set of recommendations for software engineering.</p>
+
+   <p id="_3.1.0.2" title="_3.1.0.2">&lsquo;Is Software Engineering Engineering&rsquo;<sup><a href="#ref-denn">[denn]</a></sup> looks at six practices of wider engineering where software is weak.</p>
+
+   <p id="_3.1.0.3" title="_3.1.0.3">Those articles have a perspective of comparing practice &ndash; what is done or not done in engineering and software. They look at particular features in more detail, and suggest particular actions for software development to adopt.</p>
+
+   <p id="_3.1.0.4" title="_3.1.0.4">This article is complementary. It looks more at what software development <i>is</i>. It takes a slightly larger context, and maps other engineering to software more as a whole. And it suggests particular <i>thought</i> &ndash; as a prerequisite to different action.</p>
+
+   <!-- 'A Computer Science Perspective Of Bridge Design'; Spector, Gifford; 1986; ACM.
+   - probably worth a look, but cannot be found on the WWW... -->
+</div>
+
+
+<div class="section" id="conclusion" title="conclusion">
+<h3>Conclusion</h3>
+
+   <p id="_3.2.0.1" title="_3.2.0.1">Software is not quite like anything else. But with analysis, and with guiding models, it can be better understood. Software itself does not change. But the structure of the thinking about it, its main properties and relations, can be enriched.</p>
+
+   <p id="_3.2.0.2" title="_3.2.0.2">This is rather like refactoring, but with thought&ndash;subject instead of code&ndash;function: First, thoughts can fit the properties of the subject better; Second, thoughts can fit each other, and external thoughts better. What were vague familiarities and similarities then become concretely exploitable.</p>
+
+   <p id="_3.2.0.3" title="_3.2.0.3">Of course, this is not the only possible refactoring. Further and other refactorings, and other work, would be good too. More analysis of architecture, and relating it to the building model. . . More investigation of engineering's sub-parts (especially more mechanics). . . Much more attention to the management side: of the whole, architecture, and engineering. . . And overall, this treatment is essentially static, and examining software development as dynamic, as a process, would be a reasonable next step.</p>
+</div>
+
+
+<div class="section" id="references" title="references">
+<h3>References</h3>
+
+   <ul id="_3.3.0.1" title="_3.3.0.1">
+      <li id="ref-eric">[eric] &lsquo;The Cambridge Handbook Of Expertise And Expert Performance&rsquo;; Ericsson, et al; 2006. &ndash; ch. 4, p. 50-53</li>
+      <li id="ref-arch">[arch] archcareers.org; (AIA, AIAS); 2009. &ndash; /archoverview.html</li>
+      <li id="ref-hend">[hend] &lsquo;Project Management For Construction&rsquo;; Hendrickson; 2003. &ndash; ch. 1, ch. 3 <!--http://pmbook.ce.cmu.edu/--></li>
+      <li id="ref-idso">[idso] &lsquo;Quake III Arena&rsquo;; id Software; 1999.</li>
+      <li id="ref-sei">[sei] &lsquo;Published Software Architecture Definitions&rsquo;; SEI; 2009. <!--http://www.sei.cmu.edu/architecture/published_definitions.html--></li>
+      <li id="ref-pahl">[pahl] &lsquo;Engineering Design: A Systematic Approach&rsquo;; Pahl, Beitz, Feldhusen, Grote, Wallace (ed/trans), Blessing (ed/trans); 2007. &ndash; part 1.1.1</li>
+      <li id="ref-bucc">[bucc] &lsquo;Engineering Mechanics For Structures&rsquo;; Bucciarelli; MIT, 2002.</li>
+      <li id="ref-hend2">[hend2] &lsquo;Project Management For Construction&rsquo;; Hendrickson; 2003. &ndash; ch. 3.1, ch 1.6, ch 1.8, ch 1.4, ch 1.9 <!--http://pmbook.ce.cmu.edu/--></li>
+      <li id="ref-shaw">[shaw] &lsquo;Prospects For An Engineering Discipline Of Software&rsquo;; Shaw; 1990.</li>
+      <li id="ref-denn">[denn] &lsquo;Is Software Engineering Engineering&rsquo;; Denning, Riehle; 2009.</li>
+   </ul>
+</div>
+
+
+</div>
+
+
+</div><!--text-->
+
+
+
+</div><!--paper-->
+
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

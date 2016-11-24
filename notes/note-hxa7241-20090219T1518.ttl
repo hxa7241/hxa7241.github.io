@@ -1,0 +1,38 @@
+# ttl - Turtle - http://www.w3.org/TeamSubmission/turtle/
+
+# Note - HXA7241
+# (for a new note, change: thisnote, title, content, contenthash, date.)
+
+
+@base <http://hxa.name/>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/TR/xmlschema-2/#>
+@prefix rfc: <http://www.ietf.org/rfc/>
+@prefix iana: <http://www.iana.org/assignments/media-types/>
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix hxa: <rdf/1/rdf-terms#> .
+@prefix thisnote: <urn:uuid:2E6B6021-BEBF-4C33-95F8-ED127F58C30B> .
+
+
+thisnote:
+dc:title  "Software 'Mass-Production'"@en
+; hxa:content """
+Mass-production for software is different. And it has no relation to ideas of 'software factories', so-called.
+
+Reflect upon the WWW, and an alternative parallel-world: it could have been partly based not on HTML but an opaque binary format, like an elaborated PNG or TIFF image file. The design and appearance would have rested upon the several software development teams making browsers, as part of their GUIs. But instead, HTML separated out and simplified that part of software development work. Effectively, the coding effort to make the browser application GUIs was spread to many thousands of people. This is a kind of 'mass-production' for software, of a different and interesting form -- it gains not just effort, but diverse creativity too. Also there is an important participatory factor: it is appealing and encouraging to be able to control the look of your personal data-presence.
+
+So there is significant power in transforming development work in this way. More generally: in spreading simple formal/logical activities to very many people. 
+
+This is perhaps the formulation of proper software mass-production. It is not directly analogous to factories, ie. automating craft, but instead fitted to what is hard for software: It is about parallelising the difficult human creative aspect, within/according to the needed logical structures.
+"""@en
+; hxa:contenthash  "936e3de54f346ed5a7c577fda5ef27aecbe891e2"^^rfc:rfc3174
+; hxa:domainurl  <notes/>
+; rdf:type  hxa:note
+; dc:format  "text"^^iana:text
+; dc:date  "2009-02-19T15:18"^^xsd:dateTime
+; dc:creator  <about/foaf.rdf>
+; dc:language  "en-GB"^^rfc:rfc4646
+; dc:rights  <http://creativecommons.org/licenses/by-sa/3.0/>
+.

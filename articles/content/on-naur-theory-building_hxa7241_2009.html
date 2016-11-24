@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>On Naur's &lsquo;Programming As Theory Building&rsquo; - HXA7241 - 2009</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="On Naur's 'Programming As Theory Building' - HXA7241 - 2009" />
+   <meta name="DC.subject"     content="programming, software engineering, philosophy of software engineering" />
+   <meta name="DC.description" content="A problem in Naur's 'Programming As Theory Building' and the improved philosophical model it prompted." />
+   <meta name="DC.type"        content="article" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2009-10-27" />
+   <meta name="DC.date"        content="2010-01-07" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/articles/content/on-naur-theory-building_hxa7241_2009.html" />
+
+   <meta name="keywords"       content="programming, software engineering, philosophy of software engineering" />
+   <meta name="description"    content="A problem in Naur's 'Programming As Theory Building' and the improved philosophical model it prompted." />
+   <meta name="document"       content="hxa7241article8" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>On Naur's &lsquo;Programming As Theory Building&rsquo;</h1>
+</div>
+
+
+<div id="colophon" title="colophon">
+<h4>Harrison Ainsworth / <small>HXA7241</small></h4>
+
+   <p id="contact"><a href="http://www.hxa.name/">http://www.hxa.name/</a></p>
+   <p id="timestamp" title="started: 2009-10-27">2010-01-07</p>
+</div>
+
+
+
+<div id="text">
+
+<div class="section" id="summary" title="summary">
+<h3>Summary</h3>
+
+   <p>In &lsquo;Programming As Theory Building&rsquo;<a href="#ref-01" id="note-01" title="note-01"><sup>[1]</sup></a> Naur proposes a philosophical model of what programming is. But the current article shows it appears to be based on a contradiction. Instead, it can be improved by adapting a model from physical engineering. The originally proposed implications are sustained, and enlarged with another benefit.</p>
+
+   <p>(1500 words)</p>
+
+
+   <div class="part" id="summary-motivation" title="summary-motivation">
+   <h4>Motivation</h4>
+
+   <p>From the original article:</p>
+
+   <blockquote>
+   <p>&ldquo;A more general background of the presentation is a conviction that it is important to have an appropriate understanding of what programming is. If our understanding is inappropriate we will misunderstand the difficulties that arise in the activity and our attempts to overcome them will give rise to conflicts and frustrations.&rdquo;</p>
+   </blockquote>
+
+   <p>This is what philosophy of software engineering is about <a  href="#ref-02" id="note-02" title="note-02"><sup>[2]</sup></a>. And the current article shares this underlying motivation &ndash; it is not about a discovery or invention, but about trying to think clearly about what we already have.</p>
+   </div>
+</div>
+
+
+<div class="section" id="models" title="models">
+<h3>Models</h3>
+
+   <div class="part" id="models-original" title="models-original">
+   <h4>Original model</h4>
+
+   <p>&lsquo;Programming As Theory Building&rsquo; proposes that programming is not an outer writing of software code, but an inner building of mental structure. A team gradually learns about the computational form of the problem and solution, and assembles a complex idea of it. This is the indispensable basis and source for any of their work.</p>
+
+   <p>The term &lsquo;theory&rsquo; is meant as: a kind of knowledge that is intellectual and complex, allowing sophisticated intellectual capability. And in this context, its subject is software.</p>
+
+   <blockquote>
+   <p>&ldquo;programming properly should be regarded as an activity by which the programmers form or achieve a certain kind of insight, a theory, of the matters at hand.&rdquo;</p>
+   </blockquote>
+
+   <p>This knowledge is built by the programmer at work:</p>
+
+   <blockquote>
+   <p>&ldquo;In terms of Ryle's notion of theory, what has to be built by the programmer is a theory of how certain affairs of the world will be handled by, or supported by, a computer program.&rdquo;</p>
+   </blockquote>
+
+   <blockquote>
+   <p>&ldquo;programming must involve, as the essential part, a building up of the programmers' knowledge&rdquo;</p>
+   </blockquote>
+
+   <p>And this knowledge is an exclusively human possession, it is not constituted by code and/or documentation:</p>
+
+   <blockquote>
+   <p>&ldquo;This suggestion [of theory building] is in contrast to what appears to be a more common notion, that programming should be regarded as a production of a program and certain other texts.&rdquo;</p>
+   </blockquote>
+
+   <blockquote>
+   <p>&ldquo;In arguing for the Theory Building View, the basic issue is to show how the knowledge possessed by the programmer by virtue of his or her having the theory necessarily, and in an essential manner, transcends that which is recorded in the documented products.&rdquo;</p>
+   </blockquote>
+
+   <p>And this knowledge is primary in programming &ndash; it directs it and underlies it, as a <i>sine qua non</i>.</p>
+   </div>
+
+
+   <div class="part" id="models-inconsistency" title="models-inconsistency">
+   <h4>Inconsistency</h4>
+
+   <p>On one hand, a &lsquo;theory&rsquo; is described as something completely internal and irreducible:</p>
+
+   <blockquote>
+   <p>&ldquo;A main claim of the Theory Building View of programming is that an essential part of any program, the theory of it, is something that could not conceivably be expressed, but is inextricably bound to human beings.&rdquo;</p>
+   </blockquote>
+
+   <blockquote>
+   <p>&ldquo;the theory, is not, and cannot be, expressed&rdquo;</p>
+   </blockquote>
+
+   <blockquote>
+   <p>&ldquo;It only makes sense to the agent who has knowledge of the world, that is to the programmer, and cannot be reduced to any limited set of criteria or rules&rdquo;</p>
+   </blockquote>
+
+   <p>But on the other hand, a &lsquo;theory&rsquo; is applied to external objects:</p>
+
+   <blockquote>
+   <p>&ldquo;For a program to retain its quality it is mandatory that each modification is firmly grounded in the theory of it.&rdquo;</p>
+   </blockquote>
+
+   <blockquote>
+   <p>&ldquo;if viewed in relation to the theory of the program these ways [of changing it] may look very different, some of them perhaps conforming to that theory or extending it in a natural way, while others may be wholly inconsistent with that theory&rdquo;</p>
+   </blockquote>
+
+   <p>These cannot both be true. And since the second is actually practised, it must be the first that is wrong.</p>
+
+   <p>A &lsquo;theory&rsquo; cannot be wholly internal if it is applied to things. If something external conforms to it to some degree, then that thing is to that degree an expression of the &lsquo;theory&rsquo;. What else is an expression? And, a &lsquo;theory&rsquo; cannot be irreducible if it applies to things that <i>are</i> reducible. If it matches something &ndash; like software &ndash; that is complex and determinate, it must itself be analysable into determinate properties or patterns or structure.</p>
+
+   <p>Since &lsquo;theory&rsquo; is used to make actual software &ndash; something that can fit or diverge from it &ndash; &lsquo;theory&rsquo; must have a substantial, and complex, objective part.</p>
+   </div>
+
+
+   <div class="part" id="models-replacement" title="models-replacement">
+   <h4>Replacement model</h4>
+
+   <p>Solving the original model's inconsistency is straightforward: by properly recognising the objective portion of &lsquo;theory&rsquo;. Part of &lsquo;theory&rsquo; is a matter of inaccessible human apprehension, but part is substantially, complexly accessible. A new model should give this appropriate status. And because the accessible part has scope for useful, practical understanding, it should be given precedence.</p>
+
+   <p>The current article proposes that programming is better thought of as: <b>engineering-design of structures in a particular abstract &lsquo;material&rsquo;</b>. This is really just a careful translation from physical material in civil engineering, substituting in computation time and space. The material takes the place of the objective side of &lsquo;theory&rsquo;, with digital/computational material having, like physical material, similar general characteristics:</p>
+
+   <ul>
+      <li>The material, and structures of it, are objective and determinate &ndash; like mathematics it can produce logically provable, and measurable practically applicable, knowledge.</li>
+      <li>The material has a range of regularity &ndash; it permits precise knowledge, as well as supporting rougher yet still reliable guides (as for craft)</li>
+      <li>The material has certain properties, constraints, limitations &ndash; a &lsquo;grain&rsquo; that makes some structures work better than others, and some manipulations easier than others.</li>
+      <li>Structures of the material can be substantially expressed in code etc. &ndash; though they are limited expressions.</li>
+      <li>Structures of the material can be considered and created, in an obscure way, by human thought.</li>
+   </ul>
+
+   <p>This material is what primarily defines the field of software engineering as distinct from others (not the product, not the activity or process), and the centre which everything fits.</p>
+
+   <p>&lsquo;Medium&rsquo; would perhaps be a closer term, but &lsquo;material&rsquo; is more real &ndash; which is proabably good for something so abstract and in the background. The aim is, after all, to highlight something half-realised, make it clear, and be a way to prompt or guide thought.</p>
+
+   <p>The new model extends and improves the old one. There is still code and program, there is still special human capability, but there is added the first-class concept of an objective determinate material, and its potential for sophisticated understanding. Philosophically, the original model could be seen as a form of &lsquo;idealism&rsquo;, and the new model a &lsquo;Software Engineering Materialism&rsquo;.</p>
+   </div>
+</div>
+
+
+<div class="section" id="implications" title="implications">
+<h3>Implications</h3>
+
+   <div class="part" id="implications-original" title="implications-original">
+   <h4>Original implications</h4>
+
+   <p>The original model justifies a professional status for programmers. Their work cannot be done by simply following rules, or manipulating text, it requires &lsquo;theory building&rsquo;.</p>
+
+   <blockquote>
+   <p>&ldquo;the notion of a programming method, understood as a set of rules of procedure to be followed by the programmer, is based on invalid assumptions and so has to be rejected. As further consequences of the view, programmers have to be accorded the status of responsible, permanent developers and managers of the activity of which the computer is a part&rdquo;</p>
+   </blockquote>
+
+   <blockquote>
+   <p>&ldquo;much current discussion of programming seems to assume that programming is similar to industrial production, the programmer being regarded as a component of that production, a component that has to be controlled by rules of procedure and which can be replaced easily.&rdquo;</p>
+   </blockquote>
+
+   <blockquote>
+   <p>&ldquo;the notion of the programmer as an easily replaceable component in the program production activity has to be abandoned. Instead the programmer must be regarded as a responsible developer and manager of the activity in which the computer is a part. In order to fill this position he or she must be given a permanent position, of a status similar to that of other professionals, such as engineers and lawyers, whose active contributions as employers of enterprises rest on their intellectual proficiency.&rdquo;</p>
+   </blockquote>
+
+   <p>And so also specifically for software modification:</p>
+
+   <blockquote>
+   <p>&ldquo;the expectation of the possibility of low cost program modifications conceivably finds support in the fact that a program is a text held in a medium allowing for easy editing. For this support to be valid it must clearly be assumed that the dominating cost is one of text manipulation. This would agree with a notion of programming as text production. On the Theory Building View this whole argument is false.&rdquo;</p>
+   </blockquote>
+
+   <blockquote>
+   <p>&ldquo;the problems of program modification arise from acting on the assumption that programming consists of program text production, instead of recognising programming as an activity of theory building.&rdquo;</p>
+   </blockquote>
+   </div>
+
+
+   <div class="part" id="implications-updated" title="implications-updated">
+   <h4>Updated implications</h4>
+
+   <p>The new model also supports the original implication of professional status: Engineering-design of structures in computational material requires deep knowledge and practised skill &ndash; knowledge of the material, of how it can relate to problem domains; skill with engineering-design. Since there is still a basis in complex structures and their mental manipulation, there are the same professional demands.</p>
+
+   <p>But the original model has a serious weakness: it doesn't produce anything logically or mathematically structured. Despite the name, &lsquo;theory&rsquo; doesn't have the properties of a real theory &ndash; being subject to measurement, mathematical modelling, testing. It offers no way of scientific/engineering advance.</p>
+
+   <p>The new model's primacy of &lsquo;material&rsquo; suggests that a sophisticated knowledge can still be further developed for software. Both at the core, analogous to physics for real material; and less strictly/exactly at its boundary, with respect to the design process. By giving primary status to the area that can be most fruitful of useful knowledge, the new model adds an important benefit.</p>
+   </div>
+</div>
+
+
+<div class="section" id="references" title="references">
+<h3>References</h3>
+
+   <ul>
+      <li id="ref-01"><a href="#note-01">[1]</a> <a href="http://alistair.cockburn.us/ASD+book+extract:+%22Naur,+Ehn,+Musashi%22">&lsquo;Programming As Theory Building&rsquo;; Naur; 1985.</a></li>
+      <li id="ref-02"><a href="#note-02">[2]</a> <a href="http://www.hxa.name/notes/note-hxa7241-20090410T1636.html">&lsquo;Philosophy Of Software Development&rsquo; Harrison Ainsworth; 2009.</a></li>
+   </ul>
+</div>
+
+
+</div><!--text-->
+
+
+<div id="postface" title="postface">
+<h3>Metadata</h3>
+
+   <dl id="metadata" title="metadata" class="plainlist">
+      <dt>subject</dt>
+      <dd id="metadata-subject" title="metadata-subject">programming, software engineering, philosophy of software engineering</dd>
+
+      <dt>uri</dt>
+      <dd id="metadata-id" title="metadata-id"><a href="http://www.hxa.name/articles/content/on-naur-theory-building_hxa7241_2009.html">http://www.hxa.name/articles/content/on-naur-theory-building_hxa7241_2009.html</a></dd>
+
+      <dt>license</dt>
+      <dd id="metadata-license" title="metadata-license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons BY-SA 3.0 License</a></dd>
+   </dl>
+</div>
+
+
+</div><!--paper-->
+
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

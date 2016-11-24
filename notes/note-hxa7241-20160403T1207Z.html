@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>How Objects Naturally Arise - (note-20160403T1207Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="How Objects Naturally Arise - (note-20160403T1207Z) - HXA7241" />
+   <meta name="DC.subject"     content="software, programming, OO" />
+   <meta name="DC.description" content="Why have objects? They are 'naturally arising': components are necessary, callbacks are valuable, and grouping them is good -- and there is an object." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2016-04-03" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20160403T1207Z.html" />
+
+   <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+   <meta name="keywords"       content="software, programming, OO" />
+   <meta name="description"    content="Why have objects? They are 'naturally arising': components are necessary, callbacks are valuable, and grouping them is good -- and there is an object." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons BY-SA 3.0" />
+
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>How Objects Naturally Arise</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20160403T1207Z.html" title="permalink">NOTE HXA7241 2016-04-03T12:07Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>Why have objects? They are &lsquo;naturally arising&rsquo;: components are necessary, callbacks are valuable, and grouping them is good &ndash; and there is an object.</h5>
+
+
+   <div class="part" id="part0">
+      <p>Instead of seeing OO as something devised, a way of doing things that was designed, or otherwise deliberate, try looking at OO as antiteleological &ndash; as just one of the natural forms that arises from the &lsquo;grain&rsquo; of the material of software, and whose usefulness is rather by happenstance.</p>
+
+      <p>The argument proceeds thus:</p>
+      <ul>
+         <li>Components naturally arise &ndash; in building and in knowledge.</li>
+         <li>Callbacks naturally arise &ndash; as a shortcut to passing actual code.</li>
+         <li>Groupings naturally arise &ndash; by offering a way to components.</li>
+         <li>Conclusion &ndash; do not overdo it.</li>
+      </ul>
+   </div>
+
+
+   <div class="part" id="part1">
+      <h4>Components naturally arise</h4>
+
+      <p>Things must be broken into pieces &ndash; components &ndash; for building to be possible at all. Otherwise, everything would have to be made as a monolithic whole, completely from scratch each time, with no knowledge ever reused.</p>
+
+      <p>And with components necessarily comes: 1, interfaces between components; and 2, parameterisation of those interfaces. Parameterisation is really what gives the reusability: with none, a component could only fit in a single place &ndash; it would not really be a component, it would still be part of a monolith and not really separate. The range of the parameters allows the component to fit in multiple places.</p>
+   </div>
+
+
+   <div class="part" id="part2">
+      <h4>Callbacks naturally arise</h4>
+
+      <p>The maximal limit/&lsquo;extent&rsquo; of a component interface is, in a way, Turing-completeness &ndash; the component being parameterised by a full programming language. Rather than the component being configured with a few &lsquo;switches&rsquo; or other values, it is controlled with a language that has no computational limit.</p>
+
+      <p>But when both component and client run in the same context, in the same form, there is a shortcut: callbacks. Instead of an interface taking source-code text to parse and interpret, or even ready-compiled code to execute, it can take not code but merely a pointer to it. The component is still parameterised by general code, but packaged in a different way &ndash; by reference really.</p>
+   </div>
+
+
+   <div class="part" id="part3">
+      <h4>Groupings naturally arise</h4>
+
+      <p>Software creators seek grouping because it is a kind of inchoate component: finding a commonality, an aspect of simplification, is a step toward finding something understandable and buildable, as noted above.</p>
+
+      <p>The salient way of grouping callback procedures is on their shared parameters. And that will tend to boil down to a single one that represents what is common &ndash; any that are shared can be factored into one.</p>
+
+      <p>So we end up with a set of callback procedures grouped around a shared datastructure ... and there is an object !</p>
+   </div>
+
+
+   <div class="part" id="part4">
+      <h4>Conclusion</h4>
+
+      <p>Does this mean OO is excellent, right, and obligatory? No. It is one structure that has a place.</p>
+   </div>
+
+
+   <div class="part" id="part5">
+      <h4>Reference</h4>
+
+      <p>Now read this other article for further examination of this subject:</p>
+      <ul>
+         <li><a href="http://www.cs.cmu.edu/~aldrich/papers/objects-essay.pdf">"Why Objects Are Inevitable"; Aldrich; 2013 / article.</a></li>
+      </ul>
+   </div>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

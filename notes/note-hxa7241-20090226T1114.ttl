@@ -1,0 +1,43 @@
+# ttl - Turtle - http://www.w3.org/TeamSubmission/turtle/
+
+# Note - HXA7241
+# (for a new note, change: thisnote, title, content, contenthash, date.)
+
+
+@base <http://hxa.name/>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/TR/xmlschema-2/#>
+@prefix rfc: <http://www.ietf.org/rfc/>
+@prefix iana: <http://www.iana.org/assignments/media-types/>
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix hxa: <rdf/1/rdf-terms#> .
+@prefix thisnote: <urn:uuid:AD6DE096-046C-4517-93F3-BC03A0906CB4> .
+
+
+thisnote:
+dc:title  "Logical Structure And Software Architecture"@en
+; hxa:content """
+Software architecture is about articulating logical structure, but what does that mean more exactly?
+
+Mere conciousness confers upon almost everything at least some logical properties. Almost everything can be seen and handled in some way discretely and measurably. This aspect is ubiquitous, although varied: Some things partake only superficially or nebulously, like a feeling (at least it has some name and existence), but others deeply and complexly, like physics.
+
+That logical structure is the underlying realm of software architecture. Its focus is the region between vague and determinate, and its activity is to crystallise something for practical use, by means of software engineering. (The same underlying realm also belongs to software engineering, but its purview is the clear and determinate, and its task is to implement architecture.) Software architecture works to see and define useful new arrangements and expressions of logical structures. For example: the newsgroup/forum, the Wiki, the FPS game, music recommending/tracking, the windowing GUI.
+
+With such an extensive domain, software architecture potentially has many kinds and specialisms. And also a variety of levels. Some will diverge, like building architecture and product design have for physical objects.
+
+Its prospect of development is also large, ultimately open-ended, owing to its main dependencies: There is continuing enlargement of engineering capability, and an inexhaustible request, in human behaviour, for novel variations of uses for it.
+
+References:
+* 'Software Development In A Nutshell' http://www.hxa.name/notes/note-hxa7241-20090218T0934.ttl
+"""@en
+; hxa:contenthash  "124218a3c87b07f623df002c314801cf48c6c59b"^^rfc:rfc3174
+; hxa:domainurl  <notes/>
+; rdf:type  hxa:note
+; dc:format  "text"^^iana:text
+; dc:date  "2009-02-26T11:14"^^xsd:dateTime
+; dc:creator  <about/foaf.rdf>
+; dc:language  "en-GB"^^rfc:rfc4646
+; dc:rights  <http://creativecommons.org/licenses/by-sa/3.0/>
+.

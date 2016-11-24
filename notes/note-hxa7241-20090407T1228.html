@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Structured Object-Oriented Programming - (note-20090407T1228) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Structured Object-Oriented Programming (note) - HXA7241 - 2009" />
+   <meta name="DC.subject"     content="software engineering, rework structure, programming language" />
+   <meta name="DC.description" content="Inconclusive consideration of Structured Programming and Object-Orientation." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.publisher"   content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2009-04-07" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20090407T1228.html" />
+
+   <meta name="keywords"       content="software engineering, rework structure, programming language" />
+   <meta name="description"    content="Inconclusive consideration of Structured Programming and Object-Orientation." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Structured Object-Oriented Programming</h1>
+   <h2><a href="http://www.hxa.name/notes/note-hxa7241-20090407T1228.html" title="permalink">note-<small>HXA7241</small>-<small>20090407T1228</small></a></h2>
+   <h4>Harrison Ainsworth</h4>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <p><i>[Subject: software engineering > rework structure > language]</i></p>
+
+   <p>Structured Programming proposed a limited set of forms &ndash; only sequences, conditionals, and loops &ndash; for building all procedural software. The intended primary benefits were:</p>
+   <ul>
+      <li>uniformity of complexity &ndash; complexity &ldquo;is proportional to program length&rdquo;</li>
+      <li>a global, subdividable &ldquo;frame of reference&rdquo; or &ldquo;coordinate&rdquo; space</li>
+   </ul>
+   <p>and these ramify into other details of understanding and manipulation. The whole representation is more &lsquo;logically efficient&rsquo;.</p>
+
+   <p>Is it possible to apply a similar formalisation to Object-Oriented software? Classes seem comparatively undisciplined: on one hand they have a single general form (various methods and fields), on the other there are various loose open-ended conventions (such as Patterns). Structured Programming implies more discipline, like a limited set of interfaces for all classes. And the aim would be making interchange easier by reducing adjustment of interfaces.</p>
+
+   <p>Functional programming suggests something of a direct analogue to the three Structured forms, translated into data:</p>
+   <ul>
+      <li>map (struct in C, object in JSON) &ndash; sequence</li>
+      <li>list (array in C and JSON) &ndash; loop</li>
+      <li>sum/variant-type (union in C) &ndash; conditional</li>
+   </ul>
+   <p>Perhaps this is the answer. They are comprehensive, and they have a limited set of fixed interfaces &ndash; although they disappear into the language syntax.</p>
+
+   <p>But the basic data structures aren't quite satisfying: the primacy of data-orientation seems lost, and they are too low-level (and being well-established, they don't add anything new). Classifications of kinds of classes would be better: like containers, iterators, or streams, each defining a pattern of methods. They only exist vaguely/colloquially though; something firmer is needed.</p>
+
+   <p>Maybe just strictly defined versions of &lsquo;Design Patterns&rsquo; would do, like: Iterator, Strategy, Composite . . .</p>
+
+   <p>References:</p>
+
+   <ul>
+      <li><a href="http://www.cs.utexas.edu/users/EWD/ewd02xx/EWD249.PDF">&lsquo;Notes On Structured Programming&rsquo;/ewd249; Dijkstra; 1970.</a></li>
+      <li>&lsquo;Object Oriented Software Construction&rsquo;; Meyer; 1997.</li>
+      <li>&lsquo;Design Patterns&rsquo;; Gamma, Helm, Johnson, Vlissides; 1995.</li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

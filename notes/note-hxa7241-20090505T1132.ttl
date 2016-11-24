@@ -1,0 +1,48 @@
+# ttl - Turtle - http://www.w3.org/TeamSubmission/turtle/
+
+# Note - HXA7241
+# (for a new note, change: thisnote, title, content, contenthash, date.)
+
+
+@base <http://hxa.name/>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/TR/xmlschema-2/#> .
+@prefix rfc: <http://www.ietf.org/rfc/> .
+@prefix iana: <http://www.iana.org/assignments/media-types/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix hxa: <rdf/1/rdf-terms#> .
+@prefix thisnote: <urn:uuid:8D861F4A-AF98-4458-AEAE-CAAB870AF888> .
+
+
+thisnote:
+dc:title  "The Third Principle Of Programming Languages"@en
+; hxa:content """
+   *A main driver of language design must be the extended design process.*
+
+Languages are largely representation/rework structure: a lot of what they do, and what they are for is to enable understandability and modifiability of software. And most of that representation/rework duty in software engineering is taken by languages. So a principle of languages must be to meet this need.
+
+The extended design process is what contains, defines, and organises work and rework. This process has an overall shape: first, a progressive tightening of abstract definition -- the main flow of design; second a lateral transform of structure -- for other changes. It is the second flow that is to suit the extra changeability of software, and makes it *extended*.
+
+Current languages seem to only marginally, tangentially address this: To fit the extended design process means languages must facilitate change, and in two particular kinds. Meyer explains that one of OO's merits is applicability across the design process. This is broadly due to modularisation, which helps with both kinds of change. But modularisation is really about *avoiding* change, not enabling it. And what it can avoid is always limited. At the manipulation level, languages are even worse: they are obviously static representations. The only structure that represents change seems to be patch formats for version control system usage. Instead of such rudimentary and adscititious aids, surely something better is needed.
+
+Improvement can be based on normal scientific means: further analysis of the extended design process, and characterisation and measurement of software change during design. Both ultimately depend on how things are actually done. But open new choice and control over how to do them better.
+
+*(The other two principles of programming languages are: subject model suitability, and data/computation mechanics support. They arise from the other two relevant parts of software engineering.)*
+
+References:
+* 'Software Engineering And Civil Engineering'; HXA7241; 2008.
+* 'Determinate Knowledge In Software Engineering'; HXA7241; 2009.
+* 'Object-Oriented Software Construction'; Meyer; 1997. -- p 22, p 506, p 931.
+* 'diff' unixy tool.
+"""@en
+; hxa:contenthash  "73434508a10b69b28629db9793683b1ea617e9fe"^^rfc:rfc3174
+; hxa:domainurl  <notes/>
+; rdf:type  hxa:note
+; dc:format  "text"^^iana:text
+; dc:date  "2009-05-05T11:32"^^xsd:dateTime
+; dc:creator  <about/foaf.rdf>
+; dc:language  "en-GB"^^rfc:rfc4646
+; dc:rights  <http://creativecommons.org/licenses/by-sa/3.0/>
+.

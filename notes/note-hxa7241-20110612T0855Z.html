@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>The second basic question of software engineering - (note-20110612T0855Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="The second basic question of software engineering - (note-20110612T0855Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, representation, material, analysis of abstractions" />
+   <meta name="DC.description" content="Saying we want to improve how software engineering is done seems OK, but can that be clarified? We understand what kinds of computation are efficient by formalising the idea of what computation is. We can perhaps understand what development is efficient by formalising what development is." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2011-06-12" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20110612T0855Z.html" />
+
+   <meta name="keywords"       content="software-engineering, representation, material, analysis of abstractions" />
+   <meta name="description"    content="Saying we want to improve how software engineering is done seems OK, but can that be clarified? We understand what kinds of computation are efficient by formalising the idea of what computation is. We can perhaps understand what development is efficient by formalising what development is." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>The second basic question of software engineering</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20110612T0855Z.html" title="permalink">NOTE HXA7241 2011-06-12T08:55Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>Saying we want to improve how software engineering is done seems OK, but can that be clarified? We understand what kinds of computation are efficient by formalising the idea of what computation is. We can perhaps understand what development is efficient by formalising what development is.</h5>
+
+
+   <h3>The first basic question</h3>
+
+   <blockquote>
+      <p>&ldquo;The fundamental question underlying all of computing is: What can be (efficiently) automated?&rdquo;</p>
+      <p>&ndash; <a href="http://web.archive.org/web/20060525195404/http://www.idi.ntnu.no/emner/dif8916/denning.pdf">&lsquo;Computer Science, The Discipline&rsquo;; Denning; 1999.</a></p>
+   </blockquote>
+
+   <p>This is the real core of software engineering: how much time and space (and perhaps energy) does a computation take? and will it fit the intended/expected computational resources? The most indispensible requirement of any project is that, within real constraints, the thing will actually work.</p>
+
+
+   <h3>The second basic question</h3>
+
+   <p>But there is a second basic question for software engineering: how much time and resources does <i>development</i> take? &ndash; or, &lsquo;What can be (efficiently) developed?&rsquo;.</p>
+
+   <p>This follows from what could be distilled into the two underlying goals of engineering generally (see <a href="http://www.hxa.name/articles/content/software-engineering-design_hxa7241_2010.html">&lsquo;Understanding Software Engineering Design&rsquo;</a>): the first is to maximise requirements fulfilment in the product, and the second is to minimise the development effort to do so. We want the project to work and be correct, but we also want it done at reasonable cost.</p>
+
+   <p>The second question is not so important, and also more difficult. It cannot, it seems, ever be answered so definitely: engineering work is creative and indeterminate; we never know exactly what is wanted, nor exactly how to do it. But despite this, it is something we would like to answer somehow. (How much can it be answered? and how precisely?)</p>
+
+
+   <h3>Formalisation</h3>
+
+   <blockquote>
+      <p>&ldquo;we construct our mechanical symbol manipulators by means of human symbol manipulation&rdquo;</p>
+      <p>&ldquo;computing science is concerned with the interplay between mechanized and human symbol manipulation&rdquo;</p>
+   <p>&ndash; <a href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html">&lsquo;On the cruelty of really teaching computing science&rsquo;; EWD-1036; Dijkstra; 1988.</a></p>
+   </blockquote>
+
+   <p>The second question will be answerable in terms of the technical forms that the projects are representable in. Answering the <i>first</i> question is done in terms of sorting, searching, etc. &ndash; general algorithmic forms &ndash; which problems fit which algorithms. So answering the second question will be similar: which projects fit which developmental forms.</p>
+
+   <p>This is what formalisation means here: looking from the perspective of the technical medium: seeing the vague behaviour through the discrete, objective parts it is expressed in. Though development seems vague, complex, ungraspable, it is done through a medium that is well-defined and simpler &ndash; and that is what can be understood. How we solve problems is obscure, but the manipulations that the medium can undergo are determinate, clear, precise.</p>
+
+   <p>Answering the second question is about clarifying what kinds of software modification are possible, and what properties, including costs, they have. This is the proper basis. There is otherwise a vague, implicit, goal of making software development easier, but this cannot in general be quite right. As Brooks noted, there are essential costs to development, that cannot be significantly avoided. Simply making things better is an uninformed goal: we need to know the terrain before we can see where we can go.</p>
+
+   <p>Concretely, specifically, what does this mean? For computational efficiency we have analysis of algorithms &ndash; addressing the &lsquo;functional&rsquo; aspect of software; for development efficiency we want something like &lsquo;analysis of abstractions&rsquo; &ndash; addressing the &lsquo;representational&rsquo; aspect of software. But what would that be exactly? . . .</p>
+
+
+   <h3>References</h3>
+
+   <ul>
+      <li><a href="http://web.archive.org/web/20060525195404/http://www.idi.ntnu.no/emner/dif8916/denning.pdf">&lsquo;Computer Science, The Discipline&rsquo;; Denning; 1999.</a></li>
+      <li><a href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html">&lsquo;On the cruelty of really teaching computing science&rsquo; / EWD-1036; Dijkstra; 1988.</a></li>
+      <li>&lsquo;No Silver Bullet&rsquo;; Brooks; 1987.</li>
+   </ul>
+
+
+   <h3>Related</h3>
+
+   <ul>
+      <li><a href="http://www.hxa.name/articles/content/software-engineering-design_hxa7241_2010.html">&lsquo;Understanding Software Engineering Design&rsquo;; HXA; 2010.</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110605T0723Z.html">&lsquo;The functional/representational division in software&rsquo;; HXA; 2011.</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110410T0910Z.html">&lsquo;Definition of ‘abstract’&rsquo;; HXA; 2011.</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110327T1046Z.html">&lsquo;Stone cathedrals, structure-preserving-transformations, and software development&rsquo;; HXA; 2011.</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20100713T2123Z.html">&lsquo;Alternatives To Design-Construction-Maintenance&rsquo;; HXA; 2010.</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="hxa7241-rdf-terms" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+   <title>&lt; H X A 7 2 4 1 &gt; : RDF terms </title>
+
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+</head>
+
+
+<body>
+
+<h1>HXA7241 RDF terms</h1>
+
+<dl>
+   <dt id="article">article</dt>
+   <dd>(the type of) an article -- a small to moderate length, semi-formal writing</dd>
+
+   <dt id="content">content</dt>
+   <dd>content of an object, as text (probably just plain-text, not some kind of encoding of something else into text)</dd>
+
+   <dt id="contenthash">contenthash</dt>
+   <dd>SHA1 hash of an object's content</dd>
+
+   <dt id="domainurl">domainurl</dt>
+   <dd>URL stem where the object is served (unless the content is embedded in RDF): just add the object's urn:uuid</dd>
+
+   <dt id="note">note</dt>
+   <dd>(the type of) a note -- a short, informal, article</dd>
+
+   <dt id="url">url</dt>
+   <dd>a URL</dd>
+</dl>
+
+<p><a href="/">(home)</a></p>
+
+
+<!--<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>-->
+
+</body>
+
+</html>

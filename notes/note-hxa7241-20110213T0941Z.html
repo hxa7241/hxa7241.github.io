@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Imagining 'dynamic macros' for Scheme - (note-20110213T0941Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Imagining 'dynamic macros' for Scheme - (note-20110213T0941Z) - HXA7241" />
+   <meta name="DC.subject"     content="programming-language, lisp, macros, lambdas" />
+   <meta name="DC.description" content="It seems possible to merge macros with lambdas, making a smoother single language feature. (At least, as far as a quick casual pondering will take you.)" />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2011-02-26" />
+   <meta name="DC.date"        content="2011-02-13" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20110213T0941Z.html" />
+
+   <meta name="keywords"       content="programming-language, lisp, macros, lambdas" />
+   <meta name="description"    content="It seems possible to merge macros with lambdas, making a smoother single language feature. (At least, as far as a quick casual pondering will take you.)" />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Imagining &lsquo;dynamic macros&rsquo; for Scheme</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20110213T0941Z.html" title="permalink">NOTE HXA7241 2011-02-13T09:41Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>It seems possible to merge macros with lambdas, making a smoother single language feature. (At least, as far as a quick casual pondering will take you.)</h5>
+
+
+   <h3>The Scheme ethos, and macros</h3>
+
+   <p><a href="http://www.schemers.org/Documents/Standards/R5RS/HTML/r5rs-Z-H-3.html">R5RS says at the start</a>: &ldquo;Programming languages should be designed not by piling feature on top of feature, but by removing the weaknesses and restrictions that make additional features appear necessary.&rdquo;</p>
+
+   <p>Does this apply to macros? Macros might seem like a necessarily distinct mechanism, but is that so?</p>
+
+
+   <h3>What macros offer, and call-by-name</h3>
+
+   <p>&lsquo;<code>And</code>&rsquo; and &lsquo;<code>or</code>&rsquo; cannot be lambdas because they might not want to evaluate some of their arguments. But this looks like something call-by-name could handle. So how much could macros be replaced by specific control of argument passing? &ndash; as in <a href="http://www.scala-lang.org/">Scala</a> a parameter can be set to be call-by-name or call-by-value. This is the seed of the idea. Maybe the solely call-by-value mode of Scheme lambdas could be considered a restriction that might be removed.</p>
+
+   <p>From <a href="http://www.paulgraham.com/onlisptext.html">&lsquo;On Lisp&rsquo;</a> by Paul Graham, section 8.1, we can understand what macros offer. They do two broad things not possible otherwise: control the evaluation of their arguments, and directly inline their code:</p>
+   <ul>
+      <li>control
+         <ul>
+            <li>conditional, or multiple, evaluation of arguments</li>
+            <li>transformation of expressions, and binding of lexical variables</li>
+         </ul></li>
+      <li>inlining
+         <ul>
+            <li>assuming a variable from the context</li>
+            <li>compile-time-execution, and call-avoidance</li>
+         </ul></li>
+   </ul>
+
+   <p>The first can be done with call-by-name. The second cannot, but perhaps could be with some extension to it: to allow &lsquo;reaching in&rsquo; to the structure of the expression that is evaluated to give the argument.</p>
+
+   <p>The third is recognised as dubious, and do Scheme's hygienic macros even allow it? The fourth seems like it should be a separate, orthogonal, feature and mechanism.</p>
+
+
+   <h3>Extending call-by-name with &lsquo;constructors&rsquo;</h3>
+
+   <p>In one of the &lsquo;On Lisp&rsquo; examples, &lsquo;<code>setf</code>&rsquo; must be a macro because <code>(setf (car a) 'b)</code> needs to become <code>(progn (rplaca a 'b) 'b)</code>. That is not possible with just call-by-name because it cannot see into the structure of the <code>(car a)</code> argument. But if a function could demand that an argument matches a particular &lsquo;constructor&rsquo;, it could get that access.</p>
+
+   <p>With such &lsquo;constructed&rsquo; call-by-name, the function parameter is not only specified as by-name, but a &lsquo;constructor&rsquo; is specified too, to allow access to the argument's sub-structure.</p>
+
+   <p>Basic call-by-name effectively passes arguments wrapped in lambdas, &lsquo;constructed&rsquo; call-by-name would pass (in Lisp) a general list &ndash; i.e. a tree &ndash; of lambda-wrapped terminal things. This tree can then be manipulated, re-arranged, and executed in any way.</p>
+
+   <p class="lowlight">(You might ask, how can you pass this as a lambda and have the call site know to provide this special constructed structure? But how does any call site know to provide the right number of the right kind of arguments? These &lsquo;constructed&rsquo; parameters are just another part of the lambda's signature &ndash; an extension of the same basic thing, not really anything different. With a latent-typed language <i>you</i> write the code to fit, and with a static-typed language those constraints can be specified and checked.)</p>
+
+   <p>Is this enough to replace the first two &ndash; the main, control &ndash; uses of macros? It seems to do the essence of them.</p>
+
+
+   <h3>Dynamic macros</h3>
+
+   <p>What we have, effectively, is dynamic macros &ndash; integrated with the rest of execution and with no barrier between them and lambdas (you could pass &lsquo;<code>and</code>&rsquo; as a lambda to a &lsquo;<code>map</code>&rsquo;).</p>
+
+   <p>Program execution is tree evaluation. Macros transform the tree, but keep the same (depth-first) traversal of execution. Instead, this extended call-by-name is more like changing the order of traversal, including repeating, skipping, and inserting branches. Really, it is tree transform &ndash; but dynamic where macros are static.</p>
+
+   <p>Instead of a function taking a single value as each argument, it now takes a sub-tree of program. And function-calling is delegated to the called function: <i>it</i> decides how much of its sub-tree(s) it applies to. That is, for each argument, how much of its sub-tree is evaluated immediately and how much held back for access and re-arrangement inside the function.</p>
+
+   <p>It seems to obviate &lsquo;hygienic&rsquo; effort, by using the built-in scoping mechanism of lambdas. And should not macros really be like calls anyway? &ndash; transforming arbitrary chunks in place is rather unstructured. This kind of dynamic macro slots the transform into the structure of the call.</p>
+
+   <p>The harder part is the constructing/destructuring of the argument sub-trees. The rest seems easy.</p>
+
+
+   <h3>Implementation needed</h3>
+
+   <p>Could this actually work? That requires more careful thinking.</p>
+
+   <p>Normal execution has to interpret up-coming expression trees, the change is to hold that off a little and delegate it to the called function. That then applies the special mechanism of transform before continuing.</p>
+
+   <p>The body of the called function is just like a normal macro definition. And it has its normal closure, but also, inside that, a closure for the parameter trees.</p>
+
+   <p>Hmmmm . . . (it has been an interesting thought-exercise so far anyway)</p>
+
+   <p>. . . But word has it that there is an implementation of something quite close to this: the <a href="http://web.cs.wpi.edu/~jshutt/kernel.html">Kernel Programming Language</a> &ndash; &ldquo;Kernel is a conservative, Scheme-like dialect of Lisp in which everything is a first-class object.&rdquo;. The &lsquo;dynamic macros&rsquo; there are in fact the primitive functional building-block, and lambdas are made out of <i>them</i>. A thorough and readable description is available at the site.</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

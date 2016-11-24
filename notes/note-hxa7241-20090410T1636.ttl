@@ -1,0 +1,44 @@
+# ttl - Turtle - http://www.w3.org/TeamSubmission/turtle/
+
+# Note - HXA7241
+# (for a new note, change: thisnote, title, content, contenthash, date.)
+
+
+@base <http://hxa.name/>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/TR/xmlschema-2/#> .
+@prefix rfc: <http://www.ietf.org/rfc/> .
+@prefix iana: <http://www.iana.org/assignments/media-types/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix hxa: <rdf/1/rdf-terms#> .
+@prefix thisnote: <urn:uuid:C14CB1A4-473A-49EB-B41C-E53417B2A9CB> .
+
+
+thisnote:
+dc:title  "Philosophy Of Software Development"@en
+; hxa:content """
+Philosophy of software development, like philosophy of science and philosophy of engineering, is about clarifying what it is and how it is done. (It could also be about implications, ethics, or other more contextual matters, but those shall be left aside.) And it may be an even more appropriate candidate.
+
+Russell says: "Philosophy . . . aims at . . . the kind of knowledge which gives unity and system to the body of the sciences, and the kind which results from a critical examination of the grounds of our convictions, prejudices, and beliefs.". But its status is kept always provisional, as Russell says also: ". . . as soon as definite knowledge concerning any subject becomes possible, this subject ceases to be called philosophy, and becomes a separate science.". So it is more about trying than knowing, though if its scope is of the right kind, then the products can be real and valuable.
+
+Software is the right kind of subject for philosophy to be fruitful: As far as a subject has logical structure then clarifying and organising its thought can help. And as far as a subject has uncertainty then philosophy has a place. Software seems well suited. It is a young field, entirely made of thought, spanning a range of certainty.
+
+A first approach is to compare software with other similar disciplines, such as the building industry. And how they appear to relate leads to closer examination of their constituents. In the background is always an implicit form sought in results. Perhaps for software this would, or *could*, be the structures found in software itself: recursion is apt.
+
+As an early, basic result, the subject can be divided into two major parts: philosophy of software architecture, alongside philosophy of software engineering -- each assuming a meaning more faithful to the building industry.
+
+References:
+* 'The Problems Of Philosophy'; Russell; 1912; http://www.gutenberg.org/etext/5827 .
+* 'Philosophy In The Making'; McCarthy; 2006; http://www.ingenia.org.uk/ingenia/issues/issue26/mccarthy.pdf .
+"""@en
+; hxa:contenthash  "c12b35c030b8129f63225e2cf7357cf94ca158e3"^^rfc:rfc3174
+; hxa:domainurl  <notes/>
+; rdf:type  hxa:note
+; dc:format  "text"^^iana:text
+; dc:date  "2009-04-10T16:36"^^xsd:dateTime
+; dc:creator  <about/foaf.rdf>
+; dc:language  "en-GB"^^rfc:rfc4646
+; dc:rights  <http://creativecommons.org/licenses/by-sa/3.0/>
+.

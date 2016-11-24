@@ -1,0 +1,184 @@
+
+
+HxaBuild
+======================================================================
+
+
+HxaBuild C++ build automater, version 1
+Copyright (c) 2005, Harrison Ainsworth.
+
+http://hxa7241.org/
+
+2005-04-02
+
+
+
+
+Contents
+--------
+
+ * Description
+ * Requirements
+ * Installation
+ * Usage
+ * To do
+ * Acknowledgements
+
+
+
+
+Description
+-----------
+
+HxaBuild is a command-line tool that automates C++ project building.
+It aims at moderately simple general project structures, and intends
+to automate as much as possible -- to be as easy as possible to use
+immediately.
+
+When HxaBuild is run, it scans project directories, notes file changes
+compared to the previous scan, and issues compile or link commands
+accordingly. Dependencies within the project are tracked.
+
+The purpose was simplicity, not power. For many projects, 'make' and
+its replacements are over-complicated and demand too much setup.
+Building is essentially a simple task: compile changed source files,
+and link changed object files -- in many cases it ought to be almost
+completely automatable and preconfigured.
+
+With HxaBuild, just stay within the general project pattern, and all
+you need to do is modify some default settings for directories, file
+filters, and compiler commands. There is no language to learn, and
+hardly any configuration to do.
+
+This first version has been developed with/for windows projects, but
+wouldn't need much modification for other platforms.
+
+
+
+
+Requirements
+------------
+
+Ruby 1.8
+
+
+
+
+Installation
+------------
+
+Unzip the files into their own directory.
+
+
+
+
+Usage
+-----
+
+First, your project must conform to the pattern. There must be zero or
+more source directories, zero or more library directories, and one
+object directory. Each source directory is a base: the whole tree
+below is operated on. The object directory is a base: the whole tree
+below (which mirrors the source trees) is operated on. All of the
+library directory is operated on. Which files to operate on in each
+directory is controlled by their associated filename extension
+filters. Two external directory sets can be specified: one for finding
+other included files, and one for finding other libraries.
+
+So, the granularity of configuration is the directory.
+
+Project structure pattern:
+(referencing options keys in [])
+
+	project home [homeDir]
+	   |
+	   |--- source directory bases [srcDirList]
+	   |    (more than one can be specified)
+	   |    (filtered with [cppExtList, hppExtList, rcExtList])
+	   |       |
+	   |       |--- ...
+	   |       |      |
+	   |       |      |--- ...
+	   |       |      |
+	   |       |      |--- ...
+	   |       |
+	   |       |--- ...
+	   |       |
+	   |       |--- ...
+	   |
+	   |--- library directorys [libDirList]
+	   |    (more than one can be specified)
+	   |    (filtered with [libExtList])
+	   |
+	   |--- object directory base [objDir]
+	        (filtered with [objExtList, resExtList])
+	           |
+	          ... (mirroring source tree)
+
+	compiler
+	   |
+	   |--- include directorys [incPlatformDirList]
+	   |    (more than one can be specified)
+	   |
+	   |--- library directorys [libPlatformDirList]
+	        (more than one can be specified)
+
+Second, open the options file - 'HxaBuild-options.txt' - and adjust/set
+the directories, filename extensions, and compiler commands.
+
+Finally, run the command - 'HxaBuild.rb' (or 'ruby HxaBuild.rb') - as
+shown here:
+
+Command pattern:
+	HxaBuild.rb [-clean|-rebuildall] [-msg<n>] [optionsfilepathname]
+	HxaBuild.rb -help|-?
+
+Switches:
+	-clean       delete intermediate (object) files
+	-rebuildall  clean + delete data store + build
+	-msg<0-4>    set message level: higher == more
+	-help|-?     prints this message
+
+Parameters:
+	optionsfilepathname  defaults to 'HxaBuild-options.txt'
+
+
+Build flow:
+
+	 project files    compiler files
+
+	lib  h  cpp  rc     h  lib
+	 |   |   |   |      |   |
+	 |   ----------------   |   - compile
+	 |        |   |         |
+	 |        o  res        |
+	 |        |   |         |
+	 ------------------------   - link
+	            |
+	         exe dll
+
+
+
+
+To do
+-----
+
+? allow <empty> specifier in ext lists
+	OptionsHxaBuild
+		exepathname
+		getfiletypefilter
+		changefiletype
+? have code check that directories set in options file exist
+
+
+
+
+Acknowledgements
+----------------
+
+* Ruby:
+   http://ruby-lang.org/
+* The Pragmatic Programmers pickaxe book:
+   http://phrogz.net/ProgrammingRuby/
+* Rubygarden:
+   http://rubygarden.org/ruby?CodingInRuby

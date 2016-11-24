@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="hxa7241-perceptuum" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+   <title>&lt; H X A 7 2 4 1 &gt; : perceptuum</title>
+
+   <meta name="keywords" content="graphics, 3D, renderer, global illumination, physically-based, monte-carlo, ray tracing, photon mapping, C++, Win32, open-source," />
+   <meta name="description" content="An experimental physically-based renderer simulating global illumination, with progressive refinement, frame-coherent/noise-avoiding sampling, and generalised BRDFs. Open-source C++, Windows." />
+
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="perceptuum2.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+<div class="outer">
+
+
+<div class="upper">
+   <div class="title">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
+   </div>
+</div>
+
+
+<div class="side">
+   <ul class="mainmenu">
+      <li>
+         <a href="../" title="home" accesskey="h">HOME</a>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../software/" title="various software projects">SOFTWARE</a>
+         <ul class="mainmenu">
+            <li>
+               <a href="../rendering/" title="some rendering-related development projects">RENDERING</a>
+               <ul class="mainmenu">
+                  <li>
+                     <span class="current" title="this page">PERCEPTUUM</span>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
+      </li>
+      <li>
+         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
+      </li>
+   </ul>
+</div>
+
+
+<div class="middle">
+<div class="picture">
+   <img src="perceptuum-picture.jpg" alt="four cornell box variants" />
+</div>
+
+<h2>PERCEPTUUM</h2>
+<div class="h2subheading">a global illumination renderer</div>
+
+<table class="pagemenu" border="0" cellpadding="0" frame="void" rules="none" summary="menu of page sections">
+   <tr valign="top">
+      <td>
+         <ul>
+            <li><a href="#desc">description</a></li>
+            <li><a href="#images">images</a></li>
+            <li><a href="#downloads">downloads</a></li>
+            <li><a href="#links">links</a></li>
+         </ul>
+      </td>
+   </tr>
+</table>
+
+
+<div class="content">
+
+<div class="section" id="desc">
+   <h3>description</h3>
+
+   <h4>short description</h4>
+
+   <p>An experimental physically-based renderer simulating global illumination, with progressive refinement, frame-coherent/noise-avoiding sampling, and generalised BRDFs. Complete open-source available for download under <abbr title="GNU General Public License">GPL</abbr> license, totalling 30000 lines of well organised C++.</p>
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="quick description features table">
+      <tr valign="top">
+         <td>
+            <ul>
+               <li>monte-carlo ray tracing basis</li>
+               <li>illumination by direct lighting and directly visualised photon mapping</li>
+               <li>generalised <abbr title="Bidirectional Reflection Distribution Function">BRDF</abbr> light interaction</li>
+               <li>high dynamic range <abbr title="Commission Internationale de l'Eclairage">CIE</abbr> XYZ light representation</li>
+               <li>motion blur, depth of field, and glossy scattering capabilities</li>
+               <li>quasi-random stochastic generators</li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li>progressive refinement rendering</li>
+               <li>persistable and deterministic sampling state</li>
+               <li>triangle mesh models</li>
+               <li>model hierarchical instancing</li>
+               <li>image texturing with material and bump mapping</li>
+            </ul>
+         </td>
+      </tr>
+   </table>
+
+   <h4>longer description</h4>
+
+   <p>Perceptuum is an <b>open-source</b> standalone general purpose physically-based renderer simulating <b>global illumination</b> with monte-carlo ray tracing.</p>
+
+   <p>It is a <b>Win32</b> application, with a minimal windowing interface. The scene and options are defined by <b>XML files</b>, and the image output is as tonemapped <b>PNG</b> (plain or sRGB) files, or <b>ward-realpixels</b> PNG files.</p>
+
+   <p>The code is <b>30000 lines of C++</b>, divided into java-style packages, divided into classes, each in two files (h,cpp). It is intended to be ISO C++, but it has been developed with only one compiler, and not tested with anything else.</p>
+
+   <p>Illumination is a combination of <b>direct lighting</b>, and directly visualised <b>photon mapping</b>. Lightsources are selected with importance sampling by wattage. Light interaction is by semi-generalised <b>BRDF</b>, currently using the ward model and normalised phong. Light representation is <b>high dynamic range CIE XYZ</b>.</p>
+
+   <p>The rendering process is by <b>progressive refinement</b>, gradually accumulating frames. Each frame covers all sampling dimensions based on the frame number so it is <b>persistable and deterministic</b>, and the frame coherence <b>eliminates pixel noise</b> in exchange for much less prominent strobe artifacts. The time dimension is included, enabling <b>motion blur</b>. Most of the stochastic generators are <b>quasi-random sequences</b>, to reduce variance.</p>
+
+   <p>Models are <b>triangle meshs</b>, in a <b>hierarchical instancing</b> tree, each base object mesh being a single non-self-intersecting closed surface. <b>Texturing is by images</b>, with each object having a material pointer and its triangles having coords at the corners. The materials map a simple generalized range of qualitative reflection model parameters.</p>
+
+   <!--<p>Rasterization is done projectively with a mostly realtime-style pipeline. The final part is a triangle subdivision stage to interpolate the illumination over small pixel areas, or selectively raytrace further into the scene.</p>-->
+
+   <p>Current development status is that <b>basic overall implementation is done</b>. Important features yet to do include acceleration and tuning, sky illumination, and standard model file format translation. Other features to do include translucent volumes, texturing enhancements, wavelength sampling and polarisation enhancements. Full automation is a somewhat distant goal.</p>
+
+   <h4>more documentation</h4>
+
+   <ul>
+      <li><a href="p2-details.html">details</a></li>
+      <li><a href="p2-packages.html">packages</a></li>
+      <li><a href="p2-sequences.html">sequences</a></li>
+      <li><a href="p2-todo.html">to-do</a></li>
+      <li><a href="p2-commentary.html">commentary</a></li>
+      <li><a href="p2-scene-description-v1_hxa7241_2004.html">scene format description</a></li>
+   </ul>
+</div>
+
+
+<div class="section" id="images">
+   <h3>images</h3>
+
+   <p><a href="../images/#perceptuum2"><img src="perceptuum2thumbnails.jpg" width="148" height="70" alt="thumbnail of thumbnails page" /><br />images page</a></p>
+</div>
+
+
+<div class="section" id="downloads">
+   <h3>downloads</h3>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="perceptuum2 renderer downloads">
+      <tr>
+         <td rowspan="6">
+            <img src="perceptuum2_icon.png" width="32" height="32" alt="perceptuum2 icon" class="producticon" />
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/7zip_icon.png" width="16" height="16" alt="7zip icon" />
+            <a href="perceptuum21src.7z" onclick="javascript:urchinTracker('/perceptuum/perceptuum21src.7z');">perceptuum21src.7z</a>
+         </td>
+         <td class="tableitem" valign="bottom">zipped source code (412k)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/7zip_icon.png" width="16" height="16" alt="7zip icon" />
+            <a href="p2changes.7z" onclick="javascript:urchinTracker('/perceptuum/p2changes.7z');">p2changes.7z</a>
+         </td>
+         <td class="tableitem" valign="bottom">latest source code changes (better Octree mainly) (167k)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/7zip_icon.png" width="16" height="16" alt="7zip icon" />
+            <a href="perceptuum21exe.7z" onclick="javascript:urchinTracker('/perceptuum/perceptuum21exe.7z');">perceptuum21exe.7z</a>
+         </td>
+         <td class="tableitem" valign="bottom">zipped executable (337k)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/txt_icon_g.png" width="16" height="16" alt="txt icon" />
+            <a href="perceptuum2.readme.txt">perceptuum2.readme.txt</a>
+         </td>
+         <td class="tableitem" valign="bottom">readme text file(25k)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/txt_icon_g.png" width="16" height="16" alt="txt icon" />
+            <a href="LICENSE.txt">LICENSE.txt</a>
+         </td>
+         <td class="tableitem" valign="bottom">license text file (18k)</td>
+      </tr>
+   </table>
+</div>
+
+
+<div class="section" id="links">
+   <h3>links</h3>
+
+   <table border="0" cellpadding="0" frame="void" rules="none" summary="links to other related sites">
+      <tr>
+         <td><a href="http://www.pointzero.nl/renderers/">www.pointzero.nl/renderers</a></td>
+         <td class="tablecomment">a list of renderers of all kinds</td>
+      </tr>
+      <tr>
+         <td><a href="http://toxicengine.sourceforge.net/">toxicengine.sourceforge.net</a></td>
+         <td class="tablecomment">an open-source renderer, C++, Win32 or others</td>
+      </tr>
+      <tr>
+         <td><a href="http://aqsis.sourceforge.net/">aqsis.sourceforge.net</a></td>
+         <td class="tablecomment">an open-source renderer, renderman, C++, Win32, Linux, Mac</td>
+      </tr>
+      <tr>
+         <td><a href="http://rise.sourceforge.net/">rise.sourceforge.net</a></td>
+         <td class="tablecomment">an open-source renderer, C++, Win32 and others</td>
+      </tr>
+      <tr>
+         <td><a href="http://sunflow.sourceforge.net/">sunflow.sourceforge.net</a></td>
+         <td class="tablecomment">an open-source renderer, Java</td>
+      </tr>
+      <tr>
+         <td><a href="http://www.winosi.onlinehome.de/">www.winosi.onlinehome.de</a></td>
+         <td class="tablecomment">an open-source renderer, C++, Win32</td>
+      </tr>
+      <tr>
+         <td><a href="http://radsite.lbl.gov/radiance/papers/sg94.1/">radsite.lbl.gov/radiance/papers/sg94.1</a></td>
+         <td class="tablecomment">description of the radiance renderer</td>
+      </tr>
+      <tr>
+         <td><a href="http://graphics.ucsd.edu/~henrik/">graphics.ucsd.edu/~henrik/</a></td>
+         <td class="tablecomment">the photon mapping pioneer</td>
+      </tr>
+      <tr>
+         <td><a href="http://www.graphics.cornell.edu/online/box/">www.graphics.cornell.edu/online/box</a></td>
+         <td class="tablecomment">the original cornell box</td>
+      </tr>
+      <tr>
+         <td><a href="http://www.cs.utah.edu/~bes/papers/scenes/">www.cs.utah.edu/~bes/papers/scenes</a></td>
+         <td class="tablecomment">renderer test scenes</td>
+      </tr>
+      <tr>
+         <td><a href="http://www.raytracingnews.com/">www.raytracingnews.com</a></td>
+         <td class="tablecomment">raytracing notes and ideas</td>
+      </tr>
+      <tr>
+         <td><a href="http://www.graphicspapers.com/">www.graphicspapers.com</a></td>
+         <td class="tablecomment">find that graphics research paper</td>
+      </tr>
+   </table>
+</div>
+
+</div>
+</div>
+
+
+<div class="lower">
+   <div>2006-10-21</div>
+</div>
+
+
+</div>
+</body>
+
+</html>

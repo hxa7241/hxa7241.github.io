@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Testing: thoughts on improving it - (note-20110130T0917Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Testing: thoughts on improving it - (note-20110130T0917Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, programming, testing" />
+   <meta name="DC.description" content="What does testing really do? And how can it be improved? Thinking beyond the surface seems to lead away from testing and toward automation and ergonomics." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2011-01-30" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20110130T0917Z.html" />
+
+   <meta name="keywords"       content="software-engineering, programming, testing" />
+   <meta name="description"    content="What does testing really do? And how can it be improved? Thinking beyond the surface seems to lead away from testing and toward automation and ergonomics." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Testing: thoughts on improving it</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20110130T0917Z.html" title="permalink">NOTE HXA7241 2011-01-30T09:17Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>What does testing really do? And how can it be improved? Thinking beyond the surface seems to lead away from testing and toward automation and ergonomics.</h5>
+
+
+   <h3>What testing does not do, and what should be doing that instead</h3>
+
+   <p>&lsquo;Testing&rsquo; is somewhat of a misnomer. It does not really test the functionality: only the final usage can do that. Because for testing to be truly testing requires an independent objective reference. Do we have that when we write tests?</p>
+
+   <p>If you have information that is better than the information you used to design the code, why did you not derive the code from <i>that</i> information? And if the information you have is worse than that used to make the code, what is the point of testing against it?</p>
+
+   <p>You should get the best information and derive the code faithfully from that. Then the only testing to be done is against the human judgement of the user.</p>
+
+   <p>So the way to improve correctness is <i>not</i> by writing more and better tests. It is by making more and better ways of deriving code from available information. (And making the functionality more clearly and readily available to human judgement, but that is veering toward another topic . . .)</p>
+
+
+   <h3>What testing does do, and how to improve that</h3>
+
+   <p>Really, testing does two things: 1, helps maintain consistency across code modifications; 2, helps find random errors by producing a redundant description.</p>
+Both seem improvable by focusing on their real actions.
+
+   <h4>Consistency</h4>
+
+   <p>This is indeed recognised as a main purpose of testing: you can refactor, or non-destructively modify the code, and the tests will show if it still works. But what testing is doing here is not really showing correctness. It is showing any break in <i>consistency</i>.</p>
+
+   <p>There is something important here. Since it is <i>not</i> testing correctness, that is, not depending on human judgement, and only comparing change, it can ideally be completely automated. We do not need to write &lsquo;tests&rsquo; for this at all, it could all be generated.</p>
+
+   <p>We want something like an automated random comparison, to:</p>
+   <ul>
+      <li>Find all matching interfaces of components/parts.</li>
+      <li>Generate random stimulus for them.</li>
+      <li>Compare responses before and after the modification.</li>
+   </ul>
+   <p>This can be more comprehensive and thorough than manual tests, and can be done automatically.</p>
+
+   <p class="lowlight">(Ultimately this is another case where testing is not the real answer: we should simply only allow consistency-maintaining transforms between code versions. But the possibilities and practical limits of that is another subject . . .)</p>
+
+   <h4>Unanimity</h4>
+
+   <p>Since the information used to write tests is (or should be) no better than that used to write the code, a test merely provides an alternative expression. Neither is more authoritative, both are equivalent. Testing is not really showing correctness here either: it compares two alternatives and checks their unanimity.</p>
+
+   <p>This is essentially like error-detecting/correcting codes for unreliable hardware. Software development starts with (relatively) good information, but then it passes through a noisy processing &ndash; humans writing software. Neither content nor error-detection/correction code is more certain, but together they can probably say if an error has happened.</p>
+
+   <p>This purpose should be more deliberately and fully addressed. We can have an alternative expression designed specially to work as error-correction for the particular kinds of human error in programming.</p>
+
+   <p>We want an alternative expression to be:</p>
+   <ul>
+      <li>A single special language &ndash; to learn beside all other languages</li>
+      <li>Easy to write &ndash; easier than the coding language.</li>
+      <li>Different in ways that catch common and important errors.</li>
+   </ul>
+   <p>This should be more effective than normal testing, and less effort to produce.</p>
+
+   <p class="lowlight">(It is even possible to see how to nearly automate this, by re-arranging/reversing the human activity. Instead of humans producing a different expression, have a different expression automatically generated, and have the humans judge if it matches their requirements &ndash; a passive form of judgement. But practically, this seems weaker: it is too easy to review without paying attention, but demanding active expression of code <i>forces</i> the judgement to be made.)</p>
+
+
+   <h3>Conclusion</h3>
+
+   <p>We do not really want &lsquo;testing&rsquo;. We want other things that address the truer concerns: better software transforms (and better visibility of functionality), better tracing and comparing of modifications, and better error-correction of human coding. All seem very practically realisable and improvable.</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

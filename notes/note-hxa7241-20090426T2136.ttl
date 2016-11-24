@@ -1,0 +1,51 @@
+# ttl - Turtle - http://www.w3.org/TeamSubmission/turtle/
+
+# Note - HXA7241
+# (for a new note, change: thisnote, title, content, contenthash, date.)
+
+
+@base <http://hxa.name/>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/TR/xmlschema-2/#> .
+@prefix rfc: <http://www.ietf.org/rfc/> .
+@prefix iana: <http://www.iana.org/assignments/media-types/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix hxa: <rdf/1/rdf-terms#> .
+@prefix thisnote: <urn:uuid:FE0E68F5-BD0C-47E5-BEA9-1B4B75DCEF96> .
+
+
+thisnote:
+dc:title  "Better HTML fragment referencing, and RDFa"@en
+; hxa:content """
+HTML certainly needs better, proper, fragment identifier referencing capability. Remember: unless there is already an id in the right place in the document, it is impossible.
+
+Dretblog (http://dret.typepad.com/dretblog/2008/05/xhtml-fragment.html) proposes some decent options. And it seems it would be a relatively simple project. There may be a tendency to immediate concern for robustness: surely a simple easy scheme would break too easily. But think of basic URLs -- they have no robustness, technically, at all. Totally disregarding robustness is well founded, in fact it is right. Not trying too hard makes the web work.
+
+A tangential benefit is a perhaps better way than RDFa to bridge the GGG with the WWW, ie. RDF to HTML pages.
+
+There are two obvious basic approaches:
+* add RDF to presentation (HTML): such as RDFa (simpler, easier, more acceptable)
+* add presentation to RDF: like Fresnel (complexer, less acceptable -- it is indeed not prominent)
+But another way would be: adjust an intermediary to join them together better: improved HTML URL fragment identifiers. Then external, separate, RDF could address details of web pages. This seems much the best engineeringly, because it is so minimal.
+
+Whereas, RDFa is rather dubious. Its HTML base makes it familiar and acceptable. But it still can't make statements about web-page details without changing the page itself. It is antithetical to RDF's essentially 'addititve', always open, graph principle. RDFa is also much more complex than better fragment identifiers: it adds more than it reuses, designwise (is that a tendency of W3C?).
+
+There is not really much of a problem having all three tactics available, and maybe that is best overall. But RDF + Fresnel, with better HTML fragments, would be most powerful.
+
+References:
+* 'X(HT)ML Fragment Identifiers'; Erik Wilde; 2008. -- http://dret.typepad.com/dretblog/2008/05/xhtml-fragment.html
+* 'URI References: Fragment Identifiers on URIs'; Tim Berners-Lee; 1998. -- http://www.w3.org/DesignIssues/Fragment.html
+* 'RDFa Primer'; W3C; 2008. -- http://www.w3.org/TR/xhtml-rdfa-primer/
+* 'Fresnel - Display Vocabulary for RDF'; W3C; 2008. -- http://www.w3.org/2005/04/fresnel-info/
+"""@en
+; hxa:contenthash  "854c1b2d211081bb56012262ce6beb82932e23e6"^^rfc:rfc3174
+; hxa:domainurl  <notes/>
+; rdf:type  hxa:note
+; dc:format  "text"^^iana:text
+; dc:date  "2009-04-26T21:36"^^xsd:dateTime
+; dc:creator  <about/foaf.rdf>
+; dc:language  "en-GB"^^rfc:rfc4646
+; dc:rights  <http://creativecommons.org/licenses/by-sa/3.0/>
+.

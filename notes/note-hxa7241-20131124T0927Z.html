@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>&lsquo;Boolean-blindness&rsquo; is about types - (note-20131124T0927Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="'Boolean-blindness' is about types - (note-20131124T0927Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, types" />
+   <meta name="DC.description" content="'Boolean-blindness' is not really about booleans, it is about destructuring data into types, and hence the virtue of a good type system." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2013-11-24" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20131124T0927Z.html" />
+
+   <meta name="keywords"       content="software-engineering, types" />
+   <meta name="description"    content="'Boolean-blindness' is not really about booleans, it is about destructuring data into types, and hence the virtue of a good type system." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons BY-SA 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>&lsquo;Boolean-blindness&rsquo; is about types</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20131124T0927Z.html" title="permalink">NOTE HXA7241 2013-11-24T09:39Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>&lsquo;Boolean-blindness&rsquo; is not really about booleans, it is about destructuring data into types, and hence the virtue of a good type system.</h5>
+
+   <p>&lsquo;Existential Type&rsquo;, in the article <a href="http://existentialtype.wordpress.com/2011/03/15/boolean-blindness/">&lsquo;Boolean Blindness&rsquo;</a> (see also part 1.1 of Dan Licata's <a href="http://www.cs.cmu.edu/~15150/previous-semesters/2012-spring/resources/lectures/09.pdf">15-150 lecture 9</a>), is right, but the explanation seems somehow askew, so here is a different take.</p>
+
+   <p>A boolean is said to have no &lsquo;meaning&rsquo;: &ldquo;There is <i>no information</i> carried by a Boolean beyond its value&rdquo; (original emphasis). But there is something odd/wrong with that: because it is true of <i>all</i> data: all data lacks meaning; the other bits in non-boolean data are not &lsquo;meaning&rsquo;/&lsquo;information&rsquo;, they are just other values. It is also said that: &ldquo;to make use of a Boolean you have to know its provenance so that you can know what it means&rdquo; &ndash; but again that is true of all data. Where is the meaning of data? The meaning of any piece of data seems more like in its type &ndash; in the abstraction it is an instance of. And that is the thread that unravels the puzzle.</p>
+
+   <p>The overall point is this: <b>when you have some data and you want to break it into parts to handle separately, you ought to have types to put those parts into</b>. And breaking data up to handle in parts is really the essence of what software is all about &ndash; and so that is why types are so pervasively important.</p>
+
+   <p>(Rather than &lsquo;boolean-blindness&rsquo;, a better name might be &lsquo;part-blindness&rsquo;.)</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>Consider an everyday case: the nullable pointer. There is nothing wrong with a nullable pointer in itself. It has all it needs to be handled entirely and properly. The problem comes when you want to break it up to handle in parts.</p>
+
+   <p>A nullable pointer has two &lsquo;parts&rsquo;: null, and all-other-values. These can be got at with a simple if-else conditional: <code>if p is not null then ... else ... end</code>. And there is still nothing wrong with that. The problem arrives when you want to handle the parts &ndash; and you lack a good type system. What do you do with the non-null pointer value? You just have to put it back into a pointer again &ndash; a <i>nullable</i>-pointer: which is what you started with. So where has what you did with the test been captured? Nowhere. When you handle that intended part elsewhere you have to do the test again and again.</p>
+
+   <p>(The point is the same for other destructurable data. You might parse a string into various parts and so cases. There is nothing particularly boolean here.)</p>
+
+   <p>Those &lsquo;parts&rsquo; are the separate &lsquo;meanings&rsquo; we want to break the data into. And types express those tests in the &lsquo;meaning&rsquo; of the intended type (and a type system mechanically implements that). Types create (are) an abstraction, and gain the leverage of that &ndash; they allow one piece of work to be used multiple times. When you break data up, types factor-out that break into one place, <i>and</i> allow it to be used in multiple places. Without types you cannot ever break data up into parts cleanly and reliably. You make no reusable note of what you did.</p>
+
+   <p>(The other part, null, is a special type: unit &ndash; it has only one value. But there is nothing too special about that here, it is just minimal. It still has a meaning and it is still perfectly possible to handle. When you handle it there is only one thing to do, and, most particularly, there is no more to break down: it is a leaf of the processing tree.)</p>
+
+   <p>Type systems and type checking are about being consistent: treating the same things the same and different things differently. Which is exactly the responsibility facing you after you have broken things up into parts. Dynamic typing still captures &lsquo;meaning&rsquo; but is not checked up-front like static typing. Though it is possible to make a further distinction and clarification here: what is captured it not really the &lsquo;meaning&rsquo;, but only the <i>difference</i> of meaning. The &lsquo;meaning&rsquo; is (more like) in the code that handles the types; the types, at their core, just say that things <i>are</i> different, not how.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>Types are the shadows of larger conditionals.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>Related:</p>
+   <ul>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110918T1016Z.html">&lsquo;The insoluble pragmatism of types&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110320T1027Z.html">&lsquo;Dependent types are about consistency&rsquo;</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

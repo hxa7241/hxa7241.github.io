@@ -1,0 +1,41 @@
+# ttl - Turtle - http://www.w3.org/TeamSubmission/turtle/
+
+# Note - HXA7241
+# (for a new note, change: thisnote, title, content, contenthash, date.)
+
+
+@base <http://hxa.name/>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/TR/xmlschema-2/#>
+@prefix rfc: <http://www.ietf.org/rfc/>
+@prefix iana: <http://www.iana.org/assignments/media-types/>
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix hxa: <rdf/1/rdf-terms#> .
+@prefix thisnote: <urn:uuid:99880214-E439-4924-82A6-9C08193760D6> .
+
+
+thisnote:
+dc:title  "Determinate Knowledge In Software Engineering"@en
+; hxa:content """
+Software engineering is about understanding and assembling data processes and objects, but can this be analysed further? Highest, there are two main parts:
+
+First, there is knowledge of particular subject models. These are logical structures embodied by their subject area, eg: meteorology, or project management. They are of varying kinds and sophistication, from well-defined mathematical, to vaguely-defined social. But they are all graspable by software because of their logical aspect. This first part is where architecture and engineering join: choosing and tailoring it is a matter of architecture, building it (using the following second part) is engineering. The former is vague and usage lead, the latter is determinate.
+
+Second, there is knowledge of software per se. This is in two sub-parts: First, computation mechanics: modelling performance of systems, by understanding basic data movement/transform/storage behaviour. (Mechanics is a reasonable name: analogously from civil engineering, linguistically from Greek for machine.) This is really the core of software engineering: it is all determinate, purely 'software', and only about functionality. Second, rework structure: organising code to be more understandable and changeable. The term 'design' is casually taken to mean only this, which seems wrong. It is of value but inessential, because it is only to assist the engineering process, rather than the product. Both sub-parts are somewhat immature. Maybe advance will be from Stochastic Process Algebras and Category Theory respectively.
+
+References:
+* 'Logical Structure And Software Architecture'; HXA7241; 2009
+* 'Software Development In A Nutshell'; HXA7241; 2009
+* 'Software Engineering And Civil Engineering'; HXA7241; 2008
+"""@en
+; hxa:contenthash  "154a7581fef03d1c03e5eacdbbcd0b49b7fe5fa3"^^rfc:rfc3174
+; hxa:domainurl  <notes/>
+; rdf:type  hxa:note
+; dc:format  "text"^^iana:text
+; dc:date  "2009-03-25T17:09"^^xsd:dateTime
+; dc:creator  <about/foaf.rdf>
+; dc:language  "en-GB"^^rfc:rfc4646
+; dc:rights  <http://creativecommons.org/licenses/by-sa/3.0/>
+.

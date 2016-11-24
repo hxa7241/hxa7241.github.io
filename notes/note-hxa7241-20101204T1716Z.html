@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Implicit code -- what makes it good or bad - (note-20101204T1716Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Implicit code -- what makes it good or bad - (note-20101204T1716Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, programming, implicitness" />
+   <meta name="DC.description" content="To make a software structure implicit you should adhere to a clear abstraction -- then being implicit is good and not bad." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2010-12-04" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20101204T1716Z.html" />
+
+   <meta name="keywords"       content="software-engineering, programming, implicitness" />
+   <meta name="description"    content="To make a software structure implicit you should adhere to a clear abstraction -- then being implicit is good and not bad." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Implicit code &ndash; what makes it good or bad</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20101204T1716Z.html" title="permalink">NOTE HXA7241 2010-12-04T17:16Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>To make a software structure implicit you should adhere to a clear abstraction &ndash; then being implicit is good and not bad</h5>
+
+   <p>Making things implicit in code is often noted as bad. Implicit type conversions in C++ were avoided as a cause of misunderstanding and surprise. And right at the top of <a href="http://www.python.org/dev/peps/pep-0020/">&lsquo;The Zen Of Python&rsquo;</a> is the line: &ldquo;Explicit is better than implicit&rdquo;.</p>
+
+   <p>But making things implicit is also <i>good</i>. We only have a limited amount of capability so the only way to do more is to ignore certain details. We need to make some things implicit in order to take larger steps. (&ldquo;Civilization advances by extending the number of important operations which we can perform without thinking about them.&rdquo; &ndash; Whitehead.)</p>
+
+   <p>So what is the difference between good implicit and bad implicit?</p>
+
+   <p><b>Good implicitness is about good abstraction</b>. The implicit should map to the open/varying part of an explicit abstraction, so then it is bounded by the fixed part.</p>
+
+   <p>The mechanism of tail-recursion is implicit. We do not need to think about conditionally adjusting the PC-register and leaving the stack alone. If you follow the explicit rules, it will work as expected.</p>
+
+   <p>(Similarly for many other things like list comprehensions, associative-arrays/dictionaries, etc.)</p>
+
+   <p>Implicitness adhering to abstraction cannot create surprise, because what is used or seen is the fixed part of the abstraction, and that fully contains and limits any effect of the varying part. If you understand the fixed part, you understand all that can show through, at that level, of the varying part.</p>
+
+   <p>The mechanism of function calling is also implicit, although it seems to have a chink. Stack-space is limited: if you call too much it will break. It seems the abstraction itself has an implicit rule of limited usage &ndash; is that bad? With software it is normal to have a background wariness that resources are limited, so one should not be reckless &ndash; so you could say that is also a known abstraction, and the implicit rule fits it. Fairly well.</p>
+
+   <p>Humans mess up perfect abstractions by fudging them with interpretation and context (which is a source of creativity, so it is not <i>bad</i>). Things still work well though, but the goodness of implicitness always has some matter of degree.</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>
+

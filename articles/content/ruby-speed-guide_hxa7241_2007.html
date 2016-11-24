@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Ruby Speed Guide - HXA7241 - 2007</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Ruby Speed Guide - HXA7241 - 2007" />
+   <meta name="DC.subject"     content="Software development, Programming, Ruby, Speed, Performance, Optimization" />
+   <meta name="DC.description" content="A guide to making Ruby code faster, focused on small numerical routines." />
+   <meta name="DC.type"        content="technical article" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.publisher"   content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2007-02-20" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/articles/content/ruby-speed-guide_hxa7241_2007.html" />
+
+   <meta name="keywords"       content="Software development, Programming, Ruby, Speed, Performance, Optimization" />
+   <meta name="description"    content="A guide to making Ruby code faster, focused on small numerical routines." />
+   <meta name="document"       content="hxa7241article5" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>Ruby Speed Guide</h1>
+</div>
+
+
+<div id="colophon">
+<h4>Harrison Ainsworth</h4>
+
+   <p id="contact"><a href="http://www.hxa.name/">http://www.hxa.name/</a>
+   <br />artifex <i>(&alpha;&tau;)</i> hxa7241 <i>(d&omicron;&tau;)</i> org</p>
+
+   <p id="timestamp">2007-02-20</p>
+</div>
+
+
+<div id="preface">
+   <div id="summary">
+      <h2>Summary</h2>
+      <p><a href="http://www.ruby-lang.org/">Ruby</a> is very slow. But with some coding effort Ruby programs can be made significantly faster. Here are some guides that emerged from accelerating a small numerical method by a factor of eight. (1300 words)</p>
+   </div>
+
+   <dl id="metadata" class="plainlist">
+      <dt>subject</dt>
+      <dd>Software development, Programming, Ruby, Speed, Performance, Optimization</dd>
+
+      <dt>uri</dt>
+      <dd><a href="http://www.hxa.name/articles/content/ruby-speed-guide_hxa7241_2007.html">http://www.hxa.name/articles/content/ruby-speed-guide_hxa7241_2007.html</a></dd>
+
+      <dt>license</dt>
+      <dd><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons BY-SA 3.0 License</a>.</dd>
+   </dl>
+</div>
+
+
+<div id="contents">
+   <h2>Contents</h2>
+   <ul>
+      <li><a href="#guide">Guide</a></li>
+      <li><a href="#code">Code</a></li>
+   </ul>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="guide">
+<h3>Guide</h3>
+
+   <p>(First, profile the program to find <i>what</i> to address.)</p>
+
+   <p>Generally: aim for just primitive types &mdash; <code>Fixnum</code>, <code>Float</code>, and minimum calculation. Rather like a simple manually optimized C style.</p>
+
+   <dl>
+      <dt>Factor-out everything</dt>
+      <dd>obvious common sub-expressions, and implicitly duplicated calculations (the latter has most scope for creativity)</dd>
+      <dt>Reduce to basic types and basic variables</dt>
+      <dd><code>Fixnum</code>, <code>Float</code>, and non-structured scalar variables</dd>
+      <dt>Unroll loops</dt>
+      <dd>simple to do but effective</dd>
+      <dt>Inline function calls</dt>
+      <dd>including replacing built-ins like <code>abs</code></dd>
+      <dt>Avoid iterations/list-comprehensions/etc.</dt>
+      <dd>the hidden structure in that succinctness costs time</dd>
+      <dt>Avoid arrays/hashes</dt>
+      <dd>creating new objects is probably worst, but navigating structures (indexing) costs too</dd>
+      <dt>Avoid objects</dt>
+      <dd>for similar reasons to arrays/hashes</dd>
+      <dt>Avoid parallel assignment</dt>
+      <dd>this appeared to be better (perhaps unexpected...)</dd>
+      <dt>Re-use variables</dt>
+      <dd>should squeeze out that last little advantage</dd>
+   </dl>
+
+   <p>It is mostly normal optimization, retro-style. Ruby optimizes nothing, and you have fairly detailed control. Also, retrieving stored results is cheaper than calculation.</p>
+</div>
+
+
+<div class="section" id="code">
+<h3>Code</h3>
+
+   <p>I translated a minimal global illumination renderer from C++ into Ruby (maybe crazy, but amusing) &mdash; <a href="http://www.hxa.name/minilight/">http://www.hxa.name/minilight/</a>. A straightforward transliteration of the whole will run almost 1000 times slower than C++. <i>(Ruby 1.8.2 [i386-mswin32] versus MS VC++ Express 2005, Intel P3 1GHz.)</i></p>
+
+   <p>Building the octree spatial index was slow, and the hot-spot was the triangle bound method...</p>
+
+   <p>Here are some of the variants tried (following the original C++). The fastest Ruby variant was 8.3 times faster than the slowest, but had 12 times more lines of code. I expect it could be improved further...</p>
+
+   <table border="1" cellpadding="4" cellspacing="4" frame="box" rules="all" summary="variant measures">
+      <tr><th>variant</th> <th>speedup factor</th> <th>codesize expansion</th></tr>
+      <tr align="right"><td><a href="#version1">Version 1</a></td> <td>1.000</td> <td>1.00</td></tr>
+      <tr align="right"><td><a href="#version2">Version 2</a></td> <td>1.529</td> <td>1.75</td></tr>
+      <tr align="right"><td><a href="#version3">Version 3</a></td> <td>1.601</td> <td>2.25</td></tr>
+      <tr align="right"><td><a href="#version4">Version 4</a></td> <td>3.204</td> <td>2.75</td></tr>
+      <tr align="right"><td><a href="#version5">Version 5</a></td> <td>4.502</td> <td>3.00</td></tr>
+      <tr align="right"><td><a href="#version6">Version 6</a></td> <td>5.499</td> <td>4.00</td></tr>
+      <tr align="right"><td><a href="#version7">Version 7</a></td> <td>5.939</td> <td>4.00</td></tr>
+      <tr align="right"><td><a href="#version8">Version 8</a></td> <td>7.814</td> <td>5.75</td></tr>
+      <tr align="right"><td><a href="#version9">Version 9</a></td> <td>8.336</td> <td>12.00</td></tr>
+   </table>
+
+
+   <h4 id="originalcpp">Original C++</h4>
+
+<pre><code>void Triangle::getBound
+(
+   float bound[6]
+) const
+{
+   // initialize
+   for( dword i = 6;  i-- &gt; 0;  bound[i] = vertexs_m[2][i % 3] );
+
+   // expand
+   for( dword i = 0;  i &lt; 3;  ++i )
+   {
+      for( dword j = 0, d = 0, m = 0;  j &lt; 6;  ++j, d = j / 3, m = j % 3 )
+      {
+         // include some tolerance
+         const float v = vertexs_m[i][m] + ((d ? 1.0f : -1.0f) *
+            (::fabsf(vertexs_m[i][m]) + 1.0f) * TOLERANCE());
+         bound[j] = (bound[j] &gt; v) ^ d ? v : bound[j];
+      }
+   }
+}</code></pre>
+
+   <p>This is the shortest version (6 lines) I made. (Speed is not a problem.)</p>
+
+   <p><em>(It is often said that choosing the best algorithm is most important and dominates language choice. But in practice, using a fast language <i>is</i> important: a quickly hacked-up dumb solution will probably still be fast enough &mdash; saving programming time as well as runtime.)</em></p>
+
+
+<h4 id="version1">Version 1</h4>
+
+<pre><code># Axis-aligned bounding box of triangle.
+#
+# ===return
+# * Array of 2 Vector3fc, lower corner and upper corner.
+#
+def getBound?
+
+   @vertexs.inject( Array.new( 2, @vertexs[2] ) ) do |bound, v|
+      tolerance = v.combine?( v ) { |a,b| (a.abs + 1.0) / 1024.0 }
+      [bound[0].clampMax?(v - tolerance), bound[1].clampMin?(v + tolerance)]
+   end
+
+end
+
+      # @vertexs is an Array of 3 Vector3fc
+
+      # using this method in Vector3fc:
+      def combine?( arg )
+         Vector3fc.new( yield(@x, arg.x), yield(@y, arg.y), yield(@z, arg.z) )
+      end</code></pre>
+
+   <p>21.732 seconds, 4 lines. (returns Array of two Vector3fc, instead of Array of 6 Float)</p>
+
+
+<h4 id="version2">Version 2</h4>
+
+<pre><code># Axis-aligned bounding box of triangle.
+#
+# ===return
+# * Array of 6 Float, lower corner in [0..2], and upper corner in [3..5]
+#
+def getBound?
+
+   @vertexs.inject( @vertexs[2].to_a * 2 ) do |bound, v|
+      bound.each_index do |j|
+         d, m = j &gt; 2, j % 3
+         vt = v[m] + ((d ? 1.0 : -1.0) * (v[m].abs + 1.0) * TOLERANCE)
+         bound[j] = (bound[j] &gt; vt) ^ d ? vt : bound[j]
+      end
+   end
+
+end</code></pre>
+
+   <p>14.214 seconds, 7 lines.</p>
+
+
+<h4 id="version3">Version 3</h4>
+
+<pre><code>bound = @vertexs[2].to_a * 2
+
+@vertexs.each do |v|
+   6.times do |j|
+      d, m = j &gt; 2, j % 3
+      vt = v[m] + ((d ? 1.0 : -1.0) * (v[m].abs + 1.0) * TOLERANCE)
+      bound[j] = (bound[j] &gt; vt) ^ d ? vt : bound[j]
+   end
+end
+
+bound</code></pre>
+
+   <p>13.570 seconds, 9 lines.</p>
+
+
+<h4 id="version4">Version 4</h4>
+
+<pre><code>bound = @vertexs[2].to_a * 2
+
+@vertexs.each do |v|
+   3.times do |j|
+      tolerance = (v[j].abs + 1.0) * TOLERANCE
+      c = v[j] - tolerance
+      bound[    j] = c if bound[    j] &gt; c
+      c = v[j] + tolerance
+      bound[3 + j] = c if bound[3 + j] &lt;= c
+   end
+end
+
+bound</code></pre>
+
+   <p>6.783 seconds, 11 lines.</p>
+
+
+<h4 id="version5">Version 5</h4>
+
+<pre><code>bound = [ @vertexs[2].x, @vertexs[2].y, @vertexs[2].z,
+   @vertexs[2].x, @vertexs[2].y, @vertexs[2].z ]
+
+3.times do |j|
+   2.times do |i|
+      v = @vertexs[i]
+      bound[    j] = v[j] if bound[    j] &gt; v[j]
+      bound[3 + j] = v[j] if bound[3 + j] &lt; v[j]
+   end
+   bound[    j] -= (bound[    j].abs + 1.0) * TOLERANCE
+   bound[3 + j] += (bound[3 + j].abs + 1.0) * TOLERANCE
+end
+
+bound</code></pre>
+
+   <p>4.827 seconds, 12 lines. (second choice (with factored <code>@vertexs[2]</code>))</p>
+
+
+<h4 id="version6">Version 6</h4>
+
+<pre><code>bound = Array.new( 6, 0.0 )
+
+3.times do |j|
+   v0 = @vertexs[0][j]
+   v1 = @vertexs[1][j]
+   v2 = @vertexs[2][j]
+   if v0 &lt; v1
+      bound[    j] = v0 &lt; v2 ? v0 : v2
+      bound[3 + j] = v1 &gt; v2 ? v1 : v2
+   else
+      bound[    j] = v1 &lt; v2 ? v1 : v2
+      bound[3 + j] = v0 &gt; v2 ? v0 : v2
+   end
+   bound[    j] -= (bound[    j].abs + 1.0) * TOLERANCE
+   bound[3 + j] += (bound[3 + j].abs + 1.0) * TOLERANCE
+end
+
+bound</code></pre>
+
+   <p>3.952 seconds, 16 lines.</p>
+
+
+<h4 id="version7">Version 7</h4>
+
+<pre><code>v2 = @vertexs[2]
+bound = [ v2.x, v2.y, v2.z, v2.x, v2.y, v2.z ]
+
+3.times do |j|
+   v0 = @vertexs[0][j]
+   v1 = @vertexs[1][j]
+   if v0 &lt; v1
+      bound[    j] = v0 if v0 &lt; bound[    j]
+      bound[3 + j] = v1 if v1 &gt; bound[3 + j]
+   else
+      bound[    j] = v1 if v1 &lt; bound[    j]
+      bound[3 + j] = v0 if v0 &gt; bound[3 + j]
+   end
+   bound[    j] -= (bound[    j].abs + 1.0) * TOLERANCE
+   bound[3 + j] += (bound[3 + j].abs + 1.0) * TOLERANCE
+end
+
+bound</code></pre>
+
+   <p>3.659 seconds, 16 lines. (first choice)</p>
+
+
+<h4 id="version8">Version 8</h4>
+
+<pre><code>v2 = @vertexs[2]
+bound0 = bound3 = v2.x
+bound1 = bound4 = v2.y
+bound2 = bound5 = v2.z
+
+@vertexs.each do |v|
+   e = v[0]
+   if    e &lt; bound0 then bound0 = e
+   elsif e &gt; bound3 then bound3 = e
+   end
+   e = v[1]
+   if    e &lt; bound1 then bound1 = e
+   elsif e &gt; bound4 then bound4 = e
+   end
+   e = v[2]
+   if    e &lt; bound2 then bound2 = e
+   elsif e &gt; bound5 then bound5 = e
+   end
+end
+
+[ bound0 - ((bound0.abs + 1.0) * TOLERANCE),
+  bound1 - ((bound1.abs + 1.0) * TOLERANCE),
+  bound2 - ((bound2.abs + 1.0) * TOLERANCE),
+  bound3 + ((bound3.abs + 1.0) * TOLERANCE),
+  bound4 + ((bound4.abs + 1.0) * TOLERANCE),
+  bound5 + ((bound5.abs + 1.0) * TOLERANCE) ]</code></pre>
+
+   <p>2.781 seconds, 23 lines.</p>
+
+
+<h4 id="version9">Version 9</h4>
+
+<pre><code>v2 = @vertexs[2]
+bound0 = bound3 = v2.x
+bound1 = bound4 = v2.y
+bound2 = bound5 = v2.z
+
+e = v2[0]
+if    e &lt; bound0 then bound0 = e
+elsif e &gt; bound3 then bound3 = e
+end
+e = v2[1]
+if    e &lt; bound1 then bound1 = e
+elsif e &gt; bound4 then bound4 = e
+end
+e = v2[2]
+if    e &lt; bound2 then bound2 = e
+elsif e &gt; bound5 then bound5 = e
+end
+
+v1 = @vertexs[1]
+e = v1[0]
+if    e &lt; bound0 then bound0 = e
+elsif e &gt; bound3 then bound3 = e
+end
+e = v1[1]
+if    e &lt; bound1 then bound1 = e
+elsif e &gt; bound4 then bound4 = e
+end
+e = v1[2]
+if    e &lt; bound2 then bound2 = e
+elsif e &gt; bound5 then bound5 = e
+end
+
+v0 = @vertexs[0]
+e = v0[0]
+if    e &lt; bound0 then bound0 = e
+elsif e &gt; bound3 then bound3 = e
+end
+e = v0[1]
+if    e &lt; bound1 then bound1 = e
+elsif e &gt; bound4 then bound4 = e
+end
+e = v0[2]
+if    e &lt; bound2 then bound2 = e
+elsif e &gt; bound5 then bound5 = e
+end
+
+[ bound0 - (((bound0 &lt; 0.0 ? -bound0 : bound0) + 1.0) * TOLERANCE),
+  bound1 - (((bound1 &lt; 0.0 ? -bound1 : bound1) + 1.0) * TOLERANCE),
+  bound2 - (((bound2 &lt; 0.0 ? -bound2 : bound2) + 1.0) * TOLERANCE),
+  bound3 + (((bound3 &lt; 0.0 ? -bound3 : bound3) + 1.0) * TOLERANCE),
+  bound4 + (((bound4 &lt; 0.0 ? -bound4 : bound4) + 1.0) * TOLERANCE),
+  bound5 + (((bound5 &lt; 0.0 ? -bound5 : bound5) + 1.0) * TOLERANCE) ]</code></pre>
+
+   <p>2.607 seconds, 48 lines.</p>
+
+
+<h4 id="timingharness">Timing harness for Ruby variants</h4>
+
+<pre><code># items filled with triangles from a normal scene 
+
+t0 = Time.now
+
+100.times { items.each { |item| item.getBound? } }
+
+t1 = Time.now
+puts "#{t1 - t0}"</code></pre>
+
+</div>
+
+</div>
+
+
+</div>
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

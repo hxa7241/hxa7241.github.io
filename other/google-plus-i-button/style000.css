@@ -1,0 +1,70 @@
+@import url('style001.css');
+
+div.intro {
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 15px;
+}
+img#see-1s {
+  float: right;
+  margin: 0 0 20px 25px;
+}
+img#show-1s {
+  clear: both;
+  float: left;
+  margin: 30px 25px 50px 0;
+}
+h2#show {
+  margin-top: 80px;
+}
+img#icon {
+  float: left;
+  position: relative;
+  top: 11px;
+}
+div.intro-right {
+  background: url('laptop00.png');
+  float: right;
+  height: 317px;
+  left: 1px;
+  margin: 0 0 20px 20px;
+  padding: 15px 0 0 53px;
+  position: relative;
+  top: -1px;
+  width: 497px;
+}
+img#screen {
+  cursor: pointer;
+}
+div#video-frame {
+  background: black;
+  color: white;
+  cursor: pointer;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  -moz-opacity:0.7;
+  padding: 2px 0 10px;
+  position: relative;
+  text-align: center;
+  top: -36px;
+  width: 459px;
+  z-index: 910;
+}
+div#video-frame:hover, div#video-frame.hovered {
+  background: #004f94;
+}
+div#video-frame img {
+  left: 6px;
+  position: relative;
+  top: 6px;
+}
+iframe {
+  height: 261px;
+  width: 459px;
+  z-index: 900;
+}
+.optin {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.4em;
+}

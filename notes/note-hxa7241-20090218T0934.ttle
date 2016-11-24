@@ -1,0 +1,49 @@
+# ttle0 - Turtle-en - http://www.hxa.name/articles/content/turtle-en_hxa7241_2009.html
+
+# Note - HXA7241
+# (for a new note, change: thisnote, title, content, contenthash, date.)
+
+
+Use type from <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+Use title, format, date, creator, language, rights from <http://purl.org/dc/elements/1.1/>.
+Use content, contenthash, domainurl, note from <http://hxa.name/rdf/1/rdf-terms#>.
+
+Define sha1 as <http://www.ietf.org/rfc/rfc3174.txt>.
+Define langcode as <http://www.ietf.org/rfc/rfc4646.txt>.
+Define imt-text as <http://www.iana.org/assignments/media-types/text>.
+Define datetime as <http://www.w3.org/TR/xmlschema-2/#dateTime>.
+Define cc-by-sa-3 as <http://creativecommons.org/licenses/by-sa/3.0/>.
+
+Define domain as <http://hxa.name/notes/>.
+Define hxa7241 as <http://hxa.name/about/foaf.rdf>.
+Define thisnote as <urn:uuid:A9B3B115-A561-40E7-B9FC-C87C0CB9221F>.
+
+Define Home as <http://hxa.name/>.
+
+
+thisnote
+has title "Software Development In A Nutshell" (en)
+and content """
+Software development is the form of enterprise or endeavour that builds software. It mainly comprises sub-disciplines of software architecture and software engineering.
+
+Software architecture is the recognition, creation, and articulation of logical structure in human activity. It is 'what' to do.
+
+Software engineering is the assembly of data objects and processes by understanding their properties. It is 'how' to do it.
+
+There is also the sub-discipline of software project management. But software construction is absorbed into software engineering.
+
+This is an attempt at a minimal 'well-founded' or 'historically-informed' conception of software development: it is modelled on the building industry, replacing physical material with digital. Adapting what has worked before is the best base for progress. And a clear conception is the best base for organised activity -- especially with software, in which clear thinking is the core.
+
+References:
+* http://www.hxa.name/articles/content/software-architecture-and-engineering-definitions_hxa7241_2008.html
+* http://www.hxa.name/articles/content/software-engineering-and-civil-engineering_hxa7241_2008.html
+""" (en)
+and contenthash "51e47d0c631d613b28f83a3dfbaa3d42be148da2" (sha1)
+and domainurl domain
+and type note
+and format "text" (imt-text)
+and date "2009-02-18T09:34" (datetime)
+and creator hxa7241
+and language "en-GB" (langcode)
+and rights cc-by-sa-3
+.

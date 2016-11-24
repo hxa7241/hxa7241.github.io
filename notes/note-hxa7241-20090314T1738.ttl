@@ -1,0 +1,36 @@
+# ttl - Turtle - http://www.w3.org/TeamSubmission/turtle/
+
+# Note - HXA7241
+# (for a new note, change: thisnote, title, content, contenthash, date.)
+
+
+@base <http://hxa.name/>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/TR/xmlschema-2/#>
+@prefix rfc: <http://www.ietf.org/rfc/>
+@prefix iana: <http://www.iana.org/assignments/media-types/>
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix hxa: <rdf/1/rdf-terms#> .
+@prefix thisnote: <urn:uuid:107EFD6F-22A9-4733-ADA3-1892F8A24FDE> .
+
+
+thisnote:
+dc:title  "The Problem With More Web JavaScript"@en
+; hxa:content """
+There is a fundamental problem with moving the definition of web applications to being JavaScript/Python/Java-centered. It offends one of Berners-Lee's principles of web architecture: the 'principle of least power' http://www.w3.org/DesignIssues/Principles.html#PLP. That allows the substance of the web to be accessed, analysed, processed by other unforeseen applications. But encoding everything in/around a full programming language is very opposite to that: obscure and un-manipulable.
+
+There is certainly a place for JavaScript-like power -- very specialised, low-level tasks, perhaps like the core of Google maps interface. But there needs to be a general framework; an explicit standardisation of app/interaction structure. And this would be in a simple, declarative form, maybe something like SMIL and XUL. Actually, W3C has begun to develop something that might form the basis: CDF http://www.w3.org/2004/CDF/ , but probably few have heard of it even, and it lacks important stuff . . .
+
+The application structure could then be moved as much as possible into that, or JSON, XML, or similar. So the browser has a fairly simple and very general app-engine, and everything specific is in a simple, open format. In a sense: turn as much as possible into 'content', including interaction and app intelligence. Then, like other 'content' like movies or music, it is dumb, but infinitely accessible and manipulable.
+"""@en
+; hxa:contenthash  "a2b822ca1caee973a21900c6e2aaa13001254cc2"^^rfc:rfc3174
+; hxa:domainurl  <notes/>
+; rdf:type  hxa:note
+; dc:format  "text"^^iana:text
+; dc:date  "2009-03-14T17:38"^^xsd:dateTime
+; dc:creator  <about/foaf.rdf>
+; dc:language  "en-GB"^^rfc:rfc4646
+; dc:rights  <http://creativecommons.org/licenses/by-sa/3.0/>
+.

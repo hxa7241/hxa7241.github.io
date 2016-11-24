@@ -1,0 +1,33 @@
+# ttl - Turtle - http://www.w3.org/TeamSubmission/turtle/
+
+
+@base <http://hxa.name/notes/>
+
+@prefix hxa: <http://hxa.name/rdf/1/rdf-terms#> .
+
+
+<urn:uuid:A9B3B115-A561-40E7-B9FC-C87C0CB9221F> hxa:url <note-hxa7241-20090218T0934.ttl> .
+
+<urn:uuid:2E6B6021-BEBF-4C33-95F8-ED127F58C30B> hxa:url <note-hxa7241-20090219T1518.ttl> .
+
+<urn:uuid:AD6DE096-046C-4517-93F3-BC03A0906CB4> hxa:url <note-hxa7241-20090226T1114.ttl> .
+
+<urn:uuid:107EFD6F-22A9-4733-ADA3-1892F8A24FDE> hxa:url <note-hxa7241-20090314T1738.ttl> .
+
+<urn:uuid:99880214-E439-4924-82A6-9C08193760D6> hxa:url <note-hxa7241-20090325T1709.ttl> .
+
+<urn:uuid:517BDD49-A628-4D3A-958C-0C7D747718AC> hxa:url <note-hxa7241-20090407T1228.ttl> .
+
+<urn:uuid:C14CB1A4-473A-49EB-B41C-E53417B2A9CB> hxa:url <note-hxa7241-20090410T1636.ttl> .
+
+<urn:uuid:20C3732F-D80C-4697-A9DC-CB006FC4F96D> hxa:url <note-hxa7241-20090419T1043.ttl> .
+
+<urn:uuid:FE0E68F5-BD0C-47E5-BEA9-1B4B75DCEF96> hxa:url <note-hxa7241-20090426T2136.ttl> .
+
+<urn:uuid:8D861F4A-AF98-4458-AEAE-CAAB870AF888> hxa:url <note-hxa7241-20090505T1132.ttl> .
+
+<urn:uuid:43673080-B36E-4651-A2B7-DF161ABEBE6B> hxa:url <note-hxa7241-20090512T1748.ttl> .
+
+<urn:uuid:B4164914-F500-4389-9E45-13D4F5D77407> hxa:url <note-hxa7241-20090523T1024.ttl> .
+
+<urn:uuid:F247690C-87FB-49C4-87E3-7E32867B69DF> hxa:url <note-hxa7241-20090806T1142.ttl> .

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="hxa7241-perceptuum-packages" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+   <title>&lt; H X A 7 2 4 1 &gt; : perceptuum packages</title>
+
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="perceptuum2.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="outer">
+
+
+<div class="upper">
+   <div class="title">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
+   </div>
+</div>
+
+
+<div class="side">
+   <ul class="mainmenu">
+      <li>
+         <a href="../" title="home" accesskey="h">HOME</a>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../software/" title="various software projects">SOFTWARE</a>
+         <ul class="mainmenu">
+            <li>
+               <a href="../rendering/" title="some rendering-related development projects">RENDERING</a>
+               <ul class="mainmenu">
+                  <li>
+                     <a href="../perceptuum/" title="a global illumination renderer">PERCEPTUUM</a>
+                     <ul class="mainmenu">
+                        <li>
+                           <span class="current" title="this page">PERCEPTUUM packages</span>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
+      </li>
+      <li>
+         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
+      </li>
+   </ul>
+</div>
+
+
+<div class="middle">
+<div class="picture">
+   <img src="perceptuum-picture.jpg" alt="four cornell box variants" />
+</div>
+
+<h2>PERCEPTUUM - packages</h2>
+<div class="h2subheading">a global illumination renderer development project</div>
+
+<table class="pagemenu" border="0" cellpadding="0" frame="void" rules="none" summary="menu of page sections">
+<tr valign="top">
+   <td>
+      <ul>
+         <li><a href="#dependencies">dependencies</a></li>
+         <li><a href="#summaries">summaries</a></li>
+         <li><a href="#catalog">catalog</a></li>
+      </ul>
+   </td>
+</tr>
+</table>
+
+
+<div class="content">
+
+<div class="section" id="dependencies">
+   <h3>dependencies</h3>
+
+   <pre>
+   -------------------------------------------------------
+   |                win32 ui / platform                  |
+   -------------------------------------------------------
+   |                                                     |
+   |          control         ----------------------------
+   |                          |        transport         |
+   -------------------------------------------------------
+   |                 |                 |   interaction   |
+   |                 |     modelling   -------------------
+   |                 |                                   |
+   |     imaging     -------------------------------------
+   |                                                     |
+   -------------------------------------------------------
+
+   ------------------------------------
+   |   win32 utility   |   graphics   |
+   ------------------------------------
+   |             utility              |
+   ------------------------------------
+   </pre>
+</div>
+
+
+<div class="section" id="summaries">
+   <h3>summaries</h3>
+
+   <dl>
+      <dt>project specific</dt>
+      <dd>
+         <dl>
+            <dt>control</dt>
+            <dd>
+               top level executive/sequencing classes, of the platform-independent part. reading and persistence of scene and options, and running the main render loop.
+            </dd>
+            <dt>transport</dt>
+            <dd>
+               classes concerned with rasterizing, sampling, tracing, and photon mapping.
+            </dd>
+            <dt>interaction</dt>
+            <dd>
+               classes concerned with local light scattering, centered around a surface point.
+            </dd>
+            <dt>modelling</dt>
+            <dd>
+               classes representing scene, objects, materials.
+            </dd>
+            <dt>imaging</dt>
+            <dd>
+               classes for different formats of images, conversions between them, and serialization for some.
+            </dd>
+            <dt>win32 ui / platform</dt>
+            <dd>
+               windowing desktop user interface to drive and respond to the control package.
+            </dd>
+         </dl>
+      </dd>
+      <dt>non project specific</dt>
+      <dd>
+         <dl>
+            <dt>graphics</dt>
+            <dd>
+               very general graphics classes, such as: vector, matrix, filters, trigonometry.
+            </dd>
+            <dt>utility</dt>
+            <dd>
+               general classes on the purlieus of the standard library, eg: logging, serialization, random sequences.
+            </dd>
+            <dt>win32 utility</dt>
+            <dd>
+               a few classes for some win32 abstractions: threading, exceptions, dialogs.
+            </dd>
+         </dl>
+      </dd>
+   </dl>
+</div>
+
+
+<div class="section" id="catalog">
+   <h3>catalog</h3>
+
+   <pre>
+control
+-------
+   RenderDesktop [public]
+   Render [public]
+   RenderKernel
+   RenderData
+   RenderDataFiling
+   RenderingOptions
+   RenderingOptionsImmutable
+   RenderingState
+   RenderingStatus
+
+
+
+transport
+---------
+   SpacetimeIndex [public]
+   SamplingControl [public]
+      SamplingControlDiffuse
+      SamplingControlEmitter
+      SamplingControlPath
+   Projection [public]
+   RasterizerTracing [public]
+   Illumination [public]
+   EmitterPath
+   EyePath
+   PhotonMap
+      Photon
+      OctreeVisitorPhoton
+   MediaStack
+   RenderingTime
+   Camera
+
+   RasterizerProjective [public]
+   Projector
+   RasterizationVertex
+   RasterizationTriangleIm
+   RasterizationCorner
+   RasterizationTriangleEx
+
+
+
+interaction
+-----------
+   Light [public]
+   LightStream [public]
+   EmitterPathNode [public]
+   EyePathNode [public]
+   SurfacePoint [public]
+   Medium [public]
+   Brdf
+   Bssdf
+   BssdfConstant
+   BssdfSpike
+   BssdfPhong
+   BssdfSchlick
+   BssdfWard
+
+
+
+modelling
+---------
+   Scene [public]
+   ObjectRenderable [public]
+   ObjectRenderableId [public]
+   ProjectableObjectRef
+   ObjectInstantiator
+   ObjectDefault
+   ObjectMesh
+   ObjectMeshBlock
+   ObjectMeshSphere
+   ObjectMeshCylinder
+   ObjectInstance
+   ObjectInstanceMoving
+   Bound
+   Mesh
+   TriangleImplicit
+   TriangleExplicit
+   Vertex
+   Material
+   Ray
+   Intersection
+   Qualities
+
+
+
+imaging
+-------
+   ImageAccumulation [public]
+      PixelStats
+   ImageConverter [public]
+      ToneMapperWard94
+      ColorTransformXyzToRgbFp
+      GammaTransform
+   DisplayMeasures [public]
+   ImageCieXyz [public]
+   ImageRgba [public]
+   ImageWriter [public]
+      PngWriter
+      RealPngWriter
+   ImageReader [public]
+      PngReader
+
+
+
+win32 ui / platform
+-------------------
+   AboutDialog
+   BackgroundDialog
+   ButtonBar
+   InfoDialog
+   Perceptuum2
+   StopDialog
+   ToneDialog
+   Win32FileDialog
+   Win32ImagePaneSlideable
+
+   RenderDesktopWin32
+
+
+
+win32 utility [public]
+-------------
+   Win32BackBuffer
+   Win32Dialog
+   Win32Dib
+   Win32Exception
+   Win32Thread
+   Win32ThreadFactory
+   Win32ThreadLock
+
+
+
+graphics [public]
+--------
+   Filters
+   Polar
+   Vector2&lt;&gt;
+   Vector3f
+   Vector4f
+   UnitVector3f
+   Matrix3f
+   Matrix4f
+   Quaternion
+   Transform
+   Transplace
+   Transclip
+   ClipCoords
+   ClipFlags
+   CieXyz
+   XyzE
+   Octree&lt;&gt;
+   OctreeVisitorT&lt;&gt;
+      OctreeData
+      OctreeBound
+      OctreeVisitor
+      OctreeRoot
+      OctreeCell
+      OctreeBranch
+      OctreeLeaf
+
+
+
+utility [public]
+-------
+   Primitives
+   hxa7241vector
+   hxa7241math
+   Array&lt;&gt;
+   ArrayFixed&lt;&gt;
+   Sheet&lt;&gt;
+   Vector&lt;&gt;
+   Float01
+   Float01c
+   Float16
+   FpToInt
+   Sequence
+   HaltonSequence
+   SobolSequence
+   Random
+   RandomFast
+   RandomGood
+   RandomMT
+   Histogram
+   HistogramSmall
+   Exception
+   Logger
+   LogThreadSafe
+   Thread
+   Runnable
+   ThreadSuspension
+   ThreadFactory
+   ThreadLock
+   ThreadSync
+   TimePoint
+   UriFile
+   SerializerIn
+   SerializerOut
+   XmlSerializerIn
+   XmlSerializerOut
+   ByteSerializerIn
+   ByteSerializerOut
+   TextSerializerOut
+   </pre>
+</div>
+
+</div>
+</div>
+
+
+<div class="lower">
+   <div>2004-08-22</div>
+</div>
+
+
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

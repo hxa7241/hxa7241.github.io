@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Understanding Software Engineering Design - HXA7241 - 2010</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Understanding Software Engineering Design - HXA7241 - 2010" />
+   <meta name="DC.subject"     content="softwarekonstruktionslehre, software engineering design, software engineering, philosophy of software engineering" />
+   <meta name="DC.description" content="A brief description of what seem to be the abstract essentials of software engineering design." />
+   <meta name="DC.type"        content="technical article" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2008-11-01" />
+   <meta name="DC.date"        content="2010-02-01" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/articles/content/software-engineering-design_hxa7241_2010.html" />
+
+   <meta name="keywords"       content="softwarekonstruktionslehre, software engineering design, software engineering, philosophy of software engineering" />
+   <meta name="description"    content="A brief description of what seem to be the abstract essentials of software engineering design." />
+   <meta name="document"       content="hxa7241article6" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>Understanding Software Engineering Design</h1>
+</div>
+
+
+<div id="colophon" title="colophon">
+<h4>Harrison Ainsworth</h4>
+
+   <p id="contact"><a href="http://www.hxa.name/">http://www.hxa.name/</a>
+   <br />hxa7241+articles <i>(&alpha;&tau;)</i> googlemail <i>(d&omicron;&tau;)</i> com</p>
+
+   <p id="timestamp" title="started: 2008-11-01">2010-02-01</p>
+</div>
+
+
+<div id="preface">
+   <div id="summary" title="summary">
+      <h2>Summary</h2>
+      <p id="_0.1.1" title="_0.1.1">This is a brief description of what seem to be the abstract essentials of software engineering design. First, what is general to all engineering design, including software. Then, what is specific to software engineering design. It seeks some answers to the question: &ldquo;What are you doing when you are doing engineering &ndash; when you are designing an engineering solution to a problem?&rdquo;.</p>
+
+      <p id="_0.1.2" title="_0.1.2">It is mainly distilled and extrapolated from the broadly mechanical-engineering perspective of &lsquo;Engineering Design: A Systematic Approach&rsquo; by <span xml:lang="de" lang="de">Pahl</span> and <span xml:lang="de" lang="de">Beitz</span>. The basic, and perhaps best, way to understand software's special qualities is to relate it to established knowledge.</p>
+
+      <p id="_0.1.3" title="_0.1.3">The scope is restricted to a minimal core of engineering. Requirements formation and management are excluded, both assumed taken care of elsewhere. These are important but not truly distinctive to engineering proper. The motto or axiom here is an intensional, mechanistic, activity-based definition of engineering: that it is <i>&lsquo;assembling by understanding and experiment&rsquo;</i>.</p>
+
+      <p id="_0.1.4" title="_0.1.4">(3000 words)</p>
+   </div>
+
+   <dl id="metadata" title="metadata" class="plainlist">
+      <dt>Subject</dt>
+      <dd id="metadata-subject" title="metadata-subject"><span xml:lang="de" lang="de">softwarekonstruktionslehre</span>, software engineering design, software engineering, philosophy of software engineering</dd>
+
+      <dt>URI</dt>
+      <dd id="metadata-id" title="metadata-id"><a href="http://www.hxa.name/articles/content/software-engineering-design_hxa7241_2010.html">http://www.hxa.name/articles/content/software-engineering-design_hxa7241_2010.html</a></dd>
+
+      <dt>License</dt>
+      <dd id="metadata-license" title="metadata-license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons BY-SA 3.0 License</a></dd>
+   </dl>
+</div>
+
+
+<div id="contents" title="contents">
+   <h2>Contents</h2>
+
+   <h4><a href="#general">General</a></h4>
+   <ul>
+      <li><a href="#general-goals">Goals &ndash; <i>maximising fulfilment and minimising effort</i></a></li>
+      <li><a href="#general-purpose">Purpose &ndash; <i>joining what is wanted to what is possible</i></a></li>
+      <li><a href="#general-principle">Principle &ndash; <i>embodying abstract rational structures</i></a></li>
+      <li><a href="#general-process">Process &ndash; <i>recursive and iterative assembly of parts</i></a></li>
+      <li><a href="#general-comments">Comments</a></li>
+   </ul>
+
+   <h4><a href="#software">Software</a></h4>
+   <ul>
+      <li><a href="#software-products">Products &ndash; <i>algorithm and representation</i></a></li>
+      <li><a href="#software-extensions">Extensions &ndash; <i>continualness and globalness</i></a></li>
+      <li><a href="#software-evolution">Evolution &ndash; <i>a specially suitable complement to design</i></a></li>
+               <li><a href="#software-conclusion">Conclusion &ndash; <i>software engineering design drives most else</i></a></li>
+   </ul>
+
+   <ul>
+      <li><a href="#references">References</a></li>
+   </ul>
+</div>
+
+
+
+<div id="text">
+
+<div class="division" id="general" title="general">
+<h2>General</h2>
+
+
+<div class="section" id="general-goals" title="general-goals">
+<h3>Goals</h3>
+
+   <p id="_1.1.1" title="_1.1.1">There are two overall goals in engineering design. The first is to maximise fulfilment of the requirements, including all product needs. The second is to minimise the effort of design work. This includes all production work, both for immediate needs, and in anticipation of future needs. These goals could be summarised as: &lsquo;getting things right, and getting things done&rsquo;.</p>
+   <p id="_1.1.2" title="_1.1.2">Everything done in design must serve at least one of these. They set the general measure to which all activities can be referred.</p>
+
+   <p id="_1.1.3" title="_1.1.3">Background:</p>
+   <ul id="_1.1.4" title="_1.1.4">
+      <li><span xml:lang="de" lang="de">Pahl, Beitz</span>: s3.2 p78 para1.</li>
+      <li><span xml:lang="de" lang="de">Pahl, Beitz</span>: s1.1.1 p6 para1.</li>
+   </ul>
+</div>
+
+
+<div class="section" id="general-purpose" title="general-purpose">
+<h3>Purpose</h3>
+
+<p id="_1.2.1" title="_1.2.1">The essential purpose of engineering design is: to find a way to join what is wanted with what is possible &ndash; what the client <i>wants</i> to do with what the material/medium <i>can</i> do.</p>
+
+   <p id="_1.2.2" title="_1.2.2"><span xml:lang="la" lang="la">Vitruvius</span> mentions this millienia ago:</p>
+   <blockquote id="_1.2.3" title="_1.2.3">
+      <p>In architecture [particularly engineering in today's sense], as in other arts, two considerations must be constantly kept in view; namely, the intention, and the matter used to express that intention: but the intention is founded on a conviction that the matter wrought will fully suit the purpose;</p>
+   </blockquote>
+   <p id="_1.2.4" title="_1.2.4"><a href="http://penelope.uchicago.edu/Thayer/E/Roman/Texts/Vitruvius/1*.html">&ndash; &lsquo;<span xml:lang="la" lang="la">De Architectura</span>&rsquo;; <span xml:lang="la" lang="la">Vitruvius</span>; 25 BCE. &ndash; Book 1, Chapter 1, section 3.</a></p>
+
+   <p id="_1.2.5" title="_1.2.5">Each of these two is a field of knowledge itself. Requirements can be broken down and re-arranged, and are as important as the material, though have a different kind of complexity. Material knowledge is the core of engineering design &ndash; it is determinate, and understood logically. Requirements knowledge is indeterminate, and more a matter of sense. Depending on how separated the working style, the requirements side may be handled by product design or architecture &ndash; i.e. the sub-discipline focused on outer, usable features.</p>
+
+   <p id="_1.2.6" title="_1.2.6">This essential purpose of uniting these two sides sets an essential broad process &ndash; or group of activities or aspects &ndash; for design:</p>
+   <ol id="_1.2.7" title="_1.2.7">
+      <li>An analysis &ndash; break the requirements into sub-problems (half outside engineering design).</li>
+      <li>A translation &ndash; match sub-problems with sub-solutions.</li>
+      <li>A synthesis &ndash; combine sub-solutions into the product.</li>
+   </ol>
+
+   <p id="_1.2.8" title="_1.2.8">Background:</p>
+   <ul id="_1.2.9" title="_1.2.9">
+      <li><span xml:lang="de" lang="de">Pahl, Beitz</span>: s3.2 p78 para2-3.</li>
+      <li><span xml:lang="la" lang="la">Vitruvius</span>: book1 ch1 s3.</li>
+   </ul>
+</div>
+
+
+<div class="section" id="general-principle" title="general-principle">
+<h3>Principle</h3>
+
+   <p id="_1.3.1" title="_1.3.1">The principle of engineering design is to realise, or reify, abstract structures. Rational ideas are expressed, formed, or codified in the material/medium &ndash; not merely layed on top of, but aligned and interlocked with the native structure or properties of the material.</p>
+
+   <p id="_1.3.2" title="_1.3.2">The most important aspect is separating things. This simplifies the task, and even makes it possible at all. Such dividing/discretisation/decomposition is essential to determinate activity &ndash; to think is pretty much to make something distinct, separate. Crucial to engineering design is working on just one thing at a time: isolation. Doing more than one thing should be avoided. Separating isolates: parts of the solution do not interfere, and can be developed more easily, and effort can be parallelised.</p>
+
+   <p id="_1.3.3" title="_1.3.3">Really, design is neither separating nor joining alone, but making a structure or system that does both, clearly and sharply. Design creates a system of &lsquo;joints&rsquo;. But in concious effort, the first step is to separate.</p>
+
+   <p id="_1.3.4" title="_1.3.4">Background:</p>
+   <ul id="_1.3.5" title="_1.3.5">
+      <li><span xml:lang="de" lang="de">Pahl, Beitz</span>: s1.2.1 p9 para6. &ndash; sort-of</li>
+   </ul>
+</div>
+
+
+<div class="section" id="general-process" title="general-process">
+<h3>Process</h3>
+
+   <p id="_1.4.1" title="_1.4.1">Engineering design has a general, basic process, that can be seen as following from the above aspects.</p>
+
+   <p id="_1.4.2" title="_1.4.2">The overall goals lead to the first guide. Requirements must be fulfilled, but effort minimised, so: the design must create only what is particular to the project, and reuse all that is general and shared with other projects. (&lsquo;Reuse the general, create the particular.&rsquo;) &lsquo;Reuse&rsquo; here means &lsquo;import&rsquo;-reuse: finding parts already made that fit the current needs &ndash; concepts, standards, rules, components, anything. With that, as little as possible effort is spent on the required new, ad hoc, particular design.</p>
+
+   <p id="_1.4.3" title="_1.4.3">And the essential purpose of engineering design is effectively: assemble available parts to make something new. So the difference between &lsquo;reuse&rsquo; and &lsquo;create&rsquo; in the above first guide is only one of level: &lsquo;reuse&rsquo; means fill a gap in the design with a ready-made part; &lsquo;create&rsquo; means fill a gap by <i>designing</i> a part &ndash; and that is really assembling other, more primitive, ready-made parts.</p>
+
+   <p id="_1.4.4" title="_1.4.4">And the principle of reifying (separating and joining), elaborated and extended over time, gives the basic process: a recursive analysis into reused, known parts:</p>
+   <ol id="_1.4.5" title="_1.4.5">
+      <li>Break the purpose/problem/solution into an assembly of the fewest reused parts.</li>
+      <li>For any unsolved, missing areas, recurse at a lower level to step 1.</li>
+   </ol>
+   <p id="_1.4.6" title="_1.4.6">Where the top is the single whole system, and the bottom is the finest practical properties of the material. However, the direction is not really dictated: it can be as much a <i>synthesis from</i>, as an <i>analysis into</i>, known parts.</p>
+</div>
+
+
+<div class="section" id="general-comments" title="general-comments">
+<h3>Comments</h3>
+
+   <h5>Two main dynamics</h5>
+   <p id="_1.5.1" title="_1.5.1">The process has two main dynamics entwined: hierarchical progression &ndash; composition of sub-parts, and experimental progression &ndash; iteration of variation and selection.</p>
+
+   <p id="_1.5.2" title="_1.5.2">Both dynamics are essential. Experimental iteration is necessary because if information and understanding were sufficient to avoid iteration, the process could be automated and so would not be design. Design handles only insufficient information and understanding, and so requires iteration. And hierarchical composition is necessary too. Analysis/synthesis is required, as is iteration, and an iterated analysis/synthesis makes a hierarchy.</p>
+
+   <p id="_1.5.3" title="_1.5.3">The experimental progression is not pure iteration, it is variant. Iterations do not repeat exactly the same activities each time. The purpose is to get new information so some things can then be done better. Also, being combined with decomposition splits the iteration. Some parts are OK, some not, and only a portion need iteration at all. Iteration is not simply about following process steps, but attending to the parts of the product.</p>
+
+   <p id="_1.5.4" title="_1.5.4">The hierarchical progression is not only analysis, but synthesis too &ndash; it is bi-directional. Composition does not wholly descend from broad to detailed. The overall purpose of joining intention to material means there is always some detailed to broad direction too. Design can start with reusable components at various levels, and progress is arranged around them; and since there is inherent dividing, different parts can develop at different rates too.</p>
+
+   <h5>Technicality of process</h5>
+   <p id="_1.5.5" title="_1.5.5">The idea of &lsquo;process&rsquo; is really a simplification. Engineering design is not a sequence of steps. It is a <i>system of operations/transformations</i>, that reflects the multi-dimensional properties and relations of the parts the design works on. A design is put together not by following steps, but by following the parts and material.</p>
+
+   <p id="_1.5.6" title="_1.5.6">Design and management have a particular relationship. Decomposition and iteration usefully divide-up the design process, allowing assessment-points and decision-points. So management can see progress, and decide to continue, halt, or change project aims. However, the structure of decomposition is technically led &ndash; so management must <i>follow</i> the design process, not dictate it.</p>
+
+   <h5>Optimality and derivation</h5>
+   <p id="_1.5.7" title="_1.5.7">The optimum of engineering design emerges from the description of goal, purpose, and principle. The goal of proportionally maximising the reuse of ready-made parts and minimising ad hoc creation, along with the purpose of uniting intent and material, implies: finding the simplest way of creating novelty that maximally fits requirements &ndash; that is the characteristic of elegant, great design. This seems to leave out the principle of realising abstracts: good design may appear by sheer inspiration. But if there is any intention &ndash; as there must be in anything properly called design &ndash; that means some abstraction, it is just not systematically subdivided.</p>
+
+   <p id="_1.5.8" title="_1.5.8">Engineering design can be defined as: &lsquo;Assembling things by understanding their properties and using experiment where needed.&rsquo;. How does this &lsquo;understanding and experiment&rsquo; happen? Understanding sets an organising abstraction of the idea (this is the reifying principle, above), and experiment sets the particular parameter values &ndash; or, understanding sketches the idea, experiment fixes the details.</p>
+
+   <p id="_1.5.9" title="_1.5.9">(The goals, purpose, and principle are all different aspects of a single complex activity.)</p>
+
+   <p id="_1.5.10" title="_1.5.10">Background:</p>
+   <ul id="_1.5.11" title="_1.5.11">
+      <li><span xml:lang="de" lang="de">Pahl, Beitz</span>: s4.1 p125 para2. &ndash; hierarchy</li>
+      <li><span xml:lang="de" lang="de">Pahl, Beitz</span>: s4.1 p126 para4. &ndash; iteration</li>
+   </ul>
+</div>
+
+</div><!--division-->
+
+
+
+<div class="division" id="software" title="software">
+<h2>Software</h2>
+
+
+<div class="section" id="software-products" title="software-products">
+<h3>Products</h3>
+
+   <p id="_2.1.1" title="_2.1.1">The software design process has two products: algorithm and representation. These are the obvious basic features that distinguish it from other engineerings.</p>
+
+   <h5>Algorithm</h5>
+   <p id="_2.1.2" title="_2.1.2">Algorithm is primary and truly essential. Software engineering is founded on fulfilling user requirements by processing, transferring, and storing data; and doing so economically (within acceptable time and space), accurately, reliably, securely (<a href="http://www.hxa.name/notes/note-hxa7241-20091025T2123.html"><span xml:lang="la" lang="la">Vitruvius</span> might have summarised all as <i><span xml:lang="la" lang="la">Fidelitas</span></i></a>). These are the fundamental design features. And algorithmics is determinate: its design work rests on knowledge that is scientific in character, centered on theory and complexity of computation. This is equivalent to mechanics in physical engineering, and is similarly the core of software engineering.</p>
+
+   <h5>Representation</h5>
+   <p id="_2.1.3" title="_2.1.3">Representation is harder to rank, though quite clear itself. It is the visible form of the algorithmic structure, and can be chosen and changed separately from it. Representation exists to make the software manipulable for human designers: to be comprehensible and modifiable. Other engineerings have descriptions, diagrams, etc., but representation is distinctive for software in its emphasis. Representation dominates software design because: first, its importance in software's especially iterative process; second, algorithm is often underconstrained by modern computational power. These create ambivalence. Representation is secondary and inessential, because it is only to assist the engineering process, rather than constitute the usable product. Yet circumstances mean it is the most important aspect.</p>
+</div>
+
+
+<div class="section" id="software-extensions" title="software-extensions">
+<h3>Extensions</h3>
+
+   <p id="_2.2.1" title="_2.2.1">Software design has some distinctive extensions to general engineering design. These emerge from its basic properties being expressed through the elements of general design.</p>
+
+   <p id="_2.2.2" title="_2.2.2">There are two prominent aspects. Software has no final material form or product: having no end-point makes the design process <i>continual</i> &ndash; with very frequent adaptation. And software is easily copyable and communicable: having no &lsquo;location&rsquo; makes the design process <i>global</i> &ndash; with very wide re-use of components. Both these are evident in actual practice.</p>
+
+   <p id="_2.2.3" title="_2.2.3">They are both concerns of the second product, representation. Other engineerings may have more minimal forms of these, but software has them saliently.</p>
+
+   <div class="part" id="software-extensions-continualness" title="software-extensions-continualness">
+   <h4>Continualness</h4>
+
+   <h5>Iteration</h5>
+   <p id="_2.2.1.1" title="_2.2.1.1">When there is no end-point, the shape of the process changes. What would be done at the end must be done over the whole course: moving from initial to fully realised states is done repeatedly. Software design therefore naturally has a process of many fine-grained iterations &ndash; it becomes a stream of versions, of large and small degree.</p>
+
+   <p id="_2.2.1.2" title="_2.2.1.2">This is a useful attribute. The ideal of the general purpose of design (described previously) would include being able to respond instantly to changes in requirements (and in components to build with). This becomes nearly attainable with software.</p>
+
+   <p id="_2.2.1.3" title="_2.2.1.3">(There is both one course of development, and also many separate ones. Each iteration is a sub-part of an overall development process that contains and coordinates work and components for all.)</p>
+
+   <h5>Growth dimension</h5>
+   <p id="_2.2.1.4" title="_2.2.1.4">To handle this continualness, software design is prompted to add an extra concern or dimension. Not only must it define the form, but the way the form can change &ndash; it must also design a way of growth and development for parts. There are two extremes of change. It can be ordered and connected, in which case it can be planned for and pre-set. Or it can be discontinuous and substantial, and so cannot be predicted or prepared for, and must be responded to. Both must be handled by the design process/activities. But currently there seems less well-developed (or just less known and practiced) theory underneath this, compared to the other design product, algorithm.</p>
+
+   <h5>Up-front design</h5>
+   <p id="_2.2.1.5" title="_2.2.1.5">The ordered, connected kind of development can be handled with fixed programming forms. An abstraction can be set up-front, and its parameters, instances or whatever varies, are arranged over the course of development. Up-front design is only possible if the bounds of the abstraction can be defined ahead with certainty. In a sense, this is not change at all, just spreading fixed structures over time.</p>
+
+   <h5>Refactoring</h5>
+   <p id="_2.2.1.6" title="_2.2.1.6">At the other extreme, real change in requirements can only be handled with real change in software. Refactoring is a means of handling real change. Refactoring is not so much a technique, as the fundamental form of responding to iterative change of the substantial kind. Up-front design is preparatory/anticipatory, refactoring is responsive. Up-front design arranges things to suit the future, refactoring arranges the current state into a good form. (Refactoring's use of well-defined, logical transforms is not essential to its identity, it is just good use of the medium's natural properties.) One might be done after the other, but they are essentially different activities.</p>
+   </div>
+
+
+   <div class="part" id="software-extensions-globalness" title="software-extensions-globalness">
+   <h4>Globalness</h4>
+
+   <h5>Distribution</h5>
+   <p id="_2.2.2.1" title="_2.2.2.1">Globalness is similar to Continualness.</p>
+
+   <p id="_2.2.2.2" title="_2.2.2.2">When there is no location, the reach of the process changes. Whatever would be at a site is spread out over the whole field or industry: production of parts is done dispersedly. Software design therefore naturally has a process of wide distribution and communication &ndash; it becomes a single network of interrelated parts and components, of close or far degree.</p>
+
+   <p id="_2.2.2.3" title="_2.2.2.3">This is a useful attribute. The ideal of the general goals of design (described previously) would include being able to share work across the whole field. This becomes nearly attainable with software.</p>
+
+   <p id="_2.2.2.4" title="_2.2.2.4">(There are many separate programs, but there is also only one. Each project is a sub-part of a global software design process that produces and communicates components for all.)</p>
+
+   <h5>Productivity and reuse</h5>
+   <p id="_2.2.2.5" title="_2.2.2.5">Increasing software development &lsquo;productivity&rsquo; is truly about reuse. It is about focusing only on what is unique to the particular requirements, and doing nothing else. This is how programming in high-level languages is more productive than programming in assembly. It produces no difference in distinct software volume &ndash; it just factors the work so the low-level sub-tasks are done once and reused, instead of being done repeatedly.</p>
+
+   <p id="_2.2.2.6" title="_2.2.2.6">Software development has a significant large-scale economic aspect. Reuse works by exploiting copyability &ndash; copyability is like a free, limitless natural resource. Optimal development is about best using this. The ideal, extreme would be: no work is ever done more than once across the whole world. That would give the greatest gains in productivity.</p>
+
+   <p id="_2.2.2.7" title="_2.2.2.7">The basic means to realise this are the same for globalness as for continualness: up-front design and refactoring. They would just be working across projects instead of time. One is appropriate for the common, predictable, and fixed, and the other for real, substantial, variation and change.</p>
+   </div>
+</div>
+
+
+<div class="section" id="software-evolution" title="software-evolution">
+<h3>Evolution</h3>
+
+   <p id="_2.3.1" title="_2.3.1">Evolution has a special relationship to design, and even more so to software design. Both evolution and design create viable, functional structures, but by different means; and with different strengths and weaknesses. And the particular needs of evolution are especially well suited to the capabilities of software.</p>
+
+   <h5>Relation to design</h5>
+   <p id="_2.3.2" title="_2.3.2">Design depends on clear understanding of requirements. If you know what you want, design is appropriate, and better than evolution. But this condition is never entirely true. Requirements are necessarily somewhat vague, because they can only accurately describe the known: how things were done in the past. They cannot determinately predict what might be good in the future. But design always creates some amount of newness, so there is always some room for evolution.</p>
+
+   <p id="_2.3.3" title="_2.3.3">Evolution has no dependence on understanding, it will work under very limited conditions. The problem with evolution is it cannot very well be controlled. But where it is not clear what is wanted, control is not useful, and there evolution has a role.</p>
+
+   <p id="_2.3.4" title="_2.3.4">Evolution is a default, fall-back for design &ndash; a very robust and complete one.</p>
+
+   <h5>Fitting into design</h5>
+   <p id="_2.3.5" title="_2.3.5">How does evolution fit with design? Evolution has a fundamental similarity to design: procedurally, both have variation and selection. Design includes these in a larger process, so that is the obvious way to merge-in evolution. Where design is dominated by experimentation, that part can be replaced by evolution.</p>
+
+   <p id="_2.3.6" title="_2.3.6">To incorporate evolution requires exposing the &lsquo;product&rsquo; to the &lsquo;user&rsquo; or problem domain. This means: the design process must be expanded beyond simple product development bounds &ndash; so it works across releases, globally and continually. And, evolution has random variation and statistical selection (probably its main strengths). These characteristics suggest: <i>not</i> choosing the variation, but making it random; and <i>not</i> having single versions, but releasing multiple variants. These would both allow evolution to have full effect.</p>
+
+   <p id="_2.3.7" title="_2.3.7">As more is understood of natural evolution's mechanisms, other techniques can be adapted to design. But all are based on iteration, which software is uniquely able to provide.</p>
+</div>
+
+
+<div class="section" id="software-conclusion" title="software-conclusion">
+<h3>Conclusion</h3>
+
+   <p id="_2.4.1" title="_2.4.1">The technicalities, the special properties, of software shape everything else related to it. And this frame of influence orients the different layers of the subject.</p>
+
+   <p id="_2.4.2" title="_2.4.2">Computer science &ndash; mainly computational theory, and algorithmic complexity &ndash; underlies software engineering design, and in turn software engineering design underlies: programming languages, components/libraries, development processes, development tools.</p>
+
+   <p id="_2.4.3" title="_2.4.3">These exist to serve the purpose of engineering design, so how they are considered, implemented, and performed follows from and depends on understanding it. It could be said that software engineering design is the most abstract general conception of all those parts of software development. To improve those dependent subjects, we must primarily ask how they are driven by software engineering design.</p>
+</div>
+
+</div><!--division-->
+
+
+<div class="section" id="references" title="references">
+<h2>References</h2>
+
+   <ul id="_0.2.1" title="_0.2.1">
+      <li>&lsquo;Engineering Design: A Systematic Approach&rsquo; 3rd Ed.; <span xml:lang="de" lang="de">Pahl, Beitz, Feldhusen, Grote</span>, Wallace, Blessing; 2007.</li>
+   </ul>
+</div>
+
+
+</div><!--text-->
+
+
+
+</div><!--paper-->
+
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

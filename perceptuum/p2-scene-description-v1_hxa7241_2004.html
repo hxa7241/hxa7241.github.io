@@ -1,0 +1,2009 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>perceptuum 2.1 scene description v1 - hxa7241 - 2004</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="perceptuum 2.1 scene description v1 - hxa7241 - 2004" />
+   <meta name="DC.subject"     content="perceptuum, scene, documentation" />
+   <meta name="DC.description" content="a tutorial reference on the perceptuum 2.1 scene format" />
+   <meta name="DC.type"        content="technical article" />
+   <meta name="DC.type"        content="Text" />
+   <meta name="DC.type"        content="Image" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="harrison ainsworth / hxa7241" />
+   <meta name="DC.publisher"   content="hxa7241" />
+   <meta name="DC.rights"      content="copyright (c) 2004, harrison ainsworth / hxa7241. GNU Free Documentation License." />
+   <meta name="DC.date"        content="2004-07-23" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.format"      content="90 KB" />
+   <meta name="DC.language"    content="en" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/perceptuum/p2-scene-description_hxa7241_2004.html" />
+
+   <meta name="keywords"       content="perceptuum, scene, documentation" />
+   <meta name="description"    content="a tutorial reference on the perceptuum 2.1 scene format" />
+   <meta name="document"       content="hxa7241article1" />
+   <meta name="license"        content="GNU-FDL" />
+
+   <style type="text/css">
+      body
+      {
+         background-color:       white;
+         text-align:             center;
+         margin:                 0;
+         padding:                0;
+      }
+      .edge
+      {
+         color:                  white;
+         background-color:       black;
+         padding:                0.1em;
+      }
+      #header
+      {
+         font-family:            serif;
+         font-size:              2.2em;
+         line-height:            1.15em;
+         text-align:             left;
+      }
+      #footer
+      {
+         font-family:            sans-serif;
+         font-size:              1.1em;
+         line-height:            1.15em;
+         font-weight:            bold;
+         text-align:             right;
+      }
+      #hxalogo
+      {
+         text-align:             center;
+         border:                 1px solid white;
+         width:                  3.25em;
+      }
+      #header div a,
+      #footer div a
+      {
+         color:                  white;
+         background-color:       black;
+         text-decoration:        none;
+      }
+      .paper
+      {
+         color:                  black;
+         background-color:       white;
+         font-family:            sans-serif;
+         font-size:              1.1em;
+         line-height:            1.4em;
+         text-align:             left;
+         text-indent:            0em;
+         width:                  45em;
+         border:                 0 none;
+         margin-top:             7em;
+         margin-bottom:          7em;
+         margin-left:            auto;
+         margin-right:           auto;
+      }
+      #heading
+      {
+         margin-bottom:          4em;
+         width:                  75%;
+      }
+      #author
+      {
+         margin-bottom:          1.5em;
+      }
+      #e
+      {
+         margin-bottom:          0.5em;
+      }
+      #timestamp
+      {
+         margin-bottom:          0.5em;
+      }
+      #licensenotice
+      {
+         font-size:              0.9em;
+         line-height:            1.2em;
+      }
+      #preface
+      {
+         width:                  75%;
+         margin-bottom:          4em;
+      }
+      #abstract
+      {
+         text-align:             justify;
+      }
+      #contents
+      {
+         margin-bottom:          4em;
+      }
+      #contents ul,
+      #contents ol
+      {
+         list-style-type:        none;
+         margin-left:            0em;
+      }
+      #contents ul li,
+      #contents ol li
+      {
+         margin-top:             0.5em;
+         margin-bottom:          0.5em;
+      }
+      .section
+      {
+         margin-bottom:          4em;
+         text-align:             justify;
+      }
+      h1
+      {
+         font-size:              3em;
+         line-height:            1em;
+         font-weight:            normal;
+         margin-top:             0em;
+         margin-bottom:          1em;
+      }
+      h2
+      {
+         font-size:              2em;
+         line-height:            1em;
+         font-weight:            normal;
+         margin-top:             0em;
+         margin-bottom:          0.5em;
+      }
+      h3
+      {
+         font-size:              1.5em;
+         line-height:            1.2em;
+         font-weight:            normal;
+         margin-top:             0em;
+         margin-bottom:          0.5em;
+      }
+      h4
+      {
+         font-size:              1.2em;
+         line-height:            1.2em;
+         font-weight:            bold;
+         margin-top:             1em;
+         margin-bottom:          0em;
+      }
+      h5
+      {
+         font-size:              1em;
+         line-height:            1.2em;
+         font-weight:            bold;
+         margin:                 0.5em 0 0.5em 0;
+      }
+      h6
+      {
+         font-size:              1em;
+         line-height:            1.2em;
+         font-weight:            bold;
+         margin:                 0 1.5em 0 0;
+         float:                  left;
+      }
+      p
+      {
+         text-indent:            0em;
+         margin-top:             0.5em;
+         margin-bottom:          0.5em;
+      }
+      pre
+      {
+         font-family:            monospace;
+         line-height:            1.3em;
+         text-align:             left;
+         white-space:            pre;
+         margin-top:             1em;
+         margin-bottom:          1em;
+      }
+      ol, ul
+      {
+         margin:                 0.5em 2em 0.5em 3em;
+         padding:                0;
+      }
+      .plainlist
+      {
+         list-style-type:        none;
+      }
+      dl
+      {
+         margin:                 0.5em 2em 0.5em 2em;
+      }
+      table
+      {
+         font-size:              1em;
+         line-height:            1.4em;
+         margin-top:             1em;
+      }
+      img
+      {
+         border:                 1px solid black;
+         margin:                 16px 0 16px 0;
+      }
+      #references ul
+      {
+         list-style-type:        none;
+         /*list-style-position:    outside;*/
+         margin-left:            0em;
+      }
+      #references ul li
+      {
+         margin-top:             1em;
+         margin-bottom:          1em;
+      }
+      code, tt
+      {
+         font-family:            monospace;
+      }
+      li, dt, dd
+      {
+         margin-top:             0.25em;
+         margin-bottom:          0.25em;
+      }
+      dt
+      {
+         font-weight:            bold;
+      }
+      a:link, a:visited
+      {
+         color:                  black;
+         background-color:       white;
+         text-decoration:        none;
+      }
+      a:hover
+      {
+         color:                  black;
+         background-color:       white;
+         text-decoration:        underline;
+      }
+      a:active
+      {
+         color:                  black;
+         background-color:       rgb(208,208,208);
+         text-decoration:        underline;
+      }
+   </style>
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div id="hxalogo"><a href="http://www.hxa.name/perceptuum/">HXA</a></div></div>
+<div class="paper">
+
+
+<div id="heading">
+   <div id="title"><h1>perceptuum 2.1 scene description v1</h1></div>
+   <div id="author"><h4>harrison ainsworth / hxa7241</h4></div>
+   <div id="uri"><a href="http://www.hxa.name/">http://www.hxa.name/</a></div>
+   <div id="e">&Alpha;R&Tau;&Iota;F&Epsilon;&Chi; <i>at</i> &Eta;&Chi;&Alpha;7&shy;24&shy;1 <i>dot</i> &Omicron;R&shy;G</div>
+   <div id="timestamp">2004-07-23</div>
+   <div id="copyright">copyright (c) 2004, harrison ainsworth / hxa7241.</div>
+   <div id="licensenotice">Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.2 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled <a href="http://www.hxa.name/articles/fdl.txt">"GNU Free Documentation License"</a>.</div>
+</div>
+
+
+<div id="preface">
+   <div id="abstract">
+      <h2>abstract</h2>
+      <p>this article is a tutorial reference on the <a href="#ph">perceptuum 2.1 renderer<sup>[PH]</sup></a> scene format, version 1.0.</p>
+   </div>
+   <div id="keywords">
+      <h4>keywords</h4>
+      <p>perceptuum, scene, documentation</p>
+   </div>
+</div>
+
+
+<div id="contents">
+   <h2>contents</h2>
+   <ul>
+      <li><a href="#introduction">introduction</a></li>
+      <li><a href="#optionspart">options part</a></li>
+      <li><a href="#scenepart">scene part</a></li>
+      <li><a href="#examplefiles">example files</a></li>
+      <li><a href="#implementationbackground">implementation background</a></li>
+      <li><a href="#references">references</a></li>
+   </ul>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="introduction">
+<h3>introduction</h3>
+
+   <h4>files</h4>
+
+   <p>the scene definition is in <a href="#xml"><acronym title="eXtensible Markup Language">XML</acronym><sup>[XML]</sup></a> file form.</p>
+
+   <p>it is in two parts: options and scene, both required.</p>
+
+   <p>the two file names must have the same first part, with partially different extensions:</p>
+   <ul>
+      <li><code>somename.options.p2.xml</code></li>
+      <li><code>somename.scene.p2.xml</code></li>
+   </ul>
+
+   <h4>commonalities</h4>
+
+   <p>both files have the same header:</p>
+
+<pre><code>&lt;?xml version='1.0' encoding='UTF-8' standalone='yes'?&gt;
+&lt;?hxa7241-XmlSerializer version='1.0' 'object serialized to xml' 'exact class match required'?&gt;</code></pre>
+
+   <p>the xml declaration must be present exactly as shown. the serializer declaration must be present, but the last two strings can be omitted (they are commentary).</p>
+
+   <p>blank space and comments are ignored, so can be used freely. (except in leaf content)</p>
+
+   <p>tag attributes are ignored. an attribute named &lsquo;type&rsquo; can be used for commentary purposes, to help manual editing. in which case the established values for primitives are:</p>
+   <table border="0" cellpadding="4" cellspacing="0" frame="void" rules="none" summary="tag type values">
+      <tr valign="top">
+         <td>
+            <ul>
+               <li><code>boolean</code></li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li><code>character</code></li>
+               <li><code>characters</code></li>
+               <li><code>std::string</code></li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li><code>bytesigned</code></li>
+               <li><code>byteunsigned</code></li>
+               <li><code>wordsigned</code></li>
+               <li><code>wordunsigned</code></li>
+               <li><code>dwordsigned</code></li>
+               <li><code>dwordunsigned</code></li>
+               <li><code>dwordsigned</code></li>
+               <li><code>dwordunsigned</code></li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li><code>floatingpointsingle</code></li>
+               <li><code>floatingpointdouble</code></li>
+            </ul>
+         </td>
+      </tr>
+   </table>
+
+   <p>all string content must be inside CDATA markup. example: <code>&lt;name type='string'&gt;&lt;![CDATA[aluminium1]]&gt;&lt;/name&gt;</code></p>
+
+   <p>literal color values are specified in <a href="#cie"><acronym title="Commission Internationale de l'Eclairage">CIE</acronym><sup>[CIE]</sup></a> XYZ. textures are png files, the color characteristics of which can be ordinary RGB, <a href="#srgb">sRGB<sup>[SRGB]</sup></a>, or with particular chromaticities, white color, and gamma.</p>
+
+   <p>all units of measurement should be assumed to be SI.</p>
+</div>
+
+
+<div class="section" id="optionspart">
+<h3>options part</h3>
+
+   <p>conceptually, a simple fixed list of name and value pairs.</p>
+
+   <p>the whole xml structure must be followed exactly, just the values will be different. see the <a href="#exampleoptions">example options file</a>.</p>
+
+   <table border="1" cellpadding="8" cellspacing="0" frame="box" rules="all" summary="options details">
+      <tr>
+         <th>name</th><th>type</th><th>description</th>
+      </tr>
+      <tr>
+         <td>header</td><td> </td><td>fixed value as shown in introduction.</td>
+      </tr>
+      <tr>
+         <td>rendering&nbsp;options</td><td> </td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;immutable&nbsp;options</td><td> </td><td>options that are fixed across different sessions of the same render. if a render is resumed these are ignored and the original ones used.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;projection</td><td> </td><td>defines camera geometry.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eye&nbsp;position</td><td>3d vector</td><td>position of the center of projection.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;look&nbsp;direction</td><td>3d vector</td><td>direction the camera is facing.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;up&nbsp;direction</td><td>3d vector</td><td>direction the camera uses as upwards.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>width</b></td><td>float</td><td>width of the &lsquo;virtual&rsquo; projection screen.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>screen&nbsp;distance</b></td><td>float</td><td>distance of the projection screen from the center of projection.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>lens&nbsp;diameter</b></td><td>float</td><td>diameter of the thin-lens model. controls how blurry objects are that are not at the focal distance.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>focal&nbsp;length</b></td><td>float</td><td>focal length of the thin-lens model. the distance from the center of projection at which objects will be in focus.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>image&nbsp;width</b></td><td>integer</td><td>image width in pixels.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>image&nbsp;height</b></td><td>integer</td><td>image height in pixels.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;default&nbsp;object&nbsp;color</td><td>CIE XYZ</td><td>color for empty space, where no objects can be seen.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>seconds&nbsp;between&nbsp;saves</b></td><td>integer</td><td>how regularly the renderer saves the render state to disk, in case of system failure.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>tonemap&nbsp;adaptation&nbsp;luminance</b></td><td>float</td><td>ignored &mdash; determined automatically. use empty tag.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>emitter&nbsp;path&nbsp;number</b></td><td>integer</td><td>number of samples of direct lighting made in each iteration. the more emitter area the more samples needed.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>photon&nbsp;map&nbsp;size</b></td><td>integer</td><td>actually the number of photon paths made in each iteration. the number of photons stored will be some fraction of this value, maybe 1/2ish.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>lightsource&nbsp;emittance&nbsp;threshold</b></td><td>integer</td><td>wattage below which a lightsource is not treated as a principal lightsource (this is probably ignored at present).</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>emitter&nbsp;path&nbsp;length&nbsp;limit</b></td><td>integer</td><td>maximum length of an emitter path. not usually useful, use 16 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>emitter&nbsp;path&nbsp;end&nbsp;threshold</b></td><td>float</td><td>how small a fraction of original energy (or luminance) to let the light reach before ending the path. zero sets path ending to russian roulette (stochastic), which is usually best.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>eye&nbsp;path&nbsp;length&nbsp;limit</b></td><td>integer</td><td>maximum length of an eye path. not usually useful, use 16 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>eye&nbsp;path&nbsp;end&nbsp;threshold</b></td><td>float</td><td>how small a fraction of original energy (or luminance) to let the light reach before ending the path. zero sets path ending to russian roulette (stochastic), which is usually best.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;display&nbsp;characteristics</td><td> </td><td>defines the characteristics of the display the renderer is using. these will usually be unknown, so just use defaults.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;black&nbsp;point</td><td>CIE XYZ</td><td>color and intensity of black. probably about 2.5ish.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;white&nbsp;point</td><td>CIE XYZ</td><td>color and intensity of white. probably about 85ish.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;chromaticities&nbsp;XYZ&nbsp;x</td><td> </td><td>x chromaticities.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td>use 0.64 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td>use 0.30 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td>use 0.15 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;chromaticities&nbsp;XYZ&nbsp;y</td><td> </td><td>y chromaticities.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td>use 0.33 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td>use 0.60 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td>use 0.06 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;chromaticities&nbsp;XYZ&nbsp;z</td><td> </td><td>z chromaticities (these may be redundant).</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td>use 0.03 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td>use 0.10 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td>use 0.79 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;gamma&nbsp;xyz</td><td> </td><td>gamma for xyz. probably between 1 and 3, and all the same.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td>as a default, use 1 for a panel, 2.222 for a crt.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td>as a default, use 1 for a panel, 2.222 for a crt.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td>as a default, use 1 for a panel, 2.222 for a crt.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>is&nbsp;illumination&nbsp;logging</b></td><td>boolean</td><td>1 for more illumination related logging, 0 for less.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>is&nbsp;rasterizer&nbsp;logging</b></td><td>boolean</td><td>1 for more rasterizer related logging, 0 for less.</td>
+      </tr>
+   </table>
+
+</div>
+
+
+<div class="section" id="scenepart">
+<h3>scene part</h3>
+
+   <p>there are a few global parameters, a series of materials, and a series of objects.</p>
+
+   <p>all materials and objects have string names, so they can be referred to elsewhere in the seriess. material names must be unique, object names must be unique.</p>
+
+   <h4>outline</h4>
+
+   <table border="1" cellpadding="8" cellspacing="0" frame="box" rules="all" summary="scene outline">
+      <tr>
+         <th>name</th><th>type</th><th>description</th>
+      </tr>
+      <tr>
+         <td>header</td><td> </td><td>fixed value, as shown in introduction.</td>
+      </tr>
+      <tr>
+         <td>scene</td><td> </td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>time&nbsp;begin</b></td><td>float</td><td>time point when scene starts existing. this must overlap with any moving instances times for any movement to be seen. set to zero if there are no moving instances.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>time&nbsp;end</b></td><td>float</td><td>time point when scene stops existing. this must overlap with any moving instances times for any movement to be seen. set to zero if there are no moving instances.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>medium&nbsp;transparency</b></td><td>float</td><td>the transparency for the default space of the scene. use default 1 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>medium&nbsp;refractive&nbsp;index</b></td><td>float</td><td>the refractive index for the default space of the scene. use default 1 as a default.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;materials</td><td> </td><td>a variable length series of material elements.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;element</td><td> </td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;(...more&nbsp;elements...)</td><td> </td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;objects</td><td> </td><td>a variable length series of object elements.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;element</td><td> </td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;(...more&nbsp;elements...)</td><td> </td><td> </td>
+      </tr>
+   </table>
+
+   <h4>material element</h4>
+
+   <p>conceptually, a simple fixed list of name and value pairs.</p>
+
+   <p>the whole xml structure must be followed exactly, just the values will be different. see the <a href="#examplescene">example scene file</a>.</p>
+
+   <p>a material defines surface properties in a simplified generalised form. the textures override the base qualities.</p>
+
+   <table border="1" cellpadding="8" cellspacing="0" frame="box" rules="all" summary="material element">
+      <tr>
+         <th>name</th><th>type</th><th>description</th>
+      </tr>
+      <tr>
+         <td>name</td><td>string</td><td>unique across materials.</td>
+      </tr>
+      <tr>
+         <td>base&nbsp;qualities</td><td> </td><td>basic homogeneous properties, selectively overridden by textures.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;tangent</td><td>3d vector</td><td>direction of surface tangent for anisotropic materials. projected unto the surface.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;reflectivity&nbsp;diffuse</td><td>CIE xyz</td><td>color and proportion of diffuse (matte) reflectivity. the sum of each value and its corresponding specular value must be &gt;= 0 and &lt; 1.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;reflectivity&nbsp;specular</td><td>CIE xyz</td><td>color and proportion of specular (shiny) reflectivity. the sum of each value and its corresponding diffuse value must be &gt;= 0 and &lt; 1.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>roughness&nbsp;x</b></td><td>float</td><td>roughness in the tangent direction, &gt;= 0 and &lt;= 1.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>roughness&nbsp;y</b></td><td>float</td><td>roughness in the tangent perpendicular direction, &gt;= 0 and &lt;= 1.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>transparency</b></td><td>float</td><td>how transparent, &gt;= 0 and &lt;= 1.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>refractive&nbsp;index</b></td><td>float</td><td>probably between 1 and 2. (none of that superluminal phase velocity stuff!)</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;emitted</td><td> </td><td>w/m<sup>2</sup> (radiant exitance isnt that?). the wattage of a lightsource = its emitting area * this value.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>X</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Y</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Z</b></td><td>float</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>emitted&nbsp;roughness</b></td><td>float</td><td>ignored &mdash; all emittance is perfectly diffuse. use 1.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>brdf&nbsp;class&nbsp;name</b></td><td>string</td><td>ignored (currently fixed to ward model). use empty tag.</td>
+      </tr>
+      <tr>
+         <td><b>color&nbsp;image&nbsp;name</b></td><td>string</td><td>file pathname of a png image, or empty.</td>
+      </tr>
+      <tr>
+         <td><b>color&nbsp;specular&nbsp;image&nbsp;name</b></td><td>string</td><td>file pathname of a png image, or empty. if either color or color specular is empty, both assume the value of the one given. if both are empty, base qualities is used.</td>
+      </tr>
+      <tr>
+         <td><b>spec diffuse&nbsp;image&nbsp;name</b></td><td>string</td><td>file pathname of a png image, or empty. grayscale, representing the ratio between diffuse and specular. if empty, the ratio is made from base qualities reflectivities.</td>
+      </tr>
+      <tr>
+         <td><b>roughness&nbsp;x&nbsp;image&nbsp;name</b></td><td>string</td><td>file pathname of a png image, or empty. grayscale, representing 0 to 1. if one roughness is empty, both assume the value of the one supplied, if both are empty, base qualities is used.</td>
+      </tr>
+      <tr>
+         <td><b>roughness&nbsp;y&nbsp;image&nbsp;name</b></td><td>string</td><td>file pathname of a png image, or empty. grayscale, representing 0 to 1. if one roughness is empty, both assume the value of the one supplied, if both are empty, base qualities is used.</td>
+      </tr>
+      <tr>
+         <td><b>transparency&nbsp;image&nbsp;name</b></td><td>string</td><td>file pathname of a png image, or empty. grayscale, representing 0 to 1. if empty, base qualities is used.</td>
+      </tr>
+      <tr>
+         <td><b>emitted&nbsp;image&nbsp;name</b></td><td>string</td><td>file pathname of a png image, or empty. ignored.</td>
+      </tr>
+      <tr>
+         <td><b>tangent&nbsp;image&nbsp;name</b></td><td>string</td><td>file pathname of a png image, or empty. grayscale, representing a height field: tangent is aligned to contours. if empty, base qualities is used.</td>
+      </tr>
+      <tr>
+         <td><b>normal&nbsp;image&nbsp;name</b></td><td>string</td><td>file pathname of a png image, or empty. grayscale, representing a height field.</td>
+      </tr>
+   </table>
+
+   <h4>object elements</h4>
+
+   <p>object elements are polymorphic, each must be one of the following types:</p>
+   <p>objects</p>
+   <ul>
+      <li><a href="#objectmesh"><code>ObjectMesh</code></a></li>
+      <li><a href="#objectmeshblock"><code>ObjectMeshBlock</code></a></li>
+      <li><a href="#objectmeshsphere"><code>ObjectMeshSphere</code></a></li>
+      <li><a href="#objectmeshcylinder"><code>ObjectMeshCylinder</code></a></li>
+   </ul>
+   <p>instances</p>
+   <ul>
+      <li><a href="#objectinstance"><code>ObjectInstance</code></a></li>
+      <li><a href="#objectinstancemoving"><code>ObjectInstanceMoving</code></a></li>
+   </ul>
+
+   <p>the last object element in the series must be an instance type. it is the root of the scene tree.</p>
+
+   <p>descriptions of each type:</p>
+
+   <h5 id="objectmesh">ObjectMesh</h5>
+   <table border="1" cellpadding="8" cellspacing="0" frame="box" rules="all" summary="ObjectMesh type">
+      <tr>
+         <th>name</th><th>type</th><th>description</th>
+      </tr>
+      <tr>
+         <td><b>object&nbsp;type</b></td><td>string</td><td>fixed: <code>perceptuum2::modelling::ObjectMesh</code></td>
+      </tr>
+      <tr>
+         <td><b>name</b></td><td>string</td><td>unique across objects.</td>
+      </tr>
+      <tr>
+         <td><b>vertex&nbsp;count</b></td><td>integer</td><td>number of vertexs in the series. must be &lt;= 32767.</td>
+      </tr>
+      <tr>
+         <td>vertex</td><td>3d vector</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>x</b></td><td>float</td><td>x position.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>y</b></td><td>float</td><td>y position.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>z</b></td><td>float</td><td>z position.</td>
+      </tr>
+      <tr>
+         <td>(...more&nbsp;vertexs...)</td><td> </td><td> </td>
+      </tr>
+      <tr>
+         <td><b>triangle&nbsp;count</b></td><td>integer</td><td>number of triangles in the series.</td>
+      </tr>
+      <tr>
+         <td>triangle</td><td> </td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>vertex&nbsp;index&nbsp;0</b></td><td>integer</td><td>refers to a vertex in the vertex series.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>vertex&nbsp;index&nbsp;1</b></td><td>integer</td><td>refers to a vertex in the vertex series.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>vertex&nbsp;index&nbsp;2</b></td><td>integer</td><td>refers to a vertex in the vertex series.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>interpolate&nbsp;normal</b></td><td>boolean</td><td>1 to make the triangle surface appear curved.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>tx0</b></td><td>integer</td><td>pixel x position on texture image, for corner 0.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>ty0</b></td><td>integer</td><td>pixel y position on texture image, for corner 0.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>tx1</b></td><td>integer</td><td>pixel x position on texture image, for corner 1.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>ty1</b></td><td>integer</td><td>pixel y position on texture image, for corner 1.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>tx2</b></td><td>integer</td><td>pixel x position on texture image, for corner 2.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>ty2</b></td><td>integer</td><td>pixel y position on texture image, for corner 2.</td>
+      </tr>
+      <tr>
+         <td>(...more&nbsp;triangles...)</td><td> </td><td> </td>
+      </tr>
+      <tr>
+         <td><b>material&nbsp;ref</b></td><td>string</td><td>name of the material to use.</td>
+      </tr>
+   </table>
+   <p>the mesh must be a single, non-intersecting, closed surface &mdash; that is to say topologically equal to a sphere, or torus, or higher genus variant.</p>
+   <p>a special interpretation of the texture coords is used for meshs of emitting material, to allow simple shaping of emittance: if the coords are zero the face does emit, if the coords are not zero the face does not emit.</p>
+
+   <h5 id="objectmeshblock">ObjectMeshBlock</h5>
+   <p>usable in two variants, to allow alternative texture specification.</p>
+
+   <h6>variant 1</h6>
+   <table border="1" cellpadding="8" cellspacing="0" frame="box" rules="all" summary="ObjectMeshBlock type variant 1">
+      <tr>
+         <th>name</th><th>type</th><th>description</th>
+      </tr>
+      <tr>
+         <td><b>object&nbsp;type</b></td><td>string</td><td>fixed: <code>perceptuum2::modelling::ObjectMeshBlock</code></td>
+      </tr>
+      <tr>
+         <td><b>name</b></td><td>string</td><td>unique across objects.</td>
+      </tr>
+      <tr>
+         <td>dimensions</td><td>3d vector</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>x</b></td><td>float</td><td>width of block.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>y</b></td><td>float</td><td>height of block.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>z</b></td><td>float</td><td>depth of block.</td>
+      </tr>
+      <tr>
+         <td><b>net&nbsp;or&nbsp;faces</b></td><td>boolean</td><td>1 selects net based texture (this variant).</td>
+      </tr>
+      <tr>
+         <td>texture&nbsp;coords</td><td>2d vector</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>x</b></td><td>integer</td><td>x minimum of hull of texture net, on texture image, in pixels.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>y</b></td><td>integer</td><td>y minimum of hull of texture net, on texture image, in pixels.</td>
+      </tr>
+      <tr>
+         <td><b>texture&nbsp;scale</b></td><td>float</td><td>width of &lsquo;middle&rsquo; rectangle of texture net, in pixels.</td>
+      </tr>
+      <tr>
+         <td><b>material&nbsp;ref</b></td><td>string</td><td>name of the material to use.</td>
+      </tr>
+   </table>
+   <p>a &lsquo;t&rsquo; shaped net on the texture image is mapped to the block so the &lsquo;middle&rsquo; rectangle fits on top.</p>
+<pre>.   -----
+    | B |
+-------------     ------
+| L | T | R |    |\  T  \
+-------------    |L\------
+    | F |        \ |  F  |
+    -----         \|     |
+    | U |          *------
+    -----</pre>
+   <p>the dot shows the texture coords xy. the asterisk shows the spatial coords origin.</p>
+
+   <h6>variant 2</h6>
+   <table border="1" cellpadding="8" cellspacing="0" frame="box" rules="all" summary="ObjectMeshBlock type variant 2">
+      <tr>
+         <th>name</th><th>type</th><th>description</th>
+      </tr>
+      <tr>
+         <td><b>object&nbsp;type</b></td><td>string</td><td>fixed: <code>perceptuum2::modelling::ObjectMeshBlock</code></td>
+      </tr>
+      <tr>
+         <td><b>name</b></td><td>string</td><td>unique across objects.</td>
+      </tr>
+      <tr>
+         <td>dimensions</td><td>3d vector</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>x</b></td><td>float</td><td>width of block.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>y</b></td><td>float</td><td>height of block.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>z</b></td><td>float</td><td>depth of block.</td>
+      </tr>
+      <tr>
+         <td><b>net&nbsp;or&nbsp;faces</b></td><td>boolean</td><td>0 selects face based texture (this variant).</td>
+      </tr>
+      <tr>
+         <td>texture&nbsp;coords</td><td>2d vector</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>x</b></td><td>integer</td><td>pixel x position on texture image.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;<b>y</b></td><td>integer</td><td>pixel y position on texture image.</td>
+      </tr>
+      <tr>
+         <td>(...more&nbsp;texture&nbsp;coords...)</td><td> </td><td>24 in total. each adjacent four are related:<br />first four is front, next back, left, right, bottom, top.</td>
+      </tr>
+      <tr>
+         <td><b>material&nbsp;ref</b></td><td>string</td><td>name of the material to use.</td>
+      </tr>
+   </table>
+   <p>the 24 texture coords specify the pixel positions each block face corner maps from on the texture image.</p>
+   <p>a special interpretation of the texture coords is used for blocks of emitting material, to allow simple shaping of emittance: if the coords are zero the face does emit, if the coords are not zero the face does not emit.</p>
+   <p>the bottom left corner of the block is at the origin.</p>
+
+   <h5 id="objectmeshsphere">ObjectMeshSphere</h5>
+   <table border="1" cellpadding="8" cellspacing="0" frame="box" rules="all" summary="ObjectMeshSphere type">
+      <tr>
+         <th>name</th><th>type</th><th>description</th>
+      </tr>
+      <tr>
+         <td><b>object&nbsp;type</b></td><td>string</td><td>fixed: <code>perceptuum2::modelling::ObjectMeshSphere</code></td>
+      </tr>
+      <tr>
+         <td><b>name</b></td><td>string</td><td>unique across objects.</td>
+      </tr>
+      <tr>
+         <td><b>diameter</b></td><td>float</td><td>diameter of sphere.</td>
+      </tr>
+      <tr>
+         <td><b>resolution</b></td><td>integer</td><td>number of faces in mesh approximation, 0 to 9. even is an octahedron subdivision, odd is an icosahedron subdivision. resultant face counts for resolution: 8 20 32 80 128 320 512 1280 2048 5120.</td>
+      </tr>
+      <tr>
+         <td><b>material&nbsp;ref</b></td><td>string</td><td>name of the material to use.</td>
+      </tr>
+   </table>
+   <p>the center of the sphere is at the origin.</p>
+
+   <h5 id="objectmeshcylinder">ObjectMeshCylinder</h5>
+   <table border="1" cellpadding="8" cellspacing="0" frame="box" rules="all" summary="ObjectMeshCylinder type">
+      <tr>
+         <th>name</th><th>type</th><th>description</th>
+      </tr>
+      <tr>
+         <td><b>object&nbsp;type</b></td><td>string</td><td>fixed: <code>perceptuum2::modelling::ObjectMeshCylinder</code></td>
+      </tr>
+      <tr>
+         <td><b>name</b></td><td>string</td><td>unique across objects.</td>
+      </tr>
+      <tr>
+         <td><b>diameter</b></td><td>float</td><td>diameter of cylinder across height axis.</td>
+      </tr>
+      <tr>
+         <td><b>height</b></td><td>float</td><td>height of cylinder.</td>
+      </tr>
+      <tr>
+         <td><b>is&nbsp;curved</b></td><td>boolean</td><td>1 for curved (cylinder), 0 for faceted (prism).</td>
+      </tr>
+      <tr>
+         <td><b>resolution</b></td><td>integer</td><td>number of facets around height axis. 3 to 1000.</td>
+      </tr>
+      <tr>
+         <td><b>material&nbsp;ref</b></td><td>string</td><td>name of the material to use.</td>
+      </tr>
+   </table>
+   <p>the center of the bottom face of the cylinder is at the origin.</p>
+
+   <h5 id="objectinstance">ObjectInstance</h5>
+   <table border="1" cellpadding="8" cellspacing="0" frame="box" rules="all" summary="ObjectInstance type">
+      <tr>
+         <th>name</th><th>type</th><th>description</th>
+      </tr>
+      <tr>
+         <td><b>object&nbsp;type</b></td><td>string</td><td>fixed: <code>perceptuum2::modelling::ObjectInstance</code></td>
+      </tr>
+      <tr>
+         <td><b>name</b></td><td>string</td><td>unique across objects.</td>
+      </tr>
+      <tr>
+         <td>sub&nbsp;parts</td><td> </td><td>a variable length series of subpart elements.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;element</td><td> </td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>object&nbsp;ref</b></td><td>string</td><td>name of an object to include as a subpart in this instance.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;transform</td><td> </td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rotation</td><td>3d vector</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td>rotation in degrees around x axis. applied first.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td>rotation in degrees around y axis. applied second.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td>rotation in degrees around z axis. applied third.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position</td><td>3d vector</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td>translation in x.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td>translation in y.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td>translation in z.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;(...more&nbsp;elements...)</td><td> </td><td> </td>
+      </tr>
+   </table>
+   <p>objects referred to can be of any object type, and must have been defined prior to this instance. there is a nesting limit of 8 levels.</p>
+
+   <h5 id="objectinstancemoving">ObjectInstanceMoving</h5>
+   <table border="1" cellpadding="8" cellspacing="0" frame="box" rules="all" summary="ObjectInstanceMoving type">
+      <tr>
+         <th>name</th><th>type</th><th>description</th>
+      </tr>
+      <tr>
+         <td><b>object&nbsp;type</b></td><td>string</td><td>fixed: <code>perceptuum2::modelling::ObjectInstanceMoving</code></td>
+      </tr>
+      <tr>
+         <td><b>name</b></td><td>string</td><td>unique across objects.</td>
+      </tr>
+      <tr>
+         <td>sub&nbsp;parts</td><td> </td><td>a variable length series of subpart elements.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;element</td><td> </td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>object&nbsp;ref</b></td><td>string</td><td>name of an object to include as a subpart in this instance.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>start&nbsp;time</b></td><td>float</td><td>before this time, the object is in its start position and rotation.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;<b>end&nbsp;time</b></td><td>float</td><td>after this time, the object is in its end position and rotation.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;start&nbsp;rotation</td><td>3d vector</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td>rotation in degrees around x axis. applied first.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td>rotation in degrees around y axis. applied second.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td>rotation in degrees around z axis. applied third.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;start&nbsp;position</td><td>3d vector</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td>translation in x.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td>translation in y.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td>translation in z.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;rotation</td><td>3d vector</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td>rotation in degrees around x axis. applied first.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td>rotation in degrees around y axis. applied second.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td>rotation in degrees around z axis. applied third.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;position</td><td>3d vector</td><td> </td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>x</b></td><td>float</td><td>translation in x.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>y</b></td><td>float</td><td>translation in y.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>z</b></td><td>float</td><td>translation in z.</td>
+      </tr>
+      <tr>
+         <td>&nbsp;&nbsp;(...more elements...)</td><td> </td><td> </td>
+      </tr>
+   </table>
+   <p>the movement is a linear interpolation of each of position and rotation (rotation is done quaternionically).</p>
+   <p>objects referred to can be of any object type, and must have been defined prior to this instance. there is a nesting limit of 8 levels.</p>
+
+</div>
+
+
+<div class="section" id="examplefiles">
+<h3>example files</h3>
+
+   <p>this renders as a cornell box containing a large brass cylinder and a smaller moving glass cube.</p>
+
+   <h4 id="exampleoptions">options file</h4>
+
+<pre><code>&lt;?xml version='1.0' encoding='UTF-8' standalone='yes'?&gt;
+&lt;?hxa7241-XmlSerializer version='1.0' 'object serialized to xml' 'exact class match required'?&gt;
+
+&lt;!-- all options for controlling a rendering --&gt;
+&lt;perceptuum2__control__RenderingOptions type='perceptuum2::control::RenderingOptions'&gt;
+   &lt;!-- options that are fixed across different sessions of the same render --&gt;
+   &lt;immutableOptions type='perceptuum2::control::RenderingOptionsImmutable'&gt;
+      &lt;projection type='perceptuum2::transport::Projection'&gt;
+         &lt;!-- point in space where the eye is --&gt;
+         &lt;eyePosition type='hxa7241::graphics::Vector3f'&gt;
+            &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+            &lt;y type='floatingpointsingle'&gt;0.5&lt;/y&gt;
+            &lt;z type='floatingpointsingle'&gt;-2.0&lt;/z&gt;
+         &lt;/eyePosition&gt;
+         &lt;!-- the direction vector along which the eye is looking --&gt;
+         &lt;lookDirection type='hxa7241::graphics::UnitVector3f'&gt;
+            &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+            &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+            &lt;z type='floatingpointsingle'&gt;1&lt;/z&gt;
+         &lt;/lookDirection&gt;
+         &lt;!-- the direction that defines upright --&gt;
+         &lt;upDirection type='hxa7241::graphics::UnitVector3f'&gt;
+            &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+            &lt;y type='floatingpointsingle'&gt;1&lt;/y&gt;
+            &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+         &lt;/upDirection&gt;
+         &lt;!-- width of the screen in scene units --&gt;
+         &lt;width type='floatingpointsingle'&gt;1.0&lt;/width&gt;
+         &lt;!-- distance of the screen from the lens in scene units --&gt;
+         &lt;screenDistance type='floatingpointsingle'&gt;1.5&lt;/screenDistance&gt;
+         &lt;!-- diameter of the lens in scene units --&gt;
+         &lt;lensDiameter type='floatingpointsingle'&gt;0.01&lt;/lensDiameter&gt;
+         &lt;!-- focal length of the lens in scene units --&gt;
+         &lt;focalLength type='floatingpointsingle'&gt;2&lt;/focalLength&gt;
+      &lt;/projection&gt;
+      &lt;imageWidth type='dwordsigned'&gt;250&lt;/imageWidth&gt;
+      &lt;imageHeight type='dwordsigned'&gt;250&lt;/imageHeight&gt;
+      &lt;defaultObjectColor type='hxa7241::graphics::CieXyz'&gt;
+         &lt;X type='floatingpointsingle'&gt;0&lt;/X&gt;
+         &lt;Y type='floatingpointsingle'&gt;0&lt;/Y&gt;
+         &lt;Z type='floatingpointsingle'&gt;0&lt;/Z&gt;
+      &lt;/defaultObjectColor&gt;
+   &lt;/immutableOptions&gt;
+
+   &lt;secondsBetweenSaves type='dwordsigned'&gt;1000&lt;/secondsBetweenSaves&gt;
+   &lt;tonemapAdaptationLuminance type='floatingpointsingle'/&gt;
+   &lt;emitterPathNumber type='dwordsigned'&gt;2&lt;/emitterPathNumber&gt;
+   &lt;photonMapSize type='dwordsigned'&gt;100000&lt;/photonMapSize&gt;
+   &lt;!-- watts --&gt;
+   &lt;lightsourceEmittanceThreshold type='floatingpointsingle'&gt;10&lt;/lightsourceEmittanceThreshold&gt;
+   &lt;emitterPathLengthLimit type='dwordsigned'&gt;16&lt;/emitterPathLengthLimit&gt;
+   &lt;emitterPathEndThreshold type='floatingpointsingle'&gt;0&lt;/emitterPathEndThreshold&gt;
+   &lt;eyePathLengthLimit type='dwordsigned'&gt;16&lt;/eyePathLengthLimit&gt;
+   &lt;eyePathEndThreshold type='floatingpointsingle'&gt;0&lt;/eyePathEndThreshold&gt;
+
+   &lt;displayCharacteristics type='perceptuum2::imaging::DisplayMeasures'&gt;
+      &lt;!-- CIE XYZ --&gt;
+      &lt;blackPoint type='hxa7241::graphics::CieXyz'&gt;
+         &lt;X type='floatingpointsingle'&gt;2.5&lt;/X&gt;
+         &lt;Y type='floatingpointsingle'&gt;2.5&lt;/Y&gt;
+         &lt;Z type='floatingpointsingle'&gt;2.5&lt;/Z&gt;
+      &lt;/blackPoint&gt;
+      &lt;!-- CIE XYZ --&gt;
+      &lt;whitePoint type='hxa7241::graphics::CieXyz'&gt;
+         &lt;X type='floatingpointsingle'&gt;85&lt;/X&gt;
+         &lt;Y type='floatingpointsingle'&gt;85&lt;/Y&gt;
+         &lt;Z type='floatingpointsingle'&gt;85&lt;/Z&gt;
+      &lt;/whitePoint&gt;
+      &lt;!-- CIE xyz --&gt;
+      &lt;chromaticitiesXyzX type='hxa7241::graphics::Vector3f'&gt;
+         &lt;x type='floatingpointsingle'&gt;0.64&lt;/x&gt;
+         &lt;y type='floatingpointsingle'&gt;0.30&lt;/y&gt;
+         &lt;z type='floatingpointsingle'&gt;0.15&lt;/z&gt;
+      &lt;/chromaticitiesXyzX&gt;
+      &lt;!-- CIE xyz --&gt;
+      &lt;chromaticitiesXyzY type='hxa7241::graphics::Vector3f'&gt;
+         &lt;x type='floatingpointsingle'&gt;0.33&lt;/x&gt;
+         &lt;y type='floatingpointsingle'&gt;0.60&lt;/y&gt;
+         &lt;z type='floatingpointsingle'&gt;0.06&lt;/z&gt;
+      &lt;/chromaticitiesXyzY&gt;
+      &lt;!-- CIE xyz --&gt;
+      &lt;chromaticitiesXyzZ type='hxa7241::graphics::Vector3f'&gt;
+         &lt;x type='floatingpointsingle'&gt;0.03&lt;/x&gt;
+         &lt;y type='floatingpointsingle'&gt;0.10&lt;/y&gt;
+         &lt;z type='floatingpointsingle'&gt;0.79&lt;/z&gt;
+      &lt;/chromaticitiesXyzZ&gt;
+      &lt;!-- CIE xyz --&gt;
+      &lt;gammaXyz type='hxa7241::graphics::Vector3f'&gt;
+         &lt;x type='floatingpointsingle'&gt;1.0&lt;/x&gt;
+         &lt;y type='floatingpointsingle'&gt;1.0&lt;/y&gt;
+         &lt;z type='floatingpointsingle'&gt;1.0&lt;/z&gt;
+      &lt;/gammaXyz&gt;
+   &lt;/displayCharacteristics&gt;
+
+   &lt;isIlluminationLogging type='boolean'&gt;1&lt;/isIlluminationLogging&gt;
+   &lt;isRasterizerLogging type='boolean'&gt;1&lt;/isRasterizerLogging&gt;
+&lt;/perceptuum2__control__RenderingOptions&gt;</code></pre>
+
+   <h4 id="examplescene">scene file</h4>
+
+<pre><code>&lt;?xml version='1.0' encoding='UTF-8' standalone='yes'?&gt;
+&lt;?hxa7241-XmlSerializer version='1.0' 'object serialized to xml' 'exact class match required'?&gt;
+
+&lt;!-- the geometrical and material description of a renderable subject --&gt;
+&lt;perceptuum2__modelling__Scene type='perceptuum2::modelling::Scene'&gt;
+   &lt;timeBegin type='floatingpointsingle'&gt;0&lt;/timeBegin&gt;
+   &lt;timeEnd type='floatingpointsingle'&gt;1&lt;/timeEnd&gt;
+   &lt;!-- 0-1 --&gt;
+   &lt;mediumTransparency type='floatingpointsingle'&gt;1&lt;/mediumTransparency&gt;
+   &lt;mediumRefractiveIndex type='floatingpointsingle'&gt;1&lt;/mediumRefractiveIndex&gt;
+   &lt;!-- some material definitions --&gt;
+
+   &lt;materials type='std::deque'&gt;
+      &lt;!-- luminaire emitter --&gt;
+      &lt;element type='perceptuum2::modelling::Material'&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[emitter]]&gt;&lt;/name&gt;
+         &lt;baseQualities type='perceptuum2::modelling::Qualities'&gt;
+            &lt;tangent type='hxa7241::utility::UnitVector3f'&gt;
+               &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+               &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+               &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+            &lt;/tangent&gt;
+            &lt;reflectivityDiffuse type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0.75&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0.75&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0.75&lt;/Z&gt;
+            &lt;/reflectivityDiffuse&gt;
+            &lt;reflectivitySpecular type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0.0&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0.0&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0.0&lt;/Z&gt;
+            &lt;/reflectivitySpecular&gt;
+            &lt;roughnessX type='floatingpointsingle'&gt;1&lt;/roughnessX&gt;
+            &lt;roughnessY type='floatingpointsingle'&gt;1&lt;/roughnessY&gt;
+            &lt;transparency type='floatingpointsingle'&gt;0&lt;/transparency&gt;
+            &lt;refractiveIndex type='floatingpointsingle'&gt;1&lt;/refractiveIndex&gt;
+            &lt;emitted type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;2500&lt;/X&gt;&lt;!-- makes 100w for luminaire --&gt;
+               &lt;Y type='floatingpointsingle'&gt;2500&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;2500&lt;/Z&gt;
+            &lt;/emitted&gt;
+            &lt;emittedRoughness type='floatingpointsingle'&gt;1&lt;/emittedRoughness&gt;
+            &lt;brdfClassName type='string'&gt;&lt;![CDATA[]]&gt;&lt;/brdfClassName&gt;
+         &lt;/baseQualities&gt;
+         &lt;colorImageName type='string'/&gt;
+         &lt;colorSpecImageName type='string'/&gt;
+         &lt;specDiffImageName type='string'/&gt;
+         &lt;roughnessXImageName type='string'/&gt;
+         &lt;roughnessYImageName type='string'/&gt;
+         &lt;transparencyImageName type='string'/&gt;
+         &lt;emittedImageName type='string'/&gt;
+         &lt;tangentImageName type='string'/&gt;
+         &lt;normalImageName type='string'/&gt;
+      &lt;/element&gt;
+      &lt;!-- walls --&gt;
+      &lt;element type='perceptuum2::modelling::Material'&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[wallwhitediffuse]]&gt;&lt;/name&gt;
+         &lt;baseQualities type='perceptuum2::modelling::Qualities'&gt;
+            &lt;tangent type='hxa7241::utility::UnitVector3f'&gt;
+               &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+               &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+               &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+            &lt;/tangent&gt;
+            &lt;reflectivityDiffuse type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0.75&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0.75&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0.75&lt;/Z&gt;
+            &lt;/reflectivityDiffuse&gt;
+            &lt;reflectivitySpecular type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0.0&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0.0&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0.0&lt;/Z&gt;
+            &lt;/reflectivitySpecular&gt;
+            &lt;roughnessX type='floatingpointsingle'&gt;1&lt;/roughnessX&gt;
+            &lt;roughnessY type='floatingpointsingle'&gt;1&lt;/roughnessY&gt;
+            &lt;transparency type='floatingpointsingle'&gt;0&lt;/transparency&gt;
+            &lt;refractiveIndex type='floatingpointsingle'&gt;1&lt;/refractiveIndex&gt;
+            &lt;emitted type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0&lt;/Z&gt;
+            &lt;/emitted&gt;
+            &lt;emittedRoughness type='floatingpointsingle'&gt;1&lt;/emittedRoughness&gt;
+            &lt;brdfClassName type='string'&gt;&lt;![CDATA[]]&gt;&lt;/brdfClassName&gt;
+         &lt;/baseQualities&gt;
+         &lt;colorImageName type='string'/&gt;
+         &lt;colorSpecImageName type='string'/&gt;
+         &lt;specDiffImageName type='string'/&gt;
+         &lt;roughnessXImageName type='string'/&gt;
+         &lt;roughnessYImageName type='string'/&gt;
+         &lt;transparencyImageName type='string'/&gt;
+         &lt;emittedImageName type='string'/&gt;
+         &lt;tangentImageName type='string'/&gt;
+         &lt;normalImageName type='string'/&gt;
+      &lt;/element&gt;
+      &lt;element type='perceptuum2::modelling::Material'&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[wallreddiffuse]]&gt;&lt;/name&gt;
+         &lt;baseQualities type='perceptuum2::modelling::Qualities'&gt;
+            &lt;tangent type='hxa7241::utility::UnitVector3f'&gt;
+               &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+               &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+               &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+            &lt;/tangent&gt;
+            &lt;reflectivityDiffuse type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0.617&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0.480&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0.403&lt;/Z&gt;
+            &lt;/reflectivityDiffuse&gt;
+            &lt;reflectivitySpecular type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0.0&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0.0&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0.0&lt;/Z&gt;
+            &lt;/reflectivitySpecular&gt;
+            &lt;roughnessX type='floatingpointsingle'&gt;1&lt;/roughnessX&gt;
+            &lt;roughnessY type='floatingpointsingle'&gt;1&lt;/roughnessY&gt;
+            &lt;transparency type='floatingpointsingle'&gt;0&lt;/transparency&gt;
+            &lt;refractiveIndex type='floatingpointsingle'&gt;1&lt;/refractiveIndex&gt;
+            &lt;emitted type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0&lt;/Z&gt;
+            &lt;/emitted&gt;
+            &lt;emittedRoughness type='floatingpointsingle'&gt;1&lt;/emittedRoughness&gt;
+            &lt;brdfClassName type='string'&gt;&lt;![CDATA[]]&gt;&lt;/brdfClassName&gt;
+         &lt;/baseQualities&gt;
+         &lt;colorImageName type='string'/&gt;
+         &lt;colorSpecImageName type='string'/&gt;
+         &lt;specDiffImageName type='string'/&gt;
+         &lt;roughnessXImageName type='string'/&gt;
+         &lt;roughnessYImageName type='string'/&gt;
+         &lt;transparencyImageName type='string'/&gt;
+         &lt;emittedImageName type='string'/&gt;
+         &lt;tangentImageName type='string'/&gt;
+         &lt;normalImageName type='string'/&gt;
+      &lt;/element&gt;
+      &lt;element type='perceptuum2::modelling::Material'&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[wallgreendiffuse]]&gt;&lt;/name&gt;
+         &lt;baseQualities type='perceptuum2::modelling::Qualities'&gt;
+            &lt;tangent type='hxa7241::utility::UnitVector3f'&gt;
+               &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+               &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+               &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+            &lt;/tangent&gt;
+            &lt;reflectivityDiffuse type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0.480&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0.617&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0.403&lt;/Z&gt;
+            &lt;/reflectivityDiffuse&gt;
+            &lt;reflectivitySpecular type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0.0&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0.0&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0.0&lt;/Z&gt;
+            &lt;/reflectivitySpecular&gt;
+            &lt;roughnessX type='floatingpointsingle'&gt;1&lt;/roughnessX&gt;
+            &lt;roughnessY type='floatingpointsingle'&gt;1&lt;/roughnessY&gt;
+            &lt;transparency type='floatingpointsingle'&gt;0&lt;/transparency&gt;
+            &lt;refractiveIndex type='floatingpointsingle'&gt;1&lt;/refractiveIndex&gt;
+            &lt;emitted type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0&lt;/Z&gt;
+            &lt;/emitted&gt;
+            &lt;emittedRoughness type='floatingpointsingle'&gt;1&lt;/emittedRoughness&gt;
+            &lt;brdfClassName type='string'&gt;&lt;![CDATA[]]&gt;&lt;/brdfClassName&gt;
+         &lt;/baseQualities&gt;
+         &lt;colorImageName type='string'/&gt;
+         &lt;colorSpecImageName type='string'/&gt;
+         &lt;specDiffImageName type='string'/&gt;
+         &lt;roughnessXImageName type='string'/&gt;
+         &lt;roughnessYImageName type='string'/&gt;
+         &lt;transparencyImageName type='string'/&gt;
+         &lt;emittedImageName type='string'/&gt;
+         &lt;tangentImageName type='string'/&gt;
+         &lt;normalImageName type='string'/&gt;
+      &lt;/element&gt;
+      &lt;!-- blocks --&gt;
+      &lt;element type='perceptuum2::modelling::Material'&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[blockbrass]]&gt;&lt;/name&gt;
+         &lt;baseQualities type='perceptuum2::modelling::Qualities'&gt;
+            &lt;tangent type='hxa7241::utility::UnitVector3f'&gt;
+               &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+               &lt;y type='floatingpointsingle'&gt;1&lt;/y&gt;
+               &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+            &lt;/tangent&gt;
+            &lt;reflectivityDiffuse type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0.169&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0.158&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0.123&lt;/Z&gt;
+            &lt;/reflectivityDiffuse&gt;
+            &lt;reflectivitySpecular type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0.372&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0.347&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0.271&lt;/Z&gt;
+            &lt;/reflectivitySpecular&gt;
+            &lt;roughnessX type='floatingpointsingle'&gt;0.05&lt;/roughnessX&gt;
+            &lt;roughnessY type='floatingpointsingle'&gt;0.16&lt;/roughnessY&gt;
+            &lt;transparency type='floatingpointsingle'&gt;0&lt;/transparency&gt;
+            &lt;refractiveIndex type='floatingpointsingle'&gt;1&lt;/refractiveIndex&gt;
+            &lt;emitted type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0&lt;/Z&gt;
+            &lt;/emitted&gt;
+            &lt;emittedRoughness type='floatingpointsingle'&gt;1&lt;/emittedRoughness&gt;
+            &lt;brdfClassName type='string'&gt;&lt;![CDATA[]]&gt;&lt;/brdfClassName&gt;
+         &lt;/baseQualities&gt;
+         &lt;colorImageName type='string'/&gt;
+         &lt;colorSpecImageName type='string'/&gt;
+         &lt;specDiffImageName type='string'/&gt;
+         &lt;roughnessXImageName type='string'/&gt;
+         &lt;roughnessYImageName type='string'/&gt;
+         &lt;transparencyImageName type='string'/&gt;
+         &lt;emittedImageName type='string'/&gt;
+         &lt;tangentImageName type='string'/&gt;
+         &lt;normalImageName type='string'/&gt;
+      &lt;/element&gt;
+      &lt;element type='perceptuum2::modelling::Material'&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[blockglassy]]&gt;&lt;/name&gt;
+         &lt;baseQualities type='perceptuum2::modelling::Qualities'&gt;
+            &lt;tangent type='hxa7241::utility::UnitVector3f'&gt;
+               &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+               &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+               &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+            &lt;/tangent&gt;
+            &lt;reflectivityDiffuse type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0.01&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0.01&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0.01&lt;/Z&gt;
+            &lt;/reflectivityDiffuse&gt;
+            &lt;reflectivitySpecular type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0.79&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0.79&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0.94&lt;/Z&gt;
+            &lt;/reflectivitySpecular&gt;
+            &lt;roughnessX type='floatingpointsingle'&gt;0.001&lt;/roughnessX&gt;
+            &lt;roughnessY type='floatingpointsingle'&gt;0.001&lt;/roughnessY&gt;
+            &lt;transparency type='floatingpointsingle'&gt;0.89&lt;/transparency&gt;
+            &lt;refractiveIndex type='floatingpointsingle'&gt;1.52&lt;/refractiveIndex&gt;
+            &lt;emitted type='hxa7241::graphics::CieXyz'&gt;
+               &lt;X type='floatingpointsingle'&gt;0&lt;/X&gt;
+               &lt;Y type='floatingpointsingle'&gt;0&lt;/Y&gt;
+               &lt;Z type='floatingpointsingle'&gt;0&lt;/Z&gt;
+            &lt;/emitted&gt;
+            &lt;emittedRoughness type='floatingpointsingle'&gt;1&lt;/emittedRoughness&gt;
+            &lt;brdfClassName type='string'&gt;&lt;![CDATA[]]&gt;&lt;/brdfClassName&gt;
+         &lt;/baseQualities&gt;
+         &lt;colorImageName type='string'/&gt;
+         &lt;colorSpecImageName type='string'/&gt;
+         &lt;specDiffImageName type='string'/&gt;
+         &lt;roughnessXImageName type='string'/&gt;
+         &lt;roughnessYImageName type='string'/&gt;
+         &lt;transparencyImageName type='string'/&gt;
+         &lt;emittedImageName type='string'/&gt;
+         &lt;tangentImageName type='string'/&gt;
+         &lt;normalImageName type='string'/&gt;
+      &lt;/element&gt;
+   &lt;/materials&gt;
+
+   &lt;!-- some object definitions --&gt;
+   &lt;objects type='std::deque'&gt;
+      &lt;!-- luminaire --&gt;
+      &lt;element type='perceptuum2::modelling::ObjectInstantiator'&gt;
+         &lt;objectType type='string'&gt;&lt;![CDATA[perceptuum2::modelling::ObjectMeshBlock]]&gt;&lt;/objectType&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[luminaire]]&gt;&lt;/name&gt;
+         &lt;dimensions type='hxa7241::utility::UnitVector3f'&gt;
+            &lt;x type='floatingpointsingle'&gt;0.2&lt;/x&gt;
+            &lt;y type='floatingpointsingle'&gt;0.01&lt;/y&gt;
+            &lt;z type='floatingpointsingle'&gt;0.2&lt;/z&gt;
+         &lt;/dimensions&gt;
+         &lt;netOrFaces type='boolean'&gt;0&lt;/netOrFaces&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;0&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;0&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;0&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;0&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;0&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;0&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;0&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;0&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;1&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;1&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;materialRef type='string'&gt;&lt;![CDATA[emitter]]&gt;&lt;/materialRef&gt;
+      &lt;/element&gt;
+
+      &lt;!-- box --&gt;
+      &lt;element type='perceptuum2::modelling::ObjectInstantiator'&gt;
+         &lt;objectType type='string'&gt;&lt;![CDATA[perceptuum2::modelling::ObjectMeshBlock]]&gt;&lt;/objectType&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[wallleft]]&gt;&lt;/name&gt;
+         &lt;dimensions type='hxa7241::utility::UnitVector3f'&gt;
+            &lt;x type='floatingpointsingle'&gt;1.0&lt;/x&gt;
+            &lt;y type='floatingpointsingle'&gt;0.01&lt;/y&gt;
+            &lt;z type='floatingpointsingle'&gt;1.0&lt;/z&gt;
+         &lt;/dimensions&gt;
+         &lt;netOrFaces type='boolean'&gt;1&lt;/netOrFaces&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;0&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;0&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureScale type='floatingpointsingle'&gt;0&lt;/textureScale&gt;
+         &lt;materialRef type='string'&gt;&lt;![CDATA[wallreddiffuse]]&gt;&lt;/materialRef&gt;
+      &lt;/element&gt;
+      &lt;element type='perceptuum2::modelling::ObjectInstantiator'&gt;
+         &lt;objectType type='string'&gt;&lt;![CDATA[perceptuum2::modelling::ObjectMeshBlock]]&gt;&lt;/objectType&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[wallright]]&gt;&lt;/name&gt;
+         &lt;dimensions type='hxa7241::utility::UnitVector3f'&gt;
+            &lt;x type='floatingpointsingle'&gt;1.0&lt;/x&gt;
+            &lt;y type='floatingpointsingle'&gt;0.01&lt;/y&gt;
+            &lt;z type='floatingpointsingle'&gt;1.0&lt;/z&gt;
+         &lt;/dimensions&gt;
+         &lt;netOrFaces type='boolean'&gt;1&lt;/netOrFaces&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;0&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;0&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureScale type='floatingpointsingle'&gt;0&lt;/textureScale&gt;
+         &lt;materialRef type='string'&gt;&lt;![CDATA[wallgreendiffuse]]&gt;&lt;/materialRef&gt;
+      &lt;/element&gt;
+      &lt;element type='perceptuum2::modelling::ObjectInstantiator'&gt;
+         &lt;objectType type='string'&gt;&lt;![CDATA[perceptuum2::modelling::ObjectMeshBlock]]&gt;&lt;/objectType&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[wallback]]&gt;&lt;/name&gt;
+         &lt;dimensions type='hxa7241::utility::UnitVector3f'&gt;
+            &lt;x type='floatingpointsingle'&gt;1.0&lt;/x&gt;
+            &lt;y type='floatingpointsingle'&gt;0.01&lt;/y&gt;
+            &lt;z type='floatingpointsingle'&gt;1.0&lt;/z&gt;
+         &lt;/dimensions&gt;
+         &lt;netOrFaces type='boolean'&gt;1&lt;/netOrFaces&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;0&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;0&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureScale type='floatingpointsingle'&gt;0&lt;/textureScale&gt;
+         &lt;materialRef type='string'&gt;&lt;![CDATA[wallwhitediffuse]]&gt;&lt;/materialRef&gt;
+      &lt;/element&gt;
+      &lt;element type='perceptuum2::modelling::ObjectInstantiator'&gt;
+         &lt;objectType type='string'&gt;&lt;![CDATA[perceptuum2::modelling::ObjectMeshBlock]]&gt;&lt;/objectType&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[floor]]&gt;&lt;/name&gt;
+         &lt;dimensions type='hxa7241::utility::UnitVector3f'&gt;
+            &lt;x type='floatingpointsingle'&gt;1.0&lt;/x&gt;
+            &lt;y type='floatingpointsingle'&gt;0.01&lt;/y&gt;
+            &lt;z type='floatingpointsingle'&gt;1.0&lt;/z&gt;
+         &lt;/dimensions&gt;
+         &lt;netOrFaces type='boolean'&gt;1&lt;/netOrFaces&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;0&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;0&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureScale type='floatingpointsingle'&gt;0&lt;/textureScale&gt;
+         &lt;materialRef type='string'&gt;&lt;![CDATA[wallwhitediffuse]]&gt;&lt;/materialRef&gt;
+      &lt;/element&gt;
+      &lt;element type='perceptuum2::modelling::ObjectInstantiator'&gt;
+         &lt;objectType type='string'&gt;&lt;![CDATA[perceptuum2::modelling::ObjectMeshBlock]]&gt;&lt;/objectType&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[ceiling]]&gt;&lt;/name&gt;
+         &lt;dimensions type='hxa7241::utility::UnitVector3f'&gt;
+            &lt;x type='floatingpointsingle'&gt;1.0&lt;/x&gt;
+            &lt;y type='floatingpointsingle'&gt;0.01&lt;/y&gt;
+            &lt;z type='floatingpointsingle'&gt;1.0&lt;/z&gt;
+         &lt;/dimensions&gt;
+         &lt;netOrFaces type='boolean'&gt;1&lt;/netOrFaces&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;0&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;0&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureScale type='floatingpointsingle'&gt;0&lt;/textureScale&gt;
+         &lt;materialRef type='string'&gt;&lt;![CDATA[wallwhitediffuse]]&gt;&lt;/materialRef&gt;
+      &lt;/element&gt;
+
+      &lt;!-- blocks --&gt;
+      &lt;element type='perceptuum2::modelling::ObjectInstantiator'&gt;
+         &lt;objectType type='string'&gt;&lt;![CDATA[perceptuum2::modelling::ObjectMeshCylinder]]&gt;&lt;/objectType&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[cylinderlarge]]&gt;&lt;/name&gt;
+         &lt;diameter type='floatingpointsingle'&gt;0.339&lt;/diameter&gt;
+         &lt;height type='floatingpointsingle'&gt;0.6&lt;/height&gt;
+         &lt;isCurved type='boolean'&gt;1&lt;/isCurved&gt;
+         &lt;resolution type='dwordsigned'&gt;16&lt;/resolution&gt;
+         &lt;materialRef type='string'&gt;&lt;![CDATA[blockbrass]]&gt;&lt;/materialRef&gt;
+      &lt;/element&gt;
+      &lt;element type='perceptuum2::modelling::ObjectInstantiator'&gt;
+         &lt;objectType type='string'&gt;&lt;![CDATA[perceptuum2::modelling::ObjectMeshBlock]]&gt;&lt;/objectType&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[blocksmall]]&gt;&lt;/name&gt;
+         &lt;dimensions type='hxa7241::utility::UnitVector3f'&gt;
+            &lt;x type='floatingpointsingle'&gt;0.3&lt;/x&gt;
+            &lt;y type='floatingpointsingle'&gt;0.3&lt;/y&gt;
+            &lt;z type='floatingpointsingle'&gt;0.3&lt;/z&gt;
+         &lt;/dimensions&gt;
+         &lt;netOrFaces type='boolean'&gt;1&lt;/netOrFaces&gt;
+         &lt;textureCoords type='hxa7241::graphics::Vector2'&gt;
+            &lt;x type='wordsigned'&gt;0&lt;/x&gt;
+            &lt;y type='wordsigned'&gt;0&lt;/y&gt;
+         &lt;/textureCoords&gt;
+         &lt;textureScale type='floatingpointsingle'&gt;0&lt;/textureScale&gt;
+         &lt;materialRef type='string'&gt;&lt;![CDATA[blockglassy]]&gt;&lt;/materialRef&gt;
+      &lt;/element&gt;
+
+      &lt;!-- tilted block --&gt;
+      &lt;element type='perceptuum2::modelling::ObjectInstantiator'&gt;
+         &lt;objectType type='string'&gt;&lt;![CDATA[perceptuum2::modelling::ObjectInstance]]&gt;&lt;/objectType&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[blocksmalltilted]]&gt;&lt;/name&gt;
+         &lt;subParts type='std::deque'&gt;
+            &lt;element type='perceptuum2::modelling::ObjectInstance::SubPart'&gt;
+               &lt;objectRef type='string'&gt;&lt;![CDATA[blocksmall]]&gt;&lt;/objectRef&gt;
+               &lt;transform type='hxa7241::graphics::Transplace'&gt;
+                  &lt;rotation type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;30&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;-20&lt;/z&gt;
+                  &lt;/rotation&gt;
+                  &lt;position type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+                  &lt;/position&gt;
+               &lt;/transform&gt;
+            &lt;/element&gt;
+         &lt;/subParts&gt;
+      &lt;/element&gt;
+      &lt;!-- moving block --&gt;
+      &lt;element type='perceptuum2::modelling::ObjectInstantiator'&gt;
+         &lt;objectType type='string'&gt;&lt;![CDATA[perceptuum2::modelling::ObjectInstanceMoving]]&gt;&lt;/objectType&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[blocksmallmoving]]&gt;&lt;/name&gt;
+         &lt;subParts type='std::deque'&gt;
+            &lt;element type='perceptuum2::modelling::ObjectInstanceMoving::Motion'&gt;
+               &lt;objectRef type='string'&gt;&lt;![CDATA[blocksmalltilted]]&gt;&lt;/objectRef&gt;
+               &lt;startTime type='floatingpointsingle'&gt;0&lt;/startTime&gt;
+               &lt;endTime type='floatingpointsingle'&gt;1&lt;/endTime&gt;
+               &lt;startRotation type='hxa7241::graphics::Vector3f'&gt;
+                  &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+                  &lt;y type='floatingpointsingle'&gt;-20&lt;/y&gt;
+                  &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+               &lt;/startRotation&gt;
+               &lt;startPosition type='hxa7241::graphics::Vector3f'&gt;
+                  &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+                  &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                  &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+               &lt;/startPosition&gt;
+               &lt;endRotation type='hxa7241::graphics::Vector3f'&gt;
+                  &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+                  &lt;y type='floatingpointsingle'&gt;20&lt;/y&gt;
+                  &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+               &lt;/endRotation&gt;
+               &lt;endPosition type='hxa7241::graphics::Vector3f'&gt;
+                  &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+                  &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                  &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+               &lt;/endPosition&gt;
+            &lt;/element&gt;
+         &lt;/subParts&gt;
+      &lt;/element&gt;
+
+      &lt;!-- the root object --&gt;
+      &lt;element type='perceptuum2::modelling::ObjectInstantiator'&gt;
+         &lt;objectType type='string'&gt;&lt;![CDATA[perceptuum2::modelling::ObjectInstance]]&gt;&lt;/objectType&gt;
+         &lt;name type='string'&gt;&lt;![CDATA[root]]&gt;&lt;/name&gt;
+         &lt;subParts type='std::deque'&gt;
+            &lt;element type='perceptuum2::modelling::ObjectInstance::SubPart'&gt;
+               &lt;objectRef type='string'&gt;&lt;![CDATA[luminaire]]&gt;&lt;/objectRef&gt;
+               &lt;transform type='hxa7241::graphics::Transplace'&gt;
+                  &lt;rotation type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+                  &lt;/rotation&gt;
+                  &lt;position type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;-0.1&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0.99&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;-0.1&lt;/z&gt;
+                  &lt;/position&gt;
+               &lt;/transform&gt;
+            &lt;/element&gt;
+
+            &lt;element type='perceptuum2::modelling::ObjectInstance::SubPart'&gt;
+               &lt;objectRef type='string'&gt;&lt;![CDATA[floor]]&gt;&lt;/objectRef&gt;
+               &lt;transform type='hxa7241::graphics::Transplace'&gt;
+                  &lt;rotation type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+                  &lt;/rotation&gt;
+                  &lt;position type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;-0.5&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;-0.01&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;-0.5&lt;/z&gt;
+                  &lt;/position&gt;
+               &lt;/transform&gt;
+            &lt;/element&gt;
+            &lt;element type='perceptuum2::modelling::ObjectInstance::SubPart'&gt;
+               &lt;objectRef type='string'&gt;&lt;![CDATA[ceiling]]&gt;&lt;/objectRef&gt;
+               &lt;transform type='hxa7241::graphics::Transplace'&gt;
+                  &lt;rotation type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;180&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+                  &lt;/rotation&gt;
+                  &lt;position type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;-0.5&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;1.01&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0.5&lt;/z&gt;
+                  &lt;/position&gt;
+               &lt;/transform&gt;
+            &lt;/element&gt;
+
+            &lt;element type='perceptuum2::modelling::ObjectInstance::SubPart'&gt;
+               &lt;objectRef type='string'&gt;&lt;![CDATA[wallleft]]&gt;&lt;/objectRef&gt;
+               &lt;transform type='hxa7241::graphics::Transplace'&gt;
+                  &lt;rotation type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;90&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;90&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+                  &lt;/rotation&gt;
+                  &lt;position type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;-0.51&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;-0.5&lt;/z&gt;
+                  &lt;/position&gt;
+               &lt;/transform&gt;
+            &lt;/element&gt;
+            &lt;element type='perceptuum2::modelling::ObjectInstance::SubPart'&gt;
+               &lt;objectRef type='string'&gt;&lt;![CDATA[wallright]]&gt;&lt;/objectRef&gt;
+               &lt;transform type='hxa7241::graphics::Transplace'&gt;
+                  &lt;rotation type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;90&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;-90&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+                  &lt;/rotation&gt;
+                  &lt;position type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;0.51&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0.5&lt;/z&gt;
+                  &lt;/position&gt;
+               &lt;/transform&gt;
+            &lt;/element&gt;
+            &lt;element type='perceptuum2::modelling::ObjectInstance::SubPart'&gt;
+               &lt;objectRef type='string'&gt;&lt;![CDATA[wallback]]&gt;&lt;/objectRef&gt;
+               &lt;transform type='hxa7241::graphics::Transplace'&gt;
+                  &lt;rotation type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;90&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+                  &lt;/rotation&gt;
+                  &lt;position type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;-0.5&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0.51&lt;/z&gt;
+                  &lt;/position&gt;
+               &lt;/transform&gt;
+            &lt;/element&gt;
+
+            &lt;element type='perceptuum2::modelling::ObjectInstance::SubPart'&gt;
+               &lt;objectRef type='string'&gt;&lt;![CDATA[cylinderlarge]]&gt;&lt;/objectRef&gt;
+               &lt;transform type='hxa7241::graphics::Transplace'&gt;
+                  &lt;rotation type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+                  &lt;/rotation&gt;
+                  &lt;position type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;-0.1695&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+                  &lt;/position&gt;
+               &lt;/transform&gt;
+            &lt;/element&gt;
+            &lt;element type='perceptuum2::modelling::ObjectInstance::SubPart'&gt;
+               &lt;objectRef type='string'&gt;&lt;![CDATA[blocksmallmoving]]&gt;&lt;/objectRef&gt;
+               &lt;transform type='hxa7241::graphics::Transplace'&gt;
+                  &lt;rotation type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;0&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;45&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;0&lt;/z&gt;
+                  &lt;/rotation&gt;
+                  &lt;position type='hxa7241::graphics::Vector3f'&gt;
+                     &lt;x type='floatingpointsingle'&gt;0.18&lt;/x&gt;
+                     &lt;y type='floatingpointsingle'&gt;0.01&lt;/y&gt;
+                     &lt;z type='floatingpointsingle'&gt;-0.30&lt;/z&gt;
+                  &lt;/position&gt;
+               &lt;/transform&gt;
+            &lt;/element&gt;
+         &lt;/subParts&gt;
+      &lt;/element&gt;
+   &lt;/objects&gt;
+&lt;/perceptuum2__modelling__Scene&gt;</code></pre>
+
+</div>
+
+
+<div class="section" id="implementationbackground">
+<h3>implementation background</h3>
+
+   <p>a general xml parsing library isnt used. the basic idea is a simple object serialization: each tag structure matches a class, its nested tag structures matching the members, and so on hierarchically like a class, the terminal values matching the primitive values of the object.</p>
+
+   <p>that concept its stretched a little to handle class polymorphism.</p>
+
+   <p>each class that needs serialization implements four (non-member) functions, the main streaming operator ones simply calling read or write for each member. the serializer class calls the streaming function of the object passed to it &mdash; in a pseudo-recursive fashion &mdash; until primitives are reached, which are written by the serializer. type matching is partly done with templates, so its less intrusive to the client class.</p>
+
+   <p>for example, main/control/RenderingOptions:</p>
+
+<pre><code>SerializerOut&amp; perceptuum2::control::operator&lt;&lt;( SerializerOut&amp; out, const RenderingOptions&amp; obj )
+{
+    out.write( "immutableOptions",           obj.immutableOptions_m,
+        "options that are fixed across different sessions of the same render" );
+
+    out.write( "secondsBetweenSaves",        obj.secondsBetweenSaves_m );
+    out.write( "tonemapAdaptationLuminance", obj.tonemapAdaptationLuminance_m, "cd/m2" );
+
+    /// ... all the other members ...
+
+    return out;
+}
+
+
+SerializerIn&amp; perceptuum2::control::operator&gt;&gt;( SerializerIn&amp; in, RenderingOptions&amp; obj )
+{
+    in.read( "immutableOptions",           obj.immutableOptions_m );
+
+    in.read( "secondsBetweenSaves",        obj.secondsBetweenSaves_m );
+    in.read( "tonemapAdaptationLuminance", obj.tonemapAdaptationLuminance_m );
+
+    /// ... all the other members ...
+
+    return in;
+}
+
+
+const char* RenderingOptions::CLASS_NAME()
+{
+    static const char CLASS_NAME[] = "perceptuum2::control::RenderingOptions";
+    return CLASS_NAME;
+}
+
+
+const char* RenderingOptions::CLASS_DESCRIPTION()
+{
+    static const char CLASS_DESCRIPTION[] = "all options for controlling a rendering";
+    return CLASS_DESCRIPTION;
+}</code></pre>
+
+   <p>primary code class:</p>
+   <ul>
+      <li><code>utility/XmlSerializerIn</code></li>
+   </ul>
+
+   <p>secondary code classes:</p>
+   <ul>
+      <li><code>utility/XmlSerializerOut</code></li>
+      <li><code>utility/SerializerIn</code></li>
+      <li><code>utility/SerializerOut</code></li>
+   </ul>
+
+</div>
+
+</div>
+
+
+<div class="section" id="references">
+<h2>references</h2>
+   <ul>
+      <li id="ph"><span class="refnumber">[PH]</span> HXA7241, <a href="http://www.hxa.name/perceptuum/" title="web page">&lsquo;Perceptuum renderer&rsquo;</a>, hxa7241 2002-2004.</li>
+      <li id="xml"><span class="refnumber">[XML]</span> W3C, <a href="http://www.w3.org/XML/" title="web page">&lsquo;XML web site&rsquo;</a>, W3C 1998-2004.</li>
+      <li id="cie"><span class="refnumber">[CIE]</span> CIE, <a href="http://www.cie.co.at/cie/" title="web page">&lsquo;CIE web site&rsquo;</a>, CIE.</li>
+      <li id="srgb"><span class="refnumber">[SRGB]</span> W3C, <a href="http://www.w3.org/Graphics/Color/sRGB" title="web page">&lsquo;sRGB page&rsquo;</a>, W3C 1996.</li>
+   </ul>
+</div>
+
+
+</div>
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/perceptuum/">HXA / perceptuum</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

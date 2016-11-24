@@ -1,0 +1,1913 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>MiniLight 1.5.2.1 Scala - HXA7241 - 2010</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="MiniLight 1.5.2.1 Scala - HXA7241 - 2010" />
+   <meta name="DC.subject"     content="renderer, programming, scala, code" />
+   <meta name="DC.description" content="Complete code for the Scala 2.7.7 translation of MiniLight." />
+   <meta name="DC.type"        content="code presentation" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.publisher"   content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Harrison Ainsworth / HXA7241 : 2008-2010 (New) BSD License." />
+   <meta name="DC.date"        content="2008-10-26" />
+   <meta name="DC.date"        content="2010-01-10" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/minilight/minilight-scala-code.html" />
+
+   <meta name="keywords"       content="renderer, programming, scala, code" />
+   <meta name="description"    content="Complete code for the Scala 2.7.7 translation of MiniLight." />
+   <meta name="document"       content="hxa7241code2" />
+   <meta name="license"        content="(New) BSD" />
+
+   <style type="text/css">
+      body
+      {
+         background-color:       white;
+         text-align:             center;
+         margin:                 0em;
+         padding:                0em;
+      }
+
+      .edge
+      {
+         color:                  white;
+         background-color:       black;
+         font-family:            sans-serif;
+         padding:                0.1em 0.4em 0.1em 0.4em;
+      }
+
+      #header
+      {
+         font-size:              2.2em;
+         line-height:            1.15em;
+         text-align:             left;
+      }
+
+      #footer
+      {
+         font-size:              1.1em;
+         line-height:            1.15em;
+         font-weight:            bold;
+         text-align:             right;
+      }
+
+      #header div a,
+      #footer div a
+      {
+         color:                  white;
+         background-color:       black;
+         text-decoration:        underline;
+      }
+
+      .paper
+      {
+         color:                  black;
+         background-color:       white;
+         font-family:            sans-serif;
+         font-size:              1.1em;
+         line-height:            1.4em;
+         text-align:             left;
+         text-indent:            0em;
+         width:                  45em;
+         border:                 0 none;
+         margin-top:             7em;
+         margin-bottom:          7em;
+         margin-left:            auto;
+         margin-right:           auto;
+      }
+
+      #heading
+      {
+         margin-bottom:          6em;
+      }
+
+      #colophon
+      {
+         margin-bottom:          6em;
+      }
+
+      #preface
+      {
+         margin-bottom:          6em;
+      }
+
+      #summary
+      {
+         text-align:             justify;
+      }
+
+      #contents
+      {
+         margin-bottom:          6em;
+      }
+
+      #contents ul,
+      #contents ol
+      {
+         list-style-type:        none;
+         margin-left:            0em;
+         margin-bottom:          1.5em;
+      }
+
+      #contents ul ul,
+      #contents ol ol,
+      #contents ul ol,
+      #contents ol ul
+      {
+         margin-left:            2em;
+      }
+
+      #contents ul li,
+      #contents ol li
+      {
+         margin-top:             0.5em;
+         margin-bottom:          0.5em;
+      }
+
+      .section
+      {
+         margin-bottom:          6em;
+         text-align:             justify;
+      }
+
+      h1
+      {
+         font-size:              3.5em;
+         line-height:            1em;
+         font-weight:            normal;
+         text-align:             left;
+         margin-top:             0em;
+         margin-bottom:          1em;
+      }
+
+      h2
+      {
+         font-size:              2em;
+         line-height:            1em;
+         font-weight:            normal;
+         text-align:             left;
+         margin-top:             0em;
+         margin-bottom:          0.5em;
+      }
+
+      h3
+      {
+         font-size:              1.5em;
+         line-height:            1.2em;
+         font-weight:            normal;
+         text-align:             left;
+         margin-top:             1em;
+         margin-bottom:          0.5em;
+      }
+
+      h4
+      {
+         font-size:              1.2em;
+         line-height:            1.2em;
+         font-weight:            bold;
+         text-align:             left;
+         margin-top:             1em;
+         margin-bottom:          0em;
+      }
+
+      h5
+      {
+         font-size:              1em;
+         line-height:            1.2em;
+         font-weight:            bold;
+         text-align:             left;
+         margin:                 0.5em 0em 0.5em 0em;
+      }
+
+      h6
+      {
+         font-size:              1em;
+         line-height:            1.2em;
+         font-weight:            bold;
+         text-align:             left;
+         margin:                 0em 1.5em 0em 0em;
+         float:                  left;
+      }
+
+      p
+      {
+         text-indent:            0em;
+         margin-top:             0.75em;
+         margin-bottom:          0.75em;
+      }
+
+      pre
+      {
+         font-family:            monospace;
+         line-height:            1.3em;
+         text-align:             left;
+         white-space:            pre;
+         margin-top:             1em;
+         margin-bottom:          1em;
+         padding:                1.5em;
+         border:                 0.1em black solid;
+      }
+
+      ol, ul, dl
+      {
+         margin:                 0.5em 2em 0.5em 3em;
+         padding:                0em;
+      }
+
+      dl
+      {
+         margin-left:            2em;
+      }
+
+      .plainlist
+      {
+         list-style-type:        none;
+      }
+
+      dl.plainlist
+      {
+         margin:                 0.5em 0em 0.5em 0em;
+      }
+
+      table
+      {
+         font-size:              1em;
+         line-height:            1.4em;
+         margin-top:             1em;
+      }
+
+      img
+      {
+         border:                 0.1em solid black;
+         margin:                 1em 0em 1em 0em;
+      }
+
+      #references ul
+      {
+         list-style-type:        none;
+         margin-left:            0em;
+      }
+
+      #references ul li
+      {
+         margin-top:             1em;
+         margin-bottom:          1em;
+      }
+
+      sup
+      {
+         line-height:            0.5em;
+      }
+
+      code, tt
+      {
+         font-family:            monospace;
+      }
+
+      li, dt, dd
+      {
+         margin-top:             0.25em;
+         margin-bottom:          0.25em;
+      }
+
+      dt
+      {
+         font-weight:            bold;
+      }
+
+      dl.plainlist dd
+      {
+         margin-left:            0em;
+         margin-bottom:          0.5em;
+      }
+
+      a:link, a:visited
+      {
+         color:                  black;
+         background-color:       white;
+         text-decoration:        none;
+      }
+
+      a:hover
+      {
+         color:                  black;
+         background-color:       white;
+         text-decoration:        underline;
+      }
+
+      a:active
+      {
+         color:                  black;
+         background-color:       rgb(208,208,208);
+         text-decoration:        underline;
+      }
+
+      .highlight
+      {
+         background-color:       rgb(224,224,224);
+      }
+
+      .lowlight
+      {
+         color:                  rgb(144,144,144);
+      }
+
+
+      .code-preprocessor
+      {
+         color:                  rgb(108,0,108);
+      }
+
+      .code-comment
+      {
+         color:                  rgb(0,108,0);
+      }
+
+      .code-literal
+      {
+         color:                  rgb(0,108,108);
+      }
+
+      .code-keyword
+      {
+         color:                  rgb(0,0,144);
+      }
+   </style>
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/minilight/">HXA minilight</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>MiniLight 1.5.2.1 Scala</h1>
+</div>
+
+
+<div id="colophon">
+<h4>Harrison Ainsworth</h4>
+
+   <p id="contact"><a href="http://www.hxa.name/">http://www.hxa.name/</a>
+   <br />hxa7241+www <i>(&alpha;&tau;)</i> googlem&zwnj;ail <i>(d&omicron;&tau;)</i> com</p>
+
+   <p id="timestamp">2010-01-10</p>
+</div>
+
+
+<div id="preface">
+   <div id="summary">
+      <h2>Summary</h2>
+      <p>Complete code for the <a href="http://www.scala-lang.org/">Scala</a> (2.7.7) translation of MiniLight (a minimal global illumination renderer). (431 lines)</p>
+   </div>
+
+   <dl id="metadata" class="plainlist">
+      <dt>subject</dt>
+      <dd>renderer, programming, scala, code</dd>
+
+      <dt>uri</dt>
+      <dd><a href="http://www.hxa.name/minilight/minilight-scala-code.html">http://www.hxa.name/minilight/minilight-scala-code.html</a></dd>
+
+      <dt>license</dt>
+      <dd><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons BY-SA 3.0 License</a>.</dd>
+
+      <dt>download</dt>
+      <dd>Source code archive: <a href="http://www.hxa.name/minilight/minilight15scala.zip">http://www.hxa.name/minilight/minilight15scala.zip</a>
+         <br />updated for Scala 2.9.1: <a href="http://www.hxa.name/minilight/minilight153scala.zip">http://www.hxa.name/minilight/minilight153scala.zip</a></dd>
+   </dl>
+</div>
+
+
+<div id="contents">
+   <h2>Contents</h2>
+
+   <h4>Files</h4>
+   <ul>
+      <li><a href="#minilight">MiniLight.scala</a></li>
+      <li><a href="#camera">Camera.scala</a></li>
+      <li><a href="#image">Image.scala</a></li>
+      <li><a href="#raytracer">RayTracer.scala</a></li>
+      <li><a href="#scene">Scene.scala</a></li>
+      <li><a href="#spatialindex">SpatialIndex.scala</a></li>
+      <li><a href="#surfacepoint">SurfacePoint.scala</a></li>
+      <li><a href="#triangle">Triangle.scala</a></li>
+      <li><a href="#vector3f">Vector3f.scala</a></li>
+      <li><a href="#tokenstream">TokenStream.scala</a></li>
+   </ul>
+
+   <h4>Other</h4>
+   <ul>
+      <li><a href="#license">License</a></li>
+   </ul>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="minilight">
+<h2>MiniLight.scala</h2>
+
+   <pre class="sourcefile" id="MiniLight.scala"><code>
+<span class="code-keyword">package</span> hxa7241.minilight
+
+
+<span class="code-keyword">import</span> hxa7241.general.TokenStream
+
+
+
+
+<span class="code-comment">/**
+ * Control-module and entry point.&lt;p&gt;
+ *
+ * Handles command-line UI, and runs the main progressive-refinement render
+ * loop.&lt;p&gt;
+ *
+ * Supply a model file pathname as the command-line argument. Or -? for help.&lt;p&gt;
+ */</span>
+
+
+<span class="code-keyword">object</span> MiniLight
+{
+<span class="code-comment">/// user messages --------------------------------------------------------------</span>
+
+   <span class="code-keyword">private val</span> TITLE     = <span class="code-literal">"MiniLight 1.5.2.1 Scala"</span>
+   <span class="code-keyword">private val</span> COPYRIGHT = <span class="code-literal">"Harrison Ainsworth / HXA7241 : 2008-2010"</span>
+   <span class="code-keyword">private val</span> URI       = <span class="code-literal">"http://www.hxa.name/minilight/"</span>
+   <span class="code-keyword">private val</span> DATE      = <span class="code-literal">"2010-01-09"</span>
+
+   <span class="code-keyword">private val</span> BANNER_MESSAGE = <span class="code-literal">"\n  "</span> + TITLE + <span class="code-literal">"\n  "</span> + COPYRIGHT + <span class="code-literal">"\n  "</span> +
+      URI + <span class="code-literal">"\n"</span>
+
+   <span class="code-keyword">private val</span> HELP_MESSAGE   = <span class="code-literal">"""
+----------------------------------------------------------------------
+  """</span> + TITLE + <span class="code-literal">"\n\n  "</span> + COPYRIGHT + <span class="code-literal">"\n  "</span> + URI + <span class="code-literal">"\n\n  "</span> + DATE + <span class="code-literal">"""
+----------------------------------------------------------------------
+
+MiniLight is a minimal global illumination renderer.
+
+usage:
+  minilight modelFilePathName
+
+The model text file format is:
+  #MiniLight
+
+  iterations
+
+  imagewidth imageheight
+
+  viewposition viewdirection viewangle
+
+  skyemission groundreflection
+  vertex0 vertex1 vertex2 reflectivity emitivity
+  vertex0 vertex1 vertex2 reflectivity emitivity
+  ...
+
+-- where iterations and image values are ints, viewangle is a float,
+and all other values are three parenthised floats. The file must end
+with a newline. Eg.:
+  #MiniLight
+
+  100
+
+  200 150
+
+  (0 0.75 -2) (0 0 1) 45
+
+  (3626 5572 5802) (0.1 0.09 0.07)
+  (0 0 0) (0 1 0) (1 1 0)  (0.7 0.7 0.7) (0 0 0)
+"""</span>
+
+
+<span class="code-comment">/// other declarations ---------------------------------------------------------</span>
+
+   <span class="code-keyword">private val</span> MODEL_FORMAT_ID = <span class="code-literal">"#MiniLight"</span>
+   <span class="code-keyword">private val</span> SAVE_PERIOD     = <span class="code-literal">240L</span> * <span class="code-literal">1000L</span>
+
+
+   <span class="code-keyword">private def</span> saveImage( imageFilePathname:String, image:Image, frameNo:Int )
+   {
+      <span class="code-comment">// open file, write, close</span>
+      <span class="code-keyword">val</span> imageFile = <span class="code-keyword">new</span> java.io.PrintStream( imageFilePathname )
+      image.formatted( imageFile, (frameNo - <span class="code-literal">1</span>) )
+      imageFile.close()
+   }
+
+
+<span class="code-comment">/// entry point ----------------------------------------------------------------</span>
+
+   <span class="code-keyword">def</span> main( args:Array[String] )
+   {
+      <span class="code-comment">// catch everything</span>
+      <span class="code-keyword">try</span>
+      {
+         <span class="code-comment">// check for help request</span>
+         <span class="code-keyword">if</span>( args.isEmpty || (<span class="code-literal">"-?"</span> == args(<span class="code-literal">0</span>)) || (<span class="code-literal">"--help"</span>== args(<span class="code-literal">0</span>)) )
+         {
+            println( HELP_MESSAGE )
+         }
+         <span class="code-comment">// execute</span>
+         <span class="code-keyword">else</span>
+         {
+            println( BANNER_MESSAGE )
+
+            <span class="code-comment">// get/make file names</span>
+            <span class="code-keyword">val</span> modelFilePathname = args(<span class="code-literal">0</span>)
+            <span class="code-keyword">val</span> imageFilePathname = modelFilePathname + <span class="code-literal">".ppm"</span>
+
+            <span class="code-comment">// open model file</span>
+            <span class="code-keyword">val</span> modelFile = <span class="code-keyword">new</span> TokenStream( modelFilePathname )
+
+            <span class="code-comment">// check model file format identifier at start of first line</span>
+            <span class="code-keyword">if</span>( MODEL_FORMAT_ID != (modelFile.next + modelFile.next) )
+               <span class="code-keyword">throw new</span> Exception( <span class="code-literal">"invalid model file"</span> )
+
+            <span class="code-comment">// read frame iterations</span>
+            <span class="code-keyword">val</span> iterations = modelFile.next.toInt
+
+            <span class="code-comment">// create main rendering objects, from model file</span>
+            <span class="code-keyword">val</span> image  = <span class="code-keyword">new</span> Image ( modelFile )
+            <span class="code-keyword">val</span> camera = <span class="code-keyword">new</span> Camera( modelFile )
+            <span class="code-keyword">val</span> scene  = <span class="code-keyword">new</span> Scene ( modelFile, camera.eyePoint )
+
+            modelFile.close
+
+            <span class="code-comment">// remove seed parameter for non-deterministicality</span>
+            <span class="code-keyword">val</span> random = <span class="code-keyword">new</span> util.Random( <span class="code-literal">0</span> )
+
+            <span class="code-comment">// make frame number visible to interruption/ctrl-c handler</span>
+            <span class="code-keyword">var</span> frameNumber = <span class="code-literal">0</span>
+
+            <span class="code-comment">// setup interruption/ctrl-c handler
+            // (will also run at successful exit)</span>
+            Runtime.getRuntime().addShutdownHook( <span class="code-keyword">new</span> Thread()
+               {
+                  <span class="code-keyword">override def</span> run()
+                  {
+                     saveImage( imageFilePathname, image, frameNumber )
+                     <span class="code-keyword">if</span>( frameNumber &lt; iterations ) println( <span class="code-literal">"\ninterrupted"</span> )
+                  }
+               } )
+
+            <span class="code-comment">// do progressive refinement render loop</span>
+            <span class="code-keyword">var</span> lastTime = <span class="code-literal">0L</span>
+            <span class="code-keyword">for</span>( i &lt;- <span class="code-literal">1</span> <span class="code-keyword">to</span> iterations )
+            {
+               <span class="code-comment">// render a frame</span>
+               camera.getFrame( scene, random, image )
+               frameNumber = i
+
+               <span class="code-comment">// save image periodically, and at start</span>
+               <span class="code-keyword">if</span>( (SAVE_PERIOD &lt; (System.currentTimeMillis() - lastTime)) )
+               <span class="code-comment">// save image every iteration doubling</span>
+               <span class="code-comment">//if( (i &amp; (i - 1)) == 0 )</span>
+               {
+                  lastTime = System.currentTimeMillis()
+                  saveImage( imageFilePathname, image, frameNumber )
+               }
+
+               <span class="code-comment">// display latest frame number</span>
+               Console.out.append( <span class="code-literal">"\riteration: "</span> + frameNumber ).flush
+            }
+
+            println( <span class="code-literal">"\nfinished"</span> )
+        }
+      }
+      <span class="code-comment">// print any exception message</span>
+      <span class="code-keyword">catch</span>
+      {
+         <span class="code-keyword">case</span> e:Throwable =&gt; println( <span class="code-literal">"\n*** execution failed: "</span> + e )
+      }
+   }
+}
+</code></pre>
+</div>
+
+
+<div class="section" id="camera">
+<h2>Camera.scala</h2>
+
+   <pre class="sourcefile" id="Camera.scala"><code>
+<span class="code-keyword">package</span> hxa7241.minilight
+
+
+<span class="code-keyword">import</span> hxa7241.graphics.Vector3f
+
+
+
+
+<span class="code-comment">/**
+ * A view definition with rasterization capability.&lt;p&gt;
+ *
+ * @constant &lt;p&gt;
+ *
+ * @invariants &lt;ul&gt;
+ * &lt;li&gt;viewAngle_m is &gt;= 10 and &lt;= 160 degrees in radians&lt;/li&gt;
+ * &lt;li&gt;viewDirection_m is unitized&lt;/li&gt;
+ * &lt;li&gt;right_m is unitized&lt;/li&gt;
+ * &lt;li&gt;up_m is unitized&lt;/li&gt;
+ * &lt;li&gt;above three form a coordinate frame&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @param modelFile_c  to read from
+ */</span>
+<span class="code-keyword">class</span> Camera( modelFile_c:{<span class="code-keyword">def</span> next:String} ) <span class="code-keyword">extends</span> NotNull
+{
+<span class="code-comment">/// queries --------------------------------------------------------------------</span>
+
+   <span class="code-keyword">def</span> eyePoint = viewPosition_m
+
+
+   <span class="code-comment">/**
+    * Accumulate a frame to the image.
+    *
+    * @param scene   scene to render
+    * @param random  random number generator
+    * @param image   image to add to
+    */</span>
+   <span class="code-keyword">def</span> getFrame( scene:Scene, random:util.Random, image:Image )
+   {
+      <span class="code-keyword">val</span> rayTracer = <span class="code-keyword">new</span> RayTracer( scene )
+
+      <span class="code-comment">// do image sampling pixel loop</span>
+      <span class="code-keyword">for</span>( y &lt;- <span class="code-literal">0</span> <span class="code-keyword">until</span> image.height;  x &lt;- <span class="code-literal">0</span> <span class="code-keyword">until</span> image.width )
+      {
+         <span class="code-comment">// make sample ray direction, stratified by pixels</span>
+         <span class="code-keyword">val</span> sampleDirection =
+         {
+            <span class="code-comment">// make image plane displacement vector coefficients</span>
+            <span class="code-keyword">val</span> xF = ((x + random.nextFloat) * <span class="code-literal">2.0f</span> / image.width ) - <span class="code-literal">1.0f</span>
+            <span class="code-keyword">val</span> yF = ((y + random.nextFloat) * <span class="code-literal">2.0f</span> / image.height) - <span class="code-literal">1.0f</span>
+
+            <span class="code-comment">// make image plane offset vector</span>
+            <span class="code-keyword">val</span> offset = (right_m * xF) + (up_m * (yF *
+               (image.height.toFloat / image.width)))
+
+            <span class="code-comment">// add offset to view direction</span>
+            (viewDirection_m + (offset * Math.tan(viewAngle_m * <span class="code-literal">0.5f</span>).
+               toFloat)).unitized
+         }
+
+         <span class="code-comment">// get radiance from RayTracer</span>
+         <span class="code-keyword">val</span> radiance = rayTracer.radiance( viewPosition_m, sampleDirection,
+            random, null )
+
+         <span class="code-comment">// add radiance to pixel</span>
+         image.addToPixel( x, y, radiance )
+      }
+   }
+
+
+<span class="code-comment">/// fields ---------------------------------------------------------------------</span>
+
+   <span class="code-comment">// view definition</span>
+   <span class="code-keyword">private val</span> viewPosition_m  = Vector3f( modelFile_c )
+   <span class="code-keyword">private val</span> viewDirection_m =
+   {
+      <span class="code-keyword">val</span> vd = Vector3f( modelFile_c ).unitized
+      <span class="code-keyword">if</span>( !vd.isZero ) vd <span class="code-keyword">else</span> Vector3f(<span class="code-literal">0</span>, <span class="code-literal">0</span>, <span class="code-literal">1</span>)
+   }
+
+   <span class="code-keyword">private val</span> viewAngle_m = Math.toRadians(
+      (modelFile_c.next.toFloat max <span class="code-literal">10.0f</span>) min <span class="code-literal">160.0f</span> ).toFloat
+
+   <span class="code-comment">// rest of the view coord frame</span>
+   <span class="code-keyword">private val</span> (right_m, up_m) =
+   {
+      <span class="code-keyword">val</span> right = (Vector3f(<span class="code-literal">0</span>, <span class="code-literal">1</span>, <span class="code-literal">0</span>) cross viewDirection_m).unitized
+      <span class="code-keyword">if</span>( !right.isZero )
+         ( right, (viewDirection_m cross right).unitized )
+      <span class="code-keyword">else</span>
+      {
+         <span class="code-keyword">val</span> up = Vector3f( <span class="code-literal">0</span>, <span class="code-literal">0</span>, <span class="code-keyword">if</span>(viewDirection_m.y &lt; <span class="code-literal">0.0f</span>) <span class="code-literal">+1</span> <span class="code-keyword">else</span> <span class="code-literal">-1</span> )
+         ( (up cross viewDirection_m).unitized, up )
+      }
+   }
+}
+</code></pre>
+</div>
+
+
+<div class="section" id="image">
+<h2>Image.scala</h2>
+
+   <pre class="sourcefile" id="Image.scala"><code>
+<span class="code-keyword">package</span> hxa7241.minilight
+
+
+<span class="code-keyword">import</span> hxa7241.graphics.Vector3f
+
+
+
+
+<span class="code-comment">/**
+ * Pixel sheet with simple tone-mapping and file formatting.&lt;p&gt;
+ *
+ * Uses PPM image format:
+ * &lt;cite&gt;http://netpbm.sourceforge.net/doc/ppm.html&lt;/cite&gt;&lt;p&gt;
+ *
+ * Uses Ward simple tonemapper:
+ * &lt;cite&gt;'A Contrast Based Scalefactor For Luminance Display'
+ * Ward;
+ * Graphics Gems 4, AP 1994.&lt;/cite&gt;&lt;p&gt;
+ *
+ * @mutable &lt;p&gt;
+ *
+ * @invariants &lt;ul&gt;
+ * &lt;li&gt;width  &gt;= 1 and &lt;= 10000&lt;/li&gt;
+ * &lt;li&gt;height &gt;= 1 and &lt;= 10000&lt;/li&gt;
+ * &lt;li&gt;pixels_m.length == (width * height)&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @param modelFile_c  to read from
+ */</span>
+<span class="code-keyword">class</span> Image( modelFile_c:{<span class="code-keyword">def</span> next:String} ) <span class="code-keyword">extends</span> NotNull
+{
+<span class="code-comment">/// commands -------------------------------------------------------------------</span>
+
+   <span class="code-comment">/**
+    * Accumulate (add, not just assign) a value to the image.
+    *
+    * @param x         x coord
+    * @param y         y coord
+    * @param radiance  light value
+    */</span>
+   <span class="code-keyword">def</span> addToPixel( x:Int, y:Int, radiance:Vector3f )
+   {
+      <span class="code-comment">// only inside image bounds</span>
+      <span class="code-keyword">if</span>( (x &gt;= <span class="code-literal">0</span>) &amp; (x &lt; width) &amp; (y &gt;= <span class="code-literal">0</span>) &amp; (y &lt; height) )
+         pixels_m(x + ((height - <span class="code-literal">1</span> - y) * width)) += radiance
+   }
+
+
+<span class="code-comment">/// queries --------------------------------------------------------------------</span>
+
+   <span class="code-comment">/**
+    * Format the image.
+    *
+    * @param out        to receive the image
+    * @param iteration  number of accumulations made to the image
+    */</span>
+   <span class="code-keyword">def</span> formatted( out:java.io.PrintStream, iteration:Int )
+   {
+      <span class="code-comment">// make pixel value accumulation divider, and tonemap scaling</span>
+      <span class="code-keyword">val</span> divider        = <span class="code-literal">1.0f</span> / ((iteration max <span class="code-literal">0</span>) + <span class="code-literal">1</span>)
+      <span class="code-keyword">val</span> tonemapScaling = toneMapping( divider )
+
+      <span class="code-comment">// write ID and comment</span>
+      out.print( <span class="code-literal">"P6\n# "</span> + Image.MINILIGHT_URI + <span class="code-literal">"\n\n"</span> )
+
+      <span class="code-comment">// write width, height, maxval</span>
+      out.print( width + <span class="code-literal">" "</span> + height + <span class="code-literal">"\n"</span> + 255 + <span class="code-literal">"\n"</span> )
+
+      <span class="code-comment">// write pixels</span>
+      <span class="code-keyword">for</span>( pixel &lt;- pixels_m;  c &lt;- <span class="code-literal">0</span> <span class="code-keyword">to</span> <span class="code-literal">2</span>;  val channel = pixel(c) )
+      {
+         <span class="code-comment">// tonemap and gamma encode</span>
+         <span class="code-keyword">val</span> mapped  = (channel * divider * tonemapScaling) max <span class="code-literal">0.0f</span>
+         <span class="code-keyword">val</span> gammaed = Math.pow( mapped, Image.GAMMA_ENCODE ).toFloat
+
+         <span class="code-comment">// quantize and output as byte</span>
+         out.write( (((gammaed * <span class="code-literal">255.0f</span>) + <span class="code-literal">0.5f</span>) min <span class="code-literal">255.0f</span>).toByte )
+      }
+   }
+
+
+<span class="code-comment">/// implementation -------------------------------------------------------------</span>
+
+   <span class="code-comment">/**
+    * Calculate tone-mapping scaling factor.
+    *
+    * @param divider  pixel scaling
+    *
+    * @return  scaling factor
+    */</span>
+   <span class="code-keyword">private def</span> toneMapping( divider:Float ) =
+   {
+      <span class="code-comment">// calculate log mean luminance of scene,
+      // as an estimate of world-adaptation luminance</span>
+      <span class="code-keyword">val</span> logMeanLuminance =
+      {
+         <span class="code-comment">// sum</span>
+         <span class="code-keyword">val</span> sumOfLogs = pixels_m.foldLeft( <span class="code-literal">0.0f</span> )( (sum, pixel) =&gt;
+            {
+               <span class="code-keyword">val</span> y = (pixel dot Image.RGB_LUMINANCE) * divider
+               <span class="code-comment">// clamp luminance to a perceptual minimum</span>
+               sum + java.lang.Math.log10( y max <span class="code-literal">1e-4f</span> ).toFloat
+            } )
+         <span class="code-comment">// mean</span>
+         Math.pow( <span class="code-literal">10.0f</span>, (sumOfLogs / pixels_m.length) ).toFloat
+      }
+
+      <span class="code-comment">// make scale-factor from:
+      // ratio of minimum visible differences in luminance, in display-adapted
+      // and world-adapted perception (discluding the constant that cancelled),
+      // divided by display max to yield a [0,1] range</span>
+      <span class="code-keyword">val</span> a = <span class="code-literal">1.219f</span> + Math.pow( (Image.DISPLAY_LUMINANCE_MAX * <span class="code-literal">0.25f</span>), <span class="code-literal">0.4f</span> )
+      <span class="code-keyword">val</span> b = <span class="code-literal">1.219f</span> + Math.pow( logMeanLuminance,                      <span class="code-literal">0.4f</span> )
+
+      Math.pow( (a / b), <span class="code-literal">2.5f</span> ).toFloat / Image.DISPLAY_LUMINANCE_MAX
+   }
+
+
+<span class="code-comment">/// fields ---------------------------------------------------------------------</span>
+
+   <span class="code-keyword">val</span> width  = (modelFile_c.next.toInt max <span class="code-literal">1</span>) min <span class="code-literal">10000</span>
+   <span class="code-keyword">val</span> height = (modelFile_c.next.toInt max <span class="code-literal">1</span>) min <span class="code-literal">10000</span>
+
+   <span class="code-keyword">private val</span> pixels_m = Array.make( width * height, Vector3f() )
+}
+
+
+
+
+<span class="code-keyword">object</span> Image
+{
+<span class="code-comment">/// constants ------------------------------------------------------------------</span>
+
+   <span class="code-comment">// image file comment</span>
+   <span class="code-keyword">private val</span> MINILIGHT_URI = <span class="code-literal">"http://www.hxa.name/minilight/"</span>
+
+   <span class="code-comment">// guess of average screen maximum brightness</span>
+   <span class="code-keyword">private val</span> DISPLAY_LUMINANCE_MAX = <span class="code-literal">200.0f</span>
+   <span class="code-comment">// ITU-R BT.709 standard RGB luminance weighting</span>
+   <span class="code-keyword">private val</span> RGB_LUMINANCE         = Vector3f( <span class="code-literal">0.2126f</span>, <span class="code-literal">0.7152f</span>, <span class="code-literal">0.0722f</span> )
+   <span class="code-comment">// ITU-R BT.709 standard gamma</span>
+   <span class="code-keyword">private val</span> GAMMA_ENCODE          = <span class="code-literal">0.45f</span>
+}
+</code></pre>
+</div>
+
+
+<div class="section" id="raytracer">
+<h2>RayTracer.scala</h2>
+
+   <pre class="sourcefile" id="RayTracer.scala"><code>
+<span class="code-keyword">package</span> hxa7241.minilight
+
+
+<span class="code-keyword">import</span> hxa7241.graphics.Vector3f
+
+
+
+
+<span class="code-comment">/**
+ * Ray tracer for general light transport.&lt;p&gt;
+ *
+ * Traces a path with emitter sampling each step: A single chain of ray-steps
+ * advances from the eye into the scene with one sampling of emitters at each
+ * node.&lt;p&gt;
+ *
+ * @constant &lt;p&gt;
+ *
+ * @param scene_c  collection of objects
+ */</span>
+<span class="code-keyword">class</span> RayTracer( scene_c:Scene ) <span class="code-keyword">extends</span> NotNull
+{
+<span class="code-comment">/// queries --------------------------------------------------------------------</span>
+
+   <span class="code-comment">/**
+    * Radiance returned from a trace.
+    *
+    * @param rayOrigin     ray start point
+    * @param rayDirection  ray direction (unitized)
+    * @param random        random number generator
+    * @param lastHit       previous intersected object, or null
+    *
+    * @return  radiance
+    */</span>
+   <span class="code-keyword">def</span> radiance( rayOrigin:Vector3f, rayDirection:Vector3f, random:util.Random,
+      lastHit:AnyRef ):Vector3f =
+   {
+      <span class="code-comment">// intersect ray with scene</span>
+      scene_m.intersection( rayOrigin, rayDirection, lastHit ) <span class="code-keyword">match</span>
+      {
+         <span class="code-comment">// hit</span>
+         <span class="code-keyword">case</span> Some( (hitObject, hitPosition) ) =&gt;
+         {
+            <span class="code-comment">// make SurfacePoint of intersection</span>
+            <span class="code-keyword">val</span> surfacePoint = <span class="code-keyword">new</span> SurfacePoint( hitObject, hitPosition )
+
+            <span class="code-comment">// local emission (only for first-hit)</span>
+            <span class="code-keyword">val</span> localEmission = <span class="code-keyword">if</span>( lastHit != null ) Vector3f.ZERO <span class="code-keyword">else</span>
+               surfacePoint.emission( rayOrigin, -rayDirection, false )
+
+            <span class="code-comment">// emitter sample</span>
+            <span class="code-keyword">val</span> illumination = emitterSample(rayDirection, surfacePoint, random)
+
+            <span class="code-comment">// recursive reflection:
+            // single hemisphere sample, ideal diffuse BRDF:
+            //    reflected = (inradiance * pi) * (cos(in) / pi * color) *
+            //       reflectance
+            // -- reflectance magnitude is 'scaled' by the russian roulette, cos
+            // is importance sampled (both done by SurfacePoint), and the pi and
+            // 1/pi cancel out -- leaving just: inradiance * reflectance color</span>
+            <span class="code-keyword">val</span> reflection =
+               <span class="code-comment">// check surface bounces ray</span>
+               surfacePoint.nextDirection( -rayDirection, random ) <span class="code-keyword">match</span>
+               {
+                  <span class="code-comment">// recurse</span>
+                  <span class="code-keyword">case</span> Some( (nextDirection, color) ) =&gt;
+                     color * radiance( surfacePoint.position, nextDirection,
+                        random, surfacePoint.hitObject )
+                  <span class="code-comment">// end</span>
+                  <span class="code-keyword">case</span> None =&gt; Vector3f.ZERO
+               }
+
+            <span class="code-comment">// total radiance returned</span>
+            reflection + illumination + localEmission
+         }
+         <span class="code-comment">// no hit: default/background scene emission</span>
+         <span class="code-keyword">case</span> None =&gt; scene_m.defaultEmission( -rayDirection )
+      }
+   }
+
+
+<span class="code-comment">/// implementation -------------------------------------------------------------</span>
+
+   <span class="code-comment">/**
+    * Radiance from an emitter sample.
+    *
+    * @param rayDirection  previous ray direction (unitized)
+    * @param surfacePoint  surface point receiving emission
+    * @param random        random number generator
+    *
+    * @return  radiance
+    */</span>
+   <span class="code-keyword">private def</span> emitterSample( rayDirection:Vector3f, surfacePoint:SurfacePoint,
+      random:util.Random ) =
+   {
+      <span class="code-comment">// single emitter sample, ideal diffuse BRDF:
+      //    reflected = (emitivity * solidangle) * (emitterscount) *
+      //       (cos(emitdirection) / pi * reflectivity)
+      // -- SurfacePoint does the first and last parts (in separate methods)</span>
+
+      <span class="code-comment">// check an emitter was found</span>
+      scene_m.emitter( random ).flatMap( { <span class="code-keyword">case</span> (emitter, emitPosition) =&gt;
+         {
+            <span class="code-comment">// make direction to emit point</span>
+            <span class="code-keyword">val</span> emitDirection = (emitPosition - surfacePoint.position).unitized
+
+            <span class="code-comment">// send shadow ray to get light</span>
+            scene_m.intersection( surfacePoint.position, emitDirection,
+               surfacePoint.hitObject ) <span class="code-keyword">match</span>
+               {
+                  <span class="code-comment">// unshadowed</span>
+                  <span class="code-keyword">case</span> None | Some( (`emitter`, _) ) =&gt;
+                  {
+                     <span class="code-comment">// get inward emission value</span>
+                     <span class="code-keyword">val</span> emissionIn = <span class="code-keyword">new</span> SurfacePoint( emitter, emitPosition
+                        ).emission(surfacePoint.position, -emitDirection, true)
+
+                     <span class="code-comment">// get amount reflected by surface</span>
+                     Some( surfacePoint.reflection( emitDirection,
+                        (emissionIn * scene_m.emittersCount), -rayDirection ) )
+                  }
+                  <span class="code-comment">// shadowed</span>
+                  <span class="code-keyword">case</span> _ =&gt; None
+               }
+         } } ).getOrElse( Vector3f.ZERO )
+   }
+
+
+<span class="code-comment">/// fields ---------------------------------------------------------------------</span>
+
+   <span class="code-keyword">private val</span> scene_m = scene_c
+}
+</code></pre>
+</div>
+
+
+<div class="section" id="scene">
+<h2>Scene.scala</h2>
+
+   <pre class="sourcefile" id="Scene.scala"><code>
+<span class="code-keyword">package</span> hxa7241.minilight
+
+
+<span class="code-keyword">import</span> hxa7241.graphics.Vector3f
+
+
+
+
+<span class="code-comment">/**
+ * The objects in the environment.&lt;p&gt;
+ *
+ * Makes a sub-grouping of emitting objects.&lt;p&gt;
+ *
+ * @constant &lt;p&gt;
+ *
+ * @invariants &lt;ul&gt;
+ * &lt;li&gt;skyEmission_m      &gt;= 0&lt;/li&gt;
+ * &lt;li&gt;groundReflection_m &gt;= 0&lt;/li&gt;
+ * &lt;li&gt;triangles_m length &lt;= 2^20&lt;/li&gt;
+ * &lt;li&gt;emitters_m length  &lt;= 2^20&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @param modelFile_c    to read from
+ * @param eyePosition_c  eye position
+ */</span>
+<span class="code-keyword">class</span> Scene( modelFile_c:{<span class="code-keyword">def</span> next:String}, eyePosition_c:Vector3f )
+   <span class="code-keyword">extends</span> NotNull
+{
+<span class="code-comment">/// queries --------------------------------------------------------------------</span>
+
+   <span class="code-comment">/**
+    * Nearest intersection of ray with object.
+    *
+    * @param rayOrigin     ray origin
+    * @param rayDirection  ray direction (unitized)
+    * @param lastHit       previous intersected object, or null
+    *
+    * @return  triangle and position (Tuple Option)
+    */</span>
+   <span class="code-keyword">def</span> intersection( rayOrigin:Vector3f, rayDirection:Vector3f,
+      lastHit:AnyRef ) =
+   {
+      spatialIndex_m.intersection( rayOrigin, rayDirection, lastHit, None )
+   }
+
+
+   <span class="code-comment">/**
+    * Monte-carlo sample point on monte-carlo selected emitting object.
+    *
+    * @param random  random number generator
+    *
+    * @return  triangle and position (Tuple Option)
+    */</span>
+   <span class="code-keyword">def</span> emitter( random:util.Random ) =
+   {
+      <span class="code-keyword">if</span>( emittersCount &gt; <span class="code-literal">0</span> )
+      {
+         <span class="code-comment">// select emitter</span>
+         <span class="code-keyword">val</span> emitter = emitters_m( random.nextInt(emittersCount) )
+
+         <span class="code-comment">// get position on triangle</span>
+         Some( (emitter, emitter.samplePoint( random )) )
+      }
+      <span class="code-keyword">else</span>
+         None
+   }
+
+
+   <span class="code-comment">/**
+    * Number of emitters in scene.
+    *
+    * @return  number of emitters
+    */</span>
+   <span class="code-keyword">def</span> emittersCount = emitters_m.length
+
+
+   <span class="code-comment">/**
+    * Default/'background' light of scene universe.
+    *
+    * @param eyeDirection  direction to eye
+    *
+    * @return  emitted radiance
+    */</span>
+   <span class="code-keyword">def</span> defaultEmission( eyeDirection:Vector3f ) =
+   {
+      <span class="code-comment">// sky for downward ray, ground for upward ray</span>
+      <span class="code-keyword">if</span>( eyeDirection.y &lt; <span class="code-literal">0.0f</span> ) skyEmission_m <span class="code-keyword">else</span> groundReflection_m
+   }
+
+
+<span class="code-comment">/// fields ---------------------------------------------------------------------</span>
+
+   <span class="code-comment">// default scene background</span>
+   <span class="code-keyword">private val</span> skyEmission_m = Vector3f(modelFile_c).clampedMin( Vector3f.ZERO )
+   <span class="code-keyword">private val</span> groundReflection_m = Vector3f(modelFile_c).clamped01 *
+      skyEmission_m
+
+   <span class="code-comment">// main objects</span>
+   <span class="code-keyword">private val</span> triangles_m =
+   {
+      <span class="code-keyword">def</span> readTriangle( ts:List[Triangle], i:Int ):List[Triangle] =
+      {
+         <span class="code-keyword">try</span>
+         {
+            <span class="code-keyword">if</span>( i == <span class="code-literal">0</span> )
+               ts <span class="code-keyword">else</span> readTriangle( <span class="code-keyword">new</span> Triangle(modelFile_c) :: ts, i - <span class="code-literal">1</span> )
+         }
+         <span class="code-keyword">catch</span>
+         {
+            <span class="code-comment">// EOF is not really exceptional here, but the code is simpler</span>
+            <span class="code-keyword">case</span> _:java.io.EOFException =&gt; ts
+         }
+      }
+      <span class="code-comment">// read maximum of 2^20</span>
+      readTriangle( Nil, Scene.MAX_TRIANGLES ).toArray
+   }
+   <span class="code-comment">// find emitting triangles</span>
+   <span class="code-keyword">private val</span> emitters_m = triangles_m.filter(
+      <span class="code-comment">// has non-zero emission and area</span>
+      t =&gt; (!t.emitivity.isZero) &amp;&amp; (t.area &gt; <span class="code-literal">0.0f</span>) )
+
+   <span class="code-comment">// acceleration index</span>
+   <span class="code-keyword">private val</span> spatialIndex_m = <span class="code-keyword">new</span> SpatialIndex( eyePosition_c, triangles_m )
+}
+
+
+
+
+<span class="code-keyword">object</span> Scene
+{
+<span class="code-comment">/// constants ------------------------------------------------------------------</span>
+
+   <span class="code-keyword">private val</span> MAX_TRIANGLES = <span class="code-literal">0x100000</span>
+}
+</code></pre>
+</div>
+
+
+<div class="section" id="spatialindex">
+<h2>SpatialIndex.scala</h2>
+
+   <pre class="sourcefile" id="SpatialIndex.scala"><code>
+<span class="code-keyword">package</span> hxa7241.minilight
+
+
+<span class="code-keyword">import</span> hxa7241.graphics.Vector3f
+
+
+
+
+<span class="code-comment">/**
+ * A minimal spatial index for ray tracing.&lt;p&gt;
+ *
+ * Suitable for a scale of 1 metre == 1 numerical unit, and has a resolution of
+ * 1 millimetre. (Implementation uses fixed tolerances)&lt;p&gt;
+ *
+ * @implementation &lt;p&gt;
+ * Octree: axis-aligned, cubical. Subcells are numbered thusly (in binary):&lt;pre&gt;
+ *            110---111
+ *            /|    /|
+ *         010---011 |
+ *    y z   | 100-|-101
+ *    |/    | /   | /
+ *    .-x  000---001      &lt;/pre&gt;&lt;p&gt;
+ *
+ * Each cell stores its bound: fatter data, but simpler code.&lt;p&gt;
+ *
+ * Calculations for building and tracing are absolute rather than incremental --
+ * so quite numerically solid. Uses tolerances in: bounding items (in
+ * Triangle.bound), and checking intersection is inside cell (both effective
+ * for axis-aligned items). Also, depth is constrained to an absolute subcell
+ * size (easy way to handle overlapping items).&lt;p&gt;
+ *
+ * Sacrificed some clarity for compactness.&lt;p&gt;
+ *
+ * @constant &lt;p&gt;
+ *
+ * @invariants &lt;ul&gt;
+ * &lt;li&gt;bound_m length is 6&lt;/li&gt;
+ * &lt;li&gt;subParts_m is SpatialIndex.SubCells or SpatialIndex.Items&lt;/li&gt;
+ * &lt;/ul&gt;
+ */</span>
+<span class="code-keyword">final class</span> SpatialIndex <span class="code-keyword">private</span> (
+   bound_c:Array[Float], items_c:Array[Triangle], level_c:Int ) <span class="code-keyword">extends</span> NotNull
+{
+<span class="code-comment">/// standard object services ---------------------------------------------------</span>
+
+   <span class="code-comment">/**
+    * Construct (publicly).
+    *
+    * @param eyePosition  position of eye
+    * @param items        collection of all items
+    */</span>
+   <span class="code-keyword">def</span> this( eyePosition:Vector3f, items:Array[Triangle] ) = this(
+      {
+         <span class="code-comment">// make overall bound</span>
+         <span class="code-keyword">val</span> bound =
+         {
+            <span class="code-comment">// accommodate all items, and eye position (makes tracing algorithm
+            // simpler)</span>
+            <span class="code-keyword">val</span> rectBound = items.foldLeft( (eyePosition, eyePosition) )(
+               (rb, item) =&gt;
+               {
+                  <span class="code-comment">// accommodate item</span>
+                  <span class="code-keyword">val</span> ib = item.bound
+                  ( (rb._1 clampedMax ib._1), (rb._2 clampedMin ib._2) )
+               } )
+            <span class="code-comment">// make cubical</span>
+            <span class="code-keyword">val</span> cube = Vector3f( (rectBound._2 - rectBound._1).fold(Math.max) )
+            ( rectBound._1, (rectBound._2 clampedMin (rectBound._1 + cube)) )
+         }
+
+         <span class="code-comment">// convert to array</span>
+         Array.range(<span class="code-literal">0</span>,<span class="code-literal">6</span>).map( i =&gt; (<span class="code-keyword">if</span>(i &lt; <span class="code-literal">3</span>) bound._1 <span class="code-keyword">else</span> bound._2)(i % <span class="code-literal">3</span>) )
+
+      <span class="code-comment">// delegate to main (recursive) constructor</span>
+      }, items, <span class="code-literal">0</span> )
+
+
+<span class="code-comment">/// queries --------------------------------------------------------------------</span>
+
+   <span class="code-comment">/**
+    * Find nearest intersection of ray with item.
+    *
+    * @param rayOrigin     ray origin
+    * @param rayDirection  ray direction (unitized)
+    * @param lastHit       previous intersected item, or null
+    * @param _start        current traversal point, or None
+    *
+    * @return  item and position (Tuple Option)
+    */</span>
+   <span class="code-keyword">def</span> intersection( rayOrigin:Vector3f, rayDirection:Vector3f,
+      lastHit:AnyRef, _start:Option[Vector3f] ):Option[(Triangle,Vector3f)] =
+   {
+      subParts_m <span class="code-keyword">match</span>
+      {
+         <span class="code-comment">// branch: step through subcells and recurse</span>
+         <span class="code-keyword">case</span> SpatialIndex.SubCells( subCells ) =&gt;
+         {
+            <span class="code-keyword">val</span> start = _start.getOrElse( rayOrigin )
+
+            <span class="code-comment">// find which subcell holds ray origin (ray origin is inside cell)</span>
+            <span class="code-keyword">val</span> subCell =
+               <span class="code-comment">// compare dimensions with center</span>
+               (<span class="code-keyword">if</span>( start.x &gt;= ((bound_m(<span class="code-literal">0</span>) + bound_m(<span class="code-literal">3</span>)) * <span class="code-literal">0.5f</span>) ) <span class="code-literal">1</span> <span class="code-keyword">else</span> <span class="code-literal">0</span>) |
+               (<span class="code-keyword">if</span>( start.y &gt;= ((bound_m(<span class="code-literal">1</span>) + bound_m(<span class="code-literal">4</span>)) * <span class="code-literal">0.5f</span>) ) <span class="code-literal">2</span> <span class="code-keyword">else</span> <span class="code-literal">0</span>) |
+               (<span class="code-keyword">if</span>( start.z &gt;= ((bound_m(<span class="code-literal">2</span>) + bound_m(<span class="code-literal">5</span>)) * <span class="code-literal">0.5f</span>) ) <span class="code-literal">4</span> <span class="code-keyword">else</span> <span class="code-literal">0</span>)
+
+            <span class="code-comment">// define subcell walker</span>
+            <span class="code-keyword">def</span> walk( subCell:Int, cellPosition:Vector3f )
+               :Option[(Triangle,Vector3f)] =
+            {
+               <span class="code-comment">// intersect subcell
+               // if no hit, continue walking across subcells</span>
+               subCells(subCell).flatMap( _.intersection( rayOrigin,
+                  rayDirection, lastHit, Some(start) ) ).orElse(
+               {
+                  <span class="code-comment">// find next subcell ray moves to
+                  // (by finding which face of corner ahead is crossed first)</span>
+                  <span class="code-keyword">val</span> (step, axis) = (<span class="code-literal">0</span> <span class="code-keyword">to</span> <span class="code-literal">2</span>).foldLeft( Math.MAX_FLOAT, <span class="code-literal">0</span> )( {
+                     <span class="code-keyword">case</span> ((step, axis), i) =&gt;
+                     {
+                        <span class="code-keyword">val</span> high = (subCell &gt;&gt;&gt; i) &amp; <span class="code-literal">1</span>
+                        <span class="code-keyword">val</span> face = <span class="code-keyword">if</span>( (rayDirection(i) &lt; <span class="code-literal">0.0f</span>) ^ (high == <span class="code-literal">1</span>) )
+                              bound_m(i + (high * <span class="code-literal">3</span>))
+                           <span class="code-keyword">else</span>
+                              (bound_m(i) + bound_m(i + <span class="code-literal">3</span>)) * <span class="code-literal">0.5f</span>
+                        <span class="code-comment">// distance to face
+                        // (div by zero produces infinity, which is then
+                        // discarded)</span>
+                        <span class="code-keyword">val</span> distance = (face - rayOrigin(i)) / rayDirection(i)
+                        <span class="code-keyword">if</span>( distance &lt; step ) (distance, i) <span class="code-keyword">else</span> (step, axis)
+                     } } )
+
+                  <span class="code-comment">// leaving branch if: direction is negative and subcell is
+                  // low, or direction is positive and subcell is high</span>
+                  <span class="code-keyword">if</span>( (rayDirection(axis) &lt; <span class="code-literal">0.0f</span>) ^
+                     (((subCell &gt;&gt;&gt; axis) &amp; <span class="code-literal">1</span>) == <span class="code-literal">1</span>) )
+                     None
+                  <span class="code-keyword">else</span>
+                     <span class="code-comment">// move to (outer face of) next subcell</span>
+                     walk( subCell ^ (<span class="code-literal">1</span> &lt;&lt; axis),
+                        rayOrigin + (rayDirection * step) )
+               } )
+            }
+            <span class="code-comment">// step through intersected subcells</span>
+            walk( subCell, start )
+         }
+         <span class="code-comment">// leaf: exhaustively intersect contained items</span>
+         <span class="code-keyword">case</span> SpatialIndex.Items( items ) =&gt;
+         {
+            <span class="code-comment">// apply nearest-finder to items list</span>
+            items.foldLeft( None:Option[(Triangle,Vector3f)], Math.POS_INF_FLOAT
+               )( (nearest, item) =&gt;
+               {
+                  <span class="code-comment">// intersect item and inspect if nearest so far</span>
+                  <span class="code-keyword">val</span> distance = item.intersection( rayOrigin, rayDirection
+                     ).getOrElse( Math.POS_INF_FLOAT )
+                  <span class="code-comment">// also avoid false intersection with surface just come from</span>
+                  <span class="code-keyword">if</span>( (distance &lt; nearest._2) &amp;&amp; (item != lastHit) )
+                  {
+                     <span class="code-keyword">val</span> hit = rayOrigin + (rayDirection * distance)
+                     <span class="code-comment">// check intersection is inside cell bound (with tolerance)</span>
+                     <span class="code-keyword">val</span> t = Triangle.TOLERANCE
+                     <span class="code-keyword">if</span>( (bound_m(<span class="code-literal">0</span>) - hit.x &gt; t) | (hit.x - bound_m(<span class="code-literal">3</span>) &gt; t) |
+                         (bound_m(<span class="code-literal">1</span>) - hit.y &gt; t) | (hit.y - bound_m(<span class="code-literal">4</span>) &gt; t) |
+                         (bound_m(<span class="code-literal">2</span>) - hit.z &gt; t) | (hit.z - bound_m(<span class="code-literal">5</span>) &gt; t) )
+                        nearest <span class="code-keyword">else</span> (Some((item, hit)), distance)
+                  }
+                  <span class="code-keyword">else</span>
+                     nearest
+               } )._1
+         }
+      }
+   }
+
+
+<span class="code-comment">/// fields ---------------------------------------------------------------------</span>
+
+   <span class="code-keyword">private val</span> bound_m    = bound_c
+   <span class="code-keyword">private val</span> subParts_m =
+   {
+      <span class="code-comment">// if items overflow leaf and tree not too deep,
+      // make branch: make subcells, and recurse construction</span>
+      <span class="code-keyword">if</span>( (items_c.length &gt; SpatialIndex.MAX_ITEMS) &amp;
+         (level_c &lt; (SpatialIndex.MAX_LEVELS - <span class="code-literal">1</span>)) )
+      {
+         <span class="code-comment">// make subcells</span>
+         <span class="code-keyword">var</span> q1 = <span class="code-literal">0</span>
+         SpatialIndex.SubCells( <span class="code-keyword">for</span>( subcellIndex &lt;- Array.range(<span class="code-literal">0</span>,<span class="code-literal">8</span>) ) <span class="code-keyword">yield</span>
+         {
+            <span class="code-comment">// make subcell bound</span>
+            <span class="code-keyword">val</span> subBound = <span class="code-keyword">for</span>( i &lt;- Array.range(<span class="code-literal">0</span>,<span class="code-literal">6</span>);  <span class="code-keyword">val</span> m = i % <span class="code-literal">3</span> ) <span class="code-keyword">yield</span>
+               <span class="code-keyword">if</span>( (((subcellIndex &gt;&gt; m) &amp; <span class="code-literal">1</span>) ^ (i / <span class="code-literal">3</span>)) != <span class="code-literal">0</span> )
+                  (bound_c(m) + bound_c(m + <span class="code-literal">3</span>)) * <span class="code-literal">0.5f</span> <span class="code-keyword">else</span> bound_c(i)
+
+            <span class="code-comment">// collect items that overlap subcell</span>
+            <span class="code-keyword">val</span> subItems = <span class="code-keyword">for</span>( i &lt;- items_c;  <span class="code-keyword">val</span> (itemLo, itemHi) = i.bound;
+               <span class="code-comment">// must overlap in all dimensions</span>
+               <span class="code-keyword">if</span> (<span class="code-literal">0</span> <span class="code-keyword">to</span> <span class="code-literal">5</span>).foldLeft( true )( (b, j) =&gt; b &amp; ((subBound(j) &lt;=
+                  (if(j &gt; <span class="code-literal">2</span>) itemLo <span class="code-keyword">else</span> itemHi)(j % <span class="code-literal">3</span>)) ^ (j &gt; <span class="code-literal">2</span>)) )
+               ) <span class="code-keyword">yield</span> i
+
+            <span class="code-comment">// curtail degenerate subdivision by adjusting next level
+            // (degenerate if two or more subcells copy entire contents of
+            // parent, or if subdivision reaches below approx mm size)
+            // (having a model including the sun requires one subcell copying
+            // entire contents of parent to be allowed)</span>
+            q1 += (<span class="code-keyword">if</span>( subItems.length == items_c.length ) <span class="code-literal">1</span> <span class="code-keyword">else</span> <span class="code-literal">0</span>)
+            <span class="code-keyword">val</span> q2  = (subBound(<span class="code-literal">3</span>) - subBound(<span class="code-literal">0</span>)) &lt; (Triangle.TOLERANCE * <span class="code-literal">4.0f</span>)
+
+            <span class="code-comment">// maybe recurse</span>
+            <span class="code-keyword">if</span>( !subItems.isEmpty )
+               <span class="code-keyword">new</span> Some( <span class="code-keyword">new</span> SpatialIndex( subBound, subItems,
+               (<span class="code-keyword">if</span>((q1 &gt; <span class="code-literal">1</span>) | q2) SpatialIndex.MAX_LEVELS <span class="code-keyword">else</span> level_c + <span class="code-literal">1</span>) ) )
+            <span class="code-keyword">else</span>
+               None
+         } )
+      }
+      <span class="code-comment">// otherwise (size limit reached),
+      // make leaf: store items, and end recursion</span>
+      <span class="code-keyword">else</span>
+         <span class="code-comment">// (try to trim any reserve capacity)</span>
+         SpatialIndex.Items( items_c.slice( <span class="code-literal">0</span>, items_c.length ).force )
+   }
+}
+
+
+
+
+<span class="code-keyword">object</span> SpatialIndex
+{
+<span class="code-comment">/// constants ------------------------------------------------------------------</span>
+
+   <span class="code-comment">// accommodates scene including sun and earth, down to cm cells
+   // (use 47 for mm)</span>
+   <span class="code-keyword">private val</span> MAX_LEVELS = <span class="code-literal">44</span>
+
+   <span class="code-comment">// 8 seemed reasonably optimal in casual testing</span>
+   <span class="code-keyword">private val</span> MAX_ITEMS  =  <span class="code-literal">8</span>
+
+
+<span class="code-comment">/// types ----------------------------------------------------------------------</span>
+
+   <span class="code-keyword">private case class</span> SubCells( subCells:Array[Option[SpatialIndex]] )
+   <span class="code-keyword">private case class</span> Items   (    items:Array[Triangle]     )
+}
+</code></pre>
+</div>
+
+
+<div class="section" id="surfacepoint">
+<h2>SurfacePoint.scala</h2>
+
+   <pre class="sourcefile" id="SurfacePoint.scala"><code>
+<span class="code-keyword">package</span> hxa7241.minilight
+
+
+<span class="code-keyword">import</span> hxa7241.graphics.Vector3f
+
+
+
+
+<span class="code-comment">/**
+ * Surface point at a ray-object intersection.&lt;p&gt;
+ *
+ * All direction parameters are away from surface.&lt;p&gt;
+ *
+ * @constant &lt;p&gt;
+ *
+ * @param triangle_c  surface's object
+ * @param position_c  position of point on surface
+ */</span>
+<span class="code-keyword">class</span> SurfacePoint( triangle_c:Triangle, position_c:Vector3f ) <span class="code-keyword">extends</span> NotNull
+{
+<span class="code-comment">/// queries --------------------------------------------------------------------</span>
+
+   <span class="code-comment">/**
+    * Emission from surface element to point.
+    *
+    * @param toPosition    point being illuminated
+    * @param outDirection  direction (unitized) from emitting point
+    * @param isSolidAngle  use solid angle
+    *
+    * @return  emitted radiance
+    */</span>
+   <span class="code-keyword">def</span> emission( toPosition:Vector3f, outDirection:Vector3f,
+      isSolidAngle:Boolean ) =
+   {
+      <span class="code-keyword">val</span> distance2 = { val ray = toPosition - position;  ray dot ray }
+      <span class="code-keyword">val</span> cosArea   = (outDirection dot triangle_m.normal) * triangle_m.area
+
+      <span class="code-comment">// clamp-out infinity</span>
+      <span class="code-keyword">val</span> solidAngle = <span class="code-keyword">if</span>( isSolidAngle )
+         cosArea / (distance2 max <span class="code-literal">1e-6f</span>) <span class="code-keyword">else</span> <span class="code-literal">1.0f</span>
+
+      <span class="code-comment">// emit from front face of surface only</span>
+      <span class="code-keyword">if</span>( cosArea &gt; <span class="code-literal">0.0f</span> ) triangle_m.emitivity * solidAngle <span class="code-keyword">else</span> Vector3f.ZERO
+   }
+
+
+   <span class="code-comment">/**
+    * Light reflection from ray to ray by surface.
+    *
+    * @param inDirection   negative of inward ray direction
+    * @param inRadiance    inward radiance
+    * @param outDirection  outward (eyeward) ray direction
+    *
+    * @return  reflected radiance
+    */</span>
+   <span class="code-keyword">def</span> reflection( inDirection:Vector3f, inRadiance:Vector3f,
+      outDirection:Vector3f ) =
+   {
+      <span class="code-keyword">val</span> inDot  = inDirection  dot triangle_m.normal
+      <span class="code-keyword">val</span> outDot = outDirection dot triangle_m.normal
+
+      <span class="code-comment">// directions must be on same side of surface</span>
+      <span class="code-keyword">if</span>( (inDot &lt; <span class="code-literal">0.0f</span>) ^ (outDot &lt; <span class="code-literal">0.0f</span>) )
+         Vector3f.ZERO
+      <span class="code-keyword">else</span>
+         <span class="code-comment">// ideal diffuse BRDF:
+         // radiance scaled by cosine, 1/pi, and reflectivity</span>
+         (inRadiance * triangle_m.reflectivity) * (inDot.abs / Math.Pi.toFloat)
+   }
+
+
+   <span class="code-comment">/**
+    * Monte-carlo direction of reflection from surface.
+    *
+    * @param inDirection  eyeward ray direction
+    * @param random       random number generator
+    *
+    * @return sceneward ray direction (unitized) and light scaling of
+    *         interaction point (Tuple Option)
+    */</span>
+   <span class="code-keyword">def</span> nextDirection( inDirection:Vector3f, random:util.Random ) =
+   {
+      <span class="code-keyword">val</span> reflectivityMean = (triangle_m.reflectivity dot Vector3f.ONE) / <span class="code-literal">3.0f</span>
+
+      <span class="code-comment">// russian-roulette for reflectance 'magnitude'</span>
+      <span class="code-keyword">if</span>( random.nextFloat &lt; reflectivityMean )
+      {
+         <span class="code-comment">// cosine-weighted importance sample hemisphere</span>
+
+         <span class="code-keyword">val</span> _2pr1 = Math.Pi.toFloat * <span class="code-literal">2.0f</span> * random.nextFloat
+         <span class="code-keyword">val</span> sr2   = Math.sqrt( random.nextFloat ).toFloat
+
+         <span class="code-comment">// make coord frame coefficients (z in normal direction)</span>
+         <span class="code-keyword">val</span> x = Math.cos( _2pr1 ).toFloat * sr2
+         <span class="code-keyword">val</span> y = Math.sin( _2pr1 ).toFloat * sr2
+         <span class="code-keyword">val</span> z = Math.sqrt( <span class="code-literal">1.0f</span> - (sr2 * sr2) ).toFloat
+
+         <span class="code-comment">// make coord frame</span>
+         <span class="code-keyword">val</span> tangent = triangle_m.tangent
+         <span class="code-keyword">val</span> normal  =
+         {
+            <span class="code-keyword">val</span> n = triangle_m.normal
+            <span class="code-keyword">if</span>( (n dot inDirection) &gt;= <span class="code-literal">0.0f</span> ) n <span class="code-keyword">else</span> -n
+         }
+
+         <span class="code-comment">// make vector from frame times coefficients</span>
+         <span class="code-keyword">val</span> outDirection = (tangent * x) + ((normal cross tangent) * y) +
+            (normal * z)
+
+         <span class="code-comment">// make color by dividing-out mean from reflectivity</span>
+         <span class="code-keyword">val</span> color = triangle_m.reflectivity * (<span class="code-literal">1.0f</span> / reflectivityMean)
+
+         if( !outDirection.isZero ) Some( (outDirection, color) ) else None
+      }
+      <span class="code-keyword">else</span>
+         None
+   }
+
+
+   <span class="code-keyword">def</span> hitObject:AnyRef = triangle_m
+
+
+<span class="code-comment">/// fields ---------------------------------------------------------------------</span>
+
+   <span class="code-keyword">private val</span> triangle_m = triangle_c
+           <span class="code-keyword">val</span> position   = position_c
+}
+</code></pre>
+</div>
+
+
+<div class="section" id="triangle">
+<h2>Triangle.scala</h2>
+
+   <pre class="sourcefile" id="Triangle.scala"><code>
+<span class="code-keyword">package</span> hxa7241.minilight
+
+
+<span class="code-keyword">import</span> hxa7241.graphics.Vector3f
+
+
+
+
+<span class="code-comment">/**
+ * A simple, explicit/non-vertex-shared triangle.&lt;p&gt;
+ *
+ * Includes geometry and quality.&lt;p&gt;
+ *
+ * Adapts ray intersection code from:
+ * &lt;cite&gt;'Fast, Minimum Storage Ray-Triangle Intersection'
+ * Moller, Trumbore;
+ * Journal of Graphics Tools, v2 n1 p21, 1997.
+ * http://www.acm.org/jgt/papers/MollerTrumbore97/&lt;/cite&gt;&lt;p&gt;
+ *
+ * @constant &lt;p&gt;
+ *
+ * @invariants &lt;ul&gt;
+ * &lt;li&gt;vertexs_m.length == 3&lt;/li&gt;
+ * &lt;li&gt;reflectivity_m &gt;= 0 and &lt;= 1&lt;/li&gt;
+ * &lt;li&gt;emitivity_m    &gt;= 0&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * @param modelFile_c  to read from
+ */</span>
+<span class="code-keyword">final class</span> Triangle( modelFile_c:{<span class="code-keyword">def</span> next:String} ) <span class="code-keyword">extends</span> NotNull
+{
+<span class="code-comment">/// queries --------------------------------------------------------------------</span>
+
+   <span class="code-comment">/**
+    * Axis-aligned bounding box of triangle.
+    *
+    * @return  lower corner and upper corner (Tuple)
+    */</span>
+   <span class="code-keyword">def</span> bound =
+   {
+      <span class="code-comment">// calculate max and min across all vertexs</span>
+      <span class="code-keyword">val</span> lower = (vertexs_m(<span class="code-literal">0</span>) clampedMax vertexs_m(<span class="code-literal">1</span>)) clampedMax vertexs_m(<span class="code-literal">2</span>)
+      <span class="code-keyword">val</span> upper = (vertexs_m(<span class="code-literal">0</span>) clampedMin vertexs_m(<span class="code-literal">1</span>)) clampedMin vertexs_m(<span class="code-literal">2</span>)
+
+      <span class="code-comment">// add/subtract tolerance
+      // (lower is reduced, upper is increased (whatever their signs))</span>
+      ( lower - ((lower.abs + Vector3f.ONE) * Triangle.TOLERANCE),
+         upper + ((upper.abs + Vector3f.ONE) * Triangle.TOLERANCE) )
+   }
+
+
+   <span class="code-comment">/**
+    * Intersection point of ray with triangle.
+    *
+    * (Vector operations are manually inlined (is faster).)
+    *
+    * @param rayOrigin     ray origin
+    * @param rayDirection  ray direction (unitized)
+    *
+    * @return  distance along ray (Option)
+    */</span>
+   <span class="code-keyword">def</span> intersection( rayOrigin:Vector3f, rayDirection:Vector3f ) =
+   {
+      <span class="code-comment">// make vectors for two edges sharing vert0</span>
+      <span class="code-keyword">val</span> e3x = vertexs_m(<span class="code-literal">2</span>).x - vertexs_m(<span class="code-literal">0</span>).x
+      <span class="code-keyword">val</span> e3y = vertexs_m(<span class="code-literal">2</span>).y - vertexs_m(<span class="code-literal">0</span>).y
+      <span class="code-keyword">val</span> e3z = vertexs_m(<span class="code-literal">2</span>).z - vertexs_m(<span class="code-literal">0</span>).z
+
+      <span class="code-keyword">val</span> e0x = vertexs_m(<span class="code-literal">1</span>).x - vertexs_m(<span class="code-literal">0</span>).x
+      <span class="code-keyword">val</span> e0y = vertexs_m(<span class="code-literal">1</span>).y - vertexs_m(<span class="code-literal">0</span>).y
+      <span class="code-keyword">val</span> e0z = vertexs_m(<span class="code-literal">1</span>).z - vertexs_m(<span class="code-literal">0</span>).z
+
+      <span class="code-comment">// begin calculating determinant -- also used to calculate U parameter</span>
+      <span class="code-comment">//val pvec = rayDirection cross edge3</span>
+      <span class="code-keyword">val</span> pvx = (rayDirection.y * e3z) - (rayDirection.z * e3y)
+      <span class="code-keyword">val</span> pvy = (rayDirection.z * e3x) - (rayDirection.x * e3z)
+      <span class="code-keyword">val</span> pvz = (rayDirection.x * e3y) - (rayDirection.y * e3x)
+
+      <span class="code-comment">// if determinant is near zero, ray lies in plane of triangle</span>
+      <span class="code-comment">//val det = edge0 dot pvec</span>
+      <span class="code-keyword">val</span> det = (e0x * pvx) + (e0y * pvy) + (e0z * pvz)
+      <span class="code-keyword">val</span> epsilon = <span class="code-literal">0.000001f</span>
+      <span class="code-keyword">if</span>( (det &gt; -epsilon) &amp; (det &lt; epsilon) )
+         None
+      <span class="code-keyword">else</span>
+      {
+         <span class="code-keyword">val</span> inv_det = <span class="code-literal">1.0f</span> / det
+
+         <span class="code-comment">// calculate distance from vertex 0 to ray origin</span>
+         <span class="code-comment">//val tvec = rayOrigin - vertexs_m(0)</span>
+         <span class="code-keyword">val</span> tvx = rayOrigin.x - vertexs_m(<span class="code-literal">0</span>).x
+         <span class="code-keyword">val</span> tvy = rayOrigin.y - vertexs_m(<span class="code-literal">0</span>).y
+         <span class="code-keyword">val</span> tvz = rayOrigin.z - vertexs_m(<span class="code-literal">0</span>).z
+
+         <span class="code-comment">// calculate U parameter and test bounds</span>
+         <span class="code-comment">//val u = (tvec dot pvec) * inv_det</span>
+         <span class="code-keyword">val</span> u = ((tvx * pvx) + (tvy * pvy) + (tvz * pvz)) * inv_det
+         <span class="code-keyword">if</span>( (u &lt; <span class="code-literal">0.0f</span>) | (u &gt; <span class="code-literal">1.0f</span>) )
+            None
+         <span class="code-keyword">else</span>
+         {
+            <span class="code-comment">// prepare to test V parameter</span>
+            <span class="code-comment">//val qvec = tvec cross edge0</span>
+            <span class="code-keyword">val</span> qvx = (tvy * e0z) - (tvz * e0y)
+            <span class="code-keyword">val</span> qvy = (tvz * e0x) - (tvx * e0z)
+            <span class="code-keyword">val</span> qvz = (tvx * e0y) - (tvy * e0x)
+
+            <span class="code-comment">// calculate V parameter and test bounds</span>
+            <span class="code-comment">//val v = (rayDirection dot qvec) * inv_det</span>
+            <span class="code-keyword">val</span> v = ((rayDirection.x * qvx) + (rayDirection.y * qvy) +
+               (rayDirection.z * qvz)) * inv_det
+            <span class="code-keyword">if</span>( (v &lt; <span class="code-literal">0.0f</span>) | (u + v &gt; <span class="code-literal">1.0f</span>) )
+               None
+            <span class="code-keyword">else</span>
+            {
+               <span class="code-comment">// calculate t, ray intersects triangle</span>
+               <span class="code-comment">//val hitDistance = (edge3 dot qvec) * inv_det</span>
+               <span class="code-keyword">val</span> hitDistance = ((e3x * qvx) + (e3y * qvy) + (e3z * qvz)) *
+                  inv_det
+
+               <span class="code-comment">// only allow intersections in the forward ray direction</span>
+               <span class="code-keyword">if</span>(hitDistance &gt;= <span class="code-literal">0.0f</span>) Some( hitDistance ) <span class="code-keyword">else</span> None
+            }
+         }
+      }
+   }
+
+
+   <span class="code-comment">/**
+    * Monte-carlo sample point on triangle.
+    *
+    * @param random  random number generator
+    *
+    * @return  sample point
+    */</span>
+   <span class="code-keyword">def</span> samplePoint( random:util.Random ) =
+   {
+      <span class="code-comment">// get two randoms</span>
+      <span class="code-keyword">val</span> (sqr1, r2) = (Math.sqrt(random.nextFloat).toFloat, random.nextFloat)
+
+      <span class="code-comment">// make barycentric coords</span>
+      <span class="code-keyword">val</span> (a, b) = ( (<span class="code-literal">1.0f</span> - sqr1), ((<span class="code-literal">1.0f</span> - r2) * sqr1) )
+
+      <span class="code-comment">// interpolate position by scaling edges by barycentric coords</span>
+      (edge0 * a) + (edge3 * b) + vertexs_m(<span class="code-literal">0</span>)
+   }
+
+
+   <span class="code-keyword">def</span> normal  = (edge0 cross edge1).unitized
+
+   <span class="code-keyword">def</span> tangent = edge0.unitized
+
+   <span class="code-comment">// (half area of parallelogram)</span>
+   <span class="code-keyword">def</span> area    = <span class="code-literal">0.5f</span> * (edge0 cross edge1).length
+
+
+<span class="code-comment">/// implementation -------------------------------------------------------------</span>
+
+   <span class="code-keyword">private def</span> edge0 = vertexs_m(<span class="code-literal">1</span>) - vertexs_m(<span class="code-literal">0</span>)
+   <span class="code-keyword">private def</span> edge1 = vertexs_m(<span class="code-literal">2</span>) - vertexs_m(<span class="code-literal">1</span>)
+   <span class="code-keyword">private def</span> edge3 = vertexs_m(<span class="code-literal">2</span>) - vertexs_m(<span class="code-literal">0</span>)
+
+
+<span class="code-comment">/// fields ---------------------------------------------------------------------</span>
+
+   <span class="code-keyword">private val</span> vertexs_m = Array.range(<span class="code-literal">0</span>,<span class="code-literal">3</span>).map( i =&gt; Vector3f(modelFile_c) )
+
+   <span class="code-keyword">val</span> reflectivity = Vector3f(modelFile_c).clamped01
+   <span class="code-keyword">val</span> emitivity    = Vector3f(modelFile_c).clampedMin( Vector3f.ZERO )
+}
+
+
+
+
+object Triangle
+{
+<span class="code-comment">/// constants ------------------------------------------------------------------</span>
+
+   <span class="code-comment">// General tolerance of 1 mm seems reasonable.</span>
+   <span class="code-keyword">private</span>[minilight] <span class="code-keyword">val</span> TOLERANCE = <span class="code-literal">1.0f</span> / <span class="code-literal">1024.0f</span>
+}
+</code></pre>
+</div>
+
+
+<div class="section" id="vector3f">
+<h2>Vector3f.scala</h2>
+
+   <pre class="sourcefile" id="Vector3f.scala"><code>
+<span class="code-keyword">package</span> hxa7241.graphics
+
+
+
+
+<span class="code-comment">/**
+ * Yes, its the 3D vector class!.&lt;p&gt;
+ *
+ * ...mostly the usual sort of stuff.
+ * (Unused methods are commented out. They do work fine though.)&lt;p&gt;
+ *
+ * @constant &lt;p&gt;
+ */</span>
+<span class="code-keyword">final class</span> Vector3f( <span class="code-keyword">val</span> x:Float, <span class="code-keyword">val</span> y:Float, <span class="code-keyword">val</span> z:Float ) <span class="code-keyword">extends</span> NotNull
+{
+<span class="code-comment">/// standard overrides----------------------------------------------------------</span>
+
+   <span class="code-comment">// must enable this method if == or != is used
+   //override def equals( v:Any ) = v match
+   //{
+   //   case v:Vector3f =&gt; (x == v.x) &amp; (y == v.y) &amp; (z == v.z)
+   //   case _          =&gt; false
+   //}</span>
+   <span class="code-comment">//override def hashCode = (x, y, z).hashCode</span>
+
+   <span class="code-comment">//override def toString = "(" + x + " " + y + " " + z + ")"</span>
+   <span class="code-comment">//def toArray = Array( x, y, z )</span>
+
+
+<span class="code-comment">/// queries --------------------------------------------------------------------</span>
+
+<span class="code-comment">/// elements</span>
+   <span class="code-keyword">def</span> apply( i:Int ) = i <span class="code-keyword">match</span> { <span class="code-keyword">case</span> <span class="code-literal">2</span> =&gt; z; <span class="code-keyword">case</span> <span class="code-literal">1</span> =&gt; y; <span class="code-keyword">case</span> <span class="code-literal">0</span> =&gt; x }
+
+<span class="code-comment">/// =&gt; Float</span>
+   <span class="code-comment">//def sum      =  x + y + z</span>
+   <span class="code-comment">//def average  = (x + y + z) * (1.0f / 3.0f)</span>
+   <span class="code-comment">//def smallest = x min (y min z)</span>
+   <span class="code-comment">//def largest  = x max (y max z)</span>
+
+   <span class="code-keyword">def</span> length            = Math.sqrt( this dot this ).toFloat
+   <span class="code-keyword">def</span> dot( v:Vector3f ) = (x * v.x) + (y * v.y) + (z * v.z)
+   <span class="code-comment">//def distance( v:Vector3f ) = (this - v).length</span>
+
+<span class="code-comment">/// =&gt; vector3f</span>
+   <span class="code-keyword">def</span> unary_-  = <span class="code-keyword">new</span> Vector3f( -x, -y, -z )
+   <span class="code-keyword">def</span> abs      = <span class="code-keyword">new</span> Vector3f( x.abs, y.abs, z.abs )
+   <span class="code-comment">// Zero vectors, and vectors of near zero magnitude, return zero vectors;</span>
+   <span class="code-comment">// Vectors of extremely large magnitude return zero vectors:</span>
+   <span class="code-keyword">def</span> unitized = <span class="code-keyword">if</span>( length != <span class="code-literal">0.0f</span> ) this * (<span class="code-literal">1.0f</span> / length) <span class="code-keyword">else</span> Vector3f.ZERO
+   <span class="code-keyword">def</span> cross( v:Vector3f ) = <span class="code-keyword">new</span> Vector3f(
+      (y * v.z) - (z * v.y),
+      (z * v.x) - (x * v.z),
+      (x * v.y) - (y * v.x) )
+
+   <span class="code-keyword">def</span> +( v:Vector3f ) = <span class="code-keyword">new</span> Vector3f( (x + v.x), (y + v.y), (z + v.z) )
+   <span class="code-keyword">def</span> -( v:Vector3f ) = <span class="code-keyword">new</span> Vector3f( (x - v.x), (y - v.y), (z - v.z) )
+   <span class="code-keyword">def</span> *( v:Vector3f ) = <span class="code-keyword">new</span> Vector3f( (x * v.x), (y * v.y), (z * v.z) )
+   <span class="code-comment">//def /( v:Vector3f ) = new Vector3f( (x / v.x), (y / v.y), (z / v.z) )</span>
+   <span class="code-keyword">def</span> *( f:Float )    = <span class="code-keyword">new</span> Vector3f( (x * f),   (y * f),   (z * f)   )
+   <span class="code-comment">//def /( f:Float )    = this * (1.0f / f)</span>
+
+<span class="code-comment">/// logical</span>
+   <span class="code-keyword">def</span> isZero = (x == <span class="code-literal">0.0f</span>) &amp; (y == <span class="code-literal">0.0f</span>) &amp; (z == <span class="code-literal">0.0f</span>)
+
+<span class="code-comment">/// clamp</span>
+   <span class="code-keyword">def</span> clampedMin( lower:Vector3f )           = zip( Math.max, lower )
+   <span class="code-keyword">def</span> clampedMax( upper:Vector3f )           = zip( Math.min, upper )
+   <span class="code-comment">//def clamped   ( lo:Vector3f, up:Vector3f ) = clampedMin(lo).clampedMax(up)</span>
+   <span class="code-keyword">def</span> clamped01 = clampedMin(Vector3f.ZERO).clampedMax(Vector3f.ONE)
+
+<span class="code-comment">/// comprehensions</span>
+   <span class="code-keyword">def</span> fold( f:(Float,Float)=&gt;Float ) = f( f(x, y), z )
+   <span class="code-keyword">def</span> zip ( f:(Float,Float)=&gt;Float, v:Vector3f ) =
+      <span class="code-keyword">new</span> Vector3f( f(x, v.x), f(y, v.y), f(z, v.z) )
+}
+
+
+
+
+<span class="code-keyword">object</span> Vector3f
+{
+<span class="code-comment">/// constructors ---------------------------------------------------------------</span>
+
+   <span class="code-keyword">def</span> apply()                            = <span class="code-keyword">new</span> Vector3f( <span class="code-literal">0.0f</span>, <span class="code-literal">0.0f</span>, <span class="code-literal">0.0f</span> )
+   <span class="code-keyword">def</span> apply( n:Float )                   = <span class="code-keyword">new</span> Vector3f( n, n, n )
+   <span class="code-keyword">def</span> apply( x:Float, y:Float, z:Float ) = <span class="code-keyword">new</span> Vector3f( x, y, z )
+
+   <span class="code-keyword">def</span> apply( modelFile:{<span class="code-keyword">def</span> next:String} ) =
+   {
+      <span class="code-keyword">val</span> a = Array.range(<span class="code-literal">0</span>,<span class="code-literal">5</span>).map( i =&gt; modelFile.next )
+
+      <span class="code-keyword">new</span> Vector3f( a(<span class="code-literal">1</span>).toFloat, a(<span class="code-literal">2</span>).toFloat, a(<span class="code-literal">3</span>).toFloat )
+   }
+
+
+<span class="code-comment">/// constants ------------------------------------------------------------------</span>
+
+   <span class="code-keyword">val</span> ZERO       = Vector3f( <span class="code-literal">0.0f</span> )
+   <span class="code-comment">//val HALF       = Vector3f( 0.5f )</span>
+   <span class="code-keyword">val</span> ONE        = Vector3f( <span class="code-literal">1.0f</span> )
+   <span class="code-comment">//val EPSILON    = Vector3f( Math.EPS_FLOAT )
+   //val ALMOST_ONE = Vector3f( 1.0f - Math.EPS_FLOAT )
+   //val MINIMUM    = Vector3f( -Math.MAX_FLOAT )
+   //val MAXIMUM    = Vector3f( Math.MAX_FLOAT )
+   //val SMALL      = Vector3f( 1e-12f )
+   //val LARGE      = Vector3f( 1e+12f )
+   //val SMALL_48   = Vector3f( 1.0f / (65536.0f * 65536.0f * 65536.0f) )
+   //val LARGE_48   = Vector3f( 65536.0f * 65536.0f * 65536.0f )
+   //val X          = Vector3f( 1.0f, 0.0f, 0.0f )
+   //val Y          = Vector3f( 0.0f, 1.0f, 0.0f )
+   //val Z          = Vector3f( 0.0f, 0.0f, 1.0f )</span>
+}
+</code></pre>
+</div>
+
+
+<div class="section" id="tokenstream">
+<h2>TokenStream.scala</h2>
+
+   <pre class="sourcefile" id="TokenStream.scala"><code>
+<span class="code-keyword">package</span> hxa7241.general
+
+
+<span class="code-keyword">import</span> java.io.{FileReader, BufferedReader, StreamTokenizer, EOFException}
+
+
+
+
+<span class="code-comment">/**
+ * Make some dismal Java file-reading things half-usable.&lt;p&gt;
+ */</span>
+<span class="code-keyword">class</span> TokenStream( pathname_c:String ) <span class="code-keyword">extends</span> NotNull
+{
+<span class="code-comment">/// commands -------------------------------------------------------------------</span>
+
+   <span class="code-keyword">def</span> close = file_m.close()
+
+
+<span class="code-comment">/// queries --------------------------------------------------------------------</span>
+
+   <span class="code-keyword">def</span> next =
+   {
+      tokens_m.nextToken()
+      if( tokens_m.ttype == StreamTokenizer.TT_EOF ) throw new EOFException
+      <span class="code-keyword">if</span>( tokens_m.ttype &lt; <span class="code-literal">0</span> ) tokens_m.sval <span class="code-keyword">else</span> <span class="code-literal">""</span> + tokens_m.ttype.toChar
+   }
+
+
+<span class="code-comment">/// fields ---------------------------------------------------------------------</span>
+
+   <span class="code-keyword">private val</span> file_m   = <span class="code-keyword">new</span> BufferedReader( <span class="code-keyword">new</span> FileReader( pathname_c ) )
+   <span class="code-keyword">private val</span> tokens_m = <span class="code-keyword">new</span> StreamTokenizer( file_m )
+
+   tokens_m.ordinaryChars( <span class="code-literal">42</span>, <span class="code-literal">122</span> );  tokens_m.wordChars( <span class="code-literal">42</span>, <span class="code-literal">122</span> )
+}
+</code></pre>
+</div>
+
+
+<div class="section" id="license">
+<h2>License</h2>
+
+   <p>The source code is available according to the (new) BSD license:</p>
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <div class="licensenotice">
+      <p>Harrison Ainsworth / HXA7241 : 2008-2010</p>
+
+      <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+
+      <ul>
+         <li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+         <li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+         <li>The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission.</li>
+      </ul>
+
+      <p>THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+   </div>
+</div>
+
+</div>
+
+
+</div><!--paper-->
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/minilight/">http://www.hxa.name/minilight/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

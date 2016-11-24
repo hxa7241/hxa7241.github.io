@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Software's essential form, and visual programming - (note-20140330T1114Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Software's essential form, and visual programming - (note-20140330T1114Z) - HXA7241" />
+   <meta name="DC.subject"     content="software engineering, programming, programming languages, visual programming, hypercode" />
+   <meta name="DC.description" content="Text fits software's essential form. And any kind of visual programming will still have a similar kind of structure. We can do better than text, but it seems not a lot better." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2014-03-30" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20140330T1114Z.html" />
+
+   <meta name="keywords"       content="software engineering, programming, programming languages, visual programming, hypercode" />
+   <meta name="description"    content="Text fits software's essential form. And any kind of visual programming will still have a similar kind of structure. We can do better than text, but it seems not a lot better." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons BY-SA 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Software's essential form, and visual programming</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20140330T1114Z.html" title="permalink">NOTE HXA7241 2014-03-30T11:14Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>Text fits software's essential form. And any kind of visual programming will still have a similar kind of structure. We can do better than text, but it seems not a lot better.</h5>
+
+
+   <div class="part" id="introduction">
+      <p>Consider (again): <a href="http://axisofeval.blogspot.com/search/label/hypercode">http://axisofeval.blogspot.com/search/label/hypercode</a></p>
+
+   <p>That is actually a reasonable pondering and aligns with the conclusion of this note, but let us step back and look a little more generally.</p>
+
+   <p>Is this not related to visual programming &ndash; based on icons, or diagrams, or other graphical things? What possible visual ways are there? Are there completely new ways to program?</p>
+
+   <p>No: any possible ideas of visual programming have certain firm limits. Here is why.</p>
+   </div>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <div class="part" id="question">
+   <p>Start with this question: how would you input such graphical code? What would be the UI?</p>
+
+   <p>For a small language, of 20-ish elements, you can have a menu at the side and pick which to use. But what about including the basic library, of 200 items? Or the main library of 20000 items? A menu to pick visual elements will not work.</p>
+
+   <p>The obvious answer is: you type the name of the wanted element &ndash; i.e. text! Or a first thought of an alternative: classifying into groups and subgroups, and navigating down the tree. But the path to any such leaf item is just a sequence of &lsquo;keys&rsquo; each from a small set: really, just like a name composed of chars, which would be quicker to use &ndash; text again.</p>
+
+   <p>Maybe the purpose is more about using richer gestures and representations to input and output code. But the problem is still there: how can those be referred to? How could you describe a sequence needed to perform some task? Probably by naming them &ndash; which is back to text.</p>
+
+   <p>So alternatives to text seem just, well:</p>
+   <blockquote>
+      <p>&ldquo;Any sufficiently complicated non-text programming system contains an ad hoc, informally-specified, bug-ridden, slow implementation of half of ordinary text.&rdquo;</p>
+   </blockquote>
+      <p>&ndash; HXA's 10th law (adapted from Greenspun's).</p>
+   <p>It is not as bad as that, but the point is there. Purely visual/graphical systems do not seem workable, and there is always something pulling us back to text.</p>
+   </div>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <div class="part" id="constructive">
+      <p>But is this merely long conditioned text-culture making everything seem like text? (like <a href="http://www.hxa.name/notes/note-hxa7241-20121230T1123Z.html">money</a>) To avoid that we can ask this question: is it possible to break down and understand the matter in terms that are independent and primitive?</p>
+
+   <p>What is the structure, the form, the shape of software? It seems so ethereal and ungraspable, what is there to get hold of?</p>
+
+   <p>The form of software is what is done with it. Software has the features it has because of the actions performed on it. And what we do with it is build: assemble smaller pieces into larger ones, and also as part of that process, analyse larger pieces into smaller ones. There are two basic aspects: connecting and nesting &ndash; connecting in a kind of adjacency, and nesting as grouping mulitiple into one. Software is constructive. The form of software reflects the engineering design process.</p>
+
+   <p>And any sophisticated and powerful way of making things must be like this &ndash; built-from-pieces. If every new artifact were made whole and indivisible, there could be no reuse. And we would have no knowledge about what we make &ndash; how it would work/behave &ndash; because it would contain nothing used, hence known, before.</p>
+
+   <p>With material things, their shape and features determines what we can do with them. But with software it is the other way around: we can make any kind of appearance we want, but the activity is pre-set. We have a particular purpose and actions we want do with software, and so we have to make it &lsquo;look&rsquo; appropriate for that &ndash; or we are best off if we do.</p>
+
+   <p>It is this constructive form of software which makes a text-like system always make a lot of sense. Text &ndash; &lsquo;built&rsquo; of chars, and words, and lines &ndash; nicely reflects that form. Text makes for a good expression of the essential structure of software.</p>
+
+   <p>So we need some constructive symbol system (of building symbols from smaller ones) to grasp software, and text is probably a well evolved, if not simply a well established standard for that.</p>
+   </div>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <div class="part" id="pictures">
+   <p>Also try thinking from the other direction, from picture to software:</p>
+
+   <p>You may look at other visual forms &ndash; the many varieties of diagrams, illustrations, pictures &ndash; and feel they are richer and more communicative than mere text, but this vague feeling is misleading. Stop and ask: what do these pictures mean? what information do they present? what structure do they have?</p>
+
+   <p>If you had to draw a picture of software, it cannot be that just <i>anything</i> would do. Just because they might be colourful and detailed does not mean such pictures can express software, that they can <i>fit</i> software. Any kind of picture cannot represent any kind of structure &ndash; otherwise &lsquo;representation&rsquo; would not mean anything.</p>
+
+   <p>Most of the richness you might see is meaningless for software. The main requirement for a picture of software is to express the structure of software. Software has a <i>particular</i> objective form: pieces connecting and nesting. Any picture of it must be centered on expressing that.</p>
+
+   <p>Code as text <i>is</i> visual programming: it is just a picture made with a quite simple kind of drawing tool.</p>
+   </div>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <div class="part" id="conclusion">
+   <p>So visual programming ought not to be an ignis fatuus: it seems not to offer any fundamental breakthroughs. It probably cannot even be about eliminating text, or only in a superficial way. Instead, it must be about expanding text or augmenting it or making new variants of it.</p>
+
+   <p>This includes bringing forward various manipulations. Text-editing puts char-shuffling in the foreground, but we ought to emphasise the larger software structure manipulations (starting with the basics of connecting and nesting), that are currently rather in the background.</p>
+   </div>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <div class="part" id="related">
+   <h4>Related</h4>
+   <ul>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20120506T0907Z.html">&lsquo;Parsing wrongness and language value&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20120513T1116Z.html">&lsquo;Why is information a string of digits?&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110627T0842Z.html">&lsquo;The aim of software engineering&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/articles/content/software-engineering-design_hxa7241_2010.html">&lsquo;Understanding Software Engineering Design&rsquo;</a></li>
+   </ul>
+   </div>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

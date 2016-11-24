@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>GITI &ndash; Electric guitar music text format - (note-20130127T1124Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="GITI - Electric guitar music text format - (note-20130127T1124Z) - HXA7241" />
+   <meta name="DC.subject"     content="guitar, music, notation, format" />
+   <meta name="DC.description" content="GITI is a new music text notation for electric guitar: a bit like a specialised kind of *abc* (another non-traditional notation)" />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2013-01-27" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20130127T1124Z.html" />
+
+   <meta name="keywords"       content="guitar, music, notation, format" />
+   <meta name="description"    content="GITI is a new music text notation for electric guitar: a bit like a specialised kind of *abc* (another non-traditional notation)" />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>GITI &ndash; Electric guitar music text format</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20130127T1124Z.html" title="permalink">NOTE HXA7241 2013-01-27T11:24Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>GITI is a new music text notation for electric guitar: a bit like a specialised kind of <i>abc</i> (another non-traditional notation)</h5>
+
+
+   <p>Traditional music notation is very general and powerful, but rather complex and eccentric and requiring special tools. Guitar tabs are easy to read, but a little awkward to write and for software to read, and are missing time information.</p>
+
+   <p>Alternative music notations like <i>abc</i> and <i>guido</i> seem a good kind of approach: straightforward and text-based. They are more <i>digitally-oriented</i> than traditional notation and tabs.</p>
+
+   <p>GITI is somewhat like <i>abc</i> but specialised for guitar, or like tabs but without the quasi-graphical form: easy to read and write for both human and software, and including plenty of musical information.</p>
+
+   <p>As a short introduction, GITI breaks down into a sequence of space-separated tokens &ndash; &lsquo;sounds&rsquo;, and they break into three colon-separated parts &ndash; &lsquo;act&rsquo;, &lsquo;pitch&rsquo;, and &lsquo;time&rsquo;.</p>
+
+   <p>For example: <i>pluck : string 2, fret 4, vibrato : 1 quarter-note</i>:</p>
+   <blockquote class="highlight">
+      <pre class="plain"><code>p:24v:4</code></pre>
+   </blockquote>
+
+   <p>Or more complex, a doubled-bend, then slide:</p>
+   <blockquote class="highlight">
+      <pre class="plain"><code>p:414+2=512:4e  s:414/:*</code></pre>
+   </blockquote>
+
+   <p>A whole riff &ndash; Black Sabbath ‘Black Sabbath’:</p>
+   <blockquote class="highlight">
+      <pre class="plain"><code>@giti:e-2  @tuning:std  @tempo:4:3.603
+| 13=25:2 . 35:* | 24r1:2_4_8e  s:24/:8s |</code></pre>
+   </blockquote>
+
+   <p>There you can begin to see: the act part is optional, chords are &lsquo;<code>=</code>&rsquo;-separated pitches, parts the same as the previous sound are notated with &lsquo;<code>*</code>&rsquo;, times are extendable with &lsquo;<code>_</code>&rsquo;, and bars and segments are optionally showable with &lsquo;<code>|</code>&rsquo; and &lsquo;<code>.</code>&rsquo;.</p>
+
+   <p>The full description/specification is:</p>
+
+   <ul>
+      <li><a href="http://www.hxa.name/giti/">&lsquo;GITI &ndash; Electric guitar music text format&rsquo;</a></li>
+   </ul>
+
+   <p>References:</p>
+
+   <ul>
+      <li><a href="http://abcnotation.com/wiki/abc:standard:v2.1">&lsquo;abc notation standard 2.1&rsquo;</a></li>
+      <li><a href="http://guidolib.sourceforge.net/doc/GUIDO-Music%20Notation%20Format.html">&lsquo;The GUIDO Music Notation Format 1.0&rsquo;</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

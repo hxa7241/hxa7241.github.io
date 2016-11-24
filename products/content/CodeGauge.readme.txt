@@ -1,0 +1,122 @@
+
+
+CodeGauge v4.5
+======================================================================
+
+
+CodeGauge lines of code counter, version 4.5
+
+Copyright (c) 1999-2006, Harrison Ainsworth / HXA7241	
+http://www.hxa7241.org/
+
+2006-03-04
+
+
+
+
+Contents
+--------
+
+* Description
+* Requirements
+* Installation
+* Usage
+* Acknowledgements
+* License
+
+
+
+
+Description
+-----------
+
+Windows mini-application for counting lines of source code in C++,
+Java or C#.
+
+* no other runtimes needed
+* no installation needed
+* does not write to the registry
+* does not create or modify files
+
+
+
+
+Requirements
+------------
+
+* Windows 95 or later, or Windows NT 3.5 or later
+* Pentium I or equivalent AMD, or later
+* 2M ram
+* 100K disk space
+
+
+
+
+Installation
+------------
+
+Copy CodeGauge.exe to wherever.
+
+
+
+
+Usage
+-----
+
+1) Choose a language filter with the right-click menu.
+2) Drag and drop files or folders onto the CodeGauge window.
+
+* folders are looked in recursively for source files.
+
+* source files with the following name extensions are recognized:
+c cpp cxx h hpp hxx, java, cs
+depending on which language filter is chosen.
+
+* a line is counted as code if it contains a char that is not:
+a space, tab, return, newline, brace, parenthesis, or part of a
+comment.
+
+
+
+
+Acknowledgements
+----------------
+
+* TextPad 4.7.3 editor  
+  http://www.textpad.com/
+* Visual C++ 2003 Windows C++ compiler  
+  http://msdn.microsoft.com/visualc/vctoolkit2003/
+* Windows SDK  
+  http://www.microsoft.com/msdownload/platformsdk/sdkupdate/
+* GCC 3.3.5 Linux compiler  
+  http://gcc.gnu.org/
+
+
+
+
+License
+-------
+
+Copyright (c) 1999-2006, Harrison Ainsworth / HXA7241.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice, this
+  list of conditions and the following disclaimer in the documentation and/or
+  other materials provided with the distribution.
+* The name of the author may not be used to endorse or promote products derived
+  from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+OF SUCH DAMAGE.

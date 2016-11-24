@@ -1,0 +1,77 @@
+	
+
+LogoSaver screensaver
+=====================
+
+
+LogoSaver version 2.0
+Copyright (c) 2003-2004, Harrison Artifex. Some rights reserved.
+
+2004-04-04
+
+http://www.hxa7241.org/
+
+
+
+
+description
+-----------
+
+windows screensaver showing a user supplied logo.
+an exercise in aesthetic simplicity.
+
+* no other runtimes needed
+* no installation needed
+* does not write to the registry
+* does not create or modify files
+
+
+
+
+requirements
+------------
+
+* Windows 95 or later, or Windows NT 3.5 or later
+* Pentium I or equivalent AMD, or later
+* 2M ram
+* 35K disk space
+* screen resolutions 640 * 480 upwards and color modes 8bit to 32bit (8bit is not very good though)
+
+
+
+
+installation
+------------
+
+1) copy LogoSaver.scr to wherever.
+2) right-click on it, select 'install'.
+
+
+
+
+usage
+-----
+
+1) make a logo image file
+	* draw it on a black background
+	* make it less than 1/16 of screen size
+	* save it as a Windows Bitmap
+2) name the logo file logosaver_image.bmp and put it in the same
+   folder as LogoSaver.scr
+3) if LogoSaver is installed, just do nothing and wait.
+   or, double-click LogoSaver.scr.
+
+
+
+
+acknowledgements
+----------------
+
+* written in C++ for Win32
+* edited with TextPad: http://www.textpad.com/
+* compiled with Borland C++ 5.5.1 for Win32, free command line
+  compiler: http://www.borland.com/
+* packed with The Ultimate Packer for eXecutables,
+  Copyright (c) 1996-2002 Markus Oberhumer & Laszlo Molnar:
+  http://upx.sourceforge.net/
+* screensaver basis by lucian wischik: http://www.wischik.com/scr/

@@ -1,0 +1,57 @@
+
+
+comment
+-------
+
+what are the higher-level execution abstractions/structure?
+	decentralization, multiplicity, iteration, emergence
+
+semi-digital, separate fixations, scaffold, complex aggregated physical interface
+
+parameterised objects (like c++ templates) - mostly same but with a variable part
+	amino acid, nucleotide
+
+
+
+
+physical packaging
+------------------
+
+chromosome duplicates in packaging...
+
+
+
+
+execution
+---------
+
+how does genome addressing work?
+
+where is the codon key-value association stored?
+
+
+
+
+replication
+-----------
+
+initiation
+elongation
+termination
+
+
+replication begins at the same multiple points along the DNA
+origins of replication
+20000, 1 per 150Kb
+particular sub-sequences, unclear
+certain proteins attach in the locality, separates nucleotide pairs
+other proteins attach and continue separating, preparing for elongation
+
+both directions from initiation poin
+
+
+cell cycle
+	mitosis M phase - cell division
+	gap G1 phase - execution and other cellular activity
+	synthesis S phase - genome replication
+	gap G2 phase - execution and other cellular activity

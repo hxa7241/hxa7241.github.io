@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Typing and visibility - (note-20110227T0833Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Typing and visibility - (note-20110227T0833Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, programming, typing, visibility, static-typing, dynamic-typing, iterative-development" />
+   <meta name="DC.description" content="Strong typing is better than visibility, but neither is quite what is wanted." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2011-02-27" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20110227T0833Z.html" />
+
+   <meta name="keywords"       content="software-engineering, programming, typing, visibility, static-typing, dynamic-typing, iterative-development" />
+   <meta name="description"    content="Strong typing is better than visibility, but neither is quite what is wanted." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Typing and visibility</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20110227T0833Z.html" title="permalink">NOTE HXA7241 2011-02-27T08:33Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>Strong typing is better than visibility, but neither is quite what is wanted.</h5>
+
+
+   <h3>Lack of typing is bad</h3>
+
+   <p>Programming without a proper strong type system is like trying to build a house without knowing where any of the other bricks are. It is like placing bricks in space guided only by memory. Is there a brick underneath? You cannot see. And only when you step back do you find if it all collapses &ndash; then you have to search for which brick was unsupported.</p>
+
+
+   <h3>Visibility might seem an alternative</h3>
+
+   <p>One can oppose type-checking with visibility, and suggest visibility is preferable. Instead of static typing, build iteratively with small chunks, as is the culture of Lisp or Smalltalk. Why do you need to have things checked when you can <i>see</i> what you are doing?</p>
+
+   <p>Typing (static) is about ensuring coherent action. It is about maintaining consistency of intention: meaning the same thing with the same names in different parts of the software.</p>
+
+   <p>Visibility seems to be doing the same thing &ndash; it is a way of ensuring consistency too.</p>
+
+
+   <h3>But visibility is different, and inadequate</h3>
+
+   <p>But the visibility here is execution: you run the software, quickly and often, in small chunks, to see what it does. This kind of visibility is inadequate because it is too specific. In software, we want control of abstractions, but execution is only showing particular cases.</p>
+
+   <p>By designing software, we are making assertions about abstractions &ndash; that is, whole sets of practically innumerable cases. It is wholly the wrong approach to seek to prove or ensure this through individual cases. It is the very strength of software &ndash; in its material of abstraction &ndash; that we can reason about and control whole sets of things &ndash; abstractions.</p>
+
+   <p>Typing is about the abstractions themselves. It addresses the fabric of construction where the visibility of execution does not.</p>
+
+   <p>Typing <i>is</i> a kind of visibility and a kind of execution. But it is for the right kind of thing &ndash; the logical structure of abstractions. It executes something to test the structure of the abstractions. It is a kind of internal, or higher-level execution.</p>
+
+   <p>Typing does something distinct from iterative trialling or testing, and something important.</p>
+
+
+   <h3>What we should have</h3>
+
+   <p>Programmers should have immediate indication of what and where things are. And they should be looking at the abstractions, not the instances: we want to see not a few points, but the curve of the graph.</p>
+
+   <p>Strong typing is itself not enough. We should be shown we are right or wrong immediately as we form the code (even the <a href="http://oldcomputers.net/zx80.html">Sinclair ZX80</a>, and descendants, was right.).</p>
+
+   <p>But neither is that quite right. Really we should only be able to make valid and consistent transforms to the code.</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

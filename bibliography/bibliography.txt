@@ -1,0 +1,363 @@
+# HXA7241
+# 2009-11-20
+
+# (physical books only)
+
+# miscellaneous
+# art
+# philosophy
+# science
+# software
+# graphics
+# fiction
+
+# title | author[, author] | publisher | year (latest) | isbn (including '-'s)
+
+The Concise Oxford Dictionary | J B Sykes | Oxford | 1978 | 0-19-861121-8
+Roget's Thesaurus | Susan M Lloyd | Penguin | 1987 | 0-14-051124-5
+Usage And Abusage | Eric Partridge | Penguin | 1987 | 0-14-051024-9
+The Penguin Dictionary Of Twentieth Century History 1900-1978 | Alan Palmer | Penguin | 1979 | 0-14-051085-0
+A-Z London |  | Geographer's A-Z Map Company | 1998 | 0-85039-244-6
+A-Z Inner London |  | Geographer's A-Z Map Company | 2000 | 0-85039-139-3
+Whitaker's Almanack 1962 |  |  | 1962 |
+Whitaker's Almanack 1987 Shorter Edition |  |  | 1987 | 0-85021-170-0
+Selected Writings | Samuel Johnson | Penguin | 1968 |
+Essays | Michel de Montaigne, J M Cohen | Penguin | 1984 | 0-14-044083-6
+Selected Letters And Journals | Lord Byron | Picador | 1988 | 0-330-28303-0
+The Pillow Book | Sei Shonagon, Ivan Morris | Penguin | 1977 | 0-14-044236-7
+A Book Of Five Rings | Miyamoto Musashi | Harper Collins | 1995 | 0-00-638434-X
+The Teachings Of Don Juan | Carlos Castaneda | Penguin | 1976 | 0-14-003061-1
+A Separate Reality | Carlos Castaneda | Penguin | 1990 | 0-14-019236-0
+Journey To Ixtlan | Carlos Castaneda | Penguin | 1992 | 0-14-019234-4
+Tales Of Power | Carlos Castaneda | Penguin | 1992 | 0-14-019237-9
+The Second Ring Of Power | Carlos Castaneda | Penguin | 1990 | 0-14-019235-2
+The Eagle's Gift | Carlos Castaneda | Penguin | 1992 | 0-14-019233-6
+The Fire From Within | Carlos Castaneda | Washington Square Press | 1985 | 0-671-73250-1
+The Power Of Silence | Carlos Castaneda | Washington Square Press | 1987 | 0-671-73248-X
+The Art Of Dreaming | Carlos Castaneda | Thorsons | 1994 | 1-85538-427-2
+Magical Passes | Carlos Castaneda | Harper Collins | 1998 | 0-7225-3701-8
+The Active Side Of Infinity | Carlos Castaneda | Thorsons | 2000 | 0-7225-3937-1
+The Sorcerors' Crossing | Taisha Abelar | Penguin | 1993 | 0-14-019366-9
+Being In Dreaming | Florinda Donner | Harper Collins | 1991 | 0-06-250192-5
+The Second Penguin Krishnamurti Reader | Jiddu Krishnamurti | Penguin | 1979 | 0-14-003687-3
+Zen Flesh Zen Bones | Paul Reps | Penguin | 1986 | 0-14-021283-3
+Nature Man And Woman | Alan W Watts | Vintage | 1970 | 394-70592-0
+The Varieties Of Religious Experience | William James | Fontana | 1963 |
+Drugs Of Hallucination | Sidney Cohen | Paladin | 1970 | 586-08020-1
+The Marijuana Papers | David Solomon | Panther | 1970 | 586-02884-6
+A Guide To British Psilocybin Mushrooms | Richard Cooper | Red Shift Books | 1980 | 0-86166-004-8
+Playpower | Richard Neville | Panther | 1971 | 586-08042-2
+The Psychedelic Experience | Timothy Leary, Ralph Metzner, Richard Alpert | The Citadel Press | 1983 | 0-8065-0552-4
+Psychedelic Prayers | Timothy Leary | Academy Editions | 1972 | 0-902620-52-5
+The Politics Of Ecstasy | Timothy Leary | Paladin | 1971 | 586-08008-2
+Jail Notes | Timothy Leary | New English Library | 1972 | 450-01301-4
+Confessions Of A Hope Fiend | Timothy Leary | Bantam Books | 1973 | 554-08070-195
+The Game Of Life | Timothy Leary | Peace Press | 1979 | 0-915238-30-6
+Flashbacks | Timothy Leary | Heineman | 1983 | 434-40975-8
+Neuropolitique | Timothy Leary | New Falcon Press | 1991 | 156184-012-2
+Info-Psychology | Timothy Leary | Falcon Press | 1990 | 0-941404-60-9
+Chaos And Cyber Culture | Timothy Leary | Ronin | 1994 | 0-914171-77-1
+The Doors Of Perception, Heaven And Hell | Aldous Huxley | Granada | 1985 | 0-586-04437-X
+The Joyous Cosmology | Alan W Watts | Random House | 1970 | 394-70299-9
+The Human Biocomputer | John C Lilly | Abacus | 1974 | 0-349-12204-0
+The Archaic Revival | Terence McKenna | Harper Collins | 1991 | 0-06-250613-7
+True Hallucinations | Terence McKenna | Harper Collins | 1993 | 0-06-250545-9
+Trialogues At The Edge Of The West | Terence McKenna | Bear & Company | 1992 | 0-939680-97-1
+Storming Heaven | Jay Stevens | Paladin | 1989 | 0-586-08796-6
+The Acid Trip A Complete Guide To Psychedelic Music | Vernon Joynson | Babylon | 1984 | 0-907188-24-9
+Conversational Power | James K Van Fleet | Prentice Hall | 1984 | 0-13-529637-4
+Immediate Action | Andy McNab | Corgi | 1996 | 0-552-14276-X
+The White Goddess | Robert Graves | Faber | 1986 | 0-571-06961-4
+Small Is Beautiful | E F Schumacher | Abacus | 1989 | 0-349-13132-5
+Man And The Natural World | Keith Thomas | Penguin | 1984 | 0-14-007344-2
+Mythologies | Roland Barthes | Paladin | 1987 | 0-586-08164-X
+Women Of Classical Mythology A Biographical Dictionary | Robert E Bell | Oxford | 1993 | 0-19-507977-9
+The Feminist Companion To Mythology | Carolyne Larrington | Pandora | 1992 | 0-04-440850-1
+Style Wars | Peter York | Sidgwick & Jackson | 1983 | 0-283-98999-8
+Modern Times | Peter York | Futura | 1985 | 0-7088-2718-7
+Decoding Advertisements | Judith Williamson | Marion Boyars | 1987 | 0-7145-2615-0
+The Craft Of Copywriting | Alastair Crompton | Business Books | 1991 | 0-09-168031-X
+Cold Calling Techniques | Stephan Schiffman | Kogan Page | 1990 | 1-85091-817-1
+Use Your Head | Tony Buzan | BBC | 1989 | 0-563-20811-2
+The Loom Of Language | Frederick Bodmer | Merlin Press | 1987 | 085036-350-0
+Godel Escher Bach An Eternal Golden Braid | Douglas R Hofstadter | Penguin | 1982 | 0-14-005579-7
+Egyptian Magic | E A Wallis Budge | Arkana | 1988 | 1-85063-106-9
+Goetia | Aleister Crowley | Sut Anubis |  | 0-947762-04-3
+The Law Is For All | Aleister Crowley | Falcon Press | 1986 | 0-941404-25-0
+Magick | Aleister Crowley | Routledge & Kegan Paul | 1985 | 0-7100-7423-9
+The Arthurian Legends | Barber | Bibliophile Books | 1979 | 0-900123-37-0
+The Optimum Nutrition Bible | Patrick Holford | Piatkus | 1999 | 0-7499-1855-1
+The Motley Fool UK Investment Guide | David Berger, David Gardner, Tom Gardner | Boxtree | 1998 | 07522-2439-5
+The Nudist On The Late Shift | Po Bronson | Secker & Warburg | 1999 | 0-436-20477-0
+Digital Darwinism | Evan I Schwartz | Penguin | 1999 | 0-140-28684-5
+Working With Emotional Intelligence | Daniel Goleman | Bloomsbury | 1988 | 0-7475-3984-7
+Food From The Place Below | Bill Sewell, Ian Burleigh, Frances Tomlinson | Thorsons | 1996 | 0-7225-3230-X
+Ask The Headhunter | Nick A Corcodilos | Nicholas Brealey | 1997 | 1-85788-190-7
+Built To Last | James C Collins, Jerry I Porras | Random House | 1998 | 0-7126-7961-8
+Serious Creativity | Edward de Bono | Harper Collins | 1994 | 0-00-637958-3
+Thinkertoys | Michael Michalko | Ten Speed Press | 1991 | 0-89815-408-1
+How To Solve It | G Polya | Penguin | 1990 | 0-14-012499-3
+Accidental Empires | Robert X Cringely | Penguin | 1996 | 0-14-025826-4
+Conversationally Speaking | Alan Garner | Lowell House | 1997 | 1-56565-629-6
+SAS Survival Guide | John Wiseman | Collins | 1999 | 0-00-472302-3
+The SAS Urban Survival Handbook | John Wiseman | Harper Collins | 1996 | 0-00-255803-3
+SAS Self-Defence | Barry Davies | Collins | 1999 | 0-00-472301-5
+The Timeless Way Of Building | Christopher Alexander | Oxford | 1979 | 0-19-502402-8
+Better Sight Without Glasses | Harry Benjamin | Thorsons | 1992 | 0-7225-2770-5
+Getting To Yes | Roger Fisher, William Ury, Bruce Patton | Arrow Books | 1997 | 0-09-924842-5
+Influence Science And Practice | Robert B Cialdini | Allyn And Bacon | 2001 | 0-321-01147-3
+What Color Is Your Parachute | Richard Nelson Bolles | Ten Speed Press | 2003 | 1-58008-460-5
+The Wolff Olins Guide To Corporate Identity | Wally Olins | Wolff Olins | 1984 | 0-9509257-0-5
+The Notebooks | Leonardo Da Vinci, Irma A Richter | Oxford | 1990 | 0-19-281538-5
+The Brand New Monty Python Papperbok |  | Eyre Methuen |  | 0-413-31970-9
+Monty Python's Big Red Book |  | Methuen |  | 0-413-29520-6
+The Life Of Brian |  | Eyre Methuen | 1979 | 413-46550-0
+
+Greek Art | John Boardman | Thames & Hudson | 1991 | 0-500-20194-3
+Greek Sculpture The Classical Period | John Boardman | Thames & Hudson | 2002 | 0-500-20198-6
+Old Master Life Drawings | James Spero | Dover | 1986 | 0-486-25233-7
+Bridgman's Life Drawing | George B Bridgman | Dover | 1961 | 0-486-22710-3
+Dynamic Anatomy | Burne Hogarth | Watson Guptill | 1990 | 0-8230-1551-3
+Dore's Illustrations For Ariosto's 'Orlando Furioso' | Gustave Dore | Dover | 1980 | 0-486-23973-X
+Pugin's Gothic Ornament | Augustus Charles Pugin | Dover | 1986 | 0-486-25500-X
+The Book Of Signs | Rudolf Koch, Vyvyan Holland | Dover |  | 0-486-20162-7
+The Magic Mirror Of M C Escher | M C Escher, Bruno Ernst | Ballantine Books | 1976 | 0-345-29450-5
+Magritte The True Art Of Painting | Magritte, Harry Torczyner, Richard Miller | Thames And Hudson | 1979 | 0-500-27157-7
+One Hundred Flowers | Georgia O'Keefe | Phaidon | 1987 | 0-7148-2696-0
+The Universal Penman | George Bickham | Dover | 1968 | 0-486-20616-5
+Writing And Illuminating And Lettering | Edward Johnston | John Hogg | 1918 |
+The Calligrapher's Handbook | Heather Child | A&C Black | 1986 | 0-7136-2695-X
+The Mystic Art Of Written Forms | Friedrich Neugebauer, Bruce Kennett | Neugebauer Press | 1980 | 0-907234-50-X
+Decorative Alphabets And Initials | Alexander Nesbitt | Dover | 1959 | 0-486-20544-4
+The Student's Guide To Western Calligraphy | Joyce Irene Whalley | Shambhala | 1984 | 0-394-72189-6
+Contemporary Calligraphy Modern Scribes And Lettering Artists II |  | Trefoil | 1988 | 0-86294-072-9
+Pacific Wave California Graphic Design |  | Magnus | 1987 | 88-7057-070-3
+An Eye For Fractals | Michael McGuire | Addison Wesley | 1991 | 0-201-55440-2
+Nature's Chaos | James Gleick, Eliot Porter | Abacus | 1996 | 0-349-10801-3
+A Book Of Colors | Shigenobu Kobayashi | Kodansha International | 1989 | 0-87011-800-5
+Anarchitecture | Lebbeus Woods | Academy Editions / St Martin's Press | 1992 | 1-85490-149-4
+Spacecraft 2000 To 2100 AD | Stewart Cowley | Hamlyn | 1978 | 0-600-383-385
+
+The Presocratic Philosophers | Jonathan Barnes | Routledge & Kegan Paul | 1986 | 0-7100-9200-8
+Early Greek Philosophy | Jonathan Barnes | Penguin | 1987 | 0-14-044461-0
+Timaeus And Critias | Plato, Desmond Lee | Penguin | 1981 | 0-14-044261-8
+Phaedrus, Letter VII, Letter VIII | Plato, Walter Hamilton | Penguin | 1983 | 0-14-044275-8
+The Symposium | Plato, Walter Hamilton | Penguin | 1973 | 0-14-044024-0
+Philebus | Plato, Robin A H Waterfield | Penguin | 1982 | 0-14-044395-9
+Gorgias | Plato, Walter Hamilton | Penguin | 1975 | 0-14-044094-1
+Euthyphro, The Apology, Crito, Phaedo | Plato, Hugh Tredennick | Penguin | 1982 | 0-14-044037-2
+Protagoras And Meno | Plato, W K C Guthrie | Penguin | 1976 | 0-14-044068-2
+The Republic | Plato, Desmond Lee | Penguin | 1983 | 0-14-044048-8
+Theaetetus | Plato, Robin A H Waterfield | Penguin | 1987 | 0-14-044450-5
+The Nicomachean Ethics | Aristotle, David Ross | Oxford | 1990 | 0-19-281518-0
+A Treatise Of Human Nature Book One | David Hume | Fontana-Collins | 1987 | 0-00-632909-8
+Enquiries | David Hume | Oxford | 1989 | 0-19-824536-X
+An Essay Concerning Human Understanding | John Locke | J M Dent & Sons | 1990 | 0-460-11332-1
+Philosophical Works | Berkeley | J M Dent & Sons | 1989 | 0-460-11483-2
+Ethics | Spinoza, G H R Parkinson | J M Dent & Sons | 1989 | 0-460-11481-6
+Selected Philosophical Writings | Descartes, John Cottingham, Robert Stoothoff, Dugald Murdoch | Cambridge | 1989 | 0-521-35812-4
+Philosophical Writings | Leibniz, G H R Parkinson | J M Dent & Sons | 1990 | 0-460-87045-9
+Kant | Roger Scruton | Oxford | 1982 | 0-19-287577-9
+Kant Selections | Kant, Lewis White Beck | Macmillan | 1988 | 0-02-307821-9
+Critique Of Pure Reason | Immanuel Kant, Norman Kemp Smith | Macmillan | 1990 | 0-333-05713-9
+Critique Of Judgment | Immanuel Kant, Werner S Pluhar | Hackett | 1987 | 0-87220-025-6
+Kant's Transcendental Idealism | Henry E Allison | Yale University Press | 1983 | 0-300-03629-9
+Utilitarianism And Other Essays | John Stuart Mill, Jeremy Bentham | Penguin | 1987 | 0-14-043272-8
+Human All Too Human | Friedrich Nietzsche, R J Hollingdale | Cambridge | 1988 | 0-521-31945-5
+Daybreak | Friedrich Nietzsche, R J Hollingdale | Cambridge | 1987 | 0-521-28665-X
+The Gay Science | Friedrich Nietzsche, Walter Kaufmann | Vintage | 1974 | 0-394-71985-9
+Thus Spoke Zarathustra | Friedrich Nietzsche, R J Hollingdale | Penguin | 1978 | 0-14-044118-2
+Beyond Good And Evil | Friedrich Nietzsche, R J Hollingdale | Penguin | 1988 | 0-14-044267-7
+Twilight Of The Idols, The Anti-Christ | Friedrich Nietzsche, R J Hollingdale | Penguin | 1988 | 0-14-044207-3
+Ecce Homo | Friedrich Nietzsche, R J Hollingdale | Penguin | 1982 | 0-14-044393-2
+Ecce Homo | Friedrich Nietzsche, R J Hollingdale | Penguin | 1988 | 0-14-044393-2
+Tractatus Logico-Philosophicus | Ludwig Wittgenstein, D F Pears, B F McGuinness | Routledge | 1989 | 0-415-02825-6
+The Blue And Brown Books | Ludwig Wittgenstein | Blackwell | 1994 | 0-631-14660-1
+Zettel | Ludwig Wittgenstein | Blackwell | 1990 | 0-631-12823-9
+Philosophical Investigations | Ludwig Wittgenstein | Blackwell | 1989 | 0-631-14670-9
+The Problem Of Knowledge | A J Ayer | Penguin | 1988 | 0-14-020377-X
+The Problems Of Philosophy | Bertrand Russell | Oxford | 1989 | 0-19-888018-9
+Naming And Necessity | Saul Kripke | Blackwell | 1988 | 0-631-12801-8
+Lectures And Conversations On Aesthetics Psychology And Religious Belief | Ludwig Wittgenstein, Yorick Smythies, Rush Rhees, James Taylor | Blackwell | 1989 | 0-631-09580-2
+An Introduction To Plato's Republic | Julia Annas | Oxford | 1989 | 0-19-827429-7
+Plato's Theaetetus | David Bostock | Oxford | 1991 | 0-19-823930-0
+Platonic Studies | Gregory Vlastos | Princeton University | 1981 | 0-691-10021-7
+Plato's Earlier Dialectic | Richard Robinson | Oxford | 1953 | 0-19-824777-X
+Spinoza An Introduction To His Philosophical Thought | Stuart Hampshire | Penguin | 1987 | 0-14-022778-4
+A Study Of Spinoza's Ethics | Jonathon Bennett | Hackett | 1988 | 0-915145-83-9
+Problems From Locke | J L Mackie | Oxford | 1991 | 0-19-875036-6
+The Bounds Of Sense | P F Strawson | Routledge | 1989 | 0-415-04030-2
+Ethics Inventing Right And Wrong | J L Mackie | Penguin | 1977 | 0-14-021957-9
+The Languages Of Logic | Samuel Guttenplan | Blackwell | 1989 | 0-631-14625-3
+
+The Self-Made Tapestry | Philip Ball | Oxford | 1999 | 0-19-850244-3
+A Colour Atlas Of Plant Structure | Bryan G Bowes | Manson Publishing | 1996 | 1-874545-16-2
+Genomes 2 | T A Brown | Bios | 2002 | 1-85996-029-4
+On Growth And Form | D'Arcy Wentworth Thompson, John Tyler Bonner | Cambridge | 1995 | 0-521-43776-8
+The Triumph Of The Embryo | Lewis Wolpert | Oxford | 1993 | 0-19-854799-4
+Principles Of Development | Lewis Wolpert, Rosa Beddington, Thomas Jessell, Peter Lawrence, Elliot Meyerowitz, Jim Smith | Oxford | 2002 | 0-19-879291-3
+Developmental Biology | Scott F Gilbert | Sinauer | 1991 | 0-87893-245-3
+Engineering Mathematics | Anthony Croft, Robert Davison, Martin Hargreaves | Addison Wesley | 1996 | 0-201-87744-9
+Advanced Engineering Mathematics | Erwin Keyszig | Wiley | 1983 | 0-471-88941-5
+Mathematical Techniques | D W Jordan, P Smith | Oxford | 2000 | 0-19-856461-9
+Linear Algebra Through Geometry | Thomas Banchoff, John Wermer | Springer | 1992 | 0-387-97586-1
+A First Course In Mechanics | Mary Lunn | Oxford | 1996 | 0-19-853433-7
+Numerical Recipes In C | William H Press, Saul A Teukolsky, William T Vetterling, Brian P Flannery | Cambridge | 1995 | 0-521-43108-5
+Mathematical Models | H M Cundy, A P Rollett | Oxford | 1976 | 0-19-914018-9
+Elementary Fluid Dynamics | D J Acheson | Oxford | 2000 | 0-19-859679-0
+Lattice-Gas Cellular Automata And Lattice Boltzman Models An Introduction | Dieter A Wolf-Gladrow | Springer | 2000 | 3-540-66973-6
+Introduction To Numerical Analysis | J Stoer, R Bulirsch | Springer | 1993 | 0-387-97878-X
+The Computational Beauty Of Nature | Gary William Flake | MIT Press | 1998 | 0-262-06200-3
+The Beauty Of Fractals | H-O Peitgen, P H Richter | Springer | 1986 | 3-540-15851-0
+The Science Of Fractal Images | Heinz-Otto Peitgen, Dietmar Saupe | Springer | 1988 | 0-387-96608-0
+Computers And The Imagination | Clifford A Pickover | St Martin's Press | 1991 | 0-312-08343-2
+Six Easy Pieces | Richard P Feynman | Penguin | 1998 | 0-14-027666-1
+QED | Richard P Feynman | Penguin | 1990 | 0-140-1-25051
+The Inventions Of Daedalus | David E H Jones | Freeman | 1982 | 0-7167-1413-2
+The Holotropic Mind | Stanislav Grof, Hal Zina Bennett | Harper Collins | 1993 | 0-06-250659-5
+DMT The Spirit Molecule | Rick Strassman | Park Street Press | 2001 | 0-89281-927-8
+Memories Dreams Reflections | Carl Gustav Jung | Collins | 1979 | 0-00-642519-4
+Psychology And Alchemy | Carl Gustav Jung | Routledge | 1993 | 0-415-03452-3
+
+The C Programming Language | Brian W Kernighan, Dennis M Ritchie | Prentice Hall | 1988 | 0-13-110362-8
+The C++ Programming Language | Bjarne Stroustrup | Addison Wesley | 1998 | 0-201-88954-4
+The C++ Programming Language | Bjarne Stroustrup | Addison Wesley | 1991 | 0-201-53992-6
+Effective C++ | Scott Meyers | Addison Wesley | 1998 | 0-201-92488-9
+More Effective C++ | Scott Meyers | Addison Wesley | 1996 | 0-201-63371-X
+Taligent's Guide To Designing Programs | Taligent | Addison Wesley | 1994 | 0-201-40888-0
+Designing Components With The C++ STL A New Approach To Programming | Ulrich Breymann | Addison Wesley | 1998 | 0-201-17816-8
+Advanced C++ | James O Coplien | Addison Wesley | 1993 | 0-201-54855-0
+Programs And Data Structures In C | Leendert Ammeraal | Wiley | 1992 | 0-471-93123-3
+The Java Programming Language | Ken Arnold, James Gosling | Addison Wesley | 1999 | 0-201-31006-6
+The Java Tutorial Continued | Mary Campione, Kathy Walrath, Alison Huml | Addison Wesley | 1998 | 0-201-48558-3
+Effective Java | Joshua Bloch | Addison Wesley | 2001 | 0-201-31005-8
+Practical Java | Peter Haggar | Addison Wesley | 2000 | 0-201-61646-7
+The Elements Of Java Style | Allan Vermeulen, Scott W Ambler, Greg Bumgardner, Eldon Metz, Trevor Misfeldt, Jim Shur, Patrick Thompson | Cambridge | 2000 | 0-521-77768-2
+Concurrent Programming In Java | Doug Lea | Addison Wesley | 2000 | 0-201-31009-0
+JDBC API Tutorial And Reference | Seth White, Maydene Fisher, Rick Cattell, Graham Hamilton, Mark Hapner | Addison Wesley | 1999 | 0-201-43328-1
+Enterprise Java Beans | Richard Monson-Haefel | O'Reilly | 2001 | 0-596-00226-2
+Core J2EE Patterns | Deepak Alur, John Crupi, Dan Malks | Prentice Hall | 2001 | 0-13-064884-1
+J2EE Technology In Practice | Rick Cattell, Jim Inscore | Addison Wesley | 2001 | 0-201-74622-0
+HTML The Definitive Guide | Chuck Musciano, Bill Kennedy | O'Reilly | 1998 | 1-56592-492-4
+HTML For The World Wide Web | Elizabeth Castro | Peachpit Press | 1998 | 0-201-69696-7
+HTTP Pocket Reference | Clinton Wong | O'Reilly | 2000 | 1-56592-862-8
+XML Pocket Reference | Robert Eckstein, Michael Casabianca | O'Reilly | 2001 | 0-569-00133-9
+JavaScript The Definitive Guide | David Flanagan | O'Reilly | 2006 | 0-59610-199-6
+.Net Framework Essentials | Thuan Thai, Hoang Q Lam | O'Reilly | 2002 | 0-569-00302-1
+Windows 2000 Commands Pocket Reference | Aeleen Frisch | O'Reilly | 2001 | 0-569-00148-7
+A Course In Basic Programming ZX80 Operating Manual | Hugo Davenport | Science Of Cambridge | 1980 |
+Sinclair ZX81 ROM Disassembly Part A 0000H-0F54H | Ian Logan | Melbourne House | 1981 | 0-86161-106-3
+Z80-Assembly Language Programming Manual |  | Zilog | 1980 |
+Programming Pearls | Jon Bentley | Addison Wesley | 1989 | 0-201-10331-1
+Code Complete | Steve McConnell | Microsoft Press | 1993 | 1-55615-484-4
+The Practice Of Programming | Brian W Kernighan, Rob Pike | Addison Wesley | 1999 | 0-201-61586-X
+Object Oriented Software Construction | Bertrand Meyer | Prentice Hall | 1997 | 0-13-629155-4
+Object-Oriented Design Heuristics | Arthur J Riel | Addison Wesley | 1999 | 0-201-63385-X
+Design Patterns | Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides | Addison Wesley | 1995 | 0-201-63361-2
+Pattern Hatching | John Vlissides | Addison Wesley | 1998 | 0-201-43293-5
+Pattern-Oriented Software Architecture | Frank Buschmann, Regine Meunier, Hans Rohnert, Peter Sommerlad, Michael Stal | Wiley | 1996 | 0-471-95869-7
+Refactoring | Martin Fowler | Addison Wesley | 1999 | 0-201-48567-2
+The Unified Software Development Process | Ivar Jacobson, Grady Booch, James Rumbaugh | Addison Wesley | 1999 | 0-201-57169-2
+Extreme Programming Explained | Kent Beck | Addison Wesley | 1999 | 0-201-61641-6
+UML Distilled | Martin Fowler, Kendall Scott | Addison Wesley | 1997 | 0-201-32563-2
+Rapid Development | Steve McConnell | Microsoft Press | 1996 | 1-55615-900-5
+Software Project Survival Guide | Steve McConnell | Microsoft Press | 1998 | 1-57231-621-7
+The Mythical Man-Month | Frederick P Brooks Jr | Addison Wesley | 1998 | 0-201-83595-9
+Object-Oriented Software Engineering A Use Case Driven Approach | Ivar Jacobson, Magnus Christerson, Patrik Jonsson, Gunnar Overgaard | Addison Wesley | 1995 | 0-201-54435-0
+Object-Oriented Analysis And Design With Applications | Grady Booch | Addison Wesley | 1995 | 0-8053-5340-2
+Software Architecture In Practice | Len Bass, Paul Clements, Rick Kazman | Addison Wesley | 1999 | 0-201-19930-0
+Applied Software Architecture | Christine Hofmeister, Robert Nord, Dilip Soni | Addison Wesley | 2000 | 0-201-32571-3
+Introduction To The Personal Software Process | Watts S Humphrey | Addison Wesley | 1997 | 0-201-54809-7
+An Introduction To Database Systems | C J Date | Addison Wesley | 1995 | 0-201-82458-2
+The Practical SQL Handbook | Judith S Bowman, Sandra L Emerson, Marcy Darnovsky | Addison Wesley | 2001 | 0-201-70309-2
+Learning The Unix Operating System | Jerry Peek, Grace Todino, John Strang | O'Reilly | 1998 | 1-56592-390-1
+Usability Engineering | Jakob Nielsen | AP Professional | 1993 | 0-12-518406-9
+Cyberarts Exploring Art & Technology | Linda Jacobson | Miller Freeman | 1992 | 0-87930-253-4
+Computers As Theatre | Brenda Laurel | Addison Wesley | 1993 | 0-201-55060-1
+Artificial Life An Overview | Christopher G Langton | MIT Press | 1997 | 0-262-62112-6
+
+Computer Graphics Principles And Practice | James D Foley, Andries van Dam, Steven K Feiner, John F Hughes | Addison Wesley | 1990 | 0-201-12110-7
+Principles Of Digital Image Synthesis Volume 1 | Andrew S Glassner | Morgan Kaufmann | 1995 | 1-55860-276-3
+Principles Of Digital Image Synthesis Volume 2 | Andrew S Glassner | Morgan Kaufmann | 1995 | 1-55860-276-3
+Realistic Image Synthesis Using Photon Mapping | Henrik Wann Jensen | A K Peters | 2001 | 1-56881-147-0
+Jim Blinn's Corner Dirty Pixels | Jim Blinn | Morgan Kaufmann | 1998 | 1-55860-455-3
+Jim Blinn's Corner A Trip Down The Graphics Pipeline | Jim Blinn | Morgan Kaufmann | 1996 | 1-55860-387-5
+An Introduction To Ray Tracing | Andrew S Glassner | Academic Press | 1991 | 0-12-286160-4
+Advanced Animation And Rendering Techniques | Alan Watt, Mark Watt | Addison Wesley | 1996 | 0-201-54412-1
+Illumination And Color In Computer Generated Imagery | Roy Hall | Springer | 1989 | 0-387-96774-5
+Fundamentals Of Three-Dimensional Computer Graphics | Alan Watt | Addison Wesley | 1990 | 0-201-15442-0
+Wavelets For Computer Graphics | Eric J Stollnitz, Tony D DeRose, David H Salesin | Morgan Kaufmann | 1996 | 1-55860-375-1
+Computational Geometry In C | Joseph O'Rourke | Cambridge | 1998 | 0-521-64976-5
+Computer Graphics - Siggraph Conference Proceedings CD-ROM 1999 |  | ACM Siggraph | 1999 | 1-58113-150-X
+Computer Graphics - Siggraph Conference Proceedings CD-ROM 1998 |  | ACM Siggraph | 1998 | 1-58113-039-2
+Computer Graphics - Siggraph Conference Proceedings CD-ROM 1997 |  | ACM Siggraph | 1997 | 1-89791-840-1
+Computer Graphics - Siggraph Conference Proceedings CD-ROM 1996 |  | ACM Siggraph | 1996 | 1-89791-840-1
+Computer Graphics - Siggraph Conference Proceedings CD-ROM 1995 |  | ACM Siggraph | 1995 | 1-89791-763-4
+Computer Graphics - Siggraph Conference Proceedings CD-ROM 1994 |  | ACM Siggraph | 1994 | 1-89791-669-7
+Computer Graphics - Siggraph Conference Proceedings CD-ROM 1993 |  | ACM Siggraph | 1993 | 1-89791-602-4
+
+The Odyssey | Homer, Walter Shewring | Oxford | 1990 | 0-19-281542-3
+The Iliad | Homer, Robert Fitzgerald | Oxford | 1988 | 0-19-281594-6
+The Idylls | Theocritus, Robert Wells | Penguin | 1989 | 0-14-044523-4
+Prometheus Bound, The Suppliants, Seven Against Thebes, The Persians | Aeschylus, Philip Vellacott | Penguin | 1961 | 0-14-044112-3
+Electra, Ajax, Women Of Trachis, Philoctetes | Sophocles, E F Watling | Penguin | 1953 | 0-14-044028-3
+Antigone, Oedipus The King, Oedipus At Colonus | Sophocles, Robert Fagles | Penguin | 1987 | 0-14-044425-4
+Antigone, Oedipus The King, Oedipus At Colonus | Sophocles, Robert Fagles | Penguin | 1987 | 0-14-044425-4
+Ion, The Women Of Troy, Helen, The Bacchae | Euripides, Philip Vellacott | Penguin | 1987 | 0-14-044044-5
+Alcestis, Hippolytus, Iphigenia In Tauris | Euripides, Philip Vellacott | Penguin | 1974 | 0-14-044031-3
+The Aeneid | Virgil, Robert Fitzgerald | Penguin | 1985 | 0-14-044051-X
+Theogony, Works And Days, Elegies | Hesiod, Theognis, Dorothea Wender | Penguin | 1973 | 014-044283-9
+Metamorphoses | Ovid, Mary M Innes | Penguin | 1983 | 0-14-044058-5
+The Golden Ass | Lucius Apuleius, Robert Graves | Penguin | 1950 |
+The Bhagavad Gita | unknown, Juan Mascaro | Penguin | 1987 | 0-14-044121-2
+The Upanishads | unknown, Juan Mascaro | Penguin | 1987 | 0-14-044163-8
+The Tale Of Genji | Murasaki Shikibu, Edward G Seidensticker | Penguin | 1981 | 0-14-044390-8
+Le Morte D'Arthur Volume 1 | Sir Thomas Mallory | Penguin | 1987 | 0-14-043043-1
+Le Morte D'Arthur Volume 2 | Sir Thomas Mallory | Penguin | 1986 | 0-14-043044-X
+The Quest Of The Holy Grail | unknown, P M Matarasso | Penguin | 1971 | 14-044220-0
+The Death Of King Arthur | unknown, James Cable | Penguin | 1978 | 0-14-044255-3
+Vita Nuova | Dante, Mark Musa | Oxford | 1992 | 0-19-282877-0
+La Vita Nuova | Dante, Barbara Reynolds | Penguin | 1969 | 0-14-044216-2
+Selections From The Canzoniere And Other Works | Petrarch, Mark Musa | Oxford | 1992 | 0-19-281707-8
+Selections From The Canzoniere And Other Works | Petrarch, Mark Musa | Oxford | 1985 | 0-19-281707-8
+King Lear | Shakespeare | Penguin | 1987 | 0-14-070724-7
+Macbeth | Shakespeare | Penguin | 1967 | 0-14-070705-0
+Hamlet | Shakespeare | Penguin | 1980 | 0-14-070734-4
+The Sorrows Of Young Werther | Goethe, Michael Hulse | Penguin | 1989 | 0-14-044503-X
+Elective Affinities | Goethe, R J Hollingdale | Penguin | 1987 | 0-14-044242-1
+Letters From Italy | Goethe, W H Auden, Elizabeth Mayer | Penguin | 1995 | 0-14-600198-2
+Faust 1 | Johann Wolfgang Von Goethe, Philip Wayne | Penguin | 1960 |
+Faust 2 | Johann Wolfgang Von Goethe, Philip Wayne | Penguin | 1959 |
+Headlong Hall | Thomas Love Peacock | J M Dent & Co | 1891 |
+Melincourt | Thomas Love Peacock | J M Dent & Co | 1891 |
+The Pickwick Papers | Charles Dickens | Penguin | 1986 | 0-14-043078-4
+Against The Grain | Joris-Karl Huysmans, John Howard | Lieber & Lewis | 1922 |
+Against Nature | Joris-Karl Huysmans, Robert Baldick | Penguin | 1973 | 0-14-044086-0
+The Portable Blake | Blake | Penguin | 1976 | 0-14-015026-9
+Shelley | Shelley | Penguin | 1956 | 0-14-058504-4
+Coleridge | Coleridge | Penguin | 1985 | 0-14-058501-X
+Idylls Of The King | Tennyson | Penguin | 1983 | 0-14-042253-6
+Conversations Of Goethe With Eckermann And Soret | Johann Peter Eckermann, John Oxenford | George Bell & Sons | 1906 |
+A Portrait Of The Artist As A Young Man | James Joyce | Penguin | 1970 | 14-001477-2
+Jean Santeuil | Marcel Proust, Gerard Hopkins | Penguin | 1985 | 0-14-018524-0
+Remembrance Of Things Past 1 | Marcel Proust, C K Scott-Moncrieff, Terence Kilmartin | Penguin | 1989 | 0-14-018222-5
+Remembrance Of Things Past 2 | Marcel Proust, C K Scott-Moncrieff, Terence Kilmartin | Penguin | 1989 | 0-14-018223-3
+Remembrance Of Things Past 3 | Marcel Proust, C K Scott-Moncrieff, Terence Kilmartin | Penguin | 1989 | 0-14-018224-1
+The Outsider | Albert Camus | Penguin | 1963 |
+The Journey To The East | Herman Hesse | Panther | 1974 | 586-03826-4
+Diary Of A Madman, The Nose, The Overcoat, How Ivan Ivanovich Quarrelled With Ivan Nikiforovich, Ivan Fyodorovich Shponka And His Aunt | Nikolai Gogol, Ronald Wilks | Penguin | 1972 | 0-14-044273-1
+The Trial | Franz Kafka | Penguin | 1975 | 0-14-000907-8
+Death In Venice, Tristan, Tonio Kroger | Thomas Mann, H T Lowe-Porter | Penguin | 1988 | 0-14-001082-3
+Heart Of Darkness | Joseph Conrad | Penguin | 1986 | 0-14-043168-3
+On The Road | Jack Kerouac | Penguin | 1980 | 0-14-003192-8
+The Titus Books | Mervyn Peake | Penguin | 1983 | 0-14-006835-X
+Gabriela Clove And Cinnamon | Jorge Amado, James L Taylor, William Grossman | Avon | 1988 | 0-380-75470-3
+The Alchemist | Paulo Coelho, Alan R Clarke | Harper Collins | 1993 | 0-06-250266-2
+Stranger To The Ground | Richard Bach | Dell | 1990 | 0-440-20658-8
+Biplane | Richard Bach | Dell | 1990 | 0-440-20657-X
+Nothing By Chance | Richard Bach | Dell | 1990 | 0-440-20656-1
+A Gift Of Wings | Richard Bach | Dell | 1989 | 0-440-20432-1
+Illusions | Richard Bach | Pan | 1978 | 0-330-25355-7
+The Bridge Across Forever | Richard Bach | Pan | 1985 | 0-330-29081-9
+One | Richard Bach | Pan | 1988 | 0-330-31173-5
+Microserfs | Douglas Coupland | Flamingo | 1996 | 0-00-654859-8

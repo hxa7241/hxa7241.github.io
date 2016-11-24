@@ -1,0 +1,42 @@
+# ttl - Turtle - http://www.w3.org/TeamSubmission/turtle/
+
+# Note - HXA7241
+# (for a new note, change: thisnote, title, content, contenthash, date.)
+
+
+@base <http://hxa.name/>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/TR/xmlschema-2/#> .
+@prefix rfc: <http://www.ietf.org/rfc/> .
+@prefix iana: <http://www.iana.org/assignments/media-types/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix hxa: <rdf/1/rdf-terms#> .
+@prefix thisnote: <urn:uuid:B4164914-F500-4389-9E45-13D4F5D77407> .
+
+
+thisnote:
+dc:title  "'Software Design' Is Not Design"@en
+; hxa:content """
+Software engineering has veered a little off on a tangent. Its priorities have become unbalanced. Or at least the perception has.
+
+What is software design? -- modularisation, class relationships, etc. -- the structure of the code. This would be the normal view. And also accords with: Swebok 2004, 3-1 p51; and IEEE 610.12-1990.
+
+This is unsound. If you asked a civil/structural engineer about the design of a building, and they talked only about the style of diagrams and presentation of equations used, you would think there was something wrong: What about the resultant forces? the resilience to conditions? . . . what about the actual *function* of the building -- how it stays standing-up and working?
+
+Engineering is about the functionality of what is produced, foremost. What helped the engineer design it is a side issue. The structure of internal representations -- the code -- has some value, but it is not essential: because it is only to serve the engineering process, it does not constitute the product. As an engineering kind of task, software design is *really* about storing data, moving data, and processing data. That is the functionality it creates, that is its core.
+
+How valuable is representational structure? At a worst it could have a severe indirect effect: much less product functionality would be developable with available effort. But the opposite is different: products have 'essential complexity' that cannot be short-cut by refinement of tools -- only re-use can help substantially. Complaints and wishes about languages etc. are figments. They arise because, unlike something physical, software lacks a defined tangibility to show the objective limits of its medium.
+
+Software engineering should devote *some* attention to the representation structure, but it should not become a self-indulgence.
+"""@en
+; hxa:contenthash  "ebd797ced62fd50f960884dfbb5bbd6d0793577f"^^rfc:rfc3174
+; hxa:domainurl  <notes/>
+; rdf:type  hxa:note
+; dc:format  "text"^^iana:text
+; dc:date  "2009-05-23T10:24"^^xsd:dateTime
+; dc:creator  <about/foaf.rdf>
+; dc:language  "en-GB"^^rfc:rfc4646
+; dc:rights  <http://creativecommons.org/licenses/by-sa/3.0/>
+.

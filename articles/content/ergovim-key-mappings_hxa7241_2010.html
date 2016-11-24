@@ -1,0 +1,1466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>ErgoVim Key Mappings - HXA7241 - 2010</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="ErgoVim Key Mappings - HXA7241 - 2010" />
+   <meta name="DC.subject"     content="Vim, key mappings" />
+   <meta name="DC.description" content="A mostly comprehensive rearrangement of Vim's key mappings, to be more spatially ordered and modernised." />
+   <meta name="DC.type"        content="technical article" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2010-02-18" />
+   <meta name="DC.date"        content="2011-01-01" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/articles/content/software-engineering-design_hxa7241_2010.html" />
+
+   <meta name="keywords"       content="Vim, key mappings" />
+   <meta name="description"    content="A mostly comprehensive rearrangement of Vim's key mappings, to be more spatially ordered and modernised." />
+   <meta name="document"       content="hxa7241article6" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+
+   <style type="text/css">
+      h4
+      {
+         margin-top:       2.5em;
+      }
+      .keyboard
+      {
+         font-family:      sans-serif;
+         background-color: rgb(224,224,224);
+      }
+      .keyboard big
+      {
+         font-size:        1.5em;
+      }
+      .keyboard small
+      {
+         font-size:        0.8em;
+      }
+      .keyboard .unmap
+      {
+         color:            gray;
+      }
+      .ctrl
+      {
+         font-variant:     small-caps;
+      }
+      .keyboard .pane
+      {
+         background-color: rgb(192,192,224);
+      }
+      .keyboard .edit
+      {
+         background-color: rgb(224,192,192);
+      }
+      .keyboard .move
+      {
+         background-color: rgb(192,224,192);
+      }
+      .keyboard .mod
+      {
+         background-color: rgb(224,224,192);
+      }
+      .bh
+      {
+         border-top:       0.15em solid black;
+         border-bottom:    0.15em solid black;
+      }
+      .bl
+      {
+         border-left:      0.15em solid black;
+      }
+      .br
+      {
+         border-right:     0.15em solid black;
+      }
+      .bt
+      {
+         border-top:       0.15em solid black;
+      }
+      .bb
+      {
+         border-bottom:    0.15em solid black;
+      }
+      kbd
+      {
+         background-color: rgb(224,224,224);
+         border:           0.07em solid;
+         border-color:     rgb(240,240,240) gray gray rgb(240,240,240);
+         padding:          0em 0.1em 0em 0.1em;
+      }
+      table.reference td
+      {
+         padding-right:    2em;
+      }
+   </style>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>ErgoVim Key Mappings</h1>
+</div>
+
+
+<div id="colophon" title="colophon">
+<h4>Harrison Ainsworth</h4>
+
+   <p id="contact"><a href="http://www.hxa.name/">http://www.hxa.name/</a>
+   <br />hxa7241+articles <i>(&alpha;&tau;)</i> googlemail <i>(d&omicron;&tau;)</i> com</p>
+
+   <p id="timestamp" title="started: 2010-02-18">2011-01-01</p>
+</div>
+
+
+<div id="preface">
+   <div id="summary" title="summary">
+      <h2>Summary</h2>
+      <p id="_0.1.1" title="_0.1.1">This is a mostly comprehensive rearrangement of Vim's key mappings, to be more spatially ordered and modernised. It reassigns almost all normal, visual, and insert mode keys. The principles are to: group related commands on nearby keys; select the most important commands for the best positions; adopt some common standards from outside.</p>
+
+      <p id="_0.1.2" title="_0.1.2">The design idea is based on the <a href="http://xahlee.org/emacs/ergonomic_emacs_keybinding.html">ErgoEmacs Keybinding (http://xahlee.org/emacs/ergonomic_emacs_keybinding.html)</a>, but completely Vim-ified.</p>
+
+      <p id="_0.1.3" title="_0.1.3">This is the first version, and open to adjustment. For Vim Version 7.2, and US-like keyboards.</p>
+   </div>
+
+   <dl id="metadata" title="metadata" class="plainlist">
+      <dt>Subject</dt>
+      <dd id="metadata-subject" title="metadata-subject">Vim, key mappings</dd>
+
+      <dt>URI</dt>
+      <dd id="metadata-id" title="metadata-id"><a href="http://www.hxa.name/articles/content/ergovim-key-mappings_hxa7241_2010.html">http://www.hxa.name/articles/content/ergovim-key-mappings_hxa7241_2010.html</a></dd>
+
+      <dt>Download</dt>
+      <dd id="metadata-download" title="metadata-download"><a href="http://www.hxa.name/articles/content/ergovim1.vim">http://www.hxa.name/articles/content/ergovim1.vim</a></dd>
+
+      <dt>License</dt>
+      <dd id="metadata-license" title="metadata-license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons BY-SA 3.0 License</a></dd>
+   </dl>
+</div>
+
+
+<div id="contents" title="contents">
+   <h2>Contents</h2>
+
+   <ul>
+      <li><a href="#description">Description</a>
+         <ul>
+            <li><a href="#normal-mode-key-layout">Normal mode key layout</a></li>
+            <li><a href="#visual-mode-key-layout">Visual mode key layout</a></li>
+            <li><a href="#insert-mode-key-layout">Insert mode key layout</a></li>
+         </ul></li>
+      <li><a href="#reference">Reference</a>
+         <ul>
+            <li><a href="#ref-normal">Normal mode</a></li>
+            <li><a href="#ref-visual">Visual mode</a></li>
+            <li><a href="#ref-insert">Insert mode</a></li>
+            <li><a href="#ref-commandline">Command-line mode</a></li>
+         </ul></li>
+      <li><a href="#mappings">Mappings</a></li>
+   </ul>
+</div>
+
+
+
+<div id="text">
+
+
+<div class="section" id="description" title="description">
+<h3>Description</h3>
+
+   <p id="_1.1" title="_1.1">Probably the first thing one learns in Vim is the cursor movement keys. One of the principles, and virtues, of Vim is clear straight away: put the commands right under the fingers. Yet when you put your fingers on the keyboard you find something wrong: the commands are <i>not</i> under your fingers after all, but off by one to the left! Oh.</p>
+
+   <p id="_1.2" title="_1.2">Would it not be better if the movement keys were <kbd>i</kbd>,<kbd>j</kbd>,<kbd>k</kbd>,<kbd>l</kbd> &ndash; making the familiar &lsquo;inverted-t&rsquo; shape? Almost completely. The only problem is the inertia of convention &ndash; which accreted around rules now obsolete. But if you are a new user of Vim there is no need to be constrained by that. And from this change follows the rest.</p>
+
+   <p id="_1.3" title="_1.3">The single major deficiency is that the help files are not updated to match. But it is easy to look up the original commands in the new reference list, or search the reference list for original commands.</p>
+
+   <h4>Spatial ordering</h4>
+
+   <p id="_1.4" title="_1.4">Spatial grouping is a simple and flexible way to create order, and order enables understanding, learning, and memory. Each set of related keys forms a higher-level module: learning each key strengthens learning the others, and the abstraction allows a choice of members. Alternative orderings are weaker. Choosing commands by mnemonic letters overconstrains the layout, and will be either incomplete or arbitrarily forced. Reusing established conventions and patterns will be incomplete, and for Vim the bases are now forgotten.</p>
+
+   <p id="_1.5" title="_1.5">The principles are:</p>
+   <ul id="_1.6" title="_1.6">
+      <li>Group related commands together on nearby keys.</li>
+      <li>Make important commands easy to reach.</li>
+      <li>Ignore mnemonic-letter choices.</li>
+      <li>Adopt the common standard uses of <kbd>x</kbd>,<kbd>c</kbd>,<kbd>v</kbd>, and <kbd>z</kbd></li>
+      <li>Use only shift and control as modifiers, to permit portability, and allow use of other OS-UI-dependent standard short-cuts with alt.</li>
+      <li>Primarily suit US and Mac UK keyboard layouts.</li>
+   </ul>
+
+   <p id="_1.7" title="_1.7">Not everything is changed; in normal mode:</p>
+   <ul id="_1.8" title="_1.8">
+      <li><kbd>:</kbd> is now made easier as <kbd>;</kbd> (no shift needed)</li>
+      <li><kbd>/</kbd> <kbd>?</kbd> <kbd>n</kbd> are unchanged, and other search is adjacent</li>
+      <li><kbd>(</kbd> <kbd>)</kbd> <kbd>[</kbd> <kbd>]</kbd> <kbd>{</kbd> <kbd>}</kbd> are unchanged</li>
+      <li><kbd>!</kbd> and <kbd>=</kbd> are unchanged</li>
+      <li><kbd>g</kbd> is unchanged</li>
+      <li><kbd>ctrl-w</kbd> is unchanged</li>
+   </ul>
+
+   <h4>Key groups</h4>
+
+   <p id="_1.9" title="_1.9">Mainly for normal mode, but echoed in other modes.</p>
+
+   <h5>Edit</h5>
+   <ul id="_1.10" title="_1.10">
+      <li>Left home-keys: insert and visual modes.</li>
+      <li>Left upper-row: various small edit (repeat, change case, indent, word, char).</li>
+      <li>Left lower-row: standard general edit (undo, cut, copy, paste).</li>
+      <li>other: recording, filtering, <kbd>g</kbd>-prefix.</li>
+   </ul>
+
+   <h5>Move</h5>
+   <ul id="_1.11" title="_1.11">
+      <li>Right home-keys and upper: cursor movement (inverted-t, with word move and home/end grouped around).</li>
+      <li>Right lower-row: search (including grabbed, next occurence, search again).</li>
+      <li>Jump and the paren/bracket/brace commands.</li>
+      <li>other: marking, command-line, use register, <kbd>b</kbd>-prefix.</li>
+   </ul>
+
+   <h5>Tab and pane</h5>
+   <ul id="_1.12" title="_1.12">
+      <li>Number shift: open, close, split, go to.</li>
+   </ul>
+
+   <h4>Keyboard layouts</h4>
+
+   <ul id="_1.13" title="_1.13">
+      <li><a href="#normal-mode-key-layout">Normal mode key layout</a></li>
+      <li><a href="#visual-mode-key-layout">Visual mode key layout</a></li>
+      <li><a href="#insert-mode-key-layout">Insert mode key layout</a></li>
+   </ul>
+
+   <p id="_1.14" title="_1.14"><span class="keyboard"><span class="pane">Tab and pane group</span>, <span class="edit">edit group</span>, <span class="move">movement group</span>.</span></p>
+   <p id="_1.15" title="_1.15"><span class="keyboard"><b>Unmodified in bold</b>, <i>shift in italic</i>, <span class="ctrl">control in small-caps</span>.</span></p>
+
+   <table class="keyboard" id="normal-mode-key-layout" title="normal mode key layout" border="3" frame="border" rules="all" cellpadding="10" cellspacing="10">
+      <caption>Normal mode key layout</caption>
+      <tr align="left" valign="top">
+         <td class="other"><big>`</big><br/><small><b>recording execute</b> <i>record</i></small></td>
+         <td class="other"><big>!</big><br/><small><i>filter lines</i></small></td>
+         <td class="pane bh bl"><big>@</big><br/><small><i>open tab new</i></small></td>
+         <td class="pane bh"><big>#</big><br/><small><i>open tab grabbed</i></small></td>
+         <td class="pane bh"><big>$</big><br/><small><i>split new</i></small></td>
+         <td class="pane bh"><big>%</big><br/><small><i>split open grabbed</i></small></td>
+         <td class="pane bh"><big>^</big><br/><small><i>close others pane</i></small></td>
+         <td class="pane bh"><big>&amp;</big><br/><small><i>above pane</i></small></td>
+         <td class="pane bh br"><big>*</big><br/><small><i>below pane</i></small></td>
+         <td class="move bh bl"><big>(</big><br/><small><i>prev sentence</i></small></td>
+         <td class="move bh"><big>)</big><br/><small><i>next sentence</i></small></td>
+         <td class="move bt br"><big>-</big><br/><small><b>jump</b> <i>back</i></small></td>
+         <td class="other"><big>=</big><br/><small><b>filter lines</b></small></td>
+         <td class="other">back</td>
+      </tr>
+      <tr align="left" valign="top">
+         <td class="other">tab</td>
+         <td class="edit bh bl"><big>Q</big><br/><small><b>repeat last</b> <i>edit</i> <span class="ctrl">cmd-line</span></small></td>
+         <td class="edit bh"><big>W</big><br/><small><b>switch case char</b> <i>motion</i> <span class="ctrl">(window prefix)</span></small></td>
+         <td class="edit bh"><big>E</big><br/><small><b>indent</b> <i>outdent</i></small></td>
+         <td class="edit bh"><big>R</big><br/><small><b>word cut</b> <i>change</i> <span class="ctrl">del</span></small></td>
+         <td class="edit bh br"><big>T</big><br/><small><b>char cut</b> <i>change</i></small></td>
+         <td class="move bt bl"><big>Y</big><br/><small><b>matching item</b> <i>last edit pos</i> <span class="ctrl">column</span></small></td>
+         <td class="move bh"><big>U</big><br/><small><b>left word</b> <i>with punct</i> <span class="ctrl">word end</span></small></td>
+         <td class="move bt bl br"><big>I</big><br/><small><b>up</b> <i>page up</i> <span class="ctrl">scroll up</span></small></td>
+         <td class="move bh"><big>O</big><br/><small><b>right word</b> <i>with punct</i> <span class="ctrl">word end</span></small></td>
+         <td class="move bh br"><big>P</big><br/><small><b>end</b> <span class="ctrl">end para</span></small></td>
+         <td class="move bb"><big>[</big><br/><small><b>move etc.</b> <i>move etc.</i></small></td>
+         <td class="move bh br"><big>]</big><br/><small><b>move etc.</b> <i>move etc.</i></small></td>
+         <td class="other"><big>\</big><br/><small></small></td>
+      </tr>
+      <tr align="left" valign="top">
+         <td class="other">capslock</td>
+         <td class="edit bh bl"><big>A</big><br/><small><b>visual mode</b> <i>line</i> <span class="ctrl">block</span></small></td>
+         <td class="edit bh"><big>S</big><br/><small><b>insert home</b> <i>insert line over</i> <span class="ctrl">create line over</span></small></td>
+         <td class="edit bh"><big>D</big><br/><small><b>insert end</b> <i>insert line under</i> <span class="ctrl">create line under</span></small></td>
+         <td class="edit bh br"><big>F</big><br/><small><b>insert before</b> <i>after</i> <span class="ctrl">replace</span></small></td>
+         <td class="other"><big>G</big><br/><small><b>(g prefix)</b></small></td>
+         <td class="move bb bl"><big>H</big><br/><small><b>home non-blank</b> <i>home</i> <span class="ctrl">home para</span></small></td>
+         <td class="move bh bl"><big>J</big><br/><small><b>left</b> <i>screen top</i> <span class="ctrl">buff top</span></small></td>
+         <td class="move bb"><big>K</big><br/><small><b>down</b> <i>page down</i> <span class="ctrl">scroll down</span></small></td>
+         <td class="move bh br"><big>L</big><br/><small><b>right</b> <i>screen bot</i> <span class="ctrl">buff bot</span></small></td>
+         <td class="other"><big>;</big><br/><small><b>command line</b></small></td>
+         <td class="other"><big>'</big><br/><small><b>use register</b></small></td>
+         <td class="other" colspan="2">return</td>
+      </tr>
+      <tr align="left" valign="top">
+         <td class="mod">shift</td>
+         <td class="edit bh bl"><big>Z</big><br/><small><b>undo</b> <i>redo</i></small></td>
+         <td class="edit bh"><big>X</big><br/><small><b>cut</b> <i>change</i> <span class="ctrl">del</span></small></td>
+         <td class="edit bh"><big>C</big><br/><small><b>copy</b></small></td>
+         <td class="edit bh br"><big>V</big><br/><small><b>paste before</b> <i>after</i></small></td>
+         <td class="other"><big>B</big><br/><small><b>(z prefix)</b></small></td>
+         <td class="move bh bl"><big>N</big><br/><small><b>search again</b> <i>backward</i> <span class="ctrl">unhilight</span></small></td>
+         <td class="move bh"><big>M</big><br/><small><b>next occurence</b> <i>prev</i> <span class="ctrl">repeat last</span></small></td>
+         <td class="move bh"><big>,</big><br/><small><b>search grabbed partial</b> <i>backward</i></small></td>
+         <td class="move bh"><big>.</big><br/><small><b>search grabbed</b> <i>backward</i></small></td>
+         <td class="move bh br"><big>/</big><br/><small><b>search</b> <i>backward</i></small></td>
+         <td class="mod" colspan="3">shift</td>
+      </tr>
+      <tr align="left" valign="top">
+         <td class="mod">ctrl</td>
+         <td class="other"></td>
+         <td class="other"></td>
+         <td class="other" colspan="6"><big>space</big><br/><small><b>go to mark</b> <i>mark a position</i> <span class="ctrl">set prev context mark</span></small></td>
+         <td class="other"></td>
+         <td class="other"></td>
+         <td class="mod" colspan="3">ctrl</td>
+      </tr>
+   </table>
+
+   <table class="keyboard" id="visual-mode-key-layout" title="visual mode key layout" border="3" frame="border" rules="all" cellpadding="10" cellspacing="10">
+      <caption>Visual mode key layout</caption>
+      <tr align="left" valign="top">
+         <td class="other"><big class="unmap">`</big></td>
+         <td class="other"><big>!</big><br/><small><i>filter lines</i></small></td>
+         <td class="pane"><big>@</big><br/><small><i>open tab new</i></small></td>
+         <td class="pane"><big>#</big><br/><small><i>open tab grabbed</i></small></td>
+         <td class="pane"><big>$</big><br/><small><i>split new</i></small></td>
+         <td class="pane"><big>%</big><br/><small><i>split open grabbed</i></small></td>
+         <td class="pane"><big>^</big><br/><small><i>close others pane</i></small></td>
+         <td class="pane"><big>&amp;</big><br/><small><i>above pane</i></small></td>
+         <td class="pane"><big>*</big><br/><small><i>below pane</i></small></td>
+         <td class="move"><big>(</big><br/><small><i>prev sentence</i></small></td>
+         <td class="move"><big>)</big><br/><small><i>next sentence</i></small></td>
+         <td class="move"><big>-</big></td>
+         <td class="other"><big>=</big><br/><small><b>filter lines</b></small></td>
+         <td class="other">back</td>
+      </tr>
+      <tr align="left" valign="top">
+         <td class="other">tab</td>
+         <td class="edit"><big class="unmap">Q</big></td>
+         <td class="edit"><big>W</big><br/><small><b>switch case</b></small></td>
+         <td class="edit"><big>E</big><br/><small><b>indent</b> <i>outdent</i></small></td>
+         <td class="edit"><big class="unmap">R</big></td>
+         <td class="edit"><big>T</big><br/><small><span class="ctrl">replace repeated</span></small></td>
+         <td class="move"><big>Y</big><br/><small><b>matching item</b> <i>last edit pos</i> <span class="ctrl">column</span></small></td>
+         <td class="move"><big>U</big><br/><small><b>left word</b> <i>with punct</i> <span class="ctrl">word end</span></small></td>
+         <td class="move"><big>I</big><br/><small><b>up</b> <i>page</i> <span class="ctrl">scroll</span></small></td>
+         <td class="move"><big>O</big><br/><small><b>right word</b> <i>with punct</i> <span class="ctrl">word end</span></small></td>
+         <td class="move"><big>P</big><br/><small><b>end</b> <i>last</i> <span class="ctrl">para</span></small></td>
+         <td class="move"><big>[</big><br/><small><b>move etc.</b> <i>move etc.</i></small></td>
+         <td class="move"><big>]</big><br/><small><b>move etc.</b> <i>move etc.</i></small></td>
+         <td class="other"><big>|</big><br/><small><i>exchange cursor position 2</i></small></td>
+      </tr>
+      <tr align="left" valign="top">
+         <td class="other">capslock</td>
+         <td class="edit"><big>A</big><br/><small><b>visual mode</b> <i>line</i> <span class="ctrl">block</span></small></td>
+         <td class="edit"><big>S</big><br/><small><i>block insert</i> <span class="ctrl">block append</span></small></td>
+         <td class="edit"><big>D</big><br/><small><b>i text object</b></small></td>
+         <td class="edit"><big>F</big><br/><small><b>a text object</b></small></td>
+         <td class="other"><big>G</big><br/><small><b>(g prefix)</b></small></td>
+         <td class="move"><big>H</big><br/><small><b>home non-blank</b> <i>home</i> <span class="ctrl">home para</span></small></td>
+         <td class="move"><big>J</big><br/><small><b>left</b> <i>screen top</i> <span class="ctrl">buff top</span></small></td>
+         <td class="move"><big>K</big><br/><small><b>down</b> <i>page</i> <span class="ctrl">scroll</span></small></td>
+         <td class="move"><big>L</big><br/><small><b>right</b> <i>screen bot</i> <span class="ctrl">buff bot</span></small></td>
+         <td class="other"><big>;</big><br/><small><b>command line for selected</b></small></td>
+         <td class="other"><big>"</big><br/><small><i>exchange cursor position 1</i></small></td>
+         <td class="other" colspan="2">return</td>
+      </tr>
+      <tr align="left" valign="top">
+         <td class="mod">shift</td>
+         <td class="edit"><big class="unmap">Z</big></td>
+         <td class="edit"><big>X</big><br/><small><b>cut</b> <i>change</i> <span class="ctrl">del</span></small></td>
+         <td class="edit"><big>C</big><br/><small><b>copy</b></small></td>
+         <td class="edit"><big>V</big><br/><small><b>paste over</b> <i>and copy</i></small></td>
+         <td class="other"><big>B</big><br/><small><b>(z prefix)</b></small></td>
+         <td class="move"><big>N</big><br/><small><b>search again</b> <i>backward</i> <span class="ctrl">unhilight</span></small></td>
+         <td class="move"><big>M</big><br/><small><b>next occurence</b> <i>prev</i> <span class="ctrl">repeat last</span></small></td>
+         <td class="move"><big>,</big><br/><small><b>search grabbed partial</b> <i>backward</i></small></td>
+         <td class="move"><big>.</big><br/><small><b>search grabbed</b> <i>backward</i></small></td>
+         <td class="move"><big>/</big><br/><small><b>search selected</b> <i>backward</i></small></td>
+         <td class="mod" colspan="3">shift</td>
+      </tr>
+      <tr align="left" valign="top">
+         <td class="mod">ctrl</td>
+         <td class="other"></td>
+         <td class="other"></td>
+         <td class="other" colspan="6">space</td>
+         <td class="other"></td>
+         <td class="other"></td>
+         <td class="mod" colspan="3">ctrl</td>
+      </tr>
+   </table>
+
+   <table class="keyboard" id="insert-mode-key-layout" title="insert mode key layout" border="3" frame="border" rules="all" cellpadding="10" cellspacing="10">
+      <caption>Insert mode key layout</caption>
+      <tr align="left" valign="top">
+         <td class="other"><big class="unmap">`</big></td>
+         <td class="other"><big class="unmap">!</big></td>
+         <td class="edit"><big>@</big><br/><small><span class="ctrl">paste previous, exit</span></small></td>
+         <td class="other"><big class="unmap">#</big></td>
+         <td class="other"><big class="unmap">$</big></td>
+         <td class="other"><big class="unmap">%</big></td>
+         <td class="other"><big>^</big></td>
+         <td class="other"><big class="unmap">&amp;</big></td>
+         <td class="other"><big class="unmap">*</big></td>
+         <td class="other"><big class="unmap">(</big></td>
+         <td class="other"><big class="unmap">)</big></td>
+         <td class="move"><big>-</big><br/><small><span class="ctrl">to last position</span></small></td>
+         <td class="other"><big class="unmap">=</big></td>
+         <td class="other"><span class="unmap">back</span></td>
+      </tr>
+      <tr align="left" valign="top">
+         <td class="other"><span class="unmap">tab</span></td>
+         <td class="edit"><big>Q</big><br/><small><span class="ctrl">paste previous</span></small></td>
+         <td class="edit"><big>W</big><br/><small><span class="ctrl">switch case</span></small></td>
+         <td class="edit"><big>E</big><br/><small><span class="ctrl">copy char below</span></small></td>
+         <td class="edit"><big>R</big><br/><small><span class="ctrl">copy char above</span></small></td>
+         <td class="edit"><big class="unmap">T</big></td>
+         <td class="move"><big>Y</big><br/><small><span class="ctrl">to last position edited</span></small></td>
+         <td class="move"><big class="unmap">U</big><br/></td>
+         <td class="move"><big class="unmap">I</big><br/><small class="unmap">tab</small></td>
+         <td class="move"><big class="unmap">O</big><br/></td>
+         <td class="move"><big class="unmap">P</big><br/></td>
+         <td class="move"><big>[</big><br/><small><span class="ctrl">exit insert</span></small></td>
+         <td class="move"><big>]</big><br/><small><span class="ctrl">abort insert</span></small></td>
+         <td class="other"><big>\</big><br/></td>
+      </tr>
+      <tr align="left" valign="top">
+         <td class="other"><span class="unmap">capslock</span></td>
+         <td class="edit"><big>A</big><br/><small><span class="ctrl">abbrev trigger</span></small></td>
+         <td class="edit"><big>S</big><br/></td>
+         <td class="edit"><big>D</big><br/><small><span class="ctrl">keyword completion next</span></small></td>
+         <td class="edit"><big>F</big><br/><small><span class="ctrl">command and return to insert</span></small></td>
+         <td class="other"><big>G</big><br/><small><span class="ctrl">(g prefix)</span></small></td>
+         <td class="move"><big class="unmap">H</big><br/></td>
+         <td class="move"><big>J</big><br/></td>
+         <td class="move"><big>K</big><br/></td>
+         <td class="move"><big>L</big><br/></td>
+         <td class="other"><big class="unmap">;</big><br/></td>
+         <td class="other"><big class="unmap">'</big><br/></td>
+         <td class="other" colspan="2"><big>return</big><br/><small><span class="ctrl">ctrl-x sub-mode</span></small></td>
+      </tr>
+      <tr align="left" valign="top">
+         <td class="mod"><span class="unmap">shift</span></td>
+         <td class="edit"><big>Z</big><br/><small><span class="ctrl">delete all inserted</span></small></td>
+         <td class="edit"><big class="unmap">X</big></td>
+         <td class="edit"><big class="unmap">C</big></td>
+         <td class="edit"><big>V</big><br/><small><span class="ctrl">paste reg</span></small></td>
+         <td class="move"><big>B</big><br/><small><span class="ctrl">start new undoable edit</span></small></td>
+         <td class="move"><big class="unmap">N</big><br/></td>
+         <td class="move"><big class="unmap">M</big><br/><small class="unmap">return</small></td>
+         <td class="other"><big class="unmap">,</big><br/></td>
+         <td class="other"><big class="unmap">.</big><br/></td>
+         <td class="other"><big class="unmap">/</big><br/></td>
+         <td class="mod" colspan="3"><span class="unmap">shift</span></td>
+      </tr>
+      <tr align="left" valign="top">
+         <td class="mod">ctrl</td>
+         <td class="other"></td>
+         <td class="other"></td>
+         <td class="other" colspan="6"><span class="unmap">space</span></td>
+         <td class="other"></td>
+         <td class="other"></td>
+         <td class="mod" colspan="3">ctrl</td>
+      </tr>
+   </table>
+</div>
+
+
+<div class="section" id="reference" title="reference">
+<h3>Reference</h3>
+
+   <p>Annotated list of mappings.</p>
+
+   <ul>
+      <li><a href="#ref-normal">Normal mode</a></li>
+      <li><a href="#ref-visual">Visual mode</a></li>
+      <li><a href="#ref-insert">Insert mode</a></li>
+      <li><a href="#ref-commandline">Command-line mode</a></li>
+   </ul>
+
+
+   <div class="part" id="ref-normal">
+   <h4>Normal mode</h4>
+
+   <h5>Tab and pane</h5>
+
+   <table class="reference" id="tabandpane">
+      <tr valign="top"><td><kbd>@</kbd></td> <td>open tab</td> <td>[<code>:tabe</code>]</td></tr>
+      <tr valign="top"><td><kbd>#</kbd></td> <td>open tab, and edit grabbed filename</td> <td>[<code>ctrl-w gf</code>]</td></tr>
+      <tr valign="top"><td><kbd>&pound;</kbd></td> <td>open tab, and edit grabbed filename</td> <td>[<code>ctrl-w gf</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)$</kbd></td> <td>split pane, make new buffer, (n) lines high</td> <td>[<code>ctrl-w n</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)%</kbd></td> <td>split pane, and edit grabbed filename</td> <td>[<code>ctrl-w f</code>]</td></tr>
+      <tr valign="top"><td><kbd>^</kbd></td> <td>close other panes</td> <td>[<code>ctrl-w o</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)&amp;</kbd></td> <td>go to above wrapped pane, or (n)th pane</td> <td>[<code>ctrl-w shft-w</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)*</kbd></td> <td>go to below wrapped pane, or (n)th pane</td> <td>[<code>ctrl-w ctrl-w</code>]</td></tr>
+   </table>
+
+
+   <h5>right top</h5>
+
+   <table class="reference" id="righttop">
+      <tr valign="top"><td><kbd>(n)(</kbd></td> <td>to prev sentence</td> <td>[<code>(</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n))</kbd></td> <td>to next sentence</td> <td>[<code>)</code>]</td></tr>
+      <tr valign="top"><td><kbd>0</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>(n)-</kbd></td> <td>jump back, (n) times</td> <td>[<code>ctrl-o</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)_</kbd></td> <td>jump fore, (n) times</td> <td>[<code>ctrl-i</code>]</td></tr>
+      <tr valign="top"><td><kbd>=(motion)</kbd></td> <td>filter (motion) lines through'equalprg'</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>+</kbd></td> <td>unmap</td></tr>
+   </table>
+
+
+   <h5>edit</h5>
+
+   <table class="reference" id="editupper">
+      <tr valign="top"><td><kbd>(n)q</kbd></td> <td>repeat last insertion or editing command, updating (n)</td> <td>[<code>.</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-q</kbd></td> <td>repeat last command-line, (n) times</td> <td>[<code>@:</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-q</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>(n)w</kbd></td> <td>switch case of char and move left, (n) times</td> <td>[<code>~</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-w(motion)</kbd></td> <td>switch case to position of motion</td> <td>[<code>g~</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-w</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>(n)e</kbd></td> <td>indent (n) lines</td> <td>[<code>&gt;&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-e</kbd></td> <td>outdent (n) lines</td> <td>[<code>&lt;&lt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-e</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>(reg)r</kbd></td> <td>cut a word</td> <td>[<code>daw</code>]</td></tr>
+      <tr valign="top"><td><kbd>(reg)shft-r</kbd></td> <td>cut i word, then insert</td> <td>[<code>ciw</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-r</kbd></td> <td>del a word</td> <td>[<code>"_daw</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)(reg)t</kbd></td> <td>cut char foreward, (n) times</td> <td>[<code>x</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-t(char)</kbd></td> <td>replace/overwrite char, (n) times</td> <td>[<code>r</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-t</kbd></td> <td>unmap</td></tr>
+   </table>
+
+   <table class="reference" id="editmiddle">
+      <tr valign="top"><td><kbd>a</kbd></td> <td>visual, char oriented</td> <td>[<code>v</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-a</kbd></td> <td>visual, line oriented</td> <td>[<code>shft-v</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-a</kbd></td> <td>visual, block oriented</td> <td>[<code>ctrl-v</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)s</kbd></td> <td>insert, at home non-blank, (n) times</td> <td>[<code>g^i</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-s</kbd></td> <td>create new line over, then insert, (n) times</td> <td>[<code>shft-o</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)ctrl-s</kbd></td> <td>create new line over, (n) times</td> <td>[<code>shft-o esc</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)d</kbd></td> <td>insert, at end, (n) times</td> <td>[<code>g$a</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-d</kbd></td> <td>create new line under, then insert, (n) times</td> <td>[<code>o</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)ctrl-d</kbd></td> <td>create new line under, (n) times</td> <td>[<code>o esc</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)f</kbd></td> <td>insert, before position, (n) times</td> <td>[<code>i</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-f</kbd></td> <td>insert, after position, (n) times (append)</td> <td>[<code>a</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)ctrl-f</kbd></td> <td>replace: insert in overwrite mode, (n)-1 times</td> <td>[<code>shft-r</code>]</td></tr>
+      <tr valign="top"><td><kbd>g</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>shft-g</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-g</kbd></td> <td>unmap</td></tr>
+   </table>
+
+   <table class="reference" id="editlower">
+      <tr valign="top"><td><kbd>(n)z</kbd></td> <td>undo, (n) times</td> <td>[<code>u</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-z</kbd></td> <td>redo, (n) times</td> <td>[<code>ctrl-r</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-z</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>(reg)x(motion)</kbd></td> <td>cut to position of motion</td> <td>[<code>d</code>]</td></tr>
+      <tr valign="top"><td><kbd>(reg)shft-x(motion)</kbd></td> <td>cut to position of motion, then insert</td> <td>[<code>c</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-x(motion)</kbd></td> <td>del to position of motion</td> <td>[<code>"_d</code>]</td></tr>
+      <tr valign="top"><td><kbd>(reg)c(motion)</kbd></td> <td>copy to position of motion</td> <td>[<code>y</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-c</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-c</kbd></td> <td>interrupt</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)(reg)v</kbd></td> <td>paste to position before, (n) times</td> <td>[<code>shft-p</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)(reg)shft-v</kbd></td> <td>paste to position after, (n) times</td> <td>[<code>p</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-v</kbd></td> <td>unmap</td></tr>
+
+      <tr valign="top"><td><kbd>(n)(reg)xx</kbd></td> <td>cut line, (n) times</td> <td>[<code>dd</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)(reg)shft-xx</kbd></td> <td>cut line, (n) times, then insert</td> <td>[<code>cc</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)(reg)ctrl-xx</kbd></td> <td>del line, (n) times</td> <td>[<code>"_ dd</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)(reg)cc</kbd></td> <td>copy line, (n) times</td> <td>[<code>yy</code>]</td></tr>
+   </table>
+
+
+   <h5>operator pending</h5>
+
+   <table class="reference" id="operatorpending">
+      <tr valign="top"><td><kbd>d(char)</kbd></td> <td>select 'inner' text object</td> <td>[<code>i</code>]</td></tr>
+      <tr valign="top"><td><kbd>f(char)</kbd></td> <td>select 'a' text object</td> <td>[<code>a</code>]</td></tr>
+   </table>
+
+
+   <h5>move</h5>
+
+   <table class="reference" id="moveupper">
+      <tr valign="top"><td><kbd>y</kbd></td> <td>to matching paren/bracket/brace/comment/etc</td> <td>[<code>%</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-y</kbd></td> <td>to last position edited</td> <td>[<code>`.</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)ctrl-y</kbd></td> <td>go to column (n)</td> <td>[<code>|</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)u</kbd></td> <td>word left start, ignore punctuation, (n) times</td> <td>[<code>shft-b</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-u</kbd></td> <td>word left start, (n) times</td> <td>[<code>b</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)ctrl-u</kbd></td> <td>word left end, ignore punctuation, (n) times</td> <td>[<code>gE</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)i</kbd></td> <td>up (screen line), (n) times</td> <td>[<code>gk</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-i</kbd></td> <td>scroll page up, (n) times</td> <td>[<code>ctrl-b</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)ctrl-i</kbd></td> <td>scroll line up, (n) times</td> <td>[<code>ctrl-y</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)o</kbd></td> <td>word right start, ignore punctuation, (n) times</td> <td>[<code>shft-w</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-o</kbd></td> <td>word right start, (n) times</td> <td>[<code>w</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)ctrl-o</kbd></td> <td>word right end, ignore punctuation, (n) times</td> <td>[<code>shft-e</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)p</kbd></td> <td>end, (n) lines down</td> <td>[<code>g$</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-p</kbd></td> <td>end, (n) lines down</td> <td>[<code>g$</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)ctrl-p</kbd></td> <td>end para, (n) lines down</td> <td>[<code>$</code>]</td></tr>
+   </table>
+
+   <table class="reference" id="movelower">
+      <tr valign="top"><td><kbd>h</kbd></td> <td>home, non-blank</td> <td>[<code>g^</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-h</kbd></td> <td>home</td> <td>[<code>g0</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-h</kbd></td> <td>home para, non-blank</td> <td>[<code>^</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)j</kbd></td> <td>left, (n) times</td> <td>[<code>h</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-j</kbd></td> <td>screen top, or (n) lines from</td> <td>[<code>shft-h</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)ctrl-j</kbd></td> <td>buffer top, or (n) lines from</td> <td>[<code>gg</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)k</kbd></td> <td>down (screen line), (n) times</td> <td>[<code>gj</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-k</kbd></td> <td>scroll page down, (n) times</td> <td>[<code>ctrl-f</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)ctrl-k</kbd></td> <td>scroll line down, (n) times</td> <td>[<code>ctrl-e</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)l</kbd></td> <td>right, (n) times</td> <td>[<code>l</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-l</kbd></td> <td>screen bottom, or (n) lines from</td> <td>[<code>shft-l</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-l</kbd></td> <td>buffer bottom</td> <td>[<code>shft-g</code>]</td></tr>
+   </table>
+
+
+   <h5>right mid</h5>
+
+   <table class="reference" id="rightmid">
+      <tr valign="top"><td><kbd>:</kbd></td> <td>command-line mode</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>;</kbd></td> <td>command-line mode</td> <td>[<code>:</code>]</td></tr>
+      <tr valign="top"><td><kbd>'</kbd></td> <td>use reg</td> <td>[<code>"</code>]</td></tr>
+      <tr valign="top"><td><kbd>"</kbd></td> <td>use reg</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>\</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>|</kbd></td> <td>unmap</td></tr>
+   </table>
+
+
+   <h5>search</h5>
+
+   <table class="reference" id="search">
+      <tr valign="top"><td><kbd>(n)n</kbd></td> <td>search again, (n) times</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-n</kbd></td> <td>search again, in opposite direction, (n) times</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-n</kbd></td> <td>stop highlighting search</td> <td>[<code>:nohlsearch&lt;CR&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)m(char)</kbd></td> <td>to next occurence of (char), (n) times</td> <td>[<code>f</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-m(char)</kbd></td> <td>to previous occurence of (char), (n) times</td> <td>[<code>F</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)ctrl-m</kbd></td> <td>repeat last <kbd>m</kbd> command, (n) times</td> <td>[<code>;</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n),</kbd></td> <td>to fore occurence of grabbed word, partial match, (n) times</td> <td>[<code>g*</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)&lt;</kbd></td> <td>to back occurence of grabbed word, partial match, (n) times</td> <td>[<code>g#</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n).</kbd></td> <td>to fore occurence of grabbed word, (n) times</td> <td>[<code>*</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)&gt;</kbd></td> <td>to back occurence of grabbed word, (n) times</td> <td>[<code>#</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)/(pattern)</kbd></td> <td>search foreward for pattern, (n) times</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)?(pattern)</kbd></td> <td>search backward for pattern, (n) times</td> <td>[<code>leave unchanged</code>]</td></tr>
+   </table>
+
+
+   <h5>record</h5>
+
+   <table class="reference" id="record">
+      <tr valign="top"><td><kbd>~(reg)</kbd></td> <td>record series of commands to (alpha/numeric char register)</td> <td>[<code>q</code>]</td></tr>
+      <tr valign="top"><td><kbd>~</kbd></td> <td>end recording</td> <td>[<code>q</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)`(reg)</kbd></td> <td>execute (reg), (n) times</td> <td>[<code>@</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)``</kbd></td> <td>repeat prev `, (n) times</td> <td>[<code>@@</code>]</td></tr>
+   </table>
+
+
+   <h5>mark</h5>
+
+   <table class="reference" id="mark">
+      <tr valign="top"><td><kbd>shft-&lt;Space&gt;(letter)</kbd></td> <td>mark a position (letter is case-sensitive)</td> <td>[<code>m</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-&lt;Space&gt;</kbd></td> <td>set previous context mark</td> <td>[<code>m`</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;Space&gt;(letter)</kbd></td> <td>return to marked position (col and row)</td> <td>[<code>`</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;Space&gt;&lt;Space&gt;</kbd></td> <td>return to last position (col and row)</td> <td>[<code>``</code>]</td></tr>
+   </table>
+
+
+   <h5>special keys</h5>
+
+   <table class="reference" id="specialkeys">
+      <tr valign="top"><td><kbd>(n)&lt;BS&gt;</kbd></td> <td>del char backward, (n) times</td> <td>[<code>"_shft-x</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-&lt;BS&gt;</kbd></td> <td>del word backward, (n) times</td> <td>[<code>"_db</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)&lt;Del&gt;</kbd></td> <td>del char foreward, (n) times</td> <td>[<code>"_x</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-&lt;Del&gt;</kbd></td> <td>del word foreward, (n) times</td> <td>[<code>"_de</code>]</td></tr>
+
+      <tr valign="top"><td><kbd>&lt;Home&gt;</kbd></td> <td>home screen line</td> <td>[<code>g0</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-Home&gt;</kbd></td> <td>home para</td> <td>[<code>&lt;Home&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-Home&gt;</kbd></td> <td>start of file</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;End&gt;</kbd></td> <td>end screen line</td> <td>[<code>g$</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-End&gt;</kbd></td> <td>end para</td> <td>[<code>&lt;End&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-End&gt;</kbd></td> <td>end of file</td> <td>[<code>leave unchanged</code>]</td></tr>
+
+      <tr valign="top"><td><kbd>&lt;PageUp&gt;</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-PageUp&gt;</kbd></td> <td>screen top</td> <td>[<code>&lt;S-h&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-PageUp&gt;</kbd></td> <td>prev tab</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;PageDown&gt;</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-PageDown&gt;</kbd></td> <td>screen bottom</td> <td>[<code>&lt;S-l&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-PageDown&gt;</kbd></td> <td>next tab</td> <td>[<code>leave unchanged</code>]</td></tr>
+
+      <tr valign="top"><td><kbd>&lt;Up&gt;</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-Up&gt;</kbd></td> <td>up para</td> <td>[<code>&lt;Up&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-Up&gt;</kbd></td> <td>scroll line up</td> <td>[<code>ctrl-y</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;Down&gt;</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-Down&gt;</kbd></td> <td>down para</td> <td>[<code>&lt;Down&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-Down&gt;</kbd></td> <td>scroll line down</td> <td>[<code>ctrl-e</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;Left&gt;</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-Left&gt;</kbd></td> <td>word left start</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-Left&gt;</kbd></td> <td>word left start, ignore punctuation</td> <td>[<code>shft-b</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;Right&gt;</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-Right&gt;</kbd></td> <td>word right start</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-Right&gt;</kbd></td> <td>word right start, ignore punctuation</td> <td>[<code>shft-w</code>]</td></tr>
+   </table>
+
+
+   <h5>g prefixeds</h5>
+
+   <table class="reference" id="gprefixeds">
+      <tr valign="top"><td><kbd>gm</kbd></td> <td>go to first occurence in current function of grabbed token</td> <td>[<code>gd</code>]</td></tr>
+      <tr valign="top"><td><kbd>g shft-m</kbd></td> <td>go to first occurence of grabbed token</td> <td>[<code>gD</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)gj</kbd></td> <td>join lines</td> <td>[<code>shft-j</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)g shft-j</kbd></td> <td>join lines (no space inserts)</td> <td>[<code>g shft-j</code>]</td></tr>
+      <tr valign="top"><td><kbd>g:</kbd></td> <td>open commandline history window (ctrl-c to exit)</td> <td>[<code>q:</code>]</td></tr>
+      <tr valign="top"><td><kbd>g/</kbd></td> <td>open search history window (ctrl-c to exit)</td> <td>[<code>q/</code>]</td></tr>
+   </table>
+
+
+   <h5>other</h5>
+
+   <table class="reference" id="other">
+      <tr valign="top"><td><kbd>!(motion)(command)&lt;CR&gt;</kbd></td> <td>filter lines covered by motion through command</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)!!(command)&lt;CR&gt;</kbd></td> <td>filter (n) lines through command</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>b</kbd></td> <td>z-prefix</td> <td><code>[z]</code></td></tr>
+      <tr valign="top"><td><kbd>shft-b</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-b</kbd></td> <td>unmap</td></tr>
+
+      <tr valign="top"><td><kbd>&lt;F2&gt;</kbd></td> <td>toggle read-only and no-modify</td> <td>[<code>:set ro! &lt;Bar&gt; :setl noma!&lt;CR&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;F3&gt;</kbd></td> <td>toggle show tabs and trails</td> <td>[<code>:set list!&lt;CR&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;F4&gt;</kbd></td> <td>set fileformat to unix</td> <td>[<code>:set ff=unix</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;F5&gt;</kbd></td> <td>set fileformat to dos</td> <td>[<code>:set ff=dos</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-cmd-p</kbd></td> <td>unmap</td></tr>
+   </table>
+
+
+   <h5>unchanged</h5>
+
+   <table class="reference" id="unchanged">
+      <tr valign="top"><td><kbd>!</kbd></td></tr>
+      <tr valign="top"><td><kbd>(</kbd></td></tr>
+      <tr valign="top"><td><kbd>)</kbd></td></tr>
+      <tr valign="top"><td><kbd>=</kbd></td></tr>
+      <tr valign="top"><td><kbd>ctrl-w</kbd></td></tr>
+      <tr valign="top"><td><kbd>g</kbd></td></tr>
+      <tr valign="top"><td><kbd>ctrl-c</kbd></td></tr>
+      <tr valign="top"><td><kbd>[</kbd></td></tr>
+      <tr valign="top"><td><kbd>{</kbd></td></tr>
+      <tr valign="top"><td><kbd>]</kbd></td></tr>
+      <tr valign="top"><td><kbd>}</kbd></td></tr>
+      <tr valign="top"><td><kbd>:</kbd></td></tr>
+      <tr valign="top"><td><kbd>"</kbd></td></tr>
+      <tr valign="top"><td><kbd>\</kbd></td></tr>
+      <tr valign="top"><td><kbd>/</kbd></td></tr>
+      <tr valign="top"><td><kbd>?</kbd></td></tr>
+   </table>
+
+
+   <h5>available</h5>
+
+   <table class="reference" id="available1">
+      <tr valign="top"><td><kbd>0</kbd></td></tr>
+      <tr valign="top"><td><kbd>+</kbd></td></tr>
+      <tr valign="top"><td><kbd>:</kbd></td></tr>
+      <tr valign="top"><td><kbd>"</kbd></td></tr>
+      <tr valign="top"><td><kbd>|</kbd></td></tr>
+   </table>
+
+   <table class="reference" id="available2">
+      <tr valign="top"><td><kbd>ctrl-q</kbd></td></tr>
+      <tr valign="top"><td><kbd>ctrl-e</kbd></td></tr>
+      <tr valign="top"><td><kbd>ctrl-t</kbd></td></tr>
+      <tr valign="top"><td><kbd>shft-g</kbd></td></tr>
+      <tr valign="top"><td><kbd>ctrl-g</kbd></td></tr>
+      <tr valign="top"><td><kbd>ctrl-z</kbd></td></tr>
+      <tr valign="top"><td><kbd>shft-c</kbd></td></tr>
+      <tr valign="top"><td><kbd>ctrl-v</kbd></td></tr>
+   </table>
+
+   <table class="reference" id="available3">
+      <tr valign="top"><td><kbd>shft-b</kbd></td></tr>
+      <tr valign="top"><td><kbd>ctrl-b</kbd></td></tr>
+   </table>
+
+
+   <h5>netrw plugin</h5>
+
+   <p id="netrw1">Fix <kbd>:Exp</kbd>/<kbd>:Sex</kbd> navigation keys &ndash; new mapping of <kbd>i</kbd> (cursor up) doesn't work &ndash; just move the plugin's <code>i</code> key to something else:</p>
+
+   <ul id="netrw2">
+      <li><code>netrw.vim</code></li>
+      <li><code>/Applications/MacVim.app/Contents/Resources/vim/runtime/autoload/</code></li>
+      <li>
+         change <code>i</code> to <code>b</code>:
+         <pre><code>-   nnoremap &lt;buffer&gt; &lt;silent&gt; i	:call &lt;SID&gt;NetrwListStyle(1)&lt;cr&gt;
++   nnoremap &lt;buffer&gt; &lt;silent&gt; b	:call &lt;SID&gt;NetrwListStyle(1)&lt;cr&gt;</code></pre>
+      </li>
+   </ul>
+   </div><!--part-->
+
+
+   <div class="part" id="ref-visual">
+   <h4>Visual mode</h4>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>!</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>=</kbd></td> <td>[leave unchanged]</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>q</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>shft-q</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-q</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>w</kbd></td> <td>[inherit] switch case</td> <td>[<code>~</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-w</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-w</kbd></td> <td>[inherit]</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)e</kbd></td> <td>indent, (n) amount</td> <td>[<code>&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)shft-e</kbd></td> <td>outdent, (n) amount</td> <td>[<code>&lt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-e</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>r</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>shft-r</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-r</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>t</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>shft-t</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-t(char)</kbd></td> <td>[inherit] replace visual selection with repeated char</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>a</kbd></td> <td>[inherit] visual, char oriented</td> <td>[<code>v</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-a</kbd></td> <td>[inherit] visual, line oriented</td> <td>[<code>shft-v</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-a</kbd></td> <td>[inherit] visual, block oriented</td> <td>[<code>ctrl-v</code>]</td></tr>
+      <tr valign="top"><td><kbd>s(char)</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>shft-s</kbd></td> <td>block insert</td> <td>[<code>I</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-s</kbd></td> <td>block append</td> <td>[<code>A</code>]</td></tr>
+      <tr valign="top"><td><kbd>d(char)</kbd></td> <td>select 'inner' text object</td> <td>[<code>i</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-d</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-d</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>f(char)</kbd></td> <td>select 'a' text object</td> <td>[<code>a</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-f</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-f</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>g</kbd></td> <td>[inherit]</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-g</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-g</kbd></td> <td>unmap</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>z</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>shft-z</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-z</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>(reg)x</kbd></td> <td>[inherit] cut visual selection</td> <td>[<code>d</code>]</td></tr>
+      <tr valign="top"><td><kbd>(reg)shft-x</kbd></td> <td>[inherit] cut visual selection, then insert</td> <td>[<code>c</code>]</td></tr>
+      <tr valign="top"><td><kbd>(reg)ctrl-x</kbd></td> <td>[inherit] del visual selection</td> <td>[<code>"_d</code>]</td></tr>
+      <tr valign="top"><td><kbd>(reg)c</kbd></td> <td>[inherit] copy visual selection</td> <td>[<code>y</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-c</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-c</kbd></td> <td>[inherit]</td></tr>
+      <tr valign="top"><td><kbd>(n)(reg)v</kbd></td> <td>paste over visual selection</td> <td>[<code>&lt;Esc&gt;pgv"_d</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)(reg)shft-v</kbd></td> <td>paste over visual selection (and copy), (n) times</td> <td>[<code>shft-p</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-v</kbd></td> <td>unmap</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>xx</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>shft-x shft-x</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-x ctrl-x</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>cc</kbd></td> <td>unmap</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>shft-p</kbd></td> <td>last char of screen line</td> <td>[<code>g$h</code>]</td></tr>
+      <tr valign="top"><td>[inherit other movement keys]</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>:</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>;</kbd></td> <td>start ex command for highlighted lines</td> <td>[<code>v_:</code>]</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>/</kbd></td> <td>search for selected text</td> <td>[<code>y/&lt;C-R&gt;"&lt;CR&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>?</kbd></td> <td>search for selected text, backwards</td> <td>[<code>y?&lt;C-R&gt;"&lt;CR&gt;</code>]</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>"</kbd></td> <td>exchange cursor position with start of visual selection</td> <td>[<code>v_o</code>]</td></tr>
+      <tr valign="top"><td><kbd>|</kbd></td> <td>exchange cursor position with opposite corner of block</td> <td>[<code>v_O</code>]</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>~</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>`</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>``</kbd></td> <td>unmap</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>(reg)&lt;S-Del&gt;</kbd></td> <td>cut (same as x)</td> <td>[<code>v_&lt;Del&gt;</code>]</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>gq</kbd></td> <td>[leave unchanged] format lines to 'textwidth' length</td></tr>
+      <tr valign="top"><td><kbd>gv</kbd></td> <td>[leave unchanged] start same selection as last one</td></tr>
+      <tr valign="top"><td><kbd>(n)gj</kbd></td> <td>[inherit] join lines</td> <td>[<code>shft-j</code>]</td></tr>
+      <tr valign="top"><td><kbd>(n)g shft-j</kbd></td> <td>[inherit] join lines (no space inserts)</td> <td>[<code>g shft-j</code>]</td></tr>
+   </table>
+   </div><!--part-->
+
+
+   <div class="part" id="ref-insert">
+   <h4>Insert mode</h4>
+
+   <h5>edit</h5>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>ctrl-@</kbd></td> <td>[leave unchanged] paste previously pasted text, and exit</td> <td>[<code>ctrl-@</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-q</kbd></td> <td>paste previously pasted text</td> <td>[<code>ctrl-a</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-w</kbd></td> <td>switch case of char and move left</td> <td>[<code>&lt;Esc&gt;~a</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-e</kbd></td> <td>[leave unchanged] duplicate char from line below</td> <td>[<code>ctrl-e</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-r</kbd></td> <td>duplicate char from line above</td> <td>[<code>ctrl-y</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-t</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-a</kbd></td> <td>trigger abbreviation</td> <td>[<code>ctrl-]</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-s</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-d</kbd></td> <td>keyword completion next</td> <td>[<code>ctrl-n</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-f</kbd></td> <td>execute command and return to insert</td> <td>[<code>ctrl-o</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-g</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-z</kbd></td> <td>delete all inserted chars in current line</td> <td>[<code>ctrl-u</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-x</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-c</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-v(reg)</kbd></td> <td>paste contents of (reg)</td> <td>[<code>ctrl-r(reg)</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-[</kbd></td> <td>[leave unchanged] exit insert mode</td> <td>[<code>&lt;Esc&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-]</kbd></td> <td>abort insert mode</td> <td>[<code>ctrl-c</code>]</td></tr>
+   </table>
+
+
+   <h5>move, etc.</h5>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>ctrl-_</kbd></td> <td>to last position</td> <td>[<code>&lt;Esc&gt;ctrl-o a</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-y</kbd></td> <td>to last position edited</td> <td>[<code>&lt;Esc&gt;`.a</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-b</kbd></td> <td>start new undoable edit</td> <td>[<code>ctrl-g u</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-&lt;CR&gt;</kbd></td> <td>ctrl-x sub-mode</td> <td>[<code>ctrl-x</code>]</td></tr>
+   </table>
+
+
+   <h5>other</h5>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>ctrl-u</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-i</kbd></td> <td>[leave unchanged] fixed to <kbd>&lt;Tab&gt;</kbd></td></tr>
+      <tr valign="top"><td><kbd>ctrl-o</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-p</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-h</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-n</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-m</kbd></td> <td>[leave unchanged] fixed to <kbd>&lt;CR&gt;</kbd></td></tr>
+      <tr valign="top"><td><kbd>ctrl-\ a-z</kbd></td> <td>[leave unchanged] reserved</td></tr>
+      <tr valign="top"><td><kbd>ctrl-^</kbd></td> <td>[leave unchanged] toggle use of <code>:lmap</code> mappings</td></tr>
+   </table>
+
+
+   <h5>special keys</h5>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>&lt;BS&gt;</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>shft-&lt;BS&gt;</kbd></td> <td>del word backward</td> <td>[<code>ctrl-w</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;Del&gt;</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>shft-&lt;Del&gt;</kbd></td> <td>del word foreward</td> <td>[<code>&lt;Esc&gt;l"_dei</code>]</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>&lt;Home&gt;</kbd></td> <td>home screen line</td> <td>[<code>&lt;Esc&gt;g^a</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-Home&gt;</kbd></td> <td>home para</td> <td>[<code>&lt;Home&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-Home&gt;</kbd></td> <td>start of file</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;End&gt;</kbd></td> <td>end screen line</td> <td>[<code>&lt;Esc&gt;g$i</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-End&gt;</kbd></td> <td>end para</td> <td>[<code>&lt;End&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-End&gt;</kbd></td> <td>end of file</td> <td>[<code>leave unchanged</code>]</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>&lt;PageUp&gt;</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-PageUp&gt;</kbd></td> <td>screen top</td> <td>[<code>&lt;Esc&gt;&lt;S-h&gt;a</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-PageUp&gt;</kbd></td> <td>prev tab</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;PageDown&gt;</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-PageDown&gt;</kbd></td> <td>screen bottom</td> <td>[<code>&lt;Esc&gt;&lt;S-l&gt;a</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-PageDown&gt;</kbd></td> <td>next tab</td> <td>[<code>leave unchanged</code>]</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>&lt;Up&gt;</kbd></td> <td>up screen line</td> <td>[<code>&lt;Esc&gt;gka</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-Up&gt;</kbd></td> <td>up para</td> <td>[<code>&lt;Up&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-Up&gt;</kbd></td> <td>scroll line up</td> <td>[<code>&lt;Esc&gt;ctrl-ya</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;Down&gt;</kbd></td> <td>down screen line</td> <td>[<code>&lt;Esc&gt;gja</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-Down&gt;</kbd></td> <td>down para</td> <td>[<code>&lt;Down&gt;</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-Down&gt;</kbd></td> <td>scroll line down</td> <td>[<code>&lt;Esc&gt;ctrl-ea</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;Left&gt;</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-Left&gt;</kbd></td> <td>word left start</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-Left&gt;</kbd></td> <td>word left start, ignore punctuation</td> <td>[<code>&lt;Esc&gt;shft-bi</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;Right&gt;</kbd></td> <td>[leave unchanged]</td></tr>
+      <tr valign="top"><td><kbd>&lt;S-Right&gt;</kbd></td> <td>word right start</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>&lt;C-Right&gt;</kbd></td> <td>word right start, ignore punctuation</td> <td>[<code>&lt;Esc&gt;shft-wa</code>]</td></tr>
+   </table>
+
+
+   <h5>make UK keyboard more US</h5>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>&pound;</kbd></td> <td>#</td></tr>
+      <tr valign="top"><td><kbd>§</kbd></td> <td>`</td></tr>
+      <tr valign="top"><td><kbd>±</kbd></td> <td>~</td></tr>
+   </table>
+   </div><!--part-->
+
+
+   <div class="part" id="ref-commandline">
+   <h4>Command-line mode</h4>
+
+   <h5>pattern complete</h5>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>tab</kbd></td> <td>complete pattern / next match</td> <td>[<code>leave unchanged</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-tab</kbd></td> <td>complete pattern / previous match</td> <td>[<code>leave unchanged</code>]</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>ctrl-q</kbd></td> <td>complete pattern, with longest match</td> <td>[<code>ctrl-l</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-w</kbd></td> <td>complete pattern, with all matches</td> <td>[<code>ctrl-a</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-e</kbd></td> <td>go to next wildcard match</td> <td>[<code>ctrl-n</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-r</kbd></td> <td>go to previous wildcard match</td> <td>[<code>ctrl-p</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-r ctrl-r</kbd></td> <td>unmap</td></tr>
+      <tr valign="top"><td><kbd>ctrl-t</kbd></td> <td>list completions matching pattern</td> <td>[<code>ctrl-d</code>]</td></tr>
+   </table>
+
+
+   <h5>other</h5>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>ctrl-o</kbd></td> <td>insert number as byte</td> <td>[<code>ctrl-v</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-a</kbd></td> <td>trigger abbreviation</td> <td>[<code>ctrl-]</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-v</kbd></td> <td>paste register or object as typed</td> <td>[<code>ctrl-r</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-v ctrl-v</kbd></td> <td>paste register or object literally</td> <td>[<code>ctrl-r ctrl-r</code>]</td></tr>
+      <tr valign="top"><td><kbd>ctrl-h</kbd></td> <td>open command-line window</td> <td>[<code>ctrl-f</code>]</td></tr>
+      <tr valign="top"><td><kbd>shft-&lt;BS&gt;</kbd></td> <td>del word backward</td> <td>[<code>ctrl-w</code>]</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td>(other special keys, leave unchanged)</td></tr>
+   </table>
+
+   <table class="reference">
+      <tr valign="top"><td><kbd>&pound;</kbd></td> <td># (to match insert mode)</td></tr>
+      <tr valign="top"><td><kbd>:Tabv[iew]</kbd></td> <td>open new tab and view file</td> <td>[<code>(using :tabe and :view)</code>]</td></tr>
+   </table>
+   </div><!--part-->
+</div>
+
+
+<div class="section" id="mappings" title="mappings">
+<h3>Mappings</h3>
+
+   <p>All the Vim code.</p>
+
+<pre><code>" === ErgoVim key mappings ===
+
+" Version 1.
+"
+" http://www.hxa.name/articles/content/ergovim-key-mappings_hxa7241_2010.html
+
+
+" --- normal mode ---
+
+" leave unchanged: ! and !!
+
+" --- tab and pane ---
+noremap @ :tabe&lt;CR&gt;
+noremap # &lt;C-w&gt;gf
+noremap &pound; &lt;C-w&gt;gf
+noremap $ &lt;C-w&gt;n
+noremap % &lt;C-w&gt;f
+noremap ^ &lt;C-w&gt;o
+noremap &amp; &lt;C-w&gt;&lt;S-w&gt;
+noremap * &lt;C-w&gt;&lt;C-w&gt;
+
+" leave unchanged: (
+" leave unchanged: )
+noremap 0 &lt;Nop&gt;
+noremap - &lt;C-o&gt;
+noremap _ &lt;C-i&gt;
+" leave unchanged: =
+noremap + &lt;Nop&gt;
+
+" --- edit ---
+noremap q .
+noremap &lt;S-q&gt; @:
+noremap &lt;C-q&gt; &lt;Nop&gt;
+noremap w ~
+noremap &lt;S-w&gt; g~
+" leave unchanged: &lt;C-w&gt;
+noremap e &gt;&gt;
+noremap &lt;S-e&gt; &lt;&lt;
+noremap &lt;C-e&gt; &lt;Nop&gt;
+noremap r daw
+noremap &lt;S-r&gt; ciw
+noremap &lt;C-r&gt; "_daw
+noremap t x
+noremap &lt;S-t&gt; r
+noremap &lt;C-t&gt; &lt;Nop&gt;
+
+noremap a v
+noremap &lt;S-a&gt; &lt;S-v&gt;
+noremap &lt;C-a&gt; &lt;C-v&gt;
+noremap s g^i
+noremap &lt;S-s&gt; &lt;S-o&gt;
+noremap &lt;C-s&gt; &lt;S-o&gt;&lt;Esc&gt;
+noremap d g$a
+noremap &lt;S-d&gt; o
+noremap &lt;C-d&gt; o&lt;Esc&gt;
+noremap f i
+noremap &lt;S-f&gt; a
+noremap &lt;C-f&gt; &lt;S-r&gt;
+" leave unchanged: g
+noremap &lt;S-g&gt; &lt;Nop&gt;
+noremap &lt;C-g&gt; &lt;Nop&gt;
+
+noremap z u
+noremap &lt;S-z&gt; &lt;C-r&gt;
+noremap &lt;C-z&gt; &lt;Nop&gt;
+noremap x d
+noremap &lt;S-x&gt; c
+noremap &lt;C-x&gt; "_d
+noremap c y
+noremap &lt;S-c&gt; &lt;Nop&gt;
+" leave unchanged: &lt;C-c&gt;
+noremap v &lt;S-p&gt;
+noremap &lt;S-v&gt; p
+noremap &lt;C-v&gt; &lt;Nop&gt;
+
+noremap xx dd
+noremap &lt;S-x&gt;&lt;S-x&gt; cc
+noremap &lt;C-x&gt;&lt;C-x&gt; "_dd
+noremap cc yy
+
+onoremap d i
+onoremap f a
+
+" --- move ---
+noremap y %
+noremap &lt;S-y&gt; `.
+noremap &lt;C-y&gt; &lt;Bar&gt;
+noremap u &lt;S-b&gt;
+noremap &lt;S-u&gt; b
+noremap &lt;C-u&gt; gE
+noremap i gk
+noremap &lt;S-i&gt; &lt;C-b&gt;
+noremap &lt;C-i&gt; &lt;C-y&gt;
+noremap o &lt;S-w&gt;
+noremap &lt;S-o&gt; w
+noremap &lt;C-o&gt; &lt;S-e&gt;
+noremap p g$
+noremap &lt;S-p&gt; g$
+noremap &lt;C-p&gt; $
+" leave unchanged: [
+" leave unchanged: {
+" leave unchanged: ]
+" leave unchanged: }
+
+noremap h g^
+noremap &lt;S-h&gt; g0
+noremap &lt;C-h&gt; ^
+noremap j h
+noremap &lt;S-j&gt; &lt;S-h&gt;
+noremap &lt;C-j&gt; gg
+noremap k gj
+noremap &lt;S-k&gt; &lt;C-f&gt;
+noremap &lt;C-k&gt; &lt;C-e&gt;
+" leave unchanged: l
+" leave unchanged: &lt;S-l&gt;
+noremap &lt;C-l&gt; &lt;S-g&gt;
+
+" leave unchanged: :
+noremap ; :
+noremap ' "
+" leave unchanged: "
+" leave unchanged: \
+noremap &lt;Bar&gt; &lt;Nop&gt;
+
+" --- search ---
+" leave unchanged: n
+" leave unchanged: &lt;S-n&gt;
+noremap &lt;C-n&gt; :nohlsearch&lt;CR&gt;
+noremap m f
+noremap &lt;S-m&gt; &lt;S-f&gt;
+noremap &lt;C-m&gt; ;
+
+noremap , g*
+noremap &lt; g#
+noremap &lt;&lt; &lt;Nop&gt;
+noremap . *
+noremap &gt; #
+noremap &gt;&gt; &lt;Nop&gt;
+" leave unchanged: /
+" leave unchanged: ?
+
+" --- record ---
+noremap ~ q
+noremap ` @
+noremap `` @@
+
+" --- mark ---
+noremap &lt;S-Space&gt; m
+noremap &lt;C-Space&gt; m`
+noremap &lt;Space&gt; `
+noremap &lt;Space&gt;&lt;Space&gt; ``
+
+" --- special keys ---
+noremap &lt;BS&gt; "_&lt;S-x&gt;
+noremap &lt;S-BS&gt; "_db
+noremap &lt;Del&gt; "_x
+noremap &lt;S-Del&gt; "_de
+
+noremap &lt;Home&gt; g0
+noremap &lt;S-Home&gt; &lt;Home&gt;
+" leave unchanged: &lt;C-Home&gt;
+noremap &lt;End&gt; g$
+noremap &lt;S-End&gt; &lt;End&gt;
+" leave unchanged: &lt;C-End&gt;
+
+" leave unchanged: &lt;PageUp&gt;
+noremap &lt;S-PageUp&gt; &lt;S-h&gt;
+" leave unchanged: &lt;C-PageUp&gt;
+" leave unchanged: &lt;PageDown&gt;
+noremap &lt;S-PageDown&gt; &lt;S-l&gt;
+" leave unchanged: &lt;C-PageDown&gt;
+
+noremap &lt;Up&gt; gk
+noremap &lt;S-Up&gt; &lt;Up&gt;
+noremap &lt;C-Up&gt; &lt;C-y&gt;
+noremap &lt;Down&gt; gj
+noremap &lt;S-Down&gt; &lt;Down&gt;
+noremap &lt;C-Down&gt; &lt;C-e&gt;
+" leave unchanged: &lt;Left&gt;
+" leave unchanged: &lt;S-Left&gt;
+noremap &lt;C-Left&gt; &lt;S-b&gt;
+" leave unchanged: &lt;Right&gt;
+" leave unchanged: &lt;S-Right&gt;
+noremap &lt;C-Right&gt; &lt;S-w&gt;
+
+" --- g prefixeds ---
+noremap gm gd
+noremap g&lt;S-m&gt; gD
+noremap gj &lt;S-j&gt;
+" leave unchanged: g&lt;S-j&gt;
+noremap g: q:
+noremap g/ q/
+
+" --- other ---
+noremap b z
+noremap &lt;S-b&gt; &lt;Nop&gt;
+noremap &lt;C-b&gt; &lt;Nop&gt;
+noremap &lt;D-P&gt; &lt;Nop&gt;
+noremap &lt;F2&gt; :set ro! &lt;Bar&gt; :setl noma!&lt;CR&gt;
+noremap &lt;F3&gt; :set list!&lt;CR&gt;
+noremap &lt;F4&gt; :set ff=unix&lt;CR&gt;
+noremap &lt;F5&gt; :set ff=dos&lt;CR&gt;
+
+
+" --- visual mode ---
+
+" leave unchanged: !
+" leave unchanged: =
+
+vnoremap q &lt;Nop&gt;
+vnoremap &lt;S-q&gt; &lt;Nop&gt;
+vnoremap &lt;C-q&gt; &lt;Nop&gt;
+" inherit: w
+vnoremap &lt;S-w&gt; &lt;Nop&gt;
+" inherit: &lt;C-w&gt;
+vnoremap e &gt;
+vnoremap &lt;S-e&gt; &lt;
+vnoremap &lt;C-e&gt; &lt;Nop&gt;
+vnoremap r &lt;Nop&gt;
+vnoremap &lt;S-r&gt; &lt;Nop&gt;
+vnoremap &lt;C-r&gt; &lt;Nop&gt;
+vnoremap t &lt;Nop&gt;
+vnoremap &lt;S-t&gt; &lt;Nop&gt;
+" inherit: &lt;C-t&gt;
+
+" leave unchanged: a
+" leave unchanged: &lt;S-a&gt;
+" leave unchanged: &lt;C-a&gt;
+vnoremap s &lt;Nop&gt;
+vnoremap &lt;S-s&gt; I
+vnoremap &lt;C-s&gt; A
+vnoremap d i
+vnoremap &lt;S-d&gt; &lt;Nop&gt;
+vnoremap &lt;C-d&gt; &lt;Nop&gt;
+vnoremap f a
+vnoremap &lt;S-f&gt; &lt;Nop&gt;
+vnoremap &lt;C-f&gt; &lt;Nop&gt;
+" inherit: g
+vnoremap &lt;S-g&gt; &lt;Nop&gt;
+vnoremap &lt;C-g&gt; &lt;Nop&gt;
+
+vnoremap z &lt;Nop&gt;
+vnoremap &lt;S-z&gt; &lt;Nop&gt;
+vnoremap &lt;C-z&gt; &lt;Nop&gt;
+" inherit: x
+" inherit: &lt;S-x&gt;
+" inherit: &lt;C-x&gt;
+" inherit: c
+vnoremap &lt;S-c&gt; &lt;Nop&gt;
+" inherit: &lt;C-c&gt;
+vnoremap v &lt;Esc&gt;pgv"_d
+vnoremap &lt;S-v&gt; &lt;S-p&gt;
+vnoremap &lt;C-v&gt; &lt;Nop&gt;
+
+vnoremap &lt;S-p&gt; g$h
+
+vunmap xx
+vunmap &lt;S-x&gt;&lt;S-x&gt;
+vunmap &lt;C-x&gt;&lt;C-x&gt;
+vunmap cc
+
+" leave unchanged: :
+vnoremap ; v_:
+
+vnoremap / y/&lt;C-R&gt;"&lt;CR&gt;
+vnoremap ? y?&lt;C-R&gt;"&lt;CR&gt;
+
+vnoremap " o
+vnoremap &lt;Bar&gt; &lt;S-o&gt;
+
+vnoremap ~ &lt;Nop&gt;
+vnoremap ` &lt;Nop&gt;
+vunmap ``
+
+vnoremap &lt;S-Del&gt; v_&lt;Del&gt;
+
+" leave unchanged: gq
+" leave unchanged: gv
+" inherit: gj
+" inherit: g shft-j
+
+
+" --- insert mode ---
+
+" --- edit
+" leave unchanged: &lt;C-@&gt;
+inoremap &lt;C-q&gt; &lt;C-a&gt;
+inoremap &lt;C-w&gt; &lt;Esc&gt;~a
+" leave unchanged: &lt;C-e&gt;
+inoremap &lt;C-r&gt; &lt;C-y&gt;
+inoremap &lt;C-t&gt; &lt;Nop&gt;
+inoremap &lt;C-a&gt; &lt;C-]&gt;
+" leave unchanged: &lt;C-s&gt;
+inoremap &lt;C-d&gt; &lt;C-n&gt;
+inoremap &lt;C-f&gt; &lt;C-o&gt;
+" leave unchanged: &lt;C-g&gt;
+inoremap &lt;C-z&gt; &lt;C-u&gt;
+inoremap &lt;C-x&gt; &lt;Nop&gt;
+inoremap &lt;C-c&gt; &lt;Nop&gt;
+inoremap &lt;C-v&gt; &lt;C-r&gt;
+" leave unchanged: &lt;C-[&gt;
+inoremap &lt;C-]&gt; &lt;C-c&gt;
+
+" --- move, etc.
+inoremap &lt;C-_&gt; &lt;Esc&gt;&lt;C-o&gt;a
+inoremap &lt;C-y&gt; &lt;Esc&gt;`.a
+inoremap &lt;C-b&gt; &lt;C-g&gt;u
+inoremap &lt;C-CR&gt; &lt;C-x&gt;
+
+" --- other
+inoremap &lt;C-u&gt; &lt;Nop&gt;
+" leave unchanged: &lt;C-i&gt; -- fixed to &lt;Tab&gt;
+inoremap &lt;C-o&gt; &lt;Nop&gt;
+inoremap &lt;C-p&gt; &lt;Nop&gt;
+inoremap &lt;C-h&gt; &lt;Nop&gt;
+inoremap &lt;C-n&gt; &lt;Nop&gt;
+" leave unchanged: &lt;C-m&gt; -- fixed to &lt;CR&gt;
+" leave unchanged: &lt;C-\&gt;
+" leave unchanged: &lt;C-^&gt;
+
+" --- special keys
+" leave unchanged &lt;BS&gt;
+inoremap &lt;S-BS&gt; &lt;C-w&gt;
+" leave unchanged &lt;Del&gt;
+inoremap &lt;S-Del&gt; &lt;Esc&gt;l"_dei
+
+inoremap &lt;Home&gt; &lt;Esc&gt;g^a
+inoremap &lt;S-Home&gt; &lt;Home&gt;
+" leave unchanged &lt;C-Home&gt;
+inoremap &lt;End&gt; &lt;Esc&gt;g$i
+inoremap &lt;S-End&gt; &lt;End&gt;
+" leave unchanged &lt;C-End&gt;
+
+" leave unchanged &lt;PageUp&gt;
+inoremap &lt;S-PageUp&gt; &lt;Esc&gt;&lt;S-h&gt;a
+" leave unchanged &lt;C-PageUp&gt;
+" leave unchanged &lt;PageDown&gt;
+inoremap &lt;S-PageDown&gt; &lt;Esc&gt;&lt;S-l&gt;a
+" leave unchanged &lt;C-PageDown&gt;
+
+inoremap &lt;Up&gt; &lt;Esc&gt;gka
+inoremap &lt;S-Up&gt; &lt;Up&gt;
+inoremap &lt;C-Up&gt; &lt;Esc&gt;&lt;C-y&gt;a
+inoremap &lt;Down&gt; &lt;Esc&gt;gja
+inoremap &lt;S-Down&gt; &lt;Down&gt;
+inoremap &lt;C-Down&gt; &lt;Esc&gt;&lt;C-e&gt;a
+" leave unchanged &lt;Left&gt;
+" leave unchanged &lt;S-Left&gt;
+inoremap &lt;C-Left&gt; &lt;Esc&gt;&lt;S-b&gt;i
+" leave unchanged &lt;Right&gt;
+" leave unchanged &lt;S-Right&gt;
+inoremap &lt;C-Right&gt; &lt;Esc&gt;&lt;S-w&gt;a
+
+" --- make UK keyboard more USA
+inoremap &pound; #
+inoremap § `
+inoremap ± ~
+
+
+" --- command-line mode ---
+
+" --- pattern complete
+cnoremap &lt;C-q&gt; &lt;C-l&gt;
+cnoremap &lt;C-w&gt; &lt;C-a&gt;
+cnoremap &lt;C-e&gt; &lt;C-n&gt;
+cnoremap &lt;C-r&gt; &lt;C-p&gt;
+"cunmap &lt;C-r&gt;&lt;C-r&gt;
+cnoremap &lt;C-t&gt; &lt;C-d&gt;
+
+" --- other
+cnoremap &lt;C-o&gt; &lt;C-v&gt;
+
+cnoremap &lt;C-a&gt; &lt;C-]&gt;
+
+cnoremap &lt;C-v&gt; &lt;C-r&gt;
+cnoremap &lt;C-v&gt;&lt;C-v&gt; &lt;C-r&gt;&lt;C-r&gt;
+
+cnoremap &lt;C-h&gt; &lt;C-f&gt;
+
+cnoremap &lt;S-BS&gt; &lt;C-w&gt;
+
+cnoremap &pound; #
+
+command -nargs=+ -bang -bar -complete=file Tabview tabe | view &lt;args&gt; | setl noma
+</code></pre>
+</div>
+
+
+</div><!--text-->
+
+
+</div><!--paper-->
+
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="hxa7241-perceptuum-todo" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+   <title>&lt; H X A 7 2 4 1 &gt; : perceptuum to-do</title>
+
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="perceptuum2.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="outer">
+
+
+<div class="upper">
+   <div class="title">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
+   </div>
+</div>
+
+
+<div class="side">
+   <ul class="mainmenu">
+      <li>
+         <a href="../" title="home" accesskey="h">HOME</a>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../software/" title="various software projects">SOFTWARE</a>
+         <ul class="mainmenu">
+            <li>
+               <a href="../rendering/" title="some rendering-related development projects">RENDERING</a>
+               <ul class="mainmenu">
+                  <li>
+                     <a href="../perceptuum/" title="a global illumination renderer">PERCEPTUUM</a>
+                     <ul class="mainmenu">
+                        <li>
+                           <span class="current" title="this page">PERCEPTUUM to-do</span>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
+      </li>
+      <li>
+         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
+      </li>
+   </ul>
+</div>
+
+
+<div class="middle">
+<div class="picture">
+   <img src="perceptuum-picture.jpg" alt="four cornell box variants" />
+</div>
+
+<h2>PERCEPTUUM - to-do</h2>
+<div class="h2subheading">a global illumination renderer development project</div>
+
+
+<div class="content">
+
+<div class="section">
+   <h3>features</h3>
+
+   <dl>
+      <dt>projective first hit</dt>
+      <dd>
+         rasterization to be done projectively with a mostly realtime-style pipeline. the final part is a triangle subdivision stage to interpolate the illumination over small pixel areas, or selectively ray-trace further into the scene. potential of ~10x speed-up for overall rendering. first half of pipeline is written, subdivision and interpolation part isnt. (transport.)
+      </dd>
+      <dt>tracing acceleration by octree</dt>
+      <dd>
+         index objects with octrees, each instance having its own octree for its sub-parts. modify object intersection method to use octree tracing algorithm. potential of significant speed-up for overall rendering. octree classes are written, octree traversal and object refactoring isnt. (modelling.)
+      </dd>
+      <dt>optimal image accumulation sampling control</dt>
+      <dd>
+         use stats on the pixel accumulation to determine where more sampling is needed most, and if satisfactory convergence has been reached. need to use tone mapping info to calculate visible differences. problem is that regions need certain amounts of sampling, not individual pixels - some extrapolation or multiscale analysis is required. (imaging.)
+      </dd>
+      <dt>sky illumination</dt>
+      <dd>
+         separate from object emission system. simple sun and sky models. non-obvious co-operation with indirect illumination...
+      </dd>
+      <dt>window direct illumination special case</dt>
+      <dd>
+         allow objects to be tagged as 'window', and be transparent to intersection so direct lighting and therefore sharp shadows can work through windows.
+      </dd>
+      <dt>optimal specular integration</dt>
+      <dd>
+         needed for glossy surfaces when reflecting small bright areas. make numerical sampling distributions from scattering importance and photon map information. use derivative of the combination plus 1. (interaction, transport.)
+      </dd>
+      <dt>photon distribution improvement</dt>
+      <dd>
+         guided by the improvement of putting more samples into regions of greater uneveness, and the efficiency of skipping invisible regions. (transport, maybe just EmitterPath class.)
+      </dd>
+      <dt>scene file inclusion</dt>
+      <dd>
+         have the scene deserializer read in named files to use as part of the scene. needs improved object naming scheme. (modelling: additions and refactors to Scene class.)
+      </dd>
+      <dt>standard model format reading/translating</dt>
+      <dd>
+         if there was one standard format... but there isnt, so first, which one? must be: popular, have free models available, easy to interpret or have reusable code, not in conflict with perceptuum abstractions. (modelling: disconnected classes.)
+      </dd>
+      <dt>displacement mapping</dt>
+      <dd>
+         modifying object meshs during read in, based on extra texture map type. (modelling.)
+      </dd>
+      <dt>translucent volumes and subsurface scattering</dt>
+      <dd>
+         tractable in moderation... (transport, interaction, modelling.)
+      </dd>
+      <dt>polarisation</dt>
+      <dd>
+         there are a few discussions of this, see glassner 'principles...'. (interation.)
+      </dd>
+      <dt>more wavelength samples</dt>
+      <dd>
+         just add a few elements to the Light class. i think its that easy, isnt it? but conversion from cie xyz to spectral is ill-defined. (interaction.)
+      </dd>
+      <dt>instance overrideable texturing</dt>
+      <dd>
+         so an object instance can set its material properties, as well as its position. (modelling.)
+      </dd>
+      <dt>lightsource texturing</dt>
+      <dd>
+         maybe just one or two methods in Material, but its a bit awkward to write. (modelling.)
+      </dd>
+      <dt>open gl acceleration</dt>
+      <dd>
+         how much can open gl help raytracing-oriented global illumination? very uncertain.
+      </dd>
+   </dl>
+
+   <p>(wow. theres still so much to do...)</p>
+</div>
+
+</div>
+</div>
+
+
+<div class="lower">
+   <div>2004-08-22</div>
+</div>
+
+
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

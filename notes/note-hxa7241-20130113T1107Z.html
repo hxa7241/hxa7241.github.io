@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>SBNF &ndash; BNF in S-Exprs - (note-20130113T1107Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="SBNF -- BNF in S-Exprs - (note-20130113T1107Z) - HXA7241" />
+   <meta name="DC.subject"     content="software engineering, BNF, S-Exprs" />
+   <meta name="DC.description" content="S-Expressions seem particularly well-suited to BNF formulations, giving a simple, regular, and memorable format." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2013-01-13" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20130113T1107Z.html" />
+
+   <meta name="keywords"       content="software engineering, BNF, S-Exprs" />
+   <meta name="description"    content="S-Expressions seem particularly well-suited to BNF formulations, giving a simple, regular, and memorable format." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>SBNF &ndash; <br/>BNF in S-Exprs</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20130113T1107Z.html" title="permalink">NOTE HXA7241 2013-01-13T11:07Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>S-Expressions seem particularly well-suited to BNF formulations, giving a simple, regular, and memorable format.</h5>
+
+
+   <p>Problem: BNF, or EBNF, or ABNF, or some one-off variant? are sequences comma separated or just spaced? is choice higher or lower precedence? is it grouped with parenthesis, or brackets? or do brackets represent option, or is it braces? . . .</p>
+
+   <p>With S-Exprs you know where you are: a parenthised space-separated list (-tree) with the meaning in the first item. You can guess the symbols for choice, option, repetition. Easy. Memorable. S-Exprs are a meta (lexical-) syntax that the idea of BNF fits neatly into.</p>
+
+
+   <h4>Example</h4>
+
+   <blockquote>
+   <pre><code>(conditional
+   (| if unless))
+(if
+   (, "if " expr " then" block
+      (* (, "elseif " expr " then" block))
+      (? (, "else" block))
+      "end"))
+(unless
+   (, "unless " expr " then" block "end"))</code></pre>
+   </blockquote>
+
+
+   <h4>Description</h4>
+
+   <ul>
+      <li><code>(name ...)</code> &mdash; <b>definition</b> of a rule as a thing</li>
+      <li><code>(, ... ... ...)</code> &mdash; <b>sequence</b> of some things</li>
+      <li><code>(| ... ... ...)</code> &mdash; <b>choice</b> of some things</li>
+      <li><code>(? ...)</code> &mdash; <b>option</b>al inclusion (zero or one) of a thing</li>
+      <li><code>(* ...)</code> &mdash; <b>option-repetition</b> (zero or more) of a thing</li>
+      <li><code>(+ ...)</code> &mdash; <b>repetition</b> (one or more) of a thing </li>
+      <li><code>(=... ...)</code> &mdash; <b>countation</b> (some number/range) of a thing </li>
+      <li><code>"..."</code> &mdash; <b>string</b> constant (double-quote-escaped)</li>
+      <li><code>name</code> &mdash; <b>reference</b> to a rule (names are: letters, digits, and hyphens)</li>
+   </ul>
+
+   <p>Things (except <i>strings</i> and <i>references</i>) contain other things (except <i>definitions</i>).</p>
+
+   <p><i>Option-repetition</i>, <i>repetition</i>, and <i>countation</i> also optionally contain a second thing to use as a separator.</p>
+
+   <p>Various obvious or straightforward rules could be assumed, e.g.: <code>digit</code>, <code>letter</code>, <code>blank</code>, <code>int</code>, <code>real</code>.</p>
+
+   <p>(And of course, as for any text, this should all be in UTF-8.)</p>
+
+
+   <h4>Grammar</h4>
+
+   <p>Defined in itself:</p>
+
+   <blockquote>
+   <pre><code>(SBNF
+   (grammar      (, "(" name (+ blank) (* rule (+ blank)) (* blank)
+                    ")"))
+   (rule         (, "(" name content (* blank) ")"))
+   (content      (, (+ blank) (| construction constant name)))
+   (construction (, "(" (| group option repeat count) (* blank)
+                    ")"))
+   (group        (, (| "," "|") (* content)))
+   (option       (, "?" content))
+   (repeat       (, (| "*" "+") content (? content)))
+   (count        (, "=" (+ digit) (? (, "-" (+ digit))) content
+                    (? content)))
+   (constant     (, "\"" (* charescaped) "\""))
+
+   (name         (, letter (* (| letter digit "-"))))
+   (charescaped  (| char-non-doublequote-non-backslash
+                    "\\\"" "\\\\")))</code></pre>
+   </blockquote>
+
+   <p>Assuming:</p>
+
+   <ul>
+      <li><code>digit</code></li>
+      <li><code>letter</code></li>
+      <li><code>blank</code></li>
+      <li><code>char-non-doublequote-non-backslash</code></li>
+   </ul>
+
+
+   <h4>Appendix</h4>
+
+   <p>Constants/strings are a bit of a special object: not a proper form or atom. They are neater for the user, but less so for the implementor. Alternatively they could be turned into quote forms <code>(' ...)</code> and have their contents escaped for blanks and parentheses instead of double-quotes. Then it would all be forms and atoms.</p>
+
+   <p>And maybe definitions/rules <i>should</i> be nestable somehow . . .</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

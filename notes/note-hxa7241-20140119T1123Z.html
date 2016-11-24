@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Post-Currencyism 1: Outline - (note-20140119T1123Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Post-Currencyism 1: Outline - (note-20140119T1123Z) - HXA7241" />
+   <meta name="DC.subject"     content="economic engineering" />
+   <meta name="DC.description" content="An examination of post-currency economic systems, part 1: What is a specific, concrete way to describe the core idea? What software form would it take?" />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2014-01-19" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20140119T1123Z.html" />
+
+   <meta name="keywords"       content="economic engineering" />
+   <meta name="description"    content="An examination of post-currency economic systems, part 1: What is a specific, concrete way to describe the core idea? What software form would it take?" />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons BY-SA 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Post-Currencyism 1: Outline</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20140119T1123Z.html" title="permalink">NOTE HXA7241 2014-01-19T11:23Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>What is a specific, concrete way to describe the core idea? What software form would it take?</h5>
+
+   <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#details">Details</a></li>
+      <li><a href="#usage">Usage</a></li>
+      <li><a href="#commentary">Commentary</a></li>
+   </ul>
+
+
+   <h4 id="overview">Overview</h4>
+
+   <p>How about an economic system built around its underlying network structure? The idea can be summarised as: discretising and tracking what is wanted and what is available, processing the resulting graph structures to match things optimally, and dividing this work into data-sharing peers.</p>
+
+   <p>The key parts are:</p>
+   <ul>
+      <li>supply/demand signals (issued by agents)</li>
+      <li>social-like network/graph (of agents and signals)</li>
+      <li>automation/optimisation of matching (as functions on the network/graph)</li>
+      <li>distributed hosting (of matching, on peers/agents)</li>
+   </ul>
+
+   <p>The most basic information needed is what is wanted and available, which is captured in supply/demand data chunks, or &lsquo;signals&rsquo;. Then, with people and other agents agreeing &lsquo;matchings&rsquo; of those, this forms a series of network/graph structures over time. Any analysis or optimisation of the system's work is essentially functions over that graph of agent/signal interactions. And such an inherently distributed overall purpose suggests a distributed implementation across all its users.</p>
+
+
+   <h4 id="details">Details</h4>
+
+   <ul>
+      <li>Data</li>
+      <li>Algorithm</li>
+      <li>Decentralisation</li>
+   </ul>
+
+   <h5>Data</h5>
+
+   <p>Agents issue signals of supply/demand, and since these plug together they form a graph &ndash; or really a series of graphs depending on the duration considered.</p>
+
+   <p>There can be two basic data objects:</p>
+   <ul>
+      <li><code>Agent</code> : of type <code>UUID</code></li>
+      <li><code>Signal</code> : of type <code>product-type</code> {
+         <ul>
+            <li><code>offer/request</code> : of type <code>(enum of 2 values)</code>,</li>
+            <li><code>agent</code>         : of type <code>Agent</code>,</li>
+            <li><code>timestamp</code>     : of type ?,</li>
+            <li><code>amount</code>        : of type <code>(int unsigned 64 bit)</code>,</li>
+            <li><code>description</code>   : of type <code>abstract/open</code>,</li>
+         </ul>
+      }</li>
+   </ul>
+
+   <p>There can be two secondary data objects:</p>
+   <ul>
+      <li><code>SignalsLog</code> : of type <code>(list of Signal)</code></li>
+      <li><code>MatchesLog</code> : of type <code>(list of Match)</code>
+         <ul>
+            <li><code>Match</code> : of type <code>product-type</code> { <code>UUID</code>, <code>Timestamp</code>, <code>Signal</code>, <code>Signal</code> }</li>
+         </ul>
+      </li>
+   </ul>
+
+   <p>And the main data structure would be:</p>
+   <ul>
+      <li><code>Graph</code> &ndash; continually changing, built from logs, with agents as nodes and matches as edges</li>
+   </ul>
+
+   <h5>Algorithm</h5>
+
+   <p>Various functions can be run on this series of graphs, with the main purpose being to decide how to match offers and requests. These seem in principle similar to PageRank &ndash; the structure of the graph itself reflects the &lsquo;density&rsquo; of flow of supply and demand.</p>
+
+   <p>The matching functions might be:</p>
+   <ul>
+      <li><code>matchFind</code>   : of type <code>(Graph, Signal) -&gt; Signal</code></li>
+      <li><code>matchMake</code>   : of type <code>(UUID, Timestamp, Signal, Signal) -&gt; Match</code></li>
+      <li><code>matchAgree</code>  : of type <code>(Match, Agent, Agent) -&gt; Boolean</code></li>
+      <li><code>matchSubmit</code> : of type <code>(MatchesLog, Match) -&gt; MatchesLog</code></li>
+   </ul>
+
+   <h5>Decentralisation</h5>
+
+   <p>Graphs are naturally decentralised and dividable. Each peer (agent) can hold a copy of their local region of the graph &ndash; something like: all the other agents they interact with directly, and all the offers/requests/matches between them. Each peer/agent can then run their copy (or version) of the algorithms on that (possibly on their phone-puter).</p>
+
+   <p>Each agent needs a way to decide:</p>
+   <ul>
+      <li>whom to add/include in their network-group</li>
+      <li>what new additions to broadcast to their peers</li>
+   </ul>
+   <p>&ndash; that is, the network-groups are defined by differential rules.</p>
+
+   <p>Each agent needs to communicate:</p>
+   <ul>
+      <li>broadcast new members/contacts to their peers (send)</li>
+      <li>broadcast delivered matches to their peers (send)</li>
+      <li>search distally somewhat/sometimes to do matching (send &amp; receive)</li>
+   </ul>
+
+
+   <h4 id="usage">Usage</h4>
+
+   <p>How would this be used? What would a user actually do?</p>
+
+   <p>You ask your phone-puter: whenever you want to interact economically the system can tell you where to get things and where to give things. You (probably implicitly) identify yourself and request something, and the system can see your previous contributions in the network and so then tell you how much of the requested thing it can give you, and you can decide if you will agree or look for an alternative.</p>
+
+   <p>Outwardly, usage-wise, this is not really different to the currency-based way, where you check how much money you have, and see how much of what you want is affordable, and decide if you will buy. It is a kind of negotiation between what is offered and requested. Compared to the network-oriented software system, money can be seen as acting as a very primitive storage/computation of your relation to the network.</p>
+
+
+   <h4 id="commentary">Commentary</h4>
+
+   <p>Prima facie, this seems enough: the system knows what is wanted and what is available, and it has all previous interactions to use to decide how to match up the latest ones. All needed information is there.</p>
+
+   <p>However, the system is just the basic layer: it only represents supply and demand in abstract. Features of the goods transacted is not included &ndash; and that is good: that whole aspect can be added in a modular way, as another layer.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>The primary inspiration for this &lsquo;network-oriented&rsquo; economic system is <a href="http://www.punkmoney.org/">#PunkMoney</a>. #PunkMoney is centered on supply signals (promises), but omits the demand counterpart found here.</p>
+
+   <p>Related is Ripple, which is also centered on a social-like network/graph structure, but which is also centered on currency.</p>
+
+   <p>Very similar is <a href="http://edgeryders.eu/economy-app">EconomyApp</a>  (also: <a href="http://economyapp.eu/">http://economyapp.eu</a>), where this basic network-oriented idea is named &lsquo;network-barter&rsquo;.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>As a rough guestimation of plausibility:</p>
+
+   <ul>
+      <li>There are more Google searches per day (3x10^9) than basic economic transactions in the whole of Norway (Pop. 5x10^6).</li>
+      <li>There is roughly similar computer power in Norway's smartphones (2.5x10^6) as at Google (servers: ~1.5x10^6).</li>
+      <li>So perhaps we could tentatively and thought-provokingly propose that Norway could run an network-oriented post-market economy on its smartphones.</li>
+   </ul>
+
+   <h4>Related</h4>
+   <ul>
+      <li><a href="note-hxa7241-20140119T1109Z.html">Post-Currencyism 0: Introduction</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

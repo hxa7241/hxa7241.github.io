@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>The software engineering equation - (note-20101006T2011Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="The software engineering equation - (note-20101006T2011Z) - HXA7241" />
+   <meta name="DC.subject"     content="software engineering" />
+   <meta name="DC.description" content="If there were a single equation summarising all software development and use -- a 'law of infodynamics' -- what would it be like? -- Here is a quick imagination of one." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2010-10-06" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20101006T2011Z.html" />
+
+   <meta name="keywords"       content="software engineering" />
+   <meta name="description"    content="If there were a single equation summarising all software development and use -- a 'law of infodynamics' -- what would it be like? -- Here is a quick imagination of one." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>The software engineering equation</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20101006T2011Z.html" title="permalink">NOTE HXA7241 2010-10-06T20:11Z</a></h3>
+   <h4>Harrison Ainsworth</h4>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>If there were a single equation summarising all software development and use &ndash; a &lsquo;law of infodynamics&rsquo; &ndash; what would it be like? &ndash; Here is a quick imagination of one.</h5>
+
+   <p>First there is a definition of information from the lecture &lsquo;Information Engineering: Where we have been and where we may be going?&rsquo; by Mike Brady at <a href="http://www.eng.ox.ac.uk/events/centenary/movies/brady2008.html">wbcvsn-elaboration:http://www.eng.ox.ac.uk/events/centenary/movies/brady2008.html</a>, at 51m 02s &ndash; 52m 03s:</p>
+
+   <blockquote>
+      <p>&ldquo;For any given action, in any state, we can define the utility of that action, state. The information content of an action is the difference it yields in the expected utility of the state after carrying it out.&rdquo;</p>
+   </blockquote>
+   
+   <p>That could be written as:</p>
+   <blockquote>
+      <p>i(a) = u(a(S)) - u(S)</p>
+   </blockquote>
+
+   <p>&ndash; <i>the information of an action, equals: the utility of the state changed by the action, minus the utility of the state</i></p>
+
+   <p>which, with a liberal sense of analogy, is not so far from the physical world's: energy = force . displacement &ndash; if you think of information as energy, action as force, and state change as displacement (remember, this is imagination).</p>
+
+   <p>This information formula maps straight to software use:</p>
+   <ul>
+      <li><i>state</i> = the data input in running the software</li>
+      <li><i>action</i> = running the software</li>
+      <li><i>utility</i> = the usefulness of particular data, either input or output</li>
+      <li><i>information</i> = the &lsquo;magic ingredient&rsquo; in the software running that made the output data more useful than the input data</li>
+   </ul>
+
+   <p>It also maps straight to software development:</p>
+   <ul>
+      <li><i>state</i> = the software (code etc.) before the development work (which could be nothing, or a previous version)</li>
+      <li><i>action</i> = software development work (i.e. that done by programmers etc.)</li>
+      <li><i>utility</i> = the usefulness of a particular software version (according to the users)</li>
+      <li><i>information</i> = the &lsquo;magic ingredient&rsquo; in the development work that made the new version of the software more useful than the previous one</li>
+   </ul>
+
+   <p>So both software development and software use can be viewed in the same way in terms of information activity. The differences in <i>state</i> and <i>utility</i> are just in perspective or scale: software is itself data, just changing more slowly than other data, and the <i>utility</i> is different in a similar way. The key difference is in the <i>action</i>: in software use it is done by computers, and in software development by humans.</p>
+
+   <p>But, as initially stated, this is only fake. The original information definition is pseudo-mathematical: it is saying that something ill-defined is related vaguely to something else ill-defined &ndash; which is saying nothing much at all. The elements need independent, objective measures, like (at the very least) function-points for utility, lines of code for work, and some measure of state change. And then, even if that could work, it would still be only the tip of an iceberg.</p>
+
+   <p>It still seems interesting or appealing in some way though, despite its hollowness. It conjures up a way of thinking about software engineering that seems clearer and more bounded, more understandable: seeing both human and software work in terms of single unified systems of &lsquo;computational activity&rsquo;, with defined transforms on defined states of data and information . . .</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

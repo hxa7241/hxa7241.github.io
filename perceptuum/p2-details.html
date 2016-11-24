@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="hxa7241-perceptuum-details" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+   <title>&lt; H X A 7 2 4 1 &gt; : perceptuum details</title>
+
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="perceptuum2.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="outer">
+
+
+<div class="upper">
+   <div class="title">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
+   </div>
+</div>
+
+
+<div class="side">
+   <ul class="mainmenu">
+      <li>
+         <a href="../" title="home" accesskey="h">HOME</a>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../software/" title="various software projects">SOFTWARE</a>
+         <ul class="mainmenu">
+            <li>
+               <a href="../rendering/" title="some rendering-related development projects">RENDERING</a>
+               <ul class="mainmenu">
+                  <li>
+                     <a href="../perceptuum/" title="a global illumination renderer">PERCEPTUUM</a>
+                     <ul class="mainmenu">
+                        <li>
+                           <span class="current" title="this page">PERCEPTUUM details</span>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
+      </li>
+      <li>
+         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
+      </li>
+   </ul>
+</div>
+
+
+<div class="middle">
+<div class="picture">
+   <img src="perceptuum-picture.jpg" alt="four cornell box variants" />
+</div>
+
+<h2>PERCEPTUUM - details</h2>
+<div class="h2subheading">a global illumination renderer development project</div>
+
+<table class="pagemenu" border="0" cellpadding="0" frame="void" rules="none" summary="menu of page sections">
+<tr valign="top">
+   <td>
+      <ul>
+         <li><a href="#basicfeatures">basic features</a></li>
+         <li><a href="#renderingsequence">rendering sequence</a></li>
+         <li><a href="#progressiverefinement">progressive refinement</a></li>
+         <li><a href="#imageaccumulation">image accumulation</a></li>
+         <li><a href="#samplingcontrol">sampling control</a></li>
+      </ul>
+   </td>
+   <td>
+      <ul>
+         <li><a href="#sceneobjectsmodelling">scene/objects/modelling</a></li>
+         <li><a href="#sceneindexing">scene indexing</a></li>
+         <li><a href="#lightinteraction">light interaction</a></li>
+         <li><a href="#illumination">illumination</a></li>
+         <li><a href="#rasterization">rasterization</a></li>
+      </ul>
+   </td>
+</tr>
+</table>
+
+
+<div class="content">
+
+<div class="section" id="basicfeatures">
+   <h3>basic features</h3>
+
+   <ul>
+      <li>c++ on win32</li>
+      <li>renderer</li>
+      <li>global illumination by montecarlo path tracing and photon mapping</li>
+      <li>progressive refinement</li>
+      <li>temporal</li>
+      <li>frame-coherent sampling</li>
+      <li>triangle mesh models</li>
+      <li>instancing hierarchy</li>
+      <li>multi parameter image texturing</li>
+      <li>brdf light interaction</li>
+      <li>cie XYZ light</li>
+      <li>homogeneous medium fogging approximation</li>
+      <li>tone-mapped png (plain/srgb) image output</li>
+      <li>ward-realpixels png image output</li>
+   </ul>
+</div>
+
+
+<div class="section" id="renderingsequence">
+   <h3>rendering sequence</h3>
+
+   <ol>
+      <li>read in options, scene, sample control ordinates and accumulation; construct illumination and rasterizer</li>
+      <li>update scene for time point</li>
+      <li>make illumination from scene and sample control</li>
+      <li>rasterize scene to image accumulation with sample control and illumination</li>
+      <li>analyse image accumulation</li>
+      <li>if image not complete and user hasnt interrupted, repeat from 2)</li>
+   </ol>
+</div>
+
+
+<div class="section" id="progressiverefinement">
+   <h3>progressive refinement</h3>
+
+   <p>a rendering is split into frames. each frame is a limited sampling of the whole, a series of frames is a series of refinements. the mean of any set - or the mean of the series so far - is a candidate image.</p>
+</div>
+
+
+<div class="section" id="imageaccumulation">
+   <h3>image accumulation</h3>
+
+   <p>the image is continuously accumulated from frames to form a running mean. along with the mean are stored other statistics for each pixel, presently count and variance. from these statistics some indication can be got of where samples are needed more than others, and maybe if the image is converged enough to be considered completed. analysis is done after each frame.</p>
+   <p>since each pixel is handled separately, a subset of the pixels can be sampled and accumulated each frame.</p>
+</div>
+
+
+<div class="section" id="samplingcontrol">
+   <h3>sampling control</h3>
+
+   <p>all stochastic generators are centralized for ease of persistence and determinism, enabling suspension, continuation and repeatability of renders.</p>
+   <p>the frame number provides the index for most of the sampling control, the quasi/pseudo/random sequences advancing in step with the frame. this frame coherent sampling eliminates image-wide montecarlo style point noise, in exchange for localised strobe-like artifacts, which looks better.</p>
+   <p>main sampling dimensions are: scene time, light emission positions and directions, ray/photon interaction direction and absorbtion, subpixel ray start position, lens position.</p>
+   <p>the top level, frame stepped, sequences need to be quasi-random like the halton sequence or pseudo-random like standard generators, since they must gradually fill their range over an unknown sequence length - like an incrementally refined stratification.</p>
+</div>
+
+
+<div class="section" id="sceneobjectsmodelling">
+   <h3>scene/objects/modelling</h3>
+
+   <p>the overall scene contains an objects collection, and a materials collection.</p>
+   <p>strangely, the objects collection is also a tree, since you can navigate upwards in a tree like way. its the sets of transforms which make it tree-like, the objects pointed at are just sort of singletons of their type, the objects are 'types', what makes them into 'instances' is the transform used to address them. rendering is not of objects in the scene, but of the scene tree - render the root (the scene), which does its sub-objects, and so on recursively. but if you want to index the scene, then just iterate through the collection linearly, indexing each object on its own non-recursively, since for indexing, the transforms are irrelevent, the subobjects are just pointers to 'types' which just appear in the collection once.</p>
+   <p>objects are principally defined by the ability to: intersect a ray, give qualities at an intersection point, provide a mesh (for projective rendering), and give an emission point.</p>
+   <p>object types:</p>
+      <ul>
+         <li>ObjectRenderable
+            <ul>
+               <li>bounding box - axis aligned</li>
+               <li>overall emittance - precalculated</li>
+               <li>overall specularity - precalculated</li>
+            </ul>
+         </li>
+         <li>ObjectMesh (inherits ObjectRenderable)
+            <ul>
+               <li>a terminal object with no accessible subobjects, like a box, sphere or torus.</li>
+               <li>contains a collection of vertexs, and a collection of triangles, the corners being indexs into the vertex collection. the mesh must form a single, non-intersecting, closed surface, made of triangle faces.</li>
+               <li>contains a material index into the scene materials collection.</li>
+            </ul>
+         </li>
+         <li>ObjectInstance (inherits ObjectRenderable)
+            <ul>
+               <li>a collection of sub parts, each having, or defined algorithmically: an index/pointer of another ObjectRenderable, and a pair of opposing transforms</li>
+               <li>transform out to project, transform ray in to intersect.</li>
+            </ul>
+         </li>
+         <li>ObjectInstanceMoving (inherits ObjectInstance)
+            <ul>
+               <li>adds time dependent 'drivers' for the transforms in its base.</li>
+               <li>currently works by linearly interpolating start/end positions and rotations.</li>
+            </ul>
+         </li>
+      </ul>
+   <p>for movement, instance transforms can be time parameterised (perhaps defined at a finite resolution, like splines cubic or linear, analogous to the discreet triangles in a mesh, this means that the bounds can be determinate) changing shape is just different sub-objects moved by different transforms, or concrete objects altering their internal representation.</p>
+   <p>objects must be single closed surfaces, topologically like a sphere or higher genus - otherwise medium tracking wont work.</p>
+   <p>translucent objects ought not overlap - it will cope, but wont really be physically sensible. the eyepoint and lightsources ought not be inside any objects - it will cope, but wont really work properly.</p>
+   <p>texturing is handled by the materials. each mesh object has an index/pointer to a material in the scene collection, and its triangles have texture xy coords at each corner. a material can supply surface qualities for any texture xy coord query, by looking in its collection of image texture maps, one for each quality parameter. quality parameters are general, brdf model applicable characteristics, based on the ward brdf: reflectivity diffuse and specular, roughness x and y, transparency, emitted, tangent, normal.</p>
+</div>
+
+
+<div class="section" id="sceneindexing">
+   <h3>scene indexing</h3>
+
+   <p>not done yet. presently, tracing is helped by the instance hierarchy bounds.</p>
+</div>
+
+
+<div class="section" id="lightinteraction">
+   <h3>light interaction</h3>
+
+   <p>brdf form with stochastic distribution function</p>
+   <p>transmission faked by using the brdf on both sides</p>
+   <p>implementations: perfect mirror specular, perfect uniform diffuse, normalized phong, ward</p>
+   <p>general tests and visualizations</p>
+</div>
+
+
+<div class="section" id="illumination">
+   <h3>illumination</h3>
+
+   <p>direct photon mapping with separate direct lighting:</p>
+   <ul>
+      <li>emitter paths have emit position chosen stochastically by power, and propagate power entirely stochastically (no scaling), no emission is added at any bounces (all emissive energy enters at the start of the paths). photons are stored in the photon map for 2nd and later surface interactions after emission. path is ended by roulette.</li>
+      <li>direct lighting positions are chosen stochastically by power.</li>
+      <li>eye paths are partly stochastic with multiplicative cos and reflectivity. specular interaction propagates the path, maybe stopped by threshold returning zero. diffuse interaction joins path to illumination, which is direct lighting from the chosen position and local gather from photon map through surface bssdf.</li>
+   </ul>
+   <p>rationale:</p>
+   <ul>
+      <li>good sharp shadows where theyre usually produced - by direct lighting</li>
+      <li>good soft shadows where theyre usually produced - by indirect lighting</li>
+      <li>faster running</li>
+      <li>simpler code</li>
+      <li>but: fails to keep sharp shadows produced by direct lighting through glass or mirror...
+      (hack in a special case to allow shadow rays to see through flat glass - covers most occuring failures)</li>
+      <li>alternatively, indirect photon mapping (final gather at each join):
+         <ul>
+            <li>more robust</li>
+            <li>handles all illumination equally</li>
+            <li>keeps sharp shadows produced by indirect lighting, but still not through glass or mirror...</li>
+            <li>needs fewer photons</li>
+            <li>but: slower - has extra photon map local gathers and numerical distribution generation for each pixel</li>
+         </ul>
+      </li>
+   </ul>
+   <p>calculated for a scene each frame, and then queryable for any point in the scene for the frame.</p>
+   <p>emitter path starts are chosen by importance sampling by wattage of the emitting objects in the scene. done hierarchically, at present down to the triangle level, but allows down to the texel level. theres no distinct lightsource object type and all objects can be emissive, but a threshold for classifying objects as emitters or not is a rendering setting.</p>
+   <p>the energy put into the start of each path is the total scene emission wattage divided by the the number of paths. total scene emission equals: mean radiant exitance times area, of each textured triangle, summed over all triangles, equals watts.</p>
+</div>
+
+
+<div class="section" id="rasterization">
+   <h3>rasterization</h3>
+
+   <p>projective render instead of initial eye ray tracing step.</p>
+   <p>subpixel position and lens position determine projection</p>
+   <p>trace pass: if a surface point is above the shinyness threshold for the frame, then instead of being illuminated, its traced into. tracing continues until russian roulette absorbtion, or threshold absorbtion, or the surface hit is below the shinyness threshold. this last path node, furthest from the eye, is illuminated, and the light carried back along the path as radiance, with any emission from hit surfaces added along the way.</p>
+   <p>illumination interpolation</p>
+</div>
+
+</div>
+</div>
+
+
+<div class="lower">
+   <div>2004-08-22</div>
+</div>
+
+
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

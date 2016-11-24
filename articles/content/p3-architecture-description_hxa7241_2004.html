@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Perceptuum 3 Renderer Architecture Description - HXA7241 - 2004</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Perceptuum 3 Renderer Architecture Description - HXA7241 - 2004" />
+   <meta name="DC.subject"     content="perceptuum, renderer, architecture, documentation" />
+   <meta name="DC.description" content="A technical article on the Perceptuum 3 renderer architecture" />
+   <meta name="DC.type"        content="technical article" />
+   <meta name="DC.type"        content="Text" />
+   <meta name="DC.type"        content="Image" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.publisher"   content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2004-11-24" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/articles/content/p3-architecture-description_hxa7241_2004.html" />
+
+   <meta name="keywords"       content="perceptuum, renderer, architecture, documentation" />
+   <meta name="description"    content="A technical article on the Perceptuum 3 renderer architecture" />
+   <meta name="document"       content="hxa7241article5" />
+   <meta name="license"        content="none" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article.css" />
+   <style type="text/css">
+      /* uml */
+      div.umldiagram
+      {
+         padding:                1em;
+         border:                 0.1em solid;
+      }
+      div.umlclass,
+      div.umlpackage
+      {
+         /*width:                  18em;*/
+         border:                 0.1em solid;
+         margin:                 0.5em;
+         padding-bottom:         1em;
+         float:                  left;
+      }
+      div.umldiagram p
+      {
+         font-weight:            bold;
+         padding:                0 0.5em 0.5em 1em;
+         border-bottom:          0.1em solid;
+         margin-bottom:          1em;
+      }
+      div.umldiagram ul
+      {
+         margin-left:            2em;
+         margin-right:           1em;
+      }
+      div.umldiagramend
+      {
+         clear:                  both;
+      }
+   </style>
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>Perceptuum 3 Renderer Architecture Description</h1>
+</div>
+
+
+<div id="colophon">
+<h4>Harrison Ainsworth</h4>
+
+   <p id="contact"><a href="http://www.hxa.name/">http://www.hxa.name/</a>
+   <br />artifex <i>(&alpha;&tau;)</i> hxa7241 <i>(d&omicron;&tau;)</i> org</p>
+
+   <p id="timestamp">2004-11-24</p>
+</div>
+
+
+<div id="preface">
+   <div id="summary">
+      <h2>Summary</h2>
+      <p>This article is an augmented architecture description for the Perceptuum 3 renderer. It contains outlines of the ethos and techniques, and simplified views of all the models of the system (as for the Unified Software Development Process). (3000 words)</p>
+   </div>
+
+   <dl id="metadata" class="plainlist">
+      <dt>subject</dt>
+      <dd>renderer, architecture, documentation</dd>
+
+      <dt>uri</dt>
+      <dd><a href="http://www.hxa.name/articles/content/p3-architecture-description_hxa7241_2004.html">http://www.hxa.name/articles/content/p3-architecture-description_hxa7241_2004.html</a></dd>
+
+      <dt>license</dt>
+      <dd><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons BY-SA 3.0 License</a>.</dd>
+   </dl>
+</div>
+
+
+<div id="contents">
+   <h2>Contents</h2>
+   <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#requirements">Requirements Model</a></li>
+      <li><a href="#analysis">Analysis Model</a></li>
+      <li><a href="#design">Design Model</a></li>
+      <li><a href="#deployment">Deployment Model</a></li>
+      <li><a href="#implementation">Implementation Model</a></li>
+      <li><a href="#test">Test Model</a></li>
+      <li><a href="#plan">Plan</a></li>
+      <li><a href="#references">References</a></li>
+   </ul>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="introduction">
+<h3>Introduction</h3>
+
+   <h4>Architecture Description</h4>
+
+   <p>For the <a href="#r01.01">Unified Software Development Process<sup>[1.1]</sup></a>, an &lsquo;architecture description&rsquo; is a view of the whole system structure with the important characteristics made more visible by leaving details aside. It is composed of views of each and all the models of the system, based on architecturally significant use cases (most important functionality and risk). Production of this document marks the end of the elaboration phase of this project.</p>
+
+   <h4>Proposition</h4>
+
+   <p>The currently dominant approach to global illumination architecture is based on the monte-carlo ray-tracing method. Although it has strengths in generality and theoretical physical fidelity, its weaknesses show in practical use. The stochastic essence translates to an obdurate noisiness, and the high dimensionality of the domain causes insurmountably long convergence. The incoherency is not supported by common specialised hardware.</p>
+
+   <p>The requirements of users are principally aesthetics and speed, and these may be better served by a different architecture with a different emphasis. The initial ethos directing the design is:</p>
+   <ul>
+      <li>Target aesthetic realism instead of physical realism</li>
+      <li>Exploit graphics card capability</li>
+   </ul>
+   <p>That is: deliberately try to simulate less completely, and orient towards the strongest computing resource. From these follow some <b>primary internal aims</b>:</p>
+   <ul>
+      <li>Prioritise speed/robustness/usability over accuracy</li>
+      <li>Emphasise specialised features rather than general techniques</li>
+      <li>Focus on <a href="#r02.04">OpenGL<sup>[2.4]</sup></a></li>
+   </ul>
+
+   <p>And these can be more broadly guided by an <b>external product aim</b>:</p>
+   <ul>
+      <li>Be a technology able to adapt and integrate into other rendering systems</li>
+   </ul>
+
+
+   <h4>Algorithm</h4>
+
+   <p>The core algorithm can be characterised by the term: <b>projection-interpolation light gathering</b>.</p>
+   <p>An elucidation of which is: inward light at any point is determined by projection &mdash; passing scene objects through a transform and rasterization pipeline. And, most points do not have inward light determined, but instead have it approximated by interpolating points that are fully determined. The overall direction of the algorithm is to start at the eye and move out, gathering light, rather than start at light sources, spreading light. To summarise:</p>
+   <ul>
+      <li>do illumination by interpolation of inward light</li>
+      <li>do inward light integration by projection</li>
+      <li>do projection with OpenGL</li>
+   </ul>
+
+   <p>This is a re-use and adaptation of the algorithm devised by <a href="#r02.02">Ward<sup>[2.2]</sup></a> and used in the &lsquo;Radiance&rsquo; renderer. The modifications are to avoid ray tracing mostly, and avoid monte-carlo completely &mdash; replacing them with projection, and to augment it with separate feature sub-algorithms for caustics, volume scattering, motion-blur, etc.</p>
+   <p>If the number of gatherings is of the order of 1000, and each has a resolution of about 1000 points, and projecting a much simplified geometry: that would approximate the effort needed for a projective rendering of a single whole-screen image. Such a rendering can be done in the order of a few seconds.</p>
+
+   <h5>Benefits</h5>
+
+   <p>Projection is faster and more robust than monte-carlo ray tracing. It exploits coherence, and uses more fully the available scene data. Where monte-carlo requires practically infinite time to find small features, projection can easily capture them in an accumulation buffer.</p>
+   <p>Projection can be directly accelerated with specialised graphics hardware, and maybe even mostly removed by running in parallel to the CPU.</p>
+   <p>Separating feature techniques allows more specialised, faster and more robust, approximations, whereas a generalised monte-carlo approach becomes intractable with multiple dimensions.</p>
+   <p>Avoiding monte-carlo removes otherwise ineradicable noisiness in images. Aliasing can be suppressed by control of scene level-of-detail, and other established projection techniques.</p>
+   <p>Eliminating monte-carlo allows simplification of BRDF/shader handling since probability distributions are not needed.</p>
+   <p>Global light gathering more simply and automatically calculates relevant illumination, where general photon mapping (global light spreading) needs special restriction of its domain to what is visible to the viewer.</p>
+
+
+   <h4>Details</h4>
+
+   <h5>Rasterization</h5>
+   <p>The first operation is projection of the scene as a triangle mesh, into pixels containing the IDs of the visible triangles. Every pixel can then be visited to intersect a ray from the camera, using the ID and perhaps other geometric data. Maybe a triangle list can be extracted from the pixels, then each rasterized more incrementally.</p>
+   <p>The surface point determined for each pixel is then used. The position is sent to the illumination package to get all the incident light. The emission is read directly. Both can then be put through the (light-)interaction package to calculate the outward light towards the eye.</p>
+
+   <h5>Illumination</h5>
+   <h6>First Level</h6>
+   <p>The global gather algorithm is separated into two parts, the first level, nearest the eye, is made more sophisticated. The incoming light determination is separated into four parts: gather, ray trace, photon map, translucency map. They will be combined by simple addition, which means their light paths must not overlap.</p>
+   <p>The gather is itself separated into two parts: indirect and direct. The direct part only gathers emissive surfaces, and at just below screen resolution, so that shadows will be sharp. The indirect part gathers a shadowed render using nominated and brightest emitters, which provides an extra level of light bounce.</p>
+   <h6>Deeper Levels</h6>
+   <p>These less important contributions can be evaluated very much as the original Ward global gather. The trees can start at low resolution on the image, and, with high error allowance, propagate by ray tracing. The gather projection at each node could be with shadows, or just emitters only, &mdash; the tradeoff needs to be experimented with. Either way the accumulation can probably be simplified to pure diffuse.</p>
+   <h6>General</h6>
+   <p>All light gatherings are stored. A straightforward explicit representation would require a lot of, but not too much, memory. Reducing size would be beneficial to performance so some simple compression may be good. Conversion to spherical wavelets seems more appropriate than spherical harmonics, since the data would be closer to piece-wise linear.</p>
+   <p>The gather could be a uniform hemi-(or whole)-cube. More efficient may be a single surface-parallel plane, since for diffuse reflection low-angle light is a small contributor. Perhaps best would be to orient and concentrate a single plane perpendicular to the BIDF &lsquo;peak&rsquo; (if some analysis can be done), supplemented with a surface-parallel plane. A basic requirement is that the resolution be greater than the nyquist limit for the BIDF (discluding perfect specular).</p>
+   <p>Density of gathering points is set by the Ward error term. Interpolation between points is done with <a href="#r02.03">Ward gradients<sup>[2.3]</sup></a>.</p>
+   <h6>OpenGL Component</h6>
+   <p>Since projection is used &lsquo;internally&rsquo; rather than for the final image, various approximations can be made. Models can have: lower level of detail, no textures, simple shaders. Specular reflection is approximated with glossy, glossy transmission is approximated with specular. No ray tracing or photon mapping or translucency mapping is used.</p>
+   <p>So that light paths can be separated for different calculation, projection must parameterise: shadowed renders, transparency (per item), primary/secondary emitters (per item). Also projection needs to able to just produce triangle IDs.</p>
+   <p>Antialiasing and fog can be done straightforwardly. Transparency and shadows require a bit more work.</p>
+   <p>The restriction of OpenGL 1.1 to 8 bits per color channel means special work will be needed to handle bright emitters like the sun and sky. A higher level scene-graph component wrapper will be needed to maintain performance for large scenes.</p>
+   <h6>Other Transport</h6>
+   <p>At the top level extra features are enabled: ray tracing is used to follow perfect specular interaction only, and propagates in a tree for both reflection and transmission. Photon mapping is used only for nominated objects, and built by gathering at points on the object surface, and traced with perfect specular only. Translucency mapping is used only for nominated objects.</p>
+
+   <h5>Interaction</h5>
+   <p>The <acronym title="Bidirectional Interaction Distribution Function">BIDF</acronym> class is fully general, and mostly follows its mathematical form: returning a scaling (for each spectral channel) given an inward and outward direction. But it must separate perfect specular interaction: by returning a scaling (of a perfect inward ray) for an outward direction. The BIDF must also provide a rough approximation of itself in traditional form: diffuse and specular weightings and shininess value.</p>
+   <p>Some built-in BIDFs are provided: perfect diffuse, fresnel specular, Ward (and probably others). But plugins are enabled, specified in the model file with lists of tagged parameters/textures.</p>
+
+   <h5>Sampling</h5>
+   <h6>Depth Of Field</h6>
+   <p>Can be done with the image convolution technique, probably with a limit on lens size to constrain the filter size. The weakness is with reflections, which would be blurred according to the focus of the reflecting surface, rather than the reflected objects themselves. But only when the reflective surface is in focus would the fault be noticeable.</p>
+   <h6>Motion Blur</h6>
+   <p>The moving objects case can be handled by separating rendering into two passes, and treating indirect and direct illumination differently. The first pass renders all static objects with indirect gather, static photon map and translucency map illumination. All indirect gather is done with the scene fixed in mid-time position. The second pass renders iteratively: each step accumulates direct gather and ray tracing illumination, and accumulates renders of moving objects, each on a separate sub-image. When iterations complete, everything is merged and composited.</p>
+   <p>The moving camera case can be handled by including motion vectors with the pixels, then filtering the normally rendered image.</p>
+   <p>To combine depth of field and both kinds of motion blur, follow the moving objects process and apply depth of field to each sub-image, then apply the moving camera vector-filtering at the end.</p>
+   <h6>Adaptive Supersampling</h6>
+   <p>This image refinement can be done post-render, by conventional distribution ray tracing techniques. High contrast pixels can be fully sampled in both dimensions of time and lens position.</p>
+
+   <h5>Modelling</h5>
+   <p>The scene is a tree of two principal node types: objects and instances, both inheriting a common interface. An object contains a shape definition, but no transform. An instance references objects or instances, each with a transform. The basic object/instance common interface defines both projectable and ray traceable capabilities. An object need not be a triangle mesh internally, but must be able to generate one, preferably at different levels of detail.</p>
+   <p>Every triangle is uniquely identifiable. All scene tree nodes note how many triangles they contain: leaf objects know their triangle counts, instances sum their sub-part counts. So navigating a path from the root can either determine or find a particular numbered triangle. Numberings can be stored in separate trees for different levels of detail.</p>
+   <p>To spatially index the scene, each instance has an octree holding the triangles of sub-objects and the bounds of sub-instances.</p>
+
+   <h5>Imaging</h5>
+   <p>The basic format is the OpenEXR high dynamic range image. A tonemapping, gamma and color transform can be used to produce RGB images in PNG format. Supplementary buffers containing z or other geometry, and alpha can be included.</p>
+
+   <h5>Parallelizing</h5>
+   <p>Fully exploiting the GPU and multiple CPUs is not straightforward. Having the GPU work in parallel to the CPU is awkward because the GPU is used in the middle of a pipeline, and substantial computation is dependent on data produced. Having multiple CPUs work in parallel is awkward because substantial computation is routed through a single GPU.</p>
+   <p>The GPU can be wrapped by a thread running a queue. Then multiple CPU threads can submit requests and lookup results, without blocking their execution too much.</p>
+   <p>Illumination pipelines (incorporating GPU work) can be split into two: a &lsquo;seed&rsquo; pipeline to do all computation leading to submitting GPU requests, and a &lsquo;harvest&rsquo; pipeline to do all computation on GPU results. Since multiple pipeline instances would be required across the rasterization, both CPU and GPU parallelization is possible, as long as each individual pipeline completes its seed before starting its harvest. However, experimentation with prototypes is needed to see if this refactoring is really worth it.</p>
+</div>
+
+
+<div class="section" id="requirements">
+<h3>Requirements Model</h3>
+
+   <p>A system's external behaviour is described by a set of use cases. Each use case is a sequence of actions that provide the user with a result of value. With some supplementary requirements, this constitutes the requirements model.</p>
+   <p>The external behaviour has a very simple structure, the complexity being contained in the algorithms.</p>
+
+   <h4>Use Cases</h4>
+   <img src="p3-usecase-diagram.png" width="300" height="300" alt="UML use case diagram" />
+
+   <hr />
+   <h5>Modelling</h5>
+   <p>actor &ndash; user</p>
+   <ol>
+      <li>input external scene file of some common format, maybe also a command file</li>
+      <li>take output P3 command file</li>
+   </ol>
+
+   <hr />
+   <h5>Rendering</h5>
+   <p>actor &ndash; user</p>
+   <ol>
+      <li>input command file</li>
+      <li>execute renderer</li>
+      <li>(maybe read output error file, then repeat from first step)</li>
+      <li>take output <acronym title="High Dynamic Range">HDR</acronym> image file</li>
+   </ol>
+   <p>features:</p>
+   <ul>
+      <li>quick projective render</li>
+      <li>text scene file, maybe xml, maybe X3D</li>
+      <li>image output in HDR, with alpha, z</li>
+      <li>selectable rendering features, quick mode</li>
+      <li>simple general triangle mesh models</li>
+      <li>hierarchical object models</li>
+      <li>level of detail model support</li>
+      <li>global illumination</li>
+      <li>generalised shaders</li>
+      <li>sub-surface-scattering / translucency</li>
+      <li>image texturing</li>
+      <li>sky illumination</li>
+      <li>depth of field</li>
+      <li>caustics</li>
+      <li>motion blur</li>
+      <li>generalised emitters</li>
+      <li>polymorphic plugin shaders</li>
+      <li>simple fogging</li>
+      <li>bump mapping</li>
+      <li>displacement mapping ?</li>
+   </ul>
+
+   <hr />
+   <h5>Imaging</h5>
+   <p>actor &ndash; user</p>
+   <ol>
+      <li>input command file</li>
+      <li>input HDR image file</li>
+      <li>execute image converter</li>
+      <li>(maybe read output error file, then repeat from first step)</li>
+      <li>take output RGB image file</li>
+   </ol>
+   <p>features:</p>
+   <ul>
+      <li>tonemap</li>
+      <li>RGB, real-Ward output color format</li>
+      <li>PNG image format</li>
+      <li>glare</li>
+   </ul>
+   <hr />
+
+   <h4>Supplementary Requirements</h4>
+   <p>Use of OpenGL 1.1, and maybe higher level scene-graph library.</p>
+   <p>Reuse of components and libraries: Perceptuum2, Radiance, X3D, OpenEXR, libpng, boost, stlport, cppunit.</p>
+   <p>Portability to different compiler/OS/hardware.</p>
+</div>
+
+
+<div class="section" id="analysis">
+<h3>Analysis Model</h3>
+
+   <p>This has the purpose of refining the use cases in more detail, and making an initial allocation of the behavior of the system to a set of objects. The perspective is from the outside, leaving implementational considerations aside.</p>
+
+   <h4>Packages</h4>
+   <p>The broad structure is an &lsquo;open&rsquo; hierarchy: higher packages use/depend on any lower ones. There are three divisions: project specific, general graphics, and non-application specific general.</p>
+   <ul>
+      <li>rasterization</li>
+      <li>illumination</li>
+      <li>interaction (<i>light</i> interaction)</li>
+      <li>modelling</li>
+      <li>imaging</li>
+      <li>graphics</li>
+      <li>platform</li>
+      <li>general</li>
+   </ul>
+   <img src="p3-package-analysis-diagram.png" width="600" height="600" alt="UML package diagram" />
+
+   <h4>Classes</h4>
+   <p>Some key classes can be found and their basic relationships sketched.</p>
+   <div class="umldiagram">
+      <p>classes listed in package groups</p>
+
+      <div class="umlpackage">
+         <p><b>rasterization</b></p>
+         <ul>
+            <li>Camera</li>
+            <li>View</li>
+            <li>PixelCalculator</li>
+         </ul>
+      </div>
+
+      <div class="umlpackage">
+         <p><b>illumination</b></p>
+         <ul>
+            <li>Projector</li>
+            <li>LightTransport</li>
+            <li>WardTransport</li>
+            <li>RayTracer</li>
+            <li>PhotonMap</li>
+            <li>TranslucencyMap</li>
+         </ul>
+      </div>
+
+      <div class="umlpackage">
+         <p><b>interaction</b></p>
+         <ul>
+            <li>SurfacePoint</li>
+            <li>Bidf</li>
+         </ul>
+      </div>
+
+      <div class="umlpackage">
+         <p><b>modelling</b></p>
+         <ul>
+            <li>Scene</li>
+            <li>ObjectRenderable</li>
+         </ul>
+      </div>
+
+      <div class="umlpackage">
+         <p><b>imaging</b></p>
+         <ul>
+            <li>ImageHdr&lt;&gt;</li>
+         </ul>
+      </div>
+
+      <div class="umldiagramend">
+      </div>
+   </div>
+
+   <img src="p3-class-relations-diagram.png" width="600" height="600" alt="UML class-relations diagram" />
+</div>
+
+
+<div class="section" id="design">
+<h3>Design Model</h3>
+
+   <p>This defines the static structure of the system as subsystems, classes, and interfaces; and realizes the use-cases as collaborations among those elements.</p>
+
+   <h4>Classes</h4>
+   <p>Further classes are added to the packages.</p>
+   <div class="umldiagram">
+      <p>classes listed in package groups, with architecturally significant members in bold</p>
+
+      <div class="umlpackage">
+         <p><b>rasterization</b></p>
+         <ul>
+            <li><b>Camera</b></li>
+            <li>View</li>
+            <li><b>PixelCalculator</b></li>
+         </ul>
+      </div>
+
+      <div class="umlpackage">
+         <p><b>illumination</b></p>
+         <ul>
+            <li><b>Projector</b></li>
+            <li>OpenGL</li>
+            <li>Gathering</li>
+            <li>GatheringInterpolation</li>
+            <li><b>LightTransport</b></li>
+            <li><b>WardTransport</b></li>
+            <li><b>RayTracer</b></li>
+            <li>Ray</li>
+            <li><b>PhotonMap</b></li>
+            <li><b>TranslucencyMap</b></li>
+         </ul>
+      </div>
+
+      <div class="umlpackage">
+         <p><b>interaction</b></p>
+         <ul>
+            <li><b>SurfacePoint</b></li>
+            <li><b>Bidf / Brtdf</b></li>
+            <li>Brdf</li>
+            <li>Btdf</li>
+            <li>Bssrdf</li>
+            <li>Light</li>
+         </ul>
+      </div>
+
+      <div class="umlpackage">
+         <p><b>modelling</b></p>
+         <ul>
+            <li><b>Scene</b></li>
+            <li>Bound</li>
+            <li>Material</li>
+            <li>TriangleImplicit</li>
+            <li>TriangleExplicit</li>
+            <li>Vertex</li>
+            <li>Mesh</li>
+            <li><b>ObjectRenderable</b></li>
+            <li>ObjectInstance</li>
+            <li>ObjectInstanceMoving</li>
+            <li>ObjectMesh</li>
+         </ul>
+      </div>
+
+      <div class="umlpackage">
+         <p><b>imaging</b></p>
+         <ul>
+            <li><b>ImageHdr&lt;&gt;</b></li>
+            <li>GammaTransform</li>
+            <li>ColorTransform</li>
+            <li>ToneMap</li>
+            <li>PngWriter</li>
+            <li>Compositor</li>
+         </ul>
+      </div>
+
+      <div class="umlpackage">
+         <p><b>graphics</b></p>
+         <ul>
+            <li><b>Octree&lt;&gt;</b></li>
+            <li>Vectors</li>
+            <li>Matrixes</li>
+            <li>Quaternion</li>
+            <li>CieXyz</li>
+            <li>Rgb</li>
+            <li>XyzE</li>
+            <li>Polar</li>
+            <li>Filters</li>
+         </ul>
+      </div>
+
+      <div class="umlpackage">
+         <p><b>platform</b></p>
+         <ul>
+            <li>windows</li>
+            <li>WinThread</li>
+            <li>WinThreadLock</li>
+            <li>linux</li>
+            <li>mac</li>
+         </ul>
+      </div>
+
+      <div class="umlpackage">
+         <p><b>general</b></p>
+         <ul>
+            <li>Exceptions</li>
+            <li>Thread</li>
+            <li>ThreadLock</li>
+            <li>Logger</li>
+            <li>Float01</li>
+            <li>hxa7241vector</li>
+            <li>VectorEx</li>
+            <li>Sheet</li>
+            <li>TimePoint</li>
+         </ul>
+      </div>
+
+      <div class="umldiagramend">
+      </div>
+   </div>
+
+   <h4>Class Interfaces</h4>
+   <p>The interfaces are divided into methods, each with informal parameter lists.</p>
+   <div class="umldiagram">
+      <p>interfaces of important classes</p>
+
+      <div class="umlclass">
+         <p><b>Camera</b></p>
+         <ul>
+            <li>render
+               <ul class="plainlist">
+                  <li>[in]scene,</li>
+                  <li>[in]view,</li>
+                  <li>[out]imageBuffers</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umlclass">
+         <p><b>PixelCalculator</b></p>
+         <ul>
+            <li>construct
+               <ul class="plainlist">
+                  <li>[in]scene</li>
+               </ul>
+            </li>
+            <li>getPixel
+               <ul class="plainlist">
+                  <li>[in]objectid,</li>
+                  <li>[in]pixel/point position,</li>
+                  <li>[out]light</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umlclass">
+         <p><b>Projector</b></p>
+         <ul>
+            <li>construct
+               <ul class="plainlist">
+                  <li>[in]params</li>
+               </ul>
+            </li>
+            <li>project
+               <ul class="plainlist">
+                  <li>[in]scene,</li>
+                  <li>[in]view,</li>
+                  <li>[out]imageBuffers</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umlclass">
+         <p><b>LightTransport</b></p>
+         <ul>
+            <li>getIllumination
+               <ul class="plainlist">
+                  <li>[in]scene,</li>
+                  <li>[in]geometry,</li>
+                  <li>[in]outDirection,</li>
+                  <li>[in]isFullSphere,</li>
+                  <li>[out array]lights,</li>
+                  <li>[out]light,</li>
+                  <li>[out array]LightStreams</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umlclass">
+         <p><b>WardTransport</b></p>
+         <ul>
+            <li>getIllumination
+               <ul class="plainlist">
+                  <li>[in]scene,</li>
+                  <li>[in]normal,</li>
+                  <li>[in]isFullSphere,</li>
+                  <li>[out array]lights</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umlclass">
+         <p><b>RayTracer</b></p>
+         <ul>
+            <li>construct
+               <ul class="plainlist">
+                  <li>[in]WardTransport</li>
+               </ul>
+            </li>
+            <li>getIllumination
+               <ul class="plainlist">
+                  <li>[in]scene,</li>
+                  <li>[in]geometry,</li>
+                  <li>[in]outDirection,</li>
+                  <li>[out]light</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umlclass">
+         <p><b>PhotonMap</b></p>
+         <ul>
+            <li>getIllumination
+               <ul class="plainlist">
+                  <li>[in]position,</li>
+                  <li>[out array]LightStreams</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umlclass">
+         <p><b>TranslucencyMap</b></p>
+         <ul>
+            <li>getIllumination
+               <ul class="plainlist">
+                  <li>[in]position,</li>
+                  <li>[out]</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umlclass">
+         <p><b>SurfacePoint</b></p>
+         <ul>
+            <li>getEmission
+               <ul class="plainlist">
+                  <li>[out array]lights</li>
+               </ul>
+            </li>
+            <li>isTransmissive
+               <ul class="plainlist">
+                  <li>[out]bool</li>
+               </ul>
+            </li>
+            <li>getScalingGeneral
+               <ul class="plainlist">
+                  <li>[in]inVector,</li>
+                  <li>[in]outVector,</li>
+                  <li>[in]arraysLength,</li>
+                  <li>[in array]scalingWavelengths,</li>
+                  <li>[out array]scalings</li>
+               </ul>
+               </li>
+            <li>getScalingSpecular
+               <ul class="plainlist">
+                  <li>[in]outVector,</li>
+                  <li>[out]scalingSpecularReflect,</li>
+                  <li>[out]scalingSpecularTransmit</li>
+               </ul>
+            </li>
+            <li>getApproximation
+               <ul class="plainlist">
+                  <li>[out]diffuse,</li>
+                  <li>[out]specular,</li>
+                  <li>[out]shininess</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umlclass">
+         <p><b>Bidf</b></p>
+         <ul>
+            <li>isTransmissive
+               <ul class="plainlist">
+                  <li>[out]bool</li>
+               </ul>
+            </li>
+            <li>getScalingGeneral
+               <ul class="plainlist">
+                  <li>[in]inVector,</li>
+                  <li>[in]outVector,</li>
+                  <li>[in]arraysLength,</li>
+                  <li>[in array]scalingWavelengths,</li>
+                  <li>[out array]scalings</li>
+               </ul>
+               </li>
+            <li>getScalingSpecular
+               <ul class="plainlist">
+                  <li>[in]outVector,</li>
+                  <li>[out]scalingSpecularReflect,</li>
+                  <li>[out]scalingSpecularTransmit</li>
+               </ul>
+            </li>
+            <li>getApproximation
+               <ul class="plainlist">
+                  <li>[out]diffuse,</li>
+                  <li>[out]specular,</li>
+                  <li>[out]shininess</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umlclass">
+         <p><b>Scene</b></p>
+         <ul>
+            <li>setTime
+               <ul class="plainlist">
+                  <li>[in]timepoint</li>
+               </ul>
+            </li>
+            <li>enumerate
+               <ul class="plainlist">
+                  <li>[in]pixelsize,</li>
+                  <li>[in]viewpoint</li>
+               </ul>
+            </li>
+            <li>getBound
+               <ul class="plainlist">
+                  <li>[out]bound</li>
+               </ul>
+            </li>
+            <li>getIntersection
+               <ul class="plainlist">
+                  <li>[in]ObjectRenderableId,</li>
+                  <li>[in]Ray,</li>
+                  <li>[out]isHit,</li>
+                  <li>[out]distance,</li>
+                  <li>[out]Intersection</li>
+               </ul>
+            </li>
+            <li>visitObjects
+               <ul class="plainlist">
+                  <li>[in out]visitorObjects</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umlclass">
+         <p><b>ObjectRenderable</b></p>
+         <ul>
+            <li>setTime
+               <ul class="plainlist">
+                  <li>[in]timepoint</li>
+               </ul>
+            </li>
+            <li>enumerate
+               <ul class="plainlist">
+                  <li>[in]pixelsize,</li>
+                  <li>[in]viewpoint</li>
+               </ul>
+            </li>
+            <li>getBound
+               <ul class="plainlist">
+                  <li>[out]bound</li>
+               </ul>
+            </li>
+            <li>getIntersection
+               <ul class="plainlist">
+                  <li>[in]ObjectRenderableId,</li>
+                  <li>[in]Ray,</li>
+                  <li>[out]isHit,</li>
+                  <li>[out]distance,</li>
+                  <li>[out]Intersection</li>
+               </ul>
+            </li>
+            <li>visitObjects
+               <ul class="plainlist">
+                  <li>[in out]visitorObjects</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umlclass">
+         <p><b>ImageHdr</b></p>
+         <ul>
+            <li>setPixel
+               <ul class="plainlist">
+                  <li>[in]light</li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+
+      <div class="umldiagramend">
+      </div>
+   </div>
+
+   <h4>Interactions</h4>
+   <p>The main render use case can be realized as a high level pseudo-code sequence, each line being an operation description or method call.</p>
+
+   <h5>Main Sequence</h5>
+<pre>
+Camera::render
+   pre render
+      build photon map
+      build translucency map
+      enumerate scene [using view]
+   main render
+      Projector::construct for id production
+      Projector::project
+      start illumination cache
+         loop thru pixels following low res grids
+            at each point and ray trace node
+               call LightTransport to make illumination
+      loop thru pixels
+         PixelCalculator::getPixel
+            get SurfacePoint from Scene
+            Bidf::isTransmissive
+            LightTransport::getIllumination
+               WardTransport::getIllumination
+               if Bidf::getScalingSpecular larger than zero
+                  RayTracer::getIllumination
+               PhotonMap::getIllumination
+               TranslucencyMap::getIllumination
+            SurfacePoint::getEmission
+            calculate overall light interaction equation
+               Bidf::getScalingGeneral
+               Bidf::getScalingSpecular
+         Image::setPixel
+      apply depth of field
+   post render
+      adaptive supersample
+         pick high-contrast pixels
+            loop thru timesteps
+               loop thru lens points
+                  trace into pixels
+</pre>
+
+   <h5>Moving Objects Sequence</h5>
+<pre>
+set time point to mid
+render static objects
+step through time
+   render top layer
+      background accumulation, and each moving object on a separate sub image
+      accumulation
+</pre>
+
+   <h5>Moving Camera Sequence</h5>
+<pre>
+render, including pixel vectors
+convolve image according to vectors
+</pre>
+</div>
+
+
+<div class="section" id="deployment">
+<h3>Deployment Model</h3>
+
+   <p>Rather than distribute across computational nodes, this divides the system into separate executable programs of particular types.</p>
+
+   <p>Command-line programs:</p>
+   <ul>
+      <li>modeller - in: (external scene file, command file) out: (P3 scene file)</li>
+      <li>renderer - in: (commands (options, scene)) out: (log, HDR standard image)</li>
+      <li>imager - in: (commands, HDR standard image) out: (log, RGB PNG)</li>
+      <li>executor - batch them together</li>
+   </ul>
+
+   <p>Optional dynamic-link plugins can be added:</p>
+   <ul>
+      <li>Bidf</li>
+      <li>ObjectRenderable</li>
+   </ul>
+</div>
+
+
+<div class="section" id="implementation">
+<h3>Implementation Model</h3>
+
+   <p>This contains general implementation notes and guides.</p>
+
+   <!--<p>(includes components (representing source code) and the mapping of the classes to components)</p>
+   <p>general implementation properties</p>
+   <p>build system notes</p>-->
+
+   <p>Component/libraries reused:</p>
+   <ul>
+      <li>OpenGL</li>
+      <li>OpenSceneGraph</li>
+      <li>Perceptuum2</li>
+      <li>Radiance</li>
+      <li>X3D</li>
+      <li>OpenEXR</li>
+      <li>libpng</li>
+      <li>boost.org</li>
+      <li>stlport.org</li>
+      <li>cppunit</li>
+   </ul>
+
+   <p>Code details:</p>
+   <ul>
+      <li>headers have .hpp filename extension</li>
+      <li>body code has .cpp filename extension</li>
+      <li>non-nested namespaces</li>
+      <li>avoid templates except basic usage</li>
+      <li>warn if any data requirement is defaulted</li>
+      <li>make a nested exception class to capture message stack</li>
+      <li>integrated unit tests</li>
+   </ul>
+</div>
+
+
+<div class="section" id="test">
+<h3>Test Model</h3>
+
+   <p>Though testing is usually not part of the architecture for <acronym title="Unified Software Development Process">USDP</acronym>, an integrated <a href="#r01.03"><acronym title="eXtreme Programming">XP</acronym><sup>[1.3]</sup></a> approach to testing makes it so.</p>
+
+   <p>The overall strategy is that testing will be mostly unit testing &mdash; the complex, numerical nature of the algorithms demand detailed probing in several places. System testing will be by viewing specially constructed test scenes.</p>
+</div>
+
+
+<div class="section" id="plan">
+<h3>Plan</h3>
+
+   <p>Construction order:</p>
+   <ol>
+      <li>Basic skeleton version of apps</li>
+      <li>Basic visualising window app</li>
+      <li>OpenGL component prototype</li>
+      <li>Basic versions of some packages
+         <ul>
+            <li>Illumination and projective rendering</li>
+            <li>Gathering and interpolation</li>
+            <li>Rasterization</li>
+            <li>Modelling</li>
+            <li>Imaging</li>
+            <li>Interaction</li>
+         </ul>
+      </li>
+      <li>Ray tracing</li>
+      <li>Rasterization refinements
+         <ul>
+            <li>Depth of field</li>
+            <li>Motion blur</li>
+            <li>Adaptive supersampling</li>
+         </ul>
+      </li>
+      <li>Caustics
+         <ul>
+            <li>Caustic rendering</li>
+            <li>Illumination refinement</li>
+         </ul>
+      </li>
+      <li>Translucency
+         <ul>
+            <li>Translucency rendering</li>
+            <li>Illumination refinement</li>
+            <li>BSSRDF</li>
+         </ul>
+      </li>
+      <li>BIDF
+         <ul>
+            <li>Plugins</li>
+         </ul>
+      </li>
+      <li>Imaging refinement
+         <ul>
+            <li>Better tonemap</li>
+            <li>HDR format</li>
+            <li>Glare</li>
+         </ul>
+      </li>
+      <li>Multi CPU support, and GPU parallelization</li>
+   </ol>
+</div>
+
+</div>
+
+
+<div class="section" id="references">
+<h2>References</h2>
+
+   <h3>Software Engineering</h3>
+   <ul>
+      <li id="r01.01"><span class="refnumber">[01.01]</span> Booch, Jacobson, Rumbaugh; &lsquo;The Unified Software Development Process&rsquo;, Addison Wesley, 1999.</li>
+
+      <li id="r01.02"><span class="refnumber">[01.02]</span> Fowler; &lsquo;UML Distilled&rsquo; 3rd ed, Addison Wesley, 2003.</li>
+
+      <li id="r01.03"><span class="refnumber">[01.03]</span> Beck; &lsquo;Extreme Programming Explained&rsquo;, Addison Wesley, 1999.</li>
+   </ul>
+
+   <h3>Basic Approach</h3>
+   <ul>
+      <li id="r02.01"><span class="refnumber">[02.01]</span> Tabellion, Lamorlette; &lsquo;An Approximate Global Illumination System for Computer Generated Films&rsquo;, Siggraph Proceedings, 2004.</li>
+
+      <li id="r02.02"><span class="refnumber">[02.02]</span> Ward, Rubinstein, Clear; &lsquo;A Ray Tracing Solution for Diffuse Interreflection&rsquo;, Siggraph Proceedings, 1988.</li>
+
+      <li id="r02.03"><span class="refnumber">[02.03]</span> Ward, Heckbert; &lsquo;Irradiance Gradients&rsquo;, Siggraph Proceedings, 1992.</li>
+
+      <li id="r02.04"><span class="refnumber">[02.04]</span> Neider, Davis; &lsquo;OpenGL Progamming Guide&rsquo; (red book) 2nd ed, Addison Wesley, 1997.</li>
+
+      <li id="r02.05"><span class="refnumber">[02.05]</span> Nijasure, Pattanaik; &lsquo;Real-Time Global Illumination on GPU&rsquo;, unpublished, 2004.</li>
+
+      <li id="r02.06"><span class="refnumber">[02.06]</span> Krivanek, Gautron, Pattanaik, Bouatouch; &lsquo;Radiance Caching for Efficient Global Illumination Computation&rsquo;, IEEE transactions on visualisation and computer graphics, 2004.</li>
+   </ul>
+
+   <h3>Feature Techniques</h3>
+   <ul>
+      <li id="r03.01"><span class="refnumber">[03.01]</span> Glassner; &lsquo;Introduction To Ray Tracing&rsquo;, Academic Press, 1989.</li>
+
+      <li id="r03.02"><span class="refnumber">[03.02]</span> Wann Jensen, Buhler; &lsquo;A Rapid Hierarchical Rendering Technique for Translucent Materials&rsquo;, Siggraph Proceedings, 2004.</li>
+
+      <li id="r03.03"><span class="refnumber">[03.03]</span> Wann Jensen; &lsquo;Realistic Image Synthesis Using Photon Mapping&rsquo;, AK Peters, 2001.</li>
+
+      <li id="r03.04"><span class="refnumber">[03.04]</span> Ward, Rushmeier, Piatko; &lsquo;A Visibility Matching Tone Reproduction Operator for High Dynamic Range Scenes&rsquo;, ?, 1997.</li>
+
+      <li id="r03.05"><span class="refnumber">[03.05]</span> Mulder; &lsquo;Fast Perception-Based Depth of Field Rendering&rsquo;, ?, 2000.</li>
+
+      <li id="r03.06"><span class="refnumber">[03.06]</span> Ward, Eydelberg-Vileshin; &lsquo;Picture Perfect RGB Rendering Using Spectral Prefiltering and Sharp Color Primaries&rsquo;, Eurographics workshop on rendering, 2002.</li>
+   </ul>
+</div>
+
+
+</div>
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>
+
+
+
+
+<!--
+
+time:
+
+3hrs
+3hrs
+4hrs
+4hrs
+2hrs
+3hrs
+2hrs
+
+total: 21 hours
+
+-->

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Software Architecture For A New Economic System - HXA7241 - 2013</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Software Architecture For A New Economic System - HXA7241 - 2013" />
+   <meta name="DC.subject"     content="economics, information, computation, software, engineering-fiction" />
+   <meta name="DC.description" content="A rough, high-level software description for a general economic system: an informational structure/means for organising cooperation. (Or an 'engineering fiction'.)" />
+   <meta name="DC.type"        content="article" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2013-02-03" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/articles/content/economic-system-software-architecture_hxa7241_2013.html" />
+
+   <meta name="keywords"       content="economics, information, computation, software, engineering-fiction" />
+   <meta name="description"    content="A rough, high-level software description for a general economic system: an informational structure/means for organising cooperation. (Or an 'engineering fiction'.)" />
+   <meta name="document"       content="hxa7241article6" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>Software Architecture For A New Economic System</h1>
+   <h3><i>(A plausible-idea / engineering-fiction)</i></h3>
+</div>
+
+
+<div id="colophon" title="colophon">
+<h4>Harrison Ainsworth</h4>
+
+   <p id="contact"><a href="http://www.hxa.name/">http://www.hxa.name/</a>
+   <br />hxa7241+articles <i>(&alpha;&tau;)</i> googlemail <i>(d&omicron;&tau;)</i> com</p>
+
+   <p id="timestamp" title="started: 2012-11-27">2013-02-03</p>
+</div>
+
+
+<div id="preface" title="introduction">
+   <div id="summary">
+
+   <h2>Introduction</h2>
+
+   <p>To design an economic system one must capture the basics. They are not money/markets/exchange. They are: what is wanted, and what is available. The essence of this architecture is to discretise those, and assemble them into a parallel computation. The result is market-like in being distributed/decentralised, but does not involve trade in the normal sense. It is about measurement and search of a changing network. And this is intended and outlined for current information technology, with a little ambitiousness.</p>
+
+   <p>How can you have a money-less economic system? &ndash; one that is still decentralised and complex/large-scale? There seem to be no good descriptions of such a thing. Many people will pretty much deny it is possible: either we have markets or central-planning, or merely something like primitive &lsquo;barter&rsquo;. They lack imagination. Here is a reasonable sketch of a system appropriate for our informational-age.</p>
+
+   <p>This is a software architecture &ndash; a rough, high-level description &ndash; for a general economic system: an informational structure/means for organising cooperation. At this level it is as much a way of beginning to use software ideas to think more clearly about the problem as it is a plan of a solution. It delineates the main technical and usable forms, and crystallises the subject activity toward a unified software artefact. (Or if you think this is all silly, just consider it a kind of &lsquo;engineering fiction&rsquo;.)</p>
+
+   <p>The psychological aspect of economics is not considered (nor is the physical); this is only about information/computation structure. Addition of those other aspects is not prevented, but separating them off helps to clarify the informational features and limits. <span class="lowlight">(But is economics not inseparably psychological? Is music not inseparably emotional? But to build an audio codec you separate out the logical, the mathematical/computational structure. The intent is the same here.)</span></p>
+
+   <p>2000 words (15 minutes)</p>
+   </div>
+</div>
+
+
+<div id="contents" title="contents">
+   <h2>Contents</h2>
+
+   <ul>
+      <li><a href="#preface">Introduction</a></li>
+   </ul>
+
+   <h4><a href="#architecture">Architecture</a></h4>
+   <ul>
+      <li><a href="#signals">Signals</a></li>
+      <li><a href="#goods">Goods</a></li>
+      <li><a href="#measures">Measures</a></li>
+      <li><a href="#matching">Matching</a></li>
+   </ul>
+
+   <h4><a href="#comment">Comment</a></h4>
+   <ul>
+      <li><a href="#analysis">Analysis</a></li>
+      <li><a href="#features">Notable features</a></li>
+      <li><a href="#morality">Motivation and morality</a></li>
+      <li><a href="#related">Related background notes</a></li>
+   </ul>
+</div>
+
+
+
+<div id="text">
+
+<div class="division" id="architecture" title="architecture">
+<h2>Architecture</h2>
+
+<div class="section" id="signals" title="signals">
+<h3>Signals</h3>
+
+   <p>What is the key basic data structure, or data object, here? (This is a good way to start because a data structure/object is the most abstract, most broad, way to try to capture the problem and solution.)</p>
+
+   <p>It is: <b>Offers</b> and <b>Requests</b>. These are the same structure but with a flag to indicate which. They are effectively a kind of &lsquo;description&rsquo; of <i>Goods</i>, including particularly a space-time location(/region).</p>
+
+   <p>Why these? <b>They express the most general basic formulation of economic concern: supply and demand</b>. Various <i>Goods</i> are both available and wanted to various degrees, and an economic system must distribute them optimally. We could call <i>Offers</i> and <i>Requests</i> &lsquo;<b>ecoms</b>&rsquo;: they are EConomic atOMs. They are the fundamental distinctive elements on which the system is built.</p>
+
+   <p><i>Offers</i> and <i>Requests</i> discretise the &lsquo;occurrence&rsquo; of supply and demand: they allow supply and demand to be handled as discrete (hence computationally amenable) events.</p>
+
+   <p>And since <i>Offers</i> and <i>Requests</i> plug together &ndash; offers can fit requests and requests fit offers &ndash; they can form a completely connected network. This then implies that anyone's or anything's <i>Offers</i> and <i>Requests</i> are not endpoints: each thing's offers are dependent on their requests, and vice-versa, as will be seen later.</p>
+
+   <div class="lowlight">
+   <h5>Supplement</h5>
+
+   <p>Not just people, but things propose <i>Offers</i> and <i>Requests</i>. A robot car can <i>Offer</i> a journey from Woodford Green to South Woodford, and might also <i>Request</i> a replacement tyre.</p>
+   </div>
+</div>
+
+
+<div class="section" id="goods" title="goods">
+<h3>Goods</h3>
+
+   <p>The second basic data object is <b>Goods</b>. These are references or &lsquo;descriptions&rsquo; of resources, services, activities &ndash; anything that can be subject to <i>Offers</i> and <i>Requests</i>.</p>
+
+   <p>For the scope of this design they are wholly abstract: all that is needed is to be able to distinguish <i>different</i> <i>Goods</i>. This is enough for them to discretise the &lsquo;kinds&rsquo; of supply and demand: so supply and demand can be about different kinds of things.</p>
+
+   <p>Though they are abstract the network of <i>Offers</i> and <i>Requests</i> can give them a constructive sense. If a <i>Good</i> has both <i>Offers</i> and <i>Requests</i>, its <i>Offers</i> are dependent on its <i>Requests</i>. For example a final delivered thing depends on a boxed-thing and parcel-delivery; and that boxed-thing depends on a thing and a box.</p>
+
+   <p>The way that <i>Offers</i>, <i>Requests</i>, and <i>Goods</i> can be combined answers the second basic question: what is the overall algorithmic intent here? <b>To enable cooperation &ndash; to split up and coordinate work across a group</b>. The economy becomes a parallel functional computation, described by the dependencies between sub-parts.</p>
+
+   <div class="lowlight">
+   <h5>Supplement</h5>
+
+   <p>The content of <i>Offers</i> and <i>Requests</i> depends in the end on the actual features of <i>Goods</i>: one can request an LED light only because there are such lights. So there is a whole world of known/findable information that the economic system uses but is not the job of this architecture to define.</p>
+   </div>
+</div>
+
+
+<div class="section" id="measures" title="measures">
+<h3>Measures</h3>
+
+   <p>The basic implementational data object is <b>Currents</b>. This is a measure of the simplest network relations of <i>Offers</i>, <i>Requests</i>, and <i>Goods</i>. From <i>Currents</i> can be built other more important <b>Measures</b>.</p>
+
+   <p><i>Offers</i> successfully delivered to <i>Requests</i> add to <i>Current</i> between the two, distinguished by different kinds of <i>Goods</i> involved.</p>
+
+   <p><i>Currents</i> discretise the recent &lsquo;state&rsquo; of supply and demand: they express the strength/width of flow between the two in one place in the network. This is most like the normal behaviour of money &ndash; but <i>Currents</i> are the basis for deliberate and more general and discerning measurement.</p>
+
+   <p>Easiest of the secondary <i>Measures</i> that could be built from <i>Currents</i> might be something like reputation.</p>
+
+   <p>If a <i>Good</i> (including persons) delivers on an <i>Offer</i>, that increases its related supply-reputation. And if a <i>Good</i> takes delivery of a <i>Request</i>, that decreases its related demand-reputation. If you only request a kind of thing rarely, you decrease your related demand-reputation less than if you request frequently. (And if your <i>Requests</i> feed into your <i>Offers</i>, your reputation will balance out.)</p>
+
+   <p><i>Currents</i> and other <i>Measures</i> built from it are implemented by: judgement of <i>Offers</i>/<i>Requests</i> according to kind (etc.), and somewhere to store and accumulate. That is, they are functions on the (ever-changing) network to yield data of <i>Measures</i> of it, over time. (<i>Currents</i> and other <i>Measures</i> are a bit like PageRank.)</p>
+
+   <div class="lowlight">
+   <h5>Supplement</h5>
+
+   <p>Certain measures might be certified and mandated globally. E.g. some things <i>Request</i>ed (or <i>Offer</i>ed) are considered more necessities than others &ndash; so everyone is more ensured of supply.</p>
+   </div>
+</div>
+
+
+<div class="section" id="matching" title="matching">
+<h3>Matching</h3>
+
+   <p>The main algorithmic structure is <b>Matching</b>. It does the economic allocation as a form of search, using <i>Offers</i>, <i>Requests</i>, <i>Goods</i>, and most particularly <i>Currents/Measures</i> (which underlie the main indexes).</p>
+
+   <p>The primary ingredients, and drivers, of the search are <i>Offers</i> and <i>Requests</i>, since joining each to the other is the ultimate aim; and they work as an extended kind of search-term.</p>
+
+   <p>The nature of <i>Offers</i> and <i>Requests</i> means queries are more general and complex. Because they can have various time properties, they can also be ongoing announcements/notices or standing queries. And because they are mutually both question and answer to each other, they can form interactive responses and counter-queries.</p>
+
+   <p><i>Currents/Measures</i> can provide a range of knowledge to the search, and the foundation of <i>Matching</i> is to build that into its indexing (and pre-calculation). But allocation/connection of <i>Requests</i> to <i>Offers</i> can, and probably should, also be done by two other means: human judgement/choice, and randomness. The job of <i>Matching</i>'s usability structure is to help that.</p>
+
+   <p>The main engineering challenge is making this very large and very distributed. It does seem possible, but only on the edge of possibility to do it well.</p>
+
+   <div class="lowlight">
+   <h5>Supplement</h5>
+
+   <p>Perhaps parts of the matching algorithm handling <i>Currents/Measures</i> must be cryptographically secured/signed: to ensure there is only one kind of measure (related to ensuring a normal money supply is limited). Unless there is a way to automatically converge: the measurement calculation is distributed, and averaged somehow . . .</p>
+   </div>
+</div>
+
+</div><!--division-->
+
+
+
+<div class="division" id="comment" title="comment">
+<h2>Comment</h2>
+
+<div class="section" id="analysis" title="analysis">
+<h3>Analysis</h3>
+
+   <p>There are four parts: three kinds of data and one kind of algorithm:</p>
+   <ul>
+      <li>Signals &ndash; (requests, offers) events referring to goods;</li>
+      <li>Goods &ndash; identifiers of things, activities, people;</li>
+      <li>Measures &ndash; measures of the network over time;</li>
+      <li>Matching &ndash; of requests and offers, by search, using currents/measures.</li>
+   </ul>
+
+   <p>The system can be understood first as discretising the two basic concerns &ndash; supply and demand &ndash; in the three dimensions of the data:</p>
+   <ul>
+      <li>discretising the <i>occurrence</i> of supply and demand &ndash; Signals,</li>
+      <li>discretising the <i>kinds</i> of supply and demand &ndash; Goods,</li>
+      <li>discretising the <i>state</i> of supply and demand &ndash; Currents/Measures.</li>
+   </ul>
+
+   <p>And, secondly, the operation, the algorithm, of the system (hence economy) is to <i>link</i> supply and demand together in different ways as circumstances change, using certain information about the network up to now.</p>
+
+   <p>How does the established money/market system fit with that perspective? The current economic system can be seen as:</p>
+   <ul>
+      <li>discretising <i>occurrence</i> by property transfer rules and implicitly in persons,</li>
+      <li>discretising <i>kinds</i> with informal knowledge, not &lsquo;machine-readably&rsquo; mostly,</li>
+      <li>discretising <i>state</i> by money, the most digital aspect.</li>
+   </ul>
+
+   <p>And the operation of linking supply and demand is also done informally mostly, and so more information-poorly.</p>
+</div>
+
+
+<div class="section" id="features" title="features">
+<h3>Notable features</h3>
+
+   <p>There is no money, no loans, no repayment, and no symmetrical/reciprocal exchange generally. Economic interaction is expressed as it really is: asymmetrically. If you want something you just <i>Request</i> the thing and maybe get it (or something like it). Similarly with <i>Offers</i>: you give and maybe it is taken.</p>
+
+   <p>It could be seen as a software-oriented formalisation and expansion of Graeber's idea of everyday communism: it encodes and implements &ldquo;From each according to their ability, to each according to their need&rdquo; &ndash; which is perhaps the most general expression of the economic problem and solution.</p>
+
+   <dl>
+      <dt>No money, no-one gets rich:</dt>
+         <dd>People get what they need/want to do useful things &ndash; richness is economic waste.</dd>
+      <dt>No debt, no repayment:</dt>
+         <dd>Loans disappear: replaceable by <i>Requests</i> &ndash; repayment, in sending resources <i>back again</i> to where they were plentiful, is / would be dysfunctional allocation.</dd>
+      <dt>No symmetrical/reciprocal/exchange:</dt>
+         <dd>Reciprocal exchange does not make sense economically (or morally).</dd>
+      <dt>No pervasive externalities:</dt>
+         <dd>Using more information allows seamless internalisation of externalities: there is no &lsquo;external&rsquo; really: whatever should be considered in allocating can be, up to tech limits.</dd>
+   </dl>
+
+   <dl>
+      <dt>Still decentralised:</dt>
+         <dd>At least largely so, and where it makes sense to be.</dd>
+      <dt>Still uses property:</dt>
+         <dd>But perhaps enables more flexibilities of.</dd>
+   </dl>
+
+   <p>Most other thinking about economic systems is about money, and seems never quite easy to understand, it seems perpetually somewhat obscure and uncertain. Because money itself is confusing and obscuring: what does it do? does it not &lsquo;measure&rsquo; and help &lsquo;exchange&rsquo; of &lsquo;value&rsquo;? what <i>is</i> &lsquo;value&rsquo;? The whole approach leads to the wrong questions &ndash; it becomes a Wittgensteinian fly-bottle.</p>
+
+   <p>But <i>Offers</i> and <i>Requests</i> are simple: they are about what is wanted and what is available. There is nothing mysterious. Anyone can immediately understand, and see that is what an economic system is essentially about.</p>
+
+   <p>By focusing on the real essentials and being built around using more information than the current money/market system this architecture should have the potential to address the economic problem more generally and precisely, while still being practicable for modern technology.</p>
+</div>
+
+
+<div class="section" id="morality" title="morality">
+<h3>Motivation and morality</h3>
+
+   <p>Will this system sufficiently motivate people to produce? This is a likely question. The current market system obviously substantially has and sets a demanding comparison. But answering leads to questions of morality and what the aim here is anyway.</p>
+
+   <p>The current market system is claimed to drive progress especially much. To do so it must be that people work more than they otherwise would according to their deliberate wishes and to cover their basic needs. And if this effect is attributable to the market system (rather than deliberate wish), it must be concluded that it <i>forces</i> people to work more.</p>
+
+   <p>That seems immediately morally questionable (from a JS Mill view). Even though it is cooperatively good &ndash; it, by our collective action, produces what we do all want &ndash; working extra hard is something people have not really genuinely agreed to.</p>
+
+   <p>The proper task of an economic system (in the strict informational/computational sense used by this article) is not to integrate particular biases or intents of what might be wanted or not. Rather it is to be abstract and to allow <i>any</i> wants to be expressed and handled. The system should ideally be only the intermediary: it facilitates any connection of desires and availability without prejudice. The presented architecture aims to do that.</p>
+
+   <p>(But anyway the question is really one of effectiveness, and in the end the answer must be empirical: <i>build it and see</i>.)</p>
+</div>
+
+
+<div class="section" id="related" title="related">
+<h3>Related background notes</h3>
+
+   <ul>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20130203T1036Z.html">&lsquo;How to approach designing an economic system&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20130120T1053Z.html">&lsquo;Debt is a bad cooperative structure&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20130106T1019Z.html">&lsquo;Compensation for work is wrong&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20121230T1123Z.html">&lsquo;Money definitions are teleological and tautological&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20120909T0926Z.html">&lsquo;Your next project? Design a new economic system!&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20120624T1124Z.html">&lsquo;Marxist efficiency&rsquo;</a></li>
+   </ul>
+</div>
+
+</div><!--division-->
+
+</div><!--text-->
+
+
+<div id="metadata" title="metadata">
+   <h2>Metadata</h2>
+   <p><a href="http://www.hxa.name/txon/">(TXON)</a></p>
+
+<pre class="plain">DC:`
+   title:`Software Architecture For A New Economic System`
+   creator:`Harrison Ainsworth`
+
+   date:`2013-02-03`
+
+   description:`A rough, high-level software description for a general economic system: an informational structure/means for organising cooperation. (Or an 'engineering fiction'.)`
+   subject:`economics, information, computation, software, engineering-fiction`
+
+   language:`en-GB`
+   type:`article`
+   relation:`http://www.hxa.name/`
+   identifier:`http://www.hxa.name/articles/content/economic-system-software-architecture_hxa7241_2013.html`
+   rights:`Creative Commons BY-SA 3.0 License`
+`</pre>
+</div>
+
+
+</div><!--paper-->
+
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

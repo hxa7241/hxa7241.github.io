@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Parsing wrongness and language value - (note-20120506T0907Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Parsing wrongness and language value - (note-20120506T0907Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, programming-languages" />
+   <meta name="DC.description" content="Parsing is a poor choice of problem. Programming languages should help us see and help us move." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2012-05-06" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20120506T0907Z.html" />
+
+   <meta name="keywords"       content="software-engineering, programming-languages" />
+   <meta name="description"    content="Parsing is a poor choice of problem. Programming languages should help us see and help us move." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Parsing wrongness and language value</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20120506T0907Z.html" title="permalink">NOTE HXA7241 2012-05-06T09:07Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>Parsing is a poor choice of problem. Programming languages should help us see and help us move.</h5>
+
+
+   <p><a href="http://axisofeval.blogspot.co.uk/search/label/hypercode">MJS  has been recently mulling over these kinds of things</a>, so here is some more.</p>
+
+
+   <h4>Why is parsing wrong ?</h4>
+
+   <blockquote>
+      <p><a href="http://twitter.com/#!/hxa7241/status/194538612145135616">&ldquo;Is parsing not an illusory problem caused by using the wrong data structure?&rdquo;</a></p>
+   </blockquote>
+
+   <p>First, let us be clear about this message by separating-off its expression. The quote is actually logically degenerate &ndash; it is, in essence, saying: &ldquo;If something is bad, is it bad?&rdquo;. Of course the answer is always yes &ndash; it is a tautology.</p>
+
+   <p>But that accidental rhetorical form merely lends some appealing force. The suggestion is that the thing in question <i>is</i> indeed significantly bad.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>Parsing is sometimes said to be a solved problem, but that is only from a high-level academic computer-science perspective. Practically it is not. If you have to write a parser, there is some work &ndash; and for anything moderately complex or more, a serious amount (C++ anyone?).</p>
+
+   <p>The meaning of a data structure is the algorithms that use it (to paraphrase Wittgenstein). A choice of data structure really says what we want to <i>do</i> with it. So what of programming languages and text-files of code? We would have to deduce that our number-one priority is ease of typing-in code char-by-char. Does that sound like a sensible priority?</p>
+
+   <p>The normal text-file code data structure is biased toward making unimportant things easier &ndash; and so imposing significant barriers to more important things we (might) want to do.</p>
+
+
+   <h4>What should programming languages do ?</h4>
+
+   <p>As the bottom line, programming languages have only psychological value (very broadly speaking), not computational value &ndash; because they do no computation. All we value in computers and computation is orthogonal to language: changing languages will not improve it, or change it at all. (This is just the other face of the Church-Turing thesis coin.)</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p><b>A programming language is a data structure with a presentation</b> &ndash; that is the only constraint or limit to what it could possibly be. (To clarify: a language is a data structure in that it fixes a general format and allows various particular instances: the grammar is the type, programs are the values. (And the common presentation is simply text.))</p>
+
+   <p>We could picture it as an articulated mechanism with several freedoms of movement. Or a game like chess with various legal moves. (These map to software, rather than being only analogous, though they are simpler logically.)</p>
+
+   <p>So what should the <i>presentation</i> do? Perhaps the presentation for a programming language (hence programs) should show nearby, interesting, possible movements. (We also want the <i>data structure</i>, the &lsquo;grammar&rsquo;/type, to facilitate a good set of freedoms or moves, but that can be left aside for the moment.)</p>
+
+   <p>The intent is that <b>a language should present a rich, clear, view of the extended/implicit form of the software artifact</b> &ndash; the kinds of patterns, or regularities, composing it or relating to it. A good language communicates not only the program itself, but its &lsquo;context of extension&rsquo; &ndash; the ways it relates to other things, and the ways it could be extended, advanced, or changed. If we want to understand a mechanism or game, we diagram its envelopes of motions etc. or the tactical look-ahead, and so on.</p>
+
+   <p>We want a view of possible change because the main thing we do with software <i>is</i> to change it &ndash; to develop it, re-do it, extend it, modify it. The most essential requirement of languages is to support the most essential activities of software engineering.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>How to get a clearer idea of what this could amount to specifically, concretely, in practice? Ask: what kind of transforms do we want to make on code, and what would be interesting to know about their results (what is interesting to know about <i>any</i> program (parts))?</p>
+
+   <p>The first can be pursued by looking carefully at what we do, as above: we want to support the transforms of normal development: adding/removing/modifying functionality.</p>
+
+   <p>The second can be pursued by recalling the two basic aspects/questions of software engineering: the computational properties and the developmental properties &ndash; how much time/space/energy does computation take, and how much effort/resources does development take. (Do <i>any</i> current dev-environments/languages help with such information? They should.)</p>
+
+   <p>Immediate feedback, a direct view of execution state and effect &ndash; as recent demos have shown &ndash; is just a start. It is good to see what we are doing, but it would be better to see a little further too: to see what we might do next.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>How we interact with the material we work with can be of great importance. It leads us to discover more about that part of the world, and leads us to new thoughts about it. If humans were blind, would we have achieved so much?</p>
+
+   <p>Programming languages are the eyes through which we see the computational universe. Are they doing that job well?</p>
+
+   <p>A good programming language shows us possible places to go and helps us step toward them.</p>
+
+   <h5>Related:</h5>
+
+   <ul>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110627T0842Z.html">&lsquo;The aim of software engineering&rsquo;; HXA7241; 2011.</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110612T0855Z.html">&lsquo;The second basic question of software engineering&rsquo;; HXA7241; 2011.</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

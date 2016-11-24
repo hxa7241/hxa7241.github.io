@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="hxa7241-perceptuum-sequences" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+   <title>&lt; H X A 7 2 4 1 &gt; : perceptuum sequences</title>
+
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="perceptuum2.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="outer">
+
+
+<div class="upper">
+   <div class="title">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
+   </div>
+</div>
+
+
+<div class="side">
+   <ul class="mainmenu">
+      <li>
+         <a href="../" title="home" accesskey="h">HOME</a>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../software/" title="various software projects">SOFTWARE</a>
+         <ul class="mainmenu">
+            <li>
+               <a href="../rendering/" title="some rendering-related development projects">RENDERING</a>
+               <ul class="mainmenu">
+                  <li>
+                     <a href="../perceptuum/" title="a global illumination renderer">PERCEPTUUM</a>
+                     <ul class="mainmenu">
+                        <li>
+                           <span class="current" title="this page">PERCEPTUUM sequences</span>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
+      </li>
+      <li>
+         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
+      </li>
+   </ul>
+</div>
+
+
+<div class="middle">
+<div class="picture">
+   <img src="perceptuum-picture.jpg" alt="four cornell box variants" />
+</div>
+
+<h2>PERCEPTUUM - sequences</h2>
+<div class="h2subheading">a global illumination renderer development project</div>
+
+
+<div class="content">
+
+<div class="section">
+   <h3>main rendering sequence</h3>
+
+   <p>this is a kind of shorthand description, lacking detail, not clarifying instances, but class and method names are real. indentation means deeper in the call stack, or inside a loop or conditional, braces contain shortened descriptions of calls, brackets contain comments.</p>
+
+   <pre>
+Render.render
+   RenderKernel.construct
+      ImageAccumulation {get from state}
+      SamplingControl {get from state}
+      SpacetimeIndex {construct with Scene}
+      Illumination {construct with RenderingOptions}
+      RasterizerTracing {construct with RenderingOptions}
+
+   while not RenderKernel.isCompleted
+      RenderKernel.renderFrame
+         if not ImageAccumulation.isCompleted()
+            SpacetimeIndex.update with SamplingControl
+               Scene.update with timepoint from SamplingControl
+
+            Illumination.makeIllumination with SpacetimeIndex and SamplingControl
+               for all EmitterPaths [each only using its initial node]
+                  EmitterPath.trace with SpacetimeIndex and SamplingControl
+                  SamplingControl.advanceIllumination0
+               while photon maps not full
+                  EmitterPath.trace with SpacetimeIndex and SamplingControl [temporary EmitterPath within this scope]
+                  PhotonMaps {add nodes in EmitterPath}
+                  SamplingControl.advanceIllumination1
+
+            Rasterizer.rasterizeFrame with SamplingControl, SpacetimeIndex, Illumination and ImageAccumulation
+               for all pixels
+                  if ImageAccumulation.shouldSample
+                     Camera.getRay
+                     EyePath.trace with SamplingControl, SpacetimeIndex, Illumination, Ray
+                     EyePath.getEyeEndLight
+                     ImageAccumulation.addSample
+
+            ImageAccumulation.analyse
+            SamplingControl.advanceFrame
+
+      Render.attendToFrameDone {display image to app window}
+
+   Render.attendToRenderDone {display image to app window}
+
+
+
+EmitterPath.trace
+   EmitterPath.chooseLightSourceStart with Scene from SpacetimeIndex
+      Scene.getEmitted with SamplingControl
+   while path not ended
+      SpacetimeIndex.getNextIntersection with ray
+         Scene.getRootObject.getIntersection with Ray
+      EmitterPathNode.setEmitterPathNode with Intersection, Ray and Light
+      EmitterPathNode.getNextPathStep with SamplingControl {use Bssdf}
+
+
+
+EyePath.trace
+   while path not ended
+      SpacetimeIndex.getNextIntersection with ray
+      EyePathNode.setSurfacePoint with Intersection
+      EyePathNode.getNextPathStep with SamplingControl
+   if path end is diffuse
+      Illumination.getIllumination
+         Illumination.getDirectIllumination
+            for all EmitterPaths
+               EmitterPath.getSpreadLight
+               EyePathNode.getGatheredLightDistal
+         Illumination.getPhotonMapIllumination
+            PhotonMap.getIllumination
+            EyePathNode.getGatheredLightLocal
+   </pre>
+</div>
+
+</div>
+</div>
+
+
+<div class="lower">
+   <div>2004-08-22</div>
+</div>
+
+
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

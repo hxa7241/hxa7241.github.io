@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Programming language docs structure - (note-20130707T0900Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Programming language docs structure - (note-20130707T0900Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, languages, documentation" />
+   <meta name="DC.description" content="Some suggestions for documentation from learning several programming languages -- along the lines of a quasi-formalised structure." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2013-07-07" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20130707T0900Z.html" />
+
+   <meta name="keywords"       content="software-engineering, languages, documentation" />
+   <meta name="description"    content="Some suggestions for documentation from learning several programming languages -- along the lines of a quasi-formalised structure." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons BY-SA 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Programming language docs structure</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20130707T0900Z.html" title="permalink">NOTE HXA7241 2013-07-07T09:00Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>Some suggestions for documentation from learning several programming languages &ndash; along the lines of a quasi-formalised structure.</h5>
+
+   <p>There is something of a problem with many languages it seems:</p>
+   <ul>
+      <li>languages are rather complex software artifacts,</li>
+      <li>they are primarily for other people to use,</li>
+      <li>the documentation is often somewhat on the casual and exiguous side.</li>
+   </ul>
+
+   <p>The third does not fit well with the other two!</p>
+
+   <p>So what is needed is: <i>common-usage-oriented</i> documentation.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>In creating information we ought to do two things generally: attend to what we want, and exploit commonalities. And for language docs that means looking at:</p>
+   <ul>
+      <li>how the language is used in practice,</li>
+      <li>and de facto standard or common features of most languages.</li>
+   </ul>
+
+   <p>Documentation following those makes the language and its features:</p>
+   <ul>
+      <li>easier to use by looking-up things on demand,</li>
+      <li>easier to learn because of near familiarity.</li>
+   </ul>
+
+   <p>Since this proposition is supposed to fit all/many potential languages it is built around how programming is done in general. And that is, most broadly, about two things: defining data, and defining algorithms. And those are detailed by features found commonly in other existing languages.</p>
+
+   <p>So, arrange documentation into these kinds of sections and parts:</p>
+
+   <ul>
+      <li>Data
+      <ul>
+         <li>Primitives &ndash; primitive data types (bool, number, string, etc.)</li>
+         <li>Compounds &ndash; compound data types (array, list, dictionary, etc.)</li>
+         <li>Declaratives &ndash; variable and value definitions</li>
+         <li>Modularising &ndash; packaging and namespacing</li>
+         <li>Typing &ndash; type combiners (sums, products, etc.)</li>
+      </ul></li>
+      <li>Algorithm
+      <ul>
+         <li>Operations &ndash; built-in operations (+ | &lt; etc.)</li>
+         <li>Control &ndash; algorithmic/sequence structure (function, condition, iteration, etc.)</li>
+         <li>Comprehensions &ndash; compound-data processing functions (map, fold, etc.)</li>
+         <li>Parallelising</li>
+      </ul></li>
+   </ul>
+
+   <p>This would reasonably fit most languages. And even where a language significantly diverges it is still helpful: because it clarifies such differences with respect to what is familiar.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>Whatever programming task you have you will be asking the same basic kind of questions: how do I represent a string, or collection of them?, how do I specify an iteration, or condition? The form of the documentation fits these abstract structural questions, so the answers for any particular language can easily be found. And one can also easily see the broad differences in languages by noting how these general sections of the documentation are filled (or added to).</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>Related:</p>
+   <ul>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20100706T2216Z.html">&lsquo;A Core Of Programming&rsquo;</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Why do tests and types work ? - (note-20160117T1306Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Why do tests and types work ? - (note-20160117T1306Z) - HXA7241" />
+   <meta name="DC.subject"     content="software, epistemology, correctness, testing" />
+   <meta name="DC.description" content="Some epistemology of software correctness -- the underlying method seems to be repetition." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2016-01-17" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20160117T1306Z.html" />
+
+   <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+   <meta name="keywords"       content="software, epistemology, correctness, testing" />
+   <meta name="description"    content="Some epistemology of software correctness -- the underlying method seems to be repetition." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons BY-SA 3.0" />
+
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Why do tests and types work ?</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20160117T1306Z.html" title="permalink">NOTE HXA7241 2016-01-17T13:06Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>Some epistemology of software correctness &ndash; the underlying method seems to be repetition.</h5>
+
+   <p><i>&ldquo;Is it not obvious? You write the test, and if it fails, you know the software is incorrect. (And ultimately similarly for types.).&rdquo;</i></p>
+
+   <p>But how do you know the <i>test</i> is correct? If the test fails, how do you know that the original software is not right, and the test is wrong? The problem is that neither has authority over the other. And ultimately similarly for types, in their specification and use.</p>
+
+   <p>There are sayings about types: that they &lsquo;make incorrect states inexpressible&rsquo;, or that they &lsquo;ensure the software is correct by construction&rsquo;. Both these must be wrong &ndash; they both beg the question. For the first, how do you know the types are not making the <i>correct</i> states inexpressible &ndash; as the earlier point about authority? Merely making some arbitrary states inexpressible &ndash; what is the value in that? &ndash; In fact the main problem in type research is making type-systems express more. For the second saying, it is doubly wrong: as just explained, but also the software is clearly not guaranteed correct by construction, because the type-system <i>finds errors</i> in it.</p>
+
+   <p>One might well now choose to moderate the claim, to be that types and tests ensure <i>consistency</i> rather than correctness, but it still does not answer the question &ndash; it simply jettisons the matter of correctness. But it is some way toward answering.</p>
+
+   <p>If what we have is, in the end, all just code, all from the same source of information, how does calling some of it tests, or type specs &ndash; whatever might be done with them &ndash; how does it help with correctness? It seems a lifting-by-bootstraps situation.</p>
+ 
+   <p>&mdash;&mdash;&mdash;&mdash;</p>
+
+   <p>The answer to how tests and types work is this: they force repetition of expression of intention, and refer discrepancy to human judgement. Consistency is part of this, but you have to have the repetition and the judgement.</p>
+
+   <p>It is like setting a password: you are asked to repeat it.</p>
+
+   <p>This helps correctness because the ultimate authority is our intent, and there is <i>some</i> reliability in our expressions of it: our expressions are neither perfectly faithful &ndash; we would not need the help of tests/types, nor entirely noise &ndash; nothing would help. Redundancy, of repetition, reduces the chances of erroneous expression, presumably by something approximating the product of probabilities.</p>
+
+   <p>&mdash;&mdash;&mdash;&mdash;</p>
+
+   <p class="lowlight">(Is not the physical neuronal changes in the brain an objective reference for personal memory, for knowledge? (Re: Wittgenstein, Zettel: &sect;650 &sect;657p1 &sect;659 &sect;660.). I.e. feeling sure really <i>is</i> worth something.</p>
+
+   <p class="lowlight">To say we need objective reference is to say we cannot ever rely on feelings of sureness, we must <i>always</i> check <i>every detail</i>. But that cannot be. Our subjectivity depends on us having something <i>not</i> fixed to the objective, and something substantial. If every detail of our knowledge must be checked, our knowledge has no independence &ndash; so we must have none. But this is false: we <i>do</i> have independence, so our knowledge must have some reliability.).</p>
+
+   <p>&mdash;&mdash;&mdash;&mdash;</p>
+
+   <p>But when you set a password, could you not have a system where you have previously set a password <i>type</i>, and your new password is checked against that? That is not using repetition. Types seem to work a different way.</p>
+
+   <p>Do not types factor the specification, the expression of intention, into one place? Where is the repetition? Well, the type specification, and all the uses of the type, are the two repetitions, but of a different, more complex, kind. But does not the spec have authority, and the mistakes in usage are overruled automatically? No. The errors are always brought to attention. Consider an example: the type for some widely-used data was defined as an <i><code>int</code></i>, but a function is then made that is found actually needs a <i><code>float</code></i> to do the calculation properly. You realise you made a design mistake: the data type really needs to be a <i><code>float</code></i> after all. So anything expressed in the type spec can be brought into question and overruled by usage of the type, so spec and use, though they have different forms, are indeed full repetitions of intention.</p>
+
+   <p>&mdash;&mdash;&mdash;&mdash;</p>
+
+   <p>But tests and types are different, are they not? Are not types better, more powerful? Yes: because types leverage abstraction &ndash; this is the more complex kind of repetition they embody. Making a type is something like specifying a whole set of tests at once.</p>
+
+   <p>But (notwithstanding this more complex mechanism) this leverage still only works on the grounds explained before. It works as a form of making the programmer repeat their expressions of intention, and making the programmer check what they want.</p>
+
+   <p>&mdash;&mdash;&mdash;&mdash;</p>
+
+   <p>Related:</p>
+
+   <ul>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20130804T0939Z.html">&lsquo;Testing vs proof in software development&rsquo;</a></li>
+      <li><a href="http://www.hxa.name/notes/note-hxa7241-20110130T0917Z.html">&lsquo;Testing: thoughts on improving it&rsquo;</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

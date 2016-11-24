@@ -1,0 +1,161 @@
+
+gutenberg text production process
+---------------------------------
+
+1) selection
+	1) make list of plausible books
+	2) check GutIP page to eliminate those already in-progress
+		* http://www.dprice48.freeserve.co.uk/GutIP.html
+	3) search web old-book stores for pre-1923 (or other copyright-free) editions
+		* http://www.abebooks.com/
+		* http://www.alibris.com/
+		* ...
+	4) check with library of congress and british library websites for pre-1923 (or other copyright-free) editions
+		* http://www.loc.gov/
+		* http://www.bl.uk/
+2) acquisition
+	1) choose one, regarding price and delivery, order it, and wait
+	2) receive book, check it superficially
+3) clearance
+	1) go to net cafe to get scan of title page and back of title page
+		* 8bit grayscale, <=768 pixels high or 5 dots/mm, png (both scans fit on one diskette)
+	2) convert scans to <=768 pixels high, jpg, ~70k
+		* use XnView (v1.68.1): http://www.xnview.com/
+	3) submit data using gutenberg page
+		* http://beryl.ils.unc.edu/copy.html
+	4) wait a few days, then receive clearance email from gutenberg
+4) transcription
+	* use good text editor
+		* http://www.textpad.com/
+	* type, as gutenberg format ascii, but with unwrapped lines
+	* or: scan, and adjust to gutenberg format ascii, but with unwrapped lines
+5) checking
+	1) primary
+		1) read text and book in parallel
+			* make corrections and notes of corrections
+		2) archive corrected version of text
+	2) secondary
+		* gutcheck
+		* spellcheck
+		* search web dictionaries to confirm odd words
+		* compare with other translations to confirm odd words and names
+		* check for trailing spaces and tandem spaces
+		* make corrections and notes of corrections
+	3) tertiary
+		* read grammar and sense
+		* make corrections and notes of corrections
+6) finalization
+	1) wrap and cut text at 70 columns
+	2) add gutenberg 'cleared line' to top
+	3) archive text with final name
+7) conversion
+	* to xhtml 1.0 and css1, in hxa7241 structure
+		1) add chapter markup
+		2) add paragraph markup, with id and title for fragment navigation
+		3) add block quotes markup
+			* keep space chars indent
+			* poem line indent: 2 space -> 3 &nbsp;
+		4) convert italics: _word_ -> <i>word</i>
+		5) convert special characters
+			* dashes: -- -> &mdash;
+			* quotes: "" '' -> &ldquo; &rdquo; &lsquo; &rsquo;
+			* ligatures
+			* accents
+			* any others ...
+		6) add foreign languages spans with attributes xml:lang="..." lang="..."
+		7) convert notes to chapter ends or book end with bi-links
+		8) check
+			1) revert to ascii
+				1) replace entity chars with ascii equivalents
+					&nbsp; 3 -> 2
+					&amp; &mdash;
+					&lsquo; &rsquo; &ldquo; &rdquo;
+					&aelig; AElig; &oelig; &OElig;
+					&aacute; &agrave; &acirc; &auml; &Aacute; &Agrave; &Acirc; &Auml;
+					&eacute; &egrave; &ecirc; &euml; &Eacute; &Egrave; &Ecirc; &Euml;
+					&iacute; &igrave; &icirc; &iuml; &Iacute; &Igrave; &Icirc; &Iuml;
+					&oacute; &ograve; &ocirc; &ouml; &Oacute; &Ograve; &Ocirc; &Ouml;
+					&uacute; &ugrave; &ucirc; &uuml; &Uacute; &Ugrave; &Ucirc; &Uuml;
+				2) replace italic tags with underbars
+				3) strip all tags
+				4) trim blank lines
+			2) compare with archived text, and correct
+		9) archive xhtml with final name
+8) upload
+	* run checklist
+		* superficially gutenberg conformant
+		* view in html browser
+		* pc-dos line-end format
+		* compare files versions
+		* run gutcheck
+		* run html tidy
+		* run w3c html validator
+		* run w3c css validator
+	* put text files into a zip
+	* use gutenberg page
+		* http://beryl.ils.unc.edu/upload.html
+
+
+
+
+
+
+
+
+gutenberg text format 
+---------------------
+
+lines cut at <= 70 chars, hyphenated words not split
+1 space between words
+italics have surrounding "_"
+emdash is "--" with no surrounding spaces
+long dash is "----"
+blank words is 3emdash or "------"
+ellipses is " . . . "
+blank line between paragraphs
+indent is 4 spaces
+block quotes indented
+break is blank line then idented "*   *   *" then blank line
+chapter break is 4 blank lines then heading then 2 blank lines
+chapter heading is indented
+
+
+gutenberg html format
+---------------------
+
+must have accompanying text version
+filenames all lowercase
+< 2MB
+simplicity
+w3c conformant
+stripping tags produces gutenberg standard text - almost
+	(italics need conversion)
+	(char entities need conversion)
+	lines cut at 70 chars
+	indent certain places with spaces not tabs
+	dont put markup on own line
+
+
+
+
+
+
+
+
+textpad replacement expressions
+
+chapters
+--------
+
+\n\n\n\n\n    Chapter \([[:digit:]]+\)\n\n\n
+
+</p>\n</div>\n\n\n<div class="chapter" id="chapter\1">\n    <h2>Chapter \1</h2>\n\n\n<p class="firstpara"><span class="firstwords"></span>
+
+
+paragraphs:
+-----------
+
+\([^\n>]\)\n\n\([^\n<]\)    {doesnt do paragraph starting with 'n' !?}
+\([^>]\)\n\n\([^<]\)
+
+\1</p>\n\n<p>\2

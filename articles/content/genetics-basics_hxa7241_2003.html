@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Genetics Basics For Programmers - HXA7241 - 2003</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Genetics Basics For Programmers - HXA7241 - 2003" />
+   <meta name="DC.subject"     content="genetics, genome, tutorial, basic" />
+   <meta name="DC.description" content="A tutorial article on basic genetics for programmers" />
+   <meta name="DC.type"        content="technical article" />
+   <meta name="DC.type"        content="Text" />
+   <meta name="DC.type"        content="Image" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.publisher"   content="HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2003-11-27" />
+   <meta name="DC.date"        content="2004-01-16" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/articles/content/genetics-basics_hxa7241_2003.html" />
+
+   <meta name="keywords"       content="genetics, genome, tutorial, basic" />
+   <meta name="description"    content="A tutorial article on basic genetics for programmers" />
+   <meta name="document"       content="hxa7241article5" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>Genetics Basics For Programmers</h1>
+</div>
+
+
+<div id="colophon">
+<h4>Harrison Ainsworth</h4>
+
+   <p id="contact"><a href="http://www.hxa.name/">http://www.hxa.name/</a>
+   <br />artifex <i>(&alpha;&tau;)</i> hxa7241 <i>(d&omicron;&tau;)</i> org</p>
+
+   <p id="timestamp">2003-11-27</p>
+</div>
+
+
+<div id="preface">
+   <div id="summary">
+      <h2>Summary</h2>
+      <p>This article is a tutorial summary of <b>basic genetics</b>, for programmers. Only the human system is examined, and chemistry is abstracted. The first parts are <b>factual</b>, the last part is comment. (1700 words)</p>
+   </div>
+
+   <dl id="metadata" class="plainlist">
+      <dt>subject</dt>
+      <dd>Genetics, Genome, Tutorial, Basic</dd>
+
+      <dt>uri</dt>
+      <dd><a href="http://www.hxa.name/articles/content/genetics-basics_hxa7241_2003.html">http://www.hxa.name/articles/content/genetics-basics_hxa7241_2003.html</a></dd>
+
+      <dt>license</dt>
+      <dd><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons BY-SA 3.0 License</a>.</dd>
+   </dl>
+</div>
+
+
+<div id="contents">
+   <h2>Contents</h2>
+   <ul>
+      <li><a href="#basicdigitalstructure">Basic digital structure</a></li>
+      <li><a href="#physicalpackaging">Physical packaging</a></li>
+      <li><a href="#staticanalysis">Static analysis</a></li>
+      <li><a href="#executionanalysis">Execution analysis</a></li>
+      <li><a href="#comment">Comment</a></li>
+      <li><a href="#references">References</a></li>
+   </ul>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="basicdigitalstructure">
+<h3>Basic digital structure</h3>
+   <p>The <b>principal logical structure</b> of a human is defined by its <b>genome</b>. It is connected to the logical structure of other molecular and atomic objects and processes.</p>
+
+   <p>The genome is made of <b>DNA</b>. DNA is a one-dimensional <b>chain of nucleotides</b> &mdash; the bits of genome data. Nucleotide 'bits' are <b>quaternary</b> &mdash; radix 4 &mdash; rather than binary.</p>
+
+   <p>Total data size is about <b>3.2x10<sup><small>9</small></sup> nucleotides</b>. This is roughly 800MB binary data, or <b>about 1.2 CDs</b>, but it compresses well &mdash; down to about 200MB. The standard metric is <b>'bp'</b> &ndash; base pair, or <b>'b'</b> &ndash; base.</p>
+
+   <p>Differences between individual genomes are mostly single nucleotide polymorphisms &mdash; <b>SNPs</b>. SNPs average 1 per 2K nucleotides, totalling over 1.4 million.</p>
+
+   <p>In operation the genome is almost exclusively only <b>read</b>, but there is no basic write protection. An exception is immune system cells, which edit their genome copy to make varieties of combinations of certain sub-sequences. Genome mutability is, however, fundamental to evolution.</p>
+</div>
+
+
+<div class="section" id="physicalpackaging">
+<h3>Physical packaging</h3>
+   <p>The genome has about <b>1x10<sup><small>13</small></sup> copies</b> &mdash; one in each cell, except for cells of a few certain types that have no copy.</p>
+
+   <p>Each nucleotide in the DNA chain is attached to a <b>complementary pair</b> &mdash; the chain is <b>two parallel chains</b>.</p>
+
+   <p>The genome is divided into <b>nuclear</b> and <b>mitochondrial</b> parts. The nuclear part contains &gt; 99%, the mitochondrial part &lt; 1%. The nuclear part is divided into 24 linear parts &mdash; <b>chromosomes</b>. The mitochondrial part is circular, and exists in multiple copies, in mitochondria.</p>
+
+   <p>Instance nesting tree:</p>
+   <pre>human (~6x10^9)
+   cell (&lt; 1x10^13)
+      nucleus (1)
+         chromosome (46 (22 are duplicated))
+            DNA string (1)
+               nucleotide (5x10^7 &ndash; 26x10^7)
+      mitochondria (~800)
+         DNA circle (10)
+            nucleotide (16569)</pre>
+
+   <img src="gbn_class1.png" width="525" height="300" alt="UML class diagram showing composition of principal types" />
+
+   <p>DNA has various forms along its length &mdash; three adjustments of <b>helix proportion</b>, and some higher level <b>packing structures</b>. Some of these physical arrangements do have data content. They may affect processing, be writeable, or inheritable. Such '<b>epigenetic</b>' properties are unclear.</p>
+
+   <p>A <b>chromosome</b> is a packed structure of <b>DNA and protein</b>. The principal protein component is the <b>nucleosome</b>. This is made of eight protein molecules in a barrel-like form, with a protein structure attachment. Nucleosomes are arranged along the DNA at 190&ndash;220 nucleotide intervals. The DNA is <b>wound twice around</b> each nucleosome, 140&ndash;150 nucleotides around, with 50&ndash;70 between.</p>
+
+   <p>That level of packing is then packed into a <b>higher level structure which is unclear</b>. This is the dominant form during interphase &mdash; the duration between cell divisions.</p>
+
+   <p>An important and distinctive region of the chromosome is the <b>centromere</b>. It has a particular position in each chromosome, is about 1Mb long, mostly composed of 171b repetitive sequences, and has special proteins. It is involved with mechanical processes of <b>cell division</b>.</p>
+
+   <p>Another important and distinctive region is the <b>telomere</b>. It is made of 100s of copies of a particular 6b sub-sequence, with special proteins attached. It acts as an <b>end marker</b> so repair operations do not treat chromosome ends as breakages.</p>
+</div>
+
+
+<div class="section" id="staticanalysis">
+<h3>Static analysis</h3>
+   <p>The primary component of the genome is the <b>gene</b>. A gene is a sub-sequence that can be translated into the next principal logical objects: RNA and protein. There are <b>20000&ndash;30000 genes</b> in the genome. The largest gene is 80780 nucleotides, or just less than 20KB binary data.</p>
+
+   <p>Most genes are <b>discontinuous</b>: <b>exons</b> are the primary informational parts, <b>introns</b> are the interruptions. There are an average of nine exons per gene, and a maximum known of 178 exons.</p>
+
+   <p>Other sub-sequences are gene related: <b>regulatory</b> are somewhat like a 'header' for a gene, <b>gene segments</b> are variously combinable into genes, <b>pseudogenes</b> are non-functional genes.</p>
+
+   <p>The remaining classifications of genome sub-sequence are mainly kinds of <b>repeating elements</b>. <b>Interspersed repeats</b> are sequences that have copies scattered across the genome. <b>Tandem repeats</b> are sequences that have copies adjacent in variable length arrays.</p>
+
+   <p>Genome sequence categorisation:</p>
+   <pre>genic (40%)
+   genes
+      exons
+      &gt;99% genes specify proteins
+      &lt;1% genes specify non-coding RNA
+   introns
+   regulatory
+   gene segments
+   pseudogenes
+non-genic (60%)
+   interspersed repeats (44%)
+   tandem repeats (3%)
+   other (16%)</pre>
+
+   <p>Protein coding genes functional categorisation:</p>
+   <ul>
+      <li>genomic (23%) &mdash; expression, replication, maintenance</li>
+      <li>signaling (21%) &mdash; inter-cell signalling</li>
+      <li>cellular (17%) &mdash; enzymes involved in cell function</li>
+      <li>other (39%) &mdash; inter-cell transport, protein folding, immune response, structural, ...</li>
+   </ul>
+
+   <h4>Tandem repeats</h4>
+
+   <p>Tandem repeats have <b>three classifications</b> according to length.</p>
+   <ul>
+      <li>Long have an array up to 1000Kb with a repeat unit up to 300b, and are mostly in centromeres.</li>
+      <li>Medium have an array up to 20Kb with a repeat unit up to 25b, and some are in telomeres.</li>
+      <li>Short have an array up to 150b with a repeat unit up to 13b, typically 1&ndash;4b unit repeated 10&ndash;20 times.</li>
+   </ul>
+
+   <p>Genome replication machinery is not so accurate when <b>replicating lengths</b> of short unit repeats. This has two complementary implications:</p>
+   <ul>
+      <li>Repeat length for any particular array varies with human individual, so a large collection of measurements of different arrays &mdash; known as a <b>genetic profile</b> &mdash; provides a practically unique <b>identifier</b>.</li>
+      <li>Repeat lengths are inherited to a certain degree, so comparison of genetic profiles can show <b>relatedness</b> across inheritance trees.</li>
+   </ul>
+
+   <h4>Interspersed repeats</h4>
+
+   <p>Interspersed repeats are mostly <b>mobile sequences</b>, which are <b>very similar to viruses</b>, with various degrees of inactivation, simplification or missing parts. They are 0.3Kb&ndash;7Kb and based on a simple set of components: terminal repeats at each end, replication enzyme genes, core protein genes, envelope protein genes.</p>
+
+   <p>There are two types of movement: <b>transposition</b> and <b>retrotransposition</b>, with corresponding objects: transposons and retroelements. Transposition copies or moves (deleting the original) from one place to another. Retrotransposition transcribes from one place into some RNA, then reverse transcribes into some DNA, then integrates into another place.</p>
+</div>
+
+
+<div class="section" id="executionanalysis">
+<h3>Execution analysis</h3>
+   <p>The overall term for execution is <b>genome expression</b>. It is based on highly parallel execution of a basic pipeline.</p>
+
+   <p>The pipeline builds other logical objects from genes. Those next principal objects are <b>RNA</b> and <b>protein</b>. The collection of all mRNA (a type of RNA) in a cell is the <b>transcriptome</b>, and the collection of all protein in a cell is the <b>proteome</b>.</p>
+
+   <p>These are the <b>cell object state</b>. They are passed in initially by cell division, and maintained and changed by the degradation and re-synthesis of execution.</p>
+
+   <p>Cell state is complex: the transcriptome is up to <b>1000s of different mRNA</b> types, evenly represented &mdash; each type usually &lt; 1% of instances. The proteome is <b>10000&ndash;20000 different protein</b> types, and 2x10<sup><small>4</small></sup> &ndash; 1x10<sup><small>8</small></sup> instances. The most abundant 10&ndash;20% of types are almost standard across cells, specialized cell proteins are usually sparsely present. Proteins determine a cells capability and have many functions.</p>
+
+   <p>The pipeline and sub-pipelines:</p>
+   <pre>genome expression
+   transcription
+      access of genome
+      assembly of transcription machinery
+      synthesis of RNA
+      processing of RNA
+   translation
+      assembly of translation machinery
+      synthesis of protein
+      processing of protein
+      folding of protein
+
+   degradation of RNA and protein
+   (in parallel to the rest)</pre>
+
+   <h4>Transcription</h4>
+
+   <p>Genes are copied by transcription into RNA.</p>
+
+   <p>RNA is <b>a variant of DNA</b>, with one different nucleotide type, and molecular differences that make the chain less stable. Classifications of RNA:</p>
+   <pre>coding (4%)
+   mRNA &mdash; to be translated into protein
+non-coding (96%)
+   rRNA &mdash; for protein building machinery
+   tRNA &mdash; for protein building machinery
+   snRNA &mdash; for mRNA processing
+   snoRNA &mdash; for rRNA processing
+   scRNA &mdash; various things, some unclear</pre>
+
+   <p>Steps of transcription:</p>
+   <ol>
+      <li>Certain parts of DNA are accessed by <b>adjusting chromosome packing</b> structure.</li>
+      <!--[how does genome addressing work?]-->
+      <li>The main transcription machinery &mdash; the <b>transcription initiation complex</b> &mdash; is constructed of proteins, at a <b>promoter</b> &mdash; part of the regulatory header sub-sequence of a gene.</li>
+      <li>The transcription machinery <b>moves along the DNA</b>, synthesizing RNA. <b>end modifications</b> are made to the RNA, prepending and appending certain short nucleotide sub-sequences.</li>
+      <li>Resultant RNA is <b>processed</b> with one or more fairly simple one-to-one or one-to-many transforms:
+         <ul>
+            <li>splicing &mdash; removing introns and combining exons variably</li>
+            <li>cutting &mdash; dividing into separate pieces</li>
+            <li>molecular modifications &mdash; adding molecules to certain nucleotides</li>
+         </ul></li>
+   </ol>
+
+   <p>mRNA is <b>degraded</b> after a few hours.</p>
+
+   <img src="gbn_activity1.png" width="368" height="598" alt="UML activity diagram showing main execution pipeline" style="float:right;margin-left:1em;" />
+
+   <h4>Translation</h4>
+
+   <p>mRNA is copied by translation into protein.</p>
+
+   <p>Protein is a one-dimensional chain of <b>amino acids</b>, usually &lt; 2000 long. Amino acids are parameterised molecules &mdash; mostly the same with a variable part. There is a core vocabulary of <b>20</b> amino acids.</p>
+
+   <p>Steps of translation:</p>
+   <ol>
+      <li>The translation machinery involves <b>tRNA</b> and <b>rRNA</b> and other proteins.</li>
+      <li>The translation machinery <b>moves along the mRNA</b>, synthesizing protein. Basic translation is a simple <b>key-value association</b>: an mRNA <b>nucleotide triplet</b> &mdash; a <b>codon</b> &mdash; specifies an amino acid. A triplet of quaternary nucleotide bits has a range of 64 values, so there is redundancy, and most amino acids have multiple keys. A few codons act as <b>punctuation</b> for stop and start. But these are sometimes also used as amino acid keys. There are occasional deviations from the translation rules &mdash; reinterpretations cued by other properties of the mRNA.</li>
+      <!--[where is the codon key-value association stored?]-->
+      <li>Resultant proteins are <b>processed</b>.</li>
+      <li><b>Folding</b> of the protein structure is mostly determined by the sequence of amino acids physical properties.</li>
+   </ol>
+
+   <p>Proteins can have <b>four levels of structure</b>, in an improper hierarchy &mdash; since properties of levels affect non-adjacent levels too:</p>
+   <ul>
+      <li>primary &mdash; the chain of amino acids</li>
+      <li>secondary &mdash; the chain is formed into stretches of alpha-helix or beta-sheet</li>
+      <li>tertiary &mdash; three-dimensional form</li>
+      <li>quaternary &mdash; aggregation of multiple proteins, reconfigurable</li>
+    </ul>
+</div>
+
+
+<div class="section" id="comment">
+<h3>Comment</h3>
+   <p>Living things are <b>digital</b>: they are composed of elements that have discrete repeatable causal behaviours. But the digital structure is mixed with a <b>physical medium</b>. In many places physical properties affect digital processing. That mixture is unlike the clear separation found in a computer.</p>
+
+   <p>There are <b>multiple levels</b> of digital structure: the principal level &mdash; the <b>genomic</b>. A lower level &mdash; the <b>atomic</b> (or molecular, although 'molecule' is a vague concept). A higher level &mdash; the <b>cellular</b>. But the levels do not form a stack of simply increasing complexity &mdash; unlike computer software generally.</p>
+
+   <p>The classes and objects of the system are fairly distinct, but their <b>interactions are very complex</b>. The structure is dominated by decentralization, multiplicity, iteration &mdash; ultimately <b>emergent</b> behaviour. A different balance than the control of software systems.</p>
+
+   <p>The genome is <b>rather small</b> considering its function, and compared to large computer software. It is much simpler than its product individuals. Much of the complexity is an expression of the <b>rich physical medium</b>, as d'Arcy Thompson pondered.</p>
+
+   <p>It is important that the genome is not designed, but <b>evolved</b>: there is confusion, non-sense, redundancy. How is it understandable? not like artificial digital structures, but surely it is related. It is a valid task of computer science to provide a theoretical basis for reverse-engineering and understanding such <b>natural digital</b> systems.</p>
+</div>
+
+</div>
+
+
+<div class="section" id="references">
+<h2>References</h2>
+   <ul>
+      <li id="G2B"><a href="http://www.amazon.com/exec/obidos/ASIN/0471250465" title="amazon.com entry">'Genomes'</a>, Brown; Bios 2002.</li>
+   </ul>
+</div>
+
+
+</div>
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

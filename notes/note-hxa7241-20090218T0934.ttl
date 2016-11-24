@@ -1,0 +1,44 @@
+# ttl - Turtle - http://www.w3.org/TeamSubmission/turtle/
+
+# Note - HXA7241
+# (for a new note, change: thisnote, title, content, contenthash, date.)
+
+
+@base <http://hxa.name/>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/TR/xmlschema-2/#> .
+@prefix rfc: <http://www.ietf.org/rfc/> .
+@prefix iana: <http://www.iana.org/assignments/media-types/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix hxa: <rdf/1/rdf-terms#> .
+@prefix thisnote: <urn:uuid:A9B3B115-A561-40E7-B9FC-C87C0CB9221F> .
+
+
+thisnote:
+dc:title  "Software Development In A Nutshell"@en
+; hxa:content """
+Software development is the form of enterprise or endeavour that builds software. It mainly comprises sub-disciplines of software architecture and software engineering.
+
+Software architecture is the recognition, creation, and articulation of logical structure in human activity. It is 'what' to do.
+
+Software engineering is the assembly of data objects and processes by understanding their properties. It is 'how' to do it.
+
+There is also the sub-discipline of software project management. But software construction is absorbed into software engineering.
+
+This is an attempt at a minimal 'well-founded' or 'historically-informed' conception of software development: it is modelled on the building industry, replacing physical material with digital. Adapting what has worked before is the best base for progress. And a clear conception is the best base for organised activity -- especially with software, in which clear thinking is the core.
+
+References:
+* http://www.hxa.name/articles/content/software-architecture-and-engineering-definitions_hxa7241_2008.html
+* http://www.hxa.name/articles/content/software-engineering-and-civil-engineering_hxa7241_2008.html
+"""@en
+; hxa:contenthash  "51e47d0c631d613b28f83a3dfbaa3d42be148da2"^^rfc:rfc3174
+; hxa:domainurl  <notes/>
+; rdf:type  hxa:note
+; dc:format  "text"^^iana:text
+; dc:date  "2009-02-18T09:34"^^xsd:dateTime
+; dc:creator  <about/foaf.rdf>
+; dc:language  "en-GB"^^rfc:rfc4646
+; dc:rights  <http://creativecommons.org/licenses/by-sa/3.0/>
+.

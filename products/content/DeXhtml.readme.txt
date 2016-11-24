@@ -1,0 +1,114 @@
+
+
+DeXhtml xhtml converter
+=======================
+
+
+DeXhtml v1
+Copyright (c) 2004, Harrison Artifex. Some rights reserved.
+
+2004-07-01
+
+http://www.hxa7241.org/
+
+
+
+
+description
+-----------
+
+windows console tool to transform an xhtml1 file (encoded as ascii or
+8859-1) into a plain-text ascii or 8859-1 file in a simple way.
+
+the transform is:
+* translates name entities into ascii or 8859-1 chars
+* translates italic tags into single chars (optionally)
+* strips out all other tags
+* wraps and breaks lines
+
+* 'lat1', 'special' and most of 'symbol' entities supported by default
+* 'symbol': mathematical, technical, geometric and miscellaneous
+  groups unsupported by default
+
+
+
+
+requirements
+------------
+
+* Windows 95 or later, or Windows NT 3.5 or later
+* Pentium I or equivalent AMD, or later
+* 1M ram
+* 64K disk space
+
+
+
+
+installation
+------------
+
+copy DeXhtml.exe to wherever.
+
+* no other runtimes needed
+* no installation needed
+* does not write to the registry
+* does not modify files
+
+
+
+
+usage
+-----
+
+DeXhtml [-e...] [-i...] [-w...] [-o...] filepathname
+
+-e<filepathname>  set extra/overriding entity translations
+-i[char]          set italic tag translation character (defaults to strip)
+-w<32-256 | 0>    set line wrap length, 0 = no wrap (defaults to no wrap)
+-o<filepathname>  set output filepathname (defaults to inputfilepathname.txt)
+
+example:
+	DeXhtml -eentityfile.txt -i_ -w70 -oanotherfile.txt somefile.html
+
+entity translation file must contain lines of name and string pairs,
+for example:
+
+aelig  "ae"
+nbsp   " "
+ldquo  """
+shy    ""
+
+
+
+
+acknowledgements
+----------------
+
+* written in C++ for Win32 console
+* edited with TextPad: http://www.textpad.com/
+* compiled with Visual C++ Toolkit, free command line compiler:
+  http://msdn.microsoft.com/visualc/vctoolkit2003/
+* packed with: The Ultimate Packer for eXecutables,
+  Copyright (c) 1996-2002 Markus Oberhumer & Laszlo Molnar:
+  http://upx.sourceforge.net/
+
+
+
+
+license
+-------
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+MA 02111-1307, USA

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Considering the limits of DRY('dont repeat yourself') / factoring - (note-20110424T0826Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Considering the limits of DRY('dont repeat yourself') / factoring - (note-20110424T0826Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, DRY, OAOO, factoring, abstraction, extreme-programming" />
+   <meta name="DC.description" content="Factoring is good, but it has to be limited by what you really know. Otherwise adding more abstractions obstructs change more than necessary. But it is not really a trade-off: getting one aspect right makes the other right to." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2011-04-24" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20110424T0826Z.html" />
+
+   <meta name="keywords"       content="software-engineering, DRY, OAOO, factoring, abstraction, extreme-programming" />
+   <meta name="description"    content="Factoring is good, but it has to be limited by what you really know. Otherwise adding more abstractions obstructs change more than necessary. But it is not really a trade-off: getting one aspect right makes the other right to." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>Considering the limits of DRY(&lsquo;dont repeat yourself&rsquo;) / factoring</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20110424T0826Z.html" title="permalink">NOTE HXA7241 2011-04-24T08:26Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+
+   <h5>Factoring is good, but it has to be limited by what you really know. Otherwise adding more abstractions obstructs change more than necessary. But it is not really a trade-off: getting one aspect right makes the other right too.</h5>
+
+
+   <p>DRY/OOAO(&lsquo;once and once only&rsquo;)/(full-)factoring is <i>realising</i> similarities, relations, patterns, in <i>code</i> &ndash; expressing with code, understood structures.</p>
+
+   <p>This is good because it makes <i>perceptible</i>/<i>recognisable</i> structures <i>manipulable</i>. But there is a detraction: each factoring, each realisation of pattern, by adding another abstraction, adds <i>complexity</i>.</p>
+
+   <p>And the problem is that there is no upper limit, generally, on possible abstractions &ndash; there is always a new way of seeing things, largely because there are always other new things to compare and relate to &ndash; it is always possible to see some other kind of structure that the code half represents that perhaps should be properly factored out. So the guidance of &lsquo;dont repeat yourself&rsquo; / &lsquo;once and once only&rsquo; / fully factor cannot simply be maximised &ndash; there must be some limit put on it. Otherwise it would unendingly add ever more complexity.</p>
+
+      <p>&bull; &bull; &bull;</p>
+
+   <p>Also, simple non-factored repetition has a robustness.</p>
+
+   <p>A house made just of bricks is non-factored (in that sense): it just repeats the elements. But this allows easy modification of local areas. It imposes no favoured or difficult direction or areas of change. <i>Real</i> change &ndash; change <i>against</i> what you originally thought &ndash; is easiest in general with non-factored structure.</p>
+
+   <p>This is because factoring (abstraction) is dependency. The more factored, the more dependencies there are across the structure. When a perceptible structure is made manipulable, by factoring (abstraction), there is effectively a kind of articulation or &lsquo;amplifying&rsquo; of control over a larger structure. And so that larger structure, its parts, are dependent on the factoring. </p>
+
+      <p>&bull; &bull; &bull;</p>
+
+   <p>So how much &lsquo;latent&rsquo; structure (simple stacks of bricks) do we want, and how much &lsquo;realised&rsquo; structure (factored into abstractions)?</p>
+
+   <p>The answer is that we should realise exactly and only the structure we need for the particular project. Then each abstraction is doing a job and not just uselessly obstructing.</p>
+
+   <p>It is being clear about the bounds of &lsquo;knowledge&rsquo; &ndash; having a strict meaning for it. DRY says each piece of knowledge should have only one place, but the important thing is what counts as knowledge. Knowledge is not what could possibly be interpreted into the code &ndash; it is what is truly <i>known</i> in this case, for this project.</p>
+
+   <p>And by getting the &lsquo;realised&rsquo; structure right, the &lsquo;latent&rsquo; structure is made right too. They are complimentary (not antagonistic, nor sympathetic). By not overburdening the structure with abstractions, the non-factored structure is maximised &ndash; that is the amenability to real change is maximised.</p>
+
+      <p>&bull; &bull; &bull;</p>
+
+   <p>This indeed fits perfectly into eXtreme Programming. The technical core of eXtreme Programming could be seen as two-fold: 1, embrace change: the cost of change does not rise much over project life &ndash; &ldquo;This ... is <i>the</i> technical premise of XP&rdquo;; 2, simple design: only what is needed, nothing predicted &ndash; which is a way of working with or taking advantage of 1.</p>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

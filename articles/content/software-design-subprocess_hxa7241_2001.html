@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Software Technical Design Guide - HXA7241 - 2007</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Software Technical Design Guide - HXA7241 - 2007" />
+   <meta name="DC.subject"     content="Software development, Programming, Technical design, Process" />
+   <meta name="DC.description" content="A short guide for software technical design, re-synthesised from major sources." />
+   <meta name="DC.type"        content="technical article" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.publisher"   content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2007-04-12" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/articles/content/software-design-subprocess_hxa7241_2001.html" />
+
+   <meta name="keywords"       content="Software development, Programming, Technical design, Process" />
+   <meta name="description"    content="A short guide for software technical design, re-synthesised from major sources." />
+   <meta name="document"       content="hxa7241article5" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>Software Technical Design Guide</h1>
+</div>
+
+
+<div id="colophon">
+<h4>Harrison Ainsworth</h4>
+
+   <p id="contact"><a href="http://www.hxa.name/">http://www.hxa.name/</a>
+   <br />artifex <i>(&alpha;&tau;)</i> hxa7241 <i>(d&omicron;&tau;)</i> org</p>
+
+   <p id="timestamp">2007-04-12</p>
+</div>
+
+
+<div id="preface">
+   <div id="summary">
+      <h2>Summary</h2>
+      <p>A short guide for software technical design: in the form of a procedure and sets of activities and properties. It is a re-synthesis of notes from the referenced sources. (1200 words)</p>
+   </div>
+
+   <dl id="metadata" class="plainlist">
+      <dt>subject</dt>
+      <dd>Software development, Programming, Technical design, Process</dd>
+
+      <dt>uri</dt>
+      <dd><a href="http://www.hxa.name/articles/content/software-design-subprocess_hxa7241_2001.html">http://www.hxa.name/articles/content/software-design-subprocess_hxa7241_2001.html</a></dd>
+
+      <dt>license</dt>
+      <dd><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons BY-SA 3.0 License</a>.</dd>
+   </dl>
+</div>
+
+
+<div id="contents">
+   <h2>Contents</h2>
+   <ul>
+      <li><a href="#scopeandcontext">Scope And Context</a></li>
+      <li><a href="#fundamentals">Fundamentals</a></li>
+      <li><a href="#subprocess">Sub-Process</a></li>
+      <li><a href="#implementationguides">Implementation guides</a></li>
+      <li><a href="#references">References</a></li>
+   </ul>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="scopeandcontext">
+<h3>Scope And Context</h3>
+
+   <p>Design for software can be divided like design for building: into architecture and engineering. Architecture is the external, product design that forms the usable features. Engineering is the internal, technical design that forms non-usable features. This is the same as Brooks' conception in &lsquo;The Mythical Man-Month&rsquo;.</p>
+
+   <p>Engineering/technical design is the subject of this article.</p>
+
+   <p><i>(Let us not use the term &lsquo;Architecture&rsquo; as a grandiloquence for high-level design. And &lsquo;architected&rsquo; and &lsquo;architecting&rsquo; are absolutely objectionable!)</i></p>
+</div>
+
+
+<div class="section" id="fundamentals">
+<h3>Fundamentals</h3>
+
+   <h4>Separating</h4>
+
+   <p>The essence of software technical design is representation: creating, with standard means, a well-defined internal structure for the product. It is partly analysis, or separating, of ideas, and partly synthesis, or construction of ideas.</p>
+
+   <p>The most important action is to clearly separate the constituent ideas: since assembling pieces is easier than taking them apart. &lsquo;Separating&rsquo; means making the ideas rationally manipulable &mdash; expressing them closely with language, patterns, data structures, OS services, etc.</p>
+
+   <h4>Objects</h4>
+
+   <p>The principal separating technique and abstract element is the Object/Data-type. Data is more unchanging than operations on it, so structuring a system around data gives more fundamental stability. And the most sophisticated and abstract means of data representation is object based. (as from <span xml:lang="fr" lang="fr">Meyer</span>: &lsquo;Object-Oriented Software Construction&rsquo;)</p>
+
+   <p>Not everything should be an object/class/type, but the main forms should follow, or depend on, data rather than function.</p>
+
+   <h4>Generality</h4>
+
+   <p>The highest priority is to reuse as much as possible. Packages, components, patterns, code, etc., should all be the first sources or constituents of design concepts.</p>
+
+   <p>The remaining, non-general, part should be designed completely <i xml:lang="la" lang="la">ad hoc</i>. No effort should be made to generalise it. It should instead have properties of simplicity, complete factoring, minimal connectivity, etc. (as from Beck: &lsquo;Extreme Programming Explained&rsquo;)</p>
+
+   <p>Designs should <i>reuse</i> generality, but <i>create</i> the particular.</p>
+
+   <h4>But</h4>
+
+   <p>Substantial evidence that measures these and provides convincing judgements is not known.</p>
+</div>
+
+
+<div class="section" id="subprocess">
+<h3>Sub-Process</h3>
+
+   <p>The sub-process covers work for each iteration, after requirements (and architectural design) and before implementation. (Analysis and Design parts of <a href="http://www.hxa.name/articles/">&lsquo;USDP-Distilled eXtreme Documentation&rsquo;</a>)</p>
+
+   <p>There are three ordered steps: dividing, connecting, and sequencing. Each contains activities to perform, properties to achieve, and the step's input and output.</p>
+
+   <p>Preview:</p>
+   <ul>
+      <li>Input &mdash; architectural design and requirements.</li>
+      <li>Steps:
+         <ol>
+            <li>Dividing &mdash; find the essential entities of the product, as well as their supporting utilities.</li>
+            <li>Connecting &mdash; define relationships, classifications, groupings, and packagings.</li>
+            <li>Sequencing &mdash; define workflow and contexts, and rough interfaces.</li>
+         </ol>
+      </li>
+      <li>Output &mdash; classes, packages, sequences.</li>
+   </ul>
+
+
+   <h4>Sub-process input</h4>
+
+   <ul>
+      <li>Architectural design and requirements.</li>
+   </ul>
+
+
+   <h4>1: Dividing</h4>
+
+   <p>The aim is to find the basic, essential entities of the product, as well as their supporting utilities.</p>
+
+   <dl>
+      <dt>Input</dt>
+      <dd>
+         <p>Architectural design and requirements.</p>
+      </dd>
+
+      <dt>Output</dt>
+      <dd>
+        <p>A set of incipient classes consisting of just names and roles (as class document/diagram).</p>
+      </dd>
+
+      <dt>Activities</dt>
+      <dd>
+         <h6>Follow input concepts</h6>
+            <p>Translate rough &lsquo;objects&rsquo; from architecture and requirements into initial data objects. Also take from concepts in the general subject domain.</p>
+         <h6>Build bottom-up</h6>
+            <p>Extract the obvious smallest and most basic elements involved.</p>
+         <h6>Reuse other design</h6>
+            <p>Copy and integrate other projects, components, and patterns.</p>
+      </dd>
+
+      <dt>Properties</dt>
+      <dd>
+         <h6>Direct mapping</h6>
+            <p>Concept divisions in the architectural and requirements inputs, and in the domain more generally, are well-established. They set a particular &lsquo;grain&rsquo; to work with.</p>
+         <h6>Purity</h6>
+            <p>Elements should be in their simplest, smallest form. No more division should be possible. This includes: complete factorisation &mdash; there should be no duplication; slimness &mdash; separate core data types and &lsquo;views&rsquo; for them.</p>
+         <h6>Non-sequencialisation</h6>
+            <p>All sequence should be separated from data objects. Convert temporal ordering into logical constraints on methods &mdash; signatures taking certain types.</p>
+      </dd>
+   </dl>
+
+
+   <h4>2: Connecting</h4>
+
+   <p>The aim is to define the way the classes are statically related to each other, classified, grouped, or isolated from each other.</p>
+
+   <dl>
+      <dt>Input</dt>
+      <dd>
+         <p>Architectural design and requirements.</p>
+         <p>Output from Dividing.</p>
+      </dd>
+
+      <dt>Output</dt>
+      <dd>
+         <p>Classes with references and inheritances, stereotype classifications, packages (as class document/diagram, and package document/diagram).</p>
+      </dd>
+
+      <dt>Activities</dt>
+      <dd>
+         <h6>Group broadly</h6>
+            <p>Group elements into packages and classifications. Use semantic affinity to lead to logical form.</p>
+         <h6>Arrange relations</h6>
+            <p>Define composition and inheritance between objects.</p>
+         <h6>Reuse other design</h6>
+            <p>Copy and integrate other projects, components, and patterns.</p>
+      </dd>
+
+      <dt>Properties</dt>
+      <dd>
+         <h6>Minimal connection</h6>
+            <p>An element should use only primitives/built-ins, or less good, only standard-library/universals, otherwise few other elements.</p>
+            <p>If a class contains objects of another class, then the containing class should be sending messages to the contained objects &mdash; containment relation should imply uses relation.</p>
+            <p>Objects contained in the same containing class should not have uses relationships between them.</p>
+            <p>Interfaces should use only primitives or polymorphic types. Non-polymorphic types are equivalent to un-encapsulated data.</p>
+         <h6>Stable dependence</h6>
+            <p>Elements of similar volatility should be grouped. Dependencies should rest on less volatile elements. And dependencies should be one-way.</p>
+         <h6>Polymorphic inheritance</h6>
+            <p>Inheritance should be restricted to type: from abstract to concrete. Otherwise, prefer composition to inheritance.</p>
+      </dd>
+   </dl>
+
+
+   <h4>3: Sequencing</h4>
+
+   <p>The aim is to make a set of workflow context classes that arrange the entities classes into sequences of activity. Also to begin defining the interfaces of all classes.</p>
+
+   <dl>
+      <dt>Input</dt>
+      <dd>
+         <p>Architectural design and requirements.</p>
+         <p>Output from Connecting.</p>
+      </dd>
+
+      <dt>Output</dt>
+      <dd>
+         <p>Classes, interface sketches, method sketches (as class document/diagram, and sequence document/diagram).</p>
+      </dd>
+
+      <dt>Activities</dt>
+      <dd>
+         <h6>Translate use-cases</h6><br />
+            <ol>
+               <li>Create a new workflow context class for each use-case.</li>
+               <li>Decide which classes are involved along the course of each use-case.</li>
+               <li>Determine what information each part of the use-case requires.</li>
+               <li>Sketch public method declarations throughout all classes to supply the required information.</li>
+            </ol>
+         <h6>Reuse other design</h6>
+            <p>Copy and integrate other projects, components, and patterns.</p>
+      </dd>
+
+      <dt>Properties</dt>
+      <dd>
+         <h6>Layering</h6>
+            <p>Entity classes should have no dependence on the workflow classes. Activity involving interaction between entities should be handled within the workflow classes. Entity classes should be, mostly, hidden behind workflow classes.</p>
+         <h6>Interfaces</h6>
+            <p>Service offered should be: convenient, complete, primitive. Parts should be temporally unordered (except for construction and destruction).</p>
+      </dd>
+   </dl>
+
+
+   <h4>Sub-process output</h4>
+
+   <ul>
+      <li><b>Class document/diagram</b> &mdash; showing names, roles, associations (direction, ownership), inheritances, classifications, interface sketches</li>
+      <li><b>Package document/diagram</b> &mdash; showing lists of classes</li>
+      <li><b>Sequence document/diagram</b> &mdash; showing method names/intentions</li>
+   </ul>
+</div>
+
+
+<div class="section" id="implementationguides">
+<h3>Implementation guides</h3>
+
+   <h4>Class interface</h4>
+   <ul>
+      <li>Separate commands and queries &mdash; commands change object state and return nothing; queries only read object state and return results.</li>
+      <li>Separate options and operands &mdash; operands are more essential and unchanging than options, options are things its possible to find defaults for. The arguments of a method should only include operands &mdash; an operand argument represents an object on which the method will operate &mdash; an option argument represents a mode of operation.</li>
+   </ul>
+
+   <h4>Class implementation</h4>
+   <ul>
+      <li>Translate preconditions into: method signatures taking types having certain invariants.</li>
+      <li>Ensure invariants and axioms as postconditions in methods.</li>
+      <li>Ensure invariants before self method calls in non accessors.</li>
+   </ul>
+</div>
+
+</div>
+
+
+<div class="section" id="references">
+<h2>References</h2>
+
+   <ul>
+      <li>&lsquo;The Mythical Man-Month&rsquo;, Brooks, (Addison Wesley), 1998, 0-201-83595-9</li>
+      <li>&lsquo;The Unified Software Development Process&rsquo;, Jacobson, ..., (Addison Wesley), 1999, 0-201-57169-2</li>
+      <li>&lsquo;Extreme Programming Explained&rsquo;, Beck, (Addison Wesley), 1999, 0-201-61641-6</li>
+      <li>&lsquo;Object Oriented Software Construction&rsquo; 2nd ed, Meyer, (Prentice Hall), 1997, 0-13-629155-4</li>
+      <li>&lsquo;Object Oriented Design Heuristics&rsquo;, Riel, (Addison Wesley), 1999, 0-201-63385-X</li>
+      <li>&lsquo;Design Patterns&rsquo;, Gamma, ..., (Addison Wesley), 1995, 0-201-63361-2</li>
+      <li>&lsquo;Pattern Hatching&rsquo;, Vlissides, (Addison Wesley), 1998, 0-201-43293-5</li>
+      <li>&lsquo;A System Of Patterns&rsquo;, Buschmann, ..., (Wiley), 1996, 0-471-95869-7</li>
+      <li>&lsquo;Object Oriented Software Engineering&rsquo;, Jacobson, ..., (Addison Wesley), 1995, 0-201-54435-0</li>
+      <li>&lsquo;Taligent's Guide To Designing Programs&rsquo;, Taligent, (Addison Wesley), 1994, 0-201-40888-0</li>
+      <li>&lsquo;UML Distilled&rsquo;, Fowler, (Addison Wesley), 1997, 0-201-32563-2</li>
+   </ul>
+</div>
+
+
+
+</div>
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

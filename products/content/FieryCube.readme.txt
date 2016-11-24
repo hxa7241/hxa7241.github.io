@@ -1,0 +1,200 @@
+
+
+Fiery Cube screensaver
+======================
+
+
+fierycube screensaver version 1.0
+Copyright © 2001,  Harrison Artifex.  All rights reserved.
+
+www.hxa7241.org | 2001-08-22T00:00:00Z
+
+
+
+
+description
+-----------
+
+windows screensaver simulating a spinning flaming cube
+(a little programming exercise to remind me about c++, windows, 
+graphics and speed, after a couple of years doing java server side 
+stuff.)
+
+
+
+
+requirements
+------------
+
+* Windows 95 or later, or Windows NT 3.5 or later
+* Pentium I or equivalent AMD, or later
+* probably about 4M ram
+* 100K disk space
+* screen resolutions 640 * 480 upwards and color modes 8bit to 32bit
+
+
+
+
+installation
+------------
+
+1) copy FieryCube.scr to wherever
+2) right-click it, select 'install'
+
+or to view, double-click FieryCube.scr (screensavers are just normal 
+executables)
+
+
+
+
+acknowledgements
+----------------
+
+* written in ANSI C++ for Win32
+* edited with TextPad: www.textpad.com
+* compiled with borland c++ 5.5.1 for win32, free command line 
+  compiler: www.borland.com
+* screensaver basis by lucian wischik:  www.wischik.com/scr
+* some inspiration, and the color palette, from hugo elias: 
+  freespace.virgin.net/hugo.elias
+* cube concept from peter walser: www2.active.ch/~proxima
+* random number generator from numerical recipes: www.nr.com
+* fp to int conversion from chris hecker
+
+
+
+
+implementation notes
+--------------------
+
+the code is in four separate 'packages':
+- the root directory of windows things
+- saverSupport: containing a mini framework for bitmap-oriented 
+  windows screensavers (depends on win32)
+- saverInstance: containing fiery cube specific material (depends on 
+  saverSupport and general)
+- general: containing some general utils (no dependencies)
+
+    saverSupport                saverInstance
+         |                        /        \
+       win32                saverSupport   general
+
+the outer facade is saverSupport/WinSaverGenerator which offers an 
+interface of one function 'drawFrame' to be called at each timestep. 
+the central classes are WinSaverGenerator and ImageGenerator. the 
+former wraps the latter so that frame drawing code can be separated 
+into windows and non-windows parts. both are derived from and 
+specialised to make a specific application - WinSaverGeneratorFire 
+and ImageGeneratorFire for fiery cube. these four classes are at the 
+top of their packages, having a one-way uses/dependency relation on 
+the other classes in their packages.
+
+    WinSaverGenerator                     WinSaverGeneratorFire
+           |      \                         /               |
+           |   ImageGenerator    WinSaverGenerator      ImageGeneratorFire
+           |                                             /      |       |
+     WinBackBuffer                           ImageGenerator    cube    turbulence
+           |
+        WinDib
+
+the main runtime structure goes like this:
+      wndProc
+            WinSaverGeneratorFire::drawFrame
+                  WinSaverGenerator::drawFrame
+                        ImageGeneratorFire::drawNextFrame
+                              Turbulence::makeWarpMap
+                              Turbulence::warpImage
+                              ImageGeneratorFire::updraft
+                              Cube::updateAndDraw
+                              ImageGeneratorFire::coolAndHeat
+                              Blurs::gatherSquare3
+                              ImageGeneratorFire::writeColor
+                        WinBackBuffer.blitToCenter
+
+for the fire modelling, i like to think of it as a semi physically 
+based discrete fluid dynamics simulation. no, really... the grid is 
+the pixels, containing heat values. at each timestep new heat is 
+added and heat is spread to adjacent pixels, cools a little, is 
+stirred around by a vector field and moved upwards. the inconsistency 
+is the warp: its an arbitrarilly chosen noise shape rather than being 
+calculated from the smaller scale simulation elements. but thats the 
+paradigm of computer graphics - a crafted mixture of maths and 
+physics, and aesthetically based forms. its not properly simulating 
+the navier-stokes equations, but its fast and it looks good. 
+
+the simulation is scaleable to any size, almost - the two things 
+holding it back are the spreading, which needs a parameterised blur, 
+and the updraft, which also needs a parameterised blur. they can be 
+done later sometime maybe. at present it maxes out at 600 pixels 
+height - if you have a fast enough machine that is - otherwise when 
+it starts it measures the frame rate and reduces the resolution until 
+the frame rate reaches 45ish or failing that 22ish. (max frame rate 
+is clamped to 50)
+
+i developed this at first on an olde worlde 486, so speed was the 
+main concern for all design decisions. its gone through a few 
+iterations and i think its pretty honed now, aside from using 
+assembly (i dont have an assembler to work with the borland compiler 
+so inline asm wasnt readily available). of course i didnt have a good 
+way of profiling, just ::GetTickCount, so there may be room for 
+improvement based on better measurements.
+
+the main speed problem overall was drawing to the screen: partly the 
+pixel replication scaling, and partly the windows blit. not using 
+windows stretch blit was faster because only a fraction of the color 
+mode translation is necessary, simple integer scaling is used, and 
+its possible to skip blocks of pixels that havent changed. its still 
+slower than it really should be though. maybe a solution would be to 
+use directdraw, but the fastest screen mode might not look good on 
+various panel monitors, so the user should still have a choice, and 
+so the code still has to handle different screen sizes (unless 
+directx provides access to a super stretch blit or something - im not 
+familiar with it yet).
+
+the main compute drain inside the simulation was the warp. at first, 
+i calculated the displacement for each pixel and stored it in an 
+array, then ran through this each frame to get the source pixel for 
+each target pixel. (also, every 4 frames a new warp map is made by 
+'rotating' the array values along a random amount. the warp map for 
+the other 3 frames is a linear interpolation between.) the main warp 
+routine turned out to be rather slow, even though it was just a 
+simple 14 line loop doing not much. it looked, on examination, like a 
+memory problem: using too much, not fitting in the cache(s). so i 
+changed the warp routine to a texture mapping form, reading the 
+displacements from grid points and interpolating between. bigger 
+complex code, but much smaller warp map arrays, and much faster. it 
+might be worth trying generating all displacements algorithmically 
+like the perlin noise concept. its still the main time drain, so it 
+could be improved.
+
+the second main compute drain was the spreading/blurring. this was 
+improved by changing the main data structure to an array of bytes to 
+store the heat values, which then allowed a simd style technique 
+processing 4 pixels at once in the blur loops, and also similarly in 
+heat and cool. its usually the default choice to use 32 bit types to 
+store things, based on the knowledge that dwords are the cpus natural 
+size and manipulating smaller types has an overhead. but the really 
+slow factor is the memory access, and using 4 times the amount of 
+cache cant be good. that and the simd opportunities mean the default 
+choice perhaps ought to be not to use any more bits than necessary.
+
+
+(changes made to minimal.cpp:
+- disabled TSaverSettings::WriteConfigRegistry so the registry isnt 
+  written to
+- added a unhandledExceptionFilterFunction definition (to suppress 
+  display of the 'illegal operation' alert box)
+- adjusted SaverWindowProc WM_CREATE handler to set an unhandled 
+  exception handler
+- changed SaverWindowProc WM_TIMER handler to do the main job of 
+  creating and calling WinSaverGeneratorFire
+- adjusted the button/key-down handler to pass on key presses
+- commented-out MessageName)
+
+
+
+
+special keys: 
+  'f' - runtime stats
+  'g' - decrease resolution
+  'h' - increase resolution

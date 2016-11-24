@@ -1,0 +1,114 @@
+body {
+  background-color: #E9EBF0;
+  color: #444;
+  font: normal 13px arial, sans-serif;
+  margin: 0;
+}
+h1 {
+  font-size: 28px;
+  font-weight: normal;
+  margin:  17px 0 25px 80px;
+  *margin-top: 35px;
+}
+h2 {
+  font: 20px;
+  font-weight: normal;
+}
+a {
+  color: #36C;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+img {
+  border: none;
+}
+div.wrapper {
+  margin: 0 auto;
+  width: 960px;
+}
+div.header {
+  background: white url(header_g.png) repeat-x left bottom;
+  background: -webkit-gradient(linear,left top,left bottom,from(white),to(#F7F7F7));
+  background: -moz-linear-gradient(top,white,#F7F7F7);
+  border-bottom: 1px solid #D7D7D7;
+  border-top: 1px solid #EEEEEF;
+  padding: 10px 0 5px;
+}
+img#logo {
+  margin-left: -4px;
+}
+div.header-bottom {
+  border-bottom: 1px solid #E3E4E7;
+  border-top: 1px solid #DDDDDF;
+}
+div.border {
+  border: 1px solid #D8D9DC;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 3px #B6B7BB;
+  -moz-box-shadow: 0 0 3px #B6B7BB;
+  box-shadow: 0 0 3px #B6B7BB;
+}
+div.main-content, div.footer {
+  background: white;
+  margin-top: 20px;
+}
+div.masthead {
+  background: url('masthead.png') repeat-x left bottom;
+  margin-top: -1px;
+  min-height: 370px;
+  *height: 270px;
+  padding: 20px 0 20px 35px;
+}
+div.main {
+  clear: both;
+  margin-top: 35px;
+  padding: 0 35px 60px;
+}
+div.button {
+  background: #1868C2 url('http://ssl.gstatic.com/s2/oz/images/profiles/landing_btn_gradient.png') repeat-x left top;
+  background: -webkit-gradient(linear,left top,left bottom,from(#2795FC),to(#1868C2));
+  background: -moz-linear-gradient(top,#2795FC,#1868C2);
+  border: 1px solid #2765C3;
+  border-bottom: 1px solid #073890;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px 2px 2px 2px;
+  cursor: pointer;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 15px 20px 10px 0;
+  padding: 7px 24px;
+  text-align: center;
+}
+div.button a { color:#fff; }
+div.more {
+  background: #EFEFEF;
+  border-top: 1px solid #cdcdcd;
+  clear: both;
+  padding: 12px 35px;
+  *padding: 0 35px 12px;
+}
+.more hr {
+  background: white;
+  color: white;
+  border: none;
+  height: 1px;
+  margin: -12px 0 10px -35px;
+  *margin: -19px 0 -10px -35px;
+  width: 960px;
+}
+div.footer {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.hidden {
+  display: none;
+}

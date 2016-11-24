@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="hxa7241-perceptuum-commentary" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+   <title>&lt; H X A 7 2 4 1 &gt; : perceptuum commentary</title>
+
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="perceptuum2.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="outer">
+
+
+<div class="upper">
+   <div class="title">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
+   </div>
+</div>
+
+
+<div class="side">
+   <ul class="mainmenu">
+      <li>
+         <a href="../" title="home" accesskey="h">HOME</a>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../software/" title="various software projects">SOFTWARE</a>
+         <ul class="mainmenu">
+            <li>
+               <a href="../rendering/" title="some rendering-related development projects">RENDERING</a>
+               <ul class="mainmenu">
+                  <li>
+                     <a href="../perceptuum/" title="a global illumination renderer">PERCEPTUUM</a>
+                     <ul class="mainmenu">
+                        <li>
+                           <span class="current" title="this page">PERCEPTUUM commentary</span>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
+      </li>
+      <li>
+         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
+      </li>
+   </ul>
+</div>
+
+
+<div class="middle">
+<div class="picture">
+   <img src="perceptuum-picture.jpg" alt="four cornell box variants" />
+</div>
+
+<h2>PERCEPTUUM - commentary</h2>
+<div class="h2subheading">a global illumination renderer development project</div>
+
+<table class="pagemenu" border="0" cellpadding="0" frame="void" rules="none" summary="menu of page sections">
+<tr valign="top">
+   <td>
+      <ul>
+         <li><a href="#preamble">preamble</a></li>
+         <li><a href="#architecture">architecture</a></li>
+         <li><a href="#lighttransport">light transport</a></li>
+         <li><a href="#lightinteraction">light interaction</a></li>
+         <li><a href="#imaging">imaging</a></li>
+         <li><a href="#other">other</a></li>
+      </ul>
+   </td>
+</tr>
+</table>
+
+
+<div class="content">
+
+<div class="section" id="preamble">
+   <h3>preamble</h3>
+
+   <p>writing a renderer is actually quite difficult. but also educational. the further along, the more is learnt of the subtleties and difficulties involved. here are some items of knowledge my moderate journey has turned up so far.</p>
+</div>
+
+
+<div class="section" id="architecture">
+   <h3>architecture</h3>
+
+   <p>the cornell division is a good one, rendering algorithmics being composed of: global light transport, local light interaction, and perceptually informed imaging. its a simple and almost obvious partitioning, but a good basis.</p>
+   <p>making a renderer do everything fast and well is fairly difficult, making it do everything reliably and automatically is very difficult.</p>
+   <p>an iterative and incremental development process is important. a 'spike solution' that will draw some kind of image from an early stage supports motivation, and assists early defect identification.</p>
+   <p>unit testing is important: pieces must be verified at a simple level because many defects cannot be perceived in the complex mixture of the resulting images. unfortunately the nature of graphics software - complex, numerical - means writing adequate tests can be as difficult as writing implementations, so a certain amount of discipline and patience is required.</p>
+   <p>generally, an xp or unified style process is suitable.</p>
+   <p>one integration test is to compare images produced by direct lighting with no photon mapping, to photon mapping of first hit photons with no direct lighting. average image luminance should be closely similar.</p>
+</div>
+
+
+<div class="section" id="lighttransport">
+   <h3>light transport</h3>
+
+   <p>photon mapping really is the technique of choice. its simple, general and effective - better than anything else. for the renderer writer other approaches to light transport can be easily dismissed: path tracing is too noisy, bidirectional path tracing fails with non diffuse reflection, radiosity is not general and too limited in various ways, light fields are far too large. dont bother trying any of them.</p>
+   <p>a good, general, simple strategy is: direct visualisation of photon map, with separate direct lighting, and special cases for: direct lighting through flat glass, sky and sun illumination</p>
+      <ul>
+         <li>good sharp shadows where theyre usually produced - by direct lighting</li>
+         <li>good soft shadows where theyre usually produced - by indirect lighting</li>
+         <li>but: fails to keep sharp shadows produced by direct lighting through glass or mirror... hence the special case to allow shadow rays to see through flat glass - covers most occuring failures</li>
+         <li>the noise in the photon map, which appears as a bumpiness, is quite controllable by adjusting the number of photons in the estimate, so that it will then even out over a small number of frame iterations.</li>
+         <li>the weakness is then with thin objects standing away from other things - chair legs, for example. they will tend to be too dark in indirect illumination, because a very high resolution of photons would be needed to put enough onto their surface to make a good estimate.</li>
+      </ul>
+   <p>a more complex strategy is something like the full jensen one: ray traced gather to indirectly visualise photon map and emitters, with sampling distribution informed by local photon map values and brdf</p>
+      <ul>
+         <li>cures the thin objects weakness</li>
+         <li>maybe better handling of direct illumination</li>
+         <li>maybe more robust and consistently good handling of general peaks in inward illumination</li>
+         <li>but: more code, more computation</li>
+         <li>uncertain that the benefits outweigh the extra work</li>
+      </ul>
+   <p>the main problem in automation is control of photon distribution and storage in a view oriented way.</p>
+</div>
+
+
+<div class="section" id="lightinteraction">
+   <h3>light interaction</h3>
+
+   <p>the axis of rendering is the scattering event, the local light interaction. the gathering of light coming in, and the calculation of light going out, at a point on a surface. everything is oriented towards doing a good job of this.</p>
+   <p>perfect diffuse and perfect specular surfaces are easy to render, its the moderately glossy surfaces that are difficult. unfortunately many artificial objects are in this intermediate category.</p>
+   <p>its difficult to take a general brdf as a black box and render effectively and efficiently. splitting brdfs into parts that can give a measure of their pointiness helps a lot. since brdf models available are really quite primitive this isnt a restrictive or onerous requirement.</p>
+   <p>local interaction is well handled by: stochastically choosing, depending on the pointiness of the brdf, either photon map estimation or ray propagation.
+   its important to apply a 'gain'-like distortion to the pointiness: if it is near (say 10%) the ends of its range, it should be pushed all the way out - this eliminates isolated sampling effects (bright spots usually) that occur too infrequently to be averaged out well. then, if ray propagation is chosen and the brdf isnt a perfect spike or extremely pointy, emission is not included from the surface hit, but instead direct lighting is evaluated separately through the brdf - this only performs poorly for emitters occupying a large solid angle to the surface point, which is a very unusual case. (separating emitters is how ward does interaction in 'radiance')</p>
+   <p>a remaining problem is glossy interaction from concentrated bright areas (eg: surface close to an emitter, or sharply specular reflection of emitter), which is intractably noisy. none of the 'special arrangements' - photon mapping, eye ray propagation, separate direct lighting - takes care of this case. but i think i have a good idea...</p>
+   <p>the optimal montecarlo sampling distribution is not importance - putting more samples where the function is larger, but putting more samples where the function is changing most. so: use importance scaled by its derivative plus 1, for the probability density, and divide the sample values by the derivative plus 1. perfect specular would still be a spike, and perfect diffuse still constant. the brdf importance can be augmented with estimates of incoming light from the photon map. these would have to be built numerically, which requires significantly more work in code and execution than simple importance sampling. whether its worth it is untested.</p>
+   <p>despite its separateness in mathematical expressions of interaction, the cosine term must be incorporated into the brdf concept, since it doesnt apply in the perfect specular case.</p>
+   <p>the obvious representation of the brdf for a surface point as a software class is deficient. the rendering strategy will be built from a variety of brdf uses, more isomorphic to various rendering equations. in class oriented form these are broken across different parts of code and are made more difficult to grasp. some attention is required to devise a more appropriate pattern.</p>
+</div>
+
+
+<div class="section" id="imaging">
+   <h3>imaging</h3>
+
+   <p>if ward doesnt mention in the tonemapping graphics gem, then its important to also include a gamma transform of between 1/2 and 1/3 after the scaling, to simulate perceptual response - otherwise images look much too contrasty, shadows are too dark and indirect illumination is almost invisible. poynton suggests use of 1/2.2 faute de mieux.</p>
+   <p>the best output image format is png. it allows all common pixel depths and alpha, it permits color space and gamma data, its lossless compressed, its a universally supported w3c standard, and theres a solid library available to reuse. (its even possible to abuse it a bit to store ward realpixel images.)</p>
+</div>
+
+
+<div class="section" id="other">
+   <h3>other</h3>
+
+   <p>frame-coherence of stochastic sampling is preferable. that is: in the eye path tracing phase, every stochastic used in making a pixel is shared for all pixels in that frame. although it isnt such a 'good' sampling, aesthetically its much better because noise is eliminated entirely from most of the image.</p>
+   <p>quasi-random sequences are significantly superior to general pseudo-random sequences, by being less noisy and giving a smoother result faster. aliasing doesnt appear to be a problem. a lot are needed though: about 100 ideally, however this many probably wont be available, so some careful rationing will be required. also, particular pairs of sequences (which is the way many will be used) produce very unsatisfactorily regular patterns, so every pair must be tested by plotting.</p>
+</div>
+
+</div>
+</div>
+
+
+<div class="lower">
+   <div>2004-08-22</div>
+</div>
+
+
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

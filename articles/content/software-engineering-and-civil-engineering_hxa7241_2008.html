@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Software Engineering And Civil Engineering - HXA7241 - 2008</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Software Engineering And Civil Engineering - HXA7241 - 2008" />
+   <meta name="DC.subject"     content="software engineering, civil engineering, engineering, philosophy of engineering" />
+   <meta name="DC.description" content="Abstracting Civil Engineering as a guide to Software Engineering." />
+   <meta name="DC.type"        content="technical article" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.publisher"   content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2008-11-05" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/articles/content/software-engineering-and-civil-engineering_hxa7241_2008.html" />
+
+   <meta name="keywords"       content="software engineering, civil engineering, engineering, philosophy of engineering" />
+   <meta name="description"    content="Abstracting Civil Engineering as a guide to Software Engineering." />
+   <meta name="document"       content="hxa7241article5" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <!-- 87.6 hours -->
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>Software Engineering And Civil Engineering</h1>
+</div>
+
+
+<div id="colophon">
+<h4>Harrison Ainsworth</h4>
+
+   <p id="contact"><a href="http://www.hxa.name/">http://www.hxa.name/</a>
+   <br />artifex <i>(&alpha;&tau;)</i> hxa7241 <i>(d&omicron;&tau;)</i> org</p>
+
+   <p id="timestamp">2008-11-05</p>
+</div>
+
+
+<div id="preface">
+   <div id="summary">
+      <h2>Summary</h2>
+      <p>This article examines civil engineering as a guide to understanding software engineering &ndash; mainly at the technical level. And it derives some suggestions for software engineering. It is preliminary: drawn from merely moderate research, and comprising impressions and notions not verified by measurement. (3000 words)</p>
+   </div>
+
+   <dl id="metadata" class="plainlist">
+      <dt>subject</dt>
+      <dd>software engineering, civil engineering, engineering, philosophy of engineering</dd>
+
+      <dt>uri</dt>
+      <dd><a href="http://www.hxa.name/articles/content/software-engineering-and-civil-engineering_hxa7241_2008.html">http://www.hxa.name/articles/content/software-engineering-and-civil-engineering_hxa7241_2008.html</a></dd>
+
+      <dt>license</dt>
+      <dd><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons BY-SA 3.0 License</a>.</dd>
+   </dl>
+</div>
+
+
+<div id="contents">
+   <h2>Contents</h2>
+   <ul>
+      <li><a href="#introduction">Introduction</a></li>
+   </ul>
+   <h4><a href="#generaliseddescription">1 &ndash; Generalised description</a></h4>
+   <ul>
+      <li><a href="#prerequisitesofengineering">Prerequisites of engineering</a></li>
+      <li><a href="#analysisofengineering">Analysis of engineering</a></li>
+      <li><a href="#practicesofengineering">Practices of engineering</a></li>
+      <li><a href="#relationtosoftwareengineering">Relation to software engineering</a></li>
+   </ul>
+   <h4><a href="#concomitantsuggestions">2 &ndash; Concomitant suggestions</a></h4>
+   <ul>
+      <li><a href="#surroundingsubdisciplines">Surrounding sub-disciplines</a></li>
+      <li><a href="#abstractiontheory">Abstraction theory</a></li>
+      <li><a href="#dataandcomputationmechanics">Data and computation mechanics</a></li>
+      <li><a href="#thereworkaspectinsoftware">The rework aspect in software</a></li>
+   </ul>
+   <ul>
+      <li><a href="#conclusion">Conclusion</a></li>
+      <li><a href="#references">References</a></li>
+   </ul>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="introduction">
+<h3>Introduction</h3>
+
+   <p>What does &lsquo;software engineering&rsquo; mean? Understanding this is the start of pursuing it to expertise. The only way to answer is to look at other engineering fields. A view of engineering in general can be made, and how software engineering fits can be seen.</p>
+   
+   <p>Civil engineering is a good reference: It is long established with a substantial body of work. It offers a complete guide for engineering discipline that is well-known and known to work well. And it has a range and depth that should accommodate comparison with all software enterprises and projects.</p>
+
+   <p>The tasks of both software and civil engineering are the same: build something difficult for a customer. Being led by intention, by purpose, gives engineering an abstract definition. The material sets the bounds as a general background assumption, but the actions on the medium are driven and controlled by something else. So, although other engineerings are physical, it is possible for engineering to be based on something else, like software.</p>
+
+   <p>Organization and management are probably the most important project factors, but they are mostly general. Inspection of that aspect of civil engineering cannot illuminate much that is characteristic of software engineering. So this article focuses on matters closer to the technical &ndash; the area where the generalities meet the specifics of the medium.</p>
+</div>
+
+
+<div class="section" id="generaliseddescription">
+<h2>1 &ndash; Generalised description of civil engineering</h2>
+
+   <p>This looks at civil engineering's core by making an abstract description &ndash; just above the particularities of physics. As such, it gives a framework for comparison to software engineering.</p>
+</div>
+
+
+<div class="section" id="prerequisitesofengineering">
+<h3>Prerequisites of engineering</h3>
+
+   <p>What makes a good engineering discipline? There is a double-sided principle:</p>
+
+   <ul>
+      <li><i>Engineering should know/say clearly what things it can do, and how to do them.</i> Where &lsquo;clearly&rsquo; means precisely, certainly, reliably, in a language useful to its associate-disciplines (architecture and construction, for civil engineering). What can be done (for architecture) is expressed as alternatives, trade-offs, costs, material needs. How to do them (for construction) is expressed as instructions and descriptions.</li>
+
+      <li><i>Engineering must be restricted to an amenable medium</i> &ndash; one that can be modelled determinately, and scientifically (like physical material for civil engineering). This means the knowledge can be analysed, synthesized and manipulated logically and mathematically. It is structured and objective. The previous &lsquo;external&rsquo; characteristic follows from this &lsquo;internal&rsquo; one.</li>
+   </ul>
+
+   <p>For example: a job of painting a picture to evoke particular feelings is not engineering. There is a lack of clarity and objectivity. Although: the task of making colours and applying them to the surface can be engineering. Engineering takes an appropriate place within or beside other activities.</p>
+
+   <p>There is a matter of degree, a judgement of similarity to other accepted examples. The more extensive, detailed, and rich the scientific model, the more capable the engineering. Civil engineering sets a good standard.</p>
+
+   <p>There is also a question of practicality. For example, although there is substantial understanding, it is difficult or impossible to manipulate whole planets. Can this be a subject of engineering? Practical responsibilities are detached and delegated to construction, but engineering knowledge is (beside logic) partially formed by actual practice.</p>
+</div>
+
+
+<div class="section" id="analysisofengineering">
+<h3>Analysis of engineering</h3>
+
+   <p>How does the engineering core of civil engineering work?</p>
+
+   <p>There are particular features:</p>
+   <ul>
+      <li>All objects, including imagined scenes, are, at multiple levels, broken into pieces that are well-understood &ndash; proposals are analysed and translated into logical models, and those, after manipulation, can later be translated into instructions.</li>
+      <li>The logical modelling is mature, sophisticated &ndash; it has progressed through stages of rules of thumb, tables of values, and other simple ad hoc means, to Newtonian mathematical models, and computational methods.</li>
+      <li>The sophistication and extent of the knowledge is guided and directed by its surrounding sub-disciplines &ndash; what is wanted by architecture, what is practical for construction.</li>
+   </ul>
+   <p>The principle of these features is determinacy &ndash; a predictable, precise, controllable structure. This means designs can be created, derived, and manipulated with logical methods alone. This is the main strength of engineering, and it tries to develop all its activities into this form.</p>
+
+   <p>There is a particular process:</p>
+   <ol>
+      <li>Get information.</li>
+      <li>Create various designs.</li>
+      <li>Evaluate designs.</li>
+      <li>Choose one, or repeat process.</li>
+   </ol>
+   <p>(Which may progress through problems from level-to-level or part-to-part in some way.) This process is evolutionary and indeterminate. It compensates for incompleteness in determinate understanding and information &ndash; which is, in some areas, never entirely escapable. The evolutionary process also helps advance the determinate knowledge, over time.</p>
+
+   <p>In summary: Engineering assembles objects by understanding their properties, and fills gaps in understanding by using experiment.</p>
+</div>
+
+
+<div class="section" id="practicesofengineering">
+<h3>Practices of engineering</h3>
+
+   <p>Civil engineering work is separated into, as an idealisation: architecture, engineering, and construction. In practice, these may tend to be merged (for smaller projects) or subdivided (for larger projects). Each is a sub-discipline and sub-sequence and successively dependent on each other, but not sharply defined.</p>
+
+   <ul>
+      <li>Architecture is advocational: it concerns the external, user-facing, usable features. It is the &lsquo;what&rsquo;.</li>
+      <li>Engineering is technical: it concerns the internal, non-usable features. It is the &lsquo;how&rsquo;, and implements architecture.</li>
+      <li>Construction is practical: it concerns actualising the ideas in a usable material. It realises engineering.</li>
+   </ul>
+
+   <p>In practice, engineering is led by informal methods &ndash; those of experience and judgement. Yet they are still determinate, just comparatively simple.</p>
+
+   <p>With time and a disciplined context, civil engineering has built a body of knowledge. High level rules and the choices made with them appear informal. But they have arisen from effective work, and they are articulated by it, so are well-founded. Mechanical analysis, measures, and experiment could validate them. But, although that is possible, it is not feasible or needed for every case.</p>
+
+   <p>The broader aims of such engineering knowledge is to get safely within limits and get good general performance. The essential &lsquo;regularity&rsquo; of the medium &ndash; physical material &ndash; allows simplified rules to work sufficiently for their purpose. Failures do still occur: for example, the London Millennium Footbridge due to unforeseen crowd vibration resonance. But they are rarely catastrophic.</p>
+
+   <p>On design process, civil engineering has almost no knowledge to offer, unfortunately. Construction takes most project cost, time, and risk. So it has also dominated research and consideration of process/management. What else exists must be hidden within company culture.</p>
+
+   <p>However, it is possible to see that design activity is formed of a hierarchy of techniques:</p>
+   <ol>
+      <li>Copy very similar previous design.</li>
+      <li>Follow high-level guides.</li>
+      <li>Apply mathematical tools.</li>
+      <li>Use computational optimization (post-rationalisation).</li>
+      <li>Use computational generation (pre-rationalisation).</li>
+   </ol>
+   <p>They may be applied somewhat sequentially, and according to availability and particular project part. The techniques are also self-refined by use of the process over time and successive projects.</p>
+</div>
+
+
+<div class="section" id="relationtosoftwareengineering">
+<h3>Relation to software engineering</h3>
+
+   <p>The above generalised description seems entirely compatible with software engineering: from the more abstract to the more concrete, they are homologous and not antithetical. It might be observed that software engineering so far covers less &lsquo;area&rsquo; of the shared realm, and its boundaries are unclear. Yet there is large common ground. And civil engineering should indeed present a maturer template into which software engineering could grow. The current practice of software engineering may be weaker compared to others, but its essential character is the same.</p>
+
+   <p>The medium is different: bits not atoms &ndash; and this might seem important. But for large projects, those differences seem far outweighed by the similarities. They are: the complexities of the task and the organization required to control it. Civil engineering works because it is well organized, not because its basic medium is particularly suitable.</p>
+
+   <p>There should be caution against the common assumption in software that it is especially difficult. Actually, civil engineering projects seem more complex than most software projects: there is plenty of novelty, complexity, unpredictability, and risk in civil engineering. Software engineering does not appear intrinsically harder.</p>
+</div>
+
+
+<div class="section" id="concomitantsuggestions">
+<h2>2 &ndash; Concomitant suggestions for software engineering</h2>
+
+   <p>These are a few salient items of comparison from Part 1's framework. And so they also indicate possible improvements.</p>
+</div>
+
+
+<div class="section" id="surroundingsubdisciplines">
+<h3>Surrounding sub-disciplines</h3>
+
+   <p>Software engineering has adopted the terms &lsquo;architecture&rsquo;, &lsquo;engineering&rsquo;, and &lsquo;construction&rsquo;, but it has been casual and confusing with their use. Civil engineering offers an example that can be followed quite closely. This can help delineate and situate software engineering more properly.</p>
+
+   <p>In software the term &lsquo;architecture&rsquo; has no distinct meaning; it is usually merely a grandiloquence for high-level engineering design. But following civil engineering gives it real meaning: it is then the overall external appearance, usage, and function of the software system &ndash; the usage structure. (This was Brooks' view in &lsquo;The Mythical Man-Month&rsquo;.) For id's Quake 3, for example, it is the desktop executable packaging, the first-person 3D interface, the game-play, the network multiplayability, the content modifiability, etc.</p>
+
+   <p>The term &lsquo;engineering&rsquo;, in software, is strengthened by having a proper &lsquo;architecture&rsquo;. Indeterminate matters like requirements and usability are removed or distanced. And it shrinks somewhat into a more well-defined logical realm &ndash; the technical structure. Then it treats only what kind of data is moved, where, and what processing is done to it. These are the truly essential concerns of engineering for software. For id's Quake 3, for example, it is the image rendering techniques, the content data-structures, the network protocols, etc.</p>
+
+   <p>This separation of architecture and engineering has two benefits: It gives engineering clear and more stabilised requirements, allowing it to work more determinately. And, it concentrates more attention on pure product design &ndash; something of pivotal value, yet without a sufficiently prominent identity.</p>
+
+   <p>&lsquo;Construction&rsquo; in software is problematic. In civil engineering it is the realisation of a descriptional model into material form. But in software both the model and the product are held in the same digital form. So there is no realisation, so no construction. It would be misleading to use the term in software. Maybe a vestigial form of construction could be seen in wiring-up networks, plugging-in and setting-up hardware. But it does not seem appropriate (or significant) enough to take the name.</p>
+
+   <p>On the other hand: from a process/management view, physical &lsquo;construction&rsquo; and software &lsquo;coding&rsquo; do match quite well. Coding is the detailed end of software engineering design, and civil engineering construction does detailed design. Both bear the majority of time, labour, and risk. So adapting the &lsquo;construction&rsquo; term to software could be useful. Furthermore, in civil engineering, the stricter separation of construction is a significant source of trouble and inefficiency, so a non-separate &lsquo;construction&rsquo; may be an improvement. But it must always be appreciated that this is an artifact of process and management. For software, there is an essential unity of engineering and construction.</p>
+
+   <p>There is no &lsquo;maintenance&rsquo; in software; it is really development iteration, after delivery. There is no spontaneous/externally-caused degeneration; what changes is entirely deliberate (or should be). It is not different, in activity or purpose, to iteration during the main part of the project. Civil engineering probably modifies parts after delivery sometimes, but what do they call it? &lsquo;Renovation&rsquo; is not quite right. If there is a distinct name, it perhaps should be adopted by software.</p>
+</div>
+
+
+<div class="section" id="abstractiontheory">
+<h3>Abstraction theory</h3>
+
+   <p>Software certainly has a medium amenable to engineering. Comprising purely logical objects, it is necessarily capable of determinate manipulation. But that makes it rather different from a physical medium. Instead of being a material onto which a logical model is projected (so becoming a medium), software is its own medium, and its own model.</p>
+
+   <p>The purely logical character might seem to eliminate uncertainty and enable complete power of manipulation. But the limiting factor is human capability: logical relations must still be discovered, and manipulation developed. So in practice there is little advantage.</p>
+
+   <p>The constitution of the software medium is very simple and open. The basic elements (bits) have two features: an easily changeable property &ndash; to be 0 or 1, and a fixed identity &ndash; a unique address. The vitality of bits is that they can stand for anything. What particular data is for and how it is used is ultimately pure interpretation. (Computation is merely automated bit-changing according to instructions held in other bits. So it is merely an agent for, and therefore part of, an interpretation.) Software is a medium for general abstraction.</p>
+
+   <p>The freedom and mutability enables software to represent the state and transitions of any model &ndash; since a model is just a more sophisticated and structured kind of interpretation. For example, polyhedral objects: the state is made of vectors, and the transitions are by matrix transforms (each made of arrays of numbers). When taken from a mathematical branch, such models are independently well-defined. Otherwise they often must be created to fit an ill-defined source. For example: names and addresses &ndash; there are rules, but they are not entirely complete and clear. For mathematical models, there is always some adaptation or abridgement, and for informal models, always some implicit relations to others. That means the models are always susceptible to change to variations or alternatives, as implementations or requirements shift. So, not only defining abstractions, but organising their change, is fundamental in software engineering.</p>
+
+   <p>To be more capable, software engineering needs improved basic understanding of its medium. Current practice is very unsophisticated overall. A much better science of the forms and relations of abstraction per se needs development. And consequently, better techniques to understand, predict, and control (and automate) software structure &ndash; especially managing changes to it. Given their fundamental nature, such advances will provide benefits across all software. The main source of advance may be Category Theory.</p>
+</div>
+
+
+<div class="section" id="dataandcomputationmechanics">
+<h3>Data and computation mechanics</h3>
+
+   <p>Essential to software engineering ought to be quantification and modelling of basic behaviour. That is: the time and space needed for transferring data, transforming data, and storing data. Just as physical engineering calculates resultant behaviour from forces across whole structures, software engineering should capably predict performance of whole systems. (Computational complexity analysis, though valuable, is too abstract for this.)</p>
+
+   <p>Currently anecdotal guides and trial-and-error are prevalent; perhaps because better understanding is not so often useful, given the power of computers relative to everyday tasks. Although some informality is appropriate, a foundation is needed, and engineering strives to replace ad hoc experiment with determinate modelling. Also, reliably predicting extremes/bad-cases (or being assured of their absence) would be quite widely valuable.</p>
+
+   <p>A more formal understanding, though it is ultimately determinate, seems rarely feasible in operation. Like physical mechanics, trivial problems can be reckoned with equation, pen, and paper; but real problems cannot. Hence a recourse to numerical tools. These can simulate processing-components in aggregate &ndash; equivalent (and somewhat similar) to mechanics simulation tools: Provide high-level description of software, run the tool, and get fairly accurate estimations of time and space needed, and safety-bound compliance. Further development might continue the work on Stochastic Process Algebras.</p>
+</div>
+
+
+<div class="section" id="thereworkaspectinsoftware">
+<h3>The rework aspect in software</h3>
+
+   <p>This item/feature is not a deficit in relation to civil engineering, but a surplus.</p>
+
+   <p>Due to the ease of change allowed by its medium, software development process is much more iterative &ndash; most obviously as a series of versions. This effectively adds another set of requirements: for internal rework. And so a significant extra emphasis has emerged in software.</p>
+
+   <p>Physical engineering is dominantly about understanding object properties and their co-ordination &ndash; which is determinate. But the dominant concern of understanding software is about modularisation for comprehensibility and modifiability. Both are ill-defined, indeterminate, or of little capability at the moment. The goal of making it proper engineering implies the following kind of progression:</p>
+
+   <p>1. Avoidance: The simplest treatment is to remove the problem or reduce its presence. Software can be organized around fixed, closed components, more like physical engineering. And, in an elaborated form, this is the main intent of current modularisation practice. But this is only a palliative; ease of change is a virtue, and capabilities should be developed to exploit it fully.</p>
+
+   <p>2. Evidence: More observational research will establish a larger, firmer skeleton of knowledge. That is: measurements of the effects of software structuring techniques in building software systems. Such a foundation can be employed both for direct informal use (as basic limits and for reasonable inference) and developing theory.</p>
+
+   <p>3. Theory: Ultimately, a logical/mathematical model must be made to encompass the purely structural content. This science of abstraction is the subject of a previous section.</p>
+</div>
+
+
+<div class="section" id="conclusion">
+<h3>Conclusion</h3>
+
+   <p>There are various kinds of civil engineering, just as there are various kinds of software engineering. It is possible to hire a builder to put up a garage for your house. There, all disciplines &ndash; architecture, engineering, construction &ndash; are fused in one pragmatic (and effective) work. Much software resembles this, and is probably the most familiar. But this doesn't show its essence or potential scope. It is larger civil engineering, as referred to here, that can supply a pattern for software, and software appears competent for it.</p>
+
+   <p>Software engineering's weaknesses are remediable, and its future appears very good:</p>
+   <ul>
+      <li>The basic medium is very amenable &ndash; better than civil engineering.</li>
+      <li>There is lots of research on improving every aspect &ndash; more than civil engineering.</li>
+      <li>After only about 50 years it is already good &ndash; faster maturation than civil engineering.</li>
+   </ul>
+
+   <p>However, all ramifications of the technical are overshadowed by the importance of project organization, which is not really special for software.</p>
+</div>
+
+
+<div class="section" id="references">
+<h2>References</h2>
+
+   <ul>
+      <li>
+         &lsquo;MEng Civil Engineering Syllabus&rsquo;
+         Imperial College;
+         2007.
+      </li>
+      <li>
+         &lsquo;Engineering Mechanics For Structures&rsquo;
+         Bucciarelli;
+         MIT,
+         2002.
+      </li>
+      <li>
+         &lsquo;Mechanics And Design Of Concrete Structures (3-0-9) Lecture Notes&rsquo;
+         Buyukozturk;
+         MIT,
+         2004.
+      </li>
+      <li>
+         &lsquo;200 Questions And Answers On Practical Civil Engineering Works&rsquo;
+         Vincent T. H. Chu;
+         ICE,
+         2005.
+      </li>
+      <li>
+         &lsquo;Bridge Design For Economy And Durability&rsquo;
+         Pritchard;
+         1992.
+      </li>
+      <li>
+         &lsquo;Project Management For Construction&rsquo;
+         Hendrickson;
+         2003.
+      </li>
+      <li>
+         &lsquo;Civil Engineering Body Of Knowledge 2ed.&rsquo;
+         ASCE,
+         2008.
+      </li>
+      <li>
+         &lsquo;An Introduction To The Design Process&rsquo;
+         Wallace, Clarkson;
+         Department of Engineering, Cambridge University,
+         1999.
+      </li>
+      <li>
+         &lsquo;Arup Journal&rsquo;
+         2000-2008
+      </li>
+      <li>
+         &lsquo;The Bishopsgate Tower Case Study&rsquo;
+         Hesselgren, Charitou, Dritsas;
+         International Journal of Architectural Computing, 1:5,
+         2007.
+      </li>
+      <li>
+         &lsquo;Developing A Protocol For Managing The Design Process In The Building Industry&rsquo;
+         Formoso, Tzotzopoulos, Jobim, Liedtke;
+         Proceedings IGLC,
+         1998.
+      </li>
+   </ul>
+</div>
+
+</div>
+
+
+</div><!--paper-->
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

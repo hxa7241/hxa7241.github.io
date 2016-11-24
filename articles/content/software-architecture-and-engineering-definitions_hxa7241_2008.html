@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>Software Architecture And Engineering Definitions - HXA7241 - 2008</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="Software Architecture And Engineering Definitions - HXA7241 - 2008" />
+   <meta name="DC.subject"     content="software engineering, software architecture, terminology" />
+   <meta name="DC.description" content="Well-founded definitions for the terms 'architecture' and 'engineering' in software." />
+   <meta name="DC.type"        content="technical article" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.publisher"   content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2009-01-28" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/articles/content/software-architecture-and-engineering-definitions_hxa7241_2008.html" />
+
+   <meta name="keywords"       content="software engineering, software architecture, terminology" />
+   <meta name="description"    content="Well-founded definitions for the terms 'architecture' and 'engineering' in software." />
+   <meta name="document"       content="hxa7241article5" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-article.css" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="edge" id="header"><div><a href="http://www.hxa.name/articles/">HXA articles</a></div></div>
+
+<div class="paper">
+
+
+<div id="heading">
+   <h1>Software Architecture And Engineering Definitions</h1>
+</div>
+
+
+<div id="colophon">
+<h4>Harrison Ainsworth</h4>
+
+   <p id="contact"><a href="http://www.hxa.name/">http://www.hxa.name/</a>
+   <br />artifex <i>(&alpha;&tau;)</i> hxa7241 <i>(d&omicron;&tau;)</i> org</p>
+
+   <p id="timestamp">2009-01-28</p>
+</div>
+
+
+<div id="preface">
+   <div id="summary">
+      <h2>Summary</h2>
+      <p>This article describes justified definitions for the terms &lsquo;architecture&rsquo; and &lsquo;engineering&rsquo; in software. They are well-founded in Civil Engineering / the Building industry &ndash; their original source. (750 words)</p>
+   </div>
+
+   <dl id="metadata" class="plainlist">
+      <dt>subject</dt>
+      <dd>software engineering, software architecture, terminology</dd>
+
+      <dt>uri</dt>
+      <dd><a href="http://www.hxa.name/articles/content/software-architecture-and-engineering-definitions_hxa7241_2008.html">http://www.hxa.name/articles/content/software-architecture-and-engineering-definitions_hxa7241_2008.html</a></dd>
+
+      <dt>license</dt>
+      <dd><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons BY-SA 3.0 License</a>.</dd>
+   </dl>
+</div>
+
+
+<div id="contents">
+   <h2>Contents</h2>
+   <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#buildingsubdisciplines">Building's Sub-Disciplines</a></li>
+      <li><a href="#software">Software Architecture And Engineering</a></li>
+      <li><a href="#softwareconstruction">Supplement: Software Construction</a></li>
+      <li><a href="#references">References</a></li>
+   </ul>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="introduction">
+<h3>Introduction</h3>
+
+   <p>As enterprises &ndash; that is: large-scale organised activities &ndash; software engineering and civil engineering are similar. So some transfer of higher-level terminology, and concepts, is not only straightforward but probably useful. Software can gain from Building's maturity.</p>
+
+   <p>Software development has adopted the terms &lsquo;architecture&rsquo;, &lsquo;engineering&rsquo;, and &lsquo;construction&rsquo; from the building industry, but it has been casual and confusing with their use. The original <i>meaning</i> of the words has been overlooked. However, the building industry's example can be followed quite closely in concept as well as word. This can help delineate and situate software engineering, and its related sub-disciplines, more properly and clearly.</p>
+</div>
+
+
+<div class="section" id="buildingsubdisciplines">
+<h3>Building's Sub-Disciplines</h3>
+
+   <p>Building industry work is separated into, as an idealisation: architecture, engineering, and construction. In practice, these may tend to be merged (for smaller projects) or subdivided (for larger projects). Each is a sub-discipline and sub-sequence and successively dependent on each other, but not sharply defined.</p>
+
+   <ul>
+      <li>Architecture is advocational: it concerns the external, user-facing, usable features. It is the <i>&lsquo;what&rsquo;</i>, and <span title="well, it *should*, but that is a different matter...">serves client wants</span>.</li>
+      <li>Engineering is technical: it concerns the internal, non-usable features. It is the <i>&lsquo;how&rsquo;</i>, and implements architecture.</li>
+      <li>Construction is practical: it concerns actualising the ideas in a usable material. It realises engineering.</li>
+   </ul>
+</div>
+
+
+<div class="section" id="software">
+<h3>Software Architecture And Engineering</h3>
+   <h4>Software architecture definition</h4>
+
+   <p>In software the term &lsquo;architecture&rsquo; has lacked distinct meaning; it is usually merely a grandiloquence for high-level engineering design. But following building gives it real meaning: it is then the overall external appearance, usage, and function of the software system &ndash; it is the <i>&lsquo;what&rsquo;</i> &ndash; the <i>usage structure</i>. (This was also Brooks' view in &lsquo;The Mythical Man-Month&rsquo;.) For id's Quake 3, for example, it is the desktop executable packaging, the first-person 3D interface, the game-play, the network multiplayability, the content modifiability, etc.</p>
+
+   <h4>Software engineering definition</h4>
+
+   <p>The term &lsquo;engineering&rsquo;, in software, is strengthened by having a proper &lsquo;architecture&rsquo;. Indeterminate matters like requirements and usability are distanced or removed. And it shrinks somewhat into a more well-defined logical realm &ndash; it is the <i>&lsquo;how&rsquo;</i> &ndash; the <i>technical structure</i>. Then it treats only what kind of data is moved, where, and what processing is done to it. These are the truly essential concerns of engineering for software. For id's Quake 3, for example, it is the image rendering techniques, the content data-structures, the network protocols, etc.</p>
+
+   <p>This separation of architecture and engineering yields two improvements: It gives engineering clearer and more stabilised requirements, allowing it to work more determinately. And, it concentrates more attention on pure product design &ndash; something of pivotal value, yet without a sufficiently prominent identity. Now, the two major aspects of the work are clearly represented, and in a way that is supported by established engineering practice.</p>
+</div>
+
+
+<div class="section" id="softwareconstruction">
+<h3>Supplement: Software Construction</h3>
+
+   <p>To be complete, the remaining third sub-discipline can be considered:</p>
+
+   <p>The term &lsquo;Construction&rsquo; in software is problematic. In building it is the realisation of a descriptional model into material form. But in software both the model and the product are held in the same digital form. So there is no realisation, so no construction. It would be misleading to use the term in software. Maybe a vestigial form of construction could be seen in wiring-up networks, plugging-in and setting-up hardware. But it does not seem appropriate (or significant) enough to take the name.</p>
+
+   <p>On the other hand: from a process/management view, physical &lsquo;construction&rsquo; and software &lsquo;coding&rsquo; do match quite well. Coding is the detailed end of software engineering design, and building construction also does detailed design. Both bear the majority of time, labour, and risk. So adapting the &lsquo;construction&rsquo; term to software could be useful. Furthermore, in building, the stricter separation of construction is a significant source of trouble and inefficiency, so a non-separate &lsquo;construction&rsquo; may even be an improvement. But it must always be appreciated that this is an artifact of process and management. For software, there is an essential unity of engineering and construction.</p>
+</div>
+
+
+<div class="section" id="references">
+<h2>References</h2>
+
+   <ul>
+      <li>
+         <a href="http://www.hxa.name/articles/content/software-engineering-and-civil-engineering_hxa7241_2008.html">&lsquo;Software Engineering And Civil Engineering&rsquo;
+         Harrison Ainsworth / <small>HXA7241</small>;
+         2008.</a>
+         (from which, this article was adapted)
+      </li>
+   </ul>
+</div>
+
+</div>
+
+
+</div><!--paper-->
+
+<div class="edge" id="footer"><div><a href="http://www.hxa.name/articles/">http://www.hxa.name/articles/</a></div></div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>

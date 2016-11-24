@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html id="hxa7241-tools" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+   <title>&lt; H X A 7 2 4 1 &gt; : tools </title>
+
+   <meta name="keywords" content="software, Linux, Mac, win32, Windows, Lua, Ruby, Ocaml, small, source code, open source" />
+   <meta name="description" content="several small C++, Lua, Ruby, OCaml things, with source code" />
+
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+<div class="outer">
+
+
+<div class="upper">
+   <div class="title">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
+   </div>
+</div>
+
+
+<div class="side">
+   <ul class="mainmenu">
+      <li>
+         <a href="../" title="home" accesskey="h">HOME</a>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../software/" title="various software projects">SOFTWARE</a>
+         <ul class="mainmenu">
+            <li>
+               <span class="current" title="this page">TOOLS</span>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul class="mainmenu">
+      <li>
+         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
+      </li>
+      <li>
+         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
+      </li>
+   </ul>
+</div>
+
+
+<div class="middle">
+<div class="picture">
+   <img src="tools-picture.jpg" alt="glass table with dodecacardahedron" />
+</div>
+
+<h2>TOOLS</h2>
+<div class="h2subheading">some small software tools</div>
+
+<table class="pagemenu" border="0" cellpadding="0" frame="void" rules="none" summary="menu of page sections">
+   <tr valign="top">
+      <td>
+         <ul>
+            <li><a href="#fpdissect">FPDissect</a></li>
+            <li><a href="#giti">GITI format</a></li>
+            <li><a href="#utf8filter">UTF-8 filter tool/library</a></li>
+            <li><a href="#txon">TXON library/tool</a></li>
+            <li><a href="#sesgen">&lsquo;Software Engineering Symbol&rsquo; generator tool</a></li>
+            <li><a href="#ppmcomparator">PPM image comparator tool</a></li>
+            <li><a href="#minobjscheme">Minimal basic object system for Scheme</a></li>
+            <li><a href="#codegauge">CodeGauge gadget</a></li>
+            <li><a href="#timegauge">TimeGauge gadget</a></li>
+            <li><a href="#dexhtml">DeXhtml tool</a></li>
+            <li><a href="#rubygauge">RubyGauge tool</a></li>
+         </ul>
+      </td>
+   </tr>
+</table>
+
+
+<div class="content">
+
+<div class="section" id="fpdissect">
+   <h3>FPDissect floating-point format viewer</h3>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="FPDissect floating-point format viewer">
+      <tr>
+         <td rowspan="5">
+            <img src="console_icon.png" width="32" height="32" alt="console icon" class="producticon" />
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/c_icon_g.png" width="16" height="16" alt="c icon" />
+            <a href="fpdissect.c">fpdissect.c</a>
+         </td>
+         <td class="tableitem">easily compilable C-90 source code (7 KiB)</td>
+      </tr>
+   </table>
+   <p>Displays the structure of IEEE-754 floating point single (binary32) and double (binary64) precision numbers. (Requires 64-bit ints.)</p>
+</div>
+
+
+<div class="section" id="giti">
+   <h3>GITI format</h3>
+   <dl>
+      <dt><a href="../giti/"><img src="../icons1/txt_icon.png" width="48" height="48" alt="logo" />GITI &ndash; Electric guitar music text format</a></dt>
+      <dd>Description/specification of GITI (variant E): an electric guitar music notation text format.</dd>
+   </dl>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="GITI tools">
+      <tr>
+         <td>
+            <img src="../icons1/html_icon_g.png" width="16" height="16" alt="html icon" />
+            <a href="../giti/giti-validator.html">giti-validator.js</a>
+         </td>
+         <td class="tableitem">GITI Validator web page</td>
+      </tr>
+   </table>
+</div>
+
+
+<div class="section" id="utf8filter">
+   <h3>UTF-8 filter tool / library</h3>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="UTF-8 filter function/tool">
+      <tr>
+         <td rowspan="5">
+            <img src="console_icon.png" width="32" height="32" alt="console icon" class="producticon" />
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/ocaml_icon_g.png" width="16" height="16" alt="ocaml icon" />
+            <a href="utf8filter-3-ocaml.tar.gz">utf8filter-3-ocaml.tar.gz</a>
+         </td>
+         <td class="tableitem">OCaml 4.02 source code and bytecode exe and lib (28 KiB)</td>
+      </tr>
+   </table>
+   <p>Reads stdin and checks, filters, or replaces it as UTF-8 content. (According to RFC-3629 and Unicode 7.0.).</p>
+</div>
+
+
+<div class="section" id="txon">
+   <h3>TXON format / library / tool</h3>
+   <dl>
+      <dt><a href="../txon/"><img src="../txon/txon-logo.png" width="48" height="48" alt="logo" />TXON minimal data format</a></dt>
+      <dd>TXON is a minimal format for embedding structured data into any text readably and unobtrusively, with a library and command-line tool in Python.</dd>
+   </dl>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="TXON tools">
+      <tr>
+         <td>
+            <img src="../icons1/python_icon_g.png" width="16" height="16" alt="python icon" />
+            <a href="../txon/txon.py.txt">txon.py.txt</a>
+         </td>
+         <td class="tableitem">TXON - JSON - native conversion lib/tool</td>
+      </tr>
+   </table>
+</div>
+
+
+<div class="section" id="sesgen">
+   <h3>&lsquo;Software Engineering Symbol&rsquo; generator tool</h3>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="'Software Engineering Symbol' generator tool">
+      <tr>
+         <td rowspan="5">
+            <img src="console_icon.png" width="32" height="32" alt="console icon" class="producticon" />
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/lua_icon_g.png" width="16" height="16" alt="lua icon" />
+            <a href="sesgen.lua">sesgen.lua</a>
+         </td>
+         <td class="tableitem">executable Lua 5.1/5.2 source code (5 KiB)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/ocaml_icon_g.png" width="16" height="16" alt="ocaml icon" />
+            <a href="sesgen.ml">sesgen.ml</a>
+         </td>
+         <td class="tableitem">executable OCaml 4.00 source code (4 KiB)</td>
+      </tr>
+   </table>
+   <p>Read the <a href="../articles/content/software-engineering-symbol_hxa7241_2009.html">original article</a> for explanation.</p>
+</div>
+
+
+<div class="section" id="ppmcomparator">
+   <h3>PPM image comparator tool</h3>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="PPM image comparator tool">
+      <tr>
+         <td rowspan="5">
+            <img src="console_icon.png" width="32" height="32" alt="console icon" class="producticon" />
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/lua_icon_g.png" width="16" height="16" alt="lua icon" />
+            <a href="ppmcompare.lua">ppmcompare.lua</a>
+         </td>
+         <td class="tableitem">executable Lua 5.1 source code (8 KiB)</td>
+      </tr>
+   </table>
+</div>
+
+
+<div class="section" id="minobjscheme">
+   <h3>Minimal basic object system for Scheme R5RS</h3>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="Minimal basic object system for Scheme">
+      <tr>
+         <td rowspan="5">
+            <img src="console_icon.png" width="32" height="32" alt="console icon" class="producticon" />
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/scheme_icon_g.png" width="16" height="16" alt="scheme icon" />
+            <a href="minimal-objects.scm">minimal-objects.scm</a>
+         </td>
+         <td class="tableitem">Scheme R5RS source code (6 KiB)</td>
+      </tr>
+   </table>
+   <p>There are plenty of others, but all rather sophisticated and fully featured. This one is very small and simple.</p>
+</div>
+
+
+<div class="section" id="codegauge">
+   <h3>CodeGauge C++/Java/C# lines of code counter Windows gadget</h3>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="codegauge gadget">
+      <tr>
+         <td rowspan="5">
+            <img src="codegauge_icon.png" width="32" height="32" alt="CodeGauge icon" class="producticon" />
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/zip_icon_g.png" width="16" height="16" alt="zip icon" />
+            <a href="CodeGauge4src.zip" onclick="javascript:urchinTracker('/tools/CodeGauge4src.zip');">CodeGauge4src.zip</a>
+         </td>
+         <td class="tableitem" valign="bottom">zipped C++ source code and executable (40 KiB)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/win_icon_g.png" width="16" height="16" alt="windows icon" />
+            <a href="CodeGauge.exe" onclick="javascript:urchinTracker('/tools/CodeGauge.exe');">CodeGauge.exe</a>
+         </td>
+         <td class="tableitem" valign="bottom">Windows executable (45 KiB)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/txt_icon_g.png" width="16" height="16" alt="txt icon" />
+            <a href="CodeGauge.readme.txt">CodeGauge.readme.txt</a>
+         </td>
+         <td class="tableitem" valign="bottom">readme (2 KiB)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/html_icon_g.png" width="16" height="16" alt="html icon" />
+            <a href="CodeGauge-image.png">CodeGauge-image.png</a>
+         </td>
+         <td class="tableitem" valign="bottom">image (2 KiB)</td>
+      </tr>
+   </table>
+</div>
+
+
+<div class="section" id="timegauge">
+   <h3>TimeGauge stopwatch Windows gadget</h3>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="timegauge gadget">
+      <tr>
+         <td rowspan="5">
+            <img src="timegauge_icon.png" width="32" height="32" alt="TimeGauge icon" class="producticon" />
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/zip_icon_g.png" width="16" height="16" alt="zip icon" />
+            <a href="TimeGauge1src.zip" onclick="javascript:urchinTracker('/tools/TimeGauge1src.zip');">TimeGauge1src.zip</a>
+         </td>
+         <td class="tableitem" valign="bottom">zipped C++ source code and executable (32 KiB)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/win_icon_g.png" width="16" height="16" alt="windows icon" />
+            <a href="TimeGauge.exe" onclick="javascript:urchinTracker('/tools/TimeGauge.exe');">TimeGauge.exe</a>
+         </td>
+         <td class="tableitem" valign="bottom">Windows executable (37 KiB)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/txt_icon_g.png" width="16" height="16" alt="txt icon" />
+            <a href="TimeGauge.readme.txt">TimeGauge.readme.txt</a>
+         </td>
+         <td class="tableitem" valign="bottom">readme (2 KiB)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/html_icon_g.png" width="16" height="16" alt="html icon" />
+            <a href="TimeGauge-image.png">TimeGauge-image.png</a>
+         </td>
+         <td class="tableitem" valign="bottom">image (2 KiB)</td>
+      </tr>
+   </table>
+</div>
+
+
+<div class="section" id="dexhtml">
+   <h3>DeXhtml XHTML remover Windows tool</h3>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="DeXhtml tool">
+      <tr>
+         <td rowspan="5">
+            <img src="console_icon.png" width="32" height="32" alt="console icon" class="producticon" />
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/zip_icon_g.png" width="16" height="16" alt="zip icon" />
+            <a href="DeXhtml1src.zip" onclick="javascript:urchinTracker('/tools/DeXhtml1src.zip');">DeXhtml1src.zip</a>
+         </td>
+         <td class="tableitem" valign="bottom">zipped C++ source code and executable (49 KiB)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/win_icon_g.png" width="16" height="16" alt="windows icon" />
+            <a href="DeXhtml.exe" onclick="javascript:urchinTracker('/tools/DeXhtml.exe');">DeXhtml.exe</a>
+         </td>
+         <td class="tableitem" valign="bottom">Windows executable (43 KiB)</td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/txt_icon_g.png" width="16" height="16" alt="txt icon" />
+            <a href="DeXhtml.readme.txt">DeXhtml.readme.txt</a>
+         </td>
+         <td class="tableitem" valign="bottom">readme (3 KiB)</td>
+      </tr>
+   </table>
+</div>
+
+
+<div class="section" id="rubygauge">
+   <h3>RubyGauge Ruby lines of code counter tool</h3>
+
+   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="rubygauge tool">
+      <tr>
+         <td rowspan="5">
+            <img src="console_icon.png" width="32" height="32" alt="console icon" class="producticon" />
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <img src="../icons1/ruby_icon_g.png" width="16" height="16" alt="ruby icon" />
+            <a href="RubyGauge.rb.txt">RubyGauge.rb</a>
+         </td>
+         <td class="tableitem">executable Ruby source code (5 KiB)</td>
+      </tr>
+   </table>
+</div>
+
+</div>
+</div>
+
+
+<div class="lower">
+   <div>2015-05-17</div>
+</div>
+
+
+</div>
+</body>
+
+</html>

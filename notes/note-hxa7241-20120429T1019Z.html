@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+   <title>On VPRI STEPS - (note-20120429T1019Z) - HXA7241</title>
+
+   <link rel="schema.DC"       href="http://purl.org/dc/elements/1.1/" />
+   <meta name="DC.title"       content="On VPRI STEPS - (note-20120429T1019Z) - HXA7241" />
+   <meta name="DC.subject"     content="software-engineering, design, programming-languages" />
+   <meta name="DC.description" content="They seem to be producing a 'second-draft' of current practice, and making some good abstractions, not a revolutionary general technique. Perhaps because *no* general revolutionary technique seems possible for programming as such." />
+   <meta name="DC.type"        content="note" />
+   <meta name="DC.type"        content="Text" />
+   <link rel="DC.relation"     href="http://www.hxa.name/" />
+   <meta name="DC.creator"     content="Harrison Ainsworth / HXA7241" />
+   <meta name="DC.rights"      content="Creative Commons BY-SA 3.0 License." />
+   <meta name="DC.date"        content="2012-04-29" />
+   <meta name="DC.format"      content="text/html" />
+   <meta name="DC.format"      content="css1" />
+   <meta name="DC.language"    content="en-GB" />
+   <link rel="DC.identifier"   href="http://www.hxa.name/notes/note-hxa7241-20120429T1019Z.html" />
+
+   <meta name="keywords"       content="software-engineering, design, programming-languages" />
+   <meta name="description"    content="They seem to be producing a 'second-draft' of current practice, and making some good abstractions, not a revolutionary general technique. Perhaps because *no* general revolutionary technique seems possible for programming as such." />
+   <meta name="document"       content="hxa7241note1" />
+   <meta name="license"        content="Creative Commons by-sa 3.0" />
+
+   <link rel="stylesheet" type="text/css" href="hxa7241-note.css" />
+   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
+
+   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+</head>
+
+
+<body>
+<div class="paper">
+
+<div class="edge" id="header"><a href="http://www.hxa.name/notes/">HXA notes</a></div>
+
+
+<div id="heading">
+   <h1>On VPRI STEPS</h1>
+   <h3><a href="http://www.hxa.name/notes/note-hxa7241-20120429T1019Z.html" title="permalink">NOTE HXA7241 2012-04-29T10:19Z</a></h3>
+</div>
+
+
+<div id="text">
+
+<div class="section" id="whole">
+   <h5>They seem to be producing a &lsquo;second-draft&rsquo; of current practice, and making some good abstractions, not a revolutionary general technique. Perhaps because <i>no</i> general revolutionary technique seems possible for programming as such.</h5>
+
+
+   <p>What Alan Kay does is likely interesting and good, and the VPRI STEPS project appears to be doing <i>something</i>. But let us instead be sceptical! That is a more demanding exercise.</p>
+
+   <p>Is it possible to place what VPRI is doing within a broader understanding of software engineering: to gauge how significant it could possibly be, and in what way?</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>People regularly say they translated their system from language A to language B and got 10 times code-size reductions. This seems largely what STEPS is doing (leaving aside the numbers): when you look at something again, you can see how to improve it and do a much better job. But the improvement comes not mainly from the general aspect &ndash; the language B &ndash; but from understanding better the particular project because you already had a first-draft.</p>
+
+   <p>This can still be valuable work though, since it is about fairly general things we all use. Second-drafts are valuable, and ones of important things even more so.</p>
+
+   <p>But we should probably not infer that they are coming up with a revolutionary general way to write new software.</p>
+
+   <p>Substantially because large scale software cannot be <i>designed</i>: it must be <i>evolved</i>. We only know what to focus a second-draft around because we muddled together the first draft and it evolved and survived. You cannot write a second-draft first.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>The fundamental perspective to examine this is based on what Brooks said a while ago.</p>
+
+   <p>All software works by the same mechanism: abstraction. All languages are fundamentally the same (Turing equivalent). If you want to &lsquo;compress&rsquo; code, you write a library, and call a subroutine: now 100 lines is replaced by one line. The only thing left in language differences is to tweak the lexical form, the look of it.</p>
+
+   <p>So we cannot compress code better by finding a better general mechanism (software already is it). We compress code (or rather, work) by finding better <i>particular</i> abstractions for what we happen to need.</p>
+
+   <p>The value is in the scale of reuse, not the neatness of lexical-syntax. If a 1000 people reuse some software, <i>that</i> is the gain: 1000 people get the benefit of that hard thinking and work, but for practically nothing. If the lexical-form/lexical-syntax of code is improved, it helps the programmer manipulate it more easily, but that is probably insignificant compared with thinking through the problem to be solved. And the factor of improvement is much smaller than making software that is useful in more cases.</p>
+
+   <p>This is partly another view of the &lsquo;no-silver-bullet&rsquo; law again: the cost of software is in essential, not accidental, &lsquo;clerical&rsquo;, complexity.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>Or, looking at and saying this in different way:</p>
+
+   <p>VPRI's specialised language approach is like a multi-grid approach. Digital-Wittgenstein: a programming language places a grid of computationality over the world of actions.</p>
+
+   <p>So what is the difference between grids? Marginal surely. They are all the same asymptotically, in &lsquo;developmental complexity&rsquo;: all O(n) &ndash; that is, amount of code with respect to software functionality requirements. They just have a different constant factor.</p>
+
+   <p>But a large difference in constant factor would be very valuable (or at least would appear to be, since our perspective is mostly on individual projects not software globally).</p>
+
+   <p>But could that factor be large? How much difference can a language make? Surely not much. Ultimately they are all Turing-equivalent. All languages can wrap functionality up into functions/procedures/subroutines, and that is the only source of &lsquo;leverage&rsquo; anyway &ndash; abstraction is the basic force-multiplier of information.</p>
+
+   <p>All the gain from software comes from abstraction: capturing a functionality in one piece of code and reusing it in multiple ways/places. Thinking &ndash; i.e. working &ndash; once, using &ndash; i.e. getting the value of &ndash; multiple times. </p>
+
+   <p>But <i>all</i> (normal) languages can do this; they all have some subroutine abstraction feature. That means the only difference is in things that are <i>not</i> the key matter &ndash; and that means things like the lexical/presentational form cannot be important.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>This leads to asking what is &lsquo;general&rsquo;. All abstractions, all software, is general to some degree &ndash; that is half of its essence. And an innovation need not be absolutely fundamental to be rather revolutionary. The Fourier transform and the FFT are not fundamental revolutions of <i>mathematics</i>, but they are certainly exceedingly useful.</p>
+
+   <p>And there is also a way out for languages: even though they seem overall, &lsquo;economically&rsquo;, of very limited value, they give us stepping-stones for thinking: and if a different language helps us find our way to otherwise unreachable ideas, that has unlimited positive potential.</p>
+
+   <p>&mdash;&mdash;&mdash;</p>
+
+   <p>References:</p>
+
+   <ul>
+      <li><a href="http://www.vpri.org/pdf/tr2011004_steps11.pdf">&lsquo;STEPS toward expressive programming systems, 2011 progress report&rsquo; / VPRI Technical Report TR-2011-004; Viewpoints Research Institute; 2011.</a></li>
+   </ul>
+
+   <p>Loosely related:</p>
+
+   <ul>
+      <li><a href=" http://www.hxa.name/notes/note-hxa7241-20110627T0842Z.html">the value of language is in clarity and fluidity: &lsquo;The aim of software engineering&rsquo;; HXA7241; 2011.</a></li>
+      <li><a href=" http://www.hxa.name/notes/note-hxa7241-20111218T1151Z.html">sofware adds value through copies/reuse: &lsquo;Software's economic basics&rsquo;; HXA7241; 2011.</a></li>
+      <li><a href=" http://www.hxa.name/notes/note-hxa7241-20110605T0723Z.html">how language is separate from algorithm: &lsquo;The functional/representational division in software&rsquo;; HXA7241; 2011;</a></li>
+      <li><a href=" http://www.hxa.name/notes/note-hxa7241-20100317T2104Z.html">other ways to improve software: &lsquo;Future software engineering's three bases&rsquo;; HXA7241; 2010;</a></li>
+   </ul>
+</div>
+
+</div><!--text-->
+
+
+<div class="edge" id="footer"><a href="http://www.hxa.name/notes/">http://www.hxa.name/notes/</a></div>
+
+</div><!--paper-->
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-596081-1";
+urchinTracker();
+</script>
+
+</body>
+
+</html>
