@@ -1,117 +1,454 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html id="hxa7241-home" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en-GB" id="hxa7241-home">
 
 <head>
    <title>&lt; H X A 7 2 4 1 &gt;</title>
+   <meta charset="UTF-8" />
 
-   <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-
-   <meta name="keywords" content="businesscard construction, renderer, tonemapper, octree, open source, windows, linux, software, eckermann, goethe, thomas love peacock, joris-karl huysmans, ebook, heraldry, calligraphy, hxa, harrison ainsworth" />
-   <meta name="description" content="A collection of things I have produced, including: businesscard construction, a global illumination renderer, Thomas Love Peacock books, software technical articles." />
-
-   <link rel="stylesheet" type="text/css" href="style/hxa7241-main.css" />
-   <link rel="shortcut icon" type="image/x-icon" href="style/hxa7241.ico" />
-
-   <link rel="meta" type="application/rdf+xml" href="about/foaf.rdf" title="FOAF" />
-   <link rel="alternative" type="application/atom+xml" href="hxa7241-latest.xml" title="latest"/>
-
-   <link rel="openid.server"    href="http://www.myopenid.com/server" />
-   <link rel="openid.delegate"  href="http://hxa7241.myopenid.com/" />
-   <link rel="openid2.local_id" href="http://hxa7241.myopenid.com" />
-   <link rel="openid2.provider" href="http://www.myopenid.com/server" />
-   <meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=hxa7241.myopenid.com" />
-   
-   <script id="hxa7241-js" type="application/x-javascript" src="style/hxa7241.js"></script>
+   <!--<link rel="stylesheet" type="text/css" href="style/hxa7241-main-2016.css" />-->
+   <style>
+      body {
+         color:                rgb(15%,0%,0%);
+         background-color:     rgb(97%,96%,95%);
+         margin:               0em;
+         border-left:          rgb(250,200,40) solid 0.8em;
+         border-right:         rgb(158,158,153) solid 2em;
+         padding:              0em;
+         font-family:          sans-serif;
+         font-size:            18px;/*1.1em*/
+         line-height:          1.3em;
+      }
+      p {
+         margin:               1em 0em 1em 0em;
+         padding:              0em;
+      }
+      a:link {
+         color:                rgb(71,68,69);
+         text-decoration:      underline;
+      }
+      a:visited {
+         color:                rgb(158,158,153);
+         text-decoration:      underline;
+      }
+      a:hover {
+         color:                rgb(71,68,69);
+         background-color:     rgb(212,212,206);
+         text-decoration:      underline;
+      }
+      a:active {
+         color:                rgb(250,250,250);
+         background-color:     rgb(158,158,153);
+         text-decoration:      underline;
+      }
+      ul, ol {
+         list-style-position:  inside;
+         margin:               1em;
+         padding:              0em 0.5em 0em 0.5em;
+      }
+      ul ul, ul ol, ol ul, ol ol, dl ul, dl ol {
+         margin:               0.25em 2em 0.25em 2em;
+      }
+      ul {
+         list-style-type:      square;
+      }
+      li {
+         margin-top:           0.25em;
+         margin-bottom:        0.25em;
+      }
+      .plainlist {
+         list-style-type:      none;
+         margin:               1em 2em 1em 2em;
+      }
+      #top-head {
+         background-color:     rgb(99%,99%,99%);
+         margin:               0em 0em -8em 0em;
+         padding:              0em;
+         max-width:            70em;
+      }
+      #top-head h1 {
+         color:                rgb(90%,90%,90%);
+         margin:               0em 0em -0.15em 0em;
+         padding:              0em;
+         font-size:            14em;
+         line-height:          0em;
+      }
+      #top-head a svg {
+         border:               0 none;
+      }
+      #top-head svg {
+         width:                4.5em;
+      }
+      #top-head #sub-head {
+         color:                rgb(81%,81%,79%);
+         margin:               0em 0em -0.15em 0em;
+         max-width:            9em;
+         font-size:            8em;
+         line-height:          0.8em;
+         text-align:           right;
+      }
+      #top-head #subsub-head {
+         color:                rgb(55%,55%,55%);
+         height:               1.8em;
+         max-width:            58em;
+         font-size:            1.2em;
+         line-height:          0.8em;
+         text-align:           right;
+      }
+      #top-head h1 a,
+      #top-head #sub-head a {
+         color:                inherit;
+         background-color:     transparent;
+         text-decoration:      none;
+      }
+      main {
+         background-color:     rgb(99%,99%,99%);
+         margin:               0em;
+         padding:              0em 0em 2em 0em;
+         max-width:            70em;
+      }
+      article {
+         margin:               0em;
+         padding:              0 0 0 12.5%;
+      }
+      .artefact-head {
+         color:                rgb(65%,65%,65%);
+         margin:               0em 0em -0.5em -4em;
+         padding:              0em;
+         font-size:            1.2em;
+         line-height:          0.8em;
+      }
+      .artefact-head pre {
+         background-color:     transparent;
+         margin:               0em;
+         padding:              0em;
+         font-family:          monospace;
+         font-size:            0.8em;
+         line-height:          1em;
+      }
+      .artefact-body {
+         max-width:            42em;
+      }
+      .artefact-body h2 {
+         color:                rgb(64%,74%,64%);
+         margin:               0em 0em -0.3em -0.5em;
+         padding:              0em;
+         font-size:            3.5em;
+         line-height:          0.8em;
+      }
+      .artefact-summary {
+         color:                rgb(119,221,0);
+         margin-left:          -0.5em;
+         font-size:            1.4em;
+         line-height:          0.9em;
+      }
+      table.artefact-menu {
+         background-color:     rgb(95%,95%,95%);
+         border:               0 none;
+         margin:               0em 0em 3em 0em;
+         font-size:            1.1em;
+         line-height:          1em;
+      }
+      table.artefact-menu th,
+      table.artefact-menu td {
+         vertical-align:       top;
+         padding:              0em;
+      }
+      table.artefact-menu ul {
+         margin:               0em;
+         padding:              0em;
+      }
+      .artefact-body section {
+         margin:               0em 0em 4em 0em;
+      }
+      .artefact-body h3 {
+         color:                rgb(40%,40%,40%);
+         background-color:     rgb(92%,92%,92%);
+         margin:               1em 0em 0em 0em;
+         font-size:            1.7em;
+         line-height:          1em;
+         font-weight:          bold;
+      }
+      .artefact-body h4 {
+         color:                rgb(40%,40%,40%);
+         margin:               2em 0em 0.8em 0em;
+         border-bottom:        rgb(90%,90%,90%) solid 0.2em;
+         font-size:            1.2em;
+         line-height:          1em;
+         font-weight:          bold;
+      }
+      .artefact-body a.sectnum {
+         color:                rgb(70%,70%,70%);
+      }
+      #hxa7241-home .plainlist {
+         list-style-position:  inside;
+         list-style-type:      square;
+         margin:               1em 0em 1em 0em;
+         padding:              0em;
+      }
+   </style>
 </head>
 
-
 <body>
-<div class="outer">
 
+<!--
+structure:
 
-<div class="upper">
-   <div class="title">
-      <h1><a href="http://www.hxa.name/"><img src="style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
-   </div>
-</div>
+* header#top-head
+* main
+   * article#artefact
+      * header.artefact-head
+      * section.artefact-body
+         * section.s0
+            * p.s0p0
+            * ...
+         * ...
+   * ... (though usually no more than one)
+-->
 
+   <header id="top-head">
+      <!--<h1><a href="http://www.hxa.name/"><img src="hxa7241-logo-h.svg" alt="HXA7241" /></a></h1>-->
+      <h1><a href="http://www.hxa.name/">
+         <svg viewBox="0 0 240 30">
+            <desc>HXA7241</desc>
+            <g fill="#E6E6E6" stroke-width="0"
+               color-rendering="optimizeQuality"
+               shape-rendering="geometricPrecision">
+               <rect x="0" y="0" width="240" height="30" opacity="0.0" />
+               <g id="_H">
+                  <polygon points="0,30  0,19  30,19  30,30  20,30  20,25
+                     5,25  5,30" />
+                  <polygon points="0,18  0,0  5,0  5,15  10,15  10,10  20,10
+                     20,0  30,0 30,18" />
+               </g>
+               <g id="_X" transform="translate(35, 0)">
+                  <polygon points="0,30  0,22  5,22  5,30" />
+                  <polygon points="20,30  20,25  10,25  10,23  30,23  30,30" />
+                  <polygon points="0,21  0,15  5,15  10,10  20,10  20,15
+                     30,15  30,22  10,22  10,20  5,20  5,21" />
+                  <polygon points="0,10  0,0  5,0  5,10" />
+                  <polygon points="20,10  20,0  30,0  30,10" />
+               </g>
+               <g id="_A" transform="translate(70, 0)">
+                  <polygon points="0,30  0,22  5,22  5,30" />
+                  <polygon points="20,30  20,21  30,21  30,30" />
+                  <polygon points="0,20  0,15  5,15  5,20" />
+                  <polygon points="0,10  10,0  20,0  30,10  30,19  20,19
+                     20,15  10,15  10,10" />
+               </g>
+               <g id="_7" transform="translate(105, 0)">
+                  <polygon points="15,30  20,25  20,15  25,15  25,10  0,10
+                     0,7  30,7  30,30" />
+                  <polygon points="0,6  0,0  25,0  30,5  30,6" />
+               </g>
+               <g id="_2" transform="translate(140, 0)">
+                  <polygon points="0,30  0,15  10,15  10,20  20,20  20,25
+                     30,25  30,30" />
+                  <polygon points="20,15  20,11  30,11  30,15" />
+                  <polygon points="0,5  0,0  20,0  30,5  30,9  20,9  20,5" />
+               </g>
+               <g id="_4" transform="translate(175, 0)">
+                  <polygon points="25,30  25,25  0,25  0,10  10,10  10,15
+                     15,15  15,10  25,10  25,8  30,8  30,30" />
+                  <polygon points="0,8  0,0  10,0  10,8" />
+                  <polygon points="25,6  25,0  30,0  30,6" />
+               </g>
+               <g id="_1" transform="translate(210, 0)">
+                  <polygon points="0,30  0,25  10,25  10,7  20,7  20,20  30,20
+                     30,30" />
+                  <polygon points="0,10  0,6  4,6" />
+                  <polygon points="0,5  0,0  20,0  20,6  10,6  10,5" />
+               </g>
+            </g>
+         </svg>
+      </a></h1>
+      <div id="sub-head"><a href="http://www.hxa.name/">web</a></div>
+      <div id="subsub-head">a personal site initiated in 2003</div>
+   </header>
 
-<div class="side">
-   <ul class="mainmenu">
-      <li>
-         <a href="writings/" title="various thought-oriented text products">WRITINGS</a>
-      </li>
-      <li>
-         <a href="software/" title="various software projects">SOFTWARE</a>
-      </li>
-      <li>
-         <a href="other/" title="any other things produced">OTHER</a>
-      </li>
-   </ul>
-   <ul class="mainmenu">
-      <li>
-         <a href="about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
-      </li>
-      <li>
-         <a href="sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
-      </li>
-   </ul>
-</div>
+   <main>
+      <article class="artefact">
 
+<!-- metadata -->
+<header class="artefact-head">
+<pre><code>"artefact-metadata-hxa7241-www": {
+  "title": "Overview and latest",
+  "author": "Harrison Ainsworth",
+  "date": "2016-11-12T23:08Z",
+  "id": "urn:uuid:8A2622FF-CD6C-4524-AAF6-27B4C8416867",
+  "type": "index",
+  "subtype": "text/html",
+  "wordcount": 526,
+  "hashsecure": "sha256:97e5aa4e574554dc<wbr/>c2bf6a0eaf6d911f<wbr/>95e28ac13476f708<wbr/>e6940fd765faf0c7",
+  "location": "http://www.hxa.name/"
+}</code></pre>
+</header>
 
-<div class="middle">
-<div class="content">
+<!-- hash next element -->
+<section class="artefact-body">
+   <h2>Overview and latest</h2>
+   <p class="artefact-summary">a collection of various digital products</p>
 
-<div class="section">
-   <h3>Latest</h3>
+   <table class="artefact-menu">
+      <tr>
+         <td>
+            <ul>
+               <li><a href="#latest">Latest</a></li>
+               <li><a href="#writings">Writings</a></li>
+               <li><a href="#software">Software</a></li>
+               <li><a href="#other">Other</a></li>
+               <li><a href="#colophon">Colophon</a></li>
+            </ul>
+         </td>
+      </tr>
+   </table>
 
-   <ul class="plainlist">
-      <li>2016-10-30 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20161030T1229Z.html">What is hard in economic calculation?</a></li>
-      <li>2016-07-24 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20160724T1127Z.html">Basic proglang naming schemes</a></li>
-      <li>2016-07-17 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20160717T0915Z.html">A brief argument against price signals</a></li>
-      <li>2016-04-26 &nbsp; Article &ndash; <a href="articles/content/Reusability-By-Orthogonalysis_hxa7241_2016.html">Reusability By Orthogonalysis</a></li>
-      <li>2016-04-03 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20160403T1207Z.html">How Objects Naturally Arise</a></li>
-      <li>2016-01-17 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20160117T1306Z.html">Why do tests and types work ?</a></li>
-      <li>2016-01-03 &nbsp; Article &ndash; <a href="articles/content/On-Hayeks-Use-Of-Knowledge_hxa7241_2015.html">On Hayek's &lsquo;Use Of Knowledge&rsquo;</a></li>
-      <li>2015-11-08 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20151108T1107Z.html">OCaml language design articles</a></li>
-      <li>2015-01-18 &nbsp; Article &ndash; <a href="articles/content/On-Lockean-Property_HXA7241_2015.html">On Lockean Property</a></li>
-      <li>2015-09-20 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20150920T1002Z.html">The internet is an engine of centralisation</a></li>
-   </ul>
+   <section id="latest">
+      <h3>Latest</h3>
 
-   <div class="comment">
-   <p>
-      <a href="hxa7241-latest.xml" rel="alternative" type="application/atom+xml">
-            <img src="icons1/feed-icon-15.png" width="15" height="15" alt="Feed icon" title="Feed of latest changes (atom)" /> subscribe</a>
-   </p>
-   </div>
+      <ul class="plainlist">
+         <li>2016-10-30 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20161030T1229Z.html">What is hard in economic calculation?</a></li>
+         <li>2016-07-24 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20160724T1127Z.html">Basic proglang naming schemes</a></li>
+         <li>2016-07-17 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20160717T0915Z.html">A brief argument against price signals</a></li>
+         <li>2016-04-26 &nbsp; Article &ndash; <a href="articles/content/Reusability-By-Orthogonalysis_hxa7241_2016.html">Reusability By Orthogonalysis</a></li>
+         <li>2016-04-03 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20160403T1207Z.html">How Objects Naturally Arise</a></li>
+         <li>2016-01-17 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20160117T1306Z.html">Why do tests and types work ?</a></li>
+         <li>2016-01-03 &nbsp; Article &ndash; <a href="articles/content/On-Hayeks-Use-Of-Knowledge_hxa7241_2015.html">On Hayek's &lsquo;Use Of Knowledge&rsquo;</a></li>
+         <li>2015-11-08 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20151108T1107Z.html">OCaml language design articles</a></li>
+         <li>2015-01-18 &nbsp; Article &ndash; <a href="articles/content/On-Lockean-Property_HXA7241_2015.html">On Lockean Property</a></li>
+         <li>2015-09-20 &nbsp; Note &ndash; <a href="notes/note-hxa7241-20150920T1002Z.html">The internet is an engine of centralisation</a></li>
+      </ul>
+   </section>
 
-   <pre class="sesym"><code>  <a href="articles/content/software-engineering-symbol_hxa7241_2009.html" title="software engineering symbol">  1 </a>
-  <a href="articles/content/software-engineering-symbol_hxa7241_2009.html" title="software engineering symbol"> 110</a>
-  <a href="articles/content/software-engineering-symbol_hxa7241_2009.html" title="software engineering symbol">101 </a>
-  <a href="articles/content/software-engineering-symbol_hxa7241_2009.html" title="software engineering symbol">  0 </a></code></pre>
-</div>
+   <section id="writings">
+      <h3>Writings</h3>
 
-</div>
-</div>
+      <h4 id="notes"><a href="notes/">notes</a></h4>
+      <ul class="plainlist">
+         <li><a href="notes/note-hxa7241-20160403T1207Z.html">How Objects Naturally Arise</a></li>
+         <li><a href="notes/note-hxa7241-20160117T1306Z.html">Why do tests and types work ?</a></li>
+         <li><a href="notes/note-hxa7241-20150920T1002Z.html">The internet is an engine of centralisation</a></li>
+         <li><a href="notes/note-hxa7241-20141231T1101Z.html">TADIST file naming pattern</a></li>
+         <li><a href="notes/note-hxa7241-20140330T1114Z.html">Software's essential form, and visual programming</a></li>
+         <li><a href="notes/note-hxa7241-20131124T0927Z.html">&lsquo;Boolean-blindness&rsquo; is about types</a></li>
+         <li><a href="notes/note-hxa7241-20130804T0939Z.html">Testing vs proof in software development</a></li>
+         <li><a href="notes/note-hxa7241-20130609T0917Z.html">Rule-following and software development</a></li>
+         <li><a href="notes/note-hxa7241-20130113T1107Z.html">SBNF &ndash; BNF in S-Exprs</a></li>
+         <li><a href="notes/note-hxa7241-20120901T1034Z.html">Evolving global software</a></li>
+         <li><a href="notes/note-hxa7241-20120624T1124Z.html">Marxist efficiency</a></li>
+         <li><a href="notes/note-hxa7241-20120513T1116Z.html">Why is information a string of digits?</a></li>
+         <li><a href="notes/note-hxa7241-20120506T0907Z.html">Parsing wrongness and language value</a></li>
+         <li><a href="notes/note-hxa7241-20120429T1019Z.html">On VPRI STEPS</a></li>
+         <li><a href="notes/note-hxa7241-20111218T1151Z.html">Software's economic basics</a></li>
+         <li><a href="notes/note-hxa7241-20111127T1147Z.html">A logical analysis of copyright orthodoxy</a></li>
+         <li><a href="notes/note-hxa7241-20110918T1016Z.html">The insoluble pragmatism of types</a></li>
+         <li><a href="notes/note-hxa7241-20110801T1044Z.html">What is metadata?</a></li>
+         <li><a href="notes/note-hxa7241-20110710T0853Z.html">On Dijkstra on software's radical novelties</a></li>
+         <li><a href="notes/note-hxa7241-20110704T1125Z.html">Distinguishing abstraction and change</a></li>
+         <li><a href="notes/note-hxa7241-20110627T0842Z.html">The aim of software engineering</a></li>
+         <li><a href="notes/note-hxa7241-20110522T0935Z.html">Software engineering and philosophy</a></li>
+         <li><a href="notes/note-hxa7241-20110508T0913Z.html">Machine philosophy rudiments</a></li>
+         <li><a href="notes/note-hxa7241-20110424T0826Z.html">Considering the limits of DRY(&lsquo;dont repeat yourself&rsquo;) / factoring</a></li>
+         <li><a href="notes/note-hxa7241-20110417T0913Z.html">Surgical registries for software development?</a></li>
+         <li><a href="notes/note-hxa7241-20110410T0910Z.html">Definition of &lsquo;abstract&rsquo;</a></li>
+         <li><a href="notes/note-hxa7241-20110327T1046Z.html">Stone cathedrals, structure-preserving-transformations, and software development</a></li>
+         <li><a href="notes/note-hxa7241-20110219T1113Z.html">Wittgenstein for programmers (part 1)</a></li>
+         <li><a href="notes/note-hxa7241-20110130T0917Z.html">Testing: thoughts on improving it</a></li>
+         <li><a href="notes/note-hxa7241-20101204T1716Z.html">Implicit code &ndash; what makes it good or bad</a></li>
+         <li><a href="notes/note-hxa7241-20101124T1927Z.html">Should there be hard limits on program part sizes?</a></li>
+         <li><a href="notes/note-hxa7241-20101109T2102Z.html">Designed software will never be substantially higher quality</a></li>
+         <li><a href="notes/note-hxa7241-20100317T2104Z.html">Future software engineering's three bases</a></li>
+         <li><a href="notes/note-hxa7241-20100215T2141.html">An outline map of software development</a></li>
+         <li><a href="notes/note-hxa7241-20091025T2123.html">Vitruvius - 'Firmitas, Utilitas, Venustas' - In Software</a></li>
+         <li><a href="notes/note-hxa7241-20090806T1142.html">A Comment On &lsquo;A Conversation with Alan Kay&rsquo;</a></li>
+      </ul>
 
+      <p><a href="notes/">More ...</a></p>
 
-<div class="lower">
-   <div class="info">
-     2016-10-30
-   </div>
-</div>
+      <h4 id="articles"><a href="articles/">articles</a></h4>
+      <ul class="plainlist">
+         <li><a href="articles/content/Reusability-By-Orthogonalysis_hxa7241_2016.html">Reusability By Orthogonalysis</a></li>
+         <li><a href="articles/content/economic-system-software-architecture_hxa7241_2013.html">Software Architecture For A New Economic System</a></li>
+         <li><a href="articles/content/tractatus-computo-philosophicus_hxa7241_2010.html">Tractatus Computo-Philosophicus</a></li>
+         <li><a href="articles/content/software-engineering-design_hxa7241_2010.html">Understanding Software Engineering Design</a></li>
+         <li><a href="articles/content/on-naur-theory-building_hxa7241_2009.html">On Naur's &lsquo;Programming As Theory Building&rsquo;</a></li>
+         <li><a href="articles/content/is-software-architecture-really_hxa7241_2009.html">Is 'Software Architecture' Really Architecture ?</a></li>
+         <li><a href="articles/content/building-model-for-software_hxa7241_2009.html">A Building Industry Model For Software Development</a></li>
+         <li><a href="articles/content/software-architecture-and-engineering-definitions_hxa7241_2008.html">Software Architecture And Engineering Definitions</a></li>
+         <li><a href="articles/content/software-engineering-symbol_hxa7241_2009.html">A Software Engineering Symbol</a></li>
+         <li><a href="articles/content/software-engineering-and-civil-engineering_hxa7241_2008.html">Software Engineering And Civil Engineering</a></li>
+         <li><a href="articles/content/software-design-subprocess_hxa7241_2001.html">Software Technical Design Guide</a></li>
+         <li><a href="articles/content/usdp-distilled-documentation_hxa7241_2005.html">USDP-Distilled eXtreme Documentation</a></li>
+         <li><a href="articles/content/fast-pow-adjustable_hxa7241_2007.html">Fast pow() With Adjustable Accuracy</a></li>
+         <li><a href="articles/content/octree-general-cpp_hxa7241_2005.html">Octree C++ General Component</a></li>
+         <li><a href="articles/content/p3-architecture-description_hxa7241_2004.html">Perceptuum 3 Renderer Architecture</a></li>
+         <li><a href="articles/content/On-Hayeks-Use-Of-Knowledge_hxa7241_2015.html">On Hayek's &lsquo;Use Of Knowledge&rsquo;</a></li>
+         <li><a href="articles/content/On-Lockean-Property_HXA7241_2015.html">On Lockean Property</a></li>
+         <li><a href="articles/content/The-Illusion-Of-Decentralisation_HXA7241_2015.html">The Illusion Of Decentralisation</a></li>
+         <li><a href="articles/content/desert-is-counterspace-of-morality_hxa7241_2014.html">&lsquo;Just desert&rsquo; is the counter-space of morality</a></li>
+         <li><a href="articles/content/reply-to-efficient-copyright_hxa7241_2012.html">A reply to <i>&lsquo;Is efficient copyright a reasonable goal&rsquo;</i></a></li>
+         <li><a href="articles/content/tractatus-digito-philosophicus_hxa7241_2010.html">Tractatus Digito-Philosophicus</a></li>
+         <li><a href="articles/content/lockean-copyright-against_hxa7241_2011.html">The Lockean Justification For Copyright: An Argument Against</a></li>
+         <li><a href="articles/content/copyright-ethics-against_hxa7241_2010.html">Intellectual Property Ethics: Arguments Against</a></li>
+         <li><a href="articles/content/ethical-case-against-ip_koepsell_2009.html">The ethical case against IP (transcription)</a></li>
+         <li><a href="articles/content/ergovim-key-mappings_hxa7241_2010.html">ErgoVim Key Mappings</a></li>
+         <li><a href="articles/content/anti-copyright-summary_hxa7241_2009.html">Anti-Copyright Summary</a></li>
+         <li><a href="articles/content/epub-guide_hxa7241_2007.html">Epub Format Construction Guide</a></li>
+         <li><a href="articles/content/genetics-basics_hxa7241_2003.html">Genetics Basics For Programmers</a></li>
+      </ul>
+   </section>
 
+   <section id="software">
+      <h3>Software</h3>
 
-</div>
+      <h4 id="rendering"><a href="rendering/">rendering</a></h4>
+      <ul class="plainlist">
+         <li><a href="minilight/">MiniLight</a> <i>&mdash; a minimal global illumination renderer</i></li>
+         <li><a href="tonemapper/">Tonemapper</a> <i>&mdash; a high-quality HDR image converter</i></li>
+         <li><a href="whitebalancer/">Whitebalancer</a> <i>&mdash; image color-cast remover</i></li>
+         <li><a href="rendering/cpplibrary.html">C++ Library</a> <i>&mdash; a collection of quite reusable graphics-oriented code</i></li>
+         <li><a href="articles/content/octree-general-cpp_hxa7241_2005.html">Octree</a> <i>&mdash; general C++ octree component</i></li>
+      </ul>
 
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-596081-1";
-urchinTracker();
-</script>
+      <h4 id="tools"><a href="tools/">tools</a></h4>
+      <ul class="plainlist">
+         <li><a href="giti/">GITI</a> <i>&mdash; an electric guitar music notation text format</i></li>
+         <li><a href="txon/">TXON</a> <i>&mdash; a minimal format for embedding structured data into text</i></li>
+         <li><a href="tools/index.html#fpdissect">FPDissect</a> <i>&mdash; a floating-point format viewer</i></li>
+         <li><a href="tools/index.html#fpdissect">UTF8Filter</a> <i>&mdash; UTF-8 filter tool / library</i></li>
+      </ul>
+   </section>
+
+   <section id="other">
+      <h3>Other</h3>
+
+      <ul class="plainlist">
+         <li><a href="cardahedra/">Businesscardahedra</a> <i>&mdash; how to build your own business card polyhedra</i></li>
+         <li><a href="heraldry/">Heraldry</a> <i>&mdash; some heraldic and calligraphic work</i></li>
+      </ul>
+
+      <h4 id="books"><a href="books/">books</a></h4>
+         <ul class="plainlist">
+            <li><a href="books/ecog/Eckermann-ConversationsOfGoethe.html">&lsquo;Conversations Of <span xml:lang="de" lang="de">Goethe</span>&rsquo; ; <span xml:lang="de" lang="de">Eckermann</span> ; 1906 / book.</a></li>
+            <li><a href="books/content/Peacock-HeadlongHall.html">&lsquo;Headlong Hall&rsquo; ; Peacock ; 1815 / book.</a></li>
+            <li><a href="books/content/Peacock-HeadlongHall-Introduction.html">&lsquo;Introduction To Headlong Hall&rsquo; ; Garnett ; 1891 / article.</a></li>
+            <li><a href="books/content/Huysmans-AgainstTheGrain.html">&lsquo;Against The Grain&rsquo; ; Huysmans ; 1922 / book.</a></li>
+         </ul>
+   </section>
+
+   <section id="colophon">
+      <h3>Colophon</h3>
+
+      <ul class="plainlist">
+         <li><a href="about/">About</a> <i>&mdash; a vague, apocryphal and soi-disant description of the author</i></li>
+         <!--<li><a href="bibliography/">Bibliography (select)</a> <i>&mdash; a select bibliography of recommended reads</i></li>-->
+         <li><a href="../bibliography/bibliography-print.txt">Bibliography of print-books [txt]</a></li>
+         <li><a href="about/reliquary.html">Reliquary</a> <i>&mdash; some ancient obscure Z80 code</i></li>
+      </ul>
+   </section>
+</section>
+
+      </article>
+   </main>
 
 </body>
 
