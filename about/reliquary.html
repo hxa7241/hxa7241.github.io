@@ -1,73 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html id="hxa7241-reliquary" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en-GB" id="hxa7241-reliquary" class="hxa7241-colophon">
 
 <head>
-   <title>&lt; H X A 7 2 4 1 &gt; : reliquary </title>
+   <title>&lt; H X A 7 2 4 1 &gt; : reliquary</title>
+   <meta charset="UTF-8" />
 
-   <meta name="keywords" content="old, fragment, Z80, code" />
-   <meta name="description" content="the oldest code i still have: some obscure Z80 routines" />
-
-   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
-   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
-
-   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main-2016.css" />
 </head>
 
-
 <body>
-<div class="outer">
 
+   <header id="top-head">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241-logo-h.svg" alt="HXA7241" /></a></h1>
+      <div id="sub-head"><a href="../#colophon">colophon</a></div>
+      <div id="subsub-head">a personal site initiated in 2003</div>
+   </header>
 
-<div class="upper">
-   <div class="title">
-      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
-   </div>
-</div>
+   <main>
+      <article class="artefact">
 
+<header class="artefact-head">
+<pre><code>"artefact-metadata-hxa7241-www": {
+  "title": "Reliquary",
+  "author": "Harrison Ainsworth",
+  "date": "2005-06-01",
+  "id": "urn:uuid:CECAA070-4A30-47BB-98DE-4082E3290D7F",
+  "type": "jottings",
+  "subtype": "text/html",
+  "wordcount": 600,
+  "hashsecure": "sha256:69f409f314595874<wbr/>6c7a5539087c6cdf<wbr/>c731ebd31eb08cfc<wbr/>1a89d398210dd796",
+  "location": "http://www.hxa.name/about/reliquary.html"
+}</code></pre>
+</header>
 
-<div class="side">
-   <ul class="mainmenu">
-      <li>
-         <a href="../" title="home" accesskey="h">HOME</a>
-      </li>
-   </ul>
-   <ul class="mainmenu">
-      <li>
-         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
-         <ul class="mainmenu">
-            <li>
-               <span class="current" title="this page">RELIQUARY</span>
-            </li>
-         </ul>
-      </li>
-   </ul>
-   <ul class="mainmenu">
-      <li>
-         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
-      </li>
-   </ul>
-</div>
+<!-- hash next element -->
+<section class="artefact-body">
+   <h2>Reliquary</h2>
+   <p class="artefact-summary">some ancient obscure Z80 code</p>
 
+   <section id="z80routines">
+      <h3>Z80 routines</h3>
 
-<div class="middle">
-<div class="picture">
-   <img src="../software/hexdump-picture.jpg" alt="faux aged hex digits" />
-</div>
+      <p id="z80routines-p0">These fragments are the oldest code I still have, transcribed from exercise-book paper. They come from a time long ago. A time when not only commenting was unknown, but even titling the pieces of paper was avoided. Their meaning and function is lost in antiquity ...</p>
 
-<h2>RELIQUARY</h2>
-<div class="h2subheading">some ancient obscure Z80 code</div>
-
-
-<div class="content">
-
-<div class="section" id="z80">
-   <h3>Z80 routines</h3>
-
-   <p>These fragments are the oldest code I still have, transcribed from exercise-book paper. They come from a time long ago. A time when not only commenting was unknown, but even entitling the pieces of paper was avoided. Their meaning and function is lost in antiquity...</p>
-
-   <h4>fragment 1</h4>
+      <h4 id="z80routines.fragment1">fragment 1</h4>
 <pre>
             Ld HL, (x)            2A:nnnn
             Call 'Abs HL'         CD:nnnn
@@ -94,7 +70,7 @@
 (52 bytes)
 </pre>
 
-   <h4>fragment 2</h4>
+      <h4 id="z80routines.fragment2">fragment 2</h4>
 <pre>
             Ld BC, (x)            ED4B:nnnn
             Call 'Div, Mult'      CD:nnnn
@@ -117,7 +93,7 @@
             Ret                   C9
 </pre>
 
-   <h4>fragment 3</h4>
+      <h4 id="z80routines.fragment3">fragment 3</h4>
 <pre>
 (in: DE = x, y)
 
@@ -144,7 +120,7 @@
 (number of instructions: 280)
 </pre>
 
-   <h4>fragment 4</h4>
+      <h4 id="z80routines.fragment4">fragment 4</h4>
 <pre>
             Ld B, A               47
             Ld HL, d              21:nnnn
@@ -173,59 +149,46 @@
 (67 bytes)
 </pre>
 
-   <h4>fragment 5</h4>
+      <h4 id="z80routines.fragment5">fragment 5</h4>
 <pre>
-x -&gt; F030
-y -&gt; F032
-z -&gt; F034
-d =  F036
+   x -&gt; F030
+   y -&gt; F032
+   z -&gt; F034
+   d =  F036
 
-a &lt;- F038
-b &lt;- F03A
+   a &lt;- F038
+   b &lt;- F03A
 
-call F048
+   call F048
 
-F030   00 00 00 00 00 00 00 00
-F038   00 00 00 00 00 00 00 00
-F040   00 00 00 00 00 00 00 00
-F048   2A 30 F0 CD 71 F0 17 08
-F050   EB CD 80 F0 08 1F DC 74
-F058   F0 22 38 F0 2A 32 F0 CD
-F060   71 F0 17 08 EB CD 80 F0
-F068   08 1F DC 74 F0 22 3A F0
-F070   C9 7C 17 D0 3F EB 21 00
-F078   00 ED 52 C9 00 00 00 00
-F080   AF 21 00 00 DD 26 19 ED
-F088   4B 34 F0 A7 ED 42 30 01
-F090   09 3F 17 CB 13 CB 12 CB
-F098   15 CB 14 D0 25 20 EC 47
-F0A0   21 36 F0 4E 21 00 00 7C
-F0A8   DD 26 08 A7 17 CB 15 CB
-F0B0   14 CB 11 30 03 80 ED 5A
-F0B8   DD 25 20 EF 01 00 00 17
-F0C0   ED 4A C9 00 00 00 00 00
+   F030   00 00 00 00 00 00 00 00
+   F038   00 00 00 00 00 00 00 00
+   F040   00 00 00 00 00 00 00 00
+   F048   2A 30 F0 CD 71 F0 17 08
+   F050   EB CD 80 F0 08 1F DC 74
+   F058   F0 22 38 F0 2A 32 F0 CD
+   F060   71 F0 17 08 EB CD 80 F0
+   F068   08 1F DC 74 F0 22 3A F0
+   F070   C9 7C 17 D0 3F EB 21 00
+   F078   00 ED 52 C9 00 00 00 00
+   F080   AF 21 00 00 DD 26 19 ED
+   F088   4B 34 F0 A7 ED 42 30 01
+   F090   09 3F 17 CB 13 CB 12 CB
+   F098   15 CB 14 D0 25 20 EC 47
+   F0A0   21 36 F0 4E 21 00 00 7C
+   F0A8   DD 26 08 A7 17 CB 15 CB
+   F0B0   14 CB 11 30 03 80 ED 5A
+   F0B8   DD 25 20 EF 01 00 00 17
+   F0C0   ED 4A C9 00 00 00 00 00
 </pre>
 
-   <p>...the <a href="http://www.z80.info/">Z80</a> was a great CPU. And there is something in the purity and simplicity of direct machine-code programming that is still appealing.</p>
-</div>
+      <p id="z80routines-p1">... the <a href="http://www.z80.info/">Z80</a> was a great CPU. And there is something in the purity and simplicity of direct machine-code programming that is still appealing.</p>
+   </section>
 
-</div>
-</div>
+</section>
 
-
-<div class="lower">
-   <div>2005-06-01</div>
-</div>
-
-
-</div>
-
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-596081-1";
-urchinTracker();
-</script>
+      </article>
+   </main>
 
 </body>
 
