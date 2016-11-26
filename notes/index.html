@@ -1,823 +1,691 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html id="hxa7241-notes" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en-GB" id="hxa7241-notes" class="hxa7241-writings">
 
 <head>
    <title>&lt; H X A 7 2 4 1 &gt; : notes</title>
+   <meta charset="UTF-8" />
 
-   <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-
-   <meta name="keywords" content="writings, notes, software development, half-baked ideas, etc." />
-   <meta name="description" content="some short notes on a limited range of subjects" />
-
-   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
-   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
-
-   <!--<link rel="alternative" type="application/x-turtle" href="notes.ttl" title="RDF (Turtle)" />-->
-
-   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
-
-   <style type="text/css">
-      .panel
-      {
-         padding:                1.5em;
-      }
-      .panel dl,
-      .panel dt
-      {
-         margin:                 0.5em 0em 0.5em 0em;
-      }
-      .panel dd
-      {
-         margin:                 0.5em 0em 0.5em 1em;
-      }
-   </style>
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main-2016.css" />
 </head>
 
-
 <body>
-<div class="outer">
 
-
-<div class="upper">
-   <div class="title">
-      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
-   </div>
-</div>
-
-
-<div class="side">
-   <ul class="mainmenu">
-      <li>
-         <a href="../" title="home" accesskey="h">HOME</a>
-      </li>
-   </ul>
-   <ul class="mainmenu">
-      <li>
-         <a href="../writings/" title="various thought-oriented text products">WRITINGS</a>
-         <ul class="mainmenu">
-            <li>
-               <span class="current" title="this page">NOTES</span>
-            </li>
-         </ul>
-      </li>
-   </ul>
-   <ul class="mainmenu">
-      <li>
-         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
-      </li>
-      <li>
-         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
-      </li>
-   </ul>
-
-   <div class="sidepanel">
-      <p>Also:</p>
-      <ul class="submenu">
-         <!--<li><a href="https://plus.google.com/102359018718464872517">Google+</a></li>-->
-         <li><a href="http://twitter.com/hxa7241">Twitter</a></li>
-      </ul>
-
-      <p>Other places to go:</p>
-      <ul class="submenu">
-         <li><a href="http://chneukirchen.org/trivium">trivium</a></li>
-         <li><a href="http://axisofeval.blogspot.com/">axisofeval</a></li>
-         <li><a href="http://pwpwp.blogspot.com/">pwpwp</a></li>
-         <li><a href="http://dynamicaspects.org/blog/">dynamic aspects</a></li>
-         <li><a href="http://awelonblue.wordpress.com/">Awelon Blue</a></li>
-         <li><a href="http://www.realtimerendering.com/blog/">rtr blog</a></li>
-         <li><a href="http://dataisnature.com/">dataisnature</a></li>
-      </ul>
-   </div>
-</div>
-
-
-<div class="middle">
-<div class="picture">
-   <img src="../articles/articles-picture.jpg" alt="abstract tentacly things" />
-</div>
-
-<h2>NOTES</h2>
-<div class="h2subheading">some short notes on a limited range of subjects</div>
-
-
-<div class="content">
-
-<div class="sectionhead">
-   <p>This is a blog-alternative: a series of informal notes of various ideas.</p>
-
-   <p>The most common topic is (somewhat speculative) thinking about software engineering. It is not really time-oriented &ndash; the latest entry is not especially important, so scroll through the list of summaries and read any one.</p>
-
-   <p><a href="latest.xml" rel="alternative" type="application/atom+xml"><img src="../icons1/feed-icon-15.png" width="15" height="15" alt="Feed icon" title="Feed of latest notes (atom)" /> subscribe</a></p>
-</div>
-
-
-<div class="section" id="latest">
-   <h3>What is hard in economic calculation?</h3>
-
-   <p><small>(permalink: <a href="note-hxa7241-20161030T1229Z.html" title="permalink">note 2016-10-30T12:29Z</a></small>)</p>
-
-   <h5 id="p0">The reason a computationally automated, or rather assisted, economy is currently infeasible is because we lack sufficient AI capability for general &lsquo;similarity-finding&rsquo; (similizesis). It is not, as commonly opined, that the required calculation or communication is intractable.</h5>
-
-   <p>&mdash;&mdash;&mdash;&mdash;</p>
-
-   <p id="p1">Periodically, comments revisit the question of &lsquo;could computation (now) automate, and replace, markets?&rsquo;. And the reply is always reflexively &ldquo;Hayek! &ndash; &lsquo;The use of knowledge in society&rsquo;! &ndash; centralisation/etc was proven impossible long ago&rdquo;. ... But this reply is wrong, in an oblique way, and the inadequacy of the arguments is easy to spot.</p>
-
-   <p id="p2">The market &ndash; the one we see currently working &ndash; itself computes the distribution of goods. If such computation is intractable, the market could not do it. And if any approximation that is tractable must be inadequate, then the market itself must be too. In so far as the market is working as a &lsquo;machine&rsquo; &ndash; and that is the only way we can understand it &ndash; it is equal in power to any other general computer: what it can do, any computer can (and vice-versa). So the problem cannot, we are forced to conclude, be one of computational complexity.</p>
-
-   <p id="p3">The market also gathers all the data it needs, as well as performing its computation. And it does so effectively by coins and notes moving between pockets. Are we to say that this network-computation infrastructure is better than the internet plus computers? &ndash; that money in pockets is more communicationally/computationally powerful than actual networked computers &ndash; smartphones &ndash; in pockets? Money is no better a data-bearing medium than bits and electromagnetism. So the problem cannot, we are once more forced to conclude, be one of communicational difficulty.</p>
-
-   <p id="p4">The traditional &lsquo;informational&rsquo;, Hayekian, criticism of non-market alternatives is, on very light scrutiny, obviously faulty. So what is wrong? If computational automation to replace markets is not feasible, why not? What is the real reason? Or is there a slightly different question with a more plausible answer?.</p>
-
-   <p>&mdash;&mdash;&mdash;&mdash;</p>
-
-   <p id="p5">The crux of &lsquo;economic calculation&rsquo; is not (or no longer) data-gathering or computational complexity, it is what division to make between automation and delegation to people. It is about which problem it consigns to algorithm, and what form of questions and answers it poses to people.</p>
-
-   <p id="p6">The principle of operation of markets is taken to be prices, but this is in truth more subsidiary to their larger process. Markets &lsquo;externalise&rsquo; the main part of their computation to people's decisions. The market's computation is really largely human's &ndash; <i>they</i> are doing the hard work.</p>
-
-   <p id="p7">In an economy, the hard work is similarity-finding.</p>
-
-   <p>&mdash;&mdash;&mdash;&mdash;</p>
-
-   <p id="p8">Markets are coordinative: they communicate each individual's behaviour so as to shape everyone else's &ndash; prices diffuse through the system applying pressure to each individual's behaviour from all others. This is the market's part in a joint process.</p>
-
-   <p id="p9">In response, individuals need to be able to modify their actions, and the plans behind them. This is the axis of the whole. They cannot merely change ad-hoc, randomly, for then their whole behaviour would become random &ndash; they must have significant, complex, perhaps rational, direction. The least such capability individuals need to adjust something &ndash; coherently &ndash; is this: to see and find similarity in any alternative options available. (We can name this similarity-finding &lsquo;similizesis&rsquo; (noun), from: &lsquo;Similizetic&rsquo; &ndash; adj.: similarity-seeking (algorithm) &ndash; made from Latin and Greek: <i>similis</i> &lsquo;like&rsquo; + <i>zeteo</i> &lsquo;seek&rsquo;.).</p>
-
-   <p id="p10">Prices induce balancing of resource usage at large scale, but something else is needed for group cooperation: coherent action, aligning on common structure &ndash; and that is what similizesis induces between individuals.</p>
-
-   <p id="p11">This is the substantial work that markets require and delegate to humans, and that we currently have no automation for. But though it seems, on one hand, to be a demanding problem for software engineering, on the other hand, it seems not deeply hard. The most recent growth in AI in broadly recognition tasks seems adjacently related.</p>
-
-   <p>&mdash;&mdash;&mdash;&mdash;</p>
-
-   <p id="p12">Prompted most recently by:</p>
-   <ul>
-      <li><a href="http://jamiehall.cc/post/could-computers-make-communism-work">"Could Computers Make Communism Work?"; Hall; 2016 / 1500words / article.</a></li>
-   </ul>
-
-   <p id="p13">Major reference:</p>
-   <ul>
-      <li><a href="http://bactra.org/weblog/918.html">"In Soviet Union, Optimization Problem Solves You"; Shalizi; 2012 / 7900words / article.</a></li>
-      <li><a href="http://crookedtimber.org/2012/05/30/in-soviet-union-optimization-problem-solves-you/">(also here)</a></li>
-   </ul>
-   <p id="p14" class="lowlight">(This has only a hint of similizesis: <i>"(IIA) and (IIB) require us to disaggregate all the goods (and services) of the economy to the point where everything inside each category is substitutable."</i>).</p>
-</div>
-
-
-<div class="section" id="archive">
-   <h3>archive</h3>
-
-   <dl>
-      <dt>
-         <a href="note-hxa7241-20160724T1127Z.html">Basic proglang naming schemes &ndash; 2016-07-24T11:27Z</a>
-      </dt>
-      <dd>Programming languages can be classified into two well-known naming schemes (tacit, and non-), but from there one can see a third &ndash; naming from intrinsic structure &ndash; which seems interesting and underexplored.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20160717T0915Z.html">A brief argument against price signals &ndash; 2016-07-17T09:15Z</a>
-      </dt>
-      <dd>Cooperative systems must be ambivalent, therefore they must be multi-dimensional. Prices are only unidimensional, therefore price-systems alone must be inadequate.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20160403T1207Z.html">How Objects Naturally Arise &ndash; 2016-04-03T12:07Z</a>
-      </dt>
-      <dd>Why have objects? They are &lsquo;naturally arising&rsquo;: components are necessary, callbacks are valuable, and grouping them is good &ndash; and there is an object.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20160117T1306Z.html">Why do tests and types work ? &ndash; 2016-01-17T13:06Z</a>
-      </dt>
-      <dd>Some epistemology of software correctness &ndash; the underlying method seems to be repetition.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20151108T1107Z.html">OCaml language design articles &ndash; 2015-11-08T11:07Z</a>
-      </dt>
-      <dd>A list of academic articles on the original development of various OCaml features.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20150920T1002Z.html">The internet is an engine of centralisation &ndash; 2015-09-20T10:02Z</a>
-      </dt>
-      <dd>The &lsquo;flatness&rsquo; of the internet just makes it even more subject to be shaped by the inevitable non-flatness of our uses of it.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20141231T1101Z.html">TADIST file naming pattern &ndash; 2014-12-31T11:01Z</a>
-      </dt>
-      <dd>How should you name user-content files? Here is a possible way: a simple formalised pattern that seems to work for various things.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20140330T1114Z.html">Software's essential form, and visual programming &ndash; 2014-03-30T11:14Z</a>
-      </dt>
-      <dd>Text fits software's essential form. And any kind of visual programming will still have a similar kind of structure. We can do better than text, but it seems not a lot better.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20140119T1238Z.html">Post-Currencyism 3: Security &ndash; 2014-01-19T12:38Z</a>
-      </dt>
-      <dd>Does this make a viable cooperative structure? Is it basically self-supporting?</dd>
-
-      <dt>
-         <a href="note-hxa7241-20140119T1214Z.html">Post-Currencyism 2: Allocation &ndash; 2014-01-19T12:14Z</a>
-      </dt>
-      <dd>But does this make sense as an economic mechanism? How can it allocate without currency?</dd>
-
-      <dt>
-         <a href="note-hxa7241-20140119T1123Z.html">Post-Currencyism 1: Outline &ndash; 2014-01-19T11:23Z</a>
-      </dt>
-      <dd>What is a specific, concrete way to describe the core idea? What software form would it take?</dd>
-
-      <dt>
-         <a href="note-hxa7241-20140119T1109Z.html">Post-Currencyism 0: Introduction &ndash; 2014-01-19T11:09Z</a>
-      </dt>
-      <dd>An examination of post-currency economic systems.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20131124T0927Z.html">&lsquo;Boolean-blindness&rsquo; is about types &ndash; 2013-11-24T09:27Z</a>
-      </dt>
-      <dd>&lsquo;Boolean-blindness&rsquo; is not really about booleans, it is about destructuring data into types, and hence the virtue of a good type system.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20130804T0939Z.html">Testing vs proof in software development &ndash; 2013-08-04T09:39Z</a>
-      </dt>
-      <dd>Is proof better than testing? On examination it seems they are not quite comparable, and the key issues are other things: inference and judgement. Development needs both. Perhaps ideally fused into &lsquo;inferential construction&rsquo;.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20130707T0900Z.html">Programming language docs structure &ndash; 2013-07-07T09:00Z</a>
-      </dt>
-      <dd>Some suggestions for documentation from learning several programming languages &ndash; along the lines of a quasi-formalised structure.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20130630T1038Z.html">The morality of persuasion &ndash; 2013-06-30T10:38Z</a>
-      </dt>
-      <dd>Is persuasion moral? Only, it seems, in a strictly limited sense. And that leads to an informational problem of how to know when it is.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20130609T0917Z.html">Rule-following and software development &ndash; 2013-06-09T09:17Z</a>
-      </dt>
-      <dd>&ldquo;This was our paradox: no course of action could be determined by a rule, because any course of action can be made out to accord with the rule.&rdquo; &ndash; Philosophical Investigations 201a.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20130203T1036Z.html">How to approach designing an economic system &ndash; 2013-02-03T10:36Z</a>
-      </dt>
-      <dd>De-focus from currency; orient with independent knowledge; imagine cellular automata; base on supply and demand; think in software; discretise, distribute.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20130127T1124Z.html">GITI &ndash; Electric guitar music text format &ndash; 2013-01-27T11:24Z</a>
-      </dt>
-      <dd>GITI is a new music text notation for electric guitar: a bit like a specialised kind of <i>abc</i> (another non-traditional notation)</dd>
-
-      <dt>
-         <a href="note-hxa7241-20130120T1053Z.html">Debt is a bad cooperative structure &ndash; 2013-01-20T10:53Z</a>
-      </dt>
-      <dd>When you look at debt as an abstract informational/cooperative structure you find it is a dysfunctional one. And a quick check for any rational moral basis turns up nothing either. Debt is unwise and we should stop doing it.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20130113T1107Z.html">SBNF &ndash; BNF in S-Exprs &ndash; 2013-01-13T11:07Z</a>
-      </dt>
-      <dd>S-Expressions seem particularly well-suited to BNF formulations, giving a simple, regular, and memorable format.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20130106T1019Z.html">Compensation for work is wrong &ndash; 2013-01-06T10:19Z</a>
-      </dt>
-      <dd>Compensation is a faulty notion; it does not actually happen, and indeed cannot happen. It is misguided as a basic concept of economic systems.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20121230T1123Z.html">Money definitions are teleological and tautological &ndash; 2012-12-30T11:23Z</a>
-      </dt>
-      <dd>The dominant features of thinking about money are teleology and tautology. This is bad both for understanding and coming up with new ideas. We should think of it more computationally.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120916T0956Z.html">Credit for info-goods &ndash; 2012-09-16T09:56Z</a>
-      </dt>
-      <dd>Info-goods should include proper credit/acknowledgement should they not? Maybe that default intention is archaic and narrow, and it is now generally better to decouple description and associate it by hash.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120909T0926Z.html">Your next project? Design a new economic system! &ndash; 2012-09-09T09:26Z</a>
-      </dt>
-      <dd>We are surprisingly close to complete economic revolution. And this is a very interesting thing to ponder and imagine from a software view. Does that seem crazy? The reasoning is, however, straightforward: 1, the economic system works on money; 2, money is really information; 3, information technology is revolutionary.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120901T1034Z.html">Evolving global software &ndash; 2012-09-01T10:34Z</a>
-      </dt>
-      <dd>How should we develop software globally? Is it possible to say what kind of basic process and features, what broad strategies, are preferable? Here are three suggestions.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120818T0924Z.html">On Pagel's 'Infinite Stupidity', and what new information is &ndash; 2012-08-18T09:24Z</a>
-      </dt>
-      <dd>The article &lsquo;Infinite Stupidity&rsquo; makes a novel and interesting point. But it does not quite seem to stand up, and examination of why begins to unravel what information is and where it comes from.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120708T0907Z.html">Names are wrong, tacit/point-free is right &ndash; 2012-07-08T09:07Z</a>
-      </dt>
-      <dd>In software, are names not a curiosity? They are like a mini embedded comment &ndash; nothing else is like that. But furthermore they seem structurally poor too. &lsquo;Tacit-programming&rsquo; is the remedy.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120624T1124Z.html">Marxist efficiency &ndash; 2012-06-24T11:24Z</a>
-      </dt>
-      <dd>Marx's famous slogan of communism, considered purely in itself, seems wholly consistent with the core of (neo-)classical economics, but leads to a much more general perspective.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120617T0942Z.html">Artificial intelligence and the future &ndash; 2012-06-17T09:42Z</a>
-      </dt>
-      <dd>Is strong AI not very far away now? That is not the right question.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120610T0929Z.html">The internet, Kickstarter, and the obsolescence of markets &ndash; 2012-06-10T09:29Z</a>
-      </dt>
-      <dd>How much is the idea of markets obsoleted by digital networks ?</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120513T1116Z.html">Why is information a string of digits? &ndash; 2012-05-13T11:16Z</a>
-      </dt>
-      <dd>The fundamental form of information seems to be a string of digits, e.g. DNA, text, bits. Why? This appears to be a peculiarly intriguing question. It is about something apparently very simple, yet it seems somehow profound.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120506T0907Z.html">Parsing wrongness and language value &ndash; 2012-05-06T09:07Z</a>
-      </dt>
-      <dd>Parsing is a poor choice of problem. Programming languages should help us see and help us move.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120429T1019Z.html">On VPRI STEPS &ndash; 2012-04-29T10:19Z</a>
-      </dt>
-      <dd>They seem to be producing a &lsquo;second-draft&rsquo; of current practice, and making some good abstractions, not a revolutionary general technique. Perhaps because <i>no</i> general revolutionary technique seems possible for programming as such.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120508T1121Z.html">Money as a cooperative mechanism &ndash; 2012-05-08T11:21Z</a>
-      </dt>
-      <dd>What is money? It is a mechanism that supports/induces a particular framework of cooperation. And it is outdated.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120122T1207Z.html">Comparing natural language and software &ndash; 2012-01-22T12:07Z</a>
-      </dt>
-      <dd>Natural language is very different to software, but what is similar? what makes them seem related? They seem to focus on abstractions of different character.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120115T1141Z.html">Living software and dead software &ndash; 2012-01-15T11:41Z</a>
-      </dt>
-      <dd>What kind of software do you really want to make?</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120108T1248Z.html">Software as thought &ndash; 2012-01-08T12:48Z</a>
-      </dt>
-      <dd>Chaitin's little quote about software is interesting but somehow seems not quite on target. So here is a new version, modified and expanded.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20120103T1008Z.html">A copyright economy is a &lsquo;waterfall&rsquo; economy &ndash; 2012-01-03T10:08Z</a>
-      </dt>
-      <dd>Copyright has deep intrinsic inefficiency and makes the economy like a weak software development process.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20111218T1151Z.html">Software's economic basics &ndash; 2011-12-18T11:51Z</a>
-      </dt>
-      <dd>Software is about: designing the right(-est) thing, and letting anyone create benefit from it.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20111204T1257Z.html">Why an information economy is not an IP economy &ndash; 2011-12-04T12:57Z</a>
-      </dt>
-      <dd>This is a prompt to think differently about information, IP, and their economic arrangement.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20111127T1147Z.html">A logical analysis of copyright orthodoxy &ndash; 2011-11-27T11:47Z</a>
-      </dt>
-      <dd>There is a kind of rhetorical trick in copyright theory. The orthodox model appears to give a rational solidity to copyright, but as an argument <i>for</i> it it is unsound, and proves nothing of what it appears to want to.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20111113T1241Z.html">Power, predictability, and regularity &ndash; 2011-11-13T12:41Z</a>
-      </dt>
-      <dd>At the deepest level, software seems to have an essential trade-off of power against predictability. And the problem there is not a matter of conformance but of clarity. That means perhaps the best we can do is design programming languages to have a kind of &lsquo;regularity&rsquo;.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110925T1006Z.html">Enduring software &ndash; 2011-09-25T10:06Z</a>
-      </dt>
-      <dd>Making &lsquo;enduring software&rsquo; looks more like a requirements/product-design problem than an engineering problem.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110918T1016Z.html">The insoluble pragmatism of types &ndash; 2011-09-18T10:16Z</a>
-      </dt>
-      <dd>What one might think of as the problem of type systems looks, in a deep sense, actually insoluble. A useful module cannot be completely specified.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110911T0948Z.html">What part of design <i>is</i> possible? &ndash; 2011-09-11T09:48Z</a>
-      </dt>
-      <dd>Two of the underlying skills possible in engineering design must be part of the grounding of programming languages.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110828T1006Z.html">&lsquo;Long Now&rsquo; of software? &ndash; 2011-08-28T10:06Z</a>
-      </dt>
-      <dd>Is it possible to have a software equivalent to the <a href="http://longnow.org/">&lsquo;Long Now&rsquo;</a> project? Can we imagine a software system that would last for 10000 years? (or even just 1000) This means both running and adapting/reusing &ndash; both of the two fundamental aspects of software.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110821T1132Z.html">The &lsquo;ideology&rsquo; of software engineering &ndash; 2011-08-21T11:32Z</a>
-      </dt>
-      <dd>The theoretical &lsquo;ideology&rsquo; of software engineering seems to be logical, mathematical &ndash; this is how we implicitly think of software, that is what computer science leads us toward. But is this a little misleading?</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110814T0944Z.html">Reconsidering a Scheme formatting convention &ndash; 2011-08-14T09:44Z</a>
-      </dt>
-      <dd>A hugely important matter of getting source-code <i>just right</i>.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110807T1113Z.html">The embarrassment of copyright policy &ndash; 2011-08-07T11:13Z</a>
-      </dt>
-      <dd>Simply acknowledging the facts, or lack of them, leaves copyright in a surprisingly troubling position.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110801T1044Z.html">What is metadata? &ndash; 2011-08-01T10:44Z</a>
-      </dt>
-      <dd>It is usually described as &lsquo;data about data&rsquo;. But there is a slightly different angle to see it from &ndash; not so much &lsquo;above&rsquo; but &lsquo;beside&rsquo;.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110717T0908Z.html">Defined rating systems, and Google +i &ndash; 2011-07-17T09:08Z</a>
-      </dt>
-      <dd>Rating systems &ndash; like up-voting buttons for news-blogs &ndash; have a problem: what do they really mean? They seem too vague. Rating probably ought to be more clear and articulated.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110710T0853Z.html">On Dijkstra on software's radical novelties &ndash; 2011-07-10T08:53Z</a>
-      </dt>
-      <dd>In <a href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html">&lsquo;On the cruelty of really teaching computing science&rsquo; EWD1036</a>, Dijkstra captures some deep truths of software &ndash; but seems to give them a somewhat gloomy cast. Software has radical novelties, but we should not see them in a negative way.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110704T1125Z.html">Distinguishing abstraction and change &ndash; 2011-07-04T11:25Z</a>
-      </dt>
-      <dd>Abstraction and change overlap in some way, and maybe it is worth thinking a little about what that means and how they are separate.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110627T0842Z.html">The aim of software engineering &ndash; 2011-06-27T08:42Z</a>
-      </dt>
-      <dd>What, as a discipline, is software engineering trying to do? &ndash; One could begin to answer that its purpose is to be an optimal intermediary between requirement and material: a tool that goes where you point it, and shows you where it is pointing.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110619T0909Z.html">A fault in blogs &ndash; 2011-06-19T09:09Z</a>
-      </dt>
-      <dd>We ought not to be using blogs so much.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110612T0855Z.html">The second basic question of software engineering &ndash; 2011-06-12T08:55Z</a>
-      </dt>
-      <dd>Saying we want to improve how software engineering is done seems OK, but can that be clarified? We understand what kinds of computation are efficient by formalising the idea of what computation is. We can perhaps understand what development is efficient by formalising what development is.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110605T0723Z.html">The functional/representational division in software &ndash; 2011-06-05T07:23Z</a>
-      </dt>
-      <dd>The division of software engineering into &lsquo;functional&rsquo; and &lsquo;representational&rsquo; aspects/structures can be expressed with a simple (if a little archaic) metaphor, and backed with some basic theoretical definition.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110529T0714Z.html">A comment on: &lsquo;The Carrying-Cost of Code: Taking Lean Seriously&rsquo; &ndash; 2011-05-29T07:14Z</a>
-      </dt>
-      <dd><a href="http://michaelfeathers.typepad.com/michael_feathers_blog/2011/05/the-carrying-cost-of-code-taking-lean-seriously.html">The original article</a> seems, on analysis, contradictory to agile. But maybe some resolution is possible, by building more general knowledge from more general investigation.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110522T0935Z.html">Software engineering and philosophy &ndash; 2011-05-22T09:35Z</a>
-      </dt>
-      <dd>Software engineering and philosophy are in a sense (with a little imagination) twin subjects.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110515T0907Z.html">In Lisp, should lists be replaced with trees? &ndash; 2011-05-15T09:07Z</a>
-      </dt>
-      <dd>Conses/pairs/lists are rather low-level when you think about it. Would we not appreciate something just a little more powerful, a little more <i>modern</i>? A tree primitive is here casually and heretically proposed as a better alternative.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110508T0913Z.html">Machine philosophy rudiments &ndash; 2011-05-08T09:13Z</a>
-      </dt>
-      <dd>What <i>is</i> a machine? It is not a sort of complex mechanism. It is not a physical object. Or rather, it is not just those, or essentially those.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110501T0935Z.html">IT-farming (or not) &ndash; 2011-05-01T09:35Z</a>
-      </dt>
-      <dd>Why do IT people like to use the word &lsquo;farm&rsquo;? &ndash; e.g. &lsquo;server-farm&rsquo;, &lsquo;render-farm&rsquo;. It does not really make sense. What they really mean is <i>factory</i>.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110424T0826Z.html">Considering the limits of DRY(&lsquo;dont repeat yourself&rsquo;) / factoring &ndash; 2011-04-24T08:26Z</a>
-      </dt>
-      <dd>Factoring is good, but it has to be limited by what you really know. Otherwise adding more abstractions obstructs change more than necessary. But it is not really a trade-off: getting one aspect right makes the other right too.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110417T0913Z.html">Surgical registries for software development? &ndash; 2011-04-17T09:13Z</a>
-      </dt>
-      <dd>Surgical practice has developed an alternative to scientific trials to build knowledge. Perhaps this approach could benefit software development.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110410T0910Z.html">Definition of &lsquo;abstract&rsquo; &ndash; 2011-04-10T09:10Z</a>
-      </dt>
-      <dd>Abstraction is definable in a nice discrete way. And abstraction is a fundamental law of reality! maybe.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110403T1029Z.html">Licenses are not polite agreements &ndash; 2011-04-03T10:29Z</a>
-      </dt>
-      <dd>There is a quasi-meme-let around that proposes that software shrink-wrap copy-restriction licenses etc. are just honourable agreements. This is irritatingly spurious, and ought to be exposed. Here is a rebuttal &ndash; or inoculation.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110327T1046Z.html">Stone cathedrals, structure-preserving-transformations, and software development &ndash; 2011-03-27T10:46Z</a>
-      </dt>
-      <dd>This note stems from two sources: <a href="http://www.bbc.co.uk/programmes/b00b09rb">&lsquo;How To Build A Cathedral&rsquo; (BBC; 2008)</a> &ndash; a TV documentary; and &lsquo;structure-preserving-transformation&rsquo; &ndash; a phrase from Christopher Alexander. And it leads to a seeming weakness in sofware development &ndash; how we systemetise &lsquo;construction&rsquo;.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110320T1027Z.html">Dependent types are about consistency &ndash; 2011-03-20T10:27Z</a>
-      </dt>
-      <dd>Dependent types allow constraints to be defined with (almost) full algorithmic richness. Thinking about what this is doing illustrates the distinction between &lsquo;consistency&rsquo; and &lsquo;verification&rsquo;.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110314T2011Z.html">Software as web &ndash; 2011-03-14T20:11Z</a>
-      </dt>
-      <dd><a href="http://axisofeval.blogspot.com/2011/02/browsers-will-let-pls-break-free-from.html">wbcvsn-expansion:http://axisofeval.blogspot.com/2011/02/browsers-will-let-pls-break-free-from.html</a> seems right, and worth considering more, on something of a tangent.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110310T2108Z.html">A small trick to Xor &ndash; 2011-03-10T21:08Z</a>
-      </dt>
-      <dd>An arithmetic way to perform exclusive-or &ndash; something that might have a small use somewhere.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110227T0833Z.html">Typing and visibility &ndash; 2011-02-27T08:33Z</a>
-      </dt>
-      <dd>Strong typing is better than visibility, but neither is quite what is wanted.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110219T1113Z.html">Wittgenstein for programmers (part 1) &ndash; 2011-02-19T11:13Z</a>
-      </dt>
-      <dd>What does an early 20th century philosopher have to say about software engineering?</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110213T0941Z.html">Imagining &lsquo;dynamic macros&rsquo; for Scheme &ndash; 2011-02-13T09:41Z</a>
-      </dt>
-      <dd>It seems possible to merge macros with lambdas, making a smoother single language feature. (At least, as far as a quick casual pondering will take you.)</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110206T2236Z.html">Reflections on using Scheme &ndash; 2011-02-06T22:36Z</a>
-      </dt>
-      <dd>The Scheme (R5RS) translation of the MiniLight renderer has just been finished (the latest of 12 translations, 8 by the author). So now is a good time for some reflections on the language.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110130T0917Z.html">Testing: thoughts on improving it &ndash; 2011-01-30T09:17Z</a>
-      </dt>
-      <dd>What does testing really do? And how can it be improved? Thinking beyond the surface seems to lead away from testing and toward automation and ergonomics.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110123T1031Z.html">Corporation vs. internet &ndash; 2011-01-23T10:31Z</a>
-      </dt>
-      <dd>(It is not really just Facebook, it is a general problem.)</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110116T0949Z.html">OO modelling and the real-world &ndash; 2011-01-16T09:49Z</a>
-      </dt>
-      <dd>A philosophical answer to a post at <a href="http://lambda-the-ultimate.org/node/3265">Lambda The Ultimate (wbcvsn-answer:http://lambda-the-ultimate.org/node/3265)</a> (pointed out by <a href="http://axisofeval.blogspot.com/2010/11/why-are-objects-so-unintuitive.html">axisofeval</a>) which asks: &ldquo;Why are objects that we use in programming so vastly different from real-world objects?&rdquo;</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110109T1023Z.html">Programming is probabilistic &ndash; 2011-01-09T10:23Z</a>
-      </dt>
-      <dd>In common programming, we use abstractions in a particular kind of probabilistic way. It is normally in the background, but is fairly well-defined, and deserves more examination.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20110102T0955Z.html">Normalised comment rating &ndash; 2011-01-02T09:55Z</a>
-      </dt>
-      <dd>News-&lsquo;forum&rsquo; sites, like Hacker News, seem to rate comments just by counting votes: is that sophisticated enough as a measure?</dd>
-
-      <dt>
-         <a href="note-hxa7241-20101227T1008Z.html">Code style and patterns &ndash; 2010-12-27T10:08Z</a>
-      </dt>
-      <dd>Code style is open to the same criticism as software patterns &ndash; they are indicative of a lack &ndash; but they may also be unavoidable</dd>
-
-      <dt>
-         <a href="note-hxa7241-20101218T2158Z.html">A comment adding to Dijkstra on natural language programming &ndash; 2010-12-18T21:58Z</a>
-      </dt>
-      <dd>To add to Dijkstra's note &lsquo;On the foolishness of &ldquo;natural language programming&rdquo;&rsquo;: language and program are not even properly comparable</dd>
-
-      <dt>
-         <a href="note-hxa7241-20101211T1331Z.html">The attribution ingredient in IP justification &ndash; 2010-12-11T13:31Z</a>
-      </dt>
-      <dd>Mere claim of authorship is insufficient for ownership rights</dd>
-
-      <dt>
-         <a href="note-hxa7241-20101204T1716Z.html">Implicit code &ndash; what makes it good or bad &ndash; 2010-12-04T17:16Z</a>
-      </dt>
-      <dd>To make a software structure implicit you should adhere to a clear abstraction &ndash; then being implicit is good and not bad</dd>
-
-      <dt>
-         <a href="note-hxa7241-20101124T1927Z.html">Should there be hard limits on program part sizes? &ndash; 2010-11-24T19:27Z</a>
-      </dt>
-      <dd>There is cause to, based on complexity, but a better solution seems to be to adopt a different structuring &ndash; one with different scaling behaviour</dd>
-
-      <dt>
-         <a href="note-hxa7241-20101116T1814Z.html">&lsquo;Incentive&rsquo; in intellectual monopoly &ndash; 2010-11-16T18:14Z</a>
-      </dt>
-      <dd>IP does not give incentive, but a fix for market inadequacy</dd>
-
-      <dt>
-         <a href="note-hxa7241-20101109T2102Z.html">Designed software will never be substantially higher quality &ndash; 2010-11-09T21:02Z</a>
-      </dt>
-      <dd>There is a myth in software, that if we could somehow find the magic knowledge, all our software could be built to some future ideal. This cannot be right</dd>
-
-      <dt>
-         <a href="note-hxa7241-20101101T1947Z.html">What is a 'strong' or 'weak' standard? &ndash; 2010-11-01T19:47Z</a>
-      </dt>
-      <dd>Here is one possible measure of standards, and abstractions generally, by seeing the gaps in them</dd>
-
-      <dt>
-         <a href="note-hxa7241-20101026T2052Z.html">The big fault in OO &ndash; 2010-10-26T20:52Z</a>
-      </dt>
-      <dd>OO's central abstraction &ndash; the class &ndash; is too weakly, loosely defined.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20101006T2011Z.html">The software engineering equation &ndash; 2010-10-06T20:11Z</a>
-      </dt>
-      <dd>If there were a single equation summarising all software development and use &ndash; a &lsquo;law of infodynamics&rsquo; &ndash; what would it be like? &ndash; Here is a quick imagination of one.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100811T2247Z.html">A conversational convention for the web &ndash; 2010-08-11T22:47Z</a>
-      </dt>
-      <dd>A simple ad-hoc &lsquo;semanticised web&rsquo; idea for making structures of related texts.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100802T2252Z.html">Why economists like copyright; but shouldn't so much now &ndash; 2010-08-02T22:52Z</a>
-      </dt>
-      <dd>A perspective on the basic connections of copyright, industry, and internet.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100720T1842Z.html">A Comment On: &lsquo;Why writing software is not like engineering&rsquo; &ndash; 2010-07-20T18:42Z</a>
-      </dt>
-      <dd>Seeing the kernel of engineering in software development.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100713T2123Z.html">Alternatives To Design-Construction-Maintenance &ndash; 2010-07-13T21:23Z</a>
-      </dt>
-      <dd>A possible model of development based on software's own particular &lsquo;material&rsquo;.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100706T2216Z.html">A Core Of Programming &ndash; 2010-07-06T22:16Z</a>
-      </dt>
-      <dd>A few key structures that most programming languages share.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100425T2149Z.html">Copyright &lsquo;Losses&rsquo; And Public Gains &ndash; 2010-04-25T21:49Z</a>
-      </dt>
-      <dd>How a common corporate message of copyright and the internet is the complete upside-down of truth.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100420T2046Z.html">The &lsquo;Important First&rsquo; naming rule for software things &ndash; 2010-04-20T20:46Z</a>
-      </dt>
-      <dd>A small but valuable rule for naming things, that seems less considered than perhaps it ought to be.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100330T1917Z.html">&lsquo;Getting Things Done&rsquo; and software architecture &ndash; 2010-03-30T19:17Z</a>
-      </dt>
-      <dd>There is an interesting characteristic of <a href="http://www.davidco.com/what_is_gtd.php">&lsquo;Getting Things Done&rsquo;</a>: it seems algorithmic, computational.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100317T2104Z.html">Future software engineering's three bases &ndash; 2010-03-17T21:04Z</a>
-      </dt>
-      <dd>The future of software engineering is in combining less deliberate design with more automated generation and evolution.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100313T1725.html">Design should be backward-looking &ndash; 2010-03-13T17:25</a>
-      </dt>
-      <dd>Good engineering design rests essentially on good knowledge &ndash; not prediction.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100302T2157.html">There is only one program &ndash; 2010-03-02T21:57</a>
-      </dt>
-      <dd>Software tends toward a continual global ecosystem.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100221T1100.html">The simple rule of why copyright is now broken &ndash; 2010-02-21T11:00</a>
-      </dt>
-      <dd>Internet benefit is inversely related to copyright strength.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100215T2141.html">An outline map of software development &ndash; 2010-02-15T21:41</a>
-      </dt>
-      <dd>A way of dividing up and placing the parts of software development, in terms of other established fields.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100209T2001.html">Keeping your new ideas secret is probably wrong &ndash; 2010-02-09T20:01</a>
-      </dt>
-      <dd>A simple rational demonstration.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100201T2038.html">The illusion in up-front design &ndash; 2010-02-01T20:38</a>
-      </dt>
-      <dd>There is an illusion in the idea of up-front design in software (that is, code arrangement, not algorithm), that makes it seem more plausible than it really is.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100122T2023.html">The essential weakness at the core of Google search &ndash; 2010-01-22T20:23</a>
-      </dt>
-      <dd>. . . and a related problem in user-moderated comment systems.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20100113T1917.html">Paying For Information, Asymmetrically &ndash; 2010-01-13T19:17</a>
-      </dt>
-      <dd>The most reasonable way to pay for information is right in front of us.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20091116T1912.html">Software Engineering Materialism &ndash; 2009-11-16T19:12</a>
-      </dt>
-      <dd>It is good to think of software engineering as <i>&lsquo;the design of structures in a special abstract material&rsquo;</i>.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20091110T2154.html">The morality of copying: a simple Kantian evaluation &ndash; 2009-11-10T21:54</a>
-      </dt>
-      <dd>A simple, solid argument for the moral goodness of copying.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20091025T2123.html">Vitruvius - 'Firmitas, Utilitas, Venustas' - In Software &ndash; 2009-10-25T21:23</a>
-      </dt>
-      <dd>Vitruvius' ancient principles of architecture can be used to view software.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20091019T2052.html">Genome Versus Programming Language &ndash; 2009-10-19T20:52</a>
-      </dt>
-      <dd>Genomes have an extra means of code expression/expansion compared to artificial software.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090831T2006.html">Genomes As Software &ndash; 2009-08-31T20:06</a>
-      </dt>
-      <dd>A genome is a digital object, and the way it works as a system may be significantly like software.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090806T1142.html">A Comment On &lsquo;A Conversation with Alan Kay&rsquo; &ndash; 2009-08-06T11:42</a>
-      </dt>
-      <dd>An observation on an interesting software development analogy.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090523T1024.html">&lsquo;Software Design&rsquo; Is Not Design &ndash; 2009-05-23T10:24</a>
-      </dt>
-      <dd>Software engineering should not be obsessed with representation.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090512T1748.html">The Missing Principle Of Programming Languages &ndash; 2009-05-12T17:48</a>
-      </dt>
-      <dd>Languages should support data/computation mechanics (mostly known as performance evaluation/analysis).</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090505T1132.html">The Third Principle Of Programming Languages &ndash; 2009-05-05T11:32</a>
-      </dt>
-      <dd>A main driver of language design must be the extended design process.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090426T2136.html">Better HTML fragment referencing, and RDFa &ndash; 2009-04-26T21:36</a>
-      </dt>
-      <dd>A look at the relation of HTML fragment identifiers and the joining of the GGG with the WWW.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090419T1043.html">Why Data-&lsquo;Piracy&rsquo; Is Morally Good &ndash; 2009-04-19T10:43</a>
-      </dt>
-      <dd>An ethical way to understand and deal with intellectual monopoly and data-'piracy'.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090410T1636.html">Philosophy Of Software Development &ndash; 2009-04-10T16:36</a>
-      </dt>
-      <dd>A proposal for a philosophy of software development.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090407T1228.html">Structured Object-Oriented Programming &ndash; 2009-04-07T12:28</a>
-      </dt>
-      <dd>Inconclusive consideration of Structured Programming and Object-Orientation.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090325T1709.html">Determinate Knowledge In Software Engineering &ndash; 2009-03-25T17:09</a>
-      </dt>
-      <dd>A brief overview of software engineering's principal parts.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090314T1738.html">The Problem With More Web JavaScript &ndash; 2009-03-14T17:38</a>
-      </dt>
-      <dd>An extra abstraction might be now needed for web-app engineering.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090226T1114.html">Logical Structure And Software Architecture &ndash; 2009-02-26T11:14</a>
-      </dt>
-      <dd>A brief adumbration of software architecture and its underlying realm.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090219T1518.html">Software &lsquo;Mass-Production&rsquo; &ndash; 2009-02-19T15:18</a>
-      </dt>
-      <dd>A quick formulation of mass-production for software.</dd>
-
-      <dt>
-         <a href="note-hxa7241-20090218T0934.html">Software Development In A Nutshell &ndash; 2009-02-18T09:34</a>
-      </dt>
-      <dd>An attempt at a minimal 'well-founded' or 'historically-informed' conception of software development.</dd>
-   </dl>
-</div>
-
-</div>
-</div>
-
-
-<div class="lower">
-   <div>
-   <span class="icons">
-      <a href="latest.xml" rel="alternative" type="application/atom+xml">
-      <img src="../icons1/feed-icon-15.png" width="15" height="15" alt="Feed icon" title="Feed of latest notes (atom)" /></a>
-   </span>
-   2016-10-30
-   </div>
-</div>
-
-
-</div>
-
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-596081-1";
-urchinTracker();
-</script>
+   <header id="top-head">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241-logo-h.svg" alt="HXA7241" /></a></h1>
+      <div id="sub-head"><a href="../#writings">writings</a></div>
+      <div id="subsub-head">various thought-oriented text products</div>
+   </header>
+
+   <main>
+      <article class="artefact">
+
+<header class="artefact-head">
+<pre><code>"artefact-metadata-hxa7241-www": {
+  "title": "Notes",
+  "author": "Harrison Ainsworth",
+  "date": "2016-10-30",
+  "id": "urn:uuid:7C90BC71-146E-434D-ADBA-62B78C7078F0",
+  "type": "index",
+  "subtype": "text/html",
+  "wordcount": 3524,
+  "hashsecure": "sha256:2d74fc0575255bc9<wbr/>e42a5bb7ea3bba7e<wbr/>a50de73f33f172e9<wbr/>e37426acfe467bd7",
+  "location": "http://www.hxa.name/notes/"
+}</code></pre>
+</header>
+
+<!-- hash next element -->
+<section class="artefact-body">
+   <h2>Notes</h2>
+   <p class="artefact-summary">some short notes on a limited range of subjects</p>
+
+   <section id="description">
+      <h3>Description</h3>
+
+      <p id="description-p0">This is a blog-alternative: a series of informal notes of various ideas.</p>
+
+      <p id="description-p1">The most common topic is (somewhat speculative) thinking about software engineering. It is not really time-oriented &ndash; the latest entry is not especially important, so scroll through the list of summaries and read any one.</p>
+   </section>
+
+   <section id="archive">
+      <h3>Archive</h3>
+
+      <dl>
+         <dt>
+            <a href="note-hxa7241-20161030T1229Z.html">What is hard in economic calculation? &ndash; 2016-10-30T12:29Z</a>
+         </dt>
+         <dd>The reason a computationally automated, or rather assisted, economy is currently infeasible is because we lack sufficient AI capability for general &lsquo;similarity-finding&rsquo; (similizesis). It is not, as commonly opined, that the required calculation or communication is intractable.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20160724T1127Z.html">Basic proglang naming schemes &ndash; 2016-07-24T11:27Z</a>
+         </dt>
+         <dd>Programming languages can be classified into two well-known naming schemes (tacit, and non-), but from there one can see a third &ndash; naming from intrinsic structure &ndash; which seems interesting and underexplored.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20160717T0915Z.html">A brief argument against price signals &ndash; 2016-07-17T09:15Z</a>
+         </dt>
+         <dd>Cooperative systems must be ambivalent, therefore they must be multi-dimensional. Prices are only unidimensional, therefore price-systems alone must be inadequate.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20160403T1207Z.html">How Objects Naturally Arise &ndash; 2016-04-03T12:07Z</a>
+         </dt>
+         <dd>Why have objects? They are &lsquo;naturally arising&rsquo;: components are necessary, callbacks are valuable, and grouping them is good &ndash; and there is an object.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20160117T1306Z.html">Why do tests and types work ? &ndash; 2016-01-17T13:06Z</a>
+         </dt>
+         <dd>Some epistemology of software correctness &ndash; the underlying method seems to be repetition.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20151108T1107Z.html">OCaml language design articles &ndash; 2015-11-08T11:07Z</a>
+         </dt>
+         <dd>A list of academic articles on the original development of various OCaml features.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20150920T1002Z.html">The internet is an engine of centralisation &ndash; 2015-09-20T10:02Z</a>
+         </dt>
+         <dd>The &lsquo;flatness&rsquo; of the internet just makes it even more subject to be shaped by the inevitable non-flatness of our uses of it.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20141231T1101Z.html">TADIST file naming pattern &ndash; 2014-12-31T11:01Z</a>
+         </dt>
+         <dd>How should you name user-content files? Here is a possible way: a simple formalised pattern that seems to work for various things.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20140330T1114Z.html">Software's essential form, and visual programming &ndash; 2014-03-30T11:14Z</a>
+         </dt>
+         <dd>Text fits software's essential form. And any kind of visual programming will still have a similar kind of structure. We can do better than text, but it seems not a lot better.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20140119T1238Z.html">Post-Currencyism 3: Security &ndash; 2014-01-19T12:38Z</a>
+         </dt>
+         <dd>Does this make a viable cooperative structure? Is it basically self-supporting?</dd>
+
+         <dt>
+            <a href="note-hxa7241-20140119T1214Z.html">Post-Currencyism 2: Allocation &ndash; 2014-01-19T12:14Z</a>
+         </dt>
+         <dd>But does this make sense as an economic mechanism? How can it allocate without currency?</dd>
+
+         <dt>
+            <a href="note-hxa7241-20140119T1123Z.html">Post-Currencyism 1: Outline &ndash; 2014-01-19T11:23Z</a>
+         </dt>
+         <dd>What is a specific, concrete way to describe the core idea? What software form would it take?</dd>
+
+         <dt>
+            <a href="note-hxa7241-20140119T1109Z.html">Post-Currencyism 0: Introduction &ndash; 2014-01-19T11:09Z</a>
+         </dt>
+         <dd>An examination of post-currency economic systems.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20131124T0927Z.html">&lsquo;Boolean-blindness&rsquo; is about types &ndash; 2013-11-24T09:27Z</a>
+         </dt>
+         <dd>&lsquo;Boolean-blindness&rsquo; is not really about booleans, it is about destructuring data into types, and hence the virtue of a good type system.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20130804T0939Z.html">Testing vs proof in software development &ndash; 2013-08-04T09:39Z</a>
+         </dt>
+         <dd>Is proof better than testing? On examination it seems they are not quite comparable, and the key issues are other things: inference and judgement. Development needs both. Perhaps ideally fused into &lsquo;inferential construction&rsquo;.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20130707T0900Z.html">Programming language docs structure &ndash; 2013-07-07T09:00Z</a>
+         </dt>
+         <dd>Some suggestions for documentation from learning several programming languages &ndash; along the lines of a quasi-formalised structure.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20130630T1038Z.html">The morality of persuasion &ndash; 2013-06-30T10:38Z</a>
+         </dt>
+         <dd>Is persuasion moral? Only, it seems, in a strictly limited sense. And that leads to an informational problem of how to know when it is.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20130609T0917Z.html">Rule-following and software development &ndash; 2013-06-09T09:17Z</a>
+         </dt>
+         <dd>&ldquo;This was our paradox: no course of action could be determined by a rule, because any course of action can be made out to accord with the rule.&rdquo; &ndash; Philosophical Investigations 201a.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20130203T1036Z.html">How to approach designing an economic system &ndash; 2013-02-03T10:36Z</a>
+         </dt>
+         <dd>De-focus from currency; orient with independent knowledge; imagine cellular automata; base on supply and demand; think in software; discretise, distribute.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20130127T1124Z.html">GITI &ndash; Electric guitar music text format &ndash; 2013-01-27T11:24Z</a>
+         </dt>
+         <dd>GITI is a new music text notation for electric guitar: a bit like a specialised kind of <i>abc</i> (another non-traditional notation)</dd>
+
+         <dt>
+            <a href="note-hxa7241-20130120T1053Z.html">Debt is a bad cooperative structure &ndash; 2013-01-20T10:53Z</a>
+         </dt>
+         <dd>When you look at debt as an abstract informational/cooperative structure you find it is a dysfunctional one. And a quick check for any rational moral basis turns up nothing either. Debt is unwise and we should stop doing it.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20130113T1107Z.html">SBNF &ndash; BNF in S-Exprs &ndash; 2013-01-13T11:07Z</a>
+         </dt>
+         <dd>S-Expressions seem particularly well-suited to BNF formulations, giving a simple, regular, and memorable format.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20130106T1019Z.html">Compensation for work is wrong &ndash; 2013-01-06T10:19Z</a>
+         </dt>
+         <dd>Compensation is a faulty notion; it does not actually happen, and indeed cannot happen. It is misguided as a basic concept of economic systems.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20121230T1123Z.html">Money definitions are teleological and tautological &ndash; 2012-12-30T11:23Z</a>
+         </dt>
+         <dd>The dominant features of thinking about money are teleology and tautology. This is bad both for understanding and coming up with new ideas. We should think of it more computationally.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120916T0956Z.html">Credit for info-goods &ndash; 2012-09-16T09:56Z</a>
+         </dt>
+         <dd>Info-goods should include proper credit/acknowledgement should they not? Maybe that default intention is archaic and narrow, and it is now generally better to decouple description and associate it by hash.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120909T0926Z.html">Your next project? Design a new economic system! &ndash; 2012-09-09T09:26Z</a>
+         </dt>
+         <dd>We are surprisingly close to complete economic revolution. And this is a very interesting thing to ponder and imagine from a software view. Does that seem crazy? The reasoning is, however, straightforward: 1, the economic system works on money; 2, money is really information; 3, information technology is revolutionary.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120901T1034Z.html">Evolving global software &ndash; 2012-09-01T10:34Z</a>
+         </dt>
+         <dd>How should we develop software globally? Is it possible to say what kind of basic process and features, what broad strategies, are preferable? Here are three suggestions.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120818T0924Z.html">On Pagel's 'Infinite Stupidity', and what new information is &ndash; 2012-08-18T09:24Z</a>
+         </dt>
+         <dd>The article &lsquo;Infinite Stupidity&rsquo; makes a novel and interesting point. But it does not quite seem to stand up, and examination of why begins to unravel what information is and where it comes from.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120708T0907Z.html">Names are wrong, tacit/point-free is right &ndash; 2012-07-08T09:07Z</a>
+         </dt>
+         <dd>In software, are names not a curiosity? They are like a mini embedded comment &ndash; nothing else is like that. But furthermore they seem structurally poor too. &lsquo;Tacit-programming&rsquo; is the remedy.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120624T1124Z.html">Marxist efficiency &ndash; 2012-06-24T11:24Z</a>
+         </dt>
+         <dd>Marx's famous slogan of communism, considered purely in itself, seems wholly consistent with the core of (neo-)classical economics, but leads to a much more general perspective.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120617T0942Z.html">Artificial intelligence and the future &ndash; 2012-06-17T09:42Z</a>
+         </dt>
+         <dd>Is strong AI not very far away now? That is not the right question.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120610T0929Z.html">The internet, Kickstarter, and the obsolescence of markets &ndash; 2012-06-10T09:29Z</a>
+         </dt>
+         <dd>How much is the idea of markets obsoleted by digital networks ?</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120513T1116Z.html">Why is information a string of digits? &ndash; 2012-05-13T11:16Z</a>
+         </dt>
+         <dd>The fundamental form of information seems to be a string of digits, e.g. DNA, text, bits. Why? This appears to be a peculiarly intriguing question. It is about something apparently very simple, yet it seems somehow profound.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120506T0907Z.html">Parsing wrongness and language value &ndash; 2012-05-06T09:07Z</a>
+         </dt>
+         <dd>Parsing is a poor choice of problem. Programming languages should help us see and help us move.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120429T1019Z.html">On VPRI STEPS &ndash; 2012-04-29T10:19Z</a>
+         </dt>
+         <dd>They seem to be producing a &lsquo;second-draft&rsquo; of current practice, and making some good abstractions, not a revolutionary general technique. Perhaps because <i>no</i> general revolutionary technique seems possible for programming as such.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120508T1121Z.html">Money as a cooperative mechanism &ndash; 2012-05-08T11:21Z</a>
+         </dt>
+         <dd>What is money? It is a mechanism that supports/induces a particular framework of cooperation. And it is outdated.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120122T1207Z.html">Comparing natural language and software &ndash; 2012-01-22T12:07Z</a>
+         </dt>
+         <dd>Natural language is very different to software, but what is similar? what makes them seem related? They seem to focus on abstractions of different character.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120115T1141Z.html">Living software and dead software &ndash; 2012-01-15T11:41Z</a>
+         </dt>
+         <dd>What kind of software do you really want to make?</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120108T1248Z.html">Software as thought &ndash; 2012-01-08T12:48Z</a>
+         </dt>
+         <dd>Chaitin's little quote about software is interesting but somehow seems not quite on target. So here is a new version, modified and expanded.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20120103T1008Z.html">A copyright economy is a &lsquo;waterfall&rsquo; economy &ndash; 2012-01-03T10:08Z</a>
+         </dt>
+         <dd>Copyright has deep intrinsic inefficiency and makes the economy like a weak software development process.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20111218T1151Z.html">Software's economic basics &ndash; 2011-12-18T11:51Z</a>
+         </dt>
+         <dd>Software is about: designing the right(-est) thing, and letting anyone create benefit from it.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20111204T1257Z.html">Why an information economy is not an IP economy &ndash; 2011-12-04T12:57Z</a>
+         </dt>
+         <dd>This is a prompt to think differently about information, IP, and their economic arrangement.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20111127T1147Z.html">A logical analysis of copyright orthodoxy &ndash; 2011-11-27T11:47Z</a>
+         </dt>
+         <dd>There is a kind of rhetorical trick in copyright theory. The orthodox model appears to give a rational solidity to copyright, but as an argument <i>for</i> it it is unsound, and proves nothing of what it appears to want to.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20111113T1241Z.html">Power, predictability, and regularity &ndash; 2011-11-13T12:41Z</a>
+         </dt>
+         <dd>At the deepest level, software seems to have an essential trade-off of power against predictability. And the problem there is not a matter of conformance but of clarity. That means perhaps the best we can do is design programming languages to have a kind of &lsquo;regularity&rsquo;.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110925T1006Z.html">Enduring software &ndash; 2011-09-25T10:06Z</a>
+         </dt>
+         <dd>Making &lsquo;enduring software&rsquo; looks more like a requirements/product-design problem than an engineering problem.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110918T1016Z.html">The insoluble pragmatism of types &ndash; 2011-09-18T10:16Z</a>
+         </dt>
+         <dd>What one might think of as the problem of type systems looks, in a deep sense, actually insoluble. A useful module cannot be completely specified.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110911T0948Z.html">What part of design <i>is</i> possible? &ndash; 2011-09-11T09:48Z</a>
+         </dt>
+         <dd>Two of the underlying skills possible in engineering design must be part of the grounding of programming languages.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110828T1006Z.html">&lsquo;Long Now&rsquo; of software? &ndash; 2011-08-28T10:06Z</a>
+         </dt>
+         <dd>Is it possible to have a software equivalent to the <a href="http://longnow.org/">&lsquo;Long Now&rsquo;</a> project? Can we imagine a software system that would last for 10000 years? (or even just 1000) This means both running and adapting/reusing &ndash; both of the two fundamental aspects of software.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110821T1132Z.html">The &lsquo;ideology&rsquo; of software engineering &ndash; 2011-08-21T11:32Z</a>
+         </dt>
+         <dd>The theoretical &lsquo;ideology&rsquo; of software engineering seems to be logical, mathematical &ndash; this is how we implicitly think of software, that is what computer science leads us toward. But is this a little misleading?</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110814T0944Z.html">Reconsidering a Scheme formatting convention &ndash; 2011-08-14T09:44Z</a>
+         </dt>
+         <dd>A hugely important matter of getting source-code <i>just right</i>.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110807T1113Z.html">The embarrassment of copyright policy &ndash; 2011-08-07T11:13Z</a>
+         </dt>
+         <dd>Simply acknowledging the facts, or lack of them, leaves copyright in a surprisingly troubling position.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110801T1044Z.html">What is metadata? &ndash; 2011-08-01T10:44Z</a>
+         </dt>
+         <dd>It is usually described as &lsquo;data about data&rsquo;. But there is a slightly different angle to see it from &ndash; not so much &lsquo;above&rsquo; but &lsquo;beside&rsquo;.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110717T0908Z.html">Defined rating systems, and Google +i &ndash; 2011-07-17T09:08Z</a>
+         </dt>
+         <dd>Rating systems &ndash; like up-voting buttons for news-blogs &ndash; have a problem: what do they really mean? They seem too vague. Rating probably ought to be more clear and articulated.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110710T0853Z.html">On Dijkstra on software's radical novelties &ndash; 2011-07-10T08:53Z</a>
+         </dt>
+         <dd>In <a href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html">&lsquo;On the cruelty of really teaching computing science&rsquo; EWD1036</a>, Dijkstra captures some deep truths of software &ndash; but seems to give them a somewhat gloomy cast. Software has radical novelties, but we should not see them in a negative way.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110704T1125Z.html">Distinguishing abstraction and change &ndash; 2011-07-04T11:25Z</a>
+         </dt>
+         <dd>Abstraction and change overlap in some way, and maybe it is worth thinking a little about what that means and how they are separate.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110627T0842Z.html">The aim of software engineering &ndash; 2011-06-27T08:42Z</a>
+         </dt>
+         <dd>What, as a discipline, is software engineering trying to do? &ndash; One could begin to answer that its purpose is to be an optimal intermediary between requirement and material: a tool that goes where you point it, and shows you where it is pointing.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110619T0909Z.html">A fault in blogs &ndash; 2011-06-19T09:09Z</a>
+         </dt>
+         <dd>We ought not to be using blogs so much.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110612T0855Z.html">The second basic question of software engineering &ndash; 2011-06-12T08:55Z</a>
+         </dt>
+         <dd>Saying we want to improve how software engineering is done seems OK, but can that be clarified? We understand what kinds of computation are efficient by formalising the idea of what computation is. We can perhaps understand what development is efficient by formalising what development is.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110605T0723Z.html">The functional/representational division in software &ndash; 2011-06-05T07:23Z</a>
+         </dt>
+         <dd>The division of software engineering into &lsquo;functional&rsquo; and &lsquo;representational&rsquo; aspects/structures can be expressed with a simple (if a little archaic) metaphor, and backed with some basic theoretical definition.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110529T0714Z.html">A comment on: &lsquo;The Carrying-Cost of Code: Taking Lean Seriously&rsquo; &ndash; 2011-05-29T07:14Z</a>
+         </dt>
+         <dd><a href="http://michaelfeathers.typepad.com/michael_feathers_blog/2011/05/the-carrying-cost-of-code-taking-lean-seriously.html">The original article</a> seems, on analysis, contradictory to agile. But maybe some resolution is possible, by building more general knowledge from more general investigation.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110522T0935Z.html">Software engineering and philosophy &ndash; 2011-05-22T09:35Z</a>
+         </dt>
+         <dd>Software engineering and philosophy are in a sense (with a little imagination) twin subjects.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110515T0907Z.html">In Lisp, should lists be replaced with trees? &ndash; 2011-05-15T09:07Z</a>
+         </dt>
+         <dd>Conses/pairs/lists are rather low-level when you think about it. Would we not appreciate something just a little more powerful, a little more <i>modern</i>? A tree primitive is here casually and heretically proposed as a better alternative.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110508T0913Z.html">Machine philosophy rudiments &ndash; 2011-05-08T09:13Z</a>
+         </dt>
+         <dd>What <i>is</i> a machine? It is not a sort of complex mechanism. It is not a physical object. Or rather, it is not just those, or essentially those.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110501T0935Z.html">IT-farming (or not) &ndash; 2011-05-01T09:35Z</a>
+         </dt>
+         <dd>Why do IT people like to use the word &lsquo;farm&rsquo;? &ndash; e.g. &lsquo;server-farm&rsquo;, &lsquo;render-farm&rsquo;. It does not really make sense. What they really mean is <i>factory</i>.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110424T0826Z.html">Considering the limits of DRY(&lsquo;dont repeat yourself&rsquo;) / factoring &ndash; 2011-04-24T08:26Z</a>
+         </dt>
+         <dd>Factoring is good, but it has to be limited by what you really know. Otherwise adding more abstractions obstructs change more than necessary. But it is not really a trade-off: getting one aspect right makes the other right too.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110417T0913Z.html">Surgical registries for software development? &ndash; 2011-04-17T09:13Z</a>
+         </dt>
+         <dd>Surgical practice has developed an alternative to scientific trials to build knowledge. Perhaps this approach could benefit software development.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110410T0910Z.html">Definition of &lsquo;abstract&rsquo; &ndash; 2011-04-10T09:10Z</a>
+         </dt>
+         <dd>Abstraction is definable in a nice discrete way. And abstraction is a fundamental law of reality! maybe.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110403T1029Z.html">Licenses are not polite agreements &ndash; 2011-04-03T10:29Z</a>
+         </dt>
+         <dd>There is a quasi-meme-let around that proposes that software shrink-wrap copy-restriction licenses etc. are just honourable agreements. This is irritatingly spurious, and ought to be exposed. Here is a rebuttal &ndash; or inoculation.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110327T1046Z.html">Stone cathedrals, structure-preserving-transformations, and software development &ndash; 2011-03-27T10:46Z</a>
+         </dt>
+         <dd>This note stems from two sources: <a href="http://www.bbc.co.uk/programmes/b00b09rb">&lsquo;How To Build A Cathedral&rsquo; (BBC; 2008)</a> &ndash; a TV documentary; and &lsquo;structure-preserving-transformation&rsquo; &ndash; a phrase from Christopher Alexander. And it leads to a seeming weakness in sofware development &ndash; how we systemetise &lsquo;construction&rsquo;.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110320T1027Z.html">Dependent types are about consistency &ndash; 2011-03-20T10:27Z</a>
+         </dt>
+         <dd>Dependent types allow constraints to be defined with (almost) full algorithmic richness. Thinking about what this is doing illustrates the distinction between &lsquo;consistency&rsquo; and &lsquo;verification&rsquo;.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110314T2011Z.html">Software as web &ndash; 2011-03-14T20:11Z</a>
+         </dt>
+         <dd><a href="http://axisofeval.blogspot.com/2011/02/browsers-will-let-pls-break-free-from.html">wbcvsn-expansion:http://axisofeval.blogspot.com/2011/02/browsers-will-let-pls-break-free-from.html</a> seems right, and worth considering more, on something of a tangent.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110310T2108Z.html">A small trick to Xor &ndash; 2011-03-10T21:08Z</a>
+         </dt>
+         <dd>An arithmetic way to perform exclusive-or &ndash; something that might have a small use somewhere.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110227T0833Z.html">Typing and visibility &ndash; 2011-02-27T08:33Z</a>
+         </dt>
+         <dd>Strong typing is better than visibility, but neither is quite what is wanted.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110219T1113Z.html">Wittgenstein for programmers (part 1) &ndash; 2011-02-19T11:13Z</a>
+         </dt>
+         <dd>What does an early 20th century philosopher have to say about software engineering?</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110213T0941Z.html">Imagining &lsquo;dynamic macros&rsquo; for Scheme &ndash; 2011-02-13T09:41Z</a>
+         </dt>
+         <dd>It seems possible to merge macros with lambdas, making a smoother single language feature. (At least, as far as a quick casual pondering will take you.)</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110206T2236Z.html">Reflections on using Scheme &ndash; 2011-02-06T22:36Z</a>
+         </dt>
+         <dd>The Scheme (R5RS) translation of the MiniLight renderer has just been finished (the latest of 12 translations, 8 by the author). So now is a good time for some reflections on the language.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110130T0917Z.html">Testing: thoughts on improving it &ndash; 2011-01-30T09:17Z</a>
+         </dt>
+         <dd>What does testing really do? And how can it be improved? Thinking beyond the surface seems to lead away from testing and toward automation and ergonomics.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110123T1031Z.html">Corporation vs. internet &ndash; 2011-01-23T10:31Z</a>
+         </dt>
+         <dd>(It is not really just Facebook, it is a general problem.)</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110116T0949Z.html">OO modelling and the real-world &ndash; 2011-01-16T09:49Z</a>
+         </dt>
+         <dd>A philosophical answer to a post at <a href="http://lambda-the-ultimate.org/node/3265">Lambda The Ultimate (wbcvsn-answer:http://lambda-the-ultimate.org/node/3265)</a> (pointed out by <a href="http://axisofeval.blogspot.com/2010/11/why-are-objects-so-unintuitive.html">axisofeval</a>) which asks: &ldquo;Why are objects that we use in programming so vastly different from real-world objects?&rdquo;</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110109T1023Z.html">Programming is probabilistic &ndash; 2011-01-09T10:23Z</a>
+         </dt>
+         <dd>In common programming, we use abstractions in a particular kind of probabilistic way. It is normally in the background, but is fairly well-defined, and deserves more examination.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20110102T0955Z.html">Normalised comment rating &ndash; 2011-01-02T09:55Z</a>
+         </dt>
+         <dd>News-&lsquo;forum&rsquo; sites, like Hacker News, seem to rate comments just by counting votes: is that sophisticated enough as a measure?</dd>
+
+         <dt>
+            <a href="note-hxa7241-20101227T1008Z.html">Code style and patterns &ndash; 2010-12-27T10:08Z</a>
+         </dt>
+         <dd>Code style is open to the same criticism as software patterns &ndash; they are indicative of a lack &ndash; but they may also be unavoidable</dd>
+
+         <dt>
+            <a href="note-hxa7241-20101218T2158Z.html">A comment adding to Dijkstra on natural language programming &ndash; 2010-12-18T21:58Z</a>
+         </dt>
+         <dd>To add to Dijkstra's note &lsquo;On the foolishness of &ldquo;natural language programming&rdquo;&rsquo;: language and program are not even properly comparable</dd>
+
+         <dt>
+            <a href="note-hxa7241-20101211T1331Z.html">The attribution ingredient in IP justification &ndash; 2010-12-11T13:31Z</a>
+         </dt>
+         <dd>Mere claim of authorship is insufficient for ownership rights</dd>
+
+         <dt>
+            <a href="note-hxa7241-20101204T1716Z.html">Implicit code &ndash; what makes it good or bad &ndash; 2010-12-04T17:16Z</a>
+         </dt>
+         <dd>To make a software structure implicit you should adhere to a clear abstraction &ndash; then being implicit is good and not bad</dd>
+
+         <dt>
+            <a href="note-hxa7241-20101124T1927Z.html">Should there be hard limits on program part sizes? &ndash; 2010-11-24T19:27Z</a>
+         </dt>
+         <dd>There is cause to, based on complexity, but a better solution seems to be to adopt a different structuring &ndash; one with different scaling behaviour</dd>
+
+         <dt>
+            <a href="note-hxa7241-20101116T1814Z.html">&lsquo;Incentive&rsquo; in intellectual monopoly &ndash; 2010-11-16T18:14Z</a>
+         </dt>
+         <dd>IP does not give incentive, but a fix for market inadequacy</dd>
+
+         <dt>
+            <a href="note-hxa7241-20101109T2102Z.html">Designed software will never be substantially higher quality &ndash; 2010-11-09T21:02Z</a>
+         </dt>
+         <dd>There is a myth in software, that if we could somehow find the magic knowledge, all our software could be built to some future ideal. This cannot be right</dd>
+
+         <dt>
+            <a href="note-hxa7241-20101101T1947Z.html">What is a 'strong' or 'weak' standard? &ndash; 2010-11-01T19:47Z</a>
+         </dt>
+         <dd>Here is one possible measure of standards, and abstractions generally, by seeing the gaps in them</dd>
+
+         <dt>
+            <a href="note-hxa7241-20101026T2052Z.html">The big fault in OO &ndash; 2010-10-26T20:52Z</a>
+         </dt>
+         <dd>OO's central abstraction &ndash; the class &ndash; is too weakly, loosely defined.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20101006T2011Z.html">The software engineering equation &ndash; 2010-10-06T20:11Z</a>
+         </dt>
+         <dd>If there were a single equation summarising all software development and use &ndash; a &lsquo;law of infodynamics&rsquo; &ndash; what would it be like? &ndash; Here is a quick imagination of one.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100811T2247Z.html">A conversational convention for the web &ndash; 2010-08-11T22:47Z</a>
+         </dt>
+         <dd>A simple ad-hoc &lsquo;semanticised web&rsquo; idea for making structures of related texts.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100802T2252Z.html">Why economists like copyright; but shouldn't so much now &ndash; 2010-08-02T22:52Z</a>
+         </dt>
+         <dd>A perspective on the basic connections of copyright, industry, and internet.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100720T1842Z.html">A Comment On: &lsquo;Why writing software is not like engineering&rsquo; &ndash; 2010-07-20T18:42Z</a>
+         </dt>
+         <dd>Seeing the kernel of engineering in software development.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100713T2123Z.html">Alternatives To Design-Construction-Maintenance &ndash; 2010-07-13T21:23Z</a>
+         </dt>
+         <dd>A possible model of development based on software's own particular &lsquo;material&rsquo;.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100706T2216Z.html">A Core Of Programming &ndash; 2010-07-06T22:16Z</a>
+         </dt>
+         <dd>A few key structures that most programming languages share.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100425T2149Z.html">Copyright &lsquo;Losses&rsquo; And Public Gains &ndash; 2010-04-25T21:49Z</a>
+         </dt>
+         <dd>How a common corporate message of copyright and the internet is the complete upside-down of truth.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100420T2046Z.html">The &lsquo;Important First&rsquo; naming rule for software things &ndash; 2010-04-20T20:46Z</a>
+         </dt>
+         <dd>A small but valuable rule for naming things, that seems less considered than perhaps it ought to be.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100330T1917Z.html">&lsquo;Getting Things Done&rsquo; and software architecture &ndash; 2010-03-30T19:17Z</a>
+         </dt>
+         <dd>There is an interesting characteristic of <a href="http://www.davidco.com/what_is_gtd.php">&lsquo;Getting Things Done&rsquo;</a>: it seems algorithmic, computational.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100317T2104Z.html">Future software engineering's three bases &ndash; 2010-03-17T21:04Z</a>
+         </dt>
+         <dd>The future of software engineering is in combining less deliberate design with more automated generation and evolution.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100313T1725.html">Design should be backward-looking &ndash; 2010-03-13T17:25</a>
+         </dt>
+         <dd>Good engineering design rests essentially on good knowledge &ndash; not prediction.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100302T2157.html">There is only one program &ndash; 2010-03-02T21:57</a>
+         </dt>
+         <dd>Software tends toward a continual global ecosystem.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100221T1100.html">The simple rule of why copyright is now broken &ndash; 2010-02-21T11:00</a>
+         </dt>
+         <dd>Internet benefit is inversely related to copyright strength.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100215T2141.html">An outline map of software development &ndash; 2010-02-15T21:41</a>
+         </dt>
+         <dd>A way of dividing up and placing the parts of software development, in terms of other established fields.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100209T2001.html">Keeping your new ideas secret is probably wrong &ndash; 2010-02-09T20:01</a>
+         </dt>
+         <dd>A simple rational demonstration.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100201T2038.html">The illusion in up-front design &ndash; 2010-02-01T20:38</a>
+         </dt>
+         <dd>There is an illusion in the idea of up-front design in software (that is, code arrangement, not algorithm), that makes it seem more plausible than it really is.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100122T2023.html">The essential weakness at the core of Google search &ndash; 2010-01-22T20:23</a>
+         </dt>
+         <dd>. . . and a related problem in user-moderated comment systems.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20100113T1917.html">Paying For Information, Asymmetrically &ndash; 2010-01-13T19:17</a>
+         </dt>
+         <dd>The most reasonable way to pay for information is right in front of us.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20091116T1912.html">Software Engineering Materialism &ndash; 2009-11-16T19:12</a>
+         </dt>
+         <dd>It is good to think of software engineering as <i>&lsquo;the design of structures in a special abstract material&rsquo;</i>.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20091110T2154.html">The morality of copying: a simple Kantian evaluation &ndash; 2009-11-10T21:54</a>
+         </dt>
+         <dd>A simple, solid argument for the moral goodness of copying.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20091025T2123.html">Vitruvius - 'Firmitas, Utilitas, Venustas' - In Software &ndash; 2009-10-25T21:23</a>
+         </dt>
+         <dd>Vitruvius' ancient principles of architecture can be used to view software.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20091019T2052.html">Genome Versus Programming Language &ndash; 2009-10-19T20:52</a>
+         </dt>
+         <dd>Genomes have an extra means of code expression/expansion compared to artificial software.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090831T2006.html">Genomes As Software &ndash; 2009-08-31T20:06</a>
+         </dt>
+         <dd>A genome is a digital object, and the way it works as a system may be significantly like software.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090806T1142.html">A Comment On &lsquo;A Conversation with Alan Kay&rsquo; &ndash; 2009-08-06T11:42</a>
+         </dt>
+         <dd>An observation on an interesting software development analogy.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090523T1024.html">&lsquo;Software Design&rsquo; Is Not Design &ndash; 2009-05-23T10:24</a>
+         </dt>
+         <dd>Software engineering should not be obsessed with representation.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090512T1748.html">The Missing Principle Of Programming Languages &ndash; 2009-05-12T17:48</a>
+         </dt>
+         <dd>Languages should support data/computation mechanics (mostly known as performance evaluation/analysis).</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090505T1132.html">The Third Principle Of Programming Languages &ndash; 2009-05-05T11:32</a>
+         </dt>
+         <dd>A main driver of language design must be the extended design process.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090426T2136.html">Better HTML fragment referencing, and RDFa &ndash; 2009-04-26T21:36</a>
+         </dt>
+         <dd>A look at the relation of HTML fragment identifiers and the joining of the GGG with the WWW.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090419T1043.html">Why Data-&lsquo;Piracy&rsquo; Is Morally Good &ndash; 2009-04-19T10:43</a>
+         </dt>
+         <dd>An ethical way to understand and deal with intellectual monopoly and data-'piracy'.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090410T1636.html">Philosophy Of Software Development &ndash; 2009-04-10T16:36</a>
+         </dt>
+         <dd>A proposal for a philosophy of software development.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090407T1228.html">Structured Object-Oriented Programming &ndash; 2009-04-07T12:28</a>
+         </dt>
+         <dd>Inconclusive consideration of Structured Programming and Object-Orientation.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090325T1709.html">Determinate Knowledge In Software Engineering &ndash; 2009-03-25T17:09</a>
+         </dt>
+         <dd>A brief overview of software engineering's principal parts.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090314T1738.html">The Problem With More Web JavaScript &ndash; 2009-03-14T17:38</a>
+         </dt>
+         <dd>An extra abstraction might be now needed for web-app engineering.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090226T1114.html">Logical Structure And Software Architecture &ndash; 2009-02-26T11:14</a>
+         </dt>
+         <dd>A brief adumbration of software architecture and its underlying realm.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090219T1518.html">Software &lsquo;Mass-Production&rsquo; &ndash; 2009-02-19T15:18</a>
+         </dt>
+         <dd>A quick formulation of mass-production for software.</dd>
+
+         <dt>
+            <a href="note-hxa7241-20090218T0934.html">Software Development In A Nutshell &ndash; 2009-02-18T09:34</a>
+         </dt>
+         <dd>An attempt at a minimal 'well-founded' or 'historically-informed' conception of software development.</dd>
+      </dl>
+   </section>
+
+</section>
+
+      </article>
+   </main>
 
 </body>
 
