@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-GB">
 
    <title>HXA7241 latest</title>
-   <updated>2016-10-30T00:00:00Z</updated>
+   <updated>2016-12-11T00:00:00Z</updated>
    <id>http://www.hxa.name/hxa7241-latest.xml</id>
 
    <author>
@@ -18,6 +18,36 @@
 
 
    <entry>
+      <title>Why blockchain is uninteresting [note]</title>
+      <updated>2016-12-11T11:10:00Z</updated>
+      <id>tag:hxa.name,2016:log/2016-12-11T11:10:00Z</id>
+      <author>
+         <name>Harrison Ainsworth / HXA7241</name>
+      </author>
+      <rights>Creative Commons BY-SA 3.0 License</rights>
+      <summary>Bitcoin is like a steam-powered horseshoe, or an electronic typewriter: it is a contrafunctory overlap of two different eras. It distracts from inventing new info-tech and solving manifest problems.</summary>
+      <link rel="alternate" href="http://www.hxa.name/notes/note-hxa7241-20161211T1110Z.html"/>
+      <content type="text">
+Bitcoin/blockchain/etc is new tech stuck in an old mindset facing old problems -- digitising money and contract. In an informational world we should take the opportunity to rethink the forms of our interactions. But nothing in the elements of blockchain fosters new coherent/collective behaviour, because blockchain is at base individual-focused.
+
+What are crypto-ledgers fundamentally? They are about unique/inimitable data-source identity (that is what is produced by their implementation: virtually-unique token + one-way function). This makes an instant, very simple consensus: if there is only one of something it is impossible, objectively, for it not to be agreed on. (What is agreement? Not merely sameness: it must have some objective anchor, or how do you know if you *are* agreeing?). Crypto-ledgers do not create new kinds of consensus, only a new form of record of any consensus. They instigate no new patterns.
+
+The main info problem of cooperation is creating new kinds of rules/patterns -- constraints on action (-- and today, automations of them). Yet there seems nothing in crypto-ledgers that automates finding of, or induces following of, new common/shared structures. Because they perfom no abstraction: no gathering or filtering or merging of info; nor do they embody any new single fixed such abstraction. To support a shared structure, you need to coalesce info, and crypto-ledgers do not.
+
+Reinventing money and contracts is socio-technological regress, it has all been done long ago. And the claims made of its 'decentralisation'? -- they are only a confusion of implementation with usage. The largest force of centralisation in practice is money and property, because property and money work by concentrating control in human decision. Bitcoin/blockchain etc is just a reinforcement, a digital re-invigoration, of all that -- making it run on distributed computers is immaterial to the consequence at large.
+
+So put aside crypto-ledger stuff ... **How should we shape our local transactions with more kinds of global information? Make tech for *that* **!
+
+--
+
+Related:
+* "What is hard in economic calculation?"; HXA7241; 2016 / note. http://www.hxa.name/notes/note-hxa7241-20161030T1229Z.html
+* "A brief argument against price signals"; HXA7241; 2016 / note. http://www.hxa.name/notes/note-hxa7241-20160717T0915Z.html
+* "The internet is an engine of centralisation"; HXA7241; 2015 / note. http://www.hxa.name/notes/note-hxa7241-20150920T1002Z.html
+      </content>
+   </entry>
+
+   <entry>
       <title>What is hard in economic calculation?</title>
       <updated>2016-10-30T12:29:00Z</updated>
       <id>tag:hxa.name,2016:log/2016-10-30T12:29:00Z</id>
@@ -27,45 +57,6 @@
       <rights>Creative Commons BY-SA 3.0 License</rights>
       <summary>The reason a computationally planned, or rather assisted, economy is currently infeasible is because we lack sufficient AI capability for general 'similarity-finding' (similizesis). It is not, as commonly opined, that the required calculation or communication is intractable.</summary>
       <link rel="alternate" href="http://www.hxa.name/notes/note-hxa7241-20161030T1229Z.html"/>
-      <content type="text">
-Periodically, comments revisit the question of 'could computation (now) automate, and replace, markets?'. And the reply is always reflexively "Hayek! -- 'The use of knowledge in society'! -- centralisation/etc was proven impossible long ago". ... But this reply is wrong, in an oblique way, and the inadequacy of the arguments is easy to spot.
-
-The market -- the one we see currently working -- itself computes the distribution of goods. If such computation is intractable, the market could not do it. And if any approximation that is tractable must be inadequate, then the market itself must be too. In so far as the market is working as a 'machine' -- and that is the only way we can understand it -- it is equal in power to any other general computer: what it can do, any computer can (and vice-versa). So the problem cannot, we are forced to conclude, be one of computational complexity.
-
-The market also gathers all the data it needs, as well as performing its computation. And it does so effectively by coins and notes moving between pockets. Are we to say that this network-computation infrastructure is better than the internet plus computers? -- that money in pockets is more communicationally/computationally powerful than actual networked computers -- smartphones -- in pockets? Money is no better a data-bearing medium than bits and electromagnetism. So the problem cannot, we are once more forced to conclude, be one of communicational difficulty.
-
-The traditional 'informational', Hayekian, criticism of non-market alternatives is, on very light scrutiny, obviously faulty. So what is wrong? If computational automation to replace markets is not feasible, why not? What is the real reason? Or is there a slightly different question with a more plausible answer?.
-
-----
-
-The crux of 'economic calculation' is not (or no longer) data-gathering or computational complexity, it is what division to make between automation and delegation to people. It is about which problem it consigns to algorithm, and what form of questions and answers it poses to people.
-
-The principle of operation of markets is taken to be prices, but this is in truth more subsidiary to their larger process. Markets 'externalise' the main part of their computation to people's decisions. The market's computation is really largely human's -- *they* are doing the hard work.
-
-In an economy, the hard work is similarity-finding.
-
-----
-
-Markets are coordinative: they communicate each individual's behaviour so as to shape everyone else's -- prices diffuse through the system applying pressure to each individual's behaviour from all others. This is the market's part in a joint process.
-
-In response, individuals need to be able to modify their actions, and the plans behind them. This is the axis of the whole. They cannot merely change ad-hoc, randomly, for then their whole behaviour would become random &ndash; they must have significant, complex, perhaps rational, direction. The least such capability individuals need to adjust something -- coherently -- is this: to see and find similarity in any alternative options available. (We can name this similarity-finding 'similizesis' (noun), from: 'Similizetic' -- adj.: similarity-seeking (algorithm) -- made from Latin and Greek: *similis* 'like' + *zeteo* 'seek'.).
-
-Prices induce balancing of resource usage at large scale, but something else is needed for group cooperation: coherent action, aligning on common structure -- and that is what similizesis induces between individuals.
-
-This is the substantial work that markets require and delegate to humans, and that we currently have no automation for. But though it seems, on one hand, to be a demanding problem for software engineering, on the other hand, it seems not deeply hard. The most recent growth in AI in broadly recognition tasks seems adjacently related.
-
-----
-
-Prompted most recently by:
-* "Could Computers Make Communism Work?"; Hall; 2016 / 1500words / article.
-   * http://jamiehall.cc/post/could-computers-make-communism-work
-
-Major reference:
-* "In Soviet Union, Optimization Problem Solves You"; Shalizi; 2012 / 7900words / article.
-   * http://bactra.org/weblog/918.html
-   * http://crookedtimber.org/2012/05/30/in-soviet-union-optimization-problem-solves-you/
-   (This has only a hint of similizesis: *"(IIA) and (IIB) require us to disaggregate all the goods (and services) of the economy to the point where everything inside each category is substitutable."*).
-      </content>
    </entry>
 
    <entry>
@@ -90,18 +81,6 @@ Major reference:
       <rights>Creative Commons BY-SA 3.0 License</rights>
       <summary>Cooperative systems must be ambivalent, therefore they must be multi-dimensional. Prices are only unidimensional, therefore price-systems alone must be inadequate.</summary>
       <link rel="alternate" href="http://www.hxa.name/notes/note-hxa7241-20160717T0915Z.html"/>
-   </entry>
-
-   <entry>
-      <title>Reusability By Orthogonalysis [article]</title>
-      <updated>2016-04-26T10:28:00Z</updated>
-      <id>tag:hxa.name,2016:log/2016-04-26T10:28:00Z</id>
-      <author>
-         <name>Harrison Ainsworth / HXA7241</name>
-      </author>
-      <rights>Creative Commons BY-SA 4.0 License</rights>
-      <summary>To make software reusable, divide it into orthogonal facilities -- because that makes available maximal functionality with minimal dependencies.</summary>
-      <link rel="alternate" href="http://www.hxa.name/articles/content/Reusability-By-Orthogonalysis_hxa7241_2016.html"/>
    </entry>
 
 </feed>
