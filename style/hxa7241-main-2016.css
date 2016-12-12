@@ -1,8 +1,8 @@
-/* HXA7241 website style-sheet 'textographic' v1 - 2016-10-29T15:09Z */
+/* HXA7241 website style-sheet 'textographic' v1 - 2016-12-12T11:34Z */
 
 
 /*
- 
+
 Contents
 --------
 
@@ -48,12 +48,12 @@ body {
 /*-- basics --*/
 
 img {
-   border:            0 none;
+   border:               0 none;
 }
 
 sup {
-   font-size:         0.8em;
-   line-height:       0.5em;
+   font-size:            0.8em;
+   line-height:          0.5em;
 }
 
 p {
@@ -62,17 +62,18 @@ p {
 }
 
 pre {
-   background-color: rgb(232,230,228);
-   padding:          1em 0.6em 1em 0.6em;
-   font-family:      monospace;
-   font-size:        0.9em;
-   line-height:      1.3em;
+   background-color:     rgb(232,230,228);
+   margin:               1em 0em 1em 0em;
+   padding:              1em;
+   font-family:          monospace;
+   font-size:            0.9em;
+   line-height:          1.3em;
 }
 
-.comment {
+/*.comment {
    font-style:       italic;
    border-top:       0.2em solid rgb(232,230,228);
-}
+}*/
 
 
 /*-- links --*/
@@ -103,15 +104,15 @@ a:active {
 
 a:link img,
 a:visited img {
-   border:           0.1em solid rgb(250,250,250);
+   border:               0.1em solid rgb(250,250,250);
 }
 
 a:hover img {
-   border:           0.1em solid gray;
+   border:               0.1em solid gray;
 }
 
 a:active img {
-   border:           0.1em solid rgb(72,69,69);
+   border:               0.1em solid rgb(72,69,69);
 }
 
 
@@ -119,44 +120,42 @@ a:active img {
 
 ul, ol {
    list-style-position:  inside;
-   margin:           1em 0em 1em 0em;
-   padding:          0em 0.5em 0em 0.5em;
+   margin:               1em 0em 1em 0em;
+   padding:              0em;
    font-size:            1em;
 }
 
-ul ul, ul ol, ol ul, ol ol, dl ul, dl ol {
+/*ul ul, ul ol, ol ul, ol ol, dl ul, dl ol {
    margin:           0.25em 2em 0.25em 2em;
-}
+}*/
 
 ul {
-   list-style-type:  square;
+   list-style-type:      square;
 }
 
 li {
-   margin-top:       0.25em;
-   margin-bottom:    0.25em;
+   margin:               0.25em 0em 0.25em 0em;
 }
 
 dl {
-   padding:          0em;
+   padding:              0em;
 }
 
 dt {
-   font-weight:      bold;
-   /*clear:            left;*/
+   font-weight:          bold;
+   /*clear:                left;*/
 }
 
 dd {
-   margin-left:      0em;
-   margin-bottom:    1em;
+   margin:               0em 0em 1em 0em;
 }
 
 dt img {
-   margin-right:     1em;
-   float:            left;
+   margin-right:         1em;
+   float:                left;
 }
 
-dl.compact {
+/*dl.compact {
    padding-left:     2em;
 }
 
@@ -168,28 +167,34 @@ dl.compact dt {
 dl.compact dd {
    margin-top:       0.25em;
    margin-bottom:    0.25em;
-}
+}*/
 
 .plainlist {
-   list-style-type:  none;
-   margin:           1em 2em 1em 2em;
+   list-style-type:      none;
+   margin:               1em 2em 1em 2em;
 }
 
 
 /*-- tables --*/
 
 table {
-   margin:           1em 0em 1em 0em;
-   font-size:        1em;
-   line-height:      1.4em;
+   margin:               1em 0em 1em 0em;
+   font-size:            1em;
+   line-height:          1.4em;
 }
 
+table th,
 table td {
-   padding-right:    1em;
-   vertical-align:   top;
+   vertical-align:       top;
+   text-align:           left;
+   padding-right:        1em;
 }
 
-.tableterm {
+table th {
+   padding-bottom:       0.5em;
+}
+
+/*.tableterm {
    font-weight:      bold;
    padding-right:    1.5em;
 }
@@ -201,22 +206,17 @@ table td {
 .tablecomment {
    font-style:       italic;
    padding-left:     1.5em;
-}
-
-.producticon {
-   margin-right:     2em;
-}
+}*/
 
 .thumbcaption {
-   width:            100px;  /*6.2em;*/
-   margin-top:       0em;
+   width:                100px;  /*6.2em;*/
 }
 
 /*-- other --*/
 
-img.clock-small {
+/*img.clock-small {
    height:           0.8em;
-}
+}*/
 
 
 
@@ -412,7 +412,6 @@ table.artefact-menu ul {
    background-color:     rgb(232,230,228);
    font-size:            1em;
    line-height:          1.4em;
-   margin-bottom:        0em;
    padding:              0.5em;
 }
 
@@ -429,13 +428,6 @@ table.artefact-menu ul {
 
 
 /*---- page-specific ----*/
-
-/*#hxa7241-home .plainlist {
-   list-style-position:  inside;
-   list-style-type:      square;
-   margin:               1em 0em 1em 0em;
-   padding:              0em;
-}*/
 
 html.hxa7241-writings body {
    border-left:          rgb(160,80,80) solid 0.8em;
