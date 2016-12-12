@@ -1,630 +1,575 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html id="hxa7241-minilight" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en-GB" id="hxa7241-minilight" class="hxa7241-software">
 
 <head>
-   <title>&lt; H X A 7 2 4 1 &gt; : MiniLight minimal global illumination renderer</title>
+   <title>&lt; H X A 7 2 4 1 &gt; : minilight</title>
+   <meta charset="UTF-8" />
 
-   <meta name="keywords" content="graphics, 3D, renderer, minimal, global illumination, physically-based, monte-carlo, ray tracing, Mac, Linux, Windows, C, C++, OCaml, Scheme, Scala, Lua, Python, Ruby, open-source" />
-   <meta name="description" content="A minimal global illumination renderer. Open-source C, C++, OCaml, Scheme, Scala, Lua, Python, and Ruby for Mac, Linux, and Windows." />
-
-   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
-   <link rel="shortcut icon" type="image/x-icon" href="minilight.ico" />
-
-   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
-
-   <style type="text/css">
-      a img.plainimg
-      {
-         border:           0 none;
-      }
-   </style>
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main-2016.css" />
 </head>
-
 
 <body>
 
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-596081-1";
-urchinTracker();
-</script>
+   <header id="top-head">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241-logo-h.svg" alt="HXA7241" /></a></h1>
+      <div id="sub-head"><a href="../#software">software</a></div>
+      <div id="subsub-head">various software projects</div>
+   </header>
 
-<div class="outer">
+   <main>
+      <article class="artefact">
 
+<header class="artefact-head">
+<pre><code>"artefact-metadata-hxa7241-www": {
+  "title": "Minilight",
+  "author": "Harrison Ainsworth",
+  "date": "2013-05-04",
+  "id": "urn:uuid:ED2B5718-E341-4829-AACB-5A71FC101075",
+  "type": "article",
+  "subtype": "text/html",
+  "wordcount": 2218,
+  "hashsecure": "sha256:d00bd0d860c02ccc<wbr/>fec61ace720f4766<wbr/>82e6f8ec8cbe3a0c<wbr/>31ab84008e1d54bc",
+  "location": "http://www.hxa.name/minilight/"
+}</code></pre>
+</header>
 
-<div class="upper">
-   <div class="title">
-      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
-   </div>
-</div>
+<!-- hash next element -->
+<section class="artefact-body">
+   <h2>Minilight</h2>
+   <p class="artefact-summary">a minimal global illumination renderer</p>
 
-
-<div class="side">
-   <ul class="mainmenu">
-      <li>
-         <a href="../" title="home" accesskey="h">HOME</a>
-      </li>
-   </ul>
-   <ul class="mainmenu">
-      <li>
-         <a href="../software/" title="various software projects">SOFTWARE</a>
-         <ul class="mainmenu">
-            <li>
-               <a href="../rendering/" title="some rendering-related development projects">RENDERING</a>
-               <ul class="mainmenu">
-                  <li>
-                     <span class="current" title="this page">MINILIGHT</span>
-                  </li>
-               </ul>
-            </li>
-         </ul>
-      </li>
-   </ul>
-   <ul class="mainmenu">
-      <li>
-         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
-      </li>
-      <li>
-         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
-      </li>
-   </ul>
-</div>
-
-
-<div class="middle">
-<div class="picture">
-   <img src="minilight-picture.jpg" alt="four Cornell Boxes at different times of day" />
-</div>
-
-<h2>MINILIGHT</h2>
-<div class="h2subheading">a minimal global illumination renderer</div>
-
-<table class="pagemenu" border="0" cellpadding="0" frame="void" rules="none" summary="menu of page sections">
-   <tr valign="top">
-      <td>
-         <ul>
-            <li><a href="#desc">description</a></li>
-            <li><a href="#images">images</a></li>
-            <li><a href="#comparison">comparison</a></li>
-            <li><a href="#algorithm">algorithm</a></li>
-            <li><a href="#pseudocode">pseudocode</a></li>
-            <li><a href="#downloads">downloads</a></li>
-            <li><a href="#contribution">contribution</a></li>
-         </ul>
-      </td>
-   </tr>
-</table>
-
-
-<div class="content">
-
-<div class="section" id="desc">
-   <h3>description</h3>
-
-   <p>MiniLight is a <b>minimal</b> global illumination renderer. It is primarily an exercise in simplicity. But that makes it a good base and benchmark (in some sense) for development and experimentation. And it just might be the <i>neatest</i> renderer around (on average, about 650 lines). There are translations into several programming languages.</p>
-   
-   <p><i>Someone asked me how to develop a renderer in three months. It seemed not nearly enough time. But then I began to think how small such a program could be, whilst still being a complete physically based simulation with a clear, well-formed design. (A somewhat different aim from the &lsquo;Minimal Ray Tracer Programming Contest&rsquo; of 1987.) I couldn't resist an attempt.</i></p>
-
-   <p>It is a <b>command-line</b> application. It reads a simple text model file and writes a <a href="http://netpbm.sourceforge.net/doc/ppm.html">PPM</a> image file. Supported platforms include <b>Mac</b> <img src="../icons1/mac_icon_g.png" width="16" height="16" alt="mac icon" />, <b>Linux</b> <img src="../icons1/linux_icon_g.png" width="16" height="16" alt="linux icon" />, and <b>Windows</b> <img src="../icons1/win_icon_g.png" width="16" height="16" alt="windows icon" />.</p>
-
-   <p>The rendering features are:</p>
-   <ul>
-      <li>Monte-carlo path-tracing transport</li>
-      <li>Emitter sampling</li>
-      <li>Progressive refinement</li>
-      <li>RGB light</li>
-      <li>Diffuse materials</li>
-      <li>Triangle modelling primitives</li>
-      <li>Octree spatial index</li>
-      <li>Pin-hole &lsquo;lens&rsquo;</li>
-      <li>Ward linear tone-mapping</li>
-   </ul>
-
-   <p>Full <b>source code</b> is provided under the <a href="http://creativecommons.org/publicdomain/zero/1.0/">CC0 license</a>.</p>
-</div>
-
-
-<div class="section" id="images">
-   <h3>images</h3>
-   
-   <p>A <a href="http://www.graphics.cornell.edu/online/box/"><b>Cornell Box</b></a> (of course) throughout the day:</p>
-
-   <table class="panel" border="0" cellpadding="20" cellspacing="0" frame="void" rules="none" summary="Cornell Box image thumbnail links">
-      <tr valign="top">
+   <table class="artefact-menu">
+      <tr>
          <td>
-            <a href="cornellbox-m.ml1.jpg">
-               <img src="cornellbox-m-small.ml1.jpg" width="48" height="48" alt="Cornell Box at morning" title="Matutinal: skylight only." class="thumbnail" /></a>
-            <div class="thumbcaption">Cornell Box, at morning <small>(24 KiB)</small></div>
-         </td>
-         <td>
-            <a href="cornellbox-n.ml1.jpg">
-               <img src="cornellbox-n-small.ml1.jpg" width="48" height="48" alt="Cornell Box at noon" title="Meridiemal: strong sun and skylight. Note the form of the bright reflections around the lower parts of the boxes." class="thumbnail" /></a>
-            <div class="thumbcaption">Cornell Box, at noon <small>(23 KiB)</small></div>
-         </td>
-         <td>
-            <a href="cornellbox-e.ml1.jpg">
-               <img src="cornellbox-e-small.ml1.jpg" width="48" height="48" alt="Cornell Box at evening" title="Vespertinal: soft red sun and yellow sky, and artificial light. Note the very slightly soft edges of the shadows at the back -- due to the sun's size and distance." class="thumbnail" /></a>
-            <div class="thumbcaption">Cornell Box, at evening <small>(26 KiB)</small></div>
-         </td>
-         <td>
-            <a href="cornellbox.ml1.jpg">
-               <img src="cornellbox-small.ml1.jpg" width="48" height="48" alt="Cornell Box at night" title="Nocturnal: artificial light only." class="thumbnail" /></a>
-            <div class="thumbcaption">Cornell Box, at night <small>(23 KiB)</small></div>
+            <ul>
+               <li><a href="#desc">Description</a></li>
+               <li><a href="#images">Images</a></li>
+               <li><a href="#comparison">Comparison</a></li>
+               <li><a href="#algorithm">Algorithm</a></li>
+               <li><a href="#pseudocode">Pseudocode</a></li>
+               <li><a href="#downloads">Downloads</a></li>
+               <li><a href="#contribution">Contribution</a></li>
+            </ul>
          </td>
       </tr>
    </table>
 
-   <p>The models are physically based too. For example, at noon: The sky has a colour temperature of 10000K and a luminance of 1 x 10<sup>4</sup> cd/m<sup>2</sup>. The sun has a colour temperature of 5400K and a luminance of 1 x 10<sup>9</sup> cd/m<sup>2</sup>, a diameter of 1.392 x 10<sup>9</sup> m, and distance of 149.6 x 10<sup>9</sup> m. (<i>It is just a square though.</i>)</p>
+   <section id="desc">
+      <h3>Description</h3>
 
-   <p>Some of the <a href="http://www.cs.utah.edu/~bes/papers/scenes/"><b>Smits test scenes</b></a>:</p>
+      <p id="desc-p0">MiniLight is a <b>minimal</b> global illumination renderer. It is primarily an exercise in simplicity. But that makes it a good base and benchmark (in some sense) for development and experimentation. And it just might be the <i>neatest</i> renderer around (on average, about 650 lines). There are translations into several programming languages.</p>
 
-   <table class="panel" border="0" cellpadding="20" cellspacing="0" frame="void" rules="none" summary="Smits test image thumbnail links">
-      <tr valign="top">
-         <td>
-            <a href="smits-tests.ml1.jpg">
-               <img src="smits-tests-small.ml1.jpg" width="72" height="24" alt="Smits tests" class="thumbnail" /></a>
-            <div class="thumbcaption">Smits tests <small>(32 KiB)</small></div>
-         </td>
-      </tr>
-   </table>
+      <p id="desc-p1"><i>Someone asked me how to develop a renderer in three months. It seemed not nearly enough time. But then I began to think how small such a program could be, whilst still being a complete physically based simulation with a clear, well-formed design. (A somewhat different aim from the &lsquo;Minimal Ray Tracer Programming Contest&rsquo; of 1987.) I couldn't resist an attempt.</i></p>
 
-   <p>A room, at noon-ish, and night <i>(made in HDR and tonemapped with <a href="../tonemapper/">p3tonemapper</a>)</i>:</p>
+      <p id="desc-p2">It is a <b>command-line</b> application. It reads a simple text model file and writes a <a href="http://netpbm.sourceforge.net/doc/ppm.html">PPM</a> image file. Supported platforms include <b>Mac</b> 🍏, <b>Linux</b> 🐧, and <b>Windows</b>.</p>
 
-   <table class="panel" border="0" cellpadding="20" cellspacing="0" frame="void" rules="none" summary="room image thumbnail links">
-      <tr valign="top">
-         <td>
-            <a href="roomfront-n.ml1.jpg">
-               <img src="roomfront-n_small.ml1.jpg" width="77" height="48" alt="Front room at noon" title="Meridiemal: strong sun and skylight." class="thumbnail" /></a>
-            <div class="thumbcaption">Front room, at noon <small>(97 KiB)</small></div>
-         </td>
-         <td>
-            <a href="roomfront.ml1.jpg">
-               <img src="roomfront_small.ml1.jpg" width="77" height="48" alt="Cornell Box at noon" title="Nocturnal: artificial light only." class="thumbnail" /></a>
-            <div class="thumbcaption">Front room, at night <small>(47 KiB)</small></div>
-         </td>
-      </tr>
-   </table>
+      <p id="desc-p3">The rendering features are:</p>
+      <ul>
+         <li>Monte-carlo path-tracing transport</li>
+         <li>Emitter sampling</li>
+         <li>Progressive refinement</li>
+         <li>RGB light</li>
+         <li>Diffuse materials</li>
+         <li>Triangle modelling primitives</li>
+         <li>Octree spatial index</li>
+         <li>Pin-hole &lsquo;lens&rsquo;</li>
+         <li>Ward linear tone-mapping</li>
+      </ul>
 
-   <p>All these renders are 1000 paths per pixel. The standard Cornell Box, at 500 x 500 pixels, should take about 15 minutes on a 2007 machine.</p>
-
-   <p>(Models/scenes are just in a simple individual text format, but <i>if</i> they were in JSON a suggested <a href="http://json-schema.org/"><b>JSON-schema</b></a> of the <a href="model-json-schema.json">model/scene format is here</a>.)</p>
-</div>
+      <p id="desc-p4">Full <b>source code</b> is provided under the <a href="http://creativecommons.org/publicdomain/zero/1.0/">CC0 license</a>.</p>
+   </section>
 
 
-<div class="section" id="comparison">
-   <h3>comparison</h3>
+   <section id="images">
+      <h3>Images</h3>
 
-   <p>There are now eight translations:</p>
-   <table border="0" cellpadding="4" cellspacing="0" frame="void" rules="none" summary="language comparison">
-      <thead>
+      <p id="images-p0">A <a href="http://www.graphics.cornell.edu/online/box/"><b>Cornell Box</b></a> (of course) throughout the day:</p>
+
+      <table class="panel">
          <tr>
-            <th>language<br/><small>and version</small></th><th>size<br/><small>lines of code</small></th><th>size<br/><small>relative to C</small></th><th>speed<br/><small>paths per sec</small></th><th>speed<br/><small>relative to C</small></th>
+            <td>
+               <a href="cornellbox-m.ml1.jpg">
+                  <img src="cornellbox-m-small.ml1.jpg" width="64" height="64" alt="Cornell Box at morning" title="Matutinal: skylight only." class="thumbnail" /></a>
+               <div class="thumbcaption">Cornell Box, at morning <small>(24 KiB)</small></div>
+            </td>
+            <td>
+               <a href="cornellbox-n.ml1.jpg">
+                  <img src="cornellbox-n-small.ml1.jpg" width="64" height="64" alt="Cornell Box at noon" title="Meridiemal: strong sun and skylight. Note the form of the bright reflections around the lower parts of the boxes." class="thumbnail" /></a>
+               <div class="thumbcaption">Cornell Box, at noon <small>(23 KiB)</small></div>
+            </td>
+            <td>
+               <a href="cornellbox-e.ml1.jpg">
+                  <img src="cornellbox-e-small.ml1.jpg" width="64" height="64" alt="Cornell Box at evening" title="Vespertinal: soft red sun and yellow sky, and artificial light. Note the very slightly soft edges of the shadows at the back -- due to the sun's size and distance." class="thumbnail" /></a>
+               <div class="thumbcaption">Cornell Box, at evening <small>(26 KiB)</small></div>
+            </td>
+            <td>
+               <a href="cornellbox.ml1.jpg">
+                  <img src="cornellbox-small.ml1.jpg" width="64" height="64" alt="Cornell Box at night" title="Nocturnal: artificial light only." class="thumbnail" /></a>
+               <div class="thumbcaption">Cornell Box, at night <small>(23 KiB)</small></div>
+            </td>
          </tr>
-      </thead>
-      <tbody>
+      </table>
+
+      <p id="images-p1">The models are physically based too. For example, at noon: The sky has a colour temperature of 10000K and a luminance of 1 x 10<sup>4</sup> cd/m<sup>2</sup>. The sun has a colour temperature of 5400K and a luminance of 1 x 10<sup>9</sup> cd/m<sup>2</sup>, a diameter of 1.392 x 10<sup>9</sup> m, and distance of 149.6 x 10<sup>9</sup> m. (<i>It is just a square though.</i>)</p>
+
+      <p id="images-p2">Some of the <a href="http://www.cs.utah.edu/~bes/papers/scenes/"><b>Smits test scenes</b></a>:</p>
+
+      <table class="panel">
          <tr>
-            <td><a href="http://www.scala-lang.org/"><img src="../icons1/scala_icon_g.png" width="16" height="16" alt="Scala icon" class="plainimg" /></a> <a href="minilight-scala-code.html"><b>Scala</b> 2.10.0</a></td><td><span>444</span></td><td>0.36</td><td>20082</td><td>1 / 4.6</td>
+            <td>
+               <a href="smits-tests.ml1.jpg">
+                  <img src="smits-tests-small.ml1.jpg" width="96" height="32" alt="Smits tests" class="thumbnail" /></a>
+               <div class="thumbcaption">Smits tests <small>(32 KiB)</small></div>
+            </td>
          </tr>
+      </table>
+
+      <p id="images-p3">A room, at noon-ish, and night <i>(made in HDR and tonemapped with <a href="../tonemapper/">p3tonemapper</a>)</i>:</p>
+
+      <table class="panel">
          <tr>
-            <td><a href="http://ocaml.org/"><img src="../icons1/ocaml_icon_g.png" width="16" height="16" alt="OCaml icon" class="plainimg" /></a> <b>OCaml</b> 4.00.1</td><td><span title="type-inference and expression-orientation make this very concise...">473</span></td><td>0.39</td><td>40282</td><td>1 / 2.3</td>
+            <td>
+               <a href="roomfront-n.ml1.jpg">
+                  <img src="roomfront-n_small.ml1.jpg" width="103" height="64" alt="Front room at noon" title="Meridiemal: strong sun and skylight." class="thumbnail" /></a>
+               <div class="thumbcaption">Front room, at noon <small>(97 KiB)</small></div>
+            </td>
+            <td>
+               <a href="roomfront.ml1.jpg">
+                  <img src="roomfront_small.ml1.jpg" width="103" height="64" alt="Cornell Box at noon" title="Nocturnal: artificial light only." class="thumbnail" /></a>
+               <div class="thumbcaption">Front room, at night <small>(47 KiB)</small></div>
+            </td>
          </tr>
-         <tr>
-            <td><a href="http://www.python.org/"><img src="../icons1/python_icon_g.png" width="16" height="16" alt="Python icon"  class="plainimg" /></a> <span title="Translation by Juraj Sukop"><b>Python</b> 2.6.1</span></td><td><span title="significant-blank-space gives it the edge over Ruby...">510</span></td><td>0.42</td><td>403.79</td><td>1 / 230</td>
-         </tr>
-         <tr>
-            <td><a href="http://www.python.org/"><img src="../icons1/python_icon_g.png" width="16" height="16" alt="Python icon"  class="plainimg" /></a> <span title="Translation by Juraj Sukop"><b>Python</b></span> <a href="http://pypy.org/">PyPy</a> 2 beta 1</td><td>510</td><td>0.42</td><td>5658.0</td><td>1 / 16</td>
-         </tr>
-         <tr>
-            <td><a href="http://www.python.org/"><img src="../icons1/python_icon_g.png" width="16" height="16" alt="Python icon"  class="plainimg" /></a> <span title="Translation by Juraj Sukop"><b>Python</b></span> <a href="http://shed-skin.blogspot.com/">Shed</a><a href="http://code.google.com/p/shedskin/">Skin</a> 0.1.1</td><td><span title="very little adjustment needed by shedskin">516</span></td><td>0.42</td><td>24985</td><td>1 / 3.7</td>
-         </tr>
-         <tr>
-            <td><a href="http://www.ruby-lang.org/"><img src="../icons1/ruby_icon_g.png" width="16" height="16" alt="Ruby icon"  class="plainimg"/></a> <b>Ruby</b> 1.8.7</td><td>523</td><td>0.43</td><td>185.46</td><td>1 / 500</td>
-         </tr>
-         <tr>
-            <td><a href="http://www.lua.org/"><img src="../icons1/lua_icon_g.png" width="16" height="16" alt="Lua icon"  class="plainimg" /></a> <b>Lua</b> 5.2.2</td><td>557</td><td>0.46</td><td>1320.1</td><td><span title="the new bit-operations do not really help the speed">1 / 70</span></td>
-         </tr>
-         <tr>
-            <td><a href="http://www.lua.org/"><img src="../icons1/lua_icon_g.png" width="16" height="16" alt="Lua icon"  class="plainimg" /></a> <b>Lua</b> <a href="http://luajit.org/">LuaJIT</a> 2.0.1</td><td>557</td><td>0.46</td><td>6889.0</td><td><span title="LuaJIT has very unpredictable speed">1 / 13</span></td>
-         </tr>
-         <tr>
-            <td><a href="http://www.schemers.org/"><img src="../icons1/scheme_icon_g.png" width="16" height="16" alt="Scheme icon" class="plainimg" /></a> <b>Scheme</b> R5RS <small><a href="http://racket-lang.org/">(Racket 5.3)</a></small></td><td><span>677</span></td><td>0.56</td><td>1263.0</td><td>1 / 73</td>
-         </tr>
-         <tr>
-            <td><a href="http://www.stroustrup.com/C++.html"><img src="../icons1/cpp_icon_g.png" width="16" height="16" alt="C++ icon" title="what could be a logo for C++ ?"  class="plainimg" /></a> <b>C++</b> ISO-98 <small>(LLVM-G++-4.2)</small></td><td><span title="even without separate class-headers it would still be over 600...">957</span></td><td>0.79</td><td>62580</td><td>1 / 1.5</td>
-         </tr>
-         <tr>
-            <td><a href="http://cm.bell-labs.com/cm/cs/who/dmr/chist.html"><img src="../icons1/c_icon_g.png" width="16" height="16" alt="C icon" title="what could be a logo for C ?"  class="plainimg" /></a> <b>C</b> ISO-90 <small>(LLVM-GCC-4.2)</small></td><td><span title="memory management (and exception handling) is the main addition over C++">1249</span></td><td>1</td><td>92445</td><td>1</td>
-         </tr>
-      </tbody>
-   </table>
-   
-   <p>Line counts disclude comments and blanks and lines with only single braces/parentheses.</p>
-   
-   <p>Speed measurements were done on a Core2-Duo Mac, using the <a href="roomfront.ml.txt"><code>roomfront</code></a> (non-sun) model. They are just rough indications.</p>
-   
-   <p>&lsquo;Paths&rsquo; actually also send a &lsquo;shadow ray&rsquo; at each node &ndash; so twice the paths-per-second would give general basic ray-traces/intersections-per-second.</p>
-   
-   <p>C was faster than C++ probably mostly because LLVM's link-time optimisation worked for C, but <span title="run-time error: 'error for object 0x4d555458: Non-aligned pointer being freed'">not for C++</span>.</p>
-   
-   <p>Scala, Lua and Ruby are twice as slow without some manual optimization (Python too, probably). This is mostly inlining some vector operations (but also a little loop unrolling, and flattening the image pixel array).</p>
-   
-   <p><a href="minilight-flex.html"><img src="../icons1/flex_icon_g.png" width="16" height="16" alt="Flex icon" /> Try an older Flex version here . . .</a></p>
-</div>
+      </table>
+
+      <p id="images-p4">All these renders are 1000 paths per pixel. The standard Cornell Box, at 500 x 500 pixels, should take about 15 minutes on a 2007 machine.</p>
+
+      <p id="images-p5">(Models/scenes are just in a simple individual text format, but <i>if</i> they were in JSON a suggested <a href="http://json-schema.org/"><b>JSON-schema</b></a> of the <a href="model-json-schema.json">model/scene format is here</a>.)</p>
+   </section>
 
 
-<div class="section" id="algorithm">
-   <h3>algorithm</h3>
+   <section id="comparison">
+      <h3>Comparison</h3>
 
-   <h4>path tracing</h4>
-   <p>The simplest method of global illumination is pure <b>monte-carlo path tracing</b>. For each pixel, a ray is sent into the scene. When it hits something it notes its color and emission. It then bounces off and continues. Eventually all the noted info is sent back, step by step. Each step scales the light by certain factors until a final value is returned to the pixel. Repeat the whole process many times with some randomness added and average all the results. An image slowly emerges.</p>
-   
-   <p>This strategy is essentially a blind search for light emitters. Unless a ray hits an emitter it will return only blackness. For outdoor scenes most rays will bounce into the sky, and find brightness. But for indoors the emitters are small and many many rays are needed to find them. It is too slow.</p>
-   
-   <h4>emitter sampling</h4>
-   <p>This can be alleviated with <b>emitter sampling</b>. The location of all emitters is known from the model, and this can be used. Each step sends an extra ray to an emitter. But now there are two rays gathering the incoming light they must not duplicate any. To ensure this, &lsquo;local&rsquo; emission at each bounce is no longer included.</p>
+      <p id="comparison-p0">There are now eight translations:</p>
+      <table class="panel">
+         <thead>
+            <tr>
+               <th>language<br/><small>and version</small></th><th>size<br/><small>lines of code</small></th><th>size<br/><small>relative to C</small></th><th>speed<br/><small>paths per sec</small></th><th>speed<br/><small>relative to C</small></th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td><a href="http://csapp.cs.cmu.edu/3e/docs/chistory.html">🌊</a> <b>C</b> <a href="http://www.open-std.org/JTC1/SC22/WG14/www/standards">ISO-90</a> <small>(LLVM-GCC-4.2)</small></td><td><span title="memory management (and exception handling) is the main addition over C++">1249</span></td><td>1</td><td>92445</td><td>1</td>
+            </tr>
+            <tr>
+               <td><a href="http://www.stroustrup.com/C++.html">🌊</a> <b>C++</b> <a href="http://isocpp.org/">ISO-98</a> <small>(LLVM-G++-4.2)</small></td><td><span title="even without separate class-headers it would still be over 600...">957</span></td><td>0.79</td><td>62580</td><td>1 / 1.5</td>
+            </tr>
+            <tr>
+               <td><a href="http://www.schemers.org/">🍐</a> <b>Scheme</b> R5RS <small><a href="http://racket-lang.org/">(Racket 5.3)</a></small></td><td><span>677</span></td><td>0.56</td><td>1263.0</td><td>1 / 73</td>
+            </tr>
+            <tr>
+               <td><a href="http://www.lua.org/">🌙</a> <b>Lua</b> <a href="http://luajit.org/">LuaJIT</a> 2.0.1</td><td>557</td><td>0.46</td><td>6889.0</td><td><span title="LuaJIT has very unpredictable speed">1 / 13</span></td>
+            </tr>
+            <tr>
+               <td><a href="http://www.lua.org/">🌙</a> <b>Lua</b> 5.2.2</td><td>557</td><td>0.46</td><td>1320.1</td><td><span title="the new bit-operations do not really help the speed">1 / 70</span></td>
+            </tr>
+            <tr>
+               <td><a href="http://www.ruby-lang.org/">💎</a> <b>Ruby</b> 1.8.7</td><td>523</td><td>0.43</td><td>185.46</td><td>1 / 500</td>
+            </tr>
+            <tr>
+               <td><a href="http://www.python.org/">🐍</a> <span title="Translation by Juraj Sukop"><b>Python</b></span> <a href="http://shed-skin.blogspot.com/">Shed</a><a href="https://github.com/shedskin/shedskin">Skin</a> 0.1.1</td><td><span title="very little adjustment needed by shedskin">516</span></td><td>0.42</td><td>24985</td><td>1 / 3.7</td>
+            </tr>
+            <tr>
+               <td><a href="http://www.python.org/">🐍</a> <span title="Translation by Juraj Sukop"><b>Python</b></span> <a href="http://pypy.org/">PyPy</a> 2 beta 1</td><td>510</td><td>0.42</td><td>5658.0</td><td>1 / 16</td>
+            </tr>
+            <tr>
+               <td><a href="http://www.python.org/">🐍</a> <span title="Translation by Juraj Sukop"><b>Python</b> 2.6.1</span></td><td><span title="significant-blank-space gives it the edge over Ruby...">510</span></td><td>0.42</td><td>403.79</td><td>1 / 230</td>
+            </tr>
+            <tr>
+               <td><a href="http://ocaml.org/">🐫</a> <b>OCaml</b> 4.00.1</td><td><span title="type-inference and expression-orientation make this very concise...">473</span></td><td>0.39</td><td>40282</td><td>1 / 2.3</td>
+            </tr>
+            <tr>
+               <td><a href="http://www.scala-lang.org/">🐚</a> <a href="minilight-scala-code.html"><b>Scala</b> 2.10.0</a></td><td><span>444</span></td><td>0.36</td><td>20082</td><td>1 / 4.6</td>
+            </tr>
+         </tbody>
+      </table>
 
-   <h4>monte carlo</h4>
-   <p>Each interaction along the main path is handled mostly by monte-carlo. The bounce direction is chosen by <b>importance sampling</b>: proportionally more likely in directions the surface allows more reflection through. For ideal diffuse that is lots near perpendicular, little near grazing. The overall reflectivity is controlled by <b>russian-roulette</b>: proportionally more likely to bounce the more reflective the surface is. This allows a non-arbitrary end for the recursion. The colour is just scaling, because there is no advantage in monte-carlo there.</p>
+      <p id="comparison-p1">Line counts disclude comments and blanks and lines with only single braces/parentheses.</p>
 
-   <p>Both uses of monte-carlo sample more where the surface interaction transfers more light. This is a fairly good approach.</p>
+      <p id="comparison-p2">Speed measurements were done on a Core2-Duo Mac, using the <a href="roomfront.ml.txt"><code>roomfront</code></a> (non-sun) model. They are just rough indications.</p>
 
-   <p>Why? A simple analysis is that apparent noisiness is the product of detail/richness and intensity: greater detail means adjacent pixels more likely see different values, greater intensity probably means more contrast. The latter is easiest to address, because interaction's effect on intensity is simple. The treatment&mdash;sampling more&mdash;reduces noise by averaging-out the effect of the randomness.</p>
+      <p id="comparison-p3">&lsquo;Paths&rsquo; actually also send a &lsquo;shadow ray&rsquo; at each node &ndash; so twice the paths-per-second would give general basic ray-traces/intersections-per-second.</p>
 
-   <p>Over many iterations this puts more computation into resolving more visibly noisy regions, rather than wasting it on regions that won't noticeably improve. That computes an image of particular quality more quickly. But there are still shortcomings . . .</p>
+      <p id="comparison-p4">C was faster than C++ probably mostly because LLVM's link-time optimisation worked for C, but <span title="run-time error: 'error for object 0x4d555458: Non-aligned pointer being freed'">not for C++</span>.</p>
 
-   <h4>rendering equation</h4>
-   <p>Here is the specific rendering equation for this algorithm:</p>
-   <img src="rendering-equation.png" width="431" height="107" title="equation alert!!!" alt="L_o(x, \vec w) = \int_\Omega L_i(x, \vec w') (\vec w' \cdot \vec n) \frac{\rho}{\pi}\, d\vec w' \ \ + \ \ \sum_E\int_A L_e(z, \vec w'') \Gamma_A V(x,z) (\vec w'' \cdot \vec n) \frac{\rho}{\pi}\, d a" />
-   <p>Meaning: The radiance outward at a position and direction equals the sum of two terms (the first representing the main path, the second the emitter sampling). The first term integrates over the surrounding hemisphere of directions the inward radiance scaled by its projection and the reflectivity function. The second term sums over all emitters, for each integrating over the area the emission scaled by the solid angle, the visibility, the projection, and the reflectivity function.</p>
+      <p id="comparison-p5">Scala, Lua and Ruby are twice as slow without some manual optimization (Python too, probably). This is mostly inlining some vector operations (but also a little loop unrolling, and flattening the image pixel array).</p>
 
-   <!--
-   (generatable by www.wikipedia.org)
-   
-   <math>L_o(x, \vec w) = \int_\Omega L_i(x, \vec w') (\vec w' \cdot \vec n) \frac{\rho}{\pi}\, d\vec w' \ \ + \ \ \sum_E\int_A L_e(z, \vec w'') \Gamma_A V(x,z) (\vec w'' \cdot \vec n) \frac{\rho}{\pi}\, d a</math>
-
-   <math>L_o(x, \vec w) = \frac{\rho}{\pi} \int_\Omega L_i(x, \vec w') (\vec w' \cdot \vec n)\, d\vec w' \ \ + \ \ \sum_E \left [ \frac{\rho}{\pi} \Gamma_A \int_A L_e(z, \vec w'') V(x,z) (\vec w'' \cdot \vec n)\, d a \right ] </math>
-   -->
-
-   <!--<pre>L[posR,dirOut] =
-   intHemisphere( L[posI,-dirIn] * vis(posR,posI) *
-      cos(dirIn,normR) * (rfl[posR] / pi) ) + 
-   sumEmitters(
-      intArea( Le[posE,-dirIn] * sldang(A) * vis(posR,posE) *
-         cos(dirIn,normR) * (rfl[posR] / pi) ) )</pre>-->
-
-   <h4>unbiased?</h4>
-   <p>Monte-carlo path-tracing is described as &lsquo;<b>unbiased</b>&rsquo;. The term is now sometimes used in the manner of a marketing tag. Its real meaning is too abstract for that purpose. It denotes a lack of consistent error&mdash;the only error is in the effects of the randomness. Such niceties are appropriate for mathematics but for engineering we must live by practicalities. <b>All implementations</b> are <span title="consider: finite rendering time, floating point, modelling, imaging...">biased and incorrect in various ways</span>. The task is to arrange them acceptably.</p>
-
-   <h4>ultimately</h4>
-   <p>The value of this method is its simplicity, while having full generality. It allows the implementation to be almost proven correct by inspection. <i>(Correct meaning &lsquo;following the rules for a particular standard approximation&rsquo;.)</i> The images produced can be authoritative references for other renderers.</p>
-   <p>The core idea has also proven remarkably durable and adaptable since Whitted's paper of 1980. One could reasonably call it the key engineering concept for rendering, and it looks to remain so.</p>
-
-</div>
+      <p id="comparison-p6"><a href="minilight-flex.html">Try an older Flex version here . . .</a></p>
+   </section>
 
 
-<div class="section" id="pseudocode">
-   <h3>pseudocode</h3>
+   <section id="algorithm">
+      <h3>Algorithm</h3>
 
-   <p>Here is the algorithmic structure in high-level pseudocode/PDL (produced by editing the code comments into a reduced form).</p>
-   
-   <p>Whereas the actual source-code is broken into modules and procedures, this represents the sequence in a single coherent view. Thought of like geographic maps, the first is roughly 38:1 scale, the second 10:1.</p>
-   
-   <!--<p>(Each line links to (near) the corresponding part of the Scala translation page. [TODO: need to add ids to Scala page])</p>-->
+      <h4 id="algorithm.pathtracing">path tracing</h4>
+      <p id="algorithm.pathtracing-p0">The simplest method of global illumination is pure <b>monte-carlo path tracing</b>. For each pixel, a ray is sent into the scene. When it hits something it notes its color and emission. It then bounces off and continues. Eventually all the noted info is sent back, step by step. Each step scales the light by certain factors until a final value is returned to the pixel. Repeat the whole process many times with some randomness added and average all the results. An image slowly emerges.</p>
 
-   <h4 id="highlevel">High-level &ndash; 38:1 Scale</h4>
+      <p id="algorithm.pathtracing-p1">This strategy is essentially a blind search for light emitters. Unless a ray hits an emitter it will return only blackness. For outdoor scenes most rays will bounce into the sky, and find brightness. But for indoors the emitters are small and many many rays are needed to find them. It is too slow.</p>
 
-   <p>17 lines &ndash; roughly 1 for every 38 of actual code.</p>
+      <h4 id="algorithm.emittersampling">emitter sampling</h4>
+      <p id="algorithm.emittersampling-p0">This can be alleviated with <b>emitter sampling</b>. The location of all emitters is known from the model, and this can be used. Each step sends an extra ray to an emitter. But now there are two rays gathering the incoming light they must not duplicate any. To ensure this, &lsquo;local&rsquo; emission at each bounce is no longer included.</p>
+
+      <h4 id="algorithm.montecarlo">monte carlo</h4>
+      <p id="algorithm.montecarlo-p0">Each interaction along the main path is handled mostly by monte-carlo. The bounce direction is chosen by <b>importance sampling</b>: proportionally more likely in directions the surface allows more reflection through. For ideal diffuse that is lots near perpendicular, little near grazing. The overall reflectivity is controlled by <b>russian-roulette</b>: proportionally more likely to bounce the more reflective the surface is. This allows a non-arbitrary end for the recursion. The colour is just scaling, because there is no advantage in monte-carlo there.</p>
+
+      <p id="algorithm.montecarlo-p1">Both uses of monte-carlo sample more where the surface interaction transfers more light. This is a fairly good approach.</p>
+
+      <p id="algorithm.montecarlo-p2">Why? A simple analysis is that apparent noisiness is the product of detail/richness and intensity: greater detail means adjacent pixels more likely see different values, greater intensity probably means more contrast. The latter is easiest to address, because interaction's effect on intensity is simple. The treatment&mdash;sampling more&mdash;reduces noise by averaging-out the effect of the randomness.</p>
+
+      <p id="algorithm.montecarlo-p3">Over many iterations this puts more computation into resolving more visibly noisy regions, rather than wasting it on regions that won't noticeably improve. That computes an image of particular quality more quickly. But there are still shortcomings . . .</p>
+
+      <h4 id="algorithm.renderingequation">rendering equation</h4>
+      <p id="algorithm.renderingequation-p0">Here is the specific rendering equation for this algorithm:</p>
+      <img src="rendering-equation.png" width="575" height="143" alt="L_o(x, \vec w) = \int_\Omega L_i(x, \vec w') (\vec w' \cdot \vec n) \frac{\rho}{\pi}\, d\vec w' \ \ + \ \ \sum_E\int_A L_e(z, \vec w'') \Gamma_A V(x,z) (\vec w'' \cdot \vec n) \frac{\rho}{\pi}\, d a" />
+      <p id="algorithm.renderingequation-p1">Meaning: The radiance outward at a position and direction equals the sum of two terms (the first representing the main path, the second the emitter sampling). The first term integrates over the surrounding hemisphere of directions the inward radiance scaled by its projection and the reflectivity function. The second term sums over all emitters, for each integrating over the area the emission scaled by the solid angle, the visibility, the projection, and the reflectivity function.</p>
+
+      <!--
+      (generatable by www.wikipedia.org)
+
+      <math>L_o(x, \vec w) = \int_\Omega L_i(x, \vec w') (\vec w' \cdot \vec n) \frac{\rho}{\pi}\, d\vec w' \ \ + \ \ \sum_E\int_A L_e(z, \vec w'') \Gamma_A V(x,z) (\vec w'' \cdot \vec n) \frac{\rho}{\pi}\, d a</math>
+
+      <math>L_o(x, \vec w) = \frac{\rho}{\pi} \int_\Omega L_i(x, \vec w') (\vec w' \cdot \vec n)\, d\vec w' \ \ + \ \ \sum_E \left [ \frac{\rho}{\pi} \Gamma_A \int_A L_e(z, \vec w'') V(x,z) (\vec w'' \cdot \vec n)\, d a \right ] </math>
+      -->
+
+      <!--<pre>L[posR,dirOut] =
+      intHemisphere( L[posI,-dirIn] * vis(posR,posI) *
+         cos(dirIn,normR) * (rfl[posR] / pi) ) +
+      sumEmitters(
+         intArea( Le[posE,-dirIn] * sldang(A) * vis(posR,posE) *
+            cos(dirIn,normR) * (rfl[posR] / pi) ) )</pre>-->
+
+      <h4 id="algorithm.unbiased">unbiased?</h4>
+      <p id="algorithm.unbiased-p0">Monte-carlo path-tracing is described as &lsquo;<b>unbiased</b>&rsquo;. The term is now sometimes used in the manner of a marketing tag. Its real meaning is too abstract for that purpose. It denotes a lack of consistent error&mdash;the only error is in the effects of the randomness. Such niceties are appropriate for mathematics but for engineering we must live by practicalities. <b>All implementations</b> are <span title="consider: finite rendering time, floating point, modelling, imaging...">biased and incorrect in various ways</span>. The task is to arrange them acceptably.</p>
+
+      <h4 id="algorithm.ultimately">ultimately</h4>
+      <p id="algorithm.ultimately-p0">The value of this method is its simplicity, while having full generality. It allows the implementation to be almost proven correct by inspection. <i>(Correct meaning &lsquo;following the rules for a particular standard approximation&rsquo;.)</i> The images produced can be authoritative references for other renderers.</p>
+      <p id="algorithm.ultimately-p1">The core idea has also proven remarkably durable and adaptable since Whitted's paper of 1980. One could reasonably call it the key engineering concept for rendering, and it looks to remain so.</p>
+
+   </section>
+
+
+   <section id="pseudocode">
+      <h3>Pseudocode</h3>
+
+      <p id="pseudocode-p0">Here is the algorithmic structure in high-level pseudocode/PDL (produced by editing the code comments into a reduced form).</p>
+
+      <p id="pseudocode-p1">Whereas the actual source-code is broken into modules and procedures, this represents the sequence in a single coherent view. Thought of like geographic maps, the first is roughly 38:1 scale, the second 10:1.</p>
+
+      <!--<p>(Each line links to (near) the corresponding part of the Scala translation page. [TODO: need to add ids to Scala page])</p>-->
+
+      <h4 id="highlevel">high-level &ndash; 38:1 Scale</h4>
+
+      <p id="pseudocode.highlevel-p0">17 lines &ndash; roughly 1 for every 38 of actual code.</p>
 
 <pre><code>- render, by progressive refinement
-   - render a frame, to the image
-      - sample each image pixel
-         - make sample ray direction
-         - get radiance returning in sample direction
-            - intersect ray with scene
-            - if intersection hit
-               - get local emission (only for first-hit)
-               - calculate emitter sample
-               - calculate recursive reflection
-               - sum local emission, emitter sample, and recursive reflection
-            - else no hit
-               - use default/background scene emission
-         - add radiance to image
-   - save image
-      - divide pixel values by frame count
-      - apply tonemapping factor
-</code></pre>
+  - render a frame, to the image
+    - sample each image pixel
+      - make sample ray direction
+      - get radiance returning in sample direction
+        - intersect ray with scene
+        - if intersection hit
+          - get local emission (only for first-hit)
+          - calculate emitter sample
+          - calculate recursive reflection
+          - sum local emission, emitter sample, and recursive reflection
+        - else no hit
+          - use default/background scene emission
+      - add radiance to image
+  - save image
+    - divide pixel values by frame count
+    - apply tonemapping factor</code></pre>
 
-   <h4 id="mediumlevel">Medium-level &ndash; 10:1 Scale</h4>
+      <h4 id="mediumlevel">medium-level &ndash; 10:1 Scale</h4>
 
-   <p>66 lines &ndash; roughly 1 for every 10 lines of actual code.</p>
+      <p id="pseudocode.mediumlevel-p0">66 lines &ndash; roughly 1 for every 10 lines of actual code.</p>
 
 <pre><code><b>- render, by progressive refinement</b>, as many frames as wanted
-   - display UI feedback
-   <b>- render a frame, to the image</b>
-      <b>- sample each image pixel</b>
-         <b>- make sample ray direction</b> (with sub-pixel jitter)
-         <b>- get radiance returning in sample direction</b>
+  - display UI feedback
+  <b>- render a frame, to the image</b>
+    <b>- sample each image pixel</b>
+      <b>- make sample ray direction</b> (with sub-pixel jitter)
+      <b>- get radiance returning in sample direction</b>
 
-            <b>- intersect ray with scene</b>
-               - if octree branch
-                  - step through subcells and recurse
-                    - find which subcell holds ray origin
-                    - step through intersected subcells
-                       - intersect nested subcell (by recursing)
-                       - exit branch if triangle hit
-                       - find next subcell ray moves to
-                       - move to (outer face of) next subcell, or exit branch
-               - else octree leaf
-                  - exhaustively intersect contained triangles
-                     - avoid false intersection with triangle just come from
-                        - intersect ray with triangle
-                           - check if nearest so far
-                              - check intersection is inside cell bound
-                                 - note hit details
+        <b>- intersect ray with scene</b>
+          - if octree branch
+            - step through subcells and recurse
+              - find which subcell holds ray origin
+              - step through intersected subcells
+                - intersect nested subcell (by recursing)
+                - exit branch if triangle hit
+                - find next subcell ray moves to
+                - move to (outer face of) next subcell, or exit branch
+          - else octree leaf
+            - exhaustively intersect contained triangles
+              - avoid false intersection with triangle just come from
+                - intersect ray with triangle
+                  - check if nearest so far
+                    - check intersection is inside cell bound
+                      - note hit details
 
-            <b>- if intersection hit</b>
-               <b>- get local emission (only for first-hit)</b>
-                  - read triangle attribute
+        <b>- if intersection hit</b>
+          <b>- get local emission (only for first-hit)</b>
+            - read triangle attribute
 
-               <b>- calculate emitter sample</b>:
-                 emissive area, ideal diffuse BRDF:
-                    reflected = (emitivity * solidangle) * (emitterscount) *
-                       (cos(emitdirection) / pi * reflectivity)
-                  - request emitter sample point from scene
-                  - if emitter sample point available
-                     - if shadow ray is unshadowed
-                        - calculate inward emission value
-                           - emit from front face of triangle only
-                              - estimate solid angle
-                              - multiply emitivity by solid angle
-                        - calculate amount reflected by triangle
-                           - check both directions are on same side of triangle
-                             (no transmission)
-                              - calculate ideal diffuse BRDF:
-                                radiance scaled by reflectivity, cos, and 1/pi
-                        - scale radiance by number of emitters in scene
+          <b>- calculate emitter sample</b>:
+            emissive area, ideal diffuse BRDF:
+              reflected = (emitivity * solidangle) * (emitterscount) *
+                (cos(emitdirection) / pi * reflectivity)
+            - request emitter sample point from scene
+            - if emitter sample point available
+              - if shadow ray is unshadowed
+                - calculate inward emission value
+                  - emit from front face of triangle only
+                    - estimate solid angle
+                    - multiply emitivity by solid angle
+                - calculate amount reflected by triangle
+                  - check both directions are on same side of triangle
+                    (no transmission)
+                    - calculate ideal diffuse BRDF:
+                      radiance scaled by reflectivity, cos, and 1/pi
+                - scale radiance by number of emitters in scene
 
-               <b>- calculate recursive reflection</b>:
-                 single hemisphere sample, ideal diffuse BRDF:
-                    reflected = (inradiance * pi) * (cos(in) / pi * color) *
-                       reflectance
-                 reflectance magnitude is 'scaled' by the russian roulette,
-                 cos is importance sampled, and the pi and 1/pi cancel out,
-                 leaving just: inradiance * reflectance color
-                  - calculate next direction
-                     - do russian-roulette with reflectivity 'magnitude'
-                     - if alive
-                        - make direction as cosine-weighted importance sample
-                          of hemisphere
-                        - make color by dividing-out mean from reflectivity
-                  - if not path end
-                     - recurse to 'get radiance returning in sample direction'
-                     - scale recursed radiance by color
+          <b>- calculate recursive reflection</b>:
+            single hemisphere sample, ideal diffuse BRDF:
+              reflected = (inradiance * pi) * (cos(in) / pi * color) *
+                reflectance
+            reflectance magnitude is 'scaled' by the russian roulette,
+            cos is importance sampled, and the pi and 1/pi cancel out,
+            leaving just: inradiance * reflectance color
+            - calculate next direction
+              - do russian-roulette with reflectivity 'magnitude'
+              - if alive
+                - make direction as cosine-weighted importance sample
+                  of hemisphere
+                - make color by dividing-out mean from reflectivity
+            - if not path end
+              - recurse to 'get radiance returning in sample direction'
+              - scale recursed radiance by color
 
-               <b>- sum local emission, emitter sample,
-                 and recursive reflection</b>
+          <b>- sum local emission, emitter sample, and recursive reflection</b>
 
-            <b>- else no hit</b>
-               <b>- use default/background scene emission</b>
+        <b>- else no hit</b>
+          <b>- use default/background scene emission</b>
 
-         <b>- add radiance to image</b>
-   <b>- save image</b> periodically
-      <b>- divide pixel values by frame count</b>
-      <b>- apply</b> (Ward linear) <b>tonemapping factor</b>
-      - write image file (PPM P6 format)
-</code></pre>
-</div>
+      <b>- add radiance to image</b>
+  <b>- save image</b> periodically
+    <b>- divide pixel values by frame count</b>
+    <b>- apply</b> (Ward linear) <b>tonemapping factor</b>
+    - write image file (PPM P6 format)</code></pre>
+   </section>
 
 
-<div class="section" id="downloads">
-   <h3>downloads</h3>
+   <section id="downloads">
+      <h3>Downloads</h3>
 
-   <h4>Version 1.6</h4>
-   <p><small>(updated 2013-05-04)</small></p>
+      <h4 id="downloads.version16">version 1.6</h4>
+      <p id="downloads.version16-p0"><small>(updated 2013-05-04)</small></p>
 
-   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="minilight renderer downloads (grouped)">
-      <tr valign="top">
-         <td>
-            <img src="../icons1/zip_icon.png" width="16" height="16" alt="zip icon" />
-            <a href="minilight16src.tar.gz" onclick="javascript:urchinTracker('/minilight/minilight-download');">minilight16src.tar.gz</a>
-         </td>
-         <td class="tableitem"><b>All source code</b> in one package (167 KiB)</td>
-      </tr>
-      <tr valign="top">
-         <td>
-            <img src="../icons1/zip_icon.png" width="16" height="16" alt="zip icon" />
-            <a href="minilight16exe.zip" onclick="javascript:urchinTracker('/minilight/minilight-download');">minilight16exe.zip</a>
-         </td>
-         <td class="tableitem"><b>Executables</b> (from C) (Mac, Linux, Windows) (146 KiB)</td>
-      </tr>
-      <tr valign="top">
-         <td>
-            <img src="../icons1/txt_icon.png" width="16" height="16" alt="txt icon" />
-            <a href="minilight16-sha256sums.txt">minilight16-sha256sums.txt</a>
-         </td>
-         <td class="tableitem"><b>Sha-256 sums</b> (1 KiB)</td>
-      </tr>
-   </table>
+      <table class="panel">
+         <tr>
+            <td>
+               📦
+               <a href="minilight16src.tar.gz">minilight16src.tar.gz</a>
+            </td>
+            <td class="tableitem"><b>All source code</b> in one package (167 KiB)</td>
+         </tr>
+         <tr>
+            <td>
+               📦
+               <a href="minilight16exe.zip">minilight16exe.zip</a>
+            </td>
+            <td class="tableitem"><b>Executables</b> (from C) (Mac, Linux, Windows) (146 KiB)</td>
+         </tr>
+         <tr>
+            <td>
+               📄
+               <a href="minilight16-sha256sums.txt">minilight16-sha256sums.txt</a>
+            </td>
+            <td class="tableitem"><b>Sha-256 sums</b> (1 KiB)</td>
+         </tr>
+      </table>
 
-   <p>Individually:</p>
+      <p id="downloads.version16-p1">Individually:</p>
 
-   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="minilight renderer downloads (individual)">
-      <tr valign="top">
-         <td>
-            <img src="../icons1/c_icon.png" width="16" height="16" alt="C icon" />
-            <a href="minilight16c.tar.gz" onclick="javascript:urchinTracker('/minilight/minilight-download');">minilight16c.tar.gz</a>
-         </td>
-         <td class="tableitem"><b>C ISO-90</b> source code (36 KiB)</td>
-      </tr>
-      <tr>
-         <td>
-            <img src="../icons1/ocaml_icon.png" width="16" height="16" alt="OCaml icon" />
-            <a href="minilight16ocaml.tar.gz" onclick="javascript:urchinTracker('/minilight/minilight-download');">minilight16ocaml.tar.gz</a>
-         </td>
-         <td class="tableitem"><b>OCaml 4.00</b> source code (31 KiB)</td>
-      </tr>
-      <tr>
-         <td>
-            <img src="../icons1/scheme_icon.png" width="16" height="16" alt="Scheme icon" />
-            <a href="minilight16scheme.tar.gz" onclick="javascript:urchinTracker('/minilight/minilight-download');">minilight16scheme.tar.gz</a>
-         </td>
-         <td class="tableitem"><b>Scheme R5RS</b> source code (36 KiB)</td>
-      </tr>
-      <tr>
-         <td>
-            <img src="../icons1/lua_icon.png" width="16" height="16" alt="Lua icon" />
-            <a href="minilight16lua.tar.gz" onclick="javascript:urchinTracker('/minilight/minilight-download');">minilight16lua.tar.gz</a>
-         </td>
-         <td class="tableitem"><b>Lua 5.1 / 5.2</b> source code (23 KiB)</td>
-      </tr>
-      <tr valign="top">
-         <td>
-            <img src="../icons1/cpp_icon.png" width="16" height="16" alt="C++ icon" />
-            <a href="minilight16cpp.tar.gz" onclick="javascript:urchinTracker('/minilight/minilight-download');">minilight16cpp.tar.gz</a>
-         </td>
-         <td class="tableitem"><b>C++ ISO-98</b> source code (35 KiB)</td>
-      </tr>
-      <tr>
-         <td>
-            <img src="../icons1/scala_icon.png" width="16" height="16" alt="Scala icon" />
-            <a href="minilight16scala.tar.gz" onclick="javascript:urchinTracker('/minilight/minilight-download');">minilight16scala.tar.gz</a>
-         </td>
-         <td class="tableitem"><b>Scala 2.9</b> source code (30 KiB)</td>
-      </tr>
-      <tr valign="top">
-         <td>
-            <img src="../icons1/python_icon.png" width="16" height="16" alt="Python icon" />
-            <a href="minilight16python.tar.gz" onclick="javascript:urchinTracker('/minilight/minilight-download');">minilight16python.tar.gz</a>
-         </td>
-         <td class="tableitem"><b>Python 2.5 / 2.6</b> source code (16 KiB) <br/>(Translation by Juraj Sukop)</td>
-      </tr>
-      <tr>
-         <td>
-            <img src="../icons1/ruby_icon.png" width="16" height="16" alt="Ruby icon" />
-            <a href="minilight16ruby.tar.gz" onclick="javascript:urchinTracker('/minilight/minilight-download');">minilight16ruby.tar.gz</a>
-         </td>
-         <td class="tableitem"><b>Ruby 1.8</b> source code (22 KiB)</td>
-      </tr>
-      <!--<tr>
-         <td>
-            <img src="../icons1/flex_icon.png" width="16" height="16" alt="Flex icon" />
-            <a href="minilight152flex.tar.gz" onclick="javascript:urchinTracker('/minilight/minilight-download');">minilight152flex.tar.gz</a>
-         </td>
-         <td class="tableitem"><b>Flex 2</b> source code (1.5.2) (36 KiB)</td>
-      </tr>-->
-   </table>
+      <table class="panel">
+         <tr>
+            <td>
+               🌊
+               <a href="minilight16c.tar.gz">minilight16c.tar.gz</a>
+            </td>
+            <td class="tableitem"><b>C ISO-90</b> source code (36 KiB)</td>
+         </tr>
+         <tr>
+            <td>
+               🐫
+               <a href="minilight16ocaml.tar.gz">minilight16ocaml.tar.gz</a>
+            </td>
+            <td class="tableitem"><b>OCaml 4.00</b> source code (31 KiB)</td>
+         </tr>
+         <tr>
+            <td>
+               🍐
+               <a href="minilight16scheme.tar.gz">minilight16scheme.tar.gz</a>
+            </td>
+            <td class="tableitem"><b>Scheme R5RS</b> source code (36 KiB)</td>
+         </tr>
+         <tr>
+            <td>
+               🌙
+               <a href="minilight16lua.tar.gz">minilight16lua.tar.gz</a>
+            </td>
+            <td class="tableitem"><b>Lua 5.1 / 5.2</b> source code (23 KiB)</td>
+         </tr>
+         <tr>
+            <td>
+               🌊
+               <a href="minilight16cpp.tar.gz">minilight16cpp.tar.gz</a>
+            </td>
+            <td class="tableitem"><b>C++ ISO-98</b> source code (35 KiB)</td>
+         </tr>
+         <tr>
+            <td>
+               🐚
+               <a href="minilight16scala.tar.gz">minilight16scala.tar.gz</a>
+            </td>
+            <td class="tableitem"><b>Scala 2.9</b> source code (30 KiB)</td>
+         </tr>
+         <tr>
+            <td>
+               🐉
+               <a href="minilight16python.tar.gz">minilight16python.tar.gz</a>
+            </td>
+            <td class="tableitem"><b>Python 2.5 / 2.6</b> source code (16 KiB) <br/>(Translation by Juraj Sukop)</td>
+         </tr>
+         <tr>
+            <td>
+               💎
+               <a href="minilight16ruby.tar.gz">minilight16ruby.tar.gz</a>
+            </td>
+            <td class="tableitem"><b>Ruby 1.8</b> source code (22 KiB)</td>
+         </tr>
+         <!--<tr>
+            <td>
+               📃
+               <a href="minilight152flex.tar.gz">minilight152flex.tar.gz</a>
+            </td>
+            <td class="tableitem"><b>Flex 2</b> source code (1.5.2) (36 KiB)</td>
+         </tr>-->
+      </table>
 
-   <h4>Version 1.7</h4>
-   <p><small>(updated 2013-05-04 &ndash; now supporting process-level parallelism and distribution)</small></p>
+      <h4 id="downloads.version17">version 1.7</h4>
+      <p id="downloads.version17-p0"><small>(updated 2013-05-04 &ndash; now supporting process-level parallelism and distribution)</small></p>
 
-   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="minilight renderer downloads (individual)">
-      <tr valign="top">
-         <td>
-            <img src="../icons1/zip_icon.png" width="16" height="16" alt="zip icon" />
-            <a href="minilight17c.tar.gz" onclick="javascript:urchinTracker('/minilight/minilight-download');">minilight17c.tar.gz</a>
-         </td>
-         <td class="tableitem"><b>C ISO-90</b> source code (48 KiB)</td>
-      </tr>
-   </table>
+      <table class="panel">
+         <tr>
+            <td>
+               📦
+               <a href="minilight17c.tar.gz">minilight17c.tar.gz</a>
+            </td>
+            <td class="tableitem"><b>C ISO-90</b> source code (48 KiB)</td>
+         </tr>
+      </table>
 
-   <h4>external</h4>
+      <h4 id="downloads.external">external</h4>
 
-   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="minilight renderer external versions">
-      <tr>
-         <td>
-            <img src="../icons1/java_icon.png" width="16" height="16" alt="java icon" />
-            <a href="http://github.com/ORBAT/MiniLightJava">MiniLight <b>Java</b></a>
-         </td>
-         <td class="tableitem">translated by Tom Ekl&ouml;f</td>
-      </tr>
-      <tr>
-         <td>
-            <img src="../icons1/csharp_icon.png" width="16" height="16" alt="C# icon" />
-            <a href="http://www.lomont.org/Software/#GraphicsDemos">MiniLight <b>C# 3.5</b></a>
-         </td>
-         <td class="tableitem">translated (with small extras) by Chris Lomont</td>
-      </tr>
-      <tr>
-         <td>
-            <img src="../icons1/fsharp_icon.png" width="16" height="16" alt="F# icon" />
-            <a href="http://www.voyce.com/index.php/2010/06/30/minilight-renderer-in-fsharp/">MiniLight <b>F#</b></a>
-         </td>
-         <td class="tableitem">translated by Ian Voyce</td>
-      </tr>
-      <tr>
-         <td>
-            <a href="http://clojure.org/"><img src="../icons1/clojure_icon.png" width="16" height="16" alt="Clojure icon" class="plainimg" /></a>
-            <a href="http://mark.reid.name/sap/">MiniLight <b>Clojure 2009</b></a>
-         </td>
-         <td class="tableitem">partial, by Mark Reid</td>
-      </tr>
-      <tr>
-         <td>
-            <img src="../icons1/ocaml_icon.png" width="16" height="16" alt="OCaml icon" />
-            <a href="http://github.com/mfp/ocaml-minilight/tree">MiniLight <b>OCaml</b></a>
-         </td>
-         <td class="tableitem">adjustments by <a href="http://eigenclass.org/">Mauricio Fern&aacute;ndez</a></td>
-      </tr>
-      <tr>
-         <td>
-            <a href="https://developer.mozilla.org/en/JavaScript"><img src="../icons1/html_icon.png" width="16" height="16" alt="JavaScript icon" class="plainimg" /></a>
-            <a href="https://github.com/darius/minilight.js">MiniLight <b>JavaScript 3</b></a>
-         </td>
-         <td class="tableitem">in progress, by Darius Bacon</td>
-      </tr>
-   </table>
+      <table class="panel">
+         <tr>
+            <td>
+               ☕
+               <a href="http://github.com/ORBAT/MiniLightJava">MiniLight <b>Java</b></a>
+            </td>
+            <td class="tableitem">translated by Tom Ekl&ouml;f</td>
+         </tr>
+         <tr>
+            <td>
+               #
+               <a href="http://www.lomont.org/Software/#GraphicsDemos">MiniLight <b>C# 3.5</b></a>
+            </td>
+            <td class="tableitem">translated (with small extras) by Chris Lomont</td>
+         </tr>
+         <tr>
+            <td>
+               #
+               <a href="http://www.voyce.com/index.php/2010/06/30/minilight-renderer-in-fsharp/">MiniLight <b>F#</b></a>
+            </td>
+            <td class="tableitem">translated by Ian Voyce</td>
+         </tr>
+         <tr>
+            <td>
+               ☮
+               <a href="http://mark.reid.name/sap/">MiniLight <b>Clojure 2009</b></a>
+            </td>
+            <td class="tableitem">partial, by Mark Reid</td>
+         </tr>
+         <tr>
+            <td>
+               🐫
+               <a href="http://github.com/mfp/ocaml-minilight/">MiniLight <b>OCaml</b></a>
+            </td>
+            <td class="tableitem">adjustments by <a href="http://eigenclass.org/">Mauricio Fern&aacute;ndez</a></td>
+         </tr>
+         <tr>
+            <td>
+               📃
+               <a href="https://github.com/darius/minilight.js">MiniLight <b>JavaScript 3</b></a>
+            </td>
+            <td class="tableitem">in progress, by Darius Bacon</td>
+         </tr>
+      </table>
 
-   <h4>related</h4>
+      <h4 id="downloads.related">related</h4>
 
-   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="minilight renderer related things">
-      <tr>
-         <td>
-            <img src="../icons1/python_icon.png" width="16" height="16" alt="OCaml icon" />
-            <a href="https://github.com/brunonery/scripts/blob/master/minilight_export.py"><b>Blender</b> exporter</a>
-         </td>
-         <td class="tableitem">by <a href="http://brunonery.com/">Bruno Nery</a></td>
-      </tr>
-   </table>
-</div>
-
-
-<div class="section" id="contribution">
-   <h3>contribution</h3>
-
-   <p>If <i>you</i> can't resist doing a translation, I can probably add/link to it. It is a good way to learn 80% of a new language.</p>
-
-   <p>Anyone else is, of course, free to diverge from the original guidelines, but they might be worth considering:</p>
-   <ol>
-      <li>Make it compact and simple (these are the priority), by good use of the language.</li>
-      <li>Only optimize where <i>really</i> needed, and not excessively (you want to find out how well the compiler/language can do for itself with no manual help).</li>
-      <li>Perhaps follow the main module separation design.</li>
-      <li>Write the best code possible!</li>
-   </ol>
-
-   <p>Maybe sacrifice some clarity for compactness in the <code>SpatialIndex</code> module &ndash; it is a bit large <i>(it deserves careful testing, too)</i>. And, only to make the sizes comparable:</p>
-   <ul>
-      <li>lines should be &lt;= 80 chars</li>
-      <li>indent ought to be 3-ish chars <i>(but mixing tabs and spaces is a heinous sin!)</i></li>
-   </ul>
-
-   <p>The main reference versions are <b>Scheme</b>, <b>OCaml</b> and <b>C</b>.</p>
-
-   <p><span class="e">hxa7241+www <i>(&alpha;&tau;)</i> googlem&zwnj;ail <i>(d&omicron;&tau;)</i> com</span></p>
-</div>
-
-</div>
-</div>
+      <table class="panel">
+         <tr>
+            <td>
+               🐍
+               <a href="https://github.com/brunonery/scripts/blob/master/minilight_export.py"><b>Blender</b> exporter</a>
+            </td>
+            <td class="tableitem">by <a href="http://brunonery.com/">Bruno Nery</a></td>
+         </tr>
+      </table>
+   </section>
 
 
-<div class="lower">
-   <div>2013-05-04</div>
-</div>
+   <section id="contribution">
+      <h3>Contribution</h3>
 
+      <p id="contribution-p0">If <i>you</i> can't resist doing a translation, I can probably add/link to it. It is a good way to learn 80% of a new language.</p>
 
-</div>
+      <p id="contribution-p1">Anyone else is, of course, free to diverge from the original guidelines, but they might be worth considering:</p>
+      <ol>
+         <li>Make it compact and simple (these are the priority), by good use of the language.</li>
+         <li>Only optimize where <i>really</i> needed, and not excessively (you want to find out how well the compiler/language can do for itself with no manual help).</li>
+         <li>Perhaps follow the main module separation design.</li>
+         <li>Write the best code possible!</li>
+      </ol>
+
+      <p id="contribution-p2">Maybe sacrifice some clarity for compactness in the <code>SpatialIndex</code> module &ndash; it is a bit large <i>(it deserves careful testing, too)</i>. And, only to make the sizes comparable:</p>
+      <ul>
+         <li>lines should be &lt;= 80 chars</li>
+         <li>indent ought to be 3-ish chars <i>(but mixing tabs and spaces is a heinous sin!)</i></li>
+      </ul>
+
+      <p id="contribution-p3">The main reference versions are <b>Scheme</b>, <b>OCaml</b> and <b>C</b>.</p>
+
+      <p id="contribution-p4"><span class="e">hxa7241+www <i>(&alpha;&tau;)</i> googlem&zwnj;ail <i>(d&omicron;&tau;)</i> com</span></p>
+   </section>
+
+</section>
+
+      </article>
+   </main>
+
 </body>
 
 </html>
