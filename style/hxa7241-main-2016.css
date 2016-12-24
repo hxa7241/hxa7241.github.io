@@ -1,4 +1,4 @@
-/* HXA7241 website style-sheet 'textographic' v1 - 2016-12-12T11:34Z */
+/* HXA7241 website style-sheet 'textographic' v1 - 2016-12-24 */
 
 
 /*
@@ -372,7 +372,7 @@ table.artefact-menu ul {
 
 .artefact-body h4 {
    color:                rgb(40%,40%,40%);
-   margin:               2em 0em 0.8em 0em;
+   margin:               2em 0em 1em 0em;
    border-bottom:        rgb(90%,90%,90%) solid 0.2em;
    font-size:            1.2em;
    line-height:          1em;
@@ -386,27 +386,21 @@ table.artefact-menu ul {
    color:                rgb(60%,60%,60%);
 }
 
-/*
 .artefact-body h5 {
-   margin-top:           1.5em;
-   margin-bottom:        0em;
-   padding:              0em 0.5em 0em 0.5em;
+   margin:               1.5em 0em 0em 0em;
    font-size:            1em;
    line-height:          1.2em;
    font-weight:          bold;
-   text-align:           left;
 }
 
 .artefact-body h6 {
-   margin:               0em 1.5em 0em 0em;
-   padding:              0em 0.5em 0em 0.5em;
+   margin:               0em 1em 0em 0em;
+   padding:              0em 0.5em 0em 0em;
    float:                left;
    font-size:            1em;
    line-height:          1.2em;
    font-weight:          bold;
-   text-align:           left;
 }
-*/
 
 .artefact-body .panel {
    background-color:     rgb(232,230,228);
