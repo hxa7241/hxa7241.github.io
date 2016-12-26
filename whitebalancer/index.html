@@ -1,210 +1,139 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html id="hxa7241-whitebalancer" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en-GB" id="hxa7241-whitebalancer" class="hxa7241-software">
 
 <head>
-   <title>&lt; H X A 7 2 4 1 &gt; : P3 WhiteBalancer </title>
+   <title>&lt; H X A 7 2 4 1 &gt; : whitebalancer</title>
+   <meta charset="UTF-8" />
 
-   <meta name="keywords" content="whitebalancer, white-balancer, color-constancy, chromatic adaptation, rendering, graphics, component, library, software, binary, Windows, Linux" />
-   <meta name="description" content="A white-balancer component for high-quality rendering." />
-
-   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main.css" />
-   <link rel="shortcut icon" type="image/x-icon" href="../style/hxa7241.ico" />
-
-   <script id="hxa7241-js" type="application/x-javascript" src="../style/hxa7241.js"></script>
+   <link rel="stylesheet" type="text/css" href="../style/hxa7241-main-2016.css" />
 </head>
-
 
 <body>
 
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-596081-1";
-urchinTracker();
-</script>
+   <header id="top-head">
+      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241-logo-h.svg" alt="HXA7241" /></a></h1>
+      <div id="sub-head"><a href="../#software">software</a></div>
+      <div id="subsub-head">various software projects</div>
+   </header>
 
-<div class="outer">
+   <main>
+      <article class="artefact">
 
+<header class="artefact-head">
+<pre><code>"artefact-metadata-hxa7241-www": {
+  "title": "P3 Whitebalancer",
+  "author": "Harrison Ainsworth",
+  "date": "2007-12-09",
+  "id": "urn:uuid:F7BE4575-B91A-49C8-9D91-DBCA5A46E987",
+  "type": "article",
+  "subtype": "text/html",
+  "wordcount": 163,
+  "hashsecure": "sha256:6982dd67b23775ff<wbr/>cd7b2790124de980<wbr/>d5d1e1624c2b3cd1<wbr/>4443324b1645224f",
+  "location": "http://www.hxa.name/whitebalancer/"
+}</code></pre>
+</header>
 
-<div class="upper">
-   <div class="title">
-      <h1><a href="http://www.hxa.name/"><img src="../style/hxa7241logo.png" alt="HXA7241 (logo)" /></a></h1>
-   </div>
-</div>
+<!-- hash next element -->
+<section class="artefact-body">
+   <h2>P3 Whitebalancer</h2>
+   <p class="artefact-summary">a whitebalancer component for high-quality rendering</p>
 
-
-<div class="side">
-   <ul class="mainmenu">
-      <li>
-         <a href="../" title="home" accesskey="h">HOME</a>
-      </li>
-   </ul>
-   <ul class="mainmenu">
-      <li>
-         <a href="../software/" title="various software projects">SOFTWARE</a>
-         <ul class="mainmenu">
-            <li>
-               <a href="../rendering/" title="some rendering-related development projects">RENDERING</a>
-               <ul class="mainmenu">
-                  <li>
-                     <span class="current" title="this page">P3 WHITEBALANCER</span>
-                  </li>
-               </ul>
-            </li>
-         </ul>
-      </li>
-   </ul>
-   <ul class="mainmenu">
-      <li>
-         <a href="../about/" title="a vague, apocryphal and soi-disant description of the author" accesskey="a">ABOUT</a>
-      </li>
-      <li>
-         <a href="../sitemap.html" title="a hierarchical enumeration of the site's HTML content" accesskey="s">SITEMAP</a>
-      </li>
-   </ul>
-</div>
-
-
-<div class="middle">
-<div class="picture">
-   <img src="whitebalancer-picture.jpg" alt="four cornell box white-balancings" />
-</div>
-
-<h2>P3 WHITEBALANCER</h2>
-<div class="h2subheading">a whitebalancer component for high-quality rendering</div>
-
-<table class="pagemenu" border="0" cellpadding="0" frame="void" rules="none" summary="menu of page sections">
-   <tr valign="top">
-      <td>
-         <ul>
-            <li><a href="#desc">description</a></li>
-            <li><a href="#images">images</a></li>
-            <!--<li><a href="#technique">technique</a></li>-->
-            <li><a href="#downloads">downloads</a></li>
-            <li><a href="#license">license</a></li>
-         </ul>
-      </td>
-   </tr>
-</table>
-
-
-<div class="content">
-
-<div class="section" id="desc">
-   <h3>description</h3>
-
-   <p>WhiteBalancer removes the color cast from an image.</p>
-
-   <p>This emulates the perceptual capability of &lsquo;color-constancy&rsquo;: it makes the colors look more like they did in the scene where the image was created.</p>
-
-   <p>It is a command-line application and a dynamic library, for Windows and Linux.</p>
-
-   <p>Application features:</p>
-   <ul>
-      <li>reads and writes PPM and RGBE/HDR</li>
-      <li>reads and writes PNG and EXR &mdash; if you have the related libraries present</li>
-      <li>allows full control of the P3WhiteBalancer library</li>
-   </ul>
-   
-   <p>Library features:</p>
-   <ul>
-      <li>float-triplet-pixel images accepted (linear, not gamma-corrected)</li>
-      <li>HDR or LDR images accepted</li>
-      <li>image colorspace and whitepoint specifiable</li>
-      <li>original illuminant specifiable, or automatically estimated</li>
-      <li>strength of color-shift adjustable</li>
-      <li>fast enough for semi-interactive use</li>
-   </ul>
-</div>
-
-
-<div class="section" id="images">
-   <h3>images</h3>
-
-   <table class="panel" border="0" cellpadding="20" cellspacing="0" frame="void" rules="none" summary="whitebalanced image thumbnail links">
-      <tr valign="top">
+   <table class="artefact-menu">
+      <tr>
          <td>
-            <a href="cornellboxs-wb.jpg">
-               <img src="cornellboxs-wb_small.jpg" width="100" height="50" alt="cornellbox thumbnail" title="cornellbox, auto-whitebalance" class="thumbnail" /></a>
-            <div class="thumbcaption">Cornellbox, auto-whitebalance</div>
-            <div class="thumbcaption">20k</div>
-         </td>
-         <td>
-            <a href="memorials-wb.jpg">
-               <img src="memorials-wb_small.jpg" width="100" height="75" alt="church interior thumbnail" title="church interior, auto-whitebalance" class="thumbnail" /></a>
-            <div class="thumbcaption">Church interior, auto-whitebalance</div>
-            <div class="thumbcaption">67k</div>
+            <ul>
+               <li><a href="#desc">Description</a></li>
+               <li><a href="#images">Images</a></li>
+               <li><a href="#downloads">Downloads</a></li>
+            </ul>
          </td>
       </tr>
    </table>
-</div>
+
+   <section id="desc">
+      <h3>Description</h3>
+
+      <p id="desc-p0">Whitebalancer removes the color cast from an image.</p>
+
+      <p id="desc-p1">This emulates the perceptual capability of &lsquo;color-constancy&rsquo;: it makes the colors look more like they did in the scene where the image was created.</p>
+
+      <p id="desc-p2">It is a command-line application and a dynamic library, for Windows and Linux.</p>
+
+      <p id="desc-p3">Application features:</p>
+      <ul id="desc-p4">
+         <li>reads and writes PPM and RGBE/HDR</li>
+         <li>reads and writes PNG and EXR &mdash; if you have the related libraries present</li>
+         <li>allows full control of the P3WhiteBalancer library</li>
+      </ul>
+      
+      <p id="desc-p5">Library features:</p>
+      <ul id="desc-p6">
+         <li>float-triplet-pixel images accepted (linear, not gamma-corrected)</li>
+         <li>HDR or LDR images accepted</li>
+         <li>image colorspace and whitepoint specifiable</li>
+         <li>original illuminant specifiable, or automatically estimated</li>
+         <li>strength of color-shift adjustable</li>
+         <li>fast enough for semi-interactive use</li>
+      </ul>
+   </section>
 
 
-<!--<div class="section" id="technique">
-   <h3>technique</h3>
+   <section id="images">
+      <h3>Images</h3>
 
-</div>-->
-
-
-<div class="section" id="downloads">
-   <h3>downloads</h3>
-
-   <p>Version 1.2 (2007-12-04)</p>
-
-   <table border="0" cellpadding="0" cellspacing="0" frame="void" rules="none" summary="P3 WhiteBalancer downloads">
-      <tr>
-         <td>
-            <img src="../icons1/win_icon.png" width="16" height="16" alt="windows icon" />
-            <a href="p3whitebalancer12exe-win.zip" onclick="javascript:urchinTracker('/tonemapper/tonemapper-download');">p3whitebalancer12exe-win.zip</a>
-         </td>
-         <td class="tableitem" valign="bottom">application and library - Windows (189k)</td>
-      </tr>
-      <tr>
-         <td>
-            <img src="../icons1/linux_icon.png" width="16" height="16" alt="linux icon" />
-            <a href="p3whitebalancer12exe-lin.tgz" onclick="javascript:urchinTracker('/tonemapper/tonemapper-download');">p3whitebalancer12exe-lin.tgz</a>
-         </td>
-         <td class="tableitem" valign="bottom">application and library - Linux (x86) (79k)</td>
-      </tr>
-      <!--<tr>
-         <td>
-            <img src="../icons1/zip_icon.png" width="16" height="16" alt="zip icon" />
-            <a href="p3whitebalancer12src.zip" onclick="javascript:urchinTracker('/tonemapper/tonemapper-download');">p3whitebalancer12src.zip</a>
-         </td>
-         <td class="tableitem" valign="bottom">source code (180k)</td>
-      </tr>-->
-   </table>
-</div>
+      <table class="panel" id="images-p0">
+         <tr>
+            <td>
+               <a href="cornellboxs-wb.jpg">
+                  <img src="cornellboxs-wb_small.jpg" width="100" height="50" alt="cornellbox thumbnail" title="cornellbox, auto-whitebalance" class="thumbnail" /></a>
+               <div class="thumbcaption">Cornellbox, auto-<wbr/>whitebalance</div>
+               <div class="thumbcaption"><small>(20 KiB)</small></div>
+            </td>
+            <td>
+               <a href="memorials-wb.jpg">
+                  <img src="memorials-wb_small.jpg" width="100" height="75" alt="church interior thumbnail" title="church interior, auto-whitebalance" class="thumbnail" /></a>
+               <div class="thumbcaption">Church interior, auto-<wbr/>whitebalance</div>
+               <div class="thumbcaption"><small>(67 KiB)</small></div>
+            </td>
+         </tr>
+      </table>
+   </section>
 
 
-<div class="section" id="license">
-   <h3>license</h3>
+   <section id="downloads">
+      <h3>Downloads</h3>
 
-   <p>P3WhiteBalancer can be used in other projects for free, under the following
-   conditions:</p>
+      <p id="downloads-p0">Version 1.2 (2007-12-04)</p>
 
-   <ul>
-      <li>With acknowledgement &mdash; project materials must include the following notice:
-         <br/><i>P3WhiteBalancer: copyright (c) 2007, Harrison Ainsworth / HXA7241.</i></li>
-      <li>Not separately &mdash; P3WhiteBalancer must not be distributed as a stand-alone product.</li>
-      <li>Not commercially &mdash; a different license is required for that . . .</li>
-   </ul>
+      <table class="panel" id="downloads-p1">
+         <tr>
+            <td>
+               💻
+               <a href="p3whitebalancer12exe-win.zip">p3whitebalancer12exe-win.zip</a>
+            </td>
+            <td class="tableitem">application and library - Windows (189 KiB)</td>
+         </tr>
+         <tr>
+            <td>
+               🐧
+               <a href="p3whitebalancer12exe-lin.tgz">p3whitebalancer12exe-lin.tgz</a>
+            </td>
+            <td class="tableitem">application and library - Linux (x86) (79 KiB)</td>
+         </tr>
+         <tr>
+            <td>
+               📦
+               <a href="p3whitebalancer12src.zip">p3whitebalancer12src.zip</a>
+            </td>
+            <td class="tableitem">source code (180 KiB)</td>
+         </tr>
+      </table>
+   </section>
+</section>
 
-   <p>And I offer no warranties and disclaim all responsibilities &mdash; you know the usual stuff.</p>
-</div>
+      </article>
+   </main>
 
-</div>
-</div>
-
-
-<div class="lower">
-   <div>2007-12-09</div>
-</div>
-
-
-</div>
 </body>
 
 </html>
