@@ -1,4 +1,4 @@
-/* HXA7241 website style-sheet 'textographic' v1 - 2016-12-24 */
+/* HXA7241 website style-sheet 'textographic' v1 - 2016-12-28 */
 
 
 /*
@@ -125,9 +125,9 @@ ul, ol {
    font-size:            1em;
 }
 
-/*ul ul, ul ol, ol ul, ol ol, dl ul, dl ol {
-   margin:           0.25em 2em 0.25em 2em;
-}*/
+ul ul, ul ol, ol ul, ol ol, dl ul, dl ol {
+   margin:               0.5em 1em 0.5em 1em;
+}
 
 ul {
    list-style-type:      square;
