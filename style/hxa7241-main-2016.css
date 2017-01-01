@@ -1,4 +1,4 @@
-/* HXA7241 website style-sheet 'textographic' v1 - 2016-12-28 */
+/* HXA7241 website style-sheet 'textographic' v1 - 2017-01-01 */
 
 
 /*
@@ -70,10 +70,10 @@ pre {
    line-height:          1.3em;
 }
 
-/*.comment {
-   font-style:       italic;
-   border-top:       0.2em solid rgb(232,230,228);
-}*/
+.comment {
+   font-style:           italic;
+   border-top:           0.2em solid rgb(232,230,228);
+}
 
 
 /*-- links --*/
@@ -155,19 +155,19 @@ dt img {
    float:                left;
 }
 
-/*dl.compact {
-   padding-left:     2em;
+dl.compact {
+   padding-left:         0em;
 }
 
 dl.compact dt {
-   float:            left;
-   margin-right:     1em;
+   float:                left;
+   margin-right:         1em;
 }
 
 dl.compact dd {
-   margin-top:       0.25em;
-   margin-bottom:    0.25em;
-}*/
+   margin-top:           0.25em;
+   margin-bottom:        0.25em;
+}
 
 .plainlist {
    list-style-type:      none;
